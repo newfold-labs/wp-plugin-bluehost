@@ -55,7 +55,7 @@ jobs:
         run: |
           mkdir dist
           echo "DIST=${PWD}/dist" >> $GITHUB_OUTPUT
-          echo "PACKAGE=${REPO##*/}" >> $GITHUB_OUTPUT
+          echo "PACKAGE=bluehost-wordpress-plugin" >> $GITHUB_OUTPUT
 
       - name: Use Node.js 20.x
         uses: actions/setup-node@v4

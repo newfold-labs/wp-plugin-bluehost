@@ -26,6 +26,9 @@
       "*": "dist"
     }
   },
+  "extra": {
+      "installer-name": "bluehost-wordpress-plugin"
+  },
   "repositories": {
     "newfold": {
       "type": "composer",

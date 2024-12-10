@@ -106,11 +106,11 @@ jobs:
           command: npx wp-env start --debug
 
       - name: Run Cypress Tests
-        if: ${{ github.repository != 'bluehost/bluehost-wordpress-plugin' || github.actor == 'dependabot[bot]' }}
+        if: ${{ github.repository != 'newfold-labs/wp-plugin-bluehost' || github.actor == 'dependabot[bot]' }}
         run: npm run test:e2e -- --browser chrome
 
-      - name: Run Cypress Tests
-        if: ${{ github.repository == 'bluehost/bluehost-wordpress-plugin' && github.actor != 'dependabot[bot]' }}
+      - name: Run Cypress Tests (and record)
+        if: ${{ github.repository == 'newfold-labs/wp-plugin-bluehost' && github.actor != 'dependabot[bot]' }}
         run: npm run test:e2e -- --browser chrome --record --key ${{ secrets.CYPRESS_RECORD_KEY }} --tag bluehost
 
       - name: Store screenshots of test failures

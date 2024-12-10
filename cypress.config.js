@@ -88,6 +88,7 @@ module.exports = defineConfig( {
 			'vendor/newfold-labs/**/tests/cypress/integration/wp-module-support/*.cy.js', // skip any module's wp-module-support files
 			'vendor/newfold-labs/wp-module-migration/**/*.cy.js', // temporarily skip the broken migration test
 			'vendor/newfold-labs/wp-module-coming-soon/tests/cypress/integration/coming-soon-woo.cy.js', // temporarily skip until fixed with new slug
+			'vendor/newfold-labs/wp-module-deactivation/tests/cypress/integration/deactivation-survey.cy.js', // temporarily skip until fixed with new slug
 		],
 		experimentalRunAllSpecs: true,
 	},

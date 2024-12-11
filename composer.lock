@@ -2313,16 +2313,16 @@
         },
         {
             "name": "symfony/deprecation-contracts",
-            "version": "v2.5.3",
+            "version": "v2.5.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/deprecation-contracts.git",
-                "reference": "80d075412b557d41002320b96a096ca65aa2c98d"
+                "reference": "605389f2a7e5625f273b53960dc46aeaf9c62918"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/deprecation-contracts/zipball/80d075412b557d41002320b96a096ca65aa2c98d",
-                "reference": "80d075412b557d41002320b96a096ca65aa2c98d",
+                "url": "https://api.github.com/repos/symfony/deprecation-contracts/zipball/605389f2a7e5625f273b53960dc46aeaf9c62918",
+                "reference": "605389f2a7e5625f273b53960dc46aeaf9c62918",
                 "shasum": ""
             },
             "require": {
@@ -2360,7 +2360,7 @@
             "description": "A generic function and convention to trigger deprecation notices",
             "homepage": "https://symfony.com",
             "support": {
-                "source": "https://github.com/symfony/deprecation-contracts/tree/v2.5.3"
+                "source": "https://github.com/symfony/deprecation-contracts/tree/v2.5.4"
             },
             "funding": [
                 {
@@ -2376,7 +2376,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2023-01-24T14:02:46+00:00"
+            "time": "2024-09-25T14:11:13+00:00"
         },
         {
             "name": "typesense/typesense-php",
@@ -2792,16 +2792,16 @@
         },
         {
             "name": "wpscholar/url",
-            "version": "1.2.2",
+            "version": "1.2.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/wpscholar/url.git",
-                "reference": "c339972ed8e6876f1cfacbc512c6205db63645d0"
+                "reference": "6e97376a1cf3a9f4d0f0ae976cece6123d1bd4b8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/wpscholar/url/zipball/c339972ed8e6876f1cfacbc512c6205db63645d0",
-                "reference": "c339972ed8e6876f1cfacbc512c6205db63645d0",
+                "url": "https://api.github.com/repos/wpscholar/url/zipball/6e97376a1cf3a9f4d0f0ae976cece6123d1bd4b8",
+                "reference": "6e97376a1cf3a9f4d0f0ae976cece6123d1bd4b8",
                 "shasum": ""
             },
             "type": "library",
@@ -2824,9 +2824,9 @@
             "description": "A PHP class for parsing and manipulating URLs.",
             "support": {
                 "issues": "https://github.com/wpscholar/url/issues",
-                "source": "https://github.com/wpscholar/url/tree/1.2.2"
+                "source": "https://github.com/wpscholar/url/tree/1.2.3"
             },
-            "time": "2020-10-27T20:10:04+00:00"
+            "time": "2024-12-01T20:43:41+00:00"
         }
     ],
     "packages-dev": [

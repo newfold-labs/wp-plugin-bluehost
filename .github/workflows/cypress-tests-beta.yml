@@ -99,7 +99,7 @@ jobs:
         run: npx wp-env start --debug
 
       - name: Run Cypress Tests
-        if: ${{ github.repository == 'bluehost/bluehost-wordpress-plugin' }}
+        if: ${{ github.repository == 'newfold-labs/wp-plugin-bluehost' }}
         run: npm run test:e2e -- --browser chrome
 
       - name: Store screenshots of test failures

@@ -9,7 +9,7 @@ jobs:
   delete:
     name: On Delete Release
     runs-on: ubuntu-latest
-    if: ${{ github.repository == 'bluehost/bluehost-wordpress-plugin' }}
+    if: ${{ github.repository == 'newfold-labs/wp-plugin-bluehost' }}
     steps:
 
       - name: Clear cache for release API
@@ -17,4 +17,4 @@ jobs:
           curl -X POST "https://api.cloudflare.com/client/v4/zones/${{ secrets.CLOUDFLARE_ZONE_ID }}/purge_cache" \
                -H "Authorization: Bearer ${{ secrets.CLOUDFLARE_API_TOKEN }}" \
                -H "Content-Type: application/json" \
-               --data '{"files":["https://hiive.cloud/workers/release-api/plugins/bluehost/bluehost-wordpress-plugin"]}'
+               --data '{"files":["https://hiive.cloud/workers/release-api/plugins/newfold-labs/wp-plugin-bluehost"]}'

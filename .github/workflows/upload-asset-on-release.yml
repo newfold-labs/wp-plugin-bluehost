@@ -22,7 +22,7 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Validate version number
-        if: ${{ (github.repository == 'bluehost/bluehost-wordpress-plugin') && (github.event.release.prerelease == false) }}
+        if: ${{ (github.repository == 'newfold-labs/wp-plugin-bluehost') && (github.event.release.prerelease == false) }}
         run: |
           taggedVersion=${{ env.VERSION }}
           pluginHeaderVersion=`grep "Version:" bluehost-wordpress-plugin.php | grep -Eo "[0-9\.]*"`
@@ -51,7 +51,7 @@ jobs:
         run: |
           mkdir dist
           echo "DIST=${PWD}/dist" >> $GITHUB_OUTPUT
-          echo "PACKAGE=${REPO##*/}" >> $GITHUB_OUTPUT
+          echo "PACKAGE=bluehost-wordpress-plugin" >> $GITHUB_OUTPUT
 
       - name: Use Node.js 20.x
         uses: actions/setup-node@v4
@@ -91,7 +91,7 @@ jobs:
         run: npm install --legacy-peer-deps
 
       - name: Validate WP Versions
-        if: ${{ (github.repository == 'bluehost/bluehost-wordpress-plugin') && (github.event.release.prerelease == false) }}
+        if: ${{ (github.repository == 'newfold-labs/wp-plugin-bluehost') && (github.event.release.prerelease == false) }}
         run: |
           pluginHeaderTestedVersion=`grep "Tested up to:" bluehost-wordpress-plugin.php | grep -Eo "[0-9\.]*"`
           wpEnvVersion=`grep "WordPress/WordPress#tags/" .wp-env.json | grep -Eo "[0-9\.]*"`
@@ -120,10 +120,10 @@ jobs:
           gh release upload "${{ github.event.release.tag_name }}" ${{ steps.workflow.outputs.DIST }}/${{ steps.workflow.outputs.PACKAGE }}.zip
 
       - name: Clear cache for release API
-        if: ${{ github.repository == 'bluehost/bluehost-wordpress-plugin' }}
+        if: ${{ github.repository == 'newfold-labs/wp-plugin-bluehost' }}
         run: |
           curl -X POST "https://api.cloudflare.com/client/v4/zones/${{ secrets.CLOUDFLARE_ZONE_ID }}/purge_cache" \
                -H "Authorization: Bearer ${{ secrets.CLOUDFLARE_API_TOKEN }}" \
                -H "Content-Type: application/json" \
-               --data '{"files":["https://hiive.cloud/workers/release-api/plugins/bluehost/bluehost-wordpress-plugin"]}'
+               --data '{"files":["https://hiive.cloud/workers/release-api/plugins/newfold-labs/wp-plugin-bluehost"]}'
 

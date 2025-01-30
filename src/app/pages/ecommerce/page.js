@@ -2,7 +2,9 @@ import './styles.scss';
 import { useContext } from '@wordpress/element';
 import { useLocation, useNavigate, useSearchParams } from 'react-router-dom';
 import { Page } from '@newfold/ui-component-library';
-import { NewfoldECommerce } from '@newfold/wp-module-ecommerce';
+// import { NewfoldECommerce } from '@newfold/wp-module-ecommerce';
+// import '../../../../vendor/newfold-labs/wp-module-ecommerce/bluehost.css';
+import { NewfoldECommerce } from '@modules/wp-module-ecommerce/src';
 import '@newfold/wp-module-ecommerce/bluehost.css';
 import AppStore from 'App/data/store';
 import {

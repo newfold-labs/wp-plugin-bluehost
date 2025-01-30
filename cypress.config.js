@@ -3,7 +3,7 @@ const { phpVersion, core } = require( './.wp-env.json' );
 const wpVersion = /[^/]*$/.exec( core )[ 0 ];
 
 module.exports = defineConfig( {
-	projectId: 'h78f39',
+	projectId: '71eo94',
 	env: {
 		wpUsername: 'admin',
 		wpPassword: 'password',
@@ -11,7 +11,7 @@ module.exports = defineConfig( {
 		phpVersion,
 		pluginId: 'bluehost',
 		appId: 'wppbh',
-		pluginSlug: 'bluehost-wordpress-plugin',
+		pluginSlug: 'wp-plugin-bluehost',
 	},
 	downloadsFolder: 'tests/cypress/downloads',
 	fixturesFolder: 'tests/cypress/fixtures',

@@ -22,14 +22,14 @@ jobs:
   build:
     name: On Push
     runs-on: ubuntu-latest
-    if: ${{ github.repository == 'bluehost/bluehost-wordpress-plugin' }}
+    if: ${{ github.repository == 'newfold-labs/wp-plugin-bluehost' }}
     steps:
 
       - name: Checkout
         uses: actions/checkout@v4
 
       - name: Validate version number
-        if: ${{ (github.repository == 'bluehost/bluehost-wordpress-plugin') }}
+        if: ${{ (github.repository == 'newfold-labs/wp-plugin-bluehost') }}
         run: |
           pluginHeaderVersion=`grep "Version:" bluehost-wordpress-plugin.php | grep -Eo "[0-9\.]*"`
           pluginConstantVersion=`grep "'BLUEHOST_PLUGIN_VERSION'" bluehost-wordpress-plugin.php | grep -Eo "[0-9\.]*"`
@@ -55,7 +55,7 @@ jobs:
         run: |
           mkdir dist
           echo "DIST=${PWD}/dist" >> $GITHUB_OUTPUT
-          echo "PACKAGE=${REPO##*/}" >> $GITHUB_OUTPUT
+          echo "PACKAGE=bluehost-wordpress-plugin" >> $GITHUB_OUTPUT
 
       - name: Use Node.js 20.x
         uses: actions/setup-node@v4
@@ -83,7 +83,7 @@ jobs:
           npm --version
 
       - name: Validate composer.json and composer.lock
-        if: ${{ github.repository == 'bluehost/bluehost-wordpress-plugin' }}
+        if: ${{ github.repository == 'newfold-labs/wp-plugin-bluehost' }}
         run: composer validate
 
       - name: Install PHP Dependencies

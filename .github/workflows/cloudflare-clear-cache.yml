@@ -19,4 +19,3 @@ jobs:
                -H "Authorization: Bearer ${{ secrets.CLOUDFLARE_API_TOKEN }}" \
                -H "Content-Type: application/json" \
                --data '{"files":["https://hiive.cloud/workers/release-api/plugins/newfold-labs/wp-plugin-bluehost"]}'
-

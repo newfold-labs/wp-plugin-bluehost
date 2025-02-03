@@ -17,7 +17,7 @@ on:
       - 'src/**/*.js'
   pull_request:
     types: [ opened, edited, reopened, ready_for_review ]
-    paths: 
+    paths:
       - 'src/**/*.js'
   workflow_dispatch:
 
@@ -77,7 +77,7 @@ jobs:
 
       - name: Validate composer.json and composer.lock
         run: composer validate
-  
+
       - name: Install PHP Dependencies
         run: composer install --no-progress --no-dev --optimize-autoloader --prefer-dist
 

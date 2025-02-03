@@ -8,7 +8,7 @@ on:
         required: false
         default: ""
   schedule:
-    - cron: '0 12 * * 3' # Every Wednesday at noon UTC
+    - cron: '0 12 * * 3'  # Every Wednesday at noon UTC
 
 permissions:
   issues: write
@@ -38,7 +38,7 @@ jobs:
             DUE_DATE=$(date -u -d '2 weeks' '+%Y-%m-%d')
             echo "No manual input. Using default date 2 weeks from now: $DUE_DATE"
           fi
-          
+
           # Set the date format for the milestone title and due date
           DATE=$(date -u -d "$DUE_DATE" '+%B %-d, %Y')  # Human-readable date
           PR_DEADLINE=$(date -u -d "$DUE_DATE - 1 week" '+%B %-d, %Y')  # Date 1 week before

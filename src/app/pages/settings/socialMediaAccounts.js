@@ -20,6 +20,9 @@ const SocialMediaAccounts = () => {
 			} else {
 				setLoginInfo( res );
 			}
+		} ).catch( () => {
+			setLoginInfo( null )
+			setFbLogin( false );
 		} );
 	};
 

@@ -20,10 +20,10 @@ const SocialMediaAccounts = () => {
 			} else {
 				setLoginInfo( res );
 			}
-		} ).catch((e) => {
-			setLoginInfo(null)
-			setFbLogin(false);
-		});
+		} ).catch( () => {
+			setLoginInfo( null )
+			setFbLogin( false );
+		} );
 	};
 
 	useEffect( () => {

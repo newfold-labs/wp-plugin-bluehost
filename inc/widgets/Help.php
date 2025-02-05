@@ -8,15 +8,15 @@
 namespace Bluehost;
 
 /**
- * \Bluehost\BluehostAccountWidget
+ * \Bluehost\BluehostHelpWidget
  * 
- * Adds a Bluehost Account "Quick Links" dashboard widget to the WordPress dashboard.
+ * Adds a Bluehost Help "Quick Links" dashboard widget to the WordPress dashboard.
  */
-class BluehostAccountWidget {
+class BluehostHelpWidget {
     /**
      * The id of this widget.
      */
-    const id = 'bluehost_account_widget';
+    const id = 'bluehost_help_widget';
 
 	public function __construct() {
         // Register the widget
@@ -30,16 +30,8 @@ class BluehostAccountWidget {
         // Register the widget
         \wp_add_dashboard_widget(
             self::id,
-            'Bluehost Account',
+            'Need Some Help?',
             array( __CLASS__, 'widget_render' )
-        );
-        
-        \add_meta_box( 
-            'dashboard_debug', 
-            'Dashboard Debug', 
-            array( __CLASS__, 'debug_widget_render' ), 
-            'dashboard', 
-            'side', 'high' 
         );
 
         \add_action( 'admin_enqueue_scripts', array( __CLASS__, 'assets' ) );
@@ -48,37 +40,19 @@ class BluehostAccountWidget {
 
     public static function widget_render() {
         ?>
-        <ul class="nfd-flex nfd-justify-between nfd-items-center nfd-gap-4">
-            <li><a href="#">Profile</a></li>
-            <li><a href="#">Mail</a></li>
-            <li><a href="#">Hosting</a></li>
-            <li><a href="#">Security</a></li>
-        </ul>
-        <p><strong>Quick Access</strong></p>
-        <ul>
-            <li><a href="#">Payment Methods</a></li>
-            <li><a href="#">Renewals Center</a></li>
-        </ul>
+        <div class="nfd-root nfd-align-center" data-slot="bluehost-help-widget">
+            <p><?php _e( 'From DIY to full-service help.', 'wp-plugin-bluehost' ); ?></p>
+            <p><?php _e( 'Call or chat 24/7 for support or let our experts build your site for you.', 'wp-plugin-bluehost' ); ?></p>
+        </div>
         <?php
     }
 
-    public static function debug_widget_render() {
-        global $wp_meta_boxes;
-        echo '<pre>';
-        print_r( $wp_meta_boxes );
-        echo '</pre>';
-    }
-
     /**
-	 * Load Page Scripts & Styles.
-	 *
-	 * @param String $hook - The hook name
-     * 
-     * conditionally load assets if widget is present?
+	 * Load scripts/styles needed for this dashboard widget.
 	 *
 	 * @return void
 	 */
-	public static function assets( $hook ) {
+	public static function assets() {
         $asset_file = BLUEHOST_BUILD_DIR . '/index.asset.php';
 
         if ( is_readable( $asset_file ) ) {

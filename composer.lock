@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "b2f4a08c7a46129fe087d61c53e98163",
+    "content-hash": "844caa3f079910fa57aeb5770596da77",
     "packages": [
         {
             "name": "doctrine/inflector",
@@ -1759,16 +1759,16 @@
         },
         {
             "name": "newfold-labs/wp-module-performance",
-            "version": "2.5.0",
+            "version": "2.6.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/newfold-labs/wp-module-performance.git",
-                "reference": "83d61c928a2c905963e82d6a7913eb72a6de0e58"
+                "reference": "0bd806268710a548ecd595fc04bc612d8874dd23"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/newfold-labs/wp-module-performance/zipball/83d61c928a2c905963e82d6a7913eb72a6de0e58",
-                "reference": "83d61c928a2c905963e82d6a7913eb72a6de0e58",
+                "url": "https://api.github.com/repos/newfold-labs/wp-module-performance/zipball/0bd806268710a548ecd595fc04bc612d8874dd23",
+                "reference": "0bd806268710a548ecd595fc04bc612d8874dd23",
                 "shasum": ""
             },
             "require": {
@@ -1795,6 +1795,9 @@
                 ]
             },
             "scripts": {
+                "test": [
+                    "phpunit --bootstrap tests/phpunit/bootstrap.php"
+                ],
                 "cs-fix": [
                     "phpcbf --standard=phpcs.xml ."
                 ],
@@ -1813,10 +1816,10 @@
             ],
             "description": "A module for managing caching functionality.",
             "support": {
-                "source": "https://github.com/newfold-labs/wp-module-performance/tree/2.5.0",
+                "source": "https://github.com/newfold-labs/wp-module-performance/tree/2.6.0",
                 "issues": "https://github.com/newfold-labs/wp-module-performance/issues"
             },
-            "time": "2025-01-29T12:42:28+00:00"
+            "time": "2025-02-05T18:06:22+00:00"
         },
         {
             "name": "newfold-labs/wp-module-pls",
@@ -5082,10 +5085,10 @@
     },
     "prefer-stable": false,
     "prefer-lowest": false,
-    "platform": {},
-    "platform-dev": {},
+    "platform": [],
+    "platform-dev": [],
     "platform-overrides": {
         "php": "7.3.0"
     },
-    "plugin-api-version": "2.6.0"
+    "plugin-api-version": "2.3.0"
 }

@@ -6,7 +6,6 @@ import BlogPosts from './blogPosts';
 import BookingAndAppointments from './bookingAndAppointments';
 import ProductsPages from './ProductsPages';
 import AppStore from '../../data/store';
-import EcommAddonCTB from './ecommAddonCTB';
 
 const PagesAndPosts = () => {
 	const { store } = useContext( AppStore );
@@ -81,9 +80,7 @@ const PagesAndPosts = () => {
 					{ window.NewfoldRuntime.capabilities.hasYithExtended &&
 					window.NewfoldRuntime.isWoocommerceActive ? (
 						<BookingAndAppointments />
-					) : (
-						<EcommAddonCTB />
-					) }
+					) : null }
 				</div>
 			</Container>
 		</Page>

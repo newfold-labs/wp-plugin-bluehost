@@ -35,16 +35,11 @@ class BluehostHelpWidget {
         );
 
         \add_action( 'admin_enqueue_scripts', array( __CLASS__, 'assets' ) );
-        // /remove_meta_box( 'dashboard_quick_press', 'dashboard', 'side' );
     }
 
     public static function widget_render() {
-        ?>
-        <div class="nfd-root nfd-align-center" data-slot="bluehost-help-widget">
-            <p><?php _e( 'From DIY to full-service help.', 'wp-plugin-bluehost' ); ?></p>
-            <p><?php _e( 'Call or chat 24/7 for support or let our experts build your site for you.', 'wp-plugin-bluehost' ); ?></p>
-        </div>
-        <?php
+        $view_file = BLUEHOST_PLUGIN_DIR . '/inc/widgets/views/help.php';
+        include $view_file;
     }
 
     /**
@@ -53,21 +48,8 @@ class BluehostHelpWidget {
 	 * @return void
 	 */
 	public static function assets() {
-        $asset_file = BLUEHOST_BUILD_DIR . '/index.asset.php';
-
-        if ( is_readable( $asset_file ) ) {
-            $asset = include_once $asset_file;
-        } else {
-            return;
-        }
-
-        \wp_register_style(
-            'bluehost-style',
-            BLUEHOST_BUILD_URL . '/index.css',
-            array( 'wp-components' ),
-            $asset['version']
-        );
-
+        // enqueue the bluehost-style stylesheet
+        // this is registered in Admin.php > assets()
         \wp_enqueue_style( 'bluehost-style' );
 	}
 }

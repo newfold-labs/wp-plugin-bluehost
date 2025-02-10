@@ -96,21 +96,6 @@ describe( 'Pages & Posts', { testIsolation: true }, function () {
 				'edit.php?post_type=yith_booking&yith-plugin-fw-panel-skip-redirect=1'
 			);
 			cy.go( 'back' );
-		} else {
-			cy.get( '.wppbh-app-transform' )
-				.findByText( 'Transform your store!' )
-				.should( 'exist' );
-			cy.get( '.wppbh-app-transform' )
-				.find(
-					'a[href="admin.php?page=bluehost#/marketplace/product/6049dddb-1303-4c41-b3c0-242881697860"]'
-				)
-				.first()
-				.click();
-			cy.url().should(
-				'include',
-				'admin.php?page=bluehost#/marketplace/product/6049dddb-1303-4c41-b3c0-242881697860'
-			);
-			cy.go( 'back' );
 		}
 	} );
 

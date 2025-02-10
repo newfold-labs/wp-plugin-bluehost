@@ -13,14 +13,19 @@ const SocialMediaAccounts = () => {
 	let input = false;
 
 	const getFbDetails = () => {
-		getFacebookUserProfileDetails().then( ( res ) => {
-			setFbLogin( res === 'token not found!' ? false : true );
-			if ( Array.isArray( res ) ) {
-				setLoginInfo( res[ 0 ] );
-			} else {
-				setLoginInfo( res );
-			}
-		} );
+		getFacebookUserProfileDetails()
+			.then( ( res ) => {
+				setFbLogin( res === 'token not found!' ? false : true );
+				if ( Array.isArray( res ) ) {
+					setLoginInfo( res[ 0 ] );
+				} else {
+					setLoginInfo( res );
+				}
+			} )
+			.catch( () => {
+				setLoginInfo( null );
+				setFbLogin( false );
+			} );
 	};
 
 	useEffect( () => {

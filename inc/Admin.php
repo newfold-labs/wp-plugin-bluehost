@@ -201,9 +201,6 @@ final class Admin {
 	 */
 	public static function assets( $hook ) {
 
-		// These assets will be loaded in the bluehost app space only
-		if ( false !== stripos( $hook, 'bluehost' ) ) {
-
 			$asset_file = BLUEHOST_BUILD_DIR . '/index.asset.php';
 
 			if ( is_readable( $asset_file ) ) {
@@ -237,11 +234,15 @@ final class Admin {
 			);
 
 			$screen = get_current_screen();
-			if ( false !== strpos( $screen->id, 'bluehost' ) ) {
-				\wp_enqueue_script( 'bluehost-script' );
-				\wp_enqueue_style( 'bluehost-style' );
+
+			// These assets will be loaded in the bluehost app space only
+			if ( false !== stripos( $hook, 'bluehost' ) ) {
+				// only enqueue on bluehost pages
+				if ( false !== strpos( $screen->id, 'bluehost' ) ) {
+					\wp_enqueue_script( 'bluehost-script' );
+					\wp_enqueue_style( 'bluehost-style' );
+				}
 			}
-		}
 
 		// These assets are loaded in all wp-admin
 		\wp_register_script( 'newfold-plugin', false, array(), BLUEHOST_PLUGIN_VERSION, true );

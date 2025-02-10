@@ -10,7 +10,9 @@ const SocialMediaAccounts = () => {
 	const [ showModal, setShowModal ] = useState( false );
 	const [ fbLogin, setFbLogin ] = useState( false );
 	const [ loginInfo, setLoginInfo ] = useState();
+	const [ searchInfo, setSearchInfo ] = useState('');
 	let input = false;
+	const facebookRegex = /^$|facebook|f(?:a(?:c(?:e(?:b(?:o(?:o(?:k?)?)?)?)?)?)?)?/i;
 
 	const getFbDetails = () => {
 		getFacebookUserProfileDetails()
@@ -36,12 +38,19 @@ const SocialMediaAccounts = () => {
 		if ( ! input ) {
 			setShowModal( false );
 		}
+		setSearchInfo('');
 		input = false;
 	};
 
 	const handleFacebookConnect = () => {
 		facebookConnectHelper( getFbDetails ).then( () => {} );
 	};
+
+	const handleSubmit = ( e ) => {
+		e.preventDefault();
+		setSearchInfo(e.target?.[0]?.value)
+	}
+
 	return (
 		<Container.SettingsField
 			title={ __( 'Social Media Accounts', 'wp-plugin-bluehost' ) }
@@ -78,6 +87,7 @@ const SocialMediaAccounts = () => {
 						<div className=" nfd-relative nfd-w-auto nfd-my-6 nfd-mx-auto nfd-max-w-3xl">
 							<div className="nfd-border-0 nfd-rounded-lg nfd-shadow-lg nfd-relative nfd-flex nfd-flex-col nfd-w-full nfd-bg-white nfd-outline-none nfd-focus:outline-none">
 								<form
+									onSubmit={handleSubmit}
 									className="nfd-flex nfd-items-center nfd-w-full"
 									style={ { minWidth: '300px' } }
 								>
@@ -109,6 +119,14 @@ const SocialMediaAccounts = () => {
 										/>
 									</div>
 								</form>
+								{ !facebookRegex.test(searchInfo) ? 
+								<button
+								className="nfd-relative nfd-p-6 nfd-flex nfd-flex-row nfd-items-center">
+										{ __(
+											'No Records found',
+											'wp-plugin-bluehost'
+										) }
+								</button> :
 								<button
 									className="nfd-relative nfd-p-6 nfd-flex nfd-flex-row nfd-items-center"
 									style={ { cursor: 'pointer' } }
@@ -129,6 +147,7 @@ const SocialMediaAccounts = () => {
 										) }
 									</p>
 								</button>
+								}
 							</div>
 						</div>
 					</button>

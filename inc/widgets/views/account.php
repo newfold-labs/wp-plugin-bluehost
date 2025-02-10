@@ -1,52 +1,82 @@
 <?php
 /**
  * Account Widget View
+ * @package WPPluginBluehost
  *
  * This is rendered on the WordPress dashboard Bluehost Account widget.
  * Icon svgs from HeroIcons https://heroicons.com/
  */
+
 use function NewfoldLabs\WP\ModuleLoader\container;
 use function NewfoldLabs\WP\Context\getContext;
 
-// Helper methods for links
-// TODO: move these elsewhere so they can be reused
-function addUtmParams( $url ) {
+// Helper methods for links : move these elsewhere so they can be reused?
+
+/**
+ * Add UTM params to a URL
+ *
+ * @param string $url
+ * @return string
+ */
+function add_utm_params( $url ) {
 	$data        = array(
 		'utm_source' => 'wp-admin/index.php?widget=bluehost_account_widget',
 		'utm_medium' => 'bluehost_plugin',
 	);
 	return $url .= '?' . http_build_query( $data );
 }
-function isJarvis() {
+
+/**
+ * Check if the user is Jarvis
+ *
+ * @return bool
+ */
+function is_jarvis() {
 	$capabilities = container()->get( 'capabilities' )->all();
 	if ( isset( $capabilities['isJarvis'] ) && $capabilities['isJarvis'] ) {
 		return true;
 	}
 	return false;
 }
-function getPlatformPathUrl( $jarvisPath = '', $legacyPath = '' ) {
-	return isJarvis() ?
-		getPlatformBaseUrl( '/my-account/' ) . $jarvisPath :
-		getPlatformBaseUrl( '/hosting/' ) . $legacyPath;
+
+/*
+ * Get the platform path URL
+ *
+ * @param string $jarvisPath
+ * @param string $legacyPath
+ * @return string
+ */
+function get_platform_path_url( $jarvisPath = '', $legacyPath = '' ) {
+	return is_jarvis() ?
+		get_platform_base_url( '/my-account/' ) . $jarvisPath :
+		get_platform_base_url( '/hosting/' ) . $legacyPath;
 }
-function getPlatformBaseUrl( $path = '' ) {
+
+/*
+ * Get the platform base URL
+ *
+ * @param string $path
+ * @return string
+ */
+function get_platform_base_url( $path = '' ) {
 	$brand = getContext( 'brand' );
 
 	if ( $brand === 'Bluehost_India' ) {
 		return 'https://my.bluehost.in' . $path;
 	}
 
-	if ( isJarvis() ) {
+	if ( is_jarvis() ) {
 		return 'https://www.bluehost.com' . $path;
 	} else {
 		return 'https://my.bluehost.com' . $path;
 	}
 }
+
 // assets/svg/bluehost-logo.svg
 $logo_svg = file_get_contents( BLUEHOST_PLUGIN_DIR . '/assets/svg/bluehost-logo.svg' );
-// $logo_svg = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 116.8 19.3"><path fill="#3575D3" d="M0 0h5.3v5.3H0zm6.8 0h5.3v5.3H6.8zm6.9 0H19v5.3h-5.3zM0 6.8h5.3v5.3H0zm6.8 0h5.3v5.3H6.8zm6.9 0H19v5.3h-5.3zM0 13.7h5.3V19H0zm6.8 0h5.3V19H6.8zm6.9 0H19V19h-5.3zm16.1-5.5c1.1-1 2.5-1.5 4-1.5 2.7 0 5.3 1.8 5.3 6.3s-2.9 6.3-6.1 6.3c-1.6 0-3.2-.4-4.6-1.3V0h1.4zm0 9.1c1 .5 2.1.8 3.2.8 2.5 0 4.8-1.5 4.8-5.1 0-3.2-1.8-5.1-4.1-5.1-1.5.1-2.9.8-3.9 1.9zM41.5 19V0h1.3v19zm5.8-4.7c0 2.9 1.4 3.7 2.8 3.7a5 5 0 0 0 4.2-2.7V6.9h1.4v12.2h-1.4v-2.4a5.7 5.7 0 0 1-4.6 2.5c-1.9 0-3.8-1.1-3.8-4.8V6.9h1.4zm21.4 3.9a8 8 0 0 1-4.3 1c-4.1-.1-6.2-3.4-6.1-6.8 0-3.2 2.5-5.8 5.6-5.8h.4c3.3.1 5.5 2.7 5.1 6.6h-9.8c0 2.6 2.1 4.7 4.7 4.8h.1c1.3 0 2.6-.3 3.8-.9zm-.5-6.1a4 4 0 0 0-3.8-4.2h-.2a4.4 4.4 0 0 0-4.5 4.2zm5.6-2.9c1-1.6 2.6-2.5 4.5-2.6 2.4 0 3.9 1.8 3.9 4.6V19h-1.3v-7.6c0-2.6-1.4-3.6-2.8-3.6a5.6 5.6 0 0 0-4.2 2.7V19h-1.3V0H74c-.2 0-.2 9.2-.2 9.2zm22.3 3.7c0 4-2.7 6.3-5.9 6.3-3.5 0-5.9-2.8-5.9-6.3a6 6 0 0 1 5.6-6.3h.3c3.2.1 5.9 2.4 5.9 6.3zm-10.3 0c0 2.7 1.6 5 4.5 5s4.5-2.4 4.5-5-1.7-5-4.5-5-4.5 2.3-4.5 5zm13.4 4c1 .6 2.1 1 3.2 1 1.3 0 2.9-.5 2.8-1.8 0-1.1-1.2-2-3-2.7-2.1-.8-3.9-1.6-3.9-3.5s1.8-3.3 4.2-3.3a7 7 0 0 1 3.4.9l-.5 1.1c-.9-.5-1.8-.7-2.8-.7-2 0-2.9 1-2.9 2 0 1.3 1.5 1.8 3.4 2.6 2.9 1.1 3.6 2.5 3.6 3.6 0 1.9-1.8 3.1-4.2 3.1-1.4 0-2.7-.4-3.9-1.1zm16.4-10V8h-4v6.7c0 2 .8 3.2 2.6 3.3.8 0 1.6-.1 2.3-.5l.4 1.2c-.9.3-1.8.5-2.7.5-2.2 0-3.9-1.3-3.9-4.5V8H108V6.9h2.2V2.8h1.4v4.1z"/></svg>';
 // need to base64 to keep the fill color intact
 $logo_b64 = base64_encode( $logo_svg );
+
 // reused class collections for easy edits
 $box_li_classes = 'nfd-widget-account-box-li max-[575px]:nfd-items-start nfd-flex nfd-items-center nfd-justify-center nfd-card nfd-bg-canvas';
 $box_a_classes  = 'nfd-widget-account-box-a nfd-flex nfd-flex-col nfd-gap-1 nfd-items-center nfd-text-center nfd-text-[#404040] hover:nfd-text-primary';
@@ -88,9 +118,9 @@ $box_a_classes  = 'nfd-widget-account-box-a nfd-flex nfd-flex-col nfd-gap-1 nfd-
 				href="
 				<?php
 					echo esc_url(
-						isJarvis() ?
-							addUtmParams( getPlatformPathUrl( 'account-center' ) ) :
-							addUtmParams( getPlatformBaseUrl( '/cgi/token' ) )
+						is_jarvis() ?
+							add_utm_params( get_platform_path_url( 'account-center' ) ) :
+							add_utm_params( get_platform_base_url( '/cgi/token' ) )
 					);
 					?>
 				"
@@ -108,8 +138,8 @@ $box_a_classes  = 'nfd-widget-account-box-a nfd-flex nfd-flex-col nfd-gap-1 nfd-
 				href="
 				<?php
 					echo esc_url(
-						addUtmParams(
-							getPlatformPathUrl(
+						add_utm_params(
+							get_platform_path_url(
 								'home',
 								'app#/email-office'
 							)
@@ -131,8 +161,8 @@ $box_a_classes  = 'nfd-widget-account-box-a nfd-flex nfd-flex-col nfd-gap-1 nfd-
 				href="
 				<?php
 				echo esc_url(
-					addUtmParams(
-						getPlatformPathUrl(
+					add_utm_params(
+						get_platform_path_url(
 							'hosting/list',
 							'app'
 						)
@@ -154,8 +184,8 @@ $box_a_classes  = 'nfd-widget-account-box-a nfd-flex nfd-flex-col nfd-gap-1 nfd-
 				href="
 				<?php
 					echo esc_url(
-						addUtmParams(
-							getPlatformPathUrl(
+						add_utm_params(
+							get_platform_path_url(
 								'account-center',
 								'account_center#security'
 							)
@@ -179,8 +209,8 @@ $box_a_classes  = 'nfd-widget-account-box-a nfd-flex nfd-flex-col nfd-gap-1 nfd-
 				href="
 				<?php
 					echo esc_url(
-						addUtmParams(
-							getPlatformPathUrl(
+						add_utm_params(
+							get_platform_path_url(
 								'billing-center',
 								'account_center#billing'
 							)
@@ -198,8 +228,8 @@ $box_a_classes  = 'nfd-widget-account-box-a nfd-flex nfd-flex-col nfd-gap-1 nfd-
 				href="
 				<?php
 					echo esc_url(
-						addUtmParams(
-							getPlatformPathUrl(
+						add_utm_params(
+							get_platform_path_url(
 								'renewal-center',
 								'account_center#products'
 							)

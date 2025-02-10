@@ -16,8 +16,11 @@ class BluehostAccountWidget {
 	/**
 	 * The id of this widget.
 	 */
-	const id = 'bluehost_account_widget';
+	const ID = 'bluehost_account_widget';
 
+    /*
+    * Constructor
+    */
 	public function __construct() {
 		// Register the widget
 		\add_action( 'wp_dashboard_setup', array( __CLASS__, 'init' ) );
@@ -29,7 +32,7 @@ class BluehostAccountWidget {
 
 		// Register the widget
 		\wp_add_dashboard_widget(
-			self::id,
+			self::ID,
 			'Bluehost Account',
 			array( __CLASS__, 'widget_render' )
 		);
@@ -37,6 +40,9 @@ class BluehostAccountWidget {
 		\add_action( 'admin_enqueue_scripts', array( __CLASS__, 'assets' ) );
 	}
 
+    /*
+    * Render the widget
+    */
 	public static function widget_render() {
 		$view_file = BLUEHOST_PLUGIN_DIR . '/inc/widgets/views/account.php';
 		include $view_file;

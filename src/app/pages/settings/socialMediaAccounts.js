@@ -123,7 +123,7 @@ const SocialMediaAccounts = () => {
 								<button
 								className="nfd-relative nfd-p-6 nfd-flex nfd-flex-row nfd-items-center">
 										{ __(
-											'No Records found',
+											'Not found',
 											'wp-plugin-bluehost'
 										) }
 								</button> :

@@ -1,10 +1,11 @@
 <?php
 /**
  * Account Widget View
- * @package WPPluginBluehost
  *
  * This is rendered on the WordPress dashboard Bluehost Account widget.
  * Icon svgs from HeroIcons https://heroicons.com/
+ *
+ * @package WPPluginBluehost
  */
 
 use function NewfoldLabs\WP\ModuleLoader\container;
@@ -39,7 +40,7 @@ function is_jarvis() {
 	return false;
 }
 
-/*
+/**
  * Get the platform path URL
  *
  * @param string $jarvisPath
@@ -52,7 +53,7 @@ function get_platform_path_url( $jarvisPath = '', $legacyPath = '' ) {
 		get_platform_base_url( '/hosting/' ) . $legacyPath;
 }
 
-/*
+/**
  * Get the platform base URL
  *
  * @param string $path
@@ -88,7 +89,7 @@ $box_a_classes  = 'nfd-widget-account-box-a nfd-flex nfd-flex-col nfd-gap-1 nfd-
 		font-size: 0; /* hides  text */
 	}
 	#bluehost_account_widget h2:before {
-		content: url('data:image/svg+xml;base64,<?php echo $logo_b64; ?>');
+		content: url('data:image/svg+xml;base64,<?php echo esc_attr( $logo_b64 ); ?>');
 		width: 100px;
 		height: 1rem;
 		padding: .5rem;
@@ -128,7 +129,7 @@ $box_a_classes  = 'nfd-widget-account-box-a nfd-flex nfd-flex-col nfd-gap-1 nfd-
 				<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
 					<path stroke-linecap="round" stroke-linejoin="round" d="M15 9h3.75M15 12h3.75M15 15h3.75M4.5 19.5h15a2.25 2.25 0 0 0 2.25-2.25V6.75A2.25 2.25 0 0 0 19.5 4.5h-15a2.25 2.25 0 0 0-2.25 2.25v10.5A2.25 2.25 0 0 0 4.5 19.5Zm6-10.125a1.875 1.875 0 1 1-3.75 0 1.875 1.875 0 0 1 3.75 0Zm1.294 6.336a6.721 6.721 0 0 1-3.17.789 6.721 6.721 0 0 1-3.168-.789 3.376 3.376 0 0 1 6.338 0Z" />
 				</svg>
-				<?php _e( 'Profile', 'wp-plugin-bluehost' ); ?>
+				<?php esc_html_e( 'Profile', 'wp-plugin-bluehost' ); ?>
 			</a>
 		</li>
 		<li class="<?php echo esc_attr( $box_li_classes ); ?>">
@@ -151,7 +152,7 @@ $box_a_classes  = 'nfd-widget-account-box-a nfd-flex nfd-flex-col nfd-gap-1 nfd-
 				<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
 					<path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 0 1-2.25 2.25h-15a2.25 2.25 0 0 1-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0 0 19.5 4.5h-15a2.25 2.25 0 0 0-2.25 2.25m19.5 0v.243a2.25 2.25 0 0 1-1.07 1.916l-7.5 4.615a2.25 2.25 0 0 1-2.36 0L3.32 8.91a2.25 2.25 0 0 1-1.07-1.916V6.75" />
 				</svg>
-				<?php _e( 'Mail', 'wp-plugin-bluehost' ); ?>
+				<?php esc_html_e( 'Mail', 'wp-plugin-bluehost' ); ?>
 			</a>
 		</li>
 		<li class="<?php echo esc_attr( $box_li_classes ); ?>">
@@ -174,7 +175,7 @@ $box_a_classes  = 'nfd-widget-account-box-a nfd-flex nfd-flex-col nfd-gap-1 nfd-
 				<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
 					<path stroke-linecap="round" stroke-linejoin="round" d="M5.25 14.25h13.5m-13.5 0a3 3 0 0 1-3-3m3 3a3 3 0 1 0 0 6h13.5a3 3 0 1 0 0-6m-16.5-3a3 3 0 0 1 3-3h13.5a3 3 0 0 1 3 3m-19.5 0a4.5 4.5 0 0 1 .9-2.7L5.737 5.1a3.375 3.375 0 0 1 2.7-1.35h7.126c1.062 0 2.062.5 2.7 1.35l2.587 3.45a4.5 4.5 0 0 1 .9 2.7m0 0a3 3 0 0 1-3 3m0 3h.008v.008h-.008v-.008Zm0-6h.008v.008h-.008v-.008Zm-3 6h.008v.008h-.008v-.008Zm0-6h.008v.008h-.008v-.008Z" />
 				</svg>
-				<?php _e( 'Hosting', 'wp-plugin-bluehost' ); ?>
+				<?php esc_html_e( 'Hosting', 'wp-plugin-bluehost' ); ?>
 			</a>
 		</li>
 		<li class="<?php echo esc_attr( $box_li_classes ); ?>">
@@ -197,11 +198,11 @@ $box_a_classes  = 'nfd-widget-account-box-a nfd-flex nfd-flex-col nfd-gap-1 nfd-
 				<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
 					<path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75 11.25 15 15 9.75m-3-7.036A11.959 11.959 0 0 1 3.598 6 11.99 11.99 0 0 0 3 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285Z" />
 				</svg>
-				<?php _e( 'Security', 'wp-plugin-bluehost' ); ?>
+				<?php esc_html_e( 'Security', 'wp-plugin-bluehost' ); ?>
 			</a>
 		</li>
 	</ul>
-	<p class="nfd-mt-4"><strong><?php _e( 'Quick Access', 'wp-plugin-bluehost' ); ?></strong></p>
+	<p class="nfd-mt-4"><strong><?php esc_html_e( 'Quick Access', 'wp-plugin-bluehost' ); ?></strong></p>
 	<ul class="nfd-mt-4">
 		<li>
 			<a
@@ -219,7 +220,7 @@ $box_a_classes  = 'nfd-widget-account-box-a nfd-flex nfd-flex-col nfd-gap-1 nfd-
 					?>
 				"
 			>
-				<?php _e( 'Payment Methods', 'wp-plugin-bluehost' ); ?>
+				<?php esc_html_e( 'Payment Methods', 'wp-plugin-bluehost' ); ?>
 			</a>
 		</li>
 		<li>
@@ -238,7 +239,7 @@ $box_a_classes  = 'nfd-widget-account-box-a nfd-flex nfd-flex-col nfd-gap-1 nfd-
 					?>
 				"
 			>
-				<?php _e( 'Renewals Center', 'wp-plugin-bluehost' ); ?>
+				<?php esc_html_e( 'Renewals Center', 'wp-plugin-bluehost' ); ?>
 			</a>
 		</li>
 	</ul>

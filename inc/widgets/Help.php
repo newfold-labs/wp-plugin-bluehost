@@ -19,8 +19,8 @@ class BluehostHelpWidget {
 	const ID = 'bluehost_help_widget';
 
 	/**
-	* Constructor
-	*/
+	 * Constructor
+	 */
 	public function __construct() {
 		// Register the widget
 		\add_action( 'wp_dashboard_setup', array( __CLASS__, 'init' ) );
@@ -41,8 +41,8 @@ class BluehostHelpWidget {
 	}
 
 	/**
-	* Render the widget
-	*/
+	 * Render the widget
+	 */
 	public static function widget_render() {
 		$view_file = BLUEHOST_PLUGIN_DIR . '/inc/widgets/views/help.php';
 		include $view_file;

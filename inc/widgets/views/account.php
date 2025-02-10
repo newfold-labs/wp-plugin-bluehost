@@ -16,8 +16,8 @@ use function NewfoldLabs\WP\Context\getContext;
 /**
  * Add UTM params to a URL
  *
- * @param string $url
- * @return string
+ * @param string $url the URL
+ * @return string the URL with UTM params
  */
 function add_utm_params( $url ) {
 	$data        = array(
@@ -43,9 +43,9 @@ function is_jarvis() {
 /**
  * Get the platform path URL
  *
- * @param string $jarvisPath
- * @param string $legacyPath
- * @return string
+ * @param string $jarvisPath the jarvis path
+ * @param string $legacyPath the legacy path
+ * @return string platform link
  */
 function get_platform_path_url( $jarvisPath = '', $legacyPath = '' ) {
 	return is_jarvis() ?
@@ -56,13 +56,13 @@ function get_platform_path_url( $jarvisPath = '', $legacyPath = '' ) {
 /**
  * Get the platform base URL
  *
- * @param string $path
- * @return string
+ * @param string $path the path
+ * @return string platform link
  */
 function get_platform_base_url( $path = '' ) {
 	$brand = getContext( 'brand' );
 
-	if ( $brand === 'Bluehost_India' ) {
+	if ( 'Bluehost_India' === $brand ) {
 		return 'https://my.bluehost.in' . $path;
 	}
 

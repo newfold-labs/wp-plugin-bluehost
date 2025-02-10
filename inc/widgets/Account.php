@@ -19,8 +19,8 @@ class BluehostAccountWidget {
 	const ID = 'bluehost_account_widget';
 
 	/**
-	* Constructor
-	*/
+	 * Constructor
+	 */
 	public function __construct() {
 		// Register the widget
 		\add_action( 'wp_dashboard_setup', array( __CLASS__, 'init' ) );
@@ -41,8 +41,8 @@ class BluehostAccountWidget {
 	}
 
 	/**
-	* Render the widget
-	*/
+	 * Render the widget
+	 */
 	public static function widget_render() {
 		$view_file = BLUEHOST_PLUGIN_DIR . '/inc/widgets/views/account.php';
 		include $view_file;

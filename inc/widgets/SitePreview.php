@@ -1,6 +1,6 @@
 <?php
 /**
- * Hosting Account Widget.
+ * Site Preview Widget.
  *
  * @package WPPluginBluehost
  */
@@ -8,15 +8,15 @@
 namespace Bluehost;
 
 /**
- * \Bluehost\BluehostAccountWidget
+ * \Bluehost\BluehostSitePreviewWidget
  *
- * Adds a Bluehost Account "Quick Links" dashboard widget to the WordPress dashboard.
+ * Adds a SitePreview dashboard widget to the WordPress dashboard. This widget integrates with coming soon module.
  */
-class BluehostAccountWidget {
+class BluehostSitePreviewWidget {
 	/**
 	 * The id of this widget.
 	 */
-	const ID = 'bluehost_account_widget';
+	const ID = 'site_preview_widget';
 
 	/**
 	 * Constructor
@@ -33,7 +33,7 @@ class BluehostAccountWidget {
 		// Register the widget
 		\wp_add_dashboard_widget(
 			self::ID,
-			'Bluehost Account',
+			'Site Preview',
 			array( __CLASS__, 'widget_render' )
 		);
 
@@ -44,7 +44,7 @@ class BluehostAccountWidget {
 	 * Render the widget
 	 */
 	public static function widget_render() {
-		$view_file = BLUEHOST_PLUGIN_DIR . '/inc/widgets/views/account.php';
+		$view_file = BLUEHOST_PLUGIN_DIR . '/inc/widgets/views/site-preview.php';
 		include $view_file;
 	}
 

@@ -1,6 +1,6 @@
 <?php
 /**
- * All data retrieval and saving happens from this file.
+ * Help Widget.
  *
  * @package WPPluginBluehost
  */

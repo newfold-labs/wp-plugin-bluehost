@@ -125,6 +125,7 @@ msgstr ""
 
 #: inc/Admin.php:101
 #: build/4.0.5/index.js:1
+#: build/4.0.5/index.js:14
 msgid "Staging"
 msgstr ""
 
@@ -369,6 +370,74 @@ msgid "Go to Bluehost"
 msgstr ""
 
 #: build/4.0.5/index.js:1
+msgid "Hosting"
+msgstr ""
+
+#: build/4.0.5/index.js:1
+msgid "Control Panel"
+msgstr ""
+
+#: build/4.0.5/index.js:1
+msgid "Renewal Center"
+msgstr ""
+
+#: build/4.0.5/index.js:1
+msgid "Products"
+msgstr ""
+
+#: build/4.0.5/index.js:1
+msgid "Payment Methods"
+msgstr ""
+
+#: build/4.0.5/index.js:1
+msgid "Billing"
+msgstr ""
+
+#: build/4.0.5/index.js:1
+msgid "Mail"
+msgstr ""
+
+#: build/4.0.5/index.js:1
+msgid "Mail & Office"
+msgstr ""
+
+#: build/4.0.5/index.js:1
+msgid "Security"
+msgstr ""
+
+#: build/4.0.5/index.js:1
+msgid "Profile"
+msgstr ""
+
+#: build/4.0.5/index.js:1
+msgid "Validation Token"
+msgstr ""
+
+#: build/4.0.5/index.js:1
+msgid "Explore our featured collection of tools and services."
+msgstr ""
+
+#: build/4.0.5/index.js:1
+msgid "Oops, there was an error loading the marketplace, please try again later."
+msgstr ""
+
+#: build/4.0.5/index.js:1
+msgid "Sorry, no marketplace items. Please, try again later."
+msgstr ""
+
+#: build/4.0.5/index.js:1
+msgid "Load More"
+msgstr ""
+
+#: build/4.0.5/index.js:1
+msgid "Oops! Something Went Wrong"
+msgstr ""
+
+#: build/4.0.5/index.js:1
+msgid "An error occurred while loading the content. Please try again later."
+msgstr ""
+
+#: build/4.0.5/index.js:1
 msgid "Site Pages"
 msgstr ""
 
@@ -422,4 +491,20 @@ msgstr[1] ""
 #. translators: %s: number of comments. `Posts will display ${commentsPerPage} comments at a time.`
 #: build/4.0.5/index.js:14
 msgid "WonderBlocks provides a library of customizable block patterns and page templates."
+msgstr ""
+
+#: build/4.0.5/index.js:14
+msgid "Solution"
+msgstr ""
+
+#: build/4.0.5/index.js:14
+msgid "Explore the plugins and tools available with your solution."
+msgstr ""
+
+#: build/4.0.5/index.js:14
+msgid "Oops, there was an error loading your plugins and tools, please try again later."
+msgstr ""
+
+#: build/4.0.5/index.js:14
+msgid "Sorry, no current plugins and tools. Please, try again later."
 msgstr ""

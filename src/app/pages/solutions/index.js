@@ -10,18 +10,18 @@ const Solutions = () => {
 	// constants to pass to module
 	const moduleConstants = {
 		text: {
-			title: __( 'Solution', 'bluehost-wordpress-plugin' ),
+			title: __( 'Solution', 'wp-plugin-bluehost' ),
 			subTitle: __(
 				'Explore the plugins and tools available with your solution.',
-				'bluehost-wordpress-plugin'
+				'wp-plugin-bluehost'
 			),
 			error: __(
 				'Oops, there was an error loading your plugins and tools, please try again later.',
-				'bluehost-wordpress-plugin'
+				'wp-plugin-bluehost'
 			),
 			noEntitlements: __(
 				'Sorry, no current plugins and tools. Please, try again later.',
-				'bluehost-wordpress-plugin'
+				'wp-plugin-bluehost'
 			),
 		},
 	};

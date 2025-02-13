@@ -1,7 +1,7 @@
 import { useEffect, useState } from '@wordpress/element';
 import apiFetch from '@wordpress/api-fetch';
 import { useViewportMatch } from '@wordpress/compose';
-import { addQueryArgs } from '@wordpress/url';
+import { addQueryArgs, cleanForSlug } from '@wordpress/url';
 import { filter } from 'lodash';
 import { Modal, SidebarNavigation } from '@newfold/ui-component-library';
 import { default as NewfoldNotifications } from '@modules/wp-module-notifications/assets/js/components/notifications/';
@@ -110,7 +110,7 @@ export const SideNavMenuItem = ( {
 			<NavLink
 				onClick={ action && action instanceof Function ? action : null }
 				to={ path }
-				className={ `wppbh-app-navitem wppbh-app-navitem-${ label } nfd-flex nfd-items-center nfd-gap-3 nfd-px-3 nfd-py-2 nfd-rounded-md nfd-text-sm nfd-font-medium nfd-text-title leading-none hover:nfd-bg-slate-50 [&.active]:nfd-bg-[#E2E8F0]` }
+				className={ `wppbh-app-navitem wppbh-app-navitem-${ cleanForSlug( label ) } nfd-flex nfd-items-center nfd-gap-3 nfd-px-3 nfd-py-2 nfd-rounded-md nfd-text-sm nfd-font-medium nfd-text-title leading-none hover:nfd-bg-slate-50 [&.active]:nfd-bg-[#E2E8F0]` }
 			>
 				{ Icon && (
 					<Icon className="nfd-flex-shrink-0 nfd--ml-1 nfd-h-6 nfd-w-6" />
@@ -141,7 +141,7 @@ export const SideNavMenuSubItem = ( { label, path, action } ) => {
 			<NavLink
 				onClick={ action && action instanceof Function ? action : null }
 				to={ path }
-				className={ `wppbh-app-subnavitem wppbh-app-subnavitem-${ label } nfd-flex nfd-items-center nfd-gap-3 nfd-px-3 nfd-py-2 nfd-rounded-md nfd-text-sm nfd-font-medium nfd-text-body leading-none hover:nfd-bg-slate-50 [&.active]:nfd-bg-[#E2E8F0] [&.active]:nfd-text-title` }
+				className={ `wppbh-app-subnavitem wppbh-app-subnavitem-${ cleanForSlug( label ) } nfd-flex nfd-items-center nfd-gap-3 nfd-px-3 nfd-py-2 nfd-rounded-md nfd-text-sm nfd-font-medium nfd-text-body leading-none hover:nfd-bg-slate-50 [&.active]:nfd-bg-[#E2E8F0] [&.active]:nfd-text-title` }
 			>
 				{ label }
 			</NavLink>

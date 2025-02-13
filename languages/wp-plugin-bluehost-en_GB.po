@@ -419,9 +419,9 @@ msgstr "Your website is currently displaying a \"Coming Soon\" page."
 #. translators: %s: number of weeks. `The trash will automatically empty every ${numTrashWeeks} weeks.`
 #: build/4.0.5/index.js:8
 msgid "The trash will automatically empty every %s week."
-msgid_plural "The trash will automatically empty every %s weeks."
-msgstr[0] "The trash will automatically empty every %s week."
-msgstr[1] "The trash will automatically empty every %s weeks."
+msgid_plural "The bin will automatically empty every %s weeks."
+msgstr[0] "The bin will automatically empty every %s week."
+msgstr[1] "The bin will automatically empty every %s weeks."
 
 #. translators: %s: number of comments. `Posts will display ${commentsPerPage} comments at a time.`
 #: build/4.0.5/index.js:14

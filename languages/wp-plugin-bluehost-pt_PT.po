@@ -1,0 +1,382 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: wp-plugin-bluehost\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/wp-plugin-bluehost\n"
+"POT-Creation-Date: 2024-10-21 07:10-0000\n"
+"PO-Revision-Date: 2024-10-21 07:10-0000\n"
+"Last-Translator: \n"
+"Language-Team: Portuguese\n"
+"Language: pt_PT\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Crowdin\n"
+"X-Domain: wp-plugin-bluehost\n"
+"X-Crowdin-Project: bluehost-plugin\n"
+"X-Crowdin-Project-ID: 762335\n"
+"X-Crowdin-File: wp-plugin-bluehost.pot\n"
+
+msgid "The Bluehost Plugin"
+msgstr "O Plugin Bluehost"
+
+msgid "https://bluehost.com"
+msgstr "https://bluehost.com"
+
+msgid ""
+"WordPress plugin that integrates a WordPress site with the Bluehost "
+"control panel, including performance, security, and update features."
+msgstr ""
+"Plugin WordPress que integra um site WordPress com o painel de contr"
+"ole Bluehost, incluindo desempenho, segurança e recursos de atualiza"
+"ção."
+
+msgid "Bluehost"
+msgstr "Bluehost"
+
+msgid "Please install the Bluehost Plugin dependencies."
+msgstr "Por favor instale as dependências do Plugin Bluehost."
+
+msgid "Coming Soon!"
+msgstr "Em Breve!"
+
+msgid "A New WordPress Site"
+msgstr "Um novo site WordPress"
+
+msgid "How to Build a Website: A Practical Guide to WordPress on Bluehost"
+msgstr ""
+"Como construir um site: um guia prático para WordPress em um diagram"
+"a"
+
+msgid "How to Migrate a Website to Bluehost?"
+msgstr "Como migrar um site para o Bluehost?"
+
+msgid "Why choose Bluehost for your WordPress site?"
+msgstr "Por que escolher Diagrama para o seu site WordPress?"
+
+msgid ""
+"A %1$sBluehost%2$s powered website. Is this your website? Log in to "
+"%3$sWordPress%4$s or %5$sBluehost%6$s."
+msgstr ""
+"A %1$sBluehost%2$s é o seu site? Inicie sessão no %3$sWordPress%4$s "
+"ou %5$sBluehost%6$s."
+
+msgid "%s &mdash; Coming Soon"
+msgstr "%s &mdash; Em breve"
+
+msgid "Coming Soon Active"
+msgstr "Em breve ativo"
+
+msgid ""
+"Your site is currently displaying a %1$scoming soon page%2$s. Once y"
+"ou are ready, %3$slaunch your site%4$s."
+msgstr ""
+"Seu site mostrará atualmente um %1$schegando a página%2$s. Uma vez q"
+"ue você estiver pronto, %3$sinicie o seu site%4$s."
+
+msgid "Preview the coming soon landing page"
+msgstr "Pré-visualizar a página inicial em breve"
+
+msgid "Home"
+msgstr "Início"
+
+msgid "Pages & Posts"
+msgstr "Páginas e Postagens"
+
+msgid "Store"
+msgstr "Loja"
+
+msgid "Marketplace"
+msgstr "Mercado"
+
+msgid "My Plugins & Tools"
+msgstr "Meus Plugins e Ferramentas"
+
+msgid "Performance"
+msgstr "Desempenho"
+
+msgid "Settings"
+msgstr "Confirgurações"
+
+msgid "Staging"
+msgstr "Encenação"
+
+msgid "Help"
+msgstr "Ajuda"
+
+msgid "Please update to a newer WordPress version."
+msgstr "Por favor, atualize para uma versão mais recente do WordPress."
+
+msgid ""
+"There are new WordPress components which this plugin requires in ord"
+"er to render the interface."
+msgstr ""
+"Existem novos componentes do WordPress que este plugin requer para r"
+"enderizar a interface."
+
+msgid "Please update now"
+msgstr "Por favor, atualize agora"
+
+msgid ""
+"Thank you for creating with <a href=\"https://wordpress.org/\">WordPre"
+"ss</a> and <a href=\"https://bluehost.com/about\">Bluehost</a>."
+msgstr ""
+"Obrigado por criar com <a href=\"https://wordpress.org/\">WordPress</a"
+"> e <a href=\"https://bluehost.com/about\">Diagrama</a>."
+
+msgid "\"%1$s\" has self-deactivated. It is incompatible with \"%2$s\"."
+msgstr "\"%1$s\" se autodesativou. É incompatível com \"%2$s\"."
+
+msgid "\"%1$s\" has been deactivated. It is incompatible with \"%2$s\"."
+msgstr "\"%1$s\" foi desativado. É incompatível com \"%2$s\"."
+
+msgid ""
+"%1$s requires PHP version %2$s or later. You are currently running v"
+"ersion %3$s."
+msgstr ""
+"%1$s requer a versão %2$s do PHP ou posterior. Você está executando "
+"a versão %3$s no momento."
+
+msgid " Please contact your web host about upgrading PHP."
+msgstr " Por favor, contate seu host de web sobre atualização de PHP."
+
+msgid "%1$s requires the %2$s PHP extension."
+msgstr "%1$s requer a extensão PHP %2$s."
+
+msgid ""
+"%1$s requires WordPress version %2$s or later. You are currently run"
+"ning version %3$s."
+msgstr ""
+"%1$s requer a versão do WordPress %2$s ou posterior. Você está execu"
+"tando a versão %3$s no momento."
+
+msgid "The \"%s\" plugin has been deactivated."
+msgstr "O plugin \"%s\" foi desativado."
+
+msgid "Sorry, you are not allowed to access this endpoint."
+msgstr "Desculpe, você não tem permissão para acessar este endpoint."
+
+msgid ""
+"Auto-updates enabled on the <a href=\"%s\">Bluehost > Settings</a> pag"
+"e."
+msgstr ""
+"Atualizações automáticas habilitadas na página <a href=\"%s\">Diagrama"
+" > Configurações</a>."
+
+msgid "Auto-updates enabled"
+msgstr "Atualizações automáticas habilitadas"
+
+msgid "Bluehost WordPress Plugin"
+msgstr "Plugin WordPress Bluehost"
+
+msgid "Oh No, An Error!"
+msgstr "Não, um erro!"
+
+msgid "You found an error, please refresh the page and try again!"
+msgstr ""
+"Você encontrou um erro, por favor atualize a página e tente novament"
+"e!"
+
+msgid "If the error persists, please contact support."
+msgstr "Se o erro persistir, por favor contate o suporte."
+
+msgid "Error code:"
+msgstr "Código do erro:"
+
+msgid "Bluehost Account"
+msgstr "Conta Bluehost"
+
+msgid "There's nothing here!"
+msgstr "Não há nada aqui!"
+
+msgid "Products & Services"
+msgstr "Produtos e Serviços"
+
+msgid "Sales & Promotions"
+msgstr "Vendas & Promoções"
+
+msgid "Sales Channel"
+msgstr "Canal de vendas"
+
+msgid "Payments"
+msgstr "Pagamentos"
+
+msgid "Store Details"
+msgstr "Detalhes da Loja"
+
+msgid "Help with WordPress"
+msgstr "Ajuda com WordPress"
+
+msgid "Admin"
+msgstr "Administrador"
+
+msgid ""
+"The staging feature provides a way to copy a site to test new update"
+"s, features or content."
+msgstr ""
+"O recurso de staging fornece uma maneira de copiar um site para test"
+"ar novas atualizações, recursos ou conteúdo."
+
+msgid "Sorry, that is not allowed."
+msgstr "Desculpe, isso não é permitido."
+
+msgid "This feature cannot currently be modified."
+msgstr "Atualmente este recurso não pode ser modificado."
+
+msgid "Oops! Something went wrong. Please try again."
+msgstr "Opa! Algo deu errado. Por favor, tente novamente."
+
+msgid "Phone"
+msgstr "Telefone"
+
+msgid "Call Us"
+msgstr "Ligue para Nós"
+
+msgid "Chat"
+msgstr "Chat"
+
+msgid ""
+"Chat with one of our friendly Customer Care Specialists, as we are w"
+"aiting to help. Open 24 hours - 7 days."
+msgstr ""
+"Converse com um dos nossos especialistas de atendimento ao cliente, "
+"já que estamos esperando para ajudar. Abra 24 horas a 7 dias."
+
+msgid "Live Chat"
+msgstr "Chat ao Vivo"
+
+msgid "Tweet"
+msgstr "Tweet"
+
+msgid ""
+"Find our team at @bluehost for updates on our products and support f"
+"rom our team."
+msgstr ""
+"Encontre a nossa equipe em @bluehost para atualizações dos nossos pr"
+"odutos e suporte da nossa equipe."
+
+msgid "Tweet Us"
+msgstr "Tweet-nos"
+
+msgid "YouTube"
+msgstr "Youtube"
+
+msgid ""
+"Find tutorials, answers, interviews and guides on our YouTube channe"
+"l."
+msgstr ""
+"Encontre tutoriais, respostas, entrevistas e guias em nosso canal no"
+" YouTube."
+
+msgid "Watch Now"
+msgstr "Assista Agora"
+
+msgid "Knowledge Base"
+msgstr "Base de Conhecimento"
+
+msgid ""
+"Articles, guides, how-tos, instructions, and answers to our client's"
+" most frequently asked questions."
+msgstr ""
+"Artigos, guias, instruções e respostas para as perguntas mais freque"
+"ntes dos nossos clientes."
+
+msgid "Visit Knowledge Base"
+msgstr "Visitar Base de Conhecimento"
+
+msgid "Resources"
+msgstr "Recursos"
+
+msgid "Boost your online knowledge and get ahead of the competition."
+msgstr "Impulsione seu conhecimento on-line e esteja à frente da competição."
+
+msgid "Explore Resources"
+msgstr "Explorar recursos"
+
+msgid "Events and Webinars"
+msgstr "Eventos e webinários"
+
+msgid ""
+"Team Bluehost organizes multiple webinars and events throughout the "
+"year. We are also sponsors and speak at most WordCamps across the wo"
+"rld. Join us at our next event!"
+msgstr ""
+"O Team Bluehost organiza vários webinars e eventos ao longo do ano. "
+"Também somos patrocinadores e falamos no máximo no campo de palavras"
+" pelo mundo. Junte-se a nós no nosso próximo evento!"
+
+msgid "More Info"
+msgstr "Mais informações"
+
+msgid "Bluehost Website"
+msgstr "Site de Bluehost"
+
+msgid ""
+"Not finding what you need? Visit our website for more information ab"
+"out our products and services."
+msgstr ""
+"Não está encontrando o que você precisa? Visite nosso site para mais"
+" informações sobre nossos produtos e serviços."
+
+msgid "Go to Bluehost"
+msgstr "Ir para Diagrama"
+
+msgid "Site Pages"
+msgstr "Páginas do Site"
+
+msgid ""
+"Edit your homepage and other existing pages or add new pages to your"
+" site."
+msgstr ""
+"Edite sua página inicial e outras páginas existentes ou adicione nov"
+"as páginas ao seu site."
+
+msgid "View all"
+msgstr "Visualizar tudo"
+
+msgid "Add New"
+msgstr "Adicionar novo"
+
+msgid "This is where you can manage cache settings for your website."
+msgstr ""
+"Aqui é onde você pode gerenciar as configurações de cache do seu sit"
+"e."
+
+msgid ""
+"The Help Center provides guided, step-by-step assistance as you buil"
+"d your site."
+msgstr ""
+"A central de ajuda fornece ajuda passo a passo para a construção do "
+"seu site."
+
+msgid "Site Status"
+msgstr "Estado do Site"
+
+msgid "Not Live"
+msgstr "Não Ao Vivo"
+
+msgid "Live"
+msgstr "Ativo"
+
+msgid ""
+"Your Bluehost Coming Soon page lets you hide your site from visitors"
+" while you make the magic happen."
+msgstr ""
+"Sua Planta Chegando em breve permite que você esconda seu site dos v"
+"isitantes enquanto você faz a magia acontecer."
+
+msgid "Your website is currently displaying a \"Coming Soon\" page."
+msgstr "Seu site exibirá uma página \"Em breve\"."
+
+msgid "The trash will automatically empty every %s week."
+msgid_plural "The trash will automatically empty every %s weeks."
+msgstr[0] "A lixeira será automaticamente vazia a cada %s semana."
+msgstr[1] "O lixo vai esvaziar automaticamente a cada %s semanas."
+
+msgid ""
+"WonderBlocks provides a library of customizable block patterns and p"
+"age templates."
+msgstr ""
+"WonderBlocks fornece uma biblioteca de padrões de blocos personalizá"
+"veis e modelos de página."
+

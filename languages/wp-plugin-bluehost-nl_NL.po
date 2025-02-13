@@ -1,0 +1,381 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: wp-plugin-bluehost\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/wp-plugin-bluehost\n"
+"POT-Creation-Date: 2024-10-21 07:10-0000\n"
+"PO-Revision-Date: 2024-10-21 07:10-0000\n"
+"Last-Translator: \n"
+"Language-Team: Dutch\n"
+"Language: nl_NL\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Crowdin\n"
+"X-Domain: wp-plugin-bluehost\n"
+"X-Crowdin-Project: bluehost-plugin\n"
+"X-Crowdin-Project-ID: 762335\n"
+"X-Crowdin-File: wp-plugin-bluehost.pot\n"
+
+msgid "The Bluehost Plugin"
+msgstr "De Bluehost Plugin"
+
+msgid "https://bluehost.com"
+msgstr "https://bluehost.com"
+
+msgid ""
+"WordPress plugin that integrates a WordPress site with the Bluehost "
+"control panel, including performance, security, and update features."
+msgstr ""
+"WordPress plugin die een WordPress site integreert met het Bluehost "
+"control panel, inclusief prestaties, veiligheid en update functies."
+
+msgid "Bluehost"
+msgstr "Bluehost"
+
+msgid "Please install the Bluehost Plugin dependencies."
+msgstr "Installeer de Bluehost Plugin afhankelijkheden."
+
+msgid "Coming Soon!"
+msgstr "Binnenkort beschikbaar!"
+
+msgid "A New WordPress Site"
+msgstr "Een nieuwe WordPress-site"
+
+msgid "How to Build a Website: A Practical Guide to WordPress on Bluehost"
+msgstr ""
+"Hoe bouw je een Website: Een Praktische Gids naar WordPress op Blueh"
+"ost"
+
+msgid "How to Migrate a Website to Bluehost?"
+msgstr "Hoe een Website migreren naar Bluehost?"
+
+msgid "Why choose Bluehost for your WordPress site?"
+msgstr "Waarom Bluehost voor uw WordPress site kiezen?"
+
+msgid ""
+"A %1$sBluehost%2$s powered website. Is this your website? Log in to "
+"%3$sWordPress%4$s or %5$sBluehost%6$s."
+msgstr ""
+"Een %1$sBluehost%2$s aangedreven website. Is dit je website? Log in "
+"op %3$sWordPress%4$s of %5$sBluehost%6$s."
+
+msgid "%s &mdash; Coming Soon"
+msgstr "%s &mdash; Binnenkort"
+
+msgid "Coming Soon Active"
+msgstr "Binnenkort actief"
+
+msgid ""
+"Your site is currently displaying a %1$scoming soon page%2$s. Once y"
+"ou are ready, %3$slaunch your site%4$s."
+msgstr ""
+"Uw site toont momenteel een %1$sdie binnenkort pagina%2$skomt. Zodra"
+" u klaar bent, start %3$suw site%4$s."
+
+msgid "Preview the coming soon landing page"
+msgstr "Bekijk een voorbeeld van de volgende landingspagina"
+
+msgid "Home"
+msgstr "Startpagina"
+
+msgid "Pages & Posts"
+msgstr "Pagina's & Berichten"
+
+msgid "Store"
+msgstr "Winkel"
+
+msgid "Marketplace"
+msgstr "Marktplaats"
+
+msgid "My Plugins & Tools"
+msgstr "Mijn plug-ins & gereedschap"
+
+msgid "Performance"
+msgstr "Prestaties"
+
+msgid "Settings"
+msgstr "Instellingen"
+
+msgid "Staging"
+msgstr "Testboeking"
+
+msgid "Help"
+msgstr "Hulp"
+
+msgid "Please update to a newer WordPress version."
+msgstr "Update a.u.b. naar een nieuwere WordPress versie."
+
+msgid ""
+"There are new WordPress components which this plugin requires in ord"
+"er to render the interface."
+msgstr ""
+"Er zijn nieuwe WordPress-componenten die deze plugin nodig heeft om "
+"de interface te renderen."
+
+msgid "Please update now"
+msgstr "Update alstublieft nu"
+
+msgid ""
+"Thank you for creating with <a href=\"https://wordpress.org/\">WordPre"
+"ss</a> and <a href=\"https://bluehost.com/about\">Bluehost</a>."
+msgstr ""
+"Bedankt voor het aanmaken met <a href=\"https://wordpress.org/\">WordP"
+"ress</a> en <a href=\"https://bluehost.com/about\">Bluehost</a>."
+
+msgid "\"%1$s\" has self-deactivated. It is incompatible with \"%2$s\"."
+msgstr ""
+"\"%1$s\" heeft zichzelf gedeactiveerd. Het is niet compatibel met \"%2$"
+"s\"."
+
+msgid "\"%1$s\" has been deactivated. It is incompatible with \"%2$s\"."
+msgstr "\"%1$s\" is gedeactiveerd. Het is niet compatibel met \"%2$s\"."
+
+msgid ""
+"%1$s requires PHP version %2$s or later. You are currently running v"
+"ersion %3$s."
+msgstr ""
+"%1$s vereist PHP versie %2$s of hoger. Je gebruikt momenteel versie "
+"%3$s."
+
+msgid " Please contact your web host about upgrading PHP."
+msgstr " Neem alstublieft contact op met uw webhost over upgraden van PHP."
+
+msgid "%1$s requires the %2$s PHP extension."
+msgstr "%1$s vereist de %2$s PHP-extensie."
+
+msgid ""
+"%1$s requires WordPress version %2$s or later. You are currently run"
+"ning version %3$s."
+msgstr ""
+"%1$s vereist WordPress versie %2$s of hoger. U draait momenteel vers"
+"ie %3$s."
+
+msgid "The \"%s\" plugin has been deactivated."
+msgstr "De \"%s\" plugin is gedeactiveerd."
+
+msgid "Sorry, you are not allowed to access this endpoint."
+msgstr "Sorry, je hebt geen toegang tot dit eindpunt."
+
+msgid ""
+"Auto-updates enabled on the <a href=\"%s\">Bluehost > Settings</a> pag"
+"e."
+msgstr ""
+"Auto-updates ingeschakeld op de <a href=\"%s\">Bluehost > Instellingen"
+"</a> pagina."
+
+msgid "Auto-updates enabled"
+msgstr "Auto-update ingeschakeld"
+
+msgid "Bluehost WordPress Plugin"
+msgstr "Bluehost WordPress-plugin"
+
+msgid "Oh No, An Error!"
+msgstr "Oh nee, een fout!"
+
+msgid "You found an error, please refresh the page and try again!"
+msgstr "U heeft een fout gevonden, ververs de pagina en probeer het opnieuw!"
+
+msgid "If the error persists, please contact support."
+msgstr "Als de fout zich blijft voordoen, neem dan contact op met support."
+
+msgid "Error code:"
+msgstr "Foutcode:"
+
+msgid "Bluehost Account"
+msgstr "Bluehost Account"
+
+msgid "There's nothing here!"
+msgstr "Er is hier niets!"
+
+msgid "Products & Services"
+msgstr "Producten en Diensten"
+
+msgid "Sales & Promotions"
+msgstr "Verkoop & Promoties"
+
+msgid "Sales Channel"
+msgstr "Verkoop Kanaal"
+
+msgid "Payments"
+msgstr "Betalingen"
+
+msgid "Store Details"
+msgstr "Winkel Details"
+
+msgid "Help with WordPress"
+msgstr "Help met WordPress"
+
+msgid "Admin"
+msgstr "Beheerder"
+
+msgid ""
+"The staging feature provides a way to copy a site to test new update"
+"s, features or content."
+msgstr ""
+"De stagingfunctie biedt een manier om een site te kopiëren om nieuwe"
+" updates, functies of inhoud te testen."
+
+msgid "Sorry, that is not allowed."
+msgstr "Sorry, dat is niet toegestaan."
+
+msgid "This feature cannot currently be modified."
+msgstr "Deze functie kan momenteel niet worden gewijzigd."
+
+msgid "Oops! Something went wrong. Please try again."
+msgstr "Oeps! Er is iets fout gegaan. Probeer het opnieuw."
+
+msgid "Phone"
+msgstr "Telefoonnummer"
+
+msgid "Call Us"
+msgstr "Bel ons"
+
+msgid "Chat"
+msgstr "Chatten"
+
+msgid ""
+"Chat with one of our friendly Customer Care Specialists, as we are w"
+"aiting to help. Open 24 hours - 7 days."
+msgstr ""
+"Chat met een van onze vriendelijke Customer Care Specialisten, zoals"
+" we willen helpen. Open 24 uur - 7 dagen."
+
+msgid "Live Chat"
+msgstr "Live chat"
+
+msgid "Tweet"
+msgstr "tweet"
+
+msgid ""
+"Find our team at @bluehost for updates on our products and support f"
+"rom our team."
+msgstr ""
+"Vind ons team op @bluehost voor updates van onze producten en onders"
+"teuning van ons team."
+
+msgid "Tweet Us"
+msgstr "Tweet ons"
+
+msgid "YouTube"
+msgstr "YouTube"
+
+msgid ""
+"Find tutorials, answers, interviews and guides on our YouTube channe"
+"l."
+msgstr ""
+"Vind tutorials, antwoorden, interviews en handleidingen op ons YouTu"
+"be-kanaal."
+
+msgid "Watch Now"
+msgstr "Bekijk nu"
+
+msgid "Knowledge Base"
+msgstr "Kennisbank"
+
+msgid ""
+"Articles, guides, how-tos, instructions, and answers to our client's"
+" most frequently asked questions."
+msgstr ""
+"Artikelen, handleidingen, how-tos, instructies en antwoorden op de m"
+"eest gestelde vragen van onze klant."
+
+msgid "Visit Knowledge Base"
+msgstr "Bezoek de kennisbank"
+
+msgid "Resources"
+msgstr "Hulpmiddelen"
+
+msgid "Boost your online knowledge and get ahead of the competition."
+msgstr "Vergroot je online kennis en voorsprong op de competitie."
+
+msgid "Explore Resources"
+msgstr "Bronnen verkennen"
+
+msgid "Events and Webinars"
+msgstr "Gebeurtenissen en webinars"
+
+msgid ""
+"Team Bluehost organizes multiple webinars and events throughout the "
+"year. We are also sponsors and speak at most WordCamps across the wo"
+"rld. Join us at our next event!"
+msgstr ""
+"Team Bluehost organiseert meerdere webinars en evenementen het hele "
+"jaar. We zijn ook sponsors en spreken over de meeste WordCamps over "
+"de hele wereld. Doe mee bij ons volgende evenement!"
+
+msgid "More Info"
+msgstr "Meer informatie"
+
+msgid "Bluehost Website"
+msgstr "Bluehost Website"
+
+msgid ""
+"Not finding what you need? Visit our website for more information ab"
+"out our products and services."
+msgstr ""
+"Niet gevonden wat je nodig hebt? Bezoek onze website voor meer infor"
+"matie over onze producten en diensten."
+
+msgid "Go to Bluehost"
+msgstr "Ga naar Bluehost"
+
+msgid "Site Pages"
+msgstr "Site pagina's"
+
+msgid ""
+"Edit your homepage and other existing pages or add new pages to your"
+" site."
+msgstr ""
+"Bewerk uw startpagina en andere bestaande pagina's of voeg nieuwe pa"
+"gina's toe aan uw site."
+
+msgid "View all"
+msgstr "Alles weergeven"
+
+msgid "Add New"
+msgstr "Nieuwe toevoegen"
+
+msgid "This is where you can manage cache settings for your website."
+msgstr "Hier kun je de cache-instellingen voor je website beheren."
+
+msgid ""
+"The Help Center provides guided, step-by-step assistance as you buil"
+"d your site."
+msgstr ""
+"Het Helpcentrum biedt geleidelijke, stap-voor-stap ondersteuning als"
+" u uw site bouwt."
+
+msgid "Site Status"
+msgstr "Site status"
+
+msgid "Not Live"
+msgstr "Niet live"
+
+msgid "Live"
+msgstr "Zichtbaar"
+
+msgid ""
+"Your Bluehost Coming Soon page lets you hide your site from visitors"
+" while you make the magic happen."
+msgstr ""
+"Je Bluehost komtpagina laat je je site verbergen voor bezoekers terw"
+"ijl je de magie laat gebeuren."
+
+msgid "Your website is currently displaying a \"Coming Soon\" page."
+msgstr ""
+"Je website wordt momenteel een \"Binnenkort beschikbaar\" pagina weerg"
+"egeven."
+
+msgid "The trash will automatically empty every %s week."
+msgid_plural "The trash will automatically empty every %s weeks."
+msgstr[0] "De prullenbak zal automatisch elke %s week leegmaken."
+msgstr[1] "De prullenbak zal automatisch elke %s weken leegmaken."
+
+msgid ""
+"WonderBlocks provides a library of customizable block patterns and p"
+"age templates."
+msgstr ""
+"WonderBlocks biedt een bibliotheek van aanpasbare blokpatronen en pa"
+"ginasjablonen."
+

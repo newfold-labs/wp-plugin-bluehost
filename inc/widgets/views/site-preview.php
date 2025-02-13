@@ -9,6 +9,7 @@
  */
 
 use function NewfoldLabs\WP\ModuleLoader\container;
+use function NewfoldLabs\WP\Module\ComingSoon\isComingSoonActive;
 
 // globe-alt icon
 $svg    = '<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
@@ -16,7 +17,7 @@ $svg    = '<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 2
 </svg>
 ';
 $svg_64 = base64_encode( $svg );
-
+$isComingSoon = isComingSoonActive();
 
 ?>
 <style>
@@ -29,8 +30,38 @@ $svg_64 = base64_encode( $svg );
 		width: 24px;
 		height: 24px;
 	}
+    #iframe-preview-wrap {
+        position: relative;
+        overflow: hidden;
+        padding-top: 50%;
+    }
+    #iframe-preview {
+        width: 400%;
+        height: 400%;
+        transform: scale(0.25);
+        position: absolute;
+        top:0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+    }
 </style>
 <div class="nfd-root nfd-widget nfd-widget-site-preview">
+    <div id="iframe-preview-wrap" class="">
+        <iframe
+            id="iframe-preview"
+            title="<?php _e( 'Site Preview', 'wp-plugin-bluehost' ); ?>"
+            className="nfd-basis-full nfd-relative"
+            src="<?php echo esc_url( get_bloginfo( 'url' ) ) . $isComingSoon ? '?preview=coming_soon' : ''; ?>"
+            scrolling="no"
+            name="iframe-preview"
+            sandbox="allow-scripts allow-same-origin"
+            seamless
+        ></iframe>
+    </div>
+    <?php if ( $isComingSoon ) : ?>
+        <p>Coming Soon is active.</p>
+    <?php endif; ?>
 	<p class="nfd-flex nfd-gap-4  nfd-text-center nfd-mt-4">
 		<a 
 			href="<?php echo esc_url( get_bloginfo( 'url' ) ); ?>"

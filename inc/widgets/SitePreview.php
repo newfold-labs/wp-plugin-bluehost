@@ -33,7 +33,7 @@ class BluehostSitePreviewWidget {
 		// Register the widget
 		\wp_add_dashboard_widget(
 			self::ID,
-			'Site Preview',
+			__( 'Site Preview', 'wp-plugin-bluehost' ),
 			array( __CLASS__, 'widget_render' )
 		);
 

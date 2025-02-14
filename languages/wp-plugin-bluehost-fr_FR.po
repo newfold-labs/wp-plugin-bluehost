@@ -89,46 +89,46 @@ msgstr "Aperçu de la page d'accueil « À Venir Bientôt »"
 
 #: inc/Admin.php:72
 #: inc/Admin.php:289
-#: build/4.0.5/index.js:1
+#: build/4.0.6/index.js:1
 msgid "Home"
 msgstr "Accueil"
 
 #: inc/Admin.php:75
-#: build/4.0.5/index.js:1
+#: build/4.0.6/index.js:1
 msgid "Pages & Posts"
 msgstr "Pages et Articles"
 
 #: inc/Admin.php:78
-#: build/4.0.5/index.js:1
+#: build/4.0.6/index.js:1
 msgid "Store"
 msgstr "Boutique"
 
 #: inc/Admin.php:81
-#: build/4.0.5/index.js:1
+#: build/4.0.6/index.js:1
 msgid "Marketplace"
 msgstr "Marché"
 
 #: inc/Admin.php:86
-#: build/4.0.5/index.js:1
+#: build/4.0.6/index.js:1
 msgid "My Plugins & Tools"
 msgstr "Mes extensions et outils"
 
 #. translators: %1$s is the opening <a> tag, %2$s is the closing </a> tag.
 #: inc/Admin.php:92
-#: build/4.0.5/index.js:1
-#: build/4.0.5/index.js:6
+#: build/4.0.6/index.js:1
+#: build/4.0.6/index.js:6
 msgid "Performance"
 msgstr "Performance"
 
 #: inc/Admin.php:96
 #: inc/Admin.php:290
-#: build/4.0.5/index.js:1
+#: build/4.0.6/index.js:1
 msgid "Settings"
 msgstr "Réglages"
 
 #: inc/Admin.php:101
-#: build/4.0.5/index.js:1
-#: build/4.0.5/index.js:14
+#: build/4.0.6/index.js:1
+#: build/4.0.6/index.js:14
 msgid "Staging"
 msgstr "Pré-production"
 
@@ -202,312 +202,312 @@ msgstr "Mises à jour automatiques activées sur la page <a href=\"%s\">Bluehost
 msgid "Auto-updates enabled"
 msgstr "Mise à jour automatique activée"
 
-#: build/4.0.5/index.js:1
+#: build/4.0.6/index.js:1
 msgid "Bluehost WordPress Plugin"
 msgstr "Plug-in WordPress Bluehost"
 
-#: build/4.0.5/index.js:1
+#: build/4.0.6/index.js:1
 msgid "Oh No, An Error!"
 msgstr "Oh non, Une Erreur !"
 
-#: build/4.0.5/index.js:1
+#: build/4.0.6/index.js:1
 msgid "You found an error, please refresh the page and try again!"
 msgstr "Vous avez trouvé une erreur, veuillez rafraîchir la page et réessayez !"
 
-#: build/4.0.5/index.js:1
+#: build/4.0.6/index.js:1
 msgid "If the error persists, please contact support."
 msgstr "Si l'erreur persiste, veuillez contacter notre support."
 
-#: build/4.0.5/index.js:1
+#: build/4.0.6/index.js:1
 msgid "Error code:"
 msgstr "Code d'erreur :"
 
-#: build/4.0.5/index.js:1
+#: build/4.0.6/index.js:1
 msgid "Bluehost Account"
 msgstr "Compte Bluehost"
 
-#: build/4.0.5/index.js:1
+#: build/4.0.6/index.js:1
 msgid "There's nothing here!"
 msgstr "Il n'y a rien ici !"
 
-#: build/4.0.5/index.js:1
+#: build/4.0.6/index.js:1
 msgid "Products & Services"
 msgstr "Produits et Services"
 
-#: build/4.0.5/index.js:1
+#: build/4.0.6/index.js:1
 msgid "Sales & Promotions"
 msgstr "Ventes et Promotions"
 
-#: build/4.0.5/index.js:1
+#: build/4.0.6/index.js:1
 msgid "Sales Channel"
 msgstr "Canal de ventes"
 
-#: build/4.0.5/index.js:1
+#: build/4.0.6/index.js:1
 msgid "Payments"
 msgstr "Paiements"
 
-#: build/4.0.5/index.js:1
+#: build/4.0.6/index.js:1
 msgid "Store Details"
 msgstr "Détails de la boutique"
 
-#: build/4.0.5/index.js:1
+#: build/4.0.6/index.js:1
 msgid "Help with WordPress"
 msgstr "Aide avec WordPress"
 
-#: build/4.0.5/index.js:1
+#: build/4.0.6/index.js:1
 msgid "Admin"
 msgstr "Administrateur"
 
-#: build/4.0.5/index.js:1
+#: build/4.0.6/index.js:1
 msgid "The staging feature provides a way to copy a site to test new updates, features or content."
 msgstr "La fonctionnalité de mise en scène permet de copier un site pour tester de nouvelles mises à jour, des fonctionnalités ou du contenu."
 
-#: build/4.0.5/index.js:1
-#: build/4.0.5/index.js:6
-#: build/4.0.5/index.js:14
+#: build/4.0.6/index.js:1
+#: build/4.0.6/index.js:6
+#: build/4.0.6/index.js:14
 msgid "Sorry, that is not allowed."
 msgstr "Désolé, ce n'est pas autorisé."
 
-#: build/4.0.5/index.js:1
-#: build/4.0.5/index.js:6
-#: build/4.0.5/index.js:14
+#: build/4.0.6/index.js:1
+#: build/4.0.6/index.js:6
+#: build/4.0.6/index.js:14
 msgid "This feature cannot currently be modified."
 msgstr "Cette fonctionnalité ne peut pas être modifiée pour le moment."
 
-#: build/4.0.5/index.js:1
-#: build/4.0.5/index.js:6
-#: build/4.0.5/index.js:14
+#: build/4.0.6/index.js:1
+#: build/4.0.6/index.js:6
+#: build/4.0.6/index.js:14
 msgid "Oops! Something went wrong. Please try again."
 msgstr "Oups ! Une erreur s’est produite. Réessayez."
 
-#: build/4.0.5/index.js:1
+#: build/4.0.6/index.js:1
 msgid "Phone"
 msgstr "Téléphone"
 
-#: build/4.0.5/index.js:1
+#: build/4.0.6/index.js:1
 msgid "Call Us"
 msgstr "Contactez-nous"
 
-#: build/4.0.5/index.js:1
+#: build/4.0.6/index.js:1
 msgid "Chat"
 msgstr "Chat"
 
-#: build/4.0.5/index.js:1
+#: build/4.0.6/index.js:1
 msgid "Chat with one of our friendly Customer Care Specialists, as we are waiting to help. Open 24 hours - 7 days."
 msgstr "Discutez avec l'un de nos sympathiques spécialistes du service à la clientèle, car nous attendons de vous aider. Ouvert 24 heures sur 24 - 7 jours."
 
-#: build/4.0.5/index.js:1
+#: build/4.0.6/index.js:1
 msgid "Live Chat"
 msgstr "Chat en Direct"
 
-#: build/4.0.5/index.js:1
+#: build/4.0.6/index.js:1
 msgid "Tweet"
 msgstr "Tweet"
 
-#: build/4.0.5/index.js:1
+#: build/4.0.6/index.js:1
 msgid "Find our team at @bluehost for updates on our products and support from our team."
 msgstr "Trouvez notre équipe sur @bluehost pour les mises à jour sur nos produits et le support de notre équipe."
 
-#: build/4.0.5/index.js:1
+#: build/4.0.6/index.js:1
 msgid "Tweet Us"
 msgstr "Tweetez-nous"
 
-#: build/4.0.5/index.js:1
+#: build/4.0.6/index.js:1
 msgid "YouTube"
 msgstr "YouTube"
 
-#: build/4.0.5/index.js:1
+#: build/4.0.6/index.js:1
 msgid "Find tutorials, answers, interviews and guides on our YouTube channel."
 msgstr "Trouvez des tutoriels, des réponses, des interviews et des guides sur notre chaîne YouTube."
 
-#: build/4.0.5/index.js:1
+#: build/4.0.6/index.js:1
 msgid "Watch Now"
 msgstr "Regarder maintenant"
 
-#: build/4.0.5/index.js:1
+#: build/4.0.6/index.js:1
 msgid "Knowledge Base"
 msgstr "Base de connaissances"
 
-#: build/4.0.5/index.js:1
+#: build/4.0.6/index.js:1
 msgid "Articles, guides, how-tos, instructions, and answers to our client's most frequently asked questions."
 msgstr "Des articles, des guides, des conseils, des instructions et des réponses aux questions les plus fréquemment posées par nos clients."
 
-#: build/4.0.5/index.js:1
+#: build/4.0.6/index.js:1
 msgid "Visit Knowledge Base"
 msgstr "Consulter la base de connaissances"
 
-#: build/4.0.5/index.js:1
+#: build/4.0.6/index.js:1
 msgid "Resources"
 msgstr "Ressources"
 
-#: build/4.0.5/index.js:1
+#: build/4.0.6/index.js:1
 msgid "Boost your online knowledge and get ahead of the competition."
 msgstr "Stimulez vos connaissances en ligne et prenez la tête de la compétition."
 
-#: build/4.0.5/index.js:1
+#: build/4.0.6/index.js:1
 msgid "Explore Resources"
 msgstr "Explorer les ressources"
 
-#: build/4.0.5/index.js:1
+#: build/4.0.6/index.js:1
 msgid "Events and Webinars"
 msgstr "Événements et webinaires"
 
-#: build/4.0.5/index.js:1
+#: build/4.0.6/index.js:1
 msgid "Team Bluehost organizes multiple webinars and events throughout the year. We are also sponsors and speak at most WordCamps across the world. Join us at our next event!"
 msgstr "Team Bluehost organise plusieurs webinaires et événements tout au long de l'année. Nous sommes également sponsors et parlons dans la plupart des WordCamps à travers le monde. Rejoignez-nous lors de notre prochain événement !"
 
-#: build/4.0.5/index.js:1
+#: build/4.0.6/index.js:1
 msgid "More Info"
 msgstr "Plus d'Infos"
 
-#: build/4.0.5/index.js:1
+#: build/4.0.6/index.js:1
 msgid "Bluehost Website"
 msgstr "Site web Bluehost"
 
-#: build/4.0.5/index.js:1
+#: build/4.0.6/index.js:1
 msgid "Not finding what you need? Visit our website for more information about our products and services."
 msgstr "Vous ne trouvez pas ce que vous cherchez ? Visitez notre site Web pour plus d'informations sur nos produits et services."
 
-#: build/4.0.5/index.js:1
+#: build/4.0.6/index.js:1
 msgid "Go to Bluehost"
 msgstr "Aller au Bluehost"
 
-#: build/4.0.5/index.js:1
+#: build/4.0.6/index.js:1
 msgid "Site Pages"
 msgstr "Pages du site"
 
-#: build/4.0.5/index.js:1
+#: build/4.0.6/index.js:1
 msgid "Edit your homepage and other existing pages or add new pages to your site."
 msgstr "Modifiez votre page d'accueil et d'autres pages existantes ou ajoutez de nouvelles pages à votre site."
 
-#: build/4.0.5/index.js:1
+#: build/4.0.6/index.js:1
 msgid "View all"
 msgstr "Tout voir"
 
-#: build/4.0.5/index.js:1
+#: build/4.0.6/index.js:1
 msgid "Add New"
 msgstr "Ajouter un Nouveau"
 
-#: build/4.0.5/index.js:6
+#: build/4.0.6/index.js:6
 msgid "This is where you can manage cache settings for your website."
 msgstr "C'est ici que vous pouvez gérer les paramètres de cache de votre site Web."
 
-#: build/4.0.5/index.js:6
+#: build/4.0.6/index.js:6
 msgid "The Help Center provides guided, step-by-step assistance as you build your site."
 msgstr "Le Centre d'aide fournit une assistance guidée étape par étape lors de la construction de votre site."
 
-#: build/4.0.5/index.js:6
+#: build/4.0.6/index.js:6
 msgid "Site Status"
 msgstr "État du site"
 
-#: build/4.0.5/index.js:6
+#: build/4.0.6/index.js:6
 msgid "Not Live"
 msgstr "Pas en ligne"
 
-#: build/4.0.5/index.js:6
+#: build/4.0.6/index.js:6
 msgid "Live"
 msgstr "En ligne"
 
-#: build/4.0.5/index.js:6
+#: build/4.0.6/index.js:6
 msgid "Your Bluehost Coming Soon page lets you hide your site from visitors while you make the magic happen."
 msgstr "Votre Bluehost bientôt page vous permet de cacher votre site aux visiteurs pendant que vous faites de la magie se produire."
 
-#: build/4.0.5/index.js:6
+#: build/4.0.6/index.js:6
 msgid "Your website is currently displaying a \"Coming Soon\" page."
 msgstr "Votre site web affiche actuellement une page \"À venir\"."
 
 #. translators: %s: number of weeks. `The trash will automatically empty every ${numTrashWeeks} weeks.`
-#: build/4.0.5/index.js:8
+#: build/4.0.6/index.js:8
 msgid "The trash will automatically empty every %s week."
 msgid_plural "The trash will automatically empty every %s weeks."
 msgstr[0] "La corbeille sera automatiquement vide toutes les %s semaines."
 msgstr[1] "La corbeille se videra automatiquement chaque semaine."
 
 #. translators: %s: number of comments. `Posts will display ${commentsPerPage} comments at a time.`
-#: build/4.0.5/index.js:14
+#: build/4.0.6/index.js:14
 msgid "WonderBlocks provides a library of customizable block patterns and page templates."
 msgstr "WonderBlocks fournit une bibliothèque de modèles de blocs personnalisables et de modèles de pages."
 
-#: build/4.0.5/index.js:1
+#: build/4.0.6/index.js:1
 msgid "Hosting"
 msgstr "Hébergement"
 
-#: build/4.0.5/index.js:1
+#: build/4.0.6/index.js:1
 msgid "Control Panel"
 msgstr "Panneau de Contrôle"
 
-#: build/4.0.5/index.js:1
+#: build/4.0.6/index.js:1
 msgid "Renewal Center"
 msgstr "Centre de Renouvellement"
 
-#: build/4.0.5/index.js:1
+#: build/4.0.6/index.js:1
 msgid "Products"
 msgstr "Produits"
 
-#: build/4.0.5/index.js:1
+#: build/4.0.6/index.js:1
 msgid "Payment Methods"
 msgstr "Moyens de paiement"
 
-#: build/4.0.5/index.js:1
+#: build/4.0.6/index.js:1
 msgid "Billing"
 msgstr "Facturation"
 
-#: build/4.0.5/index.js:1
+#: build/4.0.6/index.js:1
 msgid "Mail"
 msgstr "Courrier"
 
-#: build/4.0.5/index.js:1
+#: build/4.0.6/index.js:1
 msgid "Mail & Office"
 msgstr "Courrier et bureau"
 
-#: build/4.0.5/index.js:1
+#: build/4.0.6/index.js:1
 msgid "Security"
 msgstr "Sécurité"
 
-#: build/4.0.5/index.js:1
+#: build/4.0.6/index.js:1
 msgid "Profile"
 msgstr "Profil"
 
-#: build/4.0.5/index.js:1
+#: build/4.0.6/index.js:1
 msgid "Validation Token"
 msgstr "Jeton de validation"
 
-#: build/4.0.5/index.js:1
+#: build/4.0.6/index.js:1
 msgid "Explore our featured collection of tools and services."
 msgstr "Explorez notre collection d'outils et de services."
 
-#: build/4.0.5/index.js:1
+#: build/4.0.6/index.js:1
 msgid "Oops, there was an error loading the marketplace, please try again later."
 msgstr "Oups, il y a eu une erreur lors du chargement du marketplace, veuillez réessayer plus tard."
 
-#: build/4.0.5/index.js:1
+#: build/4.0.6/index.js:1
 msgid "Sorry, no marketplace items. Please, try again later."
 msgstr "Désolé, aucun article sur la place de marché. Veuillez réessayer plus tard."
 
-#: build/4.0.5/index.js:1
+#: build/4.0.6/index.js:1
 msgid "Load More"
 msgstr "Charger plus"
 
-#: build/4.0.5/index.js:1
+#: build/4.0.6/index.js:1
 msgid "Oops! Something Went Wrong"
 msgstr "Oups ! Quelque chose s'est mal passé"
 
-#: build/4.0.5/index.js:1
+#: build/4.0.6/index.js:1
 msgid "An error occurred while loading the content. Please try again later."
 msgstr "Une erreur s'est produite lors du chargement du contenu. Veuillez réessayer plus tard."
 
-#: build/4.0.5/index.js:14
+#: build/4.0.6/index.js:14
 msgid "Solution"
 msgstr "Solution"
 
-#: build/4.0.5/index.js:14
+#: build/4.0.6/index.js:14
 msgid "Explore the plugins and tools available with your solution."
 msgstr "Explorez les plugins et les outils disponibles avec votre solution."
 
-#: build/4.0.5/index.js:14
+#: build/4.0.6/index.js:14
 msgid "Oops, there was an error loading your plugins and tools, please try again later."
 msgstr "Oups, il y a eu une erreur lors du chargement de vos plugins et outils, veuillez réessayer plus tard."
 
-#: build/4.0.5/index.js:14
+#: build/4.0.6/index.js:14
 msgid "Sorry, no current plugins and tools. Please, try again later."
 msgstr "Désolé, aucun plugin ou outil actuel. Veuillez réessayer plus tard."

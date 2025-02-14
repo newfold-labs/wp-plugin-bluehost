@@ -1,264 +1,264 @@
 {
     "translation-revision-date": "2024-10-21 07:10-0000",
     "generator": "WP-CLI\/2.11.0",
-    "source": "build\/4.0.5\/index.js",
+    "source": "build\/4.0.6\/index.js",
     "domain": "messages",
     "locale_data": {
         "messages": {
             "": {
                 "domain": "messages",
-                "lang": "es_ES",
-                "plural-forms": "nplurals=2; plural=(n != 1);"
+                "lang": "fr_FR",
+                "plural-forms": "nplurals=2; plural=(n > 1);"
             },
             "Home": [
-                "Inicio"
+                "Accueil"
             ],
             "Pages & Posts": [
-                "P\u00e1ginas y Mensajes"
+                "Pages et Articles"
             ],
             "Store": [
-                "Tienda"
+                "Boutique"
             ],
             "Marketplace": [
-                "Tienda"
+                "March\u00e9"
             ],
             "My Plugins & Tools": [
-                "Mis Plugins y Herramientas"
+                "Mes extensions et outils"
             ],
             "Performance": [
-                "Rendimiento"
+                "Performance"
             ],
             "Settings": [
-                "Ajustes"
+                "R\u00e9glages"
             ],
             "Staging": [
-                "Escenario"
+                "Pr\u00e9-production"
             ],
             "Bluehost WordPress Plugin": [
-                "Plugin de WordPress Bluehost"
+                "Plug-in WordPress Bluehost"
             ],
             "Oh No, An Error!": [
-                "\u00a1Oh No, un error!"
+                "Oh non, Une Erreur\u202f!"
             ],
             "You found an error, please refresh the page and try again!": [
-                "Has encontrado un error, \u00a1por favor actualiza la p\u00e1gina e int\u00e9ntalo de nuevo!"
+                "Vous avez trouv\u00e9 une erreur, veuillez rafra\u00eechir la page et r\u00e9essayez\u202f!"
             ],
             "If the error persists, please contact support.": [
-                "Si el error persiste, p\u00f3ngase en contacto con el servicio de asistencia."
+                "Si l'erreur persiste, veuillez contacter notre support."
             ],
             "Error code:": [
-                "C\u00f3digo de error:"
+                "Code d'erreur :"
             ],
             "Bluehost Account": [
-                "Cuenta Bluehost"
+                "Compte Bluehost"
             ],
             "There's nothing here!": [
-                "\u00a1No hay nada aqu\u00ed!"
+                "Il n'y a rien ici\u202f!"
             ],
             "Products & Services": [
-                "Productos y servicios"
+                "Produits et Services"
             ],
             "Sales & Promotions": [
-                "Ventas y promociones"
+                "Ventes et Promotions"
             ],
             "Sales Channel": [
-                "Canal de ventas"
+                "Canal de ventes"
             ],
             "Payments": [
-                "Pagos"
+                "Paiements"
             ],
             "Store Details": [
-                "Detalles de la tienda"
+                "D\u00e9tails de la boutique"
             ],
             "Help with WordPress": [
-                "Ayuda con WordPress"
+                "Aide avec WordPress"
             ],
             "Admin": [
-                "Admin"
+                "Administrateur"
             ],
             "The staging feature provides a way to copy a site to test new updates, features or content.": [
-                "La funci\u00f3n staging proporciona una forma de copiar un sitio para probar nuevas actualizaciones, caracter\u00edsticas o contenido."
+                "La fonctionnalit\u00e9 de mise en sc\u00e8ne permet de copier un site pour tester de nouvelles mises \u00e0 jour, des fonctionnalit\u00e9s ou du contenu."
             ],
             "Sorry, that is not allowed.": [
-                "Lo sentimos, no est\u00e1 permitido."
+                "D\u00e9sol\u00e9, ce n'est pas autoris\u00e9."
             ],
             "This feature cannot currently be modified.": [
-                "Esta caracter\u00edstica no se puede modificar actualmente."
+                "Cette fonctionnalit\u00e9 ne peut pas \u00eatre modifi\u00e9e pour le moment."
             ],
             "Oops! Something went wrong. Please try again.": [
-                "\u00a1Ups! Algo sali\u00f3 mal. Por favor, int\u00e9ntalo de nuevo."
+                "Oups ! Une erreur s\u2019est produite. R\u00e9essayez."
             ],
             "Phone": [
-                "Tel\u00e9fono"
+                "T\u00e9l\u00e9phone"
             ],
             "Call Us": [
-                "Ll\u00e1menos"
+                "Contactez-nous"
             ],
             "Chat": [
-                "Chatear"
+                "Chat"
             ],
             "Chat with one of our friendly Customer Care Specialists, as we are waiting to help. Open 24 hours - 7 days.": [
-                "Chatea con uno de nuestros simp\u00e1ticos especialistas en Atenci\u00f3n al Cliente, ya que estamos esperando a ayudar. Abierto 24 horas - 7 d\u00edas."
+                "Discutez avec l'un de nos sympathiques sp\u00e9cialistes du service \u00e0 la client\u00e8le, car nous attendons de vous aider. Ouvert 24 heures sur 24 - 7 jours."
             ],
             "Live Chat": [
-                "Chat en vivo"
+                "Chat en Direct"
             ],
             "Tweet": [
                 "Tweet"
             ],
             "Find our team at @bluehost for updates on our products and support from our team.": [
-                "Encuentre nuestro equipo en @bluehost para obtener actualizaciones sobre nuestros productos y el apoyo de nuestro equipo."
+                "Trouvez notre \u00e9quipe sur @bluehost pour les mises \u00e0 jour sur nos produits et le support de notre \u00e9quipe."
             ],
             "Tweet Us": [
-                "Tweet"
+                "Tweetez-nous"
             ],
             "YouTube": [
                 "YouTube"
             ],
             "Find tutorials, answers, interviews and guides on our YouTube channel.": [
-                "Encuentra tutoriales, respuestas, entrevistas y gu\u00edas en nuestro canal de YouTube."
+                "Trouvez des tutoriels, des r\u00e9ponses, des interviews et des guides sur notre cha\u00eene YouTube."
             ],
             "Watch Now": [
-                "Ver ahora"
+                "Regarder maintenant"
             ],
             "Knowledge Base": [
-                "Base de conocimientos"
+                "Base de connaissances"
             ],
             "Articles, guides, how-tos, instructions, and answers to our client's most frequently asked questions.": [
-                "Art\u00edculos, gu\u00edas, c\u00f3mo, instrucciones y respuestas a las preguntas m\u00e1s frecuentes de nuestros clientes."
+                "Des articles, des guides, des conseils, des instructions et des r\u00e9ponses aux questions les plus fr\u00e9quemment pos\u00e9es par nos clients."
             ],
             "Visit Knowledge Base": [
-                "Visita la Base de Conocimientos"
+                "Consulter la base de connaissances"
             ],
             "Resources": [
-                "Recursos"
+                "Ressources"
             ],
             "Boost your online knowledge and get ahead of the competition.": [
-                "Aumenta tu conocimiento en l\u00ednea y avanza por delante de la competencia."
+                "Stimulez vos connaissances en ligne et prenez la t\u00eate de la comp\u00e9tition."
             ],
             "Explore Resources": [
-                "Explorar recursos"
+                "Explorer les ressources"
             ],
             "Events and Webinars": [
-                "Eventos y seminarios web"
+                "\u00c9v\u00e9nements et webinaires"
             ],
             "Team Bluehost organizes multiple webinars and events throughout the year. We are also sponsors and speak at most WordCamps across the world. Join us at our next event!": [
-                "Equipo Bluehost organiza m\u00faltiples seminarios web y eventos durante todo el a\u00f1o. Tambi\u00e9n somos patrocinadores y hablamos en la mayor\u00eda de WordCamps de todo el mundo. \u00a1\u00danete a nosotros en nuestro pr\u00f3ximo evento!"
+                "Team Bluehost organise plusieurs webinaires et \u00e9v\u00e9nements tout au long de l'ann\u00e9e. Nous sommes \u00e9galement sponsors et parlons dans la plupart des WordCamps \u00e0 travers le monde. Rejoignez-nous lors de notre prochain \u00e9v\u00e9nement !"
             ],
             "More Info": [
-                "M\u00e1s informaci\u00f3n"
+                "Plus d'Infos"
             ],
             "Bluehost Website": [
-                "Sitio web Bluehost"
+                "Site web Bluehost"
             ],
             "Not finding what you need? Visit our website for more information about our products and services.": [
-                "No encuentra lo que necesita, visite nuestro sitio web para obtener m\u00e1s informaci\u00f3n sobre nuestros productos y servicios."
+                "Vous ne trouvez pas ce que vous cherchez ? Visitez notre site Web pour plus d'informations sur nos produits et services."
             ],
             "Go to Bluehost": [
-                "Ir a Bluehost"
+                "Aller au Bluehost"
             ],
             "Site Pages": [
-                "P\u00e1ginas del sitio"
+                "Pages du site"
             ],
             "Edit your homepage and other existing pages or add new pages to your site.": [
-                "Edite su p\u00e1gina de inicio y otras p\u00e1ginas existentes o a\u00f1ada nuevas p\u00e1ginas a su sitio."
+                "Modifiez votre page d'accueil et d'autres pages existantes ou ajoutez de nouvelles pages \u00e0 votre site."
             ],
             "View all": [
-                "Ver todo"
+                "Tout voir"
             ],
             "Add New": [
-                "A\u00f1adir nuevo"
+                "Ajouter un Nouveau"
             ],
             "This is where you can manage cache settings for your website.": [
-                "Aqu\u00ed es donde puedes administrar los ajustes de cach\u00e9 de tu sitio web."
+                "C'est ici que vous pouvez g\u00e9rer les param\u00e8tres de cache de votre site Web."
             ],
             "The Help Center provides guided, step-by-step assistance as you build your site.": [
-                "El Centro de Ayuda proporciona asistencia guiada paso a paso a medida que construye su sitio."
+                "Le Centre d'aide fournit une assistance guid\u00e9e \u00e9tape par \u00e9tape lors de la construction de votre site."
             ],
             "Site Status": [
-                "Estado del sitio"
+                "\u00c9tat du site"
             ],
             "Not Live": [
-                "No vivo"
+                "Pas en ligne"
             ],
             "Live": [
-                "Vivo"
+                "En ligne"
             ],
             "Your Bluehost Coming Soon page lets you hide your site from visitors while you make the magic happen.": [
-                "Tu p\u00e1gina de Bluehost Pr\u00f3ximamente te permite ocultar tu sitio a los visitantes mientras haces que la magia ocurra."
+                "Votre Bluehost bient\u00f4t page vous permet de cacher votre site aux visiteurs pendant que vous faites de la magie se produire."
             ],
             "Your website is currently displaying a \"Coming Soon\" page.": [
-                "Tu sitio web est\u00e1 mostrando una p\u00e1gina \"Pr\u00f3ximamente\"."
+                "Votre site web affiche actuellement une page \"\u00c0 venir\"."
             ],
             "The trash will automatically empty every %s week.": [
-                "La papelera se vac\u00eda autom\u00e1ticamente cada semana %s.",
-                "La basura se vac\u00eda autom\u00e1ticamente cada %s semanas."
+                "La corbeille sera automatiquement vide toutes les %s semaines.",
+                "La corbeille se videra automatiquement chaque semaine."
             ],
             "WonderBlocks provides a library of customizable block patterns and page templates.": [
-                "WonderBlocks proporciona una biblioteca de patrones de bloques personalizables y plantillas de p\u00e1gina."
+                "WonderBlocks fournit une biblioth\u00e8que de mod\u00e8les de blocs personnalisables et de mod\u00e8les de pages."
             ],
             "Hosting": [
-                "Alojamiento"
+                "H\u00e9bergement"
             ],
             "Control Panel": [
-                "Panel de control"
+                "Panneau de Contr\u00f4le"
             ],
             "Renewal Center": [
-                "Centro de Renovaci\u00f3n"
+                "Centre de Renouvellement"
             ],
             "Products": [
-                "Productos"
+                "Produits"
             ],
             "Payment Methods": [
-                "M\u00e9todos de pago"
+                "Moyens de paiement"
             ],
             "Billing": [
-                "Facturaci\u00f3n"
+                "Facturation"
             ],
             "Mail": [
-                "Correo"
+                "Courrier"
             ],
             "Mail & Office": [
-                "Correo y Oficina"
+                "Courrier et bureau"
             ],
             "Security": [
-                "Seguridad"
+                "S\u00e9curit\u00e9"
             ],
             "Profile": [
-                "Perfil"
+                "Profil"
             ],
             "Validation Token": [
-                "Token de validaci\u00f3n"
+                "Jeton de validation"
             ],
             "Explore our featured collection of tools and services.": [
-                "Explora nuestra colecci\u00f3n de herramientas y servicios."
+                "Explorez notre collection d'outils et de services."
             ],
             "Oops, there was an error loading the marketplace, please try again later.": [
-                "Vaya, hubo un error al cargar la tienda. Int\u00e9ntalo de nuevo m\u00e1s tarde."
+                "Oups, il y a eu une erreur lors du chargement du marketplace, veuillez r\u00e9essayer plus tard."
             ],
             "Sorry, no marketplace items. Please, try again later.": [
-                "Lo sentimos, no hay art\u00edculos de la tienda. Por favor, int\u00e9ntalo de nuevo m\u00e1s tarde."
+                "D\u00e9sol\u00e9, aucun article sur la place de march\u00e9. Veuillez r\u00e9essayer plus tard."
             ],
             "Load More": [
-                "Cargar m\u00e1s"
+                "Charger plus"
             ],
             "Oops! Something Went Wrong": [
-                "\u00a1Vaya! Algo sali\u00f3 mal"
+                "Oups ! Quelque chose s'est mal pass\u00e9"
             ],
             "An error occurred while loading the content. Please try again later.": [
-                "Se ha producido un error al cargar el contenido. Int\u00e9ntalo de nuevo m\u00e1s tarde."
+                "Une erreur s'est produite lors du chargement du contenu. Veuillez r\u00e9essayer plus tard."
             ],
             "Solution": [
-                "Soluci\u00f3n"
+                "Solution"
             ],
             "Explore the plugins and tools available with your solution.": [
-                "Explora los plugins y herramientas disponibles con tu soluci\u00f3n."
+                "Explorez les plugins et les outils disponibles avec votre solution."
             ],
             "Oops, there was an error loading your plugins and tools, please try again later.": [
-                "Vaya, hubo un error al cargar sus plugins y herramientas, por favor int\u00e9ntelo de nuevo m\u00e1s tarde."
+                "Oups, il y a eu une erreur lors du chargement de vos plugins et outils, veuillez r\u00e9essayer plus tard."
             ],
             "Sorry, no current plugins and tools. Please, try again later.": [
-                "Lo sentimos, no hay plugins y herramientas actuales. Por favor, int\u00e9ntalo de nuevo m\u00e1s tarde."
+                "D\u00e9sol\u00e9, aucun plugin ou outil actuel. Veuillez r\u00e9essayer plus tard."
             ]
         }
     }

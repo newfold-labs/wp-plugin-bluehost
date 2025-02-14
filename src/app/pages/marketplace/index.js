@@ -11,29 +11,29 @@ const MarketplacePage = () => {
 	const moduleConstants = {
 		supportsCTB: true,
 		text: {
-			title: __( 'Marketplace', 'bluehost-wordpress-plugin' ),
+			title: __( 'Marketplace', 'wp-plugin-bluehost' ),
 			subTitle: __(
 				'Explore our featured collection of tools and services.',
-				'bluehost-wordpress-plugin'
+				'wp-plugin-bluehost'
 			),
 			error: __(
 				'Oops, there was an error loading the marketplace, please try again later.',
-				'bluehost-wordpress-plugin'
+				'wp-plugin-bluehost'
 			),
 			noProducts: __(
 				'Sorry, no marketplace items. Please, try again later.',
-				'bluehost-wordpress-plugin'
+				'wp-plugin-bluehost'
 			),
-			loadMore: __( 'Load More', 'bluehost-wordpress-plugin' ),
+			loadMore: __( 'Load More', 'wp-plugin-bluehost' ),
 			productPage: {
 				error: {
 					title: __(
 						'Oops! Something Went Wrong',
-						'bluehost-wordpress-plugin'
+						'wp-plugin-bluehost'
 					),
 					description: __(
 						'An error occurred while loading the content. Please try again later.',
-						'bluehost-wordpress-plugin'
+						'wp-plugin-bluehost'
 					),
 				},
 			},

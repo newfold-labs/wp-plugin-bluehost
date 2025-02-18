@@ -8,70 +8,7 @@
  * @package WPPluginBluehost
  */
 
-use function NewfoldLabs\WP\ModuleLoader\container;
-use function NewfoldLabs\WP\Context\getContext;
-
-// Helper methods for links : move these elsewhere so they can be reused?
-
-/**
- * Add UTM params to a URL
- *
- * @param string $url the URL
- * @return string the URL with UTM params
- */
-function add_utm_params( $url ) {
-	$data        = array(
-		'utm_source' => 'wp-admin/index.php?widget=bluehost_account_widget',
-		'utm_medium' => 'bluehost_plugin',
-	);
-	return $url .= '?' . http_build_query( $data );
-}
-
-/**
- * Check if the user is Jarvis
- *
- * @return bool
- */
-function is_jarvis() {
-	$capabilities = container()->get( 'capabilities' )->all();
-	if ( isset( $capabilities['isJarvis'] ) && $capabilities['isJarvis'] ) {
-		return true;
-	}
-	return false;
-}
-
-/**
- * Get the platform path URL
- *
- * @param string $jarvisPath the jarvis path
- * @param string $legacyPath the legacy path
- * @return string platform link
- */
-function get_platform_path_url( $jarvisPath = '', $legacyPath = '' ) {
-	return is_jarvis() ?
-		get_platform_base_url( '/my-account/' ) . $jarvisPath :
-		get_platform_base_url( '/hosting/' ) . $legacyPath;
-}
-
-/**
- * Get the platform base URL
- *
- * @param string $path the path
- * @return string platform link
- */
-function get_platform_base_url( $path = '' ) {
-	$brand = getContext( 'brand' );
-
-	if ( 'Bluehost_India' === $brand ) {
-		return 'https://my.bluehost.in' . $path;
-	}
-
-	if ( is_jarvis() ) {
-		return 'https://www.bluehost.com' . $path;
-	} else {
-		return 'https://my.bluehost.com' . $path;
-	}
-}
+namespace Bluehost;
 
 // assets/svg/bluehost-logo.svg
 $logo_svg = file_get_contents( BLUEHOST_PLUGIN_DIR . '/assets/svg/bluehost-logo.svg' );
@@ -119,9 +56,9 @@ $box_a_classes  = 'nfd-widget-account-box-a nfd-flex nfd-flex-col nfd-gap-1 nfd-
 				href="
 				<?php
 					echo esc_url(
-						is_jarvis() ?
-							add_utm_params( get_platform_path_url( 'account-center' ) ) :
-							add_utm_params( get_platform_base_url( '/cgi/token' ) )
+						BluehostAccountWidget::is_jarvis() ?
+						BluehostAccountWidget::add_utm_params( BluehostAccountWidget::get_platform_path_url( 'account-center' ) ) :
+							BluehostAccountWidget::add_utm_params( BluehostAccountWidget::get_platform_base_url( '/cgi/token' ) )
 					);
 					?>
 				"
@@ -139,8 +76,8 @@ $box_a_classes  = 'nfd-widget-account-box-a nfd-flex nfd-flex-col nfd-gap-1 nfd-
 				href="
 				<?php
 					echo esc_url(
-						add_utm_params(
-							get_platform_path_url(
+						BluehostAccountWidget::add_utm_params(
+							BluehostAccountWidget::get_platform_path_url(
 								'home',
 								'app#/email-office'
 							)
@@ -162,8 +99,8 @@ $box_a_classes  = 'nfd-widget-account-box-a nfd-flex nfd-flex-col nfd-gap-1 nfd-
 				href="
 				<?php
 				echo esc_url(
-					add_utm_params(
-						get_platform_path_url(
+					BluehostAccountWidget::add_utm_params(
+						BluehostAccountWidget::get_platform_path_url(
 							'hosting/list',
 							'app'
 						)
@@ -185,8 +122,8 @@ $box_a_classes  = 'nfd-widget-account-box-a nfd-flex nfd-flex-col nfd-gap-1 nfd-
 				href="
 				<?php
 					echo esc_url(
-						add_utm_params(
-							get_platform_path_url(
+						BluehostAccountWidget::add_utm_params(
+							BluehostAccountWidget::get_platform_path_url(
 								'account-center',
 								'account_center#security'
 							)
@@ -210,8 +147,8 @@ $box_a_classes  = 'nfd-widget-account-box-a nfd-flex nfd-flex-col nfd-gap-1 nfd-
 				href="
 				<?php
 					echo esc_url(
-						add_utm_params(
-							get_platform_path_url(
+						BluehostAccountWidget::add_utm_params(
+							BluehostAccountWidget::get_platform_path_url(
 								'billing-center',
 								'account_center#billing'
 							)
@@ -229,8 +166,8 @@ $box_a_classes  = 'nfd-widget-account-box-a nfd-flex nfd-flex-col nfd-gap-1 nfd-
 				href="
 				<?php
 					echo esc_url(
-						add_utm_params(
-							get_platform_path_url(
+						BluehostAccountWidget::add_utm_params(
+							BluehostAccountWidget::get_platform_path_url(
 								'renewal-center',
 								'account_center#products'
 							)

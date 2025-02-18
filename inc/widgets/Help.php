@@ -7,6 +7,8 @@
 
 namespace Bluehost;
 
+use function NewfoldLabs\WP\ModuleLoader\container;
+
 /**
  * \Bluehost\BluehostHelpWidget
  *
@@ -57,5 +59,18 @@ class BluehostHelpWidget {
 		// enqueue the bluehost-style stylesheet
 		// this is registered in Admin.php > assets()
 		\wp_enqueue_style( 'bluehost-style' );
+	}
+
+	/**
+	 * Check if the user has access to the Help Center
+	 *
+	 * @return bool
+	 */
+	public static function can_access_help_center() {
+		$capabilities = container()->get( 'capabilities' )->all();
+		if ( isset( $capabilities['canAccessHelpCenter'] ) && $capabilities['canAccessHelpCenter'] ) {
+			return true;
+		}
+		return false;
 	}
 }

@@ -77,7 +77,7 @@ $box_a_classes  = 'nfd-widget-account-box-a nfd-flex nfd-flex-col nfd-gap-1 nfd-
 						BluehostAccountWidget::add_utm_params( BluehostAccountWidget::get_platform_path_url( 'account-center' ) ) :
 						BluehostAccountWidget::add_utm_params( BluehostAccountWidget::get_platform_base_url( '/cgi/token' ) )
 					);
-				?>
+					?>
 				"
 				id="nfd-widget-account-link-profile"
 				target="_blank"

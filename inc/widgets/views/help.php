@@ -83,7 +83,7 @@ $help_svg = '<svg viewBox="0 0 539.47 338.14" xmlns="http://www.w3.org/2000/svg"
 					BluehostAccountWidget::add_utm_params( BluehostAccountWidget::get_platform_base_url( '/help' ) ) :
 					BluehostAccountWidget::add_utm_params( BluehostAccountWidget::get_platform_base_url( '/hosting/help' ) )
 				);
-			?>
+				?>
 			"
 			target="_blank"
 			id="nfd-widget-help-link"
@@ -92,8 +92,8 @@ $help_svg = '<svg viewBox="0 0 539.47 338.14" xmlns="http://www.w3.org/2000/svg"
 </div>
 <?php
 	// only add this script if the user has access to the help center
-	if ( BluehostHelpWidget::can_access_help_center() ) :
-?>
+if ( BluehostHelpWidget::can_access_help_center() ) :
+	?>
 <script>
 document.addEventListener( 'DOMContentLoaded', initHelpButtonHandler, false );
 function initHelpButtonHandler(){

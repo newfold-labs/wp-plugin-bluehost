@@ -23,11 +23,27 @@ $svg_64 = base64_encode( $svg );
 $svgEnabled = '<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
   <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75 11.25 15 15 9.75M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
 </svg>';
-// exclamation-circle
+// exclamation-triangle
 $svgDisabled = '<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
-  <path stroke-linecap="round" stroke-linejoin="round" d="M12 9v3.75m9-.75a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9 3.75h.008v.008H12v-.008Z" />
+  <path stroke-linecap="round" stroke-linejoin="round" d="M12 9v3.75m-9.303 3.376c-.866 1.5.217 3.374 1.948 3.374h14.71c1.73 0 2.813-1.874 1.948-3.374L13.949 3.378c-.866-1.5-3.032-1.5-3.898 0L2.697 16.126ZM12 15.75h.007v.008H12v-.008Z" />
 </svg>';
-
+// rocket-launch
+$svgRocket = '<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+  <path stroke-linecap="round" stroke-linejoin="round" d="M15.59 14.37a6 6 0 0 1-5.84 7.38v-4.8m5.84-2.58a14.98 14.98 0 0 0 6.16-12.12A14.98 14.98 0 0 0 9.631 8.41m5.96 5.96a14.926 14.926 0 0 1-5.841 2.58m-.119-8.54a6 6 0 0 0-7.381 5.84h4.8m2.581-5.84a14.927 14.927 0 0 0-2.58 5.84m2.699 2.7c-.103.021-.207.041-.311.06a15.09 15.09 0 0 1-2.448-2.448 14.9 14.9 0 0 1 .06-.312m-2.24 2.39a4.493 4.493 0 0 0-1.757 4.306 4.493 4.493 0 0 0 4.306-1.758M16.5 9a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0Z" />
+</svg>';
+// wrench
+$svgWrench = '<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+  <path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75a4.5 4.5 0 0 1-4.884 4.484c-1.076-.091-2.264.071-2.95.904l-7.152 8.684a2.548 2.548 0 1 1-3.586-3.586l8.684-7.152c.833-.686.995-1.874.904-2.95a4.5 4.5 0 0 1 6.336-4.486l-3.276 3.276a3.004 3.004 0 0 0 2.25 2.25l3.276-3.276c.256.565.398 1.192.398 1.852Z" />
+  <path stroke-linecap="round" stroke-linejoin="round" d="M4.867 19.125h.008v.008h-.008v-.008Z" />
+</svg>';
+// pencil
+$svgPencil = '<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+  <path stroke-linecap="round" stroke-linejoin="round" d="m16.862 4.487 1.687-1.688a1.875 1.875 0 1 1 2.652 2.652L6.832 19.82a4.5 4.5 0 0 1-1.897 1.13l-2.685.8.8-2.685a4.5 4.5 0 0 1 1.13-1.897L16.863 4.487Zm0 0L19.5 7.125" />
+</svg>';
+// arrow-top-right-on
+$svgExternalView = '<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+  <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 6H5.25A2.25 2.25 0 0 0 3 8.25v10.5A2.25 2.25 0 0 0 5.25 21h10.5A2.25 2.25 0 0 0 18 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25" />
+</svg>';
 ?>
 <style>
 	#site_preview_widget h2 {
@@ -85,23 +101,6 @@ $svgDisabled = '<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0
 	}
 </style>
 <div class="nfd-root nfd-widget nfd-widget-site-preview">
-	<div class="nfd-flex nfd-justify-between nfd-items-center nfd-mb-4 nfd-gap-8">
-		<?php if ( $isComingSoon ) : ?>
-			<span><?php esc_html_e( 'Your site is currently displaying a "Coming Soon" page.', 'wp-plugin-bluehost' ); ?></span>
-			<a 
-				class="nfd-button nfd-button--primary nfd-shrink-0"
-				href="#"
-				id="coming-soon-disable"
-			><?php esc_html_e( 'Launch Site', 'wp-plugin-bluehost' ); ?></a>
-		<?php else : ?>
-			<span><?php esc_html_e( 'Your site is live to the world!', 'wp-plugin-bluehost' ); ?></span>
-			<a 
-				class="nfd-button nfd-button--secondary nfd-shrink-0"
-				href="#"
-				id="coming-soon-enable"
-			><?php esc_html_e( 'Activate Coming Soon', 'wp-plugin-bluehost' ); ?></a>
-		<?php endif; ?>
-	</div>
 
 	<div id="iframe-preview-wrap">
 		<div
@@ -151,17 +150,56 @@ $svgDisabled = '<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0
 		</div>
 	</div>
 
-	<p class="nfd-flex nfd-gap-4 nfd-justify-center nfd-items-center nfd-text-center nfd-mt-4">
+	<p class="nfd-text-center nfd-mt-4">
+		<?php 
+			echo $isComingSoon ?
+			esc_html( 'Your site is currently displaying a "Coming Soon" page.', 'wp-plugin-bluehost' ) :
+			esc_html( 'Your site is live to the world!', 'wp-plugin-bluehost' );
+		?>
+	</p>
+	
+	<div class="nfd-flex nfd-gap-2 nfd-justify-between nfd-items-center nfd-text-center nfd-mt-4 nfd-mb-4">
 		<a 
+			class="nfd-button nfd-button--secondary"
 			href="<?php echo esc_url( get_bloginfo( 'url' ) ); ?>"
 			target="_blank"
-			class="nfd-button nfd-button--secondary nfd-mb-4"
-		><?php esc_html_e( 'View Site', 'wp-plugin-bluehost' ); ?></a>
+			id="btn-view-site"
+		>
+			<?php echo wp_kses( $svgExternalView, KSES_ALLOWED_SVG_TAGS ); ?>
+			<?php
+				$isComingSoon ?
+				esc_html_e( 'Preview Site', 'wp-plugin-bluehost' ):
+				esc_html_e( 'View Site', 'wp-plugin-bluehost' );
+			?>
+		</a>
 		<a 
+			class="nfd-button nfd-button--secondary"
 			href="<?php echo esc_url( get_admin_url( null, 'site-editor.php?canvas=edit' ) ); ?>"
-			class="nfd-button nfd-button--secondary nfd-mb-4"
-		><?php esc_html_e( 'Edit Site', 'wp-plugin-bluehost' ); ?></a>
-	</p>
+			id="btn-edit-site"
+		>
+			<?php echo wp_kses( $svgPencil, KSES_ALLOWED_SVG_TAGS ); ?>
+			<?php esc_html_e( 'Edit Site', 'wp-plugin-bluehost' ); ?>
+		</a>
+		<?php if ( $isComingSoon ) : ?>
+			<a 
+				class="nfd-button nfd-button--upsell nfd-grow"
+				href="#"
+				id="coming-soon-disable"
+			>
+				<?php echo wp_kses( $svgRocket, KSES_ALLOWED_SVG_TAGS ); ?>
+				<?php esc_html_e( 'Launch Site', 'wp-plugin-bluehost' ); ?>
+			</a>
+		<?php else : ?>
+			<a 
+				class="nfd-button nfd-button--secondary nfd-grow"
+				href="#"
+				id="coming-soon-enable"
+			>
+				<?php echo wp_kses( $svgWrench, KSES_ALLOWED_SVG_TAGS ); ?>
+				<?php esc_html_e( 'Enable Coming Soon', 'wp-plugin-bluehost' ); ?>
+			</a>
+		<?php endif; ?>
+		</div>
 </div>
 <script>
 // inline script for now

@@ -1,14 +1,13 @@
 <?php
 /**
- * Account Widget View
+ * Site Preview Widget View
  *
- * This is rendered on the WordPress dashboard Bluehost Account widget.
+ * This is rendered on the WordPress dashboard Site Preview widget.
  * Icon svgs from HeroIcons https://heroicons.com/
  *
  * @package WPPluginBluehost
  */
 
-use function NewfoldLabs\WP\ModuleLoader\container;
 use function NewfoldLabs\WP\Module\ComingSoon\isComingSoonActive;
 
 // globe-alt icon

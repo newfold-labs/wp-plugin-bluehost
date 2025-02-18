@@ -39,11 +39,15 @@ $isComingSoon = isComingSoonActive();
         width: 400%;
         height: 400%;
         transform: scale(0.25);
+        transform-origin: top left;
         position: absolute;
         top:0;
         left: 0;
         right: 0;
         bottom: 0;
+    }
+    .nfd-align-items-center {
+        align-items: center;
     }
 </style>
 <div class="nfd-root nfd-widget nfd-widget-site-preview">
@@ -52,7 +56,7 @@ $isComingSoon = isComingSoonActive();
             id="iframe-preview"
             title="<?php _e( 'Site Preview', 'wp-plugin-bluehost' ); ?>"
             className="nfd-basis-full nfd-relative"
-            src="<?php echo esc_url( get_bloginfo( 'url' ) ) . $isComingSoon ? '?preview=coming_soon' : ''; ?>"
+            src="<?php echo esc_url( get_bloginfo( 'url' ) . '?preview=coming_soon' ); ?>"
             scrolling="no"
             name="iframe-preview"
             sandbox="allow-scripts allow-same-origin"
@@ -60,9 +64,25 @@ $isComingSoon = isComingSoonActive();
         ></iframe>
     </div>
     <?php if ( $isComingSoon ) : ?>
-        <p>Coming Soon is active.</p>
+        <div class="nfd-flex nfd-justify-between nfd-align-items-center">
+            <span>Coming Soon is active. Site is not live.</span>
+            <a 
+                class="nfd-button nfd-button--primary" 
+                href="#"
+                id="coming-soon-disable"
+            >Launch Site</a>
+        </div>
+    <?php else : ?>
+        <div class="nfd-flex nfd-justify-between nfd-align-items-center">
+            <span>Coming Soon is not active. Site is live.</span>
+            <a 
+                class="nfd-button nfd-button--primary"
+                href="#"
+                id="coming-soon-enable"
+            >Activate Coming Soon</a>
+        </div>
     <?php endif; ?>
-	<p class="nfd-flex nfd-gap-4  nfd-text-center nfd-mt-4">
+	<p class="nfd-flex nfd-gap-4 nfd-text-center nfd-justify-center nfd-mt-4">
 		<a 
 			href="<?php echo esc_url( get_bloginfo( 'url' ) ); ?>"
             target="_blank"
@@ -74,3 +94,35 @@ $isComingSoon = isComingSoonActive();
 		><?php esc_html_e( 'Edit Site', 'wp-plugin-bluehost' ); ?></a>
 	</p>
 </div>
+<script>
+document.addEventListener('DOMContentLoaded', init, false);
+function init(){
+    const enable_button = document.getElementById('coming-soon-enable');
+    if ( enable_button ) {
+        enable_button.addEventListener( 'click', function( e ) {
+            e.preventDefault();
+            if ( e.target.hasAttribute('disabled') ) {
+                return;
+            }
+            e.target.setAttribute('disabled', '');
+            window.NewfoldRuntime.comingSoon.enable().then(() => {
+                window.location.reload();
+            });
+        });
+    }
+
+    const disable_button = document.getElementById('coming-soon-disable');
+    if (disable_button) {
+        disable_button.addEventListener( 'click', function( e ) {
+            e.preventDefault();
+            if ( e.target.hasAttribute('disabled') ) {
+                return;
+            }
+            e.target.setAttribute('disabled', '');
+            window.NewfoldRuntime.comingSoon.disable().then(() => {
+                window.location.reload();
+            });
+        });
+    }
+};
+</script>

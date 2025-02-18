@@ -18,6 +18,16 @@ $svg    = '<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 2
 ';
 $svg_64 = base64_encode( $svg );
 $isComingSoon = isComingSoonActive();
+// check-circle
+$svgEnabled = '<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+  <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75 11.25 15 15 9.75M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+</svg>
+';
+// exclamation-circle
+$svgDisabled = '<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+  <path stroke-linecap="round" stroke-linejoin="round" d="M12 9v3.75m9-.75a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9 3.75h.008v.008H12v-.008Z" />
+</svg>
+';
 
 ?>
 <style>
@@ -33,7 +43,23 @@ $isComingSoon = isComingSoonActive();
     #iframe-preview-wrap {
         position: relative;
         overflow: hidden;
-        padding-top: 50%;
+        padding-top: 60%;
+        border: 1px solid #dbd1d1;
+        border-radius: 0.375rem;
+    }
+    #iframe-preview-label {
+        width: 100%;
+        position: absolute;
+        top: 0;
+        text-transform: uppercase;
+    }
+    #iframe-preview-detail {
+        width: 100%;
+        position: absolute;
+        bottom: 0;
+    }
+    #iframe-wrap {
+        position: relative;
     }
     #iframe-preview {
         width: 400%;
@@ -41,60 +67,97 @@ $isComingSoon = isComingSoonActive();
         transform: scale(0.25);
         transform-origin: top left;
         position: absolute;
-        top:0;
+        top: 20px; /* offset for label and iframe adminbar */
         left: 0;
         right: 0;
         bottom: 0;
     }
-    .nfd-align-items-center {
-        align-items: center;
+    .iframe-preview-domain {
+        font-weight: bold;
+    }
+    .iframe-preview-status svg {
+        width: 1.5rem;
+    }
+    .iframe-preview-status.status-coming-soon {
+        color: rgb(225 0 1);
+    }
+    .iframe-preview-status.status-live {
+        color: rgb(0 129 18);
     }
 </style>
 <div class="nfd-root nfd-widget nfd-widget-site-preview">
-    <div id="iframe-preview-wrap" class="">
-        <iframe
-            id="iframe-preview"
-            title="<?php _e( 'Site Preview', 'wp-plugin-bluehost' ); ?>"
-            className="nfd-basis-full nfd-relative"
-            src="<?php echo esc_url( get_bloginfo( 'url' ) . '?preview=coming_soon' ); ?>"
-            scrolling="no"
-            name="iframe-preview"
-            sandbox="allow-scripts allow-same-origin"
-            seamless
-        ></iframe>
-    </div>
-    <?php if ( $isComingSoon ) : ?>
-        <div class="nfd-flex nfd-justify-between nfd-align-items-center">
-            <span>Coming Soon is active. Site is not live.</span>
+    <div class="nfd-flex nfd-justify-between nfd-items-center nfd-mb-4 nfd-gap-8">
+        <?php if ( $isComingSoon ) : ?>
+            <span><?php esc_html_e( 'Your site is currently displaying a "Coming Soon" page.', 'wp-plugin-bluehost' ); ?></span>
             <a 
-                class="nfd-button nfd-button--primary" 
+                class="nfd-button nfd-button--primary nfd-shrink-0"
                 href="#"
                 id="coming-soon-disable"
-            >Launch Site</a>
-        </div>
-    <?php else : ?>
-        <div class="nfd-flex nfd-justify-between nfd-align-items-center">
-            <span>Coming Soon is not active. Site is live.</span>
+            ><?php esc_html_e( 'Launch Site', 'wp-plugin-bluehost' ); ?></a>
+        <?php else : ?>
+            <span><?php esc_html_e( 'Your site is live to the world!', 'wp-plugin-bluehost' ); ?></span>
             <a 
-                class="nfd-button nfd-button--primary"
+                class="nfd-button nfd-button--secondary nfd-shrink-0"
                 href="#"
                 id="coming-soon-enable"
-            >Activate Coming Soon</a>
+            ><?php esc_html_e( 'Activate Coming Soon', 'wp-plugin-bluehost' ); ?></a>
+        <?php endif; ?>
+    </div>
+
+    <div id="iframe-preview-wrap">
+        <div 
+            id="iframe-preview-label"
+            class="nfd-flex nfd-justify-center nfd-items-center nfd-p-1 nfd-bg-gray-200 nfd-border-b nfd-border-[#dbd1d1] nfd-z-10"
+        >
+            <p class="nfd-font-bold"><?php esc_html_e( 'Site Preview', 'wp-plugin-bluehost' ); ?></p>
         </div>
-    <?php endif; ?>
-	<p class="nfd-flex nfd-gap-4 nfd-text-center nfd-justify-center nfd-mt-4">
+        <div class="iframe-wrap">
+            <iframe
+                id="iframe-preview"
+                title="<?php esc_attr_e( 'Site Preview', 'wp-plugin-bluehost' ); ?>"
+                className="nfd-basis-full nfd-relative"
+                src="<?php echo esc_url( get_bloginfo( 'url' ) . '?preview=coming_soon' ); ?>"
+                scrolling="no"
+                name="iframe-preview"
+                sandbox="allow-scripts allow-same-origin"
+                seamless
+            ></iframe>
+        </div>
+        <div 
+            id="iframe-preview-detail"
+            class="nfd-flex nfd-justify-between nfd-items-center nfd-p-1 nfd-px-6 nfd-bg-gray-200 nfd-border-t nfd-border-[#dbd1d1] nfd-z-10"
+        >
+            <span class="iframe-preview-domain nfd-font-semibold"><?php 
+                $parseUrl = parse_url( get_bloginfo( 'url' ) );
+                echo esc_html( $parseUrl['host'] );
+            ?></span>
+            <span class="iframe-preview-status nfd-flex nfd-flex-row nfd-items-center nfd-gap-2 nfd-font-semibold
+                <?php echo esc_attr( $isComingSoon ? 'status-coming-soon' : 'status-live' ); ?>
+            ">
+                <?php echo $isComingSoon ? $svgDisabled : $svgEnabled; ?>
+                <span><?php 
+                    echo $isComingSoon ? 
+                    esc_html__( 'Not Live', 'wp-plugin-bluehost' ) : 
+                    esc_html__( 'Live', 'wp-plugin-bluehost' ); 
+                ?></span>
+            </span>
+        </div>
+    </div>
+
+	<p class="nfd-flex nfd-gap-4 nfd-justify-center nfd-items-center nfd-text-center nfd-mt-4">
 		<a 
 			href="<?php echo esc_url( get_bloginfo( 'url' ) ); ?>"
             target="_blank"
-			class="nfd-button nfd-button--secondary wppbh-help-link nfd-mb-4"    
+			class="nfd-button nfd-button--secondary nfd-mb-4"
 		><?php esc_html_e( 'View Site', 'wp-plugin-bluehost' ); ?></a>
 		<a 
 			href="<?php echo esc_url( get_admin_url( null, 'site-editor.php?canvas=edit' ) ); ?>"
-			class="nfd-button nfd-button--secondary wppbh-help-link nfd-mb-4"    
+			class="nfd-button nfd-button--secondary nfd-mb-4"
 		><?php esc_html_e( 'Edit Site', 'wp-plugin-bluehost' ); ?></a>
 	</p>
 </div>
 <script>
+// inline script for now
 document.addEventListener('DOMContentLoaded', init, false);
 function init(){
     const enable_button = document.getElementById('coming-soon-enable');

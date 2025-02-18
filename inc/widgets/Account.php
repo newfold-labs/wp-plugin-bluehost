@@ -69,7 +69,7 @@ class BluehostAccountWidget {
 	 * @return string the URL with UTM params
 	 */
 	public static function add_utm_params( $url ) {
-		$data = array(
+		$data        = array(
 			'utm_source' => 'wp-admin/index.php?widget=bluehost_account_widget',
 			'utm_medium' => 'bluehost_plugin',
 		);

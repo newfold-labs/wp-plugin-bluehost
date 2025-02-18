@@ -7,9 +7,9 @@
 
 namespace Bluehost;
 
-require BLUEHOST_PLUGIN_DIR . '/inc/widgets/Account.php';
-require BLUEHOST_PLUGIN_DIR . '/inc/widgets/Help.php';
-require BLUEHOST_PLUGIN_DIR . '/inc/widgets/SitePreview.php';
+require_once BLUEHOST_PLUGIN_DIR . '/inc/widgets/Account.php';
+require_once BLUEHOST_PLUGIN_DIR . '/inc/widgets/Help.php';
+require_once BLUEHOST_PLUGIN_DIR . '/inc/widgets/SitePreview.php';
 
 /* Start up the Dashboards */
 if ( is_admin() ) {

@@ -35,7 +35,7 @@ class BluehostHelpWidget {
 		// Register the widget
 		\wp_add_dashboard_widget(
 			self::ID,
-			'Need Some Help?',
+			__( 'Need Some Help?', 'wp-plugin-bluehost' ),
 			array( __CLASS__, 'widget_render' )
 		);
 

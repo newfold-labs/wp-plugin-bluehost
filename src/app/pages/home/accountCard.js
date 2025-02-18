@@ -21,8 +21,8 @@ const base = [
 		id: 'account_link',
 		href: addUtmParams( getPlatformPathUrl( 'hosting/list', 'app' ) ),
 		label: isJarvis()
-			? __( 'Hosting', 'bluehost-wordpress-plugin' )
-			: __( 'Control Panel', 'bluehost-wordpress-plugin' ),
+			? __( 'Hosting', 'wp-plugin-bluehost' )
+			: __( 'Control Panel', 'wp-plugin-bluehost' ),
 		color: 'nfd-fill-gray',
 	},
 	{
@@ -32,8 +32,8 @@ const base = [
 			getPlatformPathUrl( 'renewal-center', 'account_center#products' )
 		),
 		label: isJarvis()
-			? __( 'Renewal Center', 'bluehost-wordpress-plugin' )
-			: __( 'Products', 'bluehost-wordpress-plugin' ),
+			? __( 'Renewal Center', 'wp-plugin-bluehost' )
+			: __( 'Products', 'wp-plugin-bluehost' ),
 		color: 'nfd-fill-primary-dark',
 	},
 	{
@@ -43,8 +43,8 @@ const base = [
 			getPlatformPathUrl( 'billing-center', 'account_center#billing' )
 		),
 		label: isJarvis()
-			? __( 'Payment Methods', 'bluehost-wordpress-plugin' )
-			: __( 'Billing', 'bluehost-wordpress-plugin' ),
+			? __( 'Payment Methods', 'wp-plugin-bluehost' )
+			: __( 'Billing', 'wp-plugin-bluehost' ),
 		color: 'nfd-fill-primary',
 	},
 	{
@@ -52,8 +52,8 @@ const base = [
 		id: 'mail_link',
 		href: addUtmParams( getPlatformPathUrl( 'home', 'app#/email-office' ) ),
 		label: isJarvis()
-			? __( 'Mail', 'bluehost-wordpress-plugin' )
-			: __( 'Mail & Office', 'bluehost-wordpress-plugin' ),
+			? __( 'Mail', 'wp-plugin-bluehost' )
+			: __( 'Mail & Office', 'wp-plugin-bluehost' ),
 		color: 'nfd-fill-[#5b5b5b]',
 	},
 	{
@@ -62,7 +62,7 @@ const base = [
 		href: addUtmParams(
 			getPlatformPathUrl( 'account-center', 'account_center#security' )
 		),
-		label: __( 'Security', 'bluehost-wordpress-plugin' ),
+		label: __( 'Security', 'wp-plugin-bluehost' ),
 		color: 'nfd-fill-[#17b212]',
 	},
 	{
@@ -72,8 +72,8 @@ const base = [
 			? addUtmParams( getPlatformPathUrl( 'account-center' ) )
 			: addUtmParams( getPlatformBaseUrl( '/cgi/token' ) ),
 		label: isJarvis()
-			? __( 'Profile', 'bluehost-wordpress-plugin' )
-			: __( 'Validation Token', 'bluehost-wordpress-plugin' ),
+			? __( 'Profile', 'wp-plugin-bluehost' )
+			: __( 'Validation Token', 'wp-plugin-bluehost' ),
 		color: 'nfd-fill-[#f89c24]',
 	},
 ];

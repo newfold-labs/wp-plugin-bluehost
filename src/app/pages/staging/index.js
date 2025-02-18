@@ -10,7 +10,7 @@ const Staging = () => {
 	// constants to pass to module
 	const moduleConstants = {
 		text: {
-			title: __( 'Staging', 'bluehost-wordpress-plugin' ),
+			title: __( 'Staging', 'wp-plugin-bluehost' ),
 		},
 	};
 

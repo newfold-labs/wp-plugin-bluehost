@@ -151,7 +151,7 @@ $svgExternalView = '<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox=
 	</div>
 
 	<p class="nfd-text-center nfd-mt-4">
-		<?php 
+		<?php
 			echo $isComingSoon ?
 			esc_html( 'Your site is currently displaying a "Coming Soon" page.', 'wp-plugin-bluehost' ) :
 			esc_html( 'Your site is live to the world!', 'wp-plugin-bluehost' );
@@ -168,7 +168,7 @@ $svgExternalView = '<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox=
 			<?php echo wp_kses( $svgExternalView, KSES_ALLOWED_SVG_TAGS ); ?>
 			<?php
 				$isComingSoon ?
-				esc_html_e( 'Preview Site', 'wp-plugin-bluehost' ):
+				esc_html_e( 'Preview Site', 'wp-plugin-bluehost' ) :
 				esc_html_e( 'View Site', 'wp-plugin-bluehost' );
 			?>
 		</a>

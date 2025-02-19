@@ -1,13 +1,25 @@
-const fs = require( 'fs' );
-const fetch = require( 'node-fetch' );
+const { writeFile } = require('fs/promises');
 const wpEnv = require( './.wp-env.json' );
+async function fetchData(url) {
+	try {
+		const fetch = (...args) => import('node-fetch').then(({ default: fetch }) => fetch(...args));
+		const response = await fetch(url);
+		if (!response.ok) {
+			throw new Error(`HTTP error! status: ${response.status}`);
+		}
+		const data = await response.json();
+		return data;
+	} catch (error) {
+		console.error("Fetching error:", error);
+		throw error;
+	}
+};
 
-fetch( 'https://api.wordpress.org/core/stable-check/1.0/' )
-	.then( ( res ) => res.json() )
+fetchData( 'https://api.wordpress.org/core/stable-check/1.0/' )
 	.then( ( json ) => {
 		const wpVersion = Object.keys( json )[ Object.keys( json ).length - 1 ];
 		wpEnv.core = `WordPress/WordPress#tags/${ wpVersion }`;
-		fs.writeFile(
+		writeFile(
 			'./.wp-env.json',
 			JSON.stringify( wpEnv, null, 2 ),
 			'utf8',

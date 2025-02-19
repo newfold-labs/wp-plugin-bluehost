@@ -1,7 +1,7 @@
 {
     "translation-revision-date": "2024-10-21 07:10-0000",
     "generator": "WP-CLI\/2.11.0",
-    "source": "build\/4.0.6\/index.js",
+    "source": "build\/4.0.7\/index.js",
     "domain": "messages",
     "locale_data": {
         "messages": {
@@ -230,6 +230,18 @@
             "Validation Token": [
                 "Jeton de validation"
             ],
+            "Solution": [
+                "Solution"
+            ],
+            "Explore the plugins and tools available with your solution.": [
+                "Explorez les plugins et les outils disponibles avec votre solution."
+            ],
+            "Oops, there was an error loading your plugins and tools, please try again later.": [
+                "Oups, il y a eu une erreur lors du chargement de vos plugins et outils, veuillez r\u00e9essayer plus tard."
+            ],
+            "Sorry, no current plugins and tools. Please, try again later.": [
+                "D\u00e9sol\u00e9, aucun plugin ou outil actuel. Veuillez r\u00e9essayer plus tard."
+            ],
             "Explore our featured collection of tools and services.": [
                 "Explorez notre collection d'outils et de services."
             ],
@@ -247,18 +259,6 @@
             ],
             "An error occurred while loading the content. Please try again later.": [
                 "Une erreur s'est produite lors du chargement du contenu. Veuillez r\u00e9essayer plus tard."
-            ],
-            "Solution": [
-                "Solution"
-            ],
-            "Explore the plugins and tools available with your solution.": [
-                "Explorez les plugins et les outils disponibles avec votre solution."
-            ],
-            "Oops, there was an error loading your plugins and tools, please try again later.": [
-                "Oups, il y a eu une erreur lors du chargement de vos plugins et outils, veuillez r\u00e9essayer plus tard."
-            ],
-            "Sorry, no current plugins and tools. Please, try again later.": [
-                "D\u00e9sol\u00e9, aucun plugin ou outil actuel. Veuillez r\u00e9essayer plus tard."
             ]
         }
     }

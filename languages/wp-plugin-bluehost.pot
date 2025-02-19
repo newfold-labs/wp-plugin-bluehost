@@ -199,6 +199,91 @@ msgstr ""
 msgid "Auto-updates enabled"
 msgstr ""
 
+#: inc/widgets/Help.php:38
+msgid "Need Some Help?"
+msgstr ""
+
+#: inc/widgets/SitePreview.php:36
+#: inc/widgets/views/site-preview.php:110
+#: inc/widgets/views/site-preview.php:115
+msgid "Site Preview"
+msgstr ""
+
+#: inc/widgets/views/account.php:86
+#: build/4.0.6/index.js:1
+msgid "Profile"
+msgstr ""
+
+#: inc/widgets/views/account.php:109
+#: build/4.0.6/index.js:1
+msgid "Mail"
+msgstr ""
+
+#: inc/widgets/views/account.php:132
+#: build/4.0.6/index.js:1
+msgid "Hosting"
+msgstr ""
+
+#: inc/widgets/views/account.php:155
+#: build/4.0.6/index.js:1
+msgid "Security"
+msgstr ""
+
+#: inc/widgets/views/account.php:159
+msgid "Quick Access"
+msgstr ""
+
+#: inc/widgets/views/account.php:178
+#: build/4.0.6/index.js:1
+msgid "Payment Methods"
+msgstr ""
+
+#: inc/widgets/views/account.php:198
+msgid "Renewals Center"
+msgstr ""
+
+#: inc/widgets/views/help.php:71
+msgid "From DIY to full-service help."
+msgstr ""
+
+#: inc/widgets/views/help.php:72
+msgid "Call or chat 24/7 for support or let our experts build your site for you."
+msgstr ""
+
+#: inc/widgets/views/help.php:90
+msgid "Get Help"
+msgstr ""
+
+#: inc/widgets/views/site-preview.php:145
+#: build/4.0.6/index.js:6
+msgid "Not Live"
+msgstr ""
+
+#: inc/widgets/views/site-preview.php:146
+#: build/4.0.6/index.js:6
+msgid "Live"
+msgstr ""
+
+#: inc/widgets/views/site-preview.php:175
+msgid "Preview Site"
+msgstr ""
+
+#: inc/widgets/views/site-preview.php:176
+msgid "View Site"
+msgstr ""
+
+#: inc/widgets/views/site-preview.php:186
+msgid "Edit Site"
+msgstr ""
+
+#: inc/widgets/views/site-preview.php:196
+msgid "Launch Site"
+msgstr ""
+
+#: inc/widgets/views/site-preview.php:206
+msgid "Enable Coming Soon"
+msgstr ""
+
 #: build/4.0.6/index.js:1
 msgid "Bluehost WordPress Plugin"
 msgstr ""
@@ -370,10 +455,6 @@ msgid "Go to Bluehost"
 msgstr ""
 
 #: build/4.0.6/index.js:1
-msgid "Hosting"
-msgstr ""
-
-#: build/4.0.6/index.js:1
 msgid "Control Panel"
 msgstr ""
 
@@ -386,27 +467,11 @@ msgid "Products"
 msgstr ""
 
 #: build/4.0.6/index.js:1
-msgid "Payment Methods"
-msgstr ""
-
-#: build/4.0.6/index.js:1
 msgid "Billing"
 msgstr ""
 
 #: build/4.0.6/index.js:1
-msgid "Mail"
-msgstr ""
-
-#: build/4.0.6/index.js:1
 msgid "Mail & Office"
-msgstr ""
-
-#: build/4.0.6/index.js:1
-msgid "Security"
-msgstr ""
-
-#: build/4.0.6/index.js:1
-msgid "Profile"
 msgstr ""
 
 #: build/4.0.6/index.js:1
@@ -463,14 +528,6 @@ msgstr ""
 
 #: build/4.0.6/index.js:6
 msgid "Site Status"
-msgstr ""
-
-#: build/4.0.6/index.js:6
-msgid "Not Live"
-msgstr ""
-
-#: build/4.0.6/index.js:6
-msgid "Live"
 msgstr ""
 
 #: build/4.0.6/index.js:6

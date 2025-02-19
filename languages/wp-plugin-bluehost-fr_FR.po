@@ -400,10 +400,12 @@ msgstr "Le Centre d'aide fournit une assistance guidée étape par étape lors d
 msgid "Site Status"
 msgstr "État du site"
 
+#: inc/widgets/views/site-preview.php:145
 #: build/4.0.6/index.js:6
 msgid "Not Live"
 msgstr "Pas en ligne"
 
+#: inc/widgets/views/site-preview.php:146
 #: build/4.0.6/index.js:6
 msgid "Live"
 msgstr "En ligne"
@@ -428,6 +430,7 @@ msgstr[1] "La corbeille se videra automatiquement chaque semaine."
 msgid "WonderBlocks provides a library of customizable block patterns and page templates."
 msgstr "WonderBlocks fournit une bibliothèque de modèles de blocs personnalisables et de modèles de pages."
 
+#: inc/widgets/views/account.php:132
 #: build/4.0.6/index.js:1
 msgid "Hosting"
 msgstr "Hébergement"
@@ -444,6 +447,7 @@ msgstr "Centre de Renouvellement"
 msgid "Products"
 msgstr "Produits"
 
+#: inc/widgets/views/account.php:178
 #: build/4.0.6/index.js:1
 msgid "Payment Methods"
 msgstr "Moyens de paiement"
@@ -452,6 +456,7 @@ msgstr "Moyens de paiement"
 msgid "Billing"
 msgstr "Facturation"
 
+#: inc/widgets/views/account.php:109
 #: build/4.0.6/index.js:1
 msgid "Mail"
 msgstr "Courrier"
@@ -460,10 +465,12 @@ msgstr "Courrier"
 msgid "Mail & Office"
 msgstr "Courrier et bureau"
 
+#: inc/widgets/views/account.php:155
 #: build/4.0.6/index.js:1
 msgid "Security"
 msgstr "Sécurité"
 
+#: inc/widgets/views/account.php:86
 #: build/4.0.6/index.js:1
 msgid "Profile"
 msgstr "Profil"
@@ -511,3 +518,53 @@ msgstr "Oups, il y a eu une erreur lors du chargement de vos plugins et outils, 
 #: build/4.0.6/index.js:14
 msgid "Sorry, no current plugins and tools. Please, try again later."
 msgstr "Désolé, aucun plugin ou outil actuel. Veuillez réessayer plus tard."
+
+#: inc/widgets/Help.php:38
+msgid "Need Some Help?"
+msgstr ""
+
+#: inc/widgets/SitePreview.php:36
+#: inc/widgets/views/site-preview.php:110
+#: inc/widgets/views/site-preview.php:115
+msgid "Site Preview"
+msgstr ""
+
+#: inc/widgets/views/account.php:159
+msgid "Quick Access"
+msgstr ""
+
+#: inc/widgets/views/account.php:198
+msgid "Renewals Center"
+msgstr ""
+
+#: inc/widgets/views/help.php:71
+msgid "From DIY to full-service help."
+msgstr ""
+
+#: inc/widgets/views/help.php:72
+msgid "Call or chat 24/7 for support or let our experts build your site for you."
+msgstr ""
+
+#: inc/widgets/views/help.php:90
+msgid "Get Help"
+msgstr ""
+
+#: inc/widgets/views/site-preview.php:175
+msgid "Preview Site"
+msgstr ""
+
+#: inc/widgets/views/site-preview.php:176
+msgid "View Site"
+msgstr ""
+
+#: inc/widgets/views/site-preview.php:186
+msgid "Edit Site"
+msgstr ""
+
+#: inc/widgets/views/site-preview.php:196
+msgid "Launch Site"
+msgstr ""
+
+#: inc/widgets/views/site-preview.php:206
+msgid "Enable Coming Soon"
+msgstr ""

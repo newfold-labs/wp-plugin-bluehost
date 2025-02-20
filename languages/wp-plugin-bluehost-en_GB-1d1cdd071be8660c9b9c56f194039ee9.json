@@ -1,264 +1,264 @@
 {
     "translation-revision-date": "2024-10-21 07:10-0000",
     "generator": "WP-CLI\/2.11.0",
-    "source": "build\/4.0.7\/index.js",
+    "source": "build\/4.1.0\/index.js",
     "domain": "messages",
     "locale_data": {
         "messages": {
             "": {
                 "domain": "messages",
-                "lang": "pt_PT",
+                "lang": "en_GB",
                 "plural-forms": "nplurals=2; plural=(n != 1);"
             },
             "Home": [
-                "In\u00edcio"
+                "Home"
             ],
             "Pages & Posts": [
-                "P\u00e1ginas e Postagens"
+                "Pages & Posts"
             ],
             "Store": [
-                "Loja"
+                "Store"
             ],
             "Marketplace": [
-                "Mercado"
+                "Marketplace"
             ],
             "My Plugins & Tools": [
-                "Meus Plugins e Ferramentas"
+                "My Plugins & Tools"
             ],
             "Performance": [
-                "Desempenho"
+                "Performance"
             ],
             "Settings": [
-                "Confirgura\u00e7\u00f5es"
+                "Settings"
             ],
             "Staging": [
-                "Encena\u00e7\u00e3o"
+                "Staging"
             ],
             "Bluehost WordPress Plugin": [
-                "Plugin WordPress Bluehost"
+                "Bluehost WordPress Plugin"
             ],
             "Oh No, An Error!": [
-                "N\u00e3o, um erro!"
+                "Oh No, An Error!"
             ],
             "You found an error, please refresh the page and try again!": [
-                "Voc\u00ea encontrou um erro, por favor atualize a p\u00e1gina e tente novamente!"
+                "You found an error, please refresh the page and try again!"
             ],
             "If the error persists, please contact support.": [
-                "Se o erro persistir, por favor contate o suporte."
+                "If the error persists, please contact support."
             ],
             "Error code:": [
-                "C\u00f3digo do erro:"
+                "Error code:"
             ],
             "Bluehost Account": [
-                "Conta Bluehost"
+                "Bluehost Account"
             ],
             "There's nothing here!": [
-                "N\u00e3o h\u00e1 nada aqui!"
+                "There's nothing here!"
             ],
             "Products & Services": [
-                "Produtos e Servi\u00e7os"
+                "Products & Services"
             ],
             "Sales & Promotions": [
-                "Vendas & Promo\u00e7\u00f5es"
+                "Sales & Promotions"
             ],
             "Sales Channel": [
-                "Canal de vendas"
+                "Sales Channel"
             ],
             "Payments": [
-                "Pagamentos"
+                "Payments"
             ],
             "Store Details": [
-                "Detalhes da Loja"
+                "Store Details"
             ],
             "Help with WordPress": [
-                "Ajuda com WordPress"
+                "Help with WordPress"
             ],
             "Admin": [
-                "Administrador"
+                "Admin"
             ],
             "The staging feature provides a way to copy a site to test new updates, features or content.": [
-                "O recurso de staging fornece uma maneira de copiar um site para testar novas atualiza\u00e7\u00f5es, recursos ou conte\u00fado."
+                "The staging feature provides a way to copy a site to test new updates, features or content."
             ],
             "Sorry, that is not allowed.": [
-                "Desculpe, isso n\u00e3o \u00e9 permitido."
+                "Sorry, that is not allowed."
             ],
             "This feature cannot currently be modified.": [
-                "Atualmente este recurso n\u00e3o pode ser modificado."
+                "This feature cannot currently be modified."
             ],
             "Oops! Something went wrong. Please try again.": [
-                "Opa! Algo deu errado. Por favor, tente novamente."
+                "Oops! Something went wrong. Please try again."
             ],
             "Phone": [
-                "Telefone"
+                "Phone"
             ],
             "Call Us": [
-                "Ligue para N\u00f3s"
+                "Call Us"
             ],
             "Chat": [
                 "Chat"
             ],
             "Chat with one of our friendly Customer Care Specialists, as we are waiting to help. Open 24 hours - 7 days.": [
-                "Converse com um dos nossos especialistas de atendimento ao cliente, j\u00e1 que estamos esperando para ajudar. Abra 24 horas a 7 dias."
+                "Chat with one of our friendly Customer Care Specialists, as we are waiting to help. Open 24 hours - 7 days."
             ],
             "Live Chat": [
-                "Chat ao Vivo"
+                "Live Chat"
             ],
             "Tweet": [
                 "Tweet"
             ],
             "Find our team at @bluehost for updates on our products and support from our team.": [
-                "Encontre a nossa equipe em @bluehost para atualiza\u00e7\u00f5es dos nossos produtos e suporte da nossa equipe."
+                "Find our team at @bluehost for updates on our products and support from our team."
             ],
             "Tweet Us": [
-                "Tweet-nos"
+                "Tweet Us"
             ],
             "YouTube": [
-                "Youtube"
+                "YouTube"
             ],
             "Find tutorials, answers, interviews and guides on our YouTube channel.": [
-                "Encontre tutoriais, respostas, entrevistas e guias em nosso canal no YouTube."
+                "Find tutorials, answers, interviews and guides on our YouTube channel."
             ],
             "Watch Now": [
-                "Assista Agora"
+                "Watch Now"
             ],
             "Knowledge Base": [
-                "Base de Conhecimento"
+                "Knowledge Base"
             ],
             "Articles, guides, how-tos, instructions, and answers to our client's most frequently asked questions.": [
-                "Artigos, guias, instru\u00e7\u00f5es e respostas para as perguntas mais frequentes dos nossos clientes."
+                "Articles, guides, how-tos, instructions, and answers to our client's most frequently asked questions."
             ],
             "Visit Knowledge Base": [
-                "Visitar Base de Conhecimento"
+                "Visit Knowledge Base"
             ],
             "Resources": [
-                "Recursos"
+                "Resources"
             ],
             "Boost your online knowledge and get ahead of the competition.": [
-                "Impulsione seu conhecimento on-line e esteja \u00e0 frente da competi\u00e7\u00e3o."
+                "Boost your online knowledge and get ahead of the competition."
             ],
             "Explore Resources": [
-                "Explorar recursos"
+                "Explore Resources"
             ],
             "Events and Webinars": [
-                "Eventos e webin\u00e1rios"
+                "Events and Webinars"
             ],
             "Team Bluehost organizes multiple webinars and events throughout the year. We are also sponsors and speak at most WordCamps across the world. Join us at our next event!": [
-                "O Team Bluehost organiza v\u00e1rios webinars e eventos ao longo do ano. Tamb\u00e9m somos patrocinadores e falamos no m\u00e1ximo no campo de palavras pelo mundo. Junte-se a n\u00f3s no nosso pr\u00f3ximo evento!"
+                "Team Bluehost organizes multiple webinars and events throughout the year. We are also sponsors and speak at most WordCamps across the world. Join us at our next event!"
             ],
             "More Info": [
-                "Mais informa\u00e7\u00f5es"
+                "More Info"
             ],
             "Bluehost Website": [
-                "Site de Bluehost"
+                "Bluehost Website"
             ],
             "Not finding what you need? Visit our website for more information about our products and services.": [
-                "N\u00e3o est\u00e1 encontrando o que voc\u00ea precisa? Visite nosso site para mais informa\u00e7\u00f5es sobre nossos produtos e servi\u00e7os."
+                "Not finding what you need? Visit our website for more information about our products and services."
             ],
             "Go to Bluehost": [
-                "Ir para Diagrama"
+                "Go to Bluehost"
             ],
             "Site Pages": [
-                "P\u00e1ginas do Site"
+                "Site Pages"
             ],
             "Edit your homepage and other existing pages or add new pages to your site.": [
-                "Edite sua p\u00e1gina inicial e outras p\u00e1ginas existentes ou adicione novas p\u00e1ginas ao seu site."
+                "Edit your homepage and other existing pages or add new pages to your site."
             ],
             "View all": [
-                "Visualizar tudo"
+                "View all"
             ],
             "Add New": [
-                "Adicionar novo"
+                "Add New"
             ],
             "This is where you can manage cache settings for your website.": [
-                "Aqui \u00e9 onde voc\u00ea pode gerenciar as configura\u00e7\u00f5es de cache do seu site."
+                "This is where you can manage cache settings for your website."
             ],
             "The Help Center provides guided, step-by-step assistance as you build your site.": [
-                "A central de ajuda fornece ajuda passo a passo para a constru\u00e7\u00e3o do seu site."
+                "The Help Center provides guided, step-by-step assistance as you build your site."
             ],
             "Site Status": [
-                "Estado do Site"
+                "Site Status"
             ],
             "Not Live": [
-                "N\u00e3o Ao Vivo"
+                "Not Live"
             ],
             "Live": [
-                "Ativo"
+                "Live"
             ],
             "Your Bluehost Coming Soon page lets you hide your site from visitors while you make the magic happen.": [
-                "Sua Planta Chegando em breve permite que voc\u00ea esconda seu site dos visitantes enquanto voc\u00ea faz a magia acontecer."
+                "Your Bluehost Coming Soon page lets you hide your site from visitors while you make the magic happen."
             ],
             "Your website is currently displaying a \"Coming Soon\" page.": [
-                "Seu site exibir\u00e1 uma p\u00e1gina \"Em breve\"."
+                "Your website is currently displaying a \"Coming Soon\" page."
             ],
             "The trash will automatically empty every %s week.": [
-                "A lixeira ser\u00e1 automaticamente vazia a cada %s semana.",
-                "O lixo vai esvaziar automaticamente a cada %s semanas."
+                "The bin will automatically empty every %s week.",
+                "The bin will automatically empty every %s weeks."
             ],
             "WonderBlocks provides a library of customizable block patterns and page templates.": [
-                "WonderBlocks fornece uma biblioteca de padr\u00f5es de blocos personaliz\u00e1veis e modelos de p\u00e1gina."
+                "WonderBlocks provides a library of customizable block patterns and page templates."
             ],
             "Hosting": [
-                "Hospedagem"
+                "Hosting"
             ],
             "Control Panel": [
-                "Painel de controle"
+                "Control Panel"
             ],
             "Renewal Center": [
-                "Centro de Renova\u00e7\u00e3o"
+                "Renewal Center"
             ],
             "Products": [
-                "produtos"
+                "Products"
             ],
             "Payment Methods": [
-                "M\u00e9todos de pagamento"
+                "Payment Methods"
             ],
             "Billing": [
-                "Faturamento"
+                "Billing"
             ],
             "Mail": [
-                "Correio"
+                "Mail"
             ],
             "Mail & Office": [
-                "Correio e Escrit\u00f3rio"
+                "Mail & Office"
             ],
             "Security": [
-                "Seguran\u00e7a"
+                "Security"
             ],
             "Profile": [
-                "Perfil"
+                "Profile"
             ],
             "Validation Token": [
-                "Token de valida\u00e7\u00e3o"
+                "Validation Token"
             ],
             "Solution": [
-                "Solu\u00e7\u00f5es"
+                "Solution"
             ],
             "Explore the plugins and tools available with your solution.": [
-                "Explore os plugins e ferramentas dispon\u00edveis com sua solu\u00e7\u00e3o."
+                "Explore the plugins and tools available with your solution."
             ],
             "Oops, there was an error loading your plugins and tools, please try again later.": [
-                "Oops, ocorreu um erro ao carregar seus plugins e ferramentas, por favor, tente novamente mais tarde."
+                "Oops, there was an error loading your plugins and tools, please try again later."
             ],
             "Sorry, no current plugins and tools. Please, try again later.": [
-                "Desculpe, n\u00e3o h\u00e1 plugins nem ferramentas atuais. Por favor, tente novamente mais tarde."
+                "Sorry, no current plugins and tools. Please, try again later."
             ],
             "Explore our featured collection of tools and services.": [
-                ""
+                "Explore our featured collection of tools and services."
             ],
             "Oops, there was an error loading the marketplace, please try again later.": [
-                ""
+                "Oops, there was an error loading the marketplace, please try again later."
             ],
             "Sorry, no marketplace items. Please, try again later.": [
-                ""
+                "Sorry, no marketplace items. Please, try again later."
             ],
             "Load More": [
-                ""
+                "Load More"
             ],
             "Oops! Something Went Wrong": [
-                ""
+                "Oops! Something Went Wrong"
             ],
             "An error occurred while loading the content. Please try again later.": [
-                ""
+                "An error occurred while loading the content. Please try again later."
             ]
         }
     }

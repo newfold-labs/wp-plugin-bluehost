@@ -54,9 +54,6 @@ class YoastAI {
 		if ( 'ai.yoa.st' !== $parsed_url['host'] ) {
 			return $parsed_args;
 		}
-		if ( is_array( $parsed_args['headers'] ) ) {
-			$parsed_args['headers']['X-Yst-Cohort'] = 'Bluehost';
-		}
 		return $parsed_args;
 	}
 }

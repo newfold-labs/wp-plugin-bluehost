@@ -1,6 +1,6 @@
 /**
  * For patch releases, use `npm run set-version-bump` script.
- * For minor or major releases, use `node run ./scripts/set-version-bump.js minor`.
+ * For minor or major releases, use `node run ./.github/scripts/set-version-bump.js minor`.
  * - Then run the remaining steps from the npm script:
  * - `npm i && rm -rf ./build && npm run build && composer run i18n`
  */
@@ -8,10 +8,10 @@
 const fs = require( 'fs' );
 const path = require( 'path' );
 const semver = require( 'semver' );
-const packagefile = path.resolve( __dirname, '../package.json' );
+const packagefile = path.resolve( __dirname, '../../package.json' );
 const pluginfile = path.resolve(
 	__dirname,
-	'../bluehost-wordpress-plugin.php'
+	'../../bluehost-wordpress-plugin.php'
 );
 
 if ( fs.existsSync( packagefile ) && fs.existsSync( pluginfile ) ) {

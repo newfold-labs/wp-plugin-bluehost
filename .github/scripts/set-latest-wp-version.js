@@ -4,12 +4,12 @@
  */
 const fs = require( 'fs' );
 const path = require( 'path' );
-const wpEnvFile = path.resolve( __dirname, '../.wp-env.json' );
+const wpEnvFile = path.resolve( __dirname, '../../.wp-env.json' );
 const pluginFile = path.resolve(
 	__dirname,
-	'../bluehost-wordpress-plugin.php'
+	'../../bluehost-wordpress-plugin.php'
 );
-const wpEnv = require( '../.wp-env.json' );
+const wpEnv = require( '../../.wp-env.json' );
 async function fetchData( url ) {
 	try {
 		const fetch = ( ...args ) =>

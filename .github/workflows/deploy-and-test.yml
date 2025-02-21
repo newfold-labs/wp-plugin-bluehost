@@ -1,0 +1,104 @@
+name: Deploy Plugin to Server
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+env:
+  PLUGIN_NAME: bluehost-wordpress-plugin
+  CYPRESS_TEST_PATH: tests/cypress/integration/help.cy.js
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        environment: [bluehost-shared]
+      fail-fast: false
+
+    environment: ${{ matrix.environment }}
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+          registry-url: "https://npm.pkg.github.com"
+          scope: "@newfold-labs"
+
+      - name: Authenticate with GitHub Packages
+        run: |
+          echo "@newfold-labs:registry=https://npm.pkg.github.com" >> .npmrc
+          echo "//npm.pkg.github.com/:_authToken=${{ secrets.NEWFOLD_ACCESS_TOKEN }}" >> .npmrc
+
+      - name: Install PHP and Composer
+        run: |
+          sudo apt update
+          sudo apt install -y php-cli unzip curl
+          curl -sS https://getcomposer.org/installer | php
+          sudo mv composer.phar /usr/local/bin/composer
+
+      - name: Install Composer dependencies
+        run: composer install --no-dev --optimize-autoloader
+
+      - name: Install Node dependencies and build project
+        run: |
+          npm install
+          npm run build
+          npm run create:dev
+
+      - name: Upload build artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: plugin-build-${{ matrix.environment }}
+          path: ./${{ env.PLUGIN_NAME }}.zip
+
+      - name: Setup SSH Key
+        run: |
+          echo "${{ secrets.SERVER_SSH_PRIVATE_KEY }}" > github-actions
+          chmod 600 github-actions
+
+      - name: Copy .zip file to server via SCP
+        run: |
+          scp -i github-actions -o StrictHostKeyChecking=no ./${{ env.PLUGIN_NAME }}.zip ${{ vars.SERVER_USERNAME }}@${{ vars.SERVER_IP }}:${{ vars.SERVER_PATH }}/wp-content/uploads
+
+      - name: Extract Plugin and Activate
+        run: |
+          ssh -i github-actions -o StrictHostKeyChecking=no ${{ vars.SERVER_USERNAME }}@${{ vars.SERVER_IP }} << 'EOF'
+            cd ${{ vars.SERVER_PATH }}/wp-content
+            wp plugin install uploads/${{ env.PLUGIN_NAME }}.zip --force --path=./../
+            rm uploads/${{ env.PLUGIN_NAME }}.zip
+            wp plugin activate ${{ env.PLUGIN_NAME }} --path=./../
+          EOF
+
+      - name: Cleanup SSH Key
+        run: rm -f github-actions
+
+      - name: Wait for Server to be Ready
+        run: |
+          for i in {1..30}; do
+            STATUS_CODE=$(curl -s -o /dev/null -w "%{http_code}" "${{ vars.SITE_URL }}/wp-login.php")
+            if [[ "$STATUS_CODE" == "200" ]]; then
+              echo "Server is up with status code: $STATUS_CODE"
+              exit 0
+            fi
+            echo "Waiting for server to be ready... (Last status: $STATUS_CODE)"
+            sleep 10
+          done
+          echo "Server not ready after 5 minutes" && exit 1
+
+      - name: Run Specific Cypress Tests
+        uses: cypress-io/github-action@v6
+        with:
+          install: true
+          start: npm start
+          wait-on: ${{ vars.SITE_URL }}
+          config: baseUrl=${{ vars.SITE_URL }}
+          command: npx cypress run --spec ${{ env.CYPRESS_TEST_PATH }}
+        env:
+          BASE_URL: ${{ vars.SITE_URL }}
+          WP_ADMIN_USERNAME: ${{ secrets.WP_ADMIN_USERNAME }}
+          WP_ADMIN_PASSWORD: ${{ secrets.WP_ADMIN_PASSWORD }}

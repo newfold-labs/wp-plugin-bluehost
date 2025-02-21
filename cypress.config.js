@@ -5,13 +5,13 @@ const wpVersion = /[^/]*$/.exec( core )[ 0 ];
 module.exports = defineConfig( {
 	projectId: '71eo94',
 	env: {
-		wpUsername: 'admin',
-		wpPassword: 'password',
-		wpVersion,
+		baseUrl: process.env.BASE_URL || 'http://localhost:8882',
+		wpUsername: process.env.WP_ADMIN_USERNAME || 'admin',
+		wpPassword: process.env.WP_ADMIN_PASSWORD || 'password',
 		phpVersion,
 		pluginId: 'bluehost',
 		appId: 'wppbh',
-		pluginSlug: 'wp-plugin-bluehost',
+		pluginSlug: 'wp-plugin-bluehost'
 	},
 	downloadsFolder: 'tests/cypress/downloads',
 	fixturesFolder: 'tests/cypress/fixtures',

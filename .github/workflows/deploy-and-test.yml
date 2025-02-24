@@ -25,7 +25,7 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: 18
+          node-version: 20
           registry-url: "https://npm.pkg.github.com"
           scope: "@newfold-labs"
 
@@ -77,7 +77,7 @@ jobs:
       - name: Cleanup SSH Key
         run: rm -f github-actions
 
-      - name: Wait for Server to be Ready
+      - name: Check if the remote Server is up
         run: |
           for i in {1..30}; do
             STATUS_CODE=$(curl -s -o /dev/null -w "%{http_code}" "${{ vars.SITE_URL }}/wp-login.php")

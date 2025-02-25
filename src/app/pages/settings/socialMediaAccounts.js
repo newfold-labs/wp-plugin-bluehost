@@ -85,7 +85,7 @@ const SocialMediaAccounts = () => {
 						onClick={ handleCloseModel }
 						className=" nfd-justify-center nfd-items-center nfd-flex nfd-overflow-x-hidden nfd-overflow-y-auto nfd-fixed nfd-inset-0 nfd-z-50 nfd-outline-none nfd-focus:outline-none"
 					>
-						<div className=" nfd-relative nfd-w-auto nfd-my-6 nfd-mx-auto nfd-max-w-3xl">
+						<div className="nfd-relative nfd-w-auto nfd-my-6 nfd-mx-auto nfd-max-w-3xl">
 							<div className="nfd-border-0 nfd-rounded-lg nfd-shadow-lg nfd-relative nfd-flex nfd-flex-col nfd-w-full nfd-bg-white nfd-outline-none nfd-focus:outline-none">
 								<form
 									onSubmit={ handleSubmit }

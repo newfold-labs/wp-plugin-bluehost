@@ -1,570 +1,1056 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: wp-plugin-bluehost\n"
-"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/wp-plugin-bluehost\n"
-"Last-Translator: \n"
-"Language-Team: English (Australia)\n"
-"MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2024-10-21 07:10-0000\n"
-"PO-Revision-Date: 2024-10-21 07:10-0000\n"
-"Language: en_AU\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Crowdin\n"
-"X-Domain: wp-plugin-bluehost\n"
-"X-Crowdin-Project: bluehost-plugin\n"
-"X-Crowdin-Project-ID: 762335\n"
-"X-Crowdin-File: wp-plugin-bluehost.pot\n"
+"Project-Id-Version: Bluehost Plugin\\n"
+"POT-Creation-Date: 2024-10-21 07:10-0000\\n"
+"PO-Revision-Date: 2024-10-21 07:10-0000\\n"
+"Last-Translator: \\n"
+"Language-Team: none\\n"
+"MIME-Version: 1.0\\n"
+"Content-Type: text/plain; charset=UTF-8\\n"
+"Content-Transfer-Encoding: 8bit\\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\\n"
+"X-Generator: Crowdin\\n"
 
-#. Plugin Name of the plugin
-#: bluehost-wordpress-plugin.php
 msgid "The Bluehost Plugin"
 msgstr "The Bluehost Plugin"
 
-#. Plugin URI of the plugin
-#. Author URI of the plugin
-#: bluehost-wordpress-plugin.php
 msgid "https://bluehost.com"
 msgstr "https://bluehost.com"
 
-#. Description of the plugin
-#: bluehost-wordpress-plugin.php
 msgid "WordPress plugin that integrates a WordPress site with the Bluehost control panel, including performance, security, and update features."
 msgstr "WordPress plugin that integrates a WordPress site with the Bluehost control panel, including performance, security, and update features."
 
-#. Author of the plugin
-#: bluehost-wordpress-plugin.php
-#: inc/Admin.php:143
-#: inc/Admin.php:144
 msgid "Bluehost"
 msgstr "Bluehost"
 
-#: bootstrap.php:24
 msgid "Please install the Bluehost Plugin dependencies."
 msgstr "Please install the Bluehost Plugin dependencies."
 
-#: bootstrap.php:97
 msgid "Coming Soon!"
 msgstr "Coming Soon!"
 
-#: bootstrap.php:98
 msgid "A New WordPress Site"
 msgstr "A New WordPress Site"
 
-#: bootstrap.php:101
 msgid "How to Build a Website: A Practical Guide to WordPress on Bluehost"
 msgstr "How to Build a Website: A Practical Guide to WordPress on Bluehost"
 
-#: bootstrap.php:104
 msgid "How to Migrate a Website to Bluehost?"
 msgstr "How to Migrate a Website to Bluehost?"
 
-#: bootstrap.php:107
 msgid "Why choose Bluehost for your WordPress site?"
 msgstr "Why choose Bluehost for your WordPress site?"
 
-#. translators: %1$s is replaced with opening link tag taking you to bluehost.com/wordpress, %2$s is replaced with closing link tag, %3$s is replaced with opening link tag taking you to login page, %4$s is replaced with closing link tag, %5$s is replaced with opening link tag taking you to my.bluehost.com, %6$s is replaced with closing link tag
-#: bootstrap.php:111
 msgid "A %1$sBluehost%2$s powered website. Is this your website? Log in to %3$sWordPress%4$s or %5$sBluehost%6$s."
 msgstr "A %1$sBluehost%2$s powered website. Is this your website? Log in to %3$sWordPress%4$s or %5$sBluehost%6$s."
 
-#. translators: %s: Blog name
-#: bootstrap.php:121
 msgid "%s &mdash; Coming Soon"
 msgstr "%s &mdash; Coming Soon"
 
-#: bootstrap.php:124
 msgid "Coming Soon Active"
 msgstr "Coming Soon Active"
 
-#. translators: %1$s is replaced with the opening link tag to preview the page, and %2$s is replaced with the closing link tag, %3$s is the opening link tag, %4$s is the closing link tag.
-#: bootstrap.php:127
 msgid "Your site is currently displaying a %1$scoming soon page%2$s. Once you are ready, %3$slaunch your site%4$s."
 msgstr "Your site is currently displaying a %1$scoming soon page%2$s. Once you are ready, %3$slaunch your site%4$s."
 
-#: bootstrap.php:128
 msgid "Preview the coming soon landing page"
 msgstr "Preview the coming soon landing page"
 
-#: inc/Admin.php:72
-#: inc/Admin.php:289
-#: build/4.1.0/index.js:1
 msgid "Home"
 msgstr "Home"
 
-#: inc/Admin.php:75
-#: build/4.1.0/index.js:1
 msgid "Pages & Posts"
 msgstr "Pages & Posts"
 
-#: inc/Admin.php:78
-#: build/4.1.0/index.js:1
 msgid "Store"
 msgstr "Store"
 
-#: inc/Admin.php:81
-#: build/4.1.0/index.js:1
 msgid "Marketplace"
 msgstr "Marketplace"
 
-#: inc/Admin.php:86
-#: build/4.1.0/index.js:1
 msgid "My Plugins & Tools"
 msgstr "My Plugins & Tools"
 
-#. translators: %1$s is the opening <a> tag, %2$s is the closing </a> tag.
-#: inc/Admin.php:92
-#: build/4.1.0/index.js:1
-#: build/4.1.0/index.js:6
 msgid "Performance"
 msgstr "Performance"
 
-#: inc/Admin.php:96
-#: inc/Admin.php:290
-#: build/4.1.0/index.js:1
 msgid "Settings"
 msgstr "Settings"
 
-#: inc/Admin.php:101
-#: build/4.1.0/index.js:1
-#: build/4.1.0/index.js:14
 msgid "Staging"
 msgstr "Staging"
 
-#: inc/Admin.php:105
 msgid "Help"
 msgstr "Help"
 
-#: inc/Admin.php:186
 msgid "Please update to a newer WordPress version."
 msgstr "Please update to a newer WordPress version."
 
-#: inc/Admin.php:187
 msgid "There are new WordPress components which this plugin requires in order to render the interface."
 msgstr "There are new WordPress components which this plugin requires in order to render the interface."
 
-#: inc/Admin.php:188
 msgid "Please update now"
 msgstr "Please update now"
 
-#: inc/Admin.php:314
 msgid "Thank you for creating with <a href=\"https://wordpress.org/\">WordPress</a> and <a href=\"https://bluehost.com/about\">Bluehost</a>."
 msgstr "Thank you for creating with <a href=\"https://wordpress.org/\">WordPress</a> and <a href=\"https://bluehost.com/about\">Bluehost</a>."
 
-#. translators: 1: plugin name 2: incompatible plugin name
-#: inc/plugin-nfd-compat-check.php:161
 msgid "\"%1$s\" has self-deactivated. It is incompatible with \"%2$s\"."
 msgstr "\"%1$s\" has self-deactivated. It is incompatible with \"%2$s\"."
 
-#. translators: 1: legacy plugin name 2: plugin name
-#: inc/plugin-nfd-compat-check.php:188
 msgid "\"%1$s\" has been deactivated. It is incompatible with \"%2$s\"."
 msgstr "\"%1$s\" has been deactivated. It is incompatible with \"%2$s\"."
 
-#. translators: 1: plugin name 2: minimum required PHP version, current PHP version
-#: inc/plugin-php-compat-check.php:123
 msgid "%1$s requires PHP version %2$s or later. You are currently running version %3$s."
 msgstr "%1$s requires PHP version %2$s or later. You are currently running version %3$s."
 
-#: inc/plugin-php-compat-check.php:124
 msgid " Please contact your web host about upgrading PHP."
 msgstr " Please contact your web host about upgrading PHP."
 
-#. translators: 1: plugin name 2: required PHP extension
-#: inc/plugin-php-compat-check.php:139
 msgid "%1$s requires the %2$s PHP extension."
 msgstr "%1$s requires the %2$s PHP extension."
 
-#. translators: 1: plugin name 2: minimum required WordPress version 3: current WordPress version
-#: inc/plugin-php-compat-check.php:155
 msgid "%1$s requires WordPress version %2$s or later. You are currently running version %3$s."
 msgstr "%1$s requires WordPress version %2$s or later. You are currently running version %3$s."
 
-#. translators: plugin name
-#: inc/plugin-php-compat-check.php:193
 msgid "The \"%s\" plugin has been deactivated."
 msgstr "The \"%s\" plugin has been deactivated."
 
-#: inc/RestApi/CachingController.php:63
-#: inc/RestApi/SettingsController.php:205
 msgid "Sorry, you are not allowed to access this endpoint."
 msgstr "Sorry, you are not allowed to access this endpoint."
 
-#. translators: %s Settings > General page URL.
-#: inc/updates.php:115
-#: inc/updates.php:143
-#: inc/updates.php:170
 msgid "Auto-updates enabled on the <a href=\"%s\">Bluehost > Settings</a> page."
 msgstr "Auto-updates enabled on the <a href=\"%s\">Bluehost > Settings</a> page."
 
-#: inc/updates.php:166
 msgid "Auto-updates enabled"
 msgstr "Auto-updates enabled"
 
-#: build/4.1.0/index.js:1
 msgid "Bluehost WordPress Plugin"
 msgstr "Bluehost WordPress Plugin"
 
-#: build/4.1.0/index.js:1
 msgid "Oh No, An Error!"
 msgstr "Oh No, An Error!"
 
-#: build/4.1.0/index.js:1
 msgid "You found an error, please refresh the page and try again!"
 msgstr "You found an error, please refresh the page and try again!"
 
-#: build/4.1.0/index.js:1
 msgid "If the error persists, please contact support."
 msgstr "If the error persists, please contact support."
 
-#: build/4.1.0/index.js:1
 msgid "Error code:"
 msgstr "Error code:"
 
-#: build/4.1.0/index.js:1
 msgid "Bluehost Account"
 msgstr "Bluehost Account"
 
-#: build/4.1.0/index.js:1
 msgid "There's nothing here!"
 msgstr "There's nothing here!"
 
-#: build/4.1.0/index.js:1
 msgid "Products & Services"
 msgstr "Products & Services"
 
-#: build/4.1.0/index.js:1
 msgid "Sales & Promotions"
 msgstr "Sales & Promotions"
 
-#: build/4.1.0/index.js:1
 msgid "Sales Channel"
 msgstr "Sales Channel"
 
-#: build/4.1.0/index.js:1
 msgid "Payments"
 msgstr "Payments"
 
-#: build/4.1.0/index.js:1
 msgid "Store Details"
 msgstr "Store Details"
 
-#: build/4.1.0/index.js:1
 msgid "Help with WordPress"
 msgstr "Help with WordPress"
 
-#: build/4.1.0/index.js:1
 msgid "Admin"
 msgstr "Admin"
 
-#: build/4.1.0/index.js:1
 msgid "The staging feature provides a way to copy a site to test new updates, features or content."
 msgstr "The staging feature provides a way to copy a site to test new updates, features or content."
 
-#: build/4.1.0/index.js:1
-#: build/4.1.0/index.js:6
-#: build/4.1.0/index.js:14
 msgid "Sorry, that is not allowed."
 msgstr "Sorry, that is not allowed."
 
-#: build/4.1.0/index.js:1
-#: build/4.1.0/index.js:6
-#: build/4.1.0/index.js:14
 msgid "This feature cannot currently be modified."
 msgstr "This feature cannot currently be modified."
 
-#: build/4.1.0/index.js:1
-#: build/4.1.0/index.js:6
-#: build/4.1.0/index.js:14
 msgid "Oops! Something went wrong. Please try again."
 msgstr "Oops! Something went wrong. Please try again."
 
-#: build/4.1.0/index.js:1
 msgid "Phone"
 msgstr "Phone"
 
-#: build/4.1.0/index.js:1
 msgid "Call Us"
 msgstr "Call Us"
 
-#: build/4.1.0/index.js:1
 msgid "Chat"
 msgstr "Chat"
 
-#: build/4.1.0/index.js:1
 msgid "Chat with one of our friendly Customer Care Specialists, as we are waiting to help. Open 24 hours - 7 days."
 msgstr "Chat with one of our friendly Customer Care Specialists, as we are waiting to help. Open 24 hours - 7 days."
 
-#: build/4.1.0/index.js:1
 msgid "Live Chat"
 msgstr "Live Chat"
 
-#: build/4.1.0/index.js:1
 msgid "Tweet"
 msgstr "Tweet"
 
-#: build/4.1.0/index.js:1
 msgid "Find our team at @bluehost for updates on our products and support from our team."
 msgstr "Find our team at @bluehost for updates on our products and support from our team."
 
-#: build/4.1.0/index.js:1
 msgid "Tweet Us"
 msgstr "Tweet Us"
 
-#: build/4.1.0/index.js:1
 msgid "YouTube"
 msgstr "YouTube"
 
-#: build/4.1.0/index.js:1
 msgid "Find tutorials, answers, interviews and guides on our YouTube channel."
 msgstr "Find tutorials, answers, interviews and guides on our YouTube channel."
 
-#: build/4.1.0/index.js:1
 msgid "Watch Now"
 msgstr "Watch Now"
 
-#: build/4.1.0/index.js:1
 msgid "Knowledge Base"
 msgstr "Knowledge Base"
 
-#: build/4.1.0/index.js:1
 msgid "Articles, guides, how-tos, instructions, and answers to our client's most frequently asked questions."
 msgstr "Articles, guides, how-tos, instructions, and answers to our client's most frequently asked questions."
 
-#: build/4.1.0/index.js:1
 msgid "Visit Knowledge Base"
 msgstr "Visit Knowledge Base"
 
-#: build/4.1.0/index.js:1
 msgid "Resources"
 msgstr "Resources"
 
-#: build/4.1.0/index.js:1
 msgid "Boost your online knowledge and get ahead of the competition."
 msgstr "Boost your online knowledge and get ahead of the competition."
 
-#: build/4.1.0/index.js:1
 msgid "Explore Resources"
 msgstr "Explore Resources"
 
-#: build/4.1.0/index.js:1
 msgid "Events and Webinars"
 msgstr "Events and Webinars"
 
-#: build/4.1.0/index.js:1
 msgid "Team Bluehost organizes multiple webinars and events throughout the year. We are also sponsors and speak at most WordCamps across the world. Join us at our next event!"
 msgstr "Team Bluehost organizes multiple webinars and events throughout the year. We are also sponsors and speak at most WordCamps across the world. Join us at our next event!"
 
-#: build/4.1.0/index.js:1
 msgid "More Info"
 msgstr "More Info"
 
-#: build/4.1.0/index.js:1
 msgid "Bluehost Website"
 msgstr "Bluehost Website"
 
-#: build/4.1.0/index.js:1
 msgid "Not finding what you need? Visit our website for more information about our products and services."
 msgstr "Not finding what you need? Visit our website for more information about our products and services."
 
-#: build/4.1.0/index.js:1
 msgid "Go to Bluehost"
 msgstr "Go to Bluehost"
 
-#: build/4.1.0/index.js:1
 msgid "Site Pages"
 msgstr "Site Pages"
 
-#: build/4.1.0/index.js:1
 msgid "Edit your homepage and other existing pages or add new pages to your site."
 msgstr "Edit your homepage and other existing pages or add new pages to your site."
 
-#: build/4.1.0/index.js:1
 msgid "View all"
 msgstr "View all"
 
-#: build/4.1.0/index.js:1
 msgid "Add New"
 msgstr "Add New"
 
-#: build/4.1.0/index.js:6
 msgid "This is where you can manage cache settings for your website."
 msgstr "This is where you can manage cache settings for your website."
 
-#: build/4.1.0/index.js:6
 msgid "The Help Center provides guided, step-by-step assistance as you build your site."
 msgstr "The Help Center provides guided, step-by-step assistance as you build your site."
 
-#: build/4.1.0/index.js:6
 msgid "Site Status"
 msgstr "Site Status"
 
-#: inc/widgets/views/site-preview.php:145
-#: build/4.1.0/index.js:6
 msgid "Not Live"
 msgstr "Not Live"
 
-#: inc/widgets/views/site-preview.php:146
-#: build/4.1.0/index.js:6
 msgid "Live"
 msgstr "Live"
 
-#: build/4.1.0/index.js:6
 msgid "Your Bluehost Coming Soon page lets you hide your site from visitors while you make the magic happen."
 msgstr "Your Bluehost Coming Soon page lets you hide your site from visitors while you make the magic happen."
 
-#: build/4.1.0/index.js:6
 msgid "Your website is currently displaying a \"Coming Soon\" page."
 msgstr "Your website is currently displaying a \"Coming Soon\" page."
 
-#. translators: %s: number of weeks. `The trash will automatically empty every ${numTrashWeeks} weeks.`
-#: build/4.1.0/index.js:8
 msgid "The trash will automatically empty every %s week."
 msgid_plural "The trash will automatically empty every %s weeks."
 msgstr[0] "The trash will automatically empty every %s week."
 msgstr[1] "The trash will automatically empty every %s weeks."
 
-#. translators: %s: number of comments. `Posts will display ${commentsPerPage} comments at a time.`
-#: build/4.1.0/index.js:14
 msgid "WonderBlocks provides a library of customizable block patterns and page templates."
 msgstr "WonderBlocks provides a library of customizable block patterns and page templates."
 
-#: inc/widgets/views/account.php:132
-#: build/4.1.0/index.js:1
 msgid "Hosting"
 msgstr "Hosting"
 
-#: build/4.1.0/index.js:1
 msgid "Control Panel"
 msgstr "Control Panel"
 
-#: build/4.1.0/index.js:1
 msgid "Renewal Center"
 msgstr "Renewal Center"
 
-#: build/4.1.0/index.js:1
 msgid "Products"
 msgstr "Products"
 
-#: inc/widgets/views/account.php:178
-#: build/4.1.0/index.js:1
 msgid "Payment Methods"
 msgstr "Payment Methods"
 
-#: build/4.1.0/index.js:1
 msgid "Billing"
 msgstr "Billing"
 
-#: inc/widgets/views/account.php:109
-#: build/4.1.0/index.js:1
 msgid "Mail"
 msgstr "Mail"
 
-#: build/4.1.0/index.js:1
 msgid "Mail & Office"
 msgstr "Mail & Office"
 
-#: inc/widgets/views/account.php:155
-#: build/4.1.0/index.js:1
 msgid "Security"
 msgstr "Security"
 
-#: inc/widgets/views/account.php:86
-#: build/4.1.0/index.js:1
 msgid "Profile"
 msgstr "Profile"
 
-#: build/4.1.0/index.js:1
 msgid "Validation Token"
 msgstr "Validation Token"
 
-#: build/4.1.0/index.js:14
-msgid "Solution"
-msgstr "Solution"
-
-#: build/4.1.0/index.js:14
-msgid "Explore the plugins and tools available with your solution."
-msgstr "Explore the plugins and tools available with your solution."
-
-#: build/4.1.0/index.js:14
-msgid "Oops, there was an error loading your plugins and tools, please try again later."
-msgstr "Oops, there was an error loading your plugins and tools, please try again later."
-
-#: build/4.1.0/index.js:14
-msgid "Sorry, no current plugins and tools. Please, try again later."
-msgstr "Sorry, no current plugins and tools. Please, try again later."
-
-#: inc/widgets/Help.php:38
-msgid "Need Some Help?"
-msgstr "Need Some Help?"
-
-#: inc/widgets/SitePreview.php:36
-#: inc/widgets/views/site-preview.php:110
-#: inc/widgets/views/site-preview.php:115
-msgid "Site Preview"
-msgstr "Site Preview"
-
-#: inc/widgets/views/account.php:159
-msgid "Quick Access"
-msgstr "Quick Access"
-
-#: inc/widgets/views/account.php:198
-msgid "Renewals Center"
-msgstr "Renewals Center"
-
-#: inc/widgets/views/help.php:71
-msgid "From DIY to full-service help."
-msgstr "From DIY to full-service help."
-
-#: inc/widgets/views/help.php:72
-msgid "Call or chat 24/7 for support or let our experts build your site for you."
-msgstr "Call or chat 24/7 for support or let our experts build your site for you."
-
-#: inc/widgets/views/help.php:90
-msgid "Get Help"
-msgstr "Get Help"
-
-#: inc/widgets/views/site-preview.php:175
-msgid "Preview Site"
-msgstr "Preview Site"
-
-#: inc/widgets/views/site-preview.php:176
-msgid "View Site"
-msgstr "View Site"
-
-#: inc/widgets/views/site-preview.php:186
-msgid "Edit Site"
-msgstr "Edit Site"
-
-#: inc/widgets/views/site-preview.php:196
-msgid "Launch Site"
-msgstr "Launch Site"
-
-#: inc/widgets/views/site-preview.php:206
-msgid "Enable Coming Soon"
-msgstr "Enable Coming Soon"
-
-#: build/4.1.0/index.js:1
 msgid "Explore our featured collection of tools and services."
 msgstr "Explore our featured collection of tools and services."
 
-#: build/4.1.0/index.js:1
 msgid "Oops, there was an error loading the marketplace, please try again later."
 msgstr "Oops, there was an error loading the marketplace, please try again later."
 
-#: build/4.1.0/index.js:1
 msgid "Sorry, no marketplace items. Please, try again later."
 msgstr "Sorry, no marketplace items. Please, try again later."
 
-#: build/4.1.0/index.js:1
 msgid "Load More"
 msgstr "Load More"
 
-#: build/4.1.0/index.js:1
 msgid "Oops! Something Went Wrong"
 msgstr "Oops! Something Went Wrong"
 
-#: build/4.1.0/index.js:1
 msgid "An error occurred while loading the content. Please try again later."
 msgstr "An error occurred while loading the content. Please try again later."
+
+msgid "Solution"
+msgstr "Solution"
+
+msgid "Explore the plugins and tools available with your solution."
+msgstr "Explore the plugins and tools available with your solution."
+
+msgid "Oops, there was an error loading your plugins and tools, please try again later."
+msgstr "Oops, there was an error loading your plugins and tools, please try again later."
+
+msgid "Sorry, no current plugins and tools. Please, try again later."
+msgstr "Sorry, no current plugins and tools. Please, try again later."
+
+msgid "Need Some Help?"
+msgstr "Need Some Help?"
+
+msgid "Site Preview"
+msgstr "Site Preview"
+
+msgid "Quick Access"
+msgstr "Quick Access"
+
+msgid "Renewals Center"
+msgstr "Renewals Center"
+
+msgid "From DIY to full-service help."
+msgstr "From DIY to full-service help."
+
+msgid "Call or chat 24/7 for support or let our experts build your site for you."
+msgstr "Call or chat 24/7 for support or let our experts build your site for you."
+
+msgid "Get Help"
+msgstr "Get Help"
+
+msgid "Preview Site"
+msgstr "Preview Site"
+
+msgid "View Site"
+msgstr "View Site"
+
+msgid "Edit Site"
+msgstr "Edit Site"
+
+msgid "Launch Site"
+msgstr "Launch Site"
+
+msgid "Enable Coming Soon"
+msgstr "Enable Coming Soon"
+
+msgid "Secret page to manage admin features and settings."
+msgstr "Secret page to manage admin features and settings."
+
+msgid "We are available 24/7 to help answer questions and solve your problems."
+msgstr "We are available 24/7 to help answer questions and solve your problems."
+
+msgid "Need some help?"
+msgstr "Need some help?"
+
+msgid "Showcase physical and digital goods, product variations, and custom configurations."
+msgstr "Showcase physical and digital goods, product variations, and custom configurations."
+
+msgid "Blog Posts"
+msgstr "Blog Posts"
+
+msgid "Add a new blog post or edit your existing posts."
+msgstr "Add a new blog post or edit your existing posts."
+
+msgid "Bookings & Appointments"
+msgstr "Bookings & Appointments"
+
+msgid "Add your list of services, setup a booking calendar, and edit your bookings form."
+msgstr "Add your list of services, setup a booking calendar, and edit your bookings form."
+
+msgid "Your site is not live."
+msgstr "Your site is not live."
+
+msgid "Your site is live."
+msgstr "Your site is live."
+
+msgid "Visitors to your site will see your \"Coming Soon\" page and not your actual site. Visit %1$s\"Settings\"%2$s to set your site live."
+msgstr "Visitors to your site will see your \"Coming Soon\" page and not your actual site. Visit %1$s\"Settings\"%2$s to set your site live."
+
+msgid "Visitors to your site will see all your publicly published pages."
+msgstr "Visitors to your site will see all your publicly published pages."
+
+msgid "No cache enabled."
+msgstr "No cache enabled."
+
+msgid "Every page load is fresh."
+msgstr "Every page load is fresh."
+
+msgid "Disabled"
+msgstr "Disabled"
+
+msgid "Not recommended."
+msgstr "Not recommended."
+
+msgid "Cache static assets like images and the appearance of your site for 1 hour."
+msgstr "Cache static assets like images and the appearance of your site for 1 hour."
+
+msgid "Assets Only"
+msgstr "Assets Only"
+
+msgid "Cache enabled for assets only."
+msgstr "Cache enabled for assets only."
+
+msgid "Recommended for ecommerce and sites that update frequently or display info in real-time."
+msgstr "Recommended for ecommerce and sites that update frequently or display info in real-time."
+
+msgid "Cache static assets for 24 hours and web pages for 2 hours."
+msgstr "Cache static assets for 24 hours and web pages for 2 hours."
+
+msgid "Assets & Web Pages"
+msgstr "Assets & Web Pages"
+
+msgid "Cache enabled for assets and pages."
+msgstr "Cache enabled for assets and pages."
+
+msgid "Recommended for blogs, educational sites, and sites that update at least weekly."
+msgstr "Recommended for blogs, educational sites, and sites that update at least weekly."
+
+msgid "Cache static assets for 1 week and web pages for 8 hours."
+msgstr "Cache static assets for 1 week and web pages for 8 hours."
+
+msgid "Assets & Web Pages - Extended"
+msgstr "Assets & Web Pages - Extended"
+
+msgid "Cache enabled for assets and pages (extended)."
+msgstr "Cache enabled for assets and pages (extended)."
+
+msgid "Recommended for sites that update a few times a month or less like porfolios or brochure sites."
+msgstr "Recommended for sites that update a few times a month or less like porfolios or brochure sites."
+
+msgid "Boost speed and performance by storing a copy of your website content, files, and images online so the pages of your website load faster for your visitors."
+msgstr "Boost speed and performance by storing a copy of your website content, files, and images online so the pages of your website load faster for your visitors."
+
+msgid "Cache setting saved"
+msgstr "Cache setting saved"
+
+msgid "Cache Level"
+msgstr "Cache Level"
+
+msgid "Clear All Cache Now"
+msgstr "Clear All Cache Now"
+
+msgid "We automatically clear your cache as you work (creating content, changing settings, installing plugins and more). But you can manually clear it here to be confident it's fresh."
+msgstr "We automatically clear your cache as you work (creating content, changing settings, installing plugins and more). But you can manually clear it here to be confident it's fresh."
+
+msgid "Cache cleared"
+msgstr "Cache cleared"
+
+msgid "Clear Cache"
+msgstr "Clear Cache"
+
+msgid "Asks the browser to download and cache links on the page ahead of them being clicked on, so that when they are clicked they load almost instantly."
+msgstr "Asks the browser to download and cache links on the page ahead of them being clicked on, so that when they are clicked they load almost instantly."
+
+msgid "Link prefetching setting saved"
+msgstr "Link prefetching setting saved"
+
+msgid "Link Prefetch"
+msgstr "Link Prefetch"
+
+msgid "Enable link prefetching on desktop"
+msgstr "Enable link prefetching on desktop"
+
+msgid "Activate on desktop"
+msgstr "Activate on desktop"
+
+msgid "Behavior of the prefetch"
+msgstr "Behavior of the prefetch"
+
+msgid "Behavior"
+msgstr "Behavior"
+
+msgid "Prefetch on Mouse Down"
+msgstr "Prefetch on Mouse Down"
+
+msgid "Prefetch on Mouse Down: Starts loading the page as soon as you click down, for faster response when you release the click."
+msgstr "Prefetch on Mouse Down: Starts loading the page as soon as you click down, for faster response when you release the click."
+
+msgid "Prefetch on Mouse Hover (Recommended)"
+msgstr "Prefetch on Mouse Hover (Recommended)"
+
+msgid "Prefetch on Mouse Hover: Begins loading the page the moment your cursor hovers over a link"
+msgstr "Prefetch on Mouse Hover: Begins loading the page the moment your cursor hovers over a link"
+
+msgid "Enable link prefetching on mobile"
+msgstr "Enable link prefetching on mobile"
+
+msgid "Activate on mobile"
+msgstr "Activate on mobile"
+
+msgid "Prefetch on Touchstart (Recommended)"
+msgstr "Prefetch on Touchstart (Recommended)"
+
+msgid "Prefetch on Touchstart: Instantly starts loading the page as soon as you tap the screen, ensuring a quicker response when you lift your finger."
+msgstr "Prefetch on Touchstart: Instantly starts loading the page as soon as you tap the screen, ensuring a quicker response when you lift your finger."
+
+msgid "Prefetch Above the Fold"
+msgstr "Prefetch Above the Fold"
+
+msgid "Prefetch Above the Fold: Loads links in your current view instantly, ensuring they're ready when you need them."
+msgstr "Prefetch Above the Fold: Loads links in your current view instantly, ensuring they're ready when you need them."
+
+msgid "Exclude Keywords: A comma separated list of words or strings that will exclude a link from being prefetched. For example, excluding \"app\" will prevent https://example.com/apple from being prefetched."
+msgstr "Exclude Keywords: A comma separated list of words or strings that will exclude a link from being prefetched. For example, excluding \"app\" will prevent https://example.com/apple from being prefetched."
+
+msgid "Exclude keywords"
+msgstr "Exclude keywords"
+
+msgid "Advanced settings"
+msgstr "Advanced settings"
+
+msgid "Additional speed and scalability features powered by Jetpack Boost to make your site as fast as it can be."
+msgstr "Additional speed and scalability features powered by Jetpack Boost to make your site as fast as it can be."
+
+msgid "Optimize Critical CSS Loading (manual)"
+msgstr "Optimize Critical CSS Loading (manual)"
+
+msgid "Move important styling information to the start of the page, which helps pages display your content sooner, so your users don’t have to wait for the entire page to load."
+msgstr "Move important styling information to the start of the page, which helps pages display your content sooner, so your users don’t have to wait for the entire page to load."
+
+msgid "Optimize Critical CSS Loading (UPGRADED)"
+msgstr "Optimize Critical CSS Loading (UPGRADED)"
+
+msgid "Generate Critical CSS Automatically"
+msgstr "Generate Critical CSS Automatically"
+
+msgid "Move important styling information to the start of the page, which helps pages display your content sooner, so your users don’t have to wait for the entire page to load.%1$s %2$sBoost will automatically generate your Critical CSS%3$s whenever you make changes to the HTML or CSS structure of your site."
+msgstr "Move important styling information to the start of the page, which helps pages display your content sooner, so your users don’t have to wait for the entire page to load.%1$s %2$sBoost will automatically generate your Critical CSS%3$s whenever you make changes to the HTML or CSS structure of your site."
+
+msgid "Defer Non-Essential JavaScript"
+msgstr "Defer Non-Essential JavaScript"
+
+msgid "Run non-essential JavaScript after the page has loaded so that styles and images can load more quickly."
+msgstr "Run non-essential JavaScript after the page has loaded so that styles and images can load more quickly."
+
+msgid "Concatenate JS"
+msgstr "Concatenate JS"
+
+msgid "Scripts are grouped by their original placement, concatenated and minified to reduce site loading time and reduce the number of requests."
+msgstr "Scripts are grouped by their original placement, concatenated and minified to reduce site loading time and reduce the number of requests."
+
+msgid "Exclude JS Strings"
+msgstr "Exclude JS Strings"
+
+msgid "Concatenate CSS"
+msgstr "Concatenate CSS"
+
+msgid "Styles are grouped by their original placement, concatenated and minified to reduce site loading time and reduce the number of requests."
+msgstr "Styles are grouped by their original placement, concatenated and minified to reduce site loading time and reduce the number of requests."
+
+msgid "Exclude CSS Strings"
+msgstr "Exclude CSS Strings"
+
+msgid "Show more"
+msgstr "Show more"
+
+msgid "Show less"
+msgstr "Show less"
+
+msgid "Discover More"
+msgstr "Discover More"
+
+msgid "Install Jetpack Boost to unlock"
+msgstr "Install Jetpack Boost to unlock"
+
+msgid "Installing Jetpack Boost…"
+msgstr "Installing Jetpack Boost…"
+
+msgid "Jetpack Boost is now active"
+msgstr "Jetpack Boost is now active"
+
+msgid "Activation failed"
+msgstr "Activation failed"
+
+msgid "Discover more %1$shere%2$s"
+msgstr "Discover more %1$shere%2$s"
+
+msgid "Option saved correctly"
+msgstr "Option saved correctly"
+
+msgid "Error saving option"
+msgstr "Error saving option"
+
+msgid "Image Optimization"
+msgstr "Image Optimization"
+
+msgid "We automatically optimize your uploaded images to WebP format for faster performance and reduced file sizes. You can also choose to delete the original images to save storage space."
+msgstr "We automatically optimize your uploaded images to WebP format for faster performance and reduced file sizes. You can also choose to delete the original images to save storage space."
+
+msgid "Enable Image Optimization"
+msgstr "Enable Image Optimization"
+
+msgid "Enable or disable image optimization globally."
+msgstr "Enable or disable image optimization globally."
+
+msgid "Automatically Optimize Uploaded Images"
+msgstr "Automatically Optimize Uploaded Images"
+
+msgid "When enabled, all your new image uploads will be automatically optimized to WebP format, ensuring faster page loading and reduced file sizes."
+msgstr "When enabled, all your new image uploads will be automatically optimized to WebP format, ensuring faster page loading and reduced file sizes."
+
+msgid "Auto Delete Original Image"
+msgstr "Auto Delete Original Image"
+
+msgid "When enabled, the original uploaded image is deleted and replaced with the optimized version, helping to save storage space. If disabled, the optimized image is saved as a separate file, retaining the original."
+msgstr "When enabled, the original uploaded image is deleted and replaced with the optimized version, helping to save storage space. If disabled, the optimized image is saved as a separate file, retaining the original."
+
+msgid "No settings available."
+msgstr "No settings available."
+
+msgid "Loading settings…"
+msgstr "Loading settings…"
+
+msgid "Settings updated successfully"
+msgstr "Settings updated successfully"
+
+msgid "Your image optimization settings have been saved."
+msgstr "Your image optimization settings have been saved."
+
+msgid "Enable Lazy Loading"
+msgstr "Enable Lazy Loading"
+
+msgid "Lazy loading defers the loading of images until they are visible on the screen, improving page load speed and performance."
+msgstr "Lazy loading defers the loading of images until they are visible on the screen, improving page load speed and performance."
+
+msgid "Lazy loading has been updated."
+msgstr "Lazy loading has been updated."
+
+msgid "Oops! There was an error updating the lazy loading settings."
+msgstr "Oops! There was an error updating the lazy loading settings."
+
+msgid "Enable Bulk Optimization of Images"
+msgstr "Enable Bulk Optimization of Images"
+
+msgid "When enabled, allows bulk optimization of images in the media library."
+msgstr "When enabled, allows bulk optimization of images in the media library."
+
+msgid "Go to Media Library"
+msgstr "Go to Media Library"
+
+msgid "Error Updating Settings"
+msgstr "Error Updating Settings"
+
+msgid "Prefer Optimized Image When Exists"
+msgstr "Prefer Optimized Image When Exists"
+
+msgid "When enabled, optimized images will be served in place of original images when they exist, improving performance."
+msgstr "When enabled, optimized images will be served in place of original images when they exist, improving performance."
+
+msgid "Something went wrong while updating the settings. Please try again."
+msgstr "Something went wrong while updating the settings. Please try again."
+
+msgid "Enabled All auto-updates"
+msgstr "Enabled All auto-updates"
+
+msgid "Disabled All auto-updates"
+msgstr "Disabled All auto-updates"
+
+msgid "Everything will automatically update."
+msgstr "Everything will automatically update."
+
+msgid "Custom auto-update settings."
+msgstr "Custom auto-update settings."
+
+msgid "Automatically keep all up to date"
+msgstr "Automatically keep all up to date"
+
+msgid "Enabled Core auto-updates"
+msgstr "Enabled Core auto-updates"
+
+msgid "Disabled Core auto-updates"
+msgstr "Disabled Core auto-updates"
+
+msgid "WordPress will automatically update."
+msgstr "WordPress will automatically update."
+
+msgid "WordPress must be manually updated."
+msgstr "WordPress must be manually updated."
+
+msgid "WordPress Core"
+msgstr "WordPress Core"
+
+msgid "Enabled Plugins auto-update"
+msgstr "Enabled Plugins auto-update"
+
+msgid "Disabled Plugins auto-update"
+msgstr "Disabled Plugins auto-update"
+
+msgid "All plugins will automatically update."
+msgstr "All plugins will automatically update."
+
+msgid "Each plugin must be manually updated."
+msgstr "Each plugin must be manually updated."
+
+msgid "Plugins"
+msgstr "Plugins"
+
+msgid "Enabled Themes auto-update"
+msgstr "Enabled Themes auto-update"
+
+msgid "Disabled Themes auto-update"
+msgstr "Disabled Themes auto-update"
+
+msgid "All themes will automatically update."
+msgstr "All themes will automatically update."
+
+msgid "Each theme must be manually updated."
+msgstr "Each theme must be manually updated."
+
+msgid "Themes"
+msgstr "Themes"
+
+msgid "Automatic Updates"
+msgstr "Automatic Updates"
+
+msgid "Keeping automatic updates on ensures timely security fixes and the latest features."
+msgstr "Keeping automatic updates on ensures timely security fixes and the latest features."
+
+msgid "Coming soon activated"
+msgstr "Coming soon activated"
+
+msgid "Coming soon deactivated"
+msgstr "Coming soon deactivated"
+
+msgid "Coming soon page is active. Site requires login."
+msgstr "Coming soon page is active. Site requires login."
+
+msgid "Coming soon page is not active. Site is live to visitors."
+msgstr "Coming soon page is not active. Site is live to visitors."
+
+msgid "Turn off your \"Coming Soon\" page when you are ready to launch your website."
+msgstr "Turn off your \"Coming Soon\" page when you are ready to launch your website."
+
+msgid "Turn on your \"Coming Soon\" page when you need to make major changes to your website."
+msgstr "Turn on your \"Coming Soon\" page when you need to make major changes to your website."
+
+msgid "Disabled old post comments"
+msgstr "Disabled old post comments"
+
+msgid "Enabled old post comments"
+msgstr "Enabled old post comments"
+
+msgid "Comments on old posts are disabled."
+msgstr "Comments on old posts are disabled."
+
+msgid "Comments are allowed on old posts."
+msgstr "Comments are allowed on old posts."
+
+msgid "Disable comments for older posts"
+msgstr "Disable comments for older posts"
+
+msgid "Comments setting saved"
+msgstr "Comments setting saved"
+
+msgid "Comments on posts are disabled after %s day."
+msgid_plural "Comments on posts are disabled after %s days."
+msgstr[0] "Comments on posts are disabled after %s day."
+msgstr[1] "Comments on posts are disabled after %s days."
+
+msgid "Close comments after %s day."
+msgid_plural "Close comments after %s days."
+msgstr[0] "Close comments after %s day."
+msgstr[1] "Close comments after %s days."
+
+msgid "Comments setting saved."
+msgstr "Comments setting saved."
+
+msgid "Posts will display %s comment at a time."
+msgid_plural "Posts will display %s comments at a time."
+msgstr[0] "Posts will display %s comment at a time."
+msgstr[1] "Posts will display %s comments at a time."
+
+msgid "Comments to display per page"
+msgstr "Comments to display per page"
+
+msgid "Comments"
+msgstr "Comments"
+
+msgid "Comments allow visitors to provide feedback and respond to your posts or pages."
+msgstr "Comments allow visitors to provide feedback and respond to your posts or pages."
+
+msgid "Trash setting saved"
+msgstr "Trash setting saved"
+
+msgid "Number of weeks in between emptying trash"
+msgstr "Number of weeks in between emptying trash"
+
+msgid "Content Options"
+msgstr "Content Options"
+
+msgid "Controls for how often to empty the trash."
+msgstr "Controls for how often to empty the trash."
+
+msgid "Help Center Enabled"
+msgstr "Help Center Enabled"
+
+msgid "Help Center Disabled"
+msgstr "Help Center Disabled"
+
+msgid "Reload the page to access the Help Center."
+msgstr "Reload the page to access the Help Center."
+
+msgid "The Help Center will no longer display."
+msgstr "The Help Center will no longer display."
+
+msgid "This is where you can manage common settings for your website."
+msgstr "This is where you can manage common settings for your website."
+
+msgid "Features"
+msgstr "Features"
+
+msgid "Customize the available features as you manage your website."
+msgstr "Customize the available features as you manage your website."
+
+msgid "Performance Enabled"
+msgstr "Performance Enabled"
+
+msgid "Performance Disabled"
+msgstr "Performance Disabled"
+
+msgid "You need to reload the page to manage Performance."
+msgstr "You need to reload the page to manage Performance."
+
+msgid "Performance will no longer display."
+msgstr "Performance will no longer display."
+
+msgid "The performance feature provides improvements to loads faster for visitors including cache settings."
+msgstr "The performance feature provides improvements to loads faster for visitors including cache settings."
+
+msgid "Social Media Accounts"
+msgstr "Social Media Accounts"
+
+msgid "Connect your social media accounts to your website."
+msgstr "Connect your social media accounts to your website."
+
+msgid "Click 'Add' to connect to one of your social media accounts."
+msgstr "Click 'Add' to connect to one of your social media accounts."
+
+msgid "Add"
+msgstr "Add"
+
+msgid "Search…"
+msgstr "Search…"
+
+msgid "Facebook"
+msgstr "Facebook"
+
+msgid "Not found"
+msgstr "Not found"
+
+msgid "Staging Enabled"
+msgstr "Staging Enabled"
+
+msgid "Staging Disabled"
+msgstr "Staging Disabled"
+
+msgid "You need to reload the page to manage Staging."
+msgstr "You need to reload the page to manage Staging."
+
+msgid "Staging will no longer display."
+msgstr "Staging will no longer display."
+
+msgid "WonderBlocks Enabled"
+msgstr "WonderBlocks Enabled"
+
+msgid "WonderBlocks Disabled"
+msgstr "WonderBlocks Disabled"
+
+msgid "Create new content to see WonderBlocks in action."
+msgstr "Create new content to see WonderBlocks in action."
+
+msgid "WonderBlocks will no longer display."
+msgstr "WonderBlocks will no longer display."
+
+msgid "Cancel"
+msgstr "Cancel"
+
+msgid "Clone"
+msgstr "Clone"
+
+msgid "Confirm Clone Action"
+msgstr "Confirm Clone Action"
+
+msgid "This will overwrite anything in staging and update it to an exact clone of the current production site. Are you sure you want to proceed?"
+msgstr "This will overwrite anything in staging and update it to an exact clone of the current production site. Are you sure you want to proceed?"
+
+msgid "Cloned to Staging"
+msgstr "Cloned to Staging"
+
+msgid "Cloning production to staging, this should take about a minute."
+msgstr "Cloning production to staging, this should take about a minute."
+
+msgid "Clone to staging"
+msgstr "Clone to staging"
+
+msgid "Created"
+msgstr "Created"
+
+msgid "Staging Created"
+msgstr "Staging Created"
+
+msgid "Creating a staging site, this should take about a minute."
+msgstr "Creating a staging site, this should take about a minute."
+
+msgid "Create staging site"
+msgstr "Create staging site"
+
+msgid "Currently editing"
+msgstr "Currently editing"
+
+msgid "Delete"
+msgstr "Delete"
+
+msgid "Confirm Delete"
+msgstr "Confirm Delete"
+
+msgid "This will permanently delete staging site. Are you sure you want to proceed? You can recreate another staging site at any time, but any specific changes you've made to this staging site will be lost."
+msgstr "This will permanently delete staging site. Are you sure you want to proceed? You can recreate another staging site at any time, but any specific changes you've made to this staging site will be lost."
+
+msgid "Deleted Staging"
+msgstr "Deleted Staging"
+
+msgid "Deleting the staging site, this should take about a minute."
+msgstr "Deleting the staging site, this should take about a minute."
+
+msgid "Delete Staging Site"
+msgstr "Delete Staging Site"
+
+msgid "Deploy"
+msgstr "Deploy"
+
+msgid "Deploy all changes"
+msgstr "Deploy all changes"
+
+msgid "Confirm Deployment"
+msgstr "Confirm Deployment"
+
+msgid "Deploy database only"
+msgstr "Deploy database only"
+
+msgid "This will deploy staging to production and overwrite current production site. Are you sure you want to proceed?"
+msgstr "This will deploy staging to production and overwrite current production site. Are you sure you want to proceed?"
+
+msgid "Deploy files only"
+msgstr "Deploy files only"
+
+msgid "Deployed"
+msgstr "Deployed"
+
+msgid "Deploying from staging to production, this should take about a minute."
+msgstr "Deploying from staging to production, this should take about a minute."
+
+msgid "Deploy Site"
+msgstr "Deploy Site"
+
+msgid "Error"
+msgstr "Error"
+
+msgid "You don't have a staging site yet."
+msgstr "You don't have a staging site yet."
+
+msgid "Not currently editing"
+msgstr "Not currently editing"
+
+msgid "Proceed"
+msgstr "Proceed"
+
+msgid "Production Site"
+msgstr "Production Site"
+
+msgid "Staging Site"
+msgstr "Staging Site"
+
+msgid "A staging site is a duplicate of your live site, offering a secure environment to experiment, test updates, and deploy when ready."
+msgstr "A staging site is a duplicate of your live site, offering a secure environment to experiment, test updates, and deploy when ready."
+
+msgid "Switch"
+msgstr "Switch"
+
+msgid "Switching"
+msgstr "Switching"
+
+msgid "Switch to Production"
+msgstr "Switch to Production"
+
+msgid "This will navigate you to the production environment"
+msgstr "This will navigate you to the production environment"
+
+msgid "Loading the production environment now."
+msgstr "Loading the production environment now."
+
+msgid "Switching to the production environment, this should take about a minute."
+msgstr "Switching to the production environment, this should take about a minute."
+
+msgid "Switch to Staging"
+msgstr "Switch to Staging"
+
+msgid "This will navigate you to the staging environment"
+msgstr "This will navigate you to the staging environment"
+
+msgid "Loading the staging environment now."
+msgstr "Loading the staging environment now."
+
+msgid "Switching to the staging environment, this should take about a minute."
+msgstr "Switching to the staging environment, this should take about a minute."
+
+msgid "An unknown error has occurred."
+msgstr "An unknown error has occurred."
+
+msgid "Working…"
+msgstr "Working…"
+

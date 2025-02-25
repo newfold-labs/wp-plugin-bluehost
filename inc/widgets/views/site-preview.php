@@ -179,7 +179,13 @@ $svgExternalView = '<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox=
 		<a 
 			class="nfd-button nfd-button--secondary"
 			data-cy="nfd-edit-site"
-			href="<?php echo esc_url( get_admin_url( null, 'site-editor.php?canvas=edit' ) ); ?>"
+			href="<?php echo
+				esc_url(
+					get_admin_url(
+						null,
+						wp_is_block_theme() ? 'site-editor.php?canvas=edit' : 'customize.php'
+					)
+				); ?>"
 			id="nfd-edit-site"
 		>
 			<?php echo wp_kses( $svgPencil, KSES_ALLOWED_SVG_TAGS ); ?>

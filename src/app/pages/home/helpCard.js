@@ -5,7 +5,9 @@ const HelpCard = ( {} ) => {
 	return (
 		<Card className="wppbh-help-card">
 			<Card.Content>
-				<Title size={ 2 }>Need some help?</Title>
+				<Title size={ 2 }>
+					{ __( 'Need some help?', 'wp-plugin-bluehost' ) }
+				</Title>
 				<div className="nfd-flex nfd-flex-col nfd-gap-4 nfd-items-center nfd-text-center nfd-mt-4">
 					<img
 						className="nfd-max-w-xs"

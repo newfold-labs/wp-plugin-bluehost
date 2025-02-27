@@ -15,26 +15,20 @@ const HelpCenterSettings = ( { forceShow = false } ) => {
 	const notify = useNotification();
 
 	const getHelpCenterNoticeTitle = () => {
-		const helpCenterEnabled = __(
-			'Help Center Enabled',
-			'wp-plugin-bluehost'
-		);
-		const helpCenterDisabled = __(
-			'Help Center Disabled',
-			'wp-plugin-bluehost'
-		);
-		return helpCenter ? helpCenterEnabled : helpCenterDisabled;
+		return helpCenter
+			? __( 'Help Center Enabled', 'wp-plugin-bluehost' )
+			: __( 'Help Center Disabled', 'wp-plugin-bluehost' );
 	};
 	const getHelpCenterNoticeText = () => {
-		const helpCenterEnabled = __(
-			'Reload the page to access the Help Center.',
-			'wp-plugin-bluehost'
-		);
-		const helpCenterDisabled = __(
-			'The Help Center will no longer display.',
-			'wp-plugin-bluehost'
-		);
-		return helpCenter ? helpCenterEnabled : helpCenterDisabled;
+		return helpCenter
+			? __(
+					'Reload the page to access the Help Center.',
+					'wp-plugin-bluehost'
+			  )
+			: __(
+					'The Help Center will no longer display.',
+					'wp-plugin-bluehost'
+			  );
 	};
 
 	const toggleHelpCenter = () => {

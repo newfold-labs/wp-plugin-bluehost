@@ -49,14 +49,16 @@ const PagesAndPosts = () => {
 				>
 					{ store?.comingSoon ? (
 						<p>
-							{ sprintf(
-								/* translators: %1$s: opening anchor tag, %2$s: closing anchor tag */
-								__(
-									'Visitors to your site will see your "Coming Soon" page and not your actual site. Visit %1$s"Settings"%2$s to set your site live.',
-									'wp-plugin-bluehost'
-								),
-								'<a href="#/settings">',
-								'</a>'
+							{ __(
+								'Visitors to your site will see your "Coming Soon" page and not your actual site. Visit',
+								'wp-plugin-bluehost'
+							) }{ ' ' }
+							<a href="#/settings">
+								{ __( '"Settings"', 'wp-plugin-bluehost' ) }
+							</a>{ ' ' }
+							{ __(
+								'to set your site live.',
+								'wp-plugin-bluehost'
 							) }
 						</p>
 					) : (

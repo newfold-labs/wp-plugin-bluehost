@@ -20,84 +20,84 @@ describe( 'Navigation', { testIsolation: true }, function () {
 
 	// test main nav
 	it( 'Main nav links properly navigates', () => {
-		cy.get( '.wppbh-app-navitem-marketplace' ).should(
+		cy.get( '.wppbh-app-navitem-Marketplace' ).should(
 			'not.have.class',
 			'active'
 		);
-		cy.get( '.wppbh-app-navitem-marketplace' ).click();
+		cy.get( '.wppbh-app-navitem-Marketplace' ).click();
 		cy.wait( 500 );
 		cy.hash().should( 'eq', '#/marketplace' );
-		cy.get( '.wppbh-app-navitem-marketplace' ).should(
+		cy.get( '.wppbh-app-navitem-Marketplace' ).should(
 			'have.class',
 			'active'
 		);
 
-		cy.get( '.wppbh-app-navitem-performance' ).click();
+		cy.get( '.wppbh-app-navitem-Performance' ).click();
 		cy.wait( 500 );
 		cy.hash().should( 'eq', '#/performance' );
-		cy.get( '.wppbh-app-navitem-performance' ).should(
+		cy.get( '.wppbh-app-navitem-Performance' ).should(
 			'have.class',
 			'active'
 		);
-		cy.get( '.wppbh-app-navitem-marketplace' ).should(
+		cy.get( '.wppbh-app-navitem-Marketplace' ).should(
 			'not.have.class',
 			'active'
 		);
 
-		cy.get( '.wppbh-app-navitem-settings' ).click();
+		cy.get( '.wppbh-app-navitem-Settings' ).click();
 		cy.wait( 500 );
 		cy.hash().should( 'eq', '#/settings' );
 	} );
 
 	it( 'Subnav links properly navigates', () => {
-		cy.get( '.wppbh-app-navitem-marketplace' )
+		cy.get( '.wppbh-app-navitem-Marketplace' )
 			.scrollIntoView()
 			.should( 'not.have.class', 'active' );
-		cy.get( '.wppbh-app-navitem-marketplace' ).click();
+		cy.get( '.wppbh-app-navitem-Marketplace' ).click();
 
 		cy.wait( 500 );
 		cy.hash().should( 'eq', '#/marketplace' );
-		cy.get( '.wppbh-app-navitem-marketplace' ).should(
+		cy.get( '.wppbh-app-navitem-Marketplace' ).should(
 			'have.class',
 			'active'
 		);
 
-		cy.get( '.wppbh-app-subnavitem-services' ).click();
+		cy.get( '.wppbh-app-subnavitem-Services' ).click();
 		cy.wait( 500 );
 		cy.hash().should( 'eq', '#/marketplace/services' );
-		cy.get( '.wppbh-app-subnavitem-services' ).should(
+		cy.get( '.wppbh-app-subnavitem-Services' ).should(
 			'have.class',
 			'active'
 		);
-		cy.get( '.wppbh-app-navitem-marketplace' ).should(
+		cy.get( '.wppbh-app-navitem-Marketplace' ).should(
 			'have.class',
 			'active'
 		);
 
-		cy.get( '.wppbh-app-subnavitem-seo' ).click();
+		cy.get( '.wppbh-app-subnavitem-SEO' ).click();
 		cy.wait( 500 );
 		cy.hash().should( 'eq', '#/marketplace/seo' );
-		cy.get( '.wppbh-app-subnavitem-seo' ).should( 'have.class', 'active' );
-		cy.get( '.wppbh-app-subnavitem-services' ).should(
+		cy.get( '.wppbh-app-subnavitem-SEO' ).should( 'have.class', 'active' );
+		cy.get( '.wppbh-app-subnavitem-Services' ).should(
 			'not.have.class',
 			'active'
 		);
-		cy.get( '.wppbh-app-navitem-marketplace' ).should(
+		cy.get( '.wppbh-app-navitem-Marketplace' ).should(
 			'have.class',
 			'active'
 		);
 
-		cy.get( '.wppbh-app-navitem-performance' ).click();
+		cy.get( '.wppbh-app-navitem-Performance' ).click();
 		cy.wait( 500 );
-		cy.get( '.wppbh-app-subnavitem-services' ).should(
+		cy.get( '.wppbh-app-subnavitem-Services' ).should(
 			'not.have.class',
 			'active'
 		);
-		cy.get( '.wppbh-app-subnavitem-seo' ).should(
+		cy.get( '.wppbh-app-subnavitem-SEO' ).should(
 			'not.have.class',
 			'active'
 		);
-		cy.get( '.wppbh-app-navitem-marketplace' ).should(
+		cy.get( '.wppbh-app-navitem-Marketplace' ).should(
 			'not.have.class',
 			'active'
 		);
@@ -125,13 +125,13 @@ describe( 'Navigation', { testIsolation: true }, function () {
 		cy.viewport( 'iphone-x' );
 		cy.get( '#nfd-app-mobile-nav' ).should( 'be.visible' );
 
-		cy.get( '.wppbh-app-navitem-home' ).should( 'not.exist' );
+		cy.get( '.wppbh-app-navitem-Home' ).should( 'not.exist' );
 
 		cy.get( '#nfd-app-mobile-nav' ).click();
 		cy.wait( 500 );
-		cy.get( '.wppbh-app-navitem-home' ).should( 'be.visible' );
+		cy.get( '.wppbh-app-navitem-Home' ).should( 'be.visible' );
 		cy.get( 'button.nfd-modal__close-button' ).should( 'be.visible' );
 		cy.get( 'button.nfd-modal__close-button' ).click();
-		cy.get( '.wppbh-app-navitem-home' ).should( 'not.exist' );
+		cy.get( '.wppbh-app-navitem-Home' ).should( 'not.exist' );
 	} );
 } );

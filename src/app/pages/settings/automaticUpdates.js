@@ -16,26 +16,17 @@ const AutomaticUpdatesAll = ( { setError, notify } ) => {
 	);
 
 	const getAllNoticeTitle = () => {
-		const updatesEnabled = __(
-			'Enabled All auto-updates',
-			'wp-plugin-bluehost'
-		);
-		const updatesDisabled = __(
-			'Disabled All auto-updates',
-			'wp-plugin-bluehost'
-		);
-		return autoUpdatesAll ? updatesEnabled : updatesDisabled;
+		return autoUpdatesAll
+			? __( 'Enabled All auto-updates', 'wp-plugin-bluehost' )
+			: __( 'Disabled All auto-updates', 'wp-plugin-bluehost' );
 	};
 	const getAllNoticeText = () => {
-		const updatesEnabled = __(
-			'Everything will automatically update.',
-			'wp-plugin-bluehost'
-		);
-		const updatesDisabled = __(
-			'Custom auto-update settings.',
-			'wp-plugin-bluehost'
-		);
-		return autoUpdatesAll ? updatesEnabled : updatesDisabled;
+		return autoUpdatesAll
+			? __(
+					'Everything will automatically update.',
+					'wp-plugin-bluehost'
+			  )
+			: __( 'Custom auto-update settings.', 'wp-plugin-bluehost' );
 	};
 
 	const toggleAutoUpdatesAll = () => {
@@ -114,26 +105,14 @@ const AutomaticUpdatesMajorCore = ( { setError, notify } ) => {
 	);
 
 	const getCoreNoticeTitle = () => {
-		const updatesEnabled = __(
-			'Enabled Core auto-updates',
-			'wp-plugin-bluehost'
-		);
-		const updatesDisabled = __(
-			'Disabled Core auto-updates',
-			'wp-plugin-bluehost'
-		);
-		return autoUpdatesMajorCore ? updatesEnabled : updatesDisabled;
+		return autoUpdatesMajorCore
+			? __( 'Enabled Core auto-updates', 'wp-plugin-bluehost' )
+			: __( 'Disabled Core auto-updates', 'wp-plugin-bluehost' );
 	};
 	const getCoreNoticeText = () => {
-		const updatesEnabled = __(
-			'WordPress will automatically update.',
-			'wp-plugin-bluehost'
-		);
-		const updatesDisabled = __(
-			'WordPress must be manually updated.',
-			'wp-plugin-bluehost'
-		);
-		return autoUpdatesMajorCore ? updatesEnabled : updatesDisabled;
+		return autoUpdatesMajorCore
+			? __( 'WordPress will automatically update.', 'wp-plugin-bluehost' )
+			: __( 'WordPress must be manually updated.', 'wp-plugin-bluehost' );
 	};
 
 	const toggleAutoUpdatesMajorCore = () => {
@@ -183,26 +162,20 @@ const AutomaticUpdatesPlugins = ( { setError, notify } ) => {
 	);
 
 	const getPluginsNoticeTitle = () => {
-		const updatesEnabled = __(
-			'Enabled Plugins auto-update',
-			'wp-plugin-bluehost'
-		);
-		const updatesDisabled = __(
-			'Disabled Plugins auto-update',
-			'wp-plugin-bluehost'
-		);
-		return autoUpdatesPlugins ? updatesEnabled : updatesDisabled;
+		return autoUpdatesPlugins
+			? __( 'Enabled Plugins auto-update', 'wp-plugin-bluehost' )
+			: __( 'Disabled Plugins auto-update', 'wp-plugin-bluehost' );
 	};
 	const getPluginsNoticeText = () => {
-		const updatesEnabled = __(
-			'All plugins will automatically update.',
-			'wp-plugin-bluehost'
-		);
-		const updatesDisabled = __(
-			'Each plugin must be manually updated.',
-			'wp-plugin-bluehost'
-		);
-		return autoUpdatesPlugins ? updatesEnabled : updatesDisabled;
+		return autoUpdatesPlugins
+			? __(
+					'All plugins will automatically update.',
+					'wp-plugin-bluehost'
+			  )
+			: __(
+					'Each plugin must be manually updated.',
+					'wp-plugin-bluehost'
+			  );
 	};
 
 	const toggleAutoUpdatesPlugins = () => {
@@ -252,27 +225,21 @@ const AutomaticUpdatesThemes = ( { setError, notify } ) => {
 	);
 
 	const getThemesNoticeTitle = () => {
-		const updatesEnabled = __(
-			'Enabled Themes auto-update',
-			'wp-plugin-bluehost'
-		);
-		const updatesDisabled = __(
-			'Disabled Themes auto-update',
-			'wp-plugin-bluehost'
-		);
-		return autoUpdatesThemes ? updatesEnabled : updatesDisabled;
+		return autoUpdatesThemes
+			? __( 'Enabled Themes auto-update', 'wp-plugin-bluehost' )
+			: __( 'Disabled Themes auto-update', 'wp-plugin-bluehost' );
 	};
 
 	const getThemesNoticeText = () => {
-		const updatesEnabled = __(
-			'All themes will automatically update.',
-			'wp-plugin-bluehost'
-		);
-		const updatesDisabled = __(
-			'Each theme must be manually updated.',
-			'wp-plugin-bluehost'
-		);
-		return autoUpdatesThemes ? updatesEnabled : updatesDisabled;
+		return autoUpdatesThemes
+			? __(
+					'All themes will automatically update.',
+					'wp-plugin-bluehost'
+			  )
+			: __(
+					'Each theme must be manually updated.',
+					'wp-plugin-bluehost'
+			  );
 	};
 
 	const toggleAutoUpdatesThemes = () => {

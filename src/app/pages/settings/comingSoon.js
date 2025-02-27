@@ -16,27 +16,21 @@ const ComingSoon = () => {
 	const notify = useNotification();
 
 	const getComingSoonNoticeTitle = () => {
-		const comingSoonActived = __(
-			'Coming soon activated',
-			'wp-plugin-bluehost'
-		);
-		const comingSoonDeactivated = __(
-			'Coming soon deactivated',
-			'wp-plugin-bluehost'
-		);
-		return comingSoon ? comingSoonActived : comingSoonDeactivated;
+		return comingSoon
+			? __( 'Coming soon activated', 'wp-plugin-bluehost' )
+			: __( 'Coming soon deactivated', 'wp-plugin-bluehost' );
 	};
 
 	const getComingSoonNoticeText = () => {
-		const comingSoonActive = __(
-			'Coming soon page is active. Site requires login.',
-			'wp-plugin-bluehost'
-		);
-		const comingSoonNotActive = __(
-			'Coming soon page is not active. Site is live to visitors.',
-			'wp-plugin-bluehost'
-		);
-		return comingSoon ? comingSoonActive : comingSoonNotActive;
+		return comingSoon
+			? __(
+					'Coming soon page is active. Site requires login.',
+					'wp-plugin-bluehost'
+			  )
+			: __(
+					'Coming soon page is not active. Site is live to visitors.',
+					'wp-plugin-bluehost'
+			  );
 	};
 
 	const toggleComingSoon = () => {
@@ -70,34 +64,35 @@ const ComingSoon = () => {
 	}, [ comingSoon ] );
 
 	const getComingSoonSectionTitle = () => {
-		const status = __( 'Site Status', 'wp-plugin-bluehost' );
-		const statusNotLive = __( 'Not Live', 'wp-plugin-bluehost' );
-		const statusNotLiveClasses = 'nfd-text-[#e10001] coming-soon-status';
-		const statusLive = __( 'Live', 'wp-plugin-bluehost' );
-		const statusLiveClasses = 'nfd-text-[#008112] coming-soon-status';
-
-		const statusText = comingSoon ? statusNotLive : statusLive;
-		const statusClasses = comingSoon
-			? statusNotLiveClasses
-			: statusLiveClasses;
+		const getStatus = () => {
+			return comingSoon ? (
+				<span className="nfd-text-[#e10001] coming-soon-status">
+					{ __( 'Not Live', 'wp-plugin-bluehost' ) }
+				</span>
+			) : (
+				<span className="nfd-text-[#008112] coming-soon-status">
+					{ __( 'Live', 'wp-plugin-bluehost' ) }
+				</span>
+			);
+		};
 
 		return (
-			<span className={ statusClasses }>
-				{ status }: { statusText }
+			<span>
+				{ __( 'Site Status', 'wp-plugin-bluehost' ) }: { getStatus() }
 			</span>
 		);
 	};
 
 	const getComingSoonSectionDescription = () => {
-		const comingSoonActive = __(
-			'Turn off your "Coming Soon" page when you are ready to launch your website.',
-			'wp-plugin-bluehost'
-		);
-		const comingSoonNotActive = __(
-			'Turn on your "Coming Soon" page when you need to make major changes to your website.',
-			'wp-plugin-bluehost'
-		);
-		return comingSoon ? comingSoonActive : comingSoonNotActive;
+		return comingSoon
+			? __(
+					'Turn off your "Coming Soon" page when you are ready to launch your website.',
+					'wp-plugin-bluehost'
+			  )
+			: __(
+					'Turn on your "Coming Soon" page when you need to make major changes to your website.',
+					'wp-plugin-bluehost'
+			  );
 	};
 
 	return (

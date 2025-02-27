@@ -11,6 +11,8 @@ node_modules
 /.*
 cypress.config.js
 postcss.config.js
+set-latest-wp-version.js
+set-version-bump.js
 tailwind.config.js
 webpack.config.js
 

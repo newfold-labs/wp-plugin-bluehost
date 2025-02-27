@@ -200,43 +200,43 @@ final class Admin {
 	 * @return void
 	 */
 	public static function assets( $hook ) {
-		$asset_file = BLUEHOST_BUILD_DIR . '/index.asset.php';
 
-		if ( is_readable( $asset_file ) ) {
-			$asset = include_once $asset_file;
-		} else {
-			return;
-		}
-
-		// TODO: update this to a dependency script
-		do_action( 'newfold/installer/enqueue_scripts' );
-
-		\wp_register_script(
-			'bluehost-script',
-			BLUEHOST_BUILD_URL . '/index.js',
-			array_merge( $asset['dependencies'], array( 'newfold-features', 'nfd-runtime' ) ),
-			$asset['version'],
-			true
-		);
-
-		\wp_set_script_translations(
-			'bluehost-script',
-			'wp-plugin-bluehost',
-			BLUEHOST_PLUGIN_DIR . '/languages'
-		);
-
-		\wp_register_style(
-			'bluehost-style',
-			BLUEHOST_BUILD_URL . '/index.css',
-			array( 'wp-components' ),
-			$asset['version']
-		);
-
-		$screen = get_current_screen();
-
-			// These assets will be loaded in the bluehost app space only
+		// These assets will be loaded in the bluehost app space only
 		if ( false !== stripos( $hook, 'bluehost' ) ) {
-			// only enqueue on bluehost pages
+
+			$asset_file = BLUEHOST_BUILD_DIR . '/index.asset.php';
+
+			if ( is_readable( $asset_file ) ) {
+				$asset = include_once $asset_file;
+			} else {
+				return;
+			}
+
+			// TODO: update this to a dependency script
+			do_action( 'newfold/installer/enqueue_scripts' );
+
+			\wp_register_script(
+				'bluehost-script',
+				BLUEHOST_BUILD_URL . '/index.js',
+				array_merge( $asset['dependencies'], array( 'newfold-features', 'nfd-runtime' ) ),
+				$asset['version'],
+				true
+			);
+
+			\wp_set_script_translations(
+				'bluehost-script',
+				'wp-plugin-bluehost',
+				BLUEHOST_PLUGIN_DIR . '/languages'
+			);
+
+			\wp_register_style(
+				'bluehost-style',
+				BLUEHOST_BUILD_URL . '/index.css',
+				array( 'wp-components' ),
+				$asset['version']
+			);
+
+			$screen = get_current_screen();
 			if ( false !== strpos( $screen->id, 'bluehost' ) ) {
 				\wp_enqueue_script( 'bluehost-script' );
 				\wp_enqueue_style( 'bluehost-style' );

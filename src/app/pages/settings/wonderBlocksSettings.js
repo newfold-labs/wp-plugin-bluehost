@@ -17,26 +17,20 @@ const WonderBlocksSettings = () => {
 	const notify = useNotification();
 
 	const getWonderBlocksNoticeTitle = () => {
-		const wonderBlocksEnabled = __(
-			'WonderBlocks Enabled',
-			'wp-plugin-bluehost'
-		);
-		const wonderBlocksDisabled = __(
-			'WonderBlocks Disabled',
-			'wp-plugin-bluehost'
-		);
-		return wonderBlocks ? wonderBlocksEnabled : wonderBlocksDisabled;
+		return wonderBlocks
+			? __( 'WonderBlocks Enabled', 'wp-plugin-bluehost' )
+			: __( 'WonderBlocks Disabled', 'wp-plugin-bluehost' );
 	};
 	const getWonderBlocksNoticeText = () => {
-		const wonderBlocksEnabled = __(
-			'Create new content to see WonderBlocks in action.',
-			'wp-plugin-bluehost'
-		);
-		const wonderBlocksDisabled = __(
-			'WonderBlocks will no longer display.',
-			'wp-plugin-bluehost'
-		);
-		return wonderBlocks ? wonderBlocksEnabled : wonderBlocksDisabled;
+		return wonderBlocks
+			? __(
+					'Create new content to see WonderBlocks in action.',
+					'wp-plugin-bluehost'
+			  )
+			: __(
+					'WonderBlocks will no longer display.',
+					'wp-plugin-bluehost'
+			  );
 	};
 
 	const toggleWonderBlocks = () => {

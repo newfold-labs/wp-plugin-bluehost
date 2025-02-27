@@ -17,27 +17,15 @@ const OldPostsComments = ( { setError, notify } ) => {
 	);
 
 	const disableCommentsNoticeTitle = () => {
-		const disabledComments = __(
-			'Disabled old post comments',
-			'wp-plugin-bluehost'
-		);
-		const enabledComments = __(
-			'Enabled old post comments',
-			'wp-plugin-bluehost'
-		);
-		return disableCommentsOldPosts ? disabledComments : enabledComments;
+		return disableCommentsOldPosts
+			? __( 'Disabled old post comments', 'wp-plugin-bluehost' )
+			: __( 'Enabled old post comments', 'wp-plugin-bluehost' );
 	};
 
 	const disableCommentsNoticeText = () => {
-		const disabledComments = __(
-			'Comments on old posts are disabled.',
-			'wp-plugin-bluehost'
-		);
-		const enabledComments = __(
-			'Comments are allowed on old posts.',
-			'wp-plugin-bluehost'
-		);
-		return disableCommentsOldPosts ? disabledComments : enabledComments;
+		return disableCommentsOldPosts
+			? __( 'Comments on old posts are disabled.', 'wp-plugin-bluehost' )
+			: __( 'Comments are allowed on old posts.', 'wp-plugin-bluehost' );
 	};
 
 	const toggleDisableCommentsOldPosts = () => {

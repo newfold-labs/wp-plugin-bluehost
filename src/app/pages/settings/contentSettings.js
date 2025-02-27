@@ -14,12 +14,11 @@ const EmptyTrash = ( { setError, notify } ) => {
 	let numTrashWeeks = Math.floor( emptyTrashDays / 7 );
 
 	const emptyTrashNoticeTitle = () => {
-		const text = __( 'Trash setting saved', 'wp-plugin-bluehost' );
-		return text;
+		return __( 'Trash setting saved', 'wp-plugin-bluehost' );
 	};
 
 	const emptyTrashNoticeText = () => {
-		const text = sprintf(
+		return sprintf(
 			//translators: %s: number of weeks. `The trash will automatically empty every ${numTrashWeeks} weeks.`
 			_n(
 				'The trash will automatically empty every %s week.',
@@ -29,7 +28,6 @@ const EmptyTrash = ( { setError, notify } ) => {
 			),
 			numTrashWeeks
 		);
-		return text;
 	};
 
 	const handleEmptyTrashDaysChange = ( value ) => {

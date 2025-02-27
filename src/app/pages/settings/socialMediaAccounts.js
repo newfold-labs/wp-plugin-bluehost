@@ -10,10 +10,7 @@ const SocialMediaAccounts = () => {
 	const [ showModal, setShowModal ] = useState( false );
 	const [ fbLogin, setFbLogin ] = useState( false );
 	const [ loginInfo, setLoginInfo ] = useState();
-	const [ searchInfo, setSearchInfo ] = useState( '' );
 	let input = false;
-	const facebookRegex =
-		/^$|facebook|f(?:a(?:c(?:e(?:b(?:o(?:o(?:k?)?)?)?)?)?)?)?/i;
 
 	const getFbDetails = () => {
 		getFacebookUserProfileDetails()
@@ -39,19 +36,12 @@ const SocialMediaAccounts = () => {
 		if ( ! input ) {
 			setShowModal( false );
 		}
-		setSearchInfo( '' );
 		input = false;
 	};
 
 	const handleFacebookConnect = () => {
 		facebookConnectHelper( getFbDetails ).then( () => {} );
 	};
-
-	const handleSubmit = ( e ) => {
-		e.preventDefault();
-		setSearchInfo( e.target?.[ 0 ]?.value );
-	};
-
 	return (
 		<Container.SettingsField
 			title={ __( 'Social Media Accounts', 'wp-plugin-bluehost' ) }
@@ -85,10 +75,9 @@ const SocialMediaAccounts = () => {
 						onClick={ handleCloseModel }
 						className=" nfd-justify-center nfd-items-center nfd-flex nfd-overflow-x-hidden nfd-overflow-y-auto nfd-fixed nfd-inset-0 nfd-z-50 nfd-outline-none nfd-focus:outline-none"
 					>
-						<div className="nfd-relative nfd-w-auto nfd-my-6 nfd-mx-auto nfd-max-w-3xl">
+						<div className=" nfd-relative nfd-w-auto nfd-my-6 nfd-mx-auto nfd-max-w-3xl">
 							<div className="nfd-border-0 nfd-rounded-lg nfd-shadow-lg nfd-relative nfd-flex nfd-flex-col nfd-w-full nfd-bg-white nfd-outline-none nfd-focus:outline-none">
 								<form
-									onSubmit={ handleSubmit }
 									className="nfd-flex nfd-items-center nfd-w-full"
 									style={ { minWidth: '300px' } }
 								>
@@ -120,37 +109,26 @@ const SocialMediaAccounts = () => {
 										/>
 									</div>
 								</form>
-								{ ! facebookRegex.test( searchInfo ) ? (
-									<button className="nfd-relative nfd-p-6 nfd-flex nfd-flex-row nfd-items-center">
+								<button
+									className="nfd-relative nfd-p-6 nfd-flex nfd-flex-row nfd-items-center"
+									style={ { cursor: 'pointer' } }
+									onClick={ () => handleFacebookConnect() }
+								>
+									<svg
+										xmlns="http://www.w3.org/2000/svg"
+										className="nfd-pointer-events-none nfd-h-10 nfd-w-10"
+										fill="#405795"
+										viewBox="0 0 24 24"
+									>
+										<path d="M22.675 0h-21.35c-.732 0-1.325.593-1.325 1.325v21.351c0 .731.593 1.324 1.325 1.324h11.495v-9.294h-3.128v-3.622h3.128v-2.671c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.463.099 2.795.143v3.24l-1.918.001c-1.504 0-1.795.715-1.795 1.763v2.313h3.587l-.467 3.622h-3.12v9.293h6.116c.73 0 1.323-.593 1.323-1.325v-21.35c0-.732-.593-1.325-1.325-1.325z"></path>
+									</svg>
+									<p className="nfd-pl-3">
 										{ __(
-											'Not found',
+											'Facebook',
 											'wp-plugin-bluehost'
 										) }
-									</button>
-								) : (
-									<button
-										className="nfd-relative nfd-p-6 nfd-flex nfd-flex-row nfd-items-center"
-										style={ { cursor: 'pointer' } }
-										onClick={ () =>
-											handleFacebookConnect()
-										}
-									>
-										<svg
-											xmlns="http://www.w3.org/2000/svg"
-											className="nfd-pointer-events-none nfd-h-10 nfd-w-10"
-											fill="#405795"
-											viewBox="0 0 24 24"
-										>
-											<path d="M22.675 0h-21.35c-.732 0-1.325.593-1.325 1.325v21.351c0 .731.593 1.324 1.325 1.324h11.495v-9.294h-3.128v-3.622h3.128v-2.671c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.463.099 2.795.143v3.24l-1.918.001c-1.504 0-1.795.715-1.795 1.763v2.313h3.587l-.467 3.622h-3.12v9.293h6.116c.73 0 1.323-.593 1.323-1.325v-21.35c0-.732-.593-1.325-1.325-1.325z"></path>
-										</svg>
-										<p className="nfd-pl-3">
-											{ __(
-												'Facebook',
-												'wp-plugin-bluehost'
-											) }
-										</p>
-									</button>
-								) }
+									</p>
+								</button>
 							</div>
 						</div>
 					</button>

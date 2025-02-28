@@ -208,9 +208,6 @@ final class Admin {
 			return;
 		}
 
-		// TODO: update this to a dependency script
-		do_action( 'newfold/installer/enqueue_scripts' );
-
 		\wp_register_script(
 			'bluehost-script',
 			BLUEHOST_BUILD_URL . '/index.js',
@@ -234,12 +231,15 @@ final class Admin {
 
 		$screen = get_current_screen();
 
-			// These assets will be loaded in the bluehost app space only
+		// Load assets only in the Bluehost app space
 		if ( false !== stripos( $hook, 'bluehost' ) ) {
-			// only enqueue on bluehost pages
-			if ( false !== strpos( $screen->id, 'bluehost' ) ) {
-				\wp_enqueue_script( 'bluehost-script' );
-				\wp_enqueue_style( 'bluehost-style' );
+			// Ensure we're on the Bluehost admin page before enqueuing scripts
+			if ( isset( $screen->id ) && false !== strpos( $screen->id, 'bluehost' ) ) {
+				// TODO: Replace this with a proper dependency handling mechanism
+				do_action( 'newfold/installer/enqueue_scripts' );
+				// Enqueue the necessary Bluehost scripts and styles
+				wp_enqueue_script( 'bluehost-script' );
+				wp_enqueue_style( 'bluehost-style' );
 			}
 		}
 

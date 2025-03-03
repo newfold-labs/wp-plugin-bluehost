@@ -1,15 +1,25 @@
+# Copyright (C) 2025 Bluehost
+# This file is distributed under the GPL 2.0 or later.
 msgid ""
 msgstr ""
-"Project-Id-Version: Bluehost Plugi2024-10-21 07:10-00002024-10-21 07:10-0000none1.0text/plain; charset=UTF-88bitnplurals=2; plural=(n > 1);Crowdin\n"
-"Report-Msgid-Bugs-To: \n"
+"Project-Id-Version: wp-plugin-bluehost\n"
+"Report-Msgid-Bugs-To: https://github.com/newfold-labs/wp-plugin-bluehost/issues\n"
 "Last-Translator: \n"
-"Language-Team: \n"
+"Language-Team: French\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2025-02-25T20:53:21+00:00\n"
-"PO-Revision-Date: 2025-02-25T20:53:21+00:00\n"
-"Language: \n"
+"POT-Creation-Date: 2023-03-08T20:13:41+00:00\n"
+"PO-Revision-Date: 2025-03-03 16:59\n"
+"X-Generator: WP-CLI 2.11.0\n"
+"X-Domain: wp-plugin-bluehost\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"X-Crowdin-Project: wp-plugin-bluehost\n"
+"X-Crowdin-Project-ID: 768517\n"
+"X-Crowdin-Language: fr\n"
+"X-Crowdin-File: /languages/wp-plugin-bluehost.pot\n"
+"X-Crowdin-File-ID: 13\n"
+"Language: fr_FR\n"
 
 #. Plugin Name of the plugin
 #: bluehost-wordpress-plugin.php
@@ -32,7 +42,7 @@ msgstr "Le plugin WordPress qui intègre un site WordPress avec le panneau de co
 #: inc/Admin.php:143
 #: inc/Admin.php:144
 msgid "Bluehost"
-msgstr "Bluehost"
+msgstr "Hôte bleu"
 
 #: bootstrap.php:24
 msgid "Please install the Bluehost Plugin dependencies."
@@ -111,7 +121,7 @@ msgstr "Mes extensions et outils"
 #: build/4.1.2/index.js:1
 #: build/4.1.2/index.js:6
 msgid "Performance"
-msgstr "Performance"
+msgstr "Performances"
 
 #: inc/Admin.php:96
 #: inc/Admin.php:287
@@ -197,6 +207,94 @@ msgstr "Mises à jour automatiques activées sur la page <a href=\"%s\">Bluehost
 msgid "Auto-updates enabled"
 msgstr "Mise à jour automatique activée"
 
+#: inc/widgets/Help.php:38
+msgid "Need Some Help?"
+msgstr "Besoin d'aide ?"
+
+#: inc/widgets/SitePreview.php:36
+#: inc/widgets/views/site-preview.php:112
+#: inc/widgets/views/site-preview.php:117
+msgid "Site Preview"
+msgstr "Aperçu du site"
+
+#: inc/widgets/views/account.php:86
+#: build/4.1.2/index.js:1
+msgid "Profile"
+msgstr "Profil"
+
+#: inc/widgets/views/account.php:109
+#: build/4.1.2/index.js:1
+msgid "Mail"
+msgstr "Courrier"
+
+#: inc/widgets/views/account.php:132
+#: build/4.1.2/index.js:1
+msgid "Hosting"
+msgstr "Hébergement"
+
+#: inc/widgets/views/account.php:155
+#: build/4.1.2/index.js:1
+msgid "Security"
+msgstr "Sécurité"
+
+#: inc/widgets/views/account.php:159
+msgid "Quick Access"
+msgstr "Accès rapide"
+
+#: inc/widgets/views/account.php:178
+#: build/4.1.2/index.js:1
+msgid "Payment Methods"
+msgstr "Moyens de paiement"
+
+#: inc/widgets/views/account.php:198
+msgid "Renewals Center"
+msgstr "Centre de Renouvellement"
+
+#: inc/widgets/views/help.php:71
+#: build/4.1.2/index.js:1
+msgid "From DIY to full-service help."
+msgstr "Du bricolage au service complet."
+
+#: inc/widgets/views/help.php:72
+#: build/4.1.2/index.js:1
+msgid "Call or chat 24/7 for support or let our experts build your site for you."
+msgstr "Appelez ou discutez 24/7 pour obtenir de l'aide ou laissez nos experts construire votre site pour vous."
+
+#: inc/widgets/views/help.php:90
+#: build/4.1.2/index.js:1
+msgid "Get Help"
+msgstr "Obtenir de l'aide"
+
+#: inc/widgets/views/site-preview.php:147
+#: build/4.1.2/index.js:6
+msgid "Not Live"
+msgstr "Pas en ligne"
+
+#: inc/widgets/views/site-preview.php:148
+#: build/4.1.2/index.js:6
+msgid "Live"
+msgstr "En ligne"
+
+#: inc/widgets/views/site-preview.php:177
+msgid "Preview Site"
+msgstr "Aperçu du site"
+
+#: inc/widgets/views/site-preview.php:178
+msgid "View Site"
+msgstr "Voir le site"
+
+#: inc/widgets/views/site-preview.php:188
+msgid "Edit Site"
+msgstr "Modifier le site"
+
+#: inc/widgets/views/site-preview.php:198
+msgid "Launch Site"
+msgstr "Site de lancement"
+
+#: inc/widgets/views/site-preview.php:208
+msgid "Enable Coming Soon"
+msgstr "Activer bientôt"
+
 #: build/4.1.2/index.js:1
 msgid "Bluehost WordPress Plugin"
 msgstr "Plug-in WordPress Bluehost"
@@ -222,56 +320,6 @@ msgid "Bluehost Account"
 msgstr "Compte Bluehost"
 
 #: build/4.1.2/index.js:1
-msgid "There's nothing here!"
-msgstr "Il n'y a rien ici !"
-
-#: build/4.1.2/index.js:1
-msgid "Products & Services"
-msgstr "Produits et Services"
-
-#: build/4.1.2/index.js:1
-msgid "Sales & Promotions"
-msgstr "Ventes et Promotions"
-
-#: build/4.1.2/index.js:1
-msgid "Sales Channel"
-msgstr "Canal de ventes"
-
-#: build/4.1.2/index.js:1
-msgid "Payments"
-msgstr "Paiements"
-
-#: build/4.1.2/index.js:1
-msgid "Store Details"
-msgstr "Détails de la boutique"
-
-#: build/4.1.2/index.js:1
-msgid "Help with WordPress"
-msgstr "Aide avec WordPress"
-
-#: build/4.1.2/index.js:1
-msgid "Admin"
-msgstr "Administrateur"
-
-#: build/4.1.2/index.js:14
-msgid "The staging feature provides a way to copy a site to test new updates, features or content."
-msgstr "La fonctionnalité de mise en scène permet de copier un site pour tester de nouvelles mises à jour, des fonctionnalités ou du contenu."
-
-#: build/4.1.2/index.js:14
-msgid "Sorry, that is not allowed."
-msgstr "Désolé, ce n'est pas autorisé."
-
-#: build/4.1.2/index.js:14
-msgid "This feature cannot currently be modified."
-msgstr "Cette fonctionnalité ne peut pas être modifiée pour le moment."
-
-#: build/4.1.2/index.js:6
-#: build/4.1.2/index.js:12
-#: build/4.1.2/index.js:14
-msgid "Oops! Something went wrong. Please try again."
-msgstr "Oups ! Une erreur s’est produite. Réessayez."
-
-#: build/4.1.2/index.js:1
 msgid "Phone"
 msgstr "Téléphone"
 
@@ -281,7 +329,7 @@ msgstr "Contactez-nous"
 
 #: build/4.1.2/index.js:1
 msgid "Chat"
-msgstr "Chat"
+msgstr "Discuter"
 
 #: build/4.1.2/index.js:1
 msgid "Chat with one of our friendly Customer Care Specialists, as we are waiting to help. Open 24 hours - 7 days."
@@ -293,7 +341,7 @@ msgstr "Chat en Direct"
 
 #: build/4.1.2/index.js:1
 msgid "Tweet"
-msgstr "Tweet"
+msgstr "Tweeter"
 
 #: build/4.1.2/index.js:1
 msgid "Find our team at @bluehost for updates on our products and support from our team."
@@ -363,69 +411,45 @@ msgstr "Vous ne trouvez pas ce que vous cherchez ? Visitez notre site Web pour p
 msgid "Go to Bluehost"
 msgstr "Aller au Bluehost"
 
-#: build/4.1.2/index.js:2
-msgid "Site Pages"
-msgstr "Pages du site"
-
-#: build/4.1.2/index.js:2
-msgid "Edit your homepage and other existing pages or add new pages to your site."
-msgstr "Modifiez votre page d'accueil et d'autres pages existantes ou ajoutez de nouvelles pages à votre site."
+#: build/4.1.2/index.js:1
+msgid "There's nothing here!"
+msgstr "Il n'y a rien ici !"
 
 #: build/4.1.2/index.js:1
-#: build/4.1.2/index.js:2
-msgid "View all"
-msgstr "Tout voir"
+msgid "Products & Services"
+msgstr "Produits et Services"
 
 #: build/4.1.2/index.js:1
-#: build/4.1.2/index.js:2
-msgid "Add New"
-msgstr "Ajouter un Nouveau"
+msgid "Sales & Promotions"
+msgstr "Ventes et Promotions"
 
-#: build/4.1.2/index.js:6
-msgid "This is where you can manage cache settings for your website."
-msgstr "C'est ici que vous pouvez gérer les paramètres de cache de votre site Web."
-
-#: build/4.1.2/index.js:14
-msgid "The Help Center provides guided, step-by-step assistance as you build your site."
-msgstr "Le Centre d'aide fournit une assistance guidée étape par étape lors de la construction de votre site."
-
-#: build/4.1.2/index.js:6
-msgid "Site Status"
-msgstr "État du site"
-
-#: inc/widgets/views/site-preview.php:147
-#: build/4.1.2/index.js:6
-msgid "Not Live"
-msgstr "Pas en ligne"
-
-#: inc/widgets/views/site-preview.php:148
-#: build/4.1.2/index.js:6
-msgid "Live"
-msgstr "En ligne"
-
-#: build/4.1.2/index.js:6
-msgid "Your Bluehost Coming Soon page lets you hide your site from visitors while you make the magic happen."
-msgstr "Votre Bluehost bientôt page vous permet de cacher votre site aux visiteurs pendant que vous faites de la magie se produire."
-
-#: build/4.1.2/index.js:6
-msgid "Your website is currently displaying a \"Coming Soon\" page."
-msgstr "Votre site web affiche actuellement une page \"À venir\"."
-
-#. translators: %s: number of weeks. `The trash will automatically empty every ${numTrashWeeks} weeks.`
-#: build/4.1.2/index.js:14
-msgid "The trash will automatically empty every %s week."
-msgid_plural "The trash will automatically empty every %s weeks."
-msgstr[0] "La corbeille sera automatiquement vide toutes les %s semaines."
-msgstr[1] "La corbeille se videra automatiquement chaque semaine."
-
-#: build/4.1.2/index.js:14
-msgid "WonderBlocks provides a library of customizable block patterns and page templates."
-msgstr "WonderBlocks fournit une bibliothèque de modèles de blocs personnalisables et de modèles de pages."
-
-#: inc/widgets/views/account.php:132
 #: build/4.1.2/index.js:1
-msgid "Hosting"
-msgstr "Hébergement"
+msgid "Sales Channel"
+msgstr "Canal de ventes"
+
+#: build/4.1.2/index.js:1
+msgid "Payments"
+msgstr "Paiements"
+
+#: build/4.1.2/index.js:1
+msgid "Store Details"
+msgstr "Détails de la boutique"
+
+#: build/4.1.2/index.js:1
+msgid "Help with WordPress"
+msgstr "Aide avec WordPress"
+
+#: build/4.1.2/index.js:1
+msgid "Admin"
+msgstr "Administrateur"
+
+#: build/4.1.2/index.js:1
+msgid "Secret page to manage admin features and settings."
+msgstr "Page secrète pour gérer les fonctionnalités et les paramètres d'administration."
+
+#: build/4.1.2/index.js:1
+msgid "We are available 24/7 to help answer questions and solve your problems."
+msgstr "Nous sommes à votre disposition 24h/24 et 7j/7 pour répondre à vos questions et résoudre vos problèmes."
 
 #: build/4.1.2/index.js:1
 msgid "Control Panel"
@@ -439,37 +463,21 @@ msgstr "Centre de Renouvellement"
 msgid "Products"
 msgstr "Produits"
 
-#: inc/widgets/views/account.php:178
-#: build/4.1.2/index.js:1
-msgid "Payment Methods"
-msgstr "Moyens de paiement"
-
 #: build/4.1.2/index.js:1
 msgid "Billing"
 msgstr "Facturation"
-
-#: inc/widgets/views/account.php:109
-#: build/4.1.2/index.js:1
-msgid "Mail"
-msgstr "Courrier"
 
 #: build/4.1.2/index.js:1
 msgid "Mail & Office"
 msgstr "Courrier et bureau"
 
-#: inc/widgets/views/account.php:155
-#: build/4.1.2/index.js:1
-msgid "Security"
-msgstr "Sécurité"
-
-#: inc/widgets/views/account.php:86
-#: build/4.1.2/index.js:1
-msgid "Profile"
-msgstr "Profil"
-
 #: build/4.1.2/index.js:1
 msgid "Validation Token"
 msgstr "Jeton de validation"
+
+#: build/4.1.2/index.js:1
+msgid "Need some help?"
+msgstr "Besoin d'aide ?"
 
 #: build/4.1.2/index.js:1
 msgid "Explore our featured collection of tools and services."
@@ -496,90 +504,19 @@ msgstr "Oups ! Quelque chose s'est mal passé"
 msgid "An error occurred while loading the content. Please try again later."
 msgstr "Une erreur s'est produite lors du chargement du contenu. Veuillez réessayer plus tard."
 
-#: build/4.1.2/index.js:14
-msgid "Solution"
-msgstr "Solution"
-
-#: build/4.1.2/index.js:14
-msgid "Explore the plugins and tools available with your solution."
-msgstr "Explorez les plugins et les outils disponibles avec votre solution."
-
-#: build/4.1.2/index.js:14
-msgid "Oops, there was an error loading your plugins and tools, please try again later."
-msgstr "Oups, il y a eu une erreur lors du chargement de vos plugins et outils, veuillez réessayer plus tard."
-
-#: build/4.1.2/index.js:14
-msgid "Sorry, no current plugins and tools. Please, try again later."
-msgstr "Désolé, aucun plugin ou outil actuel. Veuillez réessayer plus tard."
-
-#: inc/widgets/Help.php:38
-msgid "Need Some Help?"
-msgstr "Besoin d'aide ?"
-
-#: inc/widgets/SitePreview.php:36
-#: inc/widgets/views/site-preview.php:112
-#: inc/widgets/views/site-preview.php:117
-msgid "Site Preview"
-msgstr "Aperçu du site"
-
-#: inc/widgets/views/account.php:159
-msgid "Quick Access"
-msgstr "Accès rapide"
-
-#: inc/widgets/views/account.php:198
-msgid "Renewals Center"
-msgstr "Centre de Renouvellement"
-
-#: inc/widgets/views/help.php:71
-#: build/4.1.2/index.js:1
-msgid "From DIY to full-service help."
-msgstr "Du bricolage au service complet."
-
-#: inc/widgets/views/help.php:72
-#: build/4.1.2/index.js:1
-msgid "Call or chat 24/7 for support or let our experts build your site for you."
-msgstr "Appelez ou discutez 24/7 pour obtenir de l'aide ou laissez nos experts construire votre site pour vous."
-
-#: inc/widgets/views/help.php:90
-#: build/4.1.2/index.js:1
-msgid "Get Help"
-msgstr "Obtenir de l'aide"
-
-#: inc/widgets/views/site-preview.php:177
-msgid "Preview Site"
-msgstr "Aperçu du site"
-
-#: inc/widgets/views/site-preview.php:178
-msgid "View Site"
-msgstr "Voir le site"
-
-#: inc/widgets/views/site-preview.php:188
-msgid "Edit Site"
-msgstr "Modifier le site"
-
-#: inc/widgets/views/site-preview.php:198
-msgid "Launch Site"
-msgstr "Site de lancement"
-
-#: inc/widgets/views/site-preview.php:208
-msgid "Enable Coming Soon"
-msgstr "Activer bientôt"
-
-#: build/4.1.2/index.js:1
-msgid "Secret page to manage admin features and settings."
-msgstr "Page secrète pour gérer les fonctionnalités et les paramètres d'administration."
-
-#: build/4.1.2/index.js:1
-msgid "We are available 24/7 to help answer questions and solve your problems."
-msgstr "Nous sommes à votre disposition 24h/24 et 7j/7 pour répondre à vos questions et résoudre vos problèmes."
-
-#: build/4.1.2/index.js:1
-msgid "Need some help?"
-msgstr "Besoin d'aide ?"
-
 #: build/4.1.2/index.js:1
 msgid "Showcase physical and digital goods, product variations, and custom configurations."
 msgstr "Présentez des produits physiques et numériques, des variations de produits et des configurations personnalisées."
+
+#: build/4.1.2/index.js:1
+#: build/4.1.2/index.js:2
+msgid "View all"
+msgstr "Tout voir"
+
+#: build/4.1.2/index.js:1
+#: build/4.1.2/index.js:2
+msgid "Add New"
+msgstr "Ajouter un Nouveau"
 
 #: build/4.1.2/index.js:1
 msgid "Blog Posts"
@@ -613,6 +550,14 @@ msgstr "Les visiteurs de votre site verront votre page \"À venir\" et non votre
 #: build/4.1.2/index.js:2
 msgid "Visitors to your site will see all your publicly published pages."
 msgstr "Les visiteurs de votre site verront toutes vos pages publiées."
+
+#: build/4.1.2/index.js:2
+msgid "Site Pages"
+msgstr "Pages du site"
+
+#: build/4.1.2/index.js:2
+msgid "Edit your homepage and other existing pages or add new pages to your site."
+msgstr "Modifiez votre page d'accueil et d'autres pages existantes ou ajoutez de nouvelles pages à votre site."
 
 #: build/4.1.2/index.js:2
 msgid "No cache enabled."
@@ -921,6 +866,12 @@ msgid "No settings available."
 msgstr "Aucun paramètre disponible."
 
 #: build/4.1.2/index.js:6
+#: build/4.1.2/index.js:12
+#: build/4.1.2/index.js:14
+msgid "Oops! Something went wrong. Please try again."
+msgstr "Oups ! Une erreur s’est produite. Réessayez."
+
+#: build/4.1.2/index.js:6
 msgid "Loading settings…"
 msgstr "Chargement des paramètres…"
 
@@ -975,6 +926,10 @@ msgstr "Lorsque cette option est activée, les images optimisées seront servies
 #: build/4.1.2/index.js:6
 msgid "Something went wrong while updating the settings. Please try again."
 msgstr "Une erreur s'est produite lors de la mise à jour des paramètres. Veuillez réessayer."
+
+#: build/4.1.2/index.js:6
+msgid "This is where you can manage cache settings for your website."
+msgstr "C'est ici que vous pouvez gérer les paramètres de cache de votre site Web."
 
 #: build/4.1.2/index.js:6
 msgid "Enabled All auto-updates"
@@ -1081,12 +1036,24 @@ msgid "Coming soon page is not active. Site is live to visitors."
 msgstr "La page à venir n'est pas active. Le site est en direct pour les visiteurs."
 
 #: build/4.1.2/index.js:6
+msgid "Site Status"
+msgstr "État du site"
+
+#: build/4.1.2/index.js:6
 msgid "Turn off your \"Coming Soon\" page when you are ready to launch your website."
 msgstr "Désactivez votre page \"À venir\" lorsque vous serez prêt à lancer votre site Web."
 
 #: build/4.1.2/index.js:6
 msgid "Turn on your \"Coming Soon\" page when you need to make major changes to your website."
 msgstr "Activez votre page \"À venir\" lorsque vous aurez besoin d'apporter des modifications majeures à votre site Web."
+
+#: build/4.1.2/index.js:6
+msgid "Your Bluehost Coming Soon page lets you hide your site from visitors while you make the magic happen."
+msgstr "Votre Bluehost bientôt page vous permet de cacher votre site aux visiteurs pendant que vous faites de la magie se produire."
+
+#: build/4.1.2/index.js:6
+msgid "Your website is currently displaying a \"Coming Soon\" page."
+msgstr "Votre site web affiche actuellement une page \"À venir\"."
 
 #: build/4.1.2/index.js:6
 msgid "Disabled old post comments"
@@ -1149,6 +1116,13 @@ msgstr "Commentaires"
 msgid "Comments allow visitors to provide feedback and respond to your posts or pages."
 msgstr "Les commentaires permettent aux visiteurs de fournir des commentaires et de répondre à vos messages ou pages."
 
+#. translators: %s: number of weeks. `The trash will automatically empty every ${numTrashWeeks} weeks.`
+#: build/4.1.2/index.js:14
+msgid "The trash will automatically empty every %s week."
+msgid_plural "The trash will automatically empty every %s weeks."
+msgstr[0] "La corbeille sera automatiquement vide toutes les %s semaines."
+msgstr[1] "La corbeille se videra automatiquement chaque semaine."
+
 #: build/4.1.2/index.js:14
 msgid "Trash setting saved"
 msgstr "Réglage de la corbeille sauvegardé"
@@ -1180,6 +1154,18 @@ msgstr "Recharger la page pour accéder au Centre d'aide."
 #: build/4.1.2/index.js:14
 msgid "The Help Center will no longer display."
 msgstr "Le Centre d'aide ne s'affichera plus."
+
+#: build/4.1.2/index.js:14
+msgid "The Help Center provides guided, step-by-step assistance as you build your site."
+msgstr "Le Centre d'aide fournit une assistance guidée étape par étape lors de la construction de votre site."
+
+#: build/4.1.2/index.js:14
+msgid "Sorry, that is not allowed."
+msgstr "Désolé, ce n'est pas autorisé."
+
+#: build/4.1.2/index.js:14
+msgid "This feature cannot currently be modified."
+msgstr "Cette fonctionnalité ne peut pas être modifiée pour le moment."
 
 #: build/4.1.2/index.js:14
 msgid "This is where you can manage common settings for your website."
@@ -1258,6 +1244,10 @@ msgid "Staging will no longer display."
 msgstr "La mise en veille ne s'affichera plus."
 
 #: build/4.1.2/index.js:14
+msgid "The staging feature provides a way to copy a site to test new updates, features or content."
+msgstr "La fonctionnalité de mise en scène permet de copier un site pour tester de nouvelles mises à jour, des fonctionnalités ou du contenu."
+
+#: build/4.1.2/index.js:14
 msgid "WonderBlocks Enabled"
 msgstr "WonderBlocks activés"
 
@@ -1272,6 +1262,26 @@ msgstr "Créer un nouveau contenu pour voir WonderBlocks en action."
 #: build/4.1.2/index.js:14
 msgid "WonderBlocks will no longer display."
 msgstr "WonderBlocks ne s'affichera plus."
+
+#: build/4.1.2/index.js:14
+msgid "WonderBlocks provides a library of customizable block patterns and page templates."
+msgstr "WonderBlocks fournit une bibliothèque de modèles de blocs personnalisables et de modèles de pages."
+
+#: build/4.1.2/index.js:14
+msgid "Solution"
+msgstr "Solution"
+
+#: build/4.1.2/index.js:14
+msgid "Explore the plugins and tools available with your solution."
+msgstr "Explorez les plugins et les outils disponibles avec votre solution."
+
+#: build/4.1.2/index.js:14
+msgid "Oops, there was an error loading your plugins and tools, please try again later."
+msgstr "Oups, il y a eu une erreur lors du chargement de vos plugins et outils, veuillez réessayer plus tard."
+
+#: build/4.1.2/index.js:14
+msgid "Sorry, no current plugins and tools. Please, try again later."
+msgstr "Désolé, aucun plugin ou outil actuel. Veuillez réessayer plus tard."
 
 #: build/4.1.2/index.js:14
 msgid "Cancel"
@@ -1456,3 +1466,4 @@ msgstr "Une erreur inconnue s'est produite."
 #: build/4.1.2/index.js:14
 msgid "Working…"
 msgstr "Travailler…"
+

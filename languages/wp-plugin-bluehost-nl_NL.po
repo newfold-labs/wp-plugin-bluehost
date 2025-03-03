@@ -1,15 +1,25 @@
+# Copyright (C) 2025 Bluehost
+# This file is distributed under the GPL 2.0 or later.
 msgid ""
 msgstr ""
-"Project-Id-Version: Bluehost Plugi2024-10-21 07:10-00002024-10-21 07:10-0000none1.0text/plain; charset=UTF-88bitnplurals=2; plural=(n != 1);Crowdin\n"
-"Report-Msgid-Bugs-To: \n"
+"Project-Id-Version: wp-plugin-bluehost\n"
+"Report-Msgid-Bugs-To: https://github.com/newfold-labs/wp-plugin-bluehost/issues\n"
 "Last-Translator: \n"
-"Language-Team: \n"
+"Language-Team: Dutch\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2025-02-25T20:53:21+00:00\n"
-"PO-Revision-Date: 2025-02-25T20:53:21+00:00\n"
-"Language: \n"
+"POT-Creation-Date: 2023-03-08T20:13:41+00:00\n"
+"PO-Revision-Date: 2025-03-03 16:59\n"
+"X-Generator: WP-CLI 2.11.0\n"
+"X-Domain: wp-plugin-bluehost\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Crowdin-Project: wp-plugin-bluehost\n"
+"X-Crowdin-Project-ID: 768517\n"
+"X-Crowdin-Language: nl\n"
+"X-Crowdin-File: /languages/wp-plugin-bluehost.pot\n"
+"X-Crowdin-File-ID: 13\n"
+"Language: nl_NL\n"
 
 #. Plugin Name of the plugin
 #: bluehost-wordpress-plugin.php
@@ -32,7 +42,7 @@ msgstr "WordPress plugin die een WordPress site integreert met het Bluehost cont
 #: inc/Admin.php:143
 #: inc/Admin.php:144
 msgid "Bluehost"
-msgstr "Bluehost"
+msgstr "Blauwe host"
 
 #: bootstrap.php:24
 msgid "Please install the Bluehost Plugin dependencies."
@@ -197,6 +207,94 @@ msgstr "Auto-updates ingeschakeld op de <a href=\"%s\">Bluehost > Instellingen</
 msgid "Auto-updates enabled"
 msgstr "Auto-update ingeschakeld"
 
+#: inc/widgets/Help.php:38
+msgid "Need Some Help?"
+msgstr "Hulp nodig?"
+
+#: inc/widgets/SitePreview.php:36
+#: inc/widgets/views/site-preview.php:112
+#: inc/widgets/views/site-preview.php:117
+msgid "Site Preview"
+msgstr "Website voorbeeld"
+
+#: inc/widgets/views/account.php:86
+#: build/4.1.2/index.js:1
+msgid "Profile"
+msgstr "Profiel"
+
+#: inc/widgets/views/account.php:109
+#: build/4.1.2/index.js:1
+msgid "Mail"
+msgstr "E-mailen"
+
+#: inc/widgets/views/account.php:132
+#: build/4.1.2/index.js:1
+msgid "Hosting"
+msgstr "Hosting"
+
+#: inc/widgets/views/account.php:155
+#: build/4.1.2/index.js:1
+msgid "Security"
+msgstr "Beveiliging"
+
+#: inc/widgets/views/account.php:159
+msgid "Quick Access"
+msgstr "Snelle Toegang"
+
+#: inc/widgets/views/account.php:178
+#: build/4.1.2/index.js:1
+msgid "Payment Methods"
+msgstr "Betalingsmethoden"
+
+#: inc/widgets/views/account.php:198
+msgid "Renewals Center"
+msgstr "Midden voor verlengingen"
+
+#: inc/widgets/views/help.php:71
+#: build/4.1.2/index.js:1
+msgid "From DIY to full-service help."
+msgstr "Van doe-het-zelf tot volledige service hulp."
+
+#: inc/widgets/views/help.php:72
+#: build/4.1.2/index.js:1
+msgid "Call or chat 24/7 for support or let our experts build your site for you."
+msgstr "Bel of chat 24/7 voor ondersteuning of laat onze experts uw site voor u bouwen."
+
+#: inc/widgets/views/help.php:90
+#: build/4.1.2/index.js:1
+msgid "Get Help"
+msgstr "Hulp vragen"
+
+#: inc/widgets/views/site-preview.php:147
+#: build/4.1.2/index.js:6
+msgid "Not Live"
+msgstr "Niet live"
+
+#: inc/widgets/views/site-preview.php:148
+#: build/4.1.2/index.js:6
+msgid "Live"
+msgstr "Zichtbaar"
+
+#: inc/widgets/views/site-preview.php:177
+msgid "Preview Site"
+msgstr "Website bekijken"
+
+#: inc/widgets/views/site-preview.php:178
+msgid "View Site"
+msgstr "Bekijk site"
+
+#: inc/widgets/views/site-preview.php:188
+msgid "Edit Site"
+msgstr "Site bewerken"
+
+#: inc/widgets/views/site-preview.php:198
+msgid "Launch Site"
+msgstr "Site starten"
+
+#: inc/widgets/views/site-preview.php:208
+msgid "Enable Coming Soon"
+msgstr "Activeer binnenkort beschikbaar"
+
 #: build/4.1.2/index.js:1
 msgid "Bluehost WordPress Plugin"
 msgstr "Bluehost WordPress-plugin"
@@ -220,56 +318,6 @@ msgstr "Foutcode:"
 #: build/4.1.2/index.js:1
 msgid "Bluehost Account"
 msgstr "Bluehost Account"
-
-#: build/4.1.2/index.js:1
-msgid "There's nothing here!"
-msgstr "Er is hier niets!"
-
-#: build/4.1.2/index.js:1
-msgid "Products & Services"
-msgstr "Producten en Diensten"
-
-#: build/4.1.2/index.js:1
-msgid "Sales & Promotions"
-msgstr "Verkoop & Promoties"
-
-#: build/4.1.2/index.js:1
-msgid "Sales Channel"
-msgstr "Verkoop Kanaal"
-
-#: build/4.1.2/index.js:1
-msgid "Payments"
-msgstr "Betalingen"
-
-#: build/4.1.2/index.js:1
-msgid "Store Details"
-msgstr "Winkel Details"
-
-#: build/4.1.2/index.js:1
-msgid "Help with WordPress"
-msgstr "Help met WordPress"
-
-#: build/4.1.2/index.js:1
-msgid "Admin"
-msgstr "Beheerder"
-
-#: build/4.1.2/index.js:14
-msgid "The staging feature provides a way to copy a site to test new updates, features or content."
-msgstr "De stagingfunctie biedt een manier om een site te kopiëren om nieuwe updates, functies of inhoud te testen."
-
-#: build/4.1.2/index.js:14
-msgid "Sorry, that is not allowed."
-msgstr "Sorry, dat is niet toegestaan."
-
-#: build/4.1.2/index.js:14
-msgid "This feature cannot currently be modified."
-msgstr "Deze functie kan momenteel niet worden gewijzigd."
-
-#: build/4.1.2/index.js:6
-#: build/4.1.2/index.js:12
-#: build/4.1.2/index.js:14
-msgid "Oops! Something went wrong. Please try again."
-msgstr "Oeps! Er is iets fout gegaan. Probeer het opnieuw."
 
 #: build/4.1.2/index.js:1
 msgid "Phone"
@@ -363,69 +411,45 @@ msgstr "Niet gevonden wat je nodig hebt? Bezoek onze website voor meer informati
 msgid "Go to Bluehost"
 msgstr "Ga naar Bluehost"
 
-#: build/4.1.2/index.js:2
-msgid "Site Pages"
-msgstr "Site pagina's"
-
-#: build/4.1.2/index.js:2
-msgid "Edit your homepage and other existing pages or add new pages to your site."
-msgstr "Bewerk uw startpagina en andere bestaande pagina's of voeg nieuwe pagina's toe aan uw site."
+#: build/4.1.2/index.js:1
+msgid "There's nothing here!"
+msgstr "Er is hier niets!"
 
 #: build/4.1.2/index.js:1
-#: build/4.1.2/index.js:2
-msgid "View all"
-msgstr "Alles weergeven"
+msgid "Products & Services"
+msgstr "Producten en Diensten"
 
 #: build/4.1.2/index.js:1
-#: build/4.1.2/index.js:2
-msgid "Add New"
-msgstr "Nieuwe toevoegen"
+msgid "Sales & Promotions"
+msgstr "Verkoop & Promoties"
 
-#: build/4.1.2/index.js:6
-msgid "This is where you can manage cache settings for your website."
-msgstr "Hier kun je de cache-instellingen voor je website beheren."
-
-#: build/4.1.2/index.js:14
-msgid "The Help Center provides guided, step-by-step assistance as you build your site."
-msgstr "Het Helpcentrum biedt geleidelijke, stap-voor-stap ondersteuning als u uw site bouwt."
-
-#: build/4.1.2/index.js:6
-msgid "Site Status"
-msgstr "Site status"
-
-#: inc/widgets/views/site-preview.php:147
-#: build/4.1.2/index.js:6
-msgid "Not Live"
-msgstr "Niet live"
-
-#: inc/widgets/views/site-preview.php:148
-#: build/4.1.2/index.js:6
-msgid "Live"
-msgstr "Zichtbaar"
-
-#: build/4.1.2/index.js:6
-msgid "Your Bluehost Coming Soon page lets you hide your site from visitors while you make the magic happen."
-msgstr "Je Bluehost komtpagina laat je je site verbergen voor bezoekers terwijl je de magie laat gebeuren."
-
-#: build/4.1.2/index.js:6
-msgid "Your website is currently displaying a \"Coming Soon\" page."
-msgstr "Je website wordt momenteel een \"Binnenkort beschikbaar\" pagina weergegeven."
-
-#. translators: %s: number of weeks. `The trash will automatically empty every ${numTrashWeeks} weeks.`
-#: build/4.1.2/index.js:14
-msgid "The trash will automatically empty every %s week."
-msgid_plural "The trash will automatically empty every %s weeks."
-msgstr[0] "De prullenbak zal automatisch elke %s week leegmaken."
-msgstr[1] "De prullenbak zal automatisch elke %s weken leegmaken."
-
-#: build/4.1.2/index.js:14
-msgid "WonderBlocks provides a library of customizable block patterns and page templates."
-msgstr "WonderBlocks biedt een bibliotheek van aanpasbare blokpatronen en paginasjablonen."
-
-#: inc/widgets/views/account.php:132
 #: build/4.1.2/index.js:1
-msgid "Hosting"
-msgstr "Hosting"
+msgid "Sales Channel"
+msgstr "Verkoop Kanaal"
+
+#: build/4.1.2/index.js:1
+msgid "Payments"
+msgstr "Betalingen"
+
+#: build/4.1.2/index.js:1
+msgid "Store Details"
+msgstr "Winkel Details"
+
+#: build/4.1.2/index.js:1
+msgid "Help with WordPress"
+msgstr "Help met WordPress"
+
+#: build/4.1.2/index.js:1
+msgid "Admin"
+msgstr "Beheerder"
+
+#: build/4.1.2/index.js:1
+msgid "Secret page to manage admin features and settings."
+msgstr "Geheime pagina om admin functies en instellingen te beheren."
+
+#: build/4.1.2/index.js:1
+msgid "We are available 24/7 to help answer questions and solve your problems."
+msgstr "We zijn 24/7 beschikbaar om te helpen vragen te beantwoorden en uw problemen op te lossen."
 
 #: build/4.1.2/index.js:1
 msgid "Control Panel"
@@ -439,37 +463,21 @@ msgstr "Vernieuwen centrum"
 msgid "Products"
 msgstr "Producten"
 
-#: inc/widgets/views/account.php:178
-#: build/4.1.2/index.js:1
-msgid "Payment Methods"
-msgstr "Betalingsmethoden"
-
 #: build/4.1.2/index.js:1
 msgid "Billing"
 msgstr "Facturering"
-
-#: inc/widgets/views/account.php:109
-#: build/4.1.2/index.js:1
-msgid "Mail"
-msgstr "E-mailen"
 
 #: build/4.1.2/index.js:1
 msgid "Mail & Office"
 msgstr "E-mail & Office"
 
-#: inc/widgets/views/account.php:155
-#: build/4.1.2/index.js:1
-msgid "Security"
-msgstr "Beveiliging"
-
-#: inc/widgets/views/account.php:86
-#: build/4.1.2/index.js:1
-msgid "Profile"
-msgstr "Profiel"
-
 #: build/4.1.2/index.js:1
 msgid "Validation Token"
 msgstr "Validatie Token"
+
+#: build/4.1.2/index.js:1
+msgid "Need some help?"
+msgstr "Hulp nodig?"
 
 #: build/4.1.2/index.js:1
 msgid "Explore our featured collection of tools and services."
@@ -496,90 +504,19 @@ msgstr "Oeps! Er ging iets mis"
 msgid "An error occurred while loading the content. Please try again later."
 msgstr "Er is een fout opgetreden tijdens het laden van de inhoud. Probeer het later opnieuw."
 
-#: build/4.1.2/index.js:14
-msgid "Solution"
-msgstr "Oplossing"
-
-#: build/4.1.2/index.js:14
-msgid "Explore the plugins and tools available with your solution."
-msgstr "Ontdek de plug-ins en gereedschappen die beschikbaar zijn met jouw oplossing."
-
-#: build/4.1.2/index.js:14
-msgid "Oops, there was an error loading your plugins and tools, please try again later."
-msgstr "Oeps, er is een fout opgetreden bij het laden van uw plugins en tools, probeer het later opnieuw."
-
-#: build/4.1.2/index.js:14
-msgid "Sorry, no current plugins and tools. Please, try again later."
-msgstr "Sorry, geen huidige plugins en tools. Probeer het later opnieuw."
-
-#: inc/widgets/Help.php:38
-msgid "Need Some Help?"
-msgstr "Hulp nodig?"
-
-#: inc/widgets/SitePreview.php:36
-#: inc/widgets/views/site-preview.php:112
-#: inc/widgets/views/site-preview.php:117
-msgid "Site Preview"
-msgstr "Website voorbeeld"
-
-#: inc/widgets/views/account.php:159
-msgid "Quick Access"
-msgstr "Snelle Toegang"
-
-#: inc/widgets/views/account.php:198
-msgid "Renewals Center"
-msgstr "Midden voor verlengingen"
-
-#: inc/widgets/views/help.php:71
-#: build/4.1.2/index.js:1
-msgid "From DIY to full-service help."
-msgstr "Van doe-het-zelf tot volledige service hulp."
-
-#: inc/widgets/views/help.php:72
-#: build/4.1.2/index.js:1
-msgid "Call or chat 24/7 for support or let our experts build your site for you."
-msgstr "Bel of chat 24/7 voor ondersteuning of laat onze experts uw site voor u bouwen."
-
-#: inc/widgets/views/help.php:90
-#: build/4.1.2/index.js:1
-msgid "Get Help"
-msgstr "Hulp vragen"
-
-#: inc/widgets/views/site-preview.php:177
-msgid "Preview Site"
-msgstr "Website bekijken"
-
-#: inc/widgets/views/site-preview.php:178
-msgid "View Site"
-msgstr "Bekijk site"
-
-#: inc/widgets/views/site-preview.php:188
-msgid "Edit Site"
-msgstr "Site bewerken"
-
-#: inc/widgets/views/site-preview.php:198
-msgid "Launch Site"
-msgstr "Site starten"
-
-#: inc/widgets/views/site-preview.php:208
-msgid "Enable Coming Soon"
-msgstr "Activeer binnenkort beschikbaar"
-
-#: build/4.1.2/index.js:1
-msgid "Secret page to manage admin features and settings."
-msgstr "Geheime pagina om admin functies en instellingen te beheren."
-
-#: build/4.1.2/index.js:1
-msgid "We are available 24/7 to help answer questions and solve your problems."
-msgstr "We zijn 24/7 beschikbaar om te helpen vragen te beantwoorden en uw problemen op te lossen."
-
-#: build/4.1.2/index.js:1
-msgid "Need some help?"
-msgstr "Hulp nodig?"
-
 #: build/4.1.2/index.js:1
 msgid "Showcase physical and digital goods, product variations, and custom configurations."
 msgstr "Laat fysieke en digitale goederen, productvariaties en aangepaste configuraties zien."
+
+#: build/4.1.2/index.js:1
+#: build/4.1.2/index.js:2
+msgid "View all"
+msgstr "Alles weergeven"
+
+#: build/4.1.2/index.js:1
+#: build/4.1.2/index.js:2
+msgid "Add New"
+msgstr "Nieuwe toevoegen"
 
 #: build/4.1.2/index.js:1
 msgid "Blog Posts"
@@ -613,6 +550,14 @@ msgstr "Bezoekers zien uw \"Binnenkort\" pagina en niet uw werkelijke site. Ga n
 #: build/4.1.2/index.js:2
 msgid "Visitors to your site will see all your publicly published pages."
 msgstr "Bezoekers op uw site zien al uw publiekelijk gepubliceerde pagina's."
+
+#: build/4.1.2/index.js:2
+msgid "Site Pages"
+msgstr "Site pagina's"
+
+#: build/4.1.2/index.js:2
+msgid "Edit your homepage and other existing pages or add new pages to your site."
+msgstr "Bewerk uw startpagina en andere bestaande pagina's of voeg nieuwe pagina's toe aan uw site."
 
 #: build/4.1.2/index.js:2
 msgid "No cache enabled."
@@ -921,6 +866,12 @@ msgid "No settings available."
 msgstr "Geen instellingen beschikbaar."
 
 #: build/4.1.2/index.js:6
+#: build/4.1.2/index.js:12
+#: build/4.1.2/index.js:14
+msgid "Oops! Something went wrong. Please try again."
+msgstr "Oeps! Er is iets fout gegaan. Probeer het opnieuw."
+
+#: build/4.1.2/index.js:6
 msgid "Loading settings…"
 msgstr "Instellingen laden…"
 
@@ -975,6 +926,10 @@ msgstr "Wanneer ingeschakeld, worden geoptimaliseerde afbeeldingen in plaats van
 #: build/4.1.2/index.js:6
 msgid "Something went wrong while updating the settings. Please try again."
 msgstr "Er ging iets mis tijdens het bijwerken van de instellingen. Probeer het opnieuw."
+
+#: build/4.1.2/index.js:6
+msgid "This is where you can manage cache settings for your website."
+msgstr "Hier kun je de cache-instellingen voor je website beheren."
 
 #: build/4.1.2/index.js:6
 msgid "Enabled All auto-updates"
@@ -1081,12 +1036,24 @@ msgid "Coming soon page is not active. Site is live to visitors."
 msgstr "Binnenkort beschikbaar is niet actief. De site is live bezoekers."
 
 #: build/4.1.2/index.js:6
+msgid "Site Status"
+msgstr "Site status"
+
+#: build/4.1.2/index.js:6
 msgid "Turn off your \"Coming Soon\" page when you are ready to launch your website."
 msgstr "Schakel uw \"Binnenkort beschikbaar\" pagina uit wanneer u klaar bent om uw website te starten."
 
 #: build/4.1.2/index.js:6
 msgid "Turn on your \"Coming Soon\" page when you need to make major changes to your website."
 msgstr "Schakel uw \"Binnenkort beschikbaar\" pagina in wanneer u belangrijke wijzigingen in uw website moet aanbrengen."
+
+#: build/4.1.2/index.js:6
+msgid "Your Bluehost Coming Soon page lets you hide your site from visitors while you make the magic happen."
+msgstr "Je Bluehost komtpagina laat je je site verbergen voor bezoekers terwijl je de magie laat gebeuren."
+
+#: build/4.1.2/index.js:6
+msgid "Your website is currently displaying a \"Coming Soon\" page."
+msgstr "Je website wordt momenteel een \"Binnenkort beschikbaar\" pagina weergegeven."
 
 #: build/4.1.2/index.js:6
 msgid "Disabled old post comments"
@@ -1149,6 +1116,13 @@ msgstr "Opmerkingen"
 msgid "Comments allow visitors to provide feedback and respond to your posts or pages."
 msgstr "Met reacties kunnen bezoekers feedback geven en reageren op uw berichten of pagina's."
 
+#. translators: %s: number of weeks. `The trash will automatically empty every ${numTrashWeeks} weeks.`
+#: build/4.1.2/index.js:14
+msgid "The trash will automatically empty every %s week."
+msgid_plural "The trash will automatically empty every %s weeks."
+msgstr[0] "De prullenbak zal automatisch elke %s week leegmaken."
+msgstr[1] "De prullenbak zal automatisch elke %s weken leegmaken."
+
 #: build/4.1.2/index.js:14
 msgid "Trash setting saved"
 msgstr "Prullenbak instelling opgeslagen"
@@ -1180,6 +1154,18 @@ msgstr "Herlaad de pagina om naar het Helpcentrum te gaan."
 #: build/4.1.2/index.js:14
 msgid "The Help Center will no longer display."
 msgstr "Het Helpcentrum wordt niet langer weergegeven."
+
+#: build/4.1.2/index.js:14
+msgid "The Help Center provides guided, step-by-step assistance as you build your site."
+msgstr "Het Helpcentrum biedt geleidelijke, stap-voor-stap ondersteuning als u uw site bouwt."
+
+#: build/4.1.2/index.js:14
+msgid "Sorry, that is not allowed."
+msgstr "Sorry, dat is niet toegestaan."
+
+#: build/4.1.2/index.js:14
+msgid "This feature cannot currently be modified."
+msgstr "Deze functie kan momenteel niet worden gewijzigd."
 
 #: build/4.1.2/index.js:14
 msgid "This is where you can manage common settings for your website."
@@ -1258,6 +1244,10 @@ msgid "Staging will no longer display."
 msgstr "Er zal niet langer gefaseerd worden weergegeven."
 
 #: build/4.1.2/index.js:14
+msgid "The staging feature provides a way to copy a site to test new updates, features or content."
+msgstr "De stagingfunctie biedt een manier om een site te kopiëren om nieuwe updates, functies of inhoud te testen."
+
+#: build/4.1.2/index.js:14
 msgid "WonderBlocks Enabled"
 msgstr "WonderBlocks ingeschakeld"
 
@@ -1272,6 +1262,26 @@ msgstr "Maak nieuwe inhoud om WonderBlocks in actie te zien."
 #: build/4.1.2/index.js:14
 msgid "WonderBlocks will no longer display."
 msgstr "WonderBlocks worden niet langer weergegeven."
+
+#: build/4.1.2/index.js:14
+msgid "WonderBlocks provides a library of customizable block patterns and page templates."
+msgstr "WonderBlocks biedt een bibliotheek van aanpasbare blokpatronen en paginasjablonen."
+
+#: build/4.1.2/index.js:14
+msgid "Solution"
+msgstr "Oplossing"
+
+#: build/4.1.2/index.js:14
+msgid "Explore the plugins and tools available with your solution."
+msgstr "Ontdek de plug-ins en gereedschappen die beschikbaar zijn met jouw oplossing."
+
+#: build/4.1.2/index.js:14
+msgid "Oops, there was an error loading your plugins and tools, please try again later."
+msgstr "Oeps, er is een fout opgetreden bij het laden van uw plugins en tools, probeer het later opnieuw."
+
+#: build/4.1.2/index.js:14
+msgid "Sorry, no current plugins and tools. Please, try again later."
+msgstr "Sorry, geen huidige plugins en tools. Probeer het later opnieuw."
 
 #: build/4.1.2/index.js:14
 msgid "Cancel"
@@ -1456,3 +1466,4 @@ msgstr "Er is een onbekende fout opgetreden."
 #: build/4.1.2/index.js:14
 msgid "Working…"
 msgstr "Bezig…"
+

@@ -1,5 +1,6 @@
 import { Alert, Container, Page } from '@newfold/ui-component-library';
 import { useContext } from '@wordpress/element';
+import { __, sprintf } from '@wordpress/i18n';
 
 import SitePages from './sitePages';
 import BlogPosts from './blogPosts';

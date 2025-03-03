@@ -17,18 +17,27 @@ const PerformanceFeatureSettings = () => {
 	const notify = useNotification();
 
 	const getPerformanceNoticeTitle = () => {
-		return performance
-			? __( 'Performance Enabled', 'wp-plugin-bluehost' )
-			: __( 'Performance Disabled', 'wp-plugin-bluehost' );
+		const performanceEnabled = __(
+			'Performance Enabled',
+			'wp-plugin-bluehost'
+		);
+		const performanceDisabled = __(
+			'Performance Disabled',
+			'wp-plugin-bluehost'
+		);
+		return performance ? performanceEnabled : performanceDisabled;
 	};
 
 	const getPerformanceNoticeText = () => {
-		return performance
-			? __(
-					'You need to reload the page to manage Performance.',
-					'wp-plugin-bluehost'
-			  )
-			: __( 'Performance will no longer display.', 'wp-plugin-bluehost' );
+		const performanceEnabled = __(
+			'You need to reload the page to manage Performance.',
+			'wp-plugin-bluehost'
+		);
+		const performanceDisabled = __(
+			'Performance will no longer display.',
+			'wp-plugin-bluehost'
+		);
+		return performance ? performanceEnabled : performanceDisabled;
 	};
 
 	const togglePerformance = () => {

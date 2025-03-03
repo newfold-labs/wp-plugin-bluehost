@@ -195,52 +195,49 @@ final class Admin {
 	/**
 	 * Load Page Scripts & Styles.
 	 *
-	 * @param String $hook - The hook name
-	 *
 	 * @return void
 	 */
-	public static function assets( $hook ) {
+	public static function assets() {
+		$asset_file = BLUEHOST_BUILD_DIR . '/index.asset.php';
 
-		// These assets will be loaded in the bluehost app space only
-		if ( false !== stripos( $hook, 'bluehost' ) ) {
+		if ( is_readable( $asset_file ) ) {
+			$asset = include_once $asset_file;
+		} else {
+			return;
+		}
 
-			$asset_file = BLUEHOST_BUILD_DIR . '/index.asset.php';
+		\wp_register_script(
+			'bluehost-script',
+			BLUEHOST_BUILD_URL . '/index.js',
+			array_merge( $asset['dependencies'], array(
+				'newfold-features',
+				'nfd-runtime',
+				'nfd-installer'
+			) ),
+			$asset['version'],
+			true
+		);
 
-			if ( is_readable( $asset_file ) ) {
-				$asset = include_once $asset_file;
-			} else {
-				return;
-			}
+		\wp_set_script_translations(
+			'bluehost-script',
+			'wp-plugin-bluehost',
+			BLUEHOST_PLUGIN_DIR . '/languages'
+		);
 
-			// TODO: update this to a dependency script
-			do_action( 'newfold/installer/enqueue_scripts' );
+		\wp_register_style(
+			'bluehost-style',
+			BLUEHOST_BUILD_URL . '/index.css',
+			array( 'wp-components', 'nfd-installer' ),
+			$asset['version']
+		);
 
-			\wp_register_script(
-				'bluehost-script',
-				BLUEHOST_BUILD_URL . '/index.js',
-				array_merge( $asset['dependencies'], array( 'newfold-features', 'nfd-runtime' ) ),
-				$asset['version'],
-				true
-			);
+		$screen = get_current_screen();
 
-			\wp_set_script_translations(
-				'bluehost-script',
-				'wp-plugin-bluehost',
-				BLUEHOST_PLUGIN_DIR . '/languages'
-			);
-
-			\wp_register_style(
-				'bluehost-style',
-				BLUEHOST_BUILD_URL . '/index.css',
-				array( 'wp-components' ),
-				$asset['version']
-			);
-
-			$screen = get_current_screen();
-			if ( false !== strpos( $screen->id, 'bluehost' ) ) {
-				\wp_enqueue_script( 'bluehost-script' );
-				\wp_enqueue_style( 'bluehost-style' );
-			}
+		// Ensure we're on the Bluehost admin page before enqueuing scripts
+		if ( isset( $screen->id ) && false !== strpos( $screen->id, 'bluehost' ) ) {
+			// Enqueue the necessary Bluehost scripts and styles
+			wp_enqueue_script( 'bluehost-script' );
+			wp_enqueue_style( 'bluehost-style' );
 		}
 
 		// These assets are loaded in all wp-admin

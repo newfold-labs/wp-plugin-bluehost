@@ -15,17 +15,20 @@ const StagingFeatureSettings = () => {
 	const notify = useNotification();
 
 	const getStagingNoticeTitle = () => {
-		return staging
-			? __( 'Staging Enabled', 'wp-plugin-bluehost' )
-			: __( 'Staging Disabled', 'wp-plugin-bluehost' );
+		const stagingEnabled = __( 'Staging Enabled', 'wp-plugin-bluehost' );
+		const stagingDisabled = __( 'Staging Disabled', 'wp-plugin-bluehost' );
+		return staging ? stagingEnabled : stagingDisabled;
 	};
 	const getStagingNoticeText = () => {
-		return staging
-			? __(
-					'You need to reload the page to manage Staging.',
-					'wp-plugin-bluehost'
-			  )
-			: __( 'Staging will no longer display.', 'wp-plugin-bluehost' );
+		const stagingEnabled = __(
+			'You need to reload the page to manage Staging.',
+			'wp-plugin-bluehost'
+		);
+		const stagingDisabled = __(
+			'Staging will no longer display.',
+			'wp-plugin-bluehost'
+		);
+		return staging ? stagingEnabled : stagingDisabled;
 	};
 
 	const toggleStaging = () => {

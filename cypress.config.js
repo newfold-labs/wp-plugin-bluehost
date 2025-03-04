@@ -75,6 +75,13 @@ module.exports = defineConfig( {
 				] );
 			}
 
+			// Test requires Yoast, so exclude if not supported due to WP or PHP versions
+			if ( ! supportsYoast( config.env ) ) {
+				config.excludeSpecPattern = config.excludeSpecPattern.concat( [
+					'vendor/newfold-labs/wp-module-solutions/tests/cypress/integration/wp-plugins-installation-check.cy.js',
+				] );
+			}
+
 			return config;
 		},
 		baseUrl: 'http://localhost:8882',
@@ -111,6 +118,17 @@ const supportsJetpack = ( env ) => {
 	if (
 		semver.satisfies( env.wpSemverVersion, '>=6.6.0' ) &&
 		semver.satisfies( env.phpSemverVersion, '>=7.2.0' )
+	) {
+		return true;
+	}
+	return false;
+};
+// Check against plugin support at https://wordpress.org/plugins/wordpress-seo/
+const supportsYoast = ( env ) => {
+	const semver = require( 'semver' );
+	if (
+		semver.satisfies( env.wpSemverVersion, '>=6.6.0' ) &&
+		semver.satisfies( env.phpSemverVersion, '>=7.2.5' )
 	) {
 		return true;
 	}

@@ -319,17 +319,17 @@ final class Admin {
 	}
 
 	/**
-	 * Add locale headers to hiive requests
-	 * 
-	 * @param array $args - HTTP request arguments
+	 * Add locale headers to hiive requests.
+	 *
+	 * @param array  $args - HTTP request arguments
 	 * @param string $url - URL of the request
-	 * 
+	 *
 	 * @return array
 	 */
 	public static function add_locale_header( $args, $url ) {
-		// if ( strpos( $url, NFD_HIIVE_URL ) !== false ) {
+		if ( defined( 'NFD_HIIVE_URL' ) && strpos( $url, NFD_HIIVE_URL ) !== false ) {
 			$args['headers']['locale'] = get_locale();
-		// }
+		}
 
 		return $args;
 	}

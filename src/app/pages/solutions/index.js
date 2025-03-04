@@ -23,6 +23,8 @@ const Solutions = () => {
 				'Sorry, no current plugins and tools. Please, try again later.',
 				'wp-plugin-bluehost'
 			),
+			loadMore: __( 'Load More', 'wp-plugin-bluehost' ),
+			myPluginsTools: __( 'My Plugins & Tools', 'wp-plugin-bluehost' ),
 		},
 	};
 

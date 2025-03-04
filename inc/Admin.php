@@ -211,7 +211,7 @@ final class Admin {
 			BLUEHOST_BUILD_URL . '/index.js',
 			array_merge(
 				$asset['dependencies'],
-					array(
+				array(
 					'newfold-features',
 					'nfd-runtime',
 					'nfd-installer'

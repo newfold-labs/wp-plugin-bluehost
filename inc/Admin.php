@@ -214,7 +214,7 @@ final class Admin {
 				array(
 					'newfold-features',
 					'nfd-runtime',
-					'nfd-installer'
+					'nfd-installer',
 				)
 			),
 			$asset['version'],

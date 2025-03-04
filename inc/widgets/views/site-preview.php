@@ -158,8 +158,8 @@ $site_edit_url = get_admin_url( null, wp_is_block_theme() ? 'site-editor.php?can
 	>
 		<?php
 			echo $isComingSoon ?
-			esc_html( 'Your site is currently displaying a "Coming Soon" page.', 'wp-plugin-bluehost' ) :
-			esc_html( 'Your site is live to the world!', 'wp-plugin-bluehost' );
+			esc_html__( 'Your site is currently displaying a "Coming Soon" page.', 'wp-plugin-bluehost' ) :
+			esc_html__( 'Your site is live to the world!', 'wp-plugin-bluehost' );
 		?>
 	</p>
 	

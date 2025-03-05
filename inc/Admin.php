@@ -328,7 +328,7 @@ final class Admin {
 	 */
 	public static function add_locale_header( $args, $url ) {
 		if ( defined( 'NFD_HIIVE_URL' ) && strpos( $url, NFD_HIIVE_URL ) !== false ) {
-			$args['headers']['locale'] = get_locale();
+			$args['headers']['X-WP-LOCALE'] = get_locale();
 		}
 
 		return $args;

@@ -202,3 +202,20 @@ if ( is_admin() ) {
 
 // Instantiate the Features singleton
 Features::getInstance();
+
+// Add locale header to HTTP requests
+add_filter(
+	'http_request_args',
+	function ( $args, $url ) {
+		if ( defined( 'NFD_HIIVE_URL' ) && strpos( $url, NFD_HIIVE_URL ) !== false ) {
+			if ( ! isset( $args['headers'] ) || ! is_array( $args['headers'] ) ) {
+				$args['headers'] = array();
+			}
+			$args['headers']['X-WP-LOCALE'] = get_locale();
+		}
+
+		return $args;
+	},
+	99,
+	2
+);

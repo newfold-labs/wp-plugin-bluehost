@@ -76,7 +76,12 @@ const HelpCenterSettings = ( { forceShow = false } ) => {
 			helpCenter,
 		} );
 		notifySuccess( getHelpCenterNoticeTitle, getHelpCenterNoticeText );
-		updateUI( '#wp-admin-bar-help-center', helpCenter, 'nfd-disabled', true );
+		updateUI(
+			'#wp-admin-bar-help-center',
+			helpCenter,
+			'nfd-disabled',
+			true
+		);
 	}, [ helpCenter ] );
 
 	return (

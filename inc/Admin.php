@@ -42,8 +42,6 @@ final class Admin {
 			/* Disable admin notices on App pages */
 			\add_action( 'admin_init', array( __CLASS__, 'disable_admin_notices' ) );
 		}
-
-		\add_filter( 'http_request_args', array( __CLASS__, 'add_locale_header' ), 10, 2 );
 	}
 
 	/**
@@ -316,21 +314,5 @@ final class Admin {
 		$footer_text = \sprintf( \__( 'Thank you for creating with <a href="https://wordpress.org/">WordPress</a> and <a href="https://bluehost.com/about">Bluehost</a>.', 'wp-plugin-bluehost' ) );
 
 		return $footer_text;
-	}
-
-	/**
-	 * Add locale headers to hiive requests.
-	 *
-	 * @param array  $args - HTTP request arguments
-	 * @param string $url - URL of the request
-	 *
-	 * @return array
-	 */
-	public static function add_locale_header( $args, $url ) {
-		if ( defined( 'NFD_HIIVE_URL' ) && strpos( $url, NFD_HIIVE_URL ) !== false ) {
-			$args['headers']['X-WP-LOCALE'] = get_locale();
-		}
-
-		return $args;
 	}
 } // END \Bluehost\Admin

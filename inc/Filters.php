@@ -7,6 +7,11 @@
 
 namespace Bluehost;
 
+/**
+ * Class Filters
+ *
+ * Registers global WordPress filters for the plugin.
+ */
 final class Filters {
 
 	/**

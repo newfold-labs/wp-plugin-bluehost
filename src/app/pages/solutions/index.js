@@ -25,6 +25,7 @@ const Solutions = () => {
 			),
 			loadMore: __( 'Load More', 'wp-plugin-bluehost' ),
 			myPluginsTools: __( 'My Plugins & Tools', 'wp-plugin-bluehost' ),
+			addNewPlugin: __( 'Add a New Plugin', 'wp-plugin-bluehost' ),
 		},
 	};
 

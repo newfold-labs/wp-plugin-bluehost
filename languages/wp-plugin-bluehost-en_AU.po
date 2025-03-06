@@ -408,6 +408,7 @@ msgstr "Live"
 msgid "Your Bluehost Coming Soon page lets you hide your site from visitors while you make the magic happen."
 msgstr "Your Bluehost Coming Soon page lets you hide your site from visitors while you make the magic happen."
 
+#: inc/widgets/views/site-preview.php:161
 #: build/4.1.2/index.js:7
 msgid "Your website is currently displaying a \"Coming Soon\" page."
 msgstr "Your website is currently displaying a \"Coming Soon\" page."
@@ -1459,14 +1460,10 @@ msgstr "An unknown error has occurred."
 msgid "Working…"
 msgstr "Working…"
 
-#: inc/widgets/views/site-preview.php:161
-msgid "Your site is currently displaying a \"Coming Soon\" page."
-msgstr ""
-
-#: inc/widgets/views/site-preview.php:162
-msgid "Your site is live to the world!"
-msgstr ""
-
 #: build/4.1.2/index.js:15
 msgid "Add a New Plugin"
 msgstr "Add a New Plugin"
+
+#: inc/widgets/views/site-preview.php:162
+msgid "Your website is live to the world!"
+msgstr "Your website is live to the world!"

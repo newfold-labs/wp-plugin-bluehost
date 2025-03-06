@@ -408,6 +408,7 @@ msgstr "Zichtbaar"
 msgid "Your Bluehost Coming Soon page lets you hide your site from visitors while you make the magic happen."
 msgstr "Je Bluehost komtpagina laat je je site verbergen voor bezoekers terwijl je de magie laat gebeuren."
 
+#: inc/widgets/views/site-preview.php:161
 #: build/4.1.2/index.js:7
 msgid "Your website is currently displaying a \"Coming Soon\" page."
 msgstr "Je website wordt momenteel een \"Binnenkort beschikbaar\" pagina weergegeven."
@@ -1459,14 +1460,10 @@ msgstr "Er is een onbekende fout opgetreden."
 msgid "Working…"
 msgstr "Bezig…"
 
-#: inc/widgets/views/site-preview.php:161
-msgid "Your site is currently displaying a \"Coming Soon\" page."
-msgstr ""
-
-#: inc/widgets/views/site-preview.php:162
-msgid "Your site is live to the world!"
-msgstr ""
-
 #: build/4.1.2/index.js:15
 msgid "Add a New Plugin"
 msgstr "Een nieuwe plugin toevoegen"
+
+#: inc/widgets/views/site-preview.php:162
+msgid "Your website is live to the world!"
+msgstr "Je website is live naar de wereld!"

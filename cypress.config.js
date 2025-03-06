@@ -8,6 +8,7 @@ module.exports = defineConfig( {
 		baseUrl: process.env.BASE_URL || 'http://localhost:8882',
 		wpUsername: process.env.WP_ADMIN_USERNAME || 'admin',
 		wpPassword: process.env.WP_ADMIN_PASSWORD || 'password',
+		wpVersion,
 		phpVersion,
 		pluginId: 'bluehost',
 		appId: 'wppbh',

@@ -39,9 +39,7 @@ const SitePages = () => {
 					{ __( 'View all', 'wp-plugin-bluehost' ) }
 				</a>
 				<a href="post-new.php?post_type=page&wb-library=patterns&wb-category=features">
-					<Button onClick>
-						{ __( 'Add New', 'wp-plugin-bluehost' ) }
-					</Button>
+					<Button>{ __( 'Add New', 'wp-plugin-bluehost' ) }</Button>
 				</a>
 			</div>
 		</Card>

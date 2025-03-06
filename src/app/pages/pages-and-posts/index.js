@@ -76,8 +76,8 @@ const PagesAndPosts = () => {
 					{ window.NewfoldRuntime.isWoocommerceActive && (
 						<ProductsPages />
 					) }
-					{ window.NewfoldRuntime.capabilities.hasYithExtended &&
-						window.NewfoldRuntime.isWoocommerceActive && (
+					{ window.NewfoldRuntime.isWoocommerceActive &&
+						window.NewfoldRuntime.capabilities.hasYithExtended && (
 							<BookingAndAppointments />
 						) }
 				</div>

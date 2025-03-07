@@ -5,13 +5,14 @@ const wpVersion = /[^/]*$/.exec( core )[ 0 ];
 module.exports = defineConfig( {
 	projectId: '71eo94',
 	env: {
-		wpUsername: 'admin',
-		wpPassword: 'password',
+		baseUrl: process.env.BASE_URL || 'http://localhost:8882',
+		wpUsername: process.env.WP_ADMIN_USERNAME || 'admin',
+		wpPassword: process.env.WP_ADMIN_PASSWORD || 'password',
 		wpVersion,
 		phpVersion,
 		pluginId: 'bluehost',
 		appId: 'wppbh',
-		pluginSlug: 'wp-plugin-bluehost',
+		pluginSlug: 'wp-plugin-bluehost'
 	},
 	downloadsFolder: 'tests/cypress/downloads',
 	fixturesFolder: 'tests/cypress/fixtures',
@@ -75,6 +76,13 @@ module.exports = defineConfig( {
 				] );
 			}
 
+			// Test requires Yoast, so exclude if not supported due to WP or PHP versions
+			if ( ! supportsYoast( config.env ) ) {
+				config.excludeSpecPattern = config.excludeSpecPattern.concat( [
+					'vendor/newfold-labs/wp-module-solutions/tests/cypress/integration/wp-plugins-installation-check.cy.js',
+				] );
+			}
+
 			return config;
 		},
 		baseUrl: 'http://localhost:8882',
@@ -86,6 +94,7 @@ module.exports = defineConfig( {
 		testIsolation: false,
 		excludeSpecPattern: [
 			'vendor/newfold-labs/**/tests/cypress/integration/wp-module-support/*.cy.js', // skip any module's wp-module-support files
+			'vendor/newfold-labs/wp-module-migration/tests/cypress/integration/Migration/verifyMigrationFromAM.cy.js', // don't run the bad migration test
 		],
 		experimentalRunAllSpecs: true,
 	},
@@ -110,6 +119,17 @@ const supportsJetpack = ( env ) => {
 	if (
 		semver.satisfies( env.wpSemverVersion, '>=6.6.0' ) &&
 		semver.satisfies( env.phpSemverVersion, '>=7.2.0' )
+	) {
+		return true;
+	}
+	return false;
+};
+// Check against plugin support at https://wordpress.org/plugins/wordpress-seo/
+const supportsYoast = ( env ) => {
+	const semver = require( 'semver' );
+	if (
+		semver.satisfies( env.wpSemverVersion, '>=6.6.0' ) &&
+		semver.satisfies( env.phpSemverVersion, '>=7.2.5' )
 	) {
 		return true;
 	}

@@ -11,5 +11,4 @@ class ExampleTest extends WP_UnitTestCase {
 	public function test_is_working() {
 		$this->assertEquals( true, true );
 	}
-
 }

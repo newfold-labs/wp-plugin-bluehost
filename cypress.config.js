@@ -94,7 +94,6 @@ module.exports = defineConfig( {
 		testIsolation: false,
 		excludeSpecPattern: [
 			'vendor/newfold-labs/**/tests/cypress/integration/wp-module-support/*.cy.js', // skip any module's wp-module-support files
-			'vendor/newfold-labs/wp-module-migration/tests/cypress/integration/Migration/verifyMigrationFromAM.cy.js', // don't run the bad migration test
 		],
 		experimentalRunAllSpecs: true,
 	},

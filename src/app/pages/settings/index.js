@@ -36,14 +36,6 @@ const Settings = () => {
 
 				<Container.Block
 					separator={ true }
-					id={ 'social-media-accounts-section' }
-					className={ 'wppbh-app-settings-social' }
-				>
-					<SocialMediaAccounts />
-				</Container.Block>
-
-				<Container.Block
-					separator={ true }
 					id={ 'wonder-blocks-section' }
 					className={ 'wppbh-app-settings-wonder-blocks' }
 				>

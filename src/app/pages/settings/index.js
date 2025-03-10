@@ -6,7 +6,7 @@ import HelpCenterSettings from './helpCenterSettings';
 import WonderBlocksSettings from './wonderBlocksSettings';
 import ContentSettings from './contentSettings';
 import CommentSettings from './commentSettings';
-import SocialMediaAccounts from './socialMediaAccounts';
+// import SocialMediaAccounts from './socialMediaAccounts';
 
 const Settings = () => {
 	return (

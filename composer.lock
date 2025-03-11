@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "9d3536712469fc9be77d0c3cc8c93dad",
+    "content-hash": "158fbdfab61df3046903b50cd2891647",
     "packages": [
         {
             "name": "doctrine/inflector",
@@ -2038,7 +2038,7 @@
         },
         {
             "name": "newfold-labs/wp-module-performance",
-            "version": "2.7.4",
+            "version": "2.7.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/newfold-labs/wp-module-performance.git",

@@ -42,6 +42,8 @@ final class Admin {
 			/* Disable admin notices on App pages */
 			\add_action( 'admin_init', array( __CLASS__, 'disable_admin_notices' ) );
 		}
+
+		\add_action( 'update_option_WPLANG', array( __CLASS__, 'clear_transient_on_language_change' ), 10, 2 );
 	}
 
 	/**
@@ -314,5 +316,23 @@ final class Admin {
 		$footer_text = \sprintf( \__( 'Thank you for creating with <a href="https://wordpress.org/">WordPress</a> and <a href="https://bluehost.com/about">Bluehost</a>.', 'wp-plugin-bluehost' ) );
 
 		return $footer_text;
+	}
+
+	/**
+	 * Clears a specific transient when the WordPress admin language setting is changed.
+	 *
+	 * This function hooks into the `update_option_WPLANG` action to detect when
+	 * the site language is updated in the WordPress settings. If a change is detected,
+	 * it deletes the specified transient to ensure fresh data is retrieved.
+	 *
+	 * @param string $old_value The previous language setting (e.g., 'en_US').
+	 * @param string $new_value The new language setting (e.g., 'fr_FR').
+	 */
+	public static function clear_transient_on_language_change( $old_value, $new_value ) {
+		// Check if the language has actually changed
+		if ( $old_value !== $new_value ) {
+			// Delete the transients to refresh cached data
+			delete_transient( 'newfold_marketplace' );
+		}
 	}
 } // END \Bluehost\Admin

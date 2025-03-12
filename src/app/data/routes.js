@@ -1,5 +1,4 @@
 import {
-	HomeIcon,
 	ShoppingBagIcon,
 	WrenchScrewdriverIcon,
 	BoltIcon,
@@ -7,12 +6,12 @@ import {
 	BuildingStorefrontIcon,
 	DocumentDuplicateIcon,
 	PuzzlePieceIcon,
+	ServerStackIcon,
 } from '@heroicons/react/24/outline';
 import { ReactComponent as HelpIcon } from '../components/icons/HelpIcon.svg';
 import { NewfoldRuntime } from '@newfold/wp-module-runtime';
 import { getMarketplaceSubnavRoutes } from '@modules/wp-module-marketplace/components/marketplaceSubnav';
 import { Route, Routes } from 'react-router-dom';
-import Home from '../pages/home';
 import PagesAndPosts from '../pages/pages-and-posts';
 import Store from '../pages/ecommerce/page';
 import Marketplace from '../pages/marketplace';
@@ -22,6 +21,7 @@ import Settings from '../pages/settings';
 import Staging from '../pages/staging';
 import Help from '../pages/help';
 import Admin from '../pages/admin';
+import Hosting from '../pages/hosting';
 
 const addPartialMatch = ( prefix, path ) =>
 	prefix === path ? `${ prefix }/*` : path;
@@ -48,7 +48,7 @@ export const AppRoutes = () => {
 						/>
 					)
 			) }
-			<Route path="/" element={ <Home /> } />
+			<Route path="/" element={ <Hosting /> } />
 			<Route
 				path="*"
 				element={
@@ -81,9 +81,9 @@ const utilityRoutePaths = [ '/help' ];
 export const routes = [
 	{
 		name: '/home',
-		title: __( 'Home', 'wp-plugin-bluehost' ),
-		Component: Home,
-		Icon: HomeIcon,
+		title: __( 'Hosting', 'wp-plugin-bluehost' ),
+		Component: Hosting,
+		Icon: ServerStackIcon,
 		condition: true,
 	},
 	{

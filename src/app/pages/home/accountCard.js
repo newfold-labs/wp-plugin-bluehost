@@ -82,7 +82,9 @@ const AccountCard = ( { props } ) => {
 	return (
 		<Card { ...props }>
 			<Card.Content>
-				<Title size={ 2 }>Bluehost Account</Title>
+				<Title size={ 2 }>
+					{ __( 'Bluehost Account', 'wp-plugin-bluehost' ) }
+				</Title>
 				<ul
 					className={ classNames(
 						'max-[575px]:nfd-grid-cols-2 nfd-gap-3',

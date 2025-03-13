@@ -333,6 +333,8 @@ final class Admin {
 		if ( $old_value !== $new_value ) {
 			// Delete the transients to refresh cached data
 			delete_transient( 'newfold_marketplace' );
+			delete_transient( 'newfold_notifications' );
+			delete_transient( 'newfold_solutions' );
 		}
 	}
 } // END \Bluehost\Admin

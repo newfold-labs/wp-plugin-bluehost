@@ -66,58 +66,52 @@ final class Admin {
 	 *
 	 * @return array
 	 */
-	public static function subpages() {
-		global $bluehost_module_container;
-		$capability = new SiteCapabilities();
+	public static function plugin_subpages() {
 
-		$home          = array(
-			'bluehost#/home' => __( 'Home', 'wp-plugin-bluehost' ),
+		$home     = array(
+			'route'	   => 'bluehost#/home',
+			'title'    => __( 'Dashboard', 'wp-plugin-bluehost' ),
+			'priority' => 1,
 		);
-		$pagesAndPosts = array(
-			'bluehost#/pages-and-posts' => __( 'Pages & Posts', 'wp-plugin-bluehost' ),
+		$settings = array(
+			'route'	   => 'bluehost#/settings',
+			'title'    => __( 'Settings', 'wp-plugin-bluehost' ),
+			'priority' => 60,
 		);
-		$store         = array(
-			'bluehost#/store' => __( 'Store', 'wp-plugin-bluehost' ),
-		);
-		$marketplace   = array(
-			'bluehost#/marketplace' => __( 'Marketplace', 'wp-plugin-bluehost' ),
-		);
-		// add plugins and tools if has solution
-		$mypluginsandtools = $capability->get( 'hasSolution' )
-			? array(
-				'bluehost#/my_plugins_and_tools' => __( 'My Plugins & Tools', 'wp-plugin-bluehost' ),
-			)
-			: array();
-		// add performance if enabled
-		$performance = isEnabled( 'performance' )
-			? array(
-				'bluehost#/performance' => __( 'Performance', 'wp-plugin-bluehost' ),
-			)
-			: array();
-		$settings    = array(
-			'bluehost#/settings' => __( 'Settings', 'wp-plugin-bluehost' ),
-		);
-		// add staging if enabled
-		$staging = isEnabled( 'staging' )
-			? array(
-				'bluehost#/staging' => __( 'Staging', 'wp-plugin-bluehost' ),
-			)
-			: array();
-		$help    = array(
-			'bluehost#/help' => __( 'Help', 'wp-plugin-bluehost' ),
+		$help     = array(
+			'route'	   => 'bluehost#/help',
+			'title'    => __( 'Help Resources', 'wp-plugin-bluehost' ),
+			'priority' => 70,
 		);
 
-		return array_merge(
-			$home,
-			$pagesAndPosts,
-			$store,
-			$marketplace,
-			$mypluginsandtools,
-			$performance,
-			$settings,
-			$staging,
-			$help
+		// apply filter to add module subnav items
+		$subnav = apply_filters(
+			'nfd_plugin_subnav', // modules can filter this to add their own subnav items
+			array(
+				$settings,
+				$home,
+				$help
+			)
 		);
+
+		// sort subnav items by priority
+		usort(
+			$subnav,
+			function( $a, $b ) {
+				if ($a['priority'] == $b['priority']) {
+					return 0;
+				}
+				return ($a['priority'] < $b['priority'] ? -1 : 1);
+			}
+		);
+		
+		$pages = array();
+		foreach ($subnav as $nav) {
+			$pages[$nav['route']] = $nav['title'];
+		}
+
+		// return subnav items sorted by priority
+		return $pages;
 	}
 
 	/**
@@ -151,19 +145,18 @@ final class Admin {
 			0
 		);
 
-		// If we're outside of Bluehost, add subpages to Bluehost menu
-		if ( false === ( isset( $_GET['page'] ) && strpos( filter_input( INPUT_GET, 'page', FILTER_UNSAFE_RAW ), 'bluehost' ) >= 0 ) ) { // phpcs:ignore
-			foreach ( self::subpages() as $route => $title ) {
-				\add_submenu_page(
-					'bluehost',
-					$title,
-					$title,
-					'manage_options',
-					$route,
-					array( __CLASS__, 'render' )
-				);
-			}
+		// Add subpagesto menu
+		foreach ( self::plugin_subpages() as $route => $title ) {
+			\add_submenu_page(
+				'bluehost',
+				$title,
+				$title,
+				'manage_options',
+				$route,
+				array( __CLASS__, 'render' )
+			);
 		}
+
 	}
 
 	/**

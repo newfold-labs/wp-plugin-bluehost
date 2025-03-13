@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "5e12cb1d7d855a145ac6766dd85b9464",
+    "content-hash": "b0ebecf46050078d50030be6ce0130b2",
     "packages": [
         {
             "name": "doctrine/inflector",
@@ -2042,12 +2042,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/newfold-labs/wp-module-performance.git",
-                "reference": "24e911bb78adbc7e9b5c7782b8a78aee4d3d930a"
+                "reference": "d13bcbedf4a027aa3004e1b03e5e4bc3221a6644"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/newfold-labs/wp-module-performance/zipball/24e911bb78adbc7e9b5c7782b8a78aee4d3d930a",
-                "reference": "24e911bb78adbc7e9b5c7782b8a78aee4d3d930a",
+                "url": "https://api.github.com/repos/newfold-labs/wp-module-performance/zipball/d13bcbedf4a027aa3004e1b03e5e4bc3221a6644",
+                "reference": "d13bcbedf4a027aa3004e1b03e5e4bc3221a6644",
                 "shasum": ""
             },
             "require": {
@@ -2122,7 +2122,7 @@
                 "source": "https://github.com/newfold-labs/wp-module-performance/tree/2.7.4",
                 "issues": "https://github.com/newfold-labs/wp-module-performance/issues"
             },
-            "time": "2025-03-07T11:44:45+00:00"
+            "time": "2025-03-12T13:39:10+00:00"
         },
         {
             "name": "newfold-labs/wp-module-pls",
@@ -2456,16 +2456,16 @@
         },
         {
             "name": "newfold-labs/wp-module-staging",
-            "version": "2.2.1",
+            "version": "2.3.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/newfold-labs/wp-module-staging.git",
-                "reference": "68fe3175a014f927580cb47857d754021a854094"
+                "reference": "d0646b4f39d9578ed313c45220f9d63ca32d1d47"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/newfold-labs/wp-module-staging/zipball/68fe3175a014f927580cb47857d754021a854094",
-                "reference": "68fe3175a014f927580cb47857d754021a854094",
+                "url": "https://api.github.com/repos/newfold-labs/wp-module-staging/zipball/d0646b4f39d9578ed313c45220f9d63ca32d1d47",
+                "reference": "d0646b4f39d9578ed313c45220f9d63ca32d1d47",
                 "shasum": ""
             },
             "require": {
@@ -2526,10 +2526,10 @@
             ],
             "description": "Newfold module for staging functionality in brand plugins",
             "support": {
-                "source": "https://github.com/newfold-labs/wp-module-staging/tree/2.2.1",
+                "source": "https://github.com/newfold-labs/wp-module-staging/tree/2.3.0",
                 "issues": "https://github.com/newfold-labs/wp-module-staging/issues"
             },
-            "time": "2025-03-10T22:06:36+00:00"
+            "time": "2025-03-13T12:55:31+00:00"
         },
         {
             "name": "newfold-labs/wp-module-survey",

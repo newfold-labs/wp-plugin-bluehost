@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "b0ebecf46050078d50030be6ce0130b2",
+    "content-hash": "c19fdf1582a73fd411f125a43f2a74b3",
     "packages": [
         {
             "name": "doctrine/inflector",
@@ -2042,12 +2042,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/newfold-labs/wp-module-performance.git",
-                "reference": "24e911bb78adbc7e9b5c7782b8a78aee4d3d930a"
+                "reference": "d13bcbedf4a027aa3004e1b03e5e4bc3221a6644"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/newfold-labs/wp-module-performance/zipball/24e911bb78adbc7e9b5c7782b8a78aee4d3d930a",
-                "reference": "24e911bb78adbc7e9b5c7782b8a78aee4d3d930a",
+                "url": "https://api.github.com/repos/newfold-labs/wp-module-performance/zipball/d13bcbedf4a027aa3004e1b03e5e4bc3221a6644",
+                "reference": "d13bcbedf4a027aa3004e1b03e5e4bc3221a6644",
                 "shasum": ""
             },
             "require": {
@@ -2122,7 +2122,7 @@
                 "source": "https://github.com/newfold-labs/wp-module-performance/tree/2.7.4",
                 "issues": "https://github.com/newfold-labs/wp-module-performance/issues"
             },
-            "time": "2025-03-07T11:44:45+00:00"
+            "time": "2025-03-12T13:39:10+00:00"
         },
         {
             "name": "newfold-labs/wp-module-pls",

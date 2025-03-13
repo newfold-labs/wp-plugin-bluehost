@@ -60,13 +60,13 @@ add_action( 'activated_plugin', __NAMESPACE__ . '\\plugin_activated', 10, 2 );
  * @return string|bool
  */
 function nfd_remove_sas_id( $value ) {
-    $blocked_sas_id = '1258907';
-    if ( $value === $blocked_sas_id ) {
-        return false;
-    }
-    return $value;
+	$blocked_sas_id = '1258907';
+	if ( $value === $blocked_sas_id ) {
+		return false;
+	}
+	return $value;
 }
 
-add_filter('option_optinmonster_trial_id', __NAMESPACE__ . '\\nfd_remove_sas_id');
-add_filter('option_wpforms_shareasale_id', __NAMESPACE__ . '\\nfd_remove_sas_id');
-add_filter('option_monsterinsights_shareasale_id', __NAMESPACE__ . '\\nfd_remove_sas_id');
+add_filter( 'option_optinmonster_trial_id', __NAMESPACE__ . '\\nfd_remove_sas_id' );
+add_filter( 'option_wpforms_shareasale_id', __NAMESPACE__ . '\\nfd_remove_sas_id' );
+add_filter( 'option_monsterinsights_shareasale_id', __NAMESPACE__ . '\\nfd_remove_sas_id' );

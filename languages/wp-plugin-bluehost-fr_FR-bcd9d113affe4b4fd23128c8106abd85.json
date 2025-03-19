@@ -1,7 +1,7 @@
 {
     "translation-revision-date": "2025-02-25T20:53:21+00:00",
     "generator": "WP-CLI\/2.11.0",
-    "source": "build\/4.1.0\/index.js",
+    "source": "build\/4.1.2\/index.js",
     "domain": "messages",
     "locale_data": {
         "messages": {
@@ -271,6 +271,9 @@
             ],
             "Get Help": [
                 "Obtenir de l'aide"
+            ],
+            "View Site": [
+                "Voir le site"
             ],
             "Secret page to manage admin features and settings.": [
                 "Page secr\u00e8te pour g\u00e9rer les fonctionnalit\u00e9s et les param\u00e8tres d'administration."
@@ -934,6 +937,9 @@
             ],
             "Working\u2026": [
                 "Travailler\u2026"
+            ],
+            "Add a New Plugin": [
+                "Ajouter un nouveau plugin"
             ]
         }
     }

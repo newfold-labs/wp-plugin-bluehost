@@ -6,7 +6,7 @@ import HelpCenterSettings from './helpCenterSettings';
 import WonderBlocksSettings from './wonderBlocksSettings';
 import ContentSettings from './contentSettings';
 import CommentSettings from './commentSettings';
-import SocialMediaAccounts from './socialMediaAccounts';
+// import SocialMediaAccounts from './socialMediaAccounts';
 
 const Settings = () => {
 	return (
@@ -32,14 +32,6 @@ const Settings = () => {
 					) }
 				>
 					<ComingSoon />
-				</Container.Block>
-
-				<Container.Block
-					separator={ true }
-					id={ 'social-media-accounts-section' }
-					className={ 'wppbh-app-settings-social' }
-				>
-					<SocialMediaAccounts />
 				</Container.Block>
 
 				<Container.Block

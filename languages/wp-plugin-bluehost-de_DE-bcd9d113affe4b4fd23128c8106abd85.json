@@ -1,939 +1,945 @@
 {
-    "translation-revision-date": "2025-02-25T20:53:21+00:00",
+    "translation-revision-date": "2024-10-21 07:10-0000",
     "generator": "WP-CLI\/2.11.0",
-    "source": "build\/4.1.0\/index.js",
+    "source": "build\/4.1.2\/index.js",
     "domain": "messages",
     "locale_data": {
         "messages": {
             "": {
                 "domain": "messages",
-                "lang": "en",
+                "lang": "de_DE",
                 "plural-forms": "nplurals=2; plural=(n != 1);"
             },
             "Home": [
-                "In\u00edcio"
+                "Startseite"
             ],
             "Pages & Posts": [
-                "P\u00e1ginas e Postagens"
+                "Seiten & Beitr\u00e4ge"
             ],
             "Store": [
-                "Loja"
+                "Shop"
             ],
             "Marketplace": [
-                "Mercado"
+                "Marktplatz"
             ],
             "My Plugins & Tools": [
-                "Meus Plugins e Ferramentas"
+                "Meine Plugins & Tools"
             ],
             "Performance": [
-                "Desempenho"
+                "Leistung"
             ],
             "Settings": [
-                "Confirgura\u00e7\u00f5es"
+                "Einstellungen"
             ],
             "Staging": [
-                "Encena\u00e7\u00e3o"
+                "Inszenierung"
             ],
             "Help": [
-                "Ajuda"
+                "Hilfe"
             ],
             "Bluehost WordPress Plugin": [
-                "Plugin WordPress Bluehost"
+                "Bluehost WordPress-Plugin"
             ],
             "Oh No, An Error!": [
-                "N\u00e3o, um erro!"
+                "Oh Nein, ein Fehler!"
             ],
             "You found an error, please refresh the page and try again!": [
-                "Voc\u00ea encontrou um erro, por favor atualize a p\u00e1gina e tente novamente!"
+                "Sie haben einen Fehler gefunden, bitte aktualisieren Sie die Seite und versuchen Sie es erneut!"
             ],
             "If the error persists, please contact support.": [
-                "Se o erro persistir, por favor contate o suporte."
+                "Wenn der Fehler weiterhin besteht, wenden Sie sich bitte an den Support."
             ],
             "Error code:": [
-                "C\u00f3digo do erro:"
+                "Fehlercode:"
             ],
             "Bluehost Account": [
-                "Conta Bluehost"
+                "Bluehost-Konto"
             ],
             "There's nothing here!": [
-                "N\u00e3o h\u00e1 nada aqui!"
+                "Hier ist nichts da!"
             ],
             "Products & Services": [
-                "Produtos e Servi\u00e7os"
+                "Produkte & Dienstleistungen"
             ],
             "Sales & Promotions": [
-                "Vendas & Promo\u00e7\u00f5es"
+                "Verk\u00e4ufe & Werbeaktionen"
             ],
             "Sales Channel": [
-                "Canal de vendas"
+                "Vertriebskanal"
             ],
             "Payments": [
-                "Pagamentos"
+                "Zahlungen"
             ],
             "Store Details": [
-                "Detalhes da Loja"
+                "Shop-Details"
             ],
             "Help with WordPress": [
-                "Ajuda com WordPress"
+                "Hilfe bei WordPress"
             ],
             "Admin": [
-                "Administrador"
+                "Admin"
             ],
             "The staging feature provides a way to copy a site to test new updates, features or content.": [
-                "O recurso de staging fornece uma maneira de copiar um site para testar novas atualiza\u00e7\u00f5es, recursos ou conte\u00fado."
+                "Die Staging-Funktion bietet eine M\u00f6glichkeit, eine Website zu kopieren, um neue Updates, Funktionen oder Inhalte zu testen."
             ],
             "Sorry, that is not allowed.": [
-                "Desculpe, isso n\u00e3o \u00e9 permitido."
+                "Entschuldigung, das ist nicht erlaubt."
             ],
             "This feature cannot currently be modified.": [
-                "Atualmente este recurso n\u00e3o pode ser modificado."
+                "Dieses Feature kann derzeit nicht ge\u00e4ndert werden."
             ],
             "Oops! Something went wrong. Please try again.": [
-                "Opa! Algo deu errado. Por favor, tente novamente."
+                "Hoppla! Etwas ist schiefgelaufen. Bitte versuche es erneut."
             ],
             "Phone": [
-                "Telefone"
+                "Telefon"
             ],
             "Call Us": [
-                "Ligue para N\u00f3s"
+                "Rufe uns an"
             ],
             "Chat": [
                 "Chat"
             ],
             "Chat with one of our friendly Customer Care Specialists, as we are waiting to help. Open 24 hours - 7 days.": [
-                "Converse com um dos nossos especialistas de atendimento ao cliente, j\u00e1 que estamos esperando para ajudar. Abra 24 horas a 7 dias."
+                "Chatten Sie mit einem unserer freundlichen Kundenservice-Spezialisten, da wir darauf warten zu helfen. \u00d6ffnen Sie 24 Stunden - 7 Tage."
             ],
             "Live Chat": [
-                "Chat ao Vivo"
+                "Live-Chat"
             ],
             "Tweet": [
                 "Tweet"
             ],
             "Find our team at @bluehost for updates on our products and support from our team.": [
-                "Encontre a nossa equipe em @bluehost para atualiza\u00e7\u00f5es dos nossos produtos e suporte da nossa equipe."
+                "Finden Sie unser Team bei @bluehost f\u00fcr Updates zu unseren Produkten und Support von unserem Team."
             ],
             "Tweet Us": [
-                "Tweet-nos"
+                "Tweet uns"
             ],
             "YouTube": [
-                "Youtube"
+                "YouTube"
             ],
             "Find tutorials, answers, interviews and guides on our YouTube channel.": [
-                "Encontre tutoriais, respostas, entrevistas e guias em nosso canal no YouTube."
+                "Finden Sie Tutorials, Antworten, Interviews und Guides auf unserem YouTube-Kanal."
             ],
             "Watch Now": [
-                "Assista Agora"
+                "Jetzt ansehen"
             ],
             "Knowledge Base": [
-                "Base de Conhecimento"
+                "Wissensdatenbank"
             ],
             "Articles, guides, how-tos, instructions, and answers to our client's most frequently asked questions.": [
-                "Artigos, guias, instru\u00e7\u00f5es e respostas para as perguntas mais frequentes dos nossos clientes."
+                "Beitr\u00e4ge, Anleitungen, Anleitungen und Antworten auf die am h\u00e4ufigsten gestellten Fragen unseres Kunden."
             ],
             "Visit Knowledge Base": [
-                "Visitar Base de Conhecimento"
+                "Wissensdatenbank besuchen"
             ],
             "Resources": [
-                "Recursos"
+                "Ressourcen"
             ],
             "Boost your online knowledge and get ahead of the competition.": [
-                "Impulsione seu conhecimento on-line e esteja \u00e0 frente da competi\u00e7\u00e3o."
+                "Steigern Sie Ihr Online-Wissen und kommen Sie dem Wettbewerb voraus."
             ],
             "Explore Resources": [
-                "Explorar recursos"
+                "Ressourcen erkunden"
             ],
             "Events and Webinars": [
-                "Eventos e webin\u00e1rios"
+                "Events und Webinare"
             ],
             "Team Bluehost organizes multiple webinars and events throughout the year. We are also sponsors and speak at most WordCamps across the world. Join us at our next event!": [
-                "O Team Bluehost organiza v\u00e1rios webinars e eventos ao longo do ano. Tamb\u00e9m somos patrocinadores e falamos no m\u00e1ximo no campo de palavras pelo mundo. Junte-se a n\u00f3s no nosso pr\u00f3ximo evento!"
+                "Team Bluehost organisiert das ganze Jahr \u00fcber mehrere Webinare und Events. Wir sind auch Sponsoren und sprechen auf maximal WordCamps auf der ganzen Welt!"
             ],
             "More Info": [
-                "Mais informa\u00e7\u00f5es"
+                "Mehr Info"
             ],
             "Bluehost Website": [
-                "Site de Bluehost"
+                "Bluehost-Website"
             ],
             "Not finding what you need? Visit our website for more information about our products and services.": [
-                "N\u00e3o est\u00e1 encontrando o que voc\u00ea precisa? Visite nosso site para mais informa\u00e7\u00f5es sobre nossos produtos e servi\u00e7os."
+                "Besuchen Sie unsere Website f\u00fcr weitere Informationen zu unseren Produkten und Dienstleistungen."
             ],
             "Go to Bluehost": [
-                "Ir para Diagrama"
+                "Gehe zu Bluehost"
             ],
             "Site Pages": [
-                "P\u00e1ginas do Site"
+                "Site-Seiten"
             ],
             "Edit your homepage and other existing pages or add new pages to your site.": [
-                "Edite sua p\u00e1gina inicial e outras p\u00e1ginas existentes ou adicione novas p\u00e1ginas ao seu site."
+                "Bearbeite deine Homepage und andere existierende Seiten oder f\u00fcge neue Seiten zu deiner Site hinzu."
             ],
             "View all": [
-                "Visualizar tudo"
+                "Alle anzeigen"
             ],
             "Add New": [
-                "Adicionar novo"
+                "Neu"
             ],
             "This is where you can manage cache settings for your website.": [
-                "Aqui \u00e9 onde voc\u00ea pode gerenciar as configura\u00e7\u00f5es de cache do seu site."
+                "Hier k\u00f6nnen Sie Cache-Einstellungen f\u00fcr Ihre Webseite verwalten."
             ],
             "The Help Center provides guided, step-by-step assistance as you build your site.": [
-                "A central de ajuda fornece ajuda passo a passo para a constru\u00e7\u00e3o do seu site."
+                "Das Hilfe-Center unterst\u00fctzt Sie Schritt f\u00fcr Schritt beim Aufbau Ihrer Website."
             ],
             "Site Status": [
-                "Estado do Site"
+                "Site-Status"
             ],
             "Not Live": [
-                "N\u00e3o Ao Vivo"
+                "Nicht live"
             ],
             "Live": [
-                "Ativo"
+                "Live"
             ],
             "Your Bluehost Coming Soon page lets you hide your site from visitors while you make the magic happen.": [
-                "Sua Planta Chegando em breve permite que voc\u00ea esconda seu site dos visitantes enquanto voc\u00ea faz a magia acontecer."
+                "Ihre Bluehost Kommende Seite erm\u00f6glicht Ihnen, Ihre Website vor Besuchern zu verstecken, w\u00e4hrend Sie die Magie verwirklichen."
             ],
             "Your website is currently displaying a \"Coming Soon\" page.": [
-                "Seu site exibir\u00e1 uma p\u00e1gina \"Em breve\"."
+                "Ihre Webseite zeigt derzeit eine \"Kommende bald\"-Seite an."
             ],
             "The trash will automatically empty every %s week.": [
-                "A lixeira ser\u00e1 automaticamente vazia a cada %s semana.",
-                "O lixo vai esvaziar automaticamente a cada %s semanas."
+                "Der Papierkorb wird jede %s Woche automatisch leer sein.",
+                "Der Papierkorb wird alle %s Wochen automatisch leer sein."
             ],
             "WonderBlocks provides a library of customizable block patterns and page templates.": [
-                "WonderBlocks fornece uma biblioteca de padr\u00f5es de blocos personaliz\u00e1veis e modelos de p\u00e1gina."
+                "WonderBlocks bietet eine Bibliothek mit anpassbaren Blockmustern und Seitenvorlagen."
             ],
             "Hosting": [
-                "Hospedagem"
+                "Hosting"
             ],
             "Control Panel": [
-                "Painel de controle"
+                "Verwaltungspanel"
             ],
             "Renewal Center": [
-                "Centro de Renova\u00e7\u00e3o"
+                "Erneuerungszentrum"
             ],
             "Products": [
-                "produtos"
+                "Produkte"
             ],
             "Payment Methods": [
-                "M\u00e9todos de pagamento"
+                "Zahlungsarten"
             ],
             "Billing": [
-                "Faturamento"
+                "Abrechnung"
             ],
             "Mail": [
-                "Correio"
+                "Mail"
             ],
             "Mail & Office": [
-                "Correio e Escrit\u00f3rio"
+                "Mail & B\u00fcro"
             ],
             "Security": [
-                "Seguran\u00e7a"
+                "Sicherheit"
             ],
             "Profile": [
-                "Perfil"
+                "Profil"
             ],
             "Validation Token": [
-                "Token de valida\u00e7\u00e3o"
+                "Validierungstoken"
             ],
             "Explore our featured collection of tools and services.": [
-                "Explore nossa cole\u00e7\u00e3o de ferramentas e servi\u00e7os em destaque."
+                "Entdecken Sie unsere Produktpalette von Tools und Dienstleistungen."
             ],
             "Oops, there was an error loading the marketplace, please try again later.": [
-                "Opa! Ocorreu um erro ao carregar o mercado. Tente novamente mais tarde."
+                "Hoppla, es gab einen Fehler beim Laden des Marktplatzes, bitte versuchen Sie es sp\u00e4ter erneut."
             ],
             "Sorry, no marketplace items. Please, try again later.": [
-                "Desculpe, nenhum item do marketplace. Por favor, tente novamente mais tarde."
+                "Leider gibt es keine Marktplatz-Artikel. Bitte versuchen Sie es sp\u00e4ter erneut."
             ],
             "Load More": [
-                "Carregar Mais"
+                "Mehr laden"
             ],
             "Oops! Something Went Wrong": [
-                "Opa! Ocorreu um erro"
+                "Hoppla! Etwas ist schief"
             ],
             "An error occurred while loading the content. Please try again later.": [
-                "Ocorreu um erro ao carregar o conte\u00fado. Tente novamente mais tarde."
+                "Beim Laden des Inhalts ist ein Fehler aufgetreten. Bitte versuchen Sie es sp\u00e4ter erneut."
             ],
             "Solution": [
-                "Solu\u00e7\u00f5es"
+                "L\u00f6sung"
             ],
             "Explore the plugins and tools available with your solution.": [
-                "Explore os plugins e ferramentas dispon\u00edveis com sua solu\u00e7\u00e3o."
+                "Entdecken Sie die mit Ihrer L\u00f6sung verf\u00fcgbaren Plugins und Werkzeuge."
             ],
             "Oops, there was an error loading your plugins and tools, please try again later.": [
-                "Oops, ocorreu um erro ao carregar seus plugins e ferramentas, por favor, tente novamente mais tarde."
+                "Hoppla, es gab einen Fehler beim Laden deiner Plugins und Werkzeuge, bitte versuche es sp\u00e4ter erneut."
             ],
             "Sorry, no current plugins and tools. Please, try again later.": [
-                "Desculpe, n\u00e3o h\u00e1 plugins nem ferramentas atuais. Por favor, tente novamente mais tarde."
+                "Entschuldigung, keine aktuellen Plugins und Werkzeuge. Bitte versuchen Sie es sp\u00e4ter erneut."
             ],
             "From DIY to full-service help.": [
-                "De \"fa\u00e7a-voc\u00ea-mesmo\" a ajuda de pleno servi\u00e7o."
+                "Vom DIY bis zur Full-Service-Hilfe."
             ],
             "Call or chat 24\/7 for support or let our experts build your site for you.": [
-                "Ligue ou converse 24\/7 para suporte ou deixe nossos especialistas criarem seu site para voc\u00ea."
+                "Rufen Sie an oder chatten Sie rund um die Uhr, um Unterst\u00fctzung zu erhalten oder lassen Sie unsere Experten Ihre Website f\u00fcr Sie bauen."
             ],
             "Get Help": [
-                "Obter ajuda"
+                "Hilfe erhalten"
+            ],
+            "View Site": [
+                "Site ansehen"
             ],
             "Secret page to manage admin features and settings.": [
-                "P\u00e1gina secreta para gerenciar recursos e configura\u00e7\u00f5es de administrador."
+                "Geheime Seite zum Verwalten von Adminfunktionen und Einstellungen."
             ],
             "We are available 24\/7 to help answer questions and solve your problems.": [
-                "Estamos dispon\u00edveis 24 horas para ajudar a responder \u00e0s perguntas e resolver seus problemas."
+                "Wir stehen Ihnen rund um die Uhr zur Verf\u00fcgung, um Fragen zu beantworten und Ihre Probleme zu l\u00f6sen."
             ],
             "Need some help?": [
-                "Precisa de alguma ajuda?"
+                "Brauchst du Hilfe?"
             ],
             "Showcase physical and digital goods, product variations, and custom configurations.": [
-                "Mostre bens f\u00edsicos e digitais, varia\u00e7\u00f5es de produtos e configura\u00e7\u00f5es personalizadas."
+                "Pr\u00e4sentation physischer und digitaler Produkte, Produktvariationen und kundenspezifischer Konfigurationen."
             ],
             "Blog Posts": [
-                "Postagens do Blog"
+                "Blog-Beitr\u00e4ge"
             ],
             "Add a new blog post or edit your existing posts.": [
-                "Adicione um novo post de blog ou edite suas postagens existentes."
+                "F\u00fcgen Sie einen neuen Blog-Beitrag hinzu oder bearbeiten Sie Ihre vorhandenen Beitr\u00e4ge."
             ],
             "Bookings & Appointments": [
-                "Reservas e compromissos"
+                "Buchungen & Termine"
             ],
             "Add your list of services, setup a booking calendar, and edit your bookings form.": [
-                "Adicione a sua lista de servi\u00e7os, configure uma agenda de reservas e edite o seu formul\u00e1rio de reservas."
+                "F\u00fcgen Sie Ihre Dienstleistungsliste hinzu, erstellen Sie einen Buchungskalender und bearbeiten Sie Ihr Buchungsformular."
             ],
             "Your site is not live.": [
-                "Seu site n\u00e3o est\u00e1 ao vivo."
+                "Ihre Seite ist nicht live."
             ],
             "Your site is live.": [
-                "Seu site est\u00e1 ao vivo."
+                "Ihre Seite ist live."
             ],
             "Visitors to your site will see your \"Coming Soon\" page and not your actual site. Visit %1$s\"Settings\"%2$s to set your site live.": [
-                "Os visitantes do seu site ver\u00e3o sua p\u00e1gina \"Em breve\" e n\u00e3o seu site real. Visite %1$s\"Configura\u00e7\u00f5es\"%2$s para colocar seu site no ar."
+                "Besucher Ihrer Website werden Ihre \"bald kommen\"-Seite und nicht Ihre aktuelle Site sehen. Besuchen Sie %1$s\"Einstellungen\"%2$s , um Ihre Site live zu setzen."
             ],
             "Visitors to your site will see all your publicly published pages.": [
-                "Os visitantes do seu site ver\u00e3o todas as suas p\u00e1ginas publicadas publicadamente."
+                "Besucher Ihrer Website werden alle \u00f6ffentlich ver\u00f6ffentlichten Seiten sehen."
             ],
             "No cache enabled.": [
-                "Nenhum cache habilitado."
+                "Kein Cache aktiviert."
             ],
             "Every page load is fresh.": [
-                "Cada carregamento da p\u00e1gina est\u00e1 fresco."
+                "Jede Seite wird neu geladen."
             ],
             "Disabled": [
-                "Desabilitado"
+                "Deaktiviert"
             ],
             "Not recommended.": [
-                "N\u00e3o recomendado."
+                "Nicht empfohlen."
             ],
             "Cache static assets like images and the appearance of your site for 1 hour.": [
-                "Armazenar arquivos est\u00e1ticos como imagens e a apar\u00eancia de seu site por 1 hora."
+                "Cache-statische Assets wie Bilder und das Aussehen Ihrer Website f\u00fcr 1 Stunde."
             ],
             "Assets Only": [
-                "Somente Ativos"
+                "Nur Assets"
             ],
             "Cache enabled for assets only.": [
-                "Cache habilitado apenas para conte\u00fados."
+                "Cache nur f\u00fcr Assets aktiviert."
             ],
             "Recommended for ecommerce and sites that update frequently or display info in real-time.": [
-                "Recomendado para com\u00e9rcio eletr\u00f4nico e sites que atualizam com frequ\u00eancia ou exibem informa\u00e7\u00f5es em tempo real."
+                "Empfohlen f\u00fcr E-Commerce-und Sites, die regelm\u00e4\u00dfig aktualisieren oder Informationen in Echtzeit anzeigen."
             ],
             "Cache static assets for 24 hours and web pages for 2 hours.": [
-                "Armazenar recursos est\u00e1ticos por 24 horas e p\u00e1ginas web por 2 horas."
+                "Statische Assets f\u00fcr 24 Stunden und Webseiten f\u00fcr 2 Stunden zwischenspeichern."
             ],
             "Assets & Web Pages": [
-                "P\u00e1ginas de Ativos & Web"
+                "Assets & Webseiten"
             ],
             "Cache enabled for assets and pages.": [
-                "Cache habilitado para m\u00eddias e p\u00e1ginas."
+                "Cache f\u00fcr Assets und Seiten aktiviert."
             ],
             "Recommended for blogs, educational sites, and sites that update at least weekly.": [
-                "Recomendado para blogs, sites educacionais e sites que atualizam pelo menos semanalmente."
+                "Empfohlen f\u00fcr Blogs, Bildungs-Sites und Websites, die mindestens w\u00f6chentlich aktualisieren."
             ],
             "Cache static assets for 1 week and web pages for 8 hours.": [
-                "Armazenar recursos est\u00e1ticos por 1 semana e p\u00e1ginas web por 8 horas."
+                "Statische Assets f\u00fcr 1 Woche und Webseiten f\u00fcr 8 Stunden zwischenspeichern."
             ],
             "Assets & Web Pages - Extended": [
-                "P\u00e1ginas de Ativos & Web - Estendidas"
+                "Assets & Webseiten - Erweitert"
             ],
             "Cache enabled for assets and pages (extended).": [
-                "Cache habilitado para conte\u00fados e p\u00e1ginas (estendido)."
+                "Cache f\u00fcr Assets und Seiten aktiviert (erweitert)."
             ],
             "Recommended for sites that update a few times a month or less like porfolios or brochure sites.": [
-                "Recomendado para sites que atualizam algumas vezes por m\u00eas ou menos, como porf\u00f3lios ou sites de correio."
+                "Empfohlen f\u00fcr Websites, die ein paar Mal im Monat oder weniger wie Porfolios oder Brosch\u00fcren Sites."
             ],
             "Boost speed and performance by storing a copy of your website content, files, and images online so the pages of your website load faster for your visitors.": [
-                "Aumente a velocidade e o desempenho armazenando uma c\u00f3pia de conte\u00fado do seu site, arquivos, e imagens online para que as p\u00e1ginas do seu site carreguem mais r\u00e1pido para seus visitantes."
+                "Beschleunigen Sie Geschwindigkeit und Leistung durch Speichern einer Kopie Ihrer Webseite, Dateien und Bilder online so dass die Seiten Ihrer Website schneller f\u00fcr Ihre Besucher geladen werden."
             ],
             "Cache setting saved": [
-                "Configura\u00e7\u00e3o de cache salva"
+                "Cache-Einstellung gespeichert"
             ],
             "Cache Level": [
-                "N\u00edvel de cache"
+                "Cache-Level"
             ],
             "Clear All Cache Now": [
-                "Limpar todo o cache agora"
+                "Alle Cache jetzt l\u00f6schen"
             ],
             "We automatically clear your cache as you work (creating content, changing settings, installing plugins and more). But you can manually clear it here to be confident it's fresh.": [
-                "N\u00f3s automaticamente limpamos seu cache enquanto voc\u00ea trabalha (criando conte\u00fado, alterando configura\u00e7\u00f5es, instalando plugins e muito mais). Mas voc\u00ea pode limpar manualmente aqui para confiar que \u00e9 fresco."
+                "Wir l\u00f6schen Ihren Cache automatisch, w\u00e4hrend Sie arbeiten (Erstellen von Inhalten, \u00c4ndern von Einstellungen, Installation von Plugins und mehr). Aber Sie k\u00f6nnen es hier manuell l\u00f6schen, um sicher zu sein, dass es frisch ist."
             ],
             "Cache cleared": [
-                "Cache limpo"
+                "Cache geleert"
             ],
             "Clear Cache": [
-                "Limpar Cache"
+                "Cache leeren"
             ],
             "Asks the browser to download and cache links on the page ahead of them being clicked on, so that when they are clicked they load almost instantly.": [
-                "Pede ao navegador para baixar e armazenar links na p\u00e1gina antes de clicar, ent\u00e3o quando s\u00e3o clicados, eles carregam quase instantaneamente."
+                "Fordert den Browser auf, Links auf der vorderen Seite herunterzuladen und zu cachen so dass sie, wenn sie angeklickt werden, fast sofort geladen werden."
             ],
             "Link prefetching setting saved": [
-                "Configura\u00e7\u00e3o de pr\u00e9-carregamento de links salva"
+                "Link-Vorab-Einstellung gespeichert"
             ],
             "Link Prefetch": [
-                "Pr\u00e9-busca de links"
+                "Link-Prefetch"
             ],
             "Enable link prefetching on desktop": [
-                "Ativar pr\u00e9-carregamento de links no computador"
+                "Link Prefetching auf dem Desktop aktivieren"
             ],
             "Activate on desktop": [
-                "Ativar no desktop"
+                "Auf Desktop aktivieren"
             ],
             "Behavior of the prefetch": [
-                "Comportamento da pr\u00e9-busca"
+                "Verhalten des Vorabholvorgangs"
             ],
             "Behavior": [
-                "Comportamento"
+                "Verhalten"
             ],
             "Prefetch on Mouse Down": [
-                "Pegar no Mouse Down"
+                "Vorabladen bei Maus runter"
             ],
             "Prefetch on Mouse Down: Starts loading the page as soon as you click down, for faster response when you release the click.": [
-                "Prebuscar no Mouse Baixo: Inicia o carregamento da p\u00e1gina assim que voc\u00ea clica no bot\u00e3o abaixo, para uma resposta mais r\u00e1pida quando voc\u00ea libera o clique."
+                "Prefetch on Maus-Down: Startet das Laden der Seite, sobald Sie nach unten klicken, um schnellere Antworten zu erhalten, wenn Sie den Klick freigeben."
             ],
             "Prefetch on Mouse Hover (Recommended)": [
-                "Prefetch on Mouse Hover (recomendado)"
+                "Vorabladen beim Maus-Hover (empfohlen)"
             ],
             "Prefetch on Mouse Hover: Begins loading the page the moment your cursor hovers over a link": [
-                "Prefetch no mouse Hover: Come\u00e7a a carregar a p\u00e1gina no momento em que seu cursor passar o mouse sobre um link"
+                "Im Maus-Hover vorabladen: Beginnt das Laden der Seite, sobald der Cursor \u00fcber einen Link schwebt"
             ],
             "Enable link prefetching on mobile": [
-                "Ativar pr\u00e9-carregamento de links no celular"
+                "Link-Prefetching auf dem Handy aktivieren"
             ],
             "Activate on mobile": [
-                "Ativar em dispositivos m\u00f3veis"
+                "Auf dem Handy aktivieren"
             ],
             "Prefetch on Touchstart (Recommended)": [
-                "Prefetch on Touchstart (Recomendado)"
+                "Bei Touchstart vorab laden (empfohlen)"
             ],
             "Prefetch on Touchstart: Instantly starts loading the page as soon as you tap the screen, ensuring a quicker response when you lift your finger.": [
-                "Pr\u00e9-visualizar ao Touchstar: Inicializa instantaneamente o carregamento da p\u00e1gina assim que voc\u00ea tocar na tela, garantindo uma resposta mais r\u00e1pida quando voc\u00ea levantar o dedo."
+                "Beim Touchstart vorabladen: Laden Sie die Seite sofort, sobald Sie auf den Bildschirm tippen, um eine schnellere Reaktion zu gew\u00e4hrleisten, wenn Sie den Finger heben."
             ],
             "Prefetch Above the Fold": [
-                "Pr\u00e9-carregamento acima do Frio"
+                "Vorabladen \u00fcber dem Fold"
             ],
             "Prefetch Above the Fold: Loads links in your current view instantly, ensuring they're ready when you need them.": [
-                "Prefetch Acima da Pasta: Carrega links na sua vis\u00e3o atual instantaneamente, garantindo que eles estejam prontos quando voc\u00ea precisar deles."
+                "\u00dcber dem Ordner ausw\u00e4hlen: L\u00e4dt Links in der aktuellen Ansicht sofort und stellt sicher, dass sie bereit sind, wenn Sie sie ben\u00f6tigen."
             ],
             "Exclude Keywords: A comma separated list of words or strings that will exclude a link from being prefetched. For example, excluding \"app\" will prevent https:\/\/example.com\/apple from being prefetched.": [
-                "Excluir palavras-chave: Uma lista separada por v\u00edrgulas de palavras ou sequ\u00eancias de caracteres que excluir\u00e1 um link de ser pr\u00e9-capturado. Por exemplo, excluir \"app\" impedir\u00e1 https:\/\/example.com\/apple de ser pr\u00e9-capturado."
+                "Stichw\u00f6rter ausklammern: Eine kommaseparierte Liste von W\u00f6rtern oder Zeichenketten, die einen Link vom Vorabladen ausschlie\u00dfen. Durch das Ausschlie\u00dfen von \"app\" wird zum Beispiel verhindert, dass https:\/\/example.com\/apple vorgeladen wird."
             ],
             "Exclude keywords": [
-                "Excluir palavras-chave"
+                "Stichw\u00f6rter ausschlie\u00dfen"
             ],
             "Advanced settings": [
-                "Configura\u00e7\u00f5es avan\u00e7adas"
+                "Erweiterte Einstellungen"
             ],
             "Additional speed and scalability features powered by Jetpack Boost to make your site as fast as it can be.": [
-                "Recursos adicionais de velocidade e escalabilidade fornecidos pelo Jetpack Boost para tornar seu site o mais r\u00e1pido poss\u00edvel."
+                "Zus\u00e4tzliche Geschwindigkeits- und Skalierbarkeitsfunktionen mit Jetpack Boost, um Ihre Seite so schnell wie m\u00f6glich zu machen."
             ],
             "Optimize Critical CSS Loading (manual)": [
-                "Otimizar o carregamento cr\u00edtico do CSS (manual)"
+                "Kritisches CSS-Laden optimieren (manuell)"
             ],
             "Move important styling information to the start of the page, which helps pages display your content sooner, so your users don\u2019t have to wait for the entire page to load.": [
-                "Mova informa\u00e7\u00f5es de estilo importantes para o in\u00edcio da p\u00e1gina, o que ajuda as p\u00e1ginas a exibir seu conte\u00fado mais cedo, para que os usu\u00e1rios n\u00e3o precisem esperar que a p\u00e1gina inteira carregue."
+                "Verschieben Sie wichtige Styling-Informationen an den Anfang der Seite, was den Seiten hilft, Ihre Inhalte schneller anzuzeigen, damit Ihre Benutzer nicht warten m\u00fcssen, bis die gesamte Seite geladen wird."
             ],
             "Optimize Critical CSS Loading (UPGRADED)": [
-                "Otimizar o carregamento de CSS cr\u00edtico (UPGRADED)"
+                "Kritisches CSS-Laden optimieren (UPGRADED)"
             ],
             "Generate Critical CSS Automatically": [
-                "Gerar CSS Cr\u00edtico automaticamente"
+                "Kritisches CSS automatisch generieren"
             ],
             "Move important styling information to the start of the page, which helps pages display your content sooner, so your users don\u2019t have to wait for the entire page to load.%1$s %2$sBoost will automatically generate your Critical CSS%3$s whenever you make changes to the HTML or CSS structure of your site.": [
-                "Mova informa\u00e7\u00f5es de estilo importantes para o in\u00edcio da p\u00e1gina, o que ajuda as p\u00e1ginas a exibir seu conte\u00fado mais cedo, para que os usu\u00e1rios n\u00e3o precisem esperar que a p\u00e1gina inteira carregue.%1$s %2$sBoost ir\u00e1 gerar automaticamente o seu CSS Cr\u00edtico%3$s sempre que voc\u00ea fizer altera\u00e7\u00f5es na estrutura HTML ou CSS do seu site."
+                "Verschieben Sie wichtige Styling-Informationen an den Anfang der Seite, was den Seiten hilft, Ihre Inhalte schneller anzuzeigen, damit Ihre Benutzer nicht warten m\u00fcssen, bis die gesamte Seite geladen wird.%1$s %2$sBoost generiert automatisch Ihre kritische CSS%3$s , wenn Sie \u00c4nderungen an der HTML- oder CSS-Struktur Ihrer Website vornehmen."
             ],
             "Defer Non-Essential JavaScript": [
-                "Adiar JavaScript n\u00e3o essencial"
+                "Verweilen Sie JavaScript"
             ],
             "Run non-essential JavaScript after the page has loaded so that styles and images can load more quickly.": [
-                "Rodar JavaScript n\u00e3o essencial depois da p\u00e1gina ser carregada, para que estilos e imagens possam carregar mais rapidamente."
+                "F\u00fchre JavaScript aus, nachdem die Seite geladen wurde, so dass Stile und Bilder schneller laden k\u00f6nnen."
             ],
             "Concatenate JS": [
-                "Concatenar JS"
+                "JS zusammenfassen"
             ],
             "Scripts are grouped by their original placement, concatenated and minified to reduce site loading time and reduce the number of requests.": [
-                "Scripts s\u00e3o agrupados pelo seu posicionamento original, concatenados e minificados para reduzir o tempo de carregamento do site e reduzir o n\u00famero de solicita\u00e7\u00f5es."
+                "Skripte werden nach der urspr\u00fcnglichen Platzierung gruppiert, verkettet und verkleinert, um die Ladezeit der Site zu reduzieren und die Anzahl der Anfragen zu reduzieren."
             ],
             "Exclude JS Strings": [
-                "Excluir frases JS"
+                "JS-Zeichenketten ausschlie\u00dfen"
             ],
             "Concatenate CSS": [
                 "Concatenate CSS"
             ],
             "Styles are grouped by their original placement, concatenated and minified to reduce site loading time and reduce the number of requests.": [
-                "Os estilos s\u00e3o agrupados pelo seu posicionamento original, concatenados e minificados para reduzir o tempo de carregamento do site e reduzir o n\u00famero de pedidos."
+                "Die Stile werden nach der urspr\u00fcnglichen Platzierung gruppiert, verkettet und verkleinert, um die Ladezeit der Site zu reduzieren und die Anzahl der Anfragen zu reduzieren."
             ],
             "Exclude CSS Strings": [
-                "Excluir frases CSS"
+                "CSS-Zeichenketten ausschlie\u00dfen"
             ],
             "Show more": [
-                "Mostre mais"
+                "Mehr anzeigen"
             ],
             "Show less": [
-                "Mostre menos"
+                "Weniger anzeigen"
             ],
             "Discover More": [
-                "Descubra mais"
+                "Mehr entdecken"
             ],
             "Install Jetpack Boost to unlock": [
-                "Instale o Jetpack Boost para desbloquear"
+                "Jetpack Boost zum Entsperren installieren"
             ],
             "Installing Jetpack Boost\u2026": [
                 "Installing Jetpack Boost\u2026"
             ],
             "Jetpack Boost is now active": [
-                "Impulso de Jetpack agora est\u00e1 ativo"
+                "Jetpack Boost ist jetzt aktiv"
             ],
             "Activation failed": [
-                "Falha na ativa\u00e7\u00e3o"
+                "Aktivierung fehlgeschlagen"
             ],
             "Discover more %1$shere%2$s": [
-                "Descubra mais %1$saqui%2$s"
+                "Entdecke mehr %1$shier%2$s"
             ],
             "Option saved correctly": [
-                "Op\u00e7\u00e3o salva corretamente"
+                "Option korrekt gespeichert"
             ],
             "Error saving option": [
-                "Erro ao salvar op\u00e7\u00e3o"
+                "Fehler beim Speichern der Option"
             ],
             "Image Optimization": [
-                "Otimiza\u00e7\u00e3o de imagem"
+                "Bildoptimierung"
             ],
             "We automatically optimize your uploaded images to WebP format for faster performance and reduced file sizes. You can also choose to delete the original images to save storage space.": [
-                "Otimizamos automaticamente suas imagens enviadas para o formato WebP para um desempenho mais r\u00e1pido e tamanhos reduzidos. Voc\u00ea tamb\u00e9m pode optar por excluir as imagens originais para economizar espa\u00e7o de armazenamento."
+                "Wir optimieren automatisch Ihre hochgeladenen Bilder im WebP-Format f\u00fcr schnellere Leistung und reduzierte Dateigr\u00f6\u00dfen. Sie k\u00f6nnen auch die urspr\u00fcnglichen Bilder l\u00f6schen, um Speicherplatz zu sparen."
             ],
             "Enable Image Optimization": [
-                "Habilitar Otimiza\u00e7\u00e3o de Imagem"
+                "Bildoptimierung aktivieren"
             ],
             "Enable or disable image optimization globally.": [
-                "Habilitar ou desabilitar a otimiza\u00e7\u00e3o de imagem globalmente."
+                "Bildoptimierung global aktivieren oder deaktivieren."
             ],
             "Automatically Optimize Uploaded Images": [
-                "Otimizar imagens enviadas automaticamente"
+                "Hochgeladene Bilder automatisch optimieren"
             ],
             "When enabled, all your new image uploads will be automatically optimized to WebP format, ensuring faster page loading and reduced file sizes.": [
-                "Quando ativado, todos os seus novos carregamentos de imagens ser\u00e3o automaticamente otimizados para o formato WebP, garantindo um carregamento mais r\u00e1pido de p\u00e1ginas e tamanho reduzido."
+                "Wenn aktiviert, werden alle Ihre neuen Bild-Uploads automatisch auf das WebP-Format optimiert, wodurch das Laden der Seiten und die Dateigr\u00f6\u00dfen verk\u00fcrzt werden."
             ],
             "Auto Delete Original Image": [
-                "Excluir imagem original automaticamente"
+                "Originalbild automatisch l\u00f6schen"
             ],
             "When enabled, the original uploaded image is deleted and replaced with the optimized version, helping to save storage space. If disabled, the optimized image is saved as a separate file, retaining the original.": [
-                "Quando ativado, a imagem original carregada \u00e9 apagada e substitu\u00edda com a vers\u00e3o otimizada, ajudando a economizar espa\u00e7o de armazenamento. Se desativado, a imagem otimizada \u00e9 salva como um arquivo separado, mantendo o original."
+                "Wenn aktiviert, wird das Original hochgeladene Bild gel\u00f6scht und durch die optimierte Version ersetzt, wodurch Speicherplatz eingespart werden kann. Wenn deaktiviert, wird das optimierte Bild als separate Datei gespeichert und das Original beibehalten."
             ],
             "No settings available.": [
-                "N\u00e3o h\u00e1 configura\u00e7\u00f5es dispon\u00edveis."
+                "Keine Einstellungen verf\u00fcgbar."
             ],
             "Loading settings\u2026": [
-                "Carregando configura\u00e7\u00f5es\u2026"
+                "Lade Einstellungen\u2026"
             ],
             "Settings updated successfully": [
-                "Configura\u00e7\u00f5es atualizadas com sucesso"
+                "Einstellungen erfolgreich aktualisiert"
             ],
             "Your image optimization settings have been saved.": [
-                "Suas configura\u00e7\u00f5es de otimiza\u00e7\u00e3o de imagem foram salvas."
+                "Ihre Bildoptimierungseinstellungen wurden gespeichert."
             ],
             "Enable Lazy Loading": [
-                "Habilitar Lazy Carregamento"
+                "Lazy laden aktivieren"
             ],
             "Lazy loading defers the loading of images until they are visible on the screen, improving page load speed and performance.": [
-                "O carregamento da pregui\u00e7a atrasa o carregamento de imagens at\u00e9 que elas estejam vis\u00edveis na tela, melhorando a velocidade e o desempenho de carregamento da p\u00e1gina."
+                "Lazy Laden verringert das Laden von Bildern, bis sie auf dem Bildschirm sichtbar sind, wodurch die Ladegeschwindigkeit und Leistung der Seite verbessert werden."
             ],
             "Lazy loading has been updated.": [
-                "O carregamento do Lazy foi atualizado."
+                "Lazy Laden wurde aktualisiert."
             ],
             "Oops! There was an error updating the lazy loading settings.": [
-                "Ops! Ocorreu um erro ao atualizar as configura\u00e7\u00f5es de carregamento pregui\u00e7oso."
+                "Hoppla! Beim Aktualisieren der Ladeeinstellungen ist ein Fehler aufgetreten."
             ],
             "Enable Bulk Optimization of Images": [
-                "Habilitar Otimiza\u00e7\u00e3o em massa de imagens"
+                "Massenoptimierung von Bildern aktivieren"
             ],
             "When enabled, allows bulk optimization of images in the media library.": [
-                "Quando ativado, permite otimiza\u00e7\u00e3o em massa de imagens na biblioteca de m\u00eddia."
+                "Wenn aktiviert, erlaubt die Massenoptimierung von Bildern in der Medienbibliothek."
             ],
             "Go to Media Library": [
-                "Ir para Biblioteca de M\u00eddia"
+                "Zur Medienbibliothek"
             ],
             "Error Updating Settings": [
-                "Erro ao atualizar as configura\u00e7\u00f5es"
+                "Fehler beim Aktualisieren der Einstellungen"
             ],
             "Prefer Optimized Image When Exists": [
-                "Prefere imagem otimizada quando existe"
+                "Optimiertes Bild bevorzugen, wenn vorhanden"
             ],
             "When enabled, optimized images will be served in place of original images when they exist, improving performance.": [
-                "Quando ativado, imagens otimizadas ser\u00e3o servidas no lugar das imagens originais quando elas existem, melhorando o desempenho."
+                "Wenn aktiviert, werden optimierte Bilder anstelle von Originalbildern geliefert, wenn sie vorhanden sind, was die Leistung verbessert."
             ],
             "Something went wrong while updating the settings. Please try again.": [
-                "Algo deu errado ao atualizar as configura\u00e7\u00f5es. Por favor, tente novamente."
+                "Beim Aktualisieren der Einstellungen ist etwas schief gelaufen. Bitte versuchen Sie es erneut."
             ],
             "Enabled All auto-updates": [
-                "Todas as atualiza\u00e7\u00f5es autom\u00e1ticas habilitadas"
+                "Alle Auto-Updates aktiviert"
             ],
             "Disabled All auto-updates": [
-                "Todas as atualiza\u00e7\u00f5es autom\u00e1ticas desativadas"
+                "Alle Auto-Updates deaktiviert"
             ],
             "Everything will automatically update.": [
-                "Tudo ser\u00e1 atualizado automaticamente."
+                "Alles wird automatisch aktualisiert."
             ],
             "Custom auto-update settings.": [
-                "Configura\u00e7\u00f5es de atualiza\u00e7\u00e3o autom\u00e1tica personalizadas."
+                "Benutzerdefinierte Auto-Update-Einstellungen."
             ],
             "Automatically keep all up to date": [
-                "Automaticamente manter tudo atualizado"
+                "Alles automatisch auf dem neuesten Stand halten"
             ],
             "Enabled Core auto-updates": [
-                "Atualiza\u00e7\u00f5es autom\u00e1ticas de Core habilitadas"
+                "Aktivierte Core Auto-Updates"
             ],
             "Disabled Core auto-updates": [
-                "Atualiza\u00e7\u00f5es autom\u00e1ticas de Core desabilitadas"
+                "Deaktivierte Core Auto-Updates"
             ],
             "WordPress will automatically update.": [
-                "WordPress ir\u00e1 atualizar automaticamente."
+                "WordPress wird automatisch aktualisiert."
             ],
             "WordPress must be manually updated.": [
-                "WordPress deve ser atualizado manualmente."
+                "WordPress muss manuell aktualisiert werden."
             ],
             "WordPress Core": [
-                "N\u00facleo WordPress"
+                "WordPress-Kern"
             ],
             "Enabled Plugins auto-update": [
-                "Ativado atualiza\u00e7\u00e3o autom\u00e1tica de plugins"
+                "Aktivierte Plugins Auto-Update"
             ],
             "Disabled Plugins auto-update": [
-                "Auto-atualiza\u00e7\u00e3o de plugins desabilitados"
+                "Deaktivierte Plugins Auto-Update"
             ],
             "All plugins will automatically update.": [
-                "Todos os plugins ser\u00e3o atualizados automaticamente."
+                "Alle Plugins werden automatisch aktualisiert."
             ],
             "Each plugin must be manually updated.": [
-                "Cada plugin deve ser atualizado manualmente."
+                "Jedes Plugin muss manuell aktualisiert werden."
             ],
             "Plugins": [
-                "Complementos"
+                "Plugins"
             ],
             "Enabled Themes auto-update": [
-                "Habilitada atualiza\u00e7\u00e3o autom\u00e1tica de temas"
+                "Aktivierte Themes Auto-Update"
             ],
             "Disabled Themes auto-update": [
-                "Desabilitar a atualiza\u00e7\u00e3o autom\u00e1tica de temas"
+                "Deaktivierte Themes Auto-Update"
             ],
             "All themes will automatically update.": [
-                "Todos os temas ser\u00e3o atualizados automaticamente."
+                "Alle Themes werden automatisch aktualisiert."
             ],
             "Each theme must be manually updated.": [
-                "Cada tema deve ser atualizado manualmente."
+                "Jedes Theme muss manuell aktualisiert werden."
             ],
             "Themes": [
-                "Temas"
+                "Themes"
             ],
             "Automatic Updates": [
-                "Atualiza\u00e7\u00f5es autom\u00e1ticas"
+                "Automatische Updates"
             ],
             "Keeping automatic updates on ensures timely security fixes and the latest features.": [
-                "Manter atualiza\u00e7\u00f5es autom\u00e1ticas sobre garante corre\u00e7\u00f5es de seguran\u00e7a oportunas e os recursos mais recentes."
+                "Die Beibehaltung automatischer Aktualisierungen sorgt f\u00fcr rechtzeitige Sicherheitsbehebungen und die neuesten Funktionen."
             ],
             "Coming soon activated": [
-                "Em breve ativada"
+                "Demn\u00e4chst aktiviert"
             ],
             "Coming soon deactivated": [
-                "Em breve desativado"
+                "Demn\u00e4chst deaktiviert"
             ],
             "Coming soon page is active. Site requires login.": [
-                "A p\u00e1gina em breve est\u00e1 ativa. Site requer login."
+                "Demn\u00e4chst ist die Seite aktiv. Die Seite ben\u00f6tigt Anmeldung."
             ],
             "Coming soon page is not active. Site is live to visitors.": [
-                "P\u00e1gina em breve n\u00e3o est\u00e1 ativa. Site est\u00e1 ativo para visitantes."
+                "Demn\u00e4chst ist die Seite nicht aktiv. Die Seite ist live f\u00fcr die Besucher."
             ],
             "Turn off your \"Coming Soon\" page when you are ready to launch your website.": [
-                "Desligue a sua p\u00e1gina \"Em breve\" quando estiver pronto para lan\u00e7ar o seu site."
+                "Schalten Sie Ihre \"Kommende bald\"-Seite ab, wenn Sie bereit sind, Ihre Website zu starten."
             ],
             "Turn on your \"Coming Soon\" page when you need to make major changes to your website.": [
-                "Ative a sua p\u00e1gina \"Em breve\" quando precisar fazer grandes altera\u00e7\u00f5es no seu site."
+                "Schalten Sie Ihre \"Kommende bald\"-Seite ein, wenn Sie wichtige \u00c4nderungen an Ihrer Website vornehmen m\u00fcssen."
             ],
             "Disabled old post comments": [
-                "Coment\u00e1rios antigos desabilitados"
+                "Alte Kommentare f\u00fcr Beitr\u00e4ge deaktiviert"
             ],
             "Enabled old post comments": [
-                "Coment\u00e1rios antigos ativados"
+                "Alte Kommentare f\u00fcr Beitr\u00e4ge aktiviert"
             ],
             "Comments on old posts are disabled.": [
-                "Coment\u00e1rios em postagens antigas est\u00e3o desabilitados."
+                "Kommentare zu alten Beitr\u00e4gen sind deaktiviert."
             ],
             "Comments are allowed on old posts.": [
-                "Coment\u00e1rios s\u00e3o permitidos em postagens antigas."
+                "Kommentare sind bei alten Beitr\u00e4gen erlaubt."
             ],
             "Disable comments for older posts": [
-                "Desativar coment\u00e1rios de publica\u00e7\u00f5es antigas"
+                "Kommentare f\u00fcr \u00e4ltere Beitr\u00e4ge deaktivieren"
             ],
             "Comments setting saved": [
-                "Configura\u00e7\u00e3o de coment\u00e1rios salva"
+                "Kommentareinstellung gespeichert"
             ],
             "Comments on posts are disabled after %s day.": [
-                "Coment\u00e1rios nas postagens est\u00e3o desativados ap\u00f3s %s dia.",
-                "Coment\u00e1rios nas postagens est\u00e3o desativados ap\u00f3s %s dias."
+                "Kommentare zu Beitr\u00e4gen sind nach %s Tag deaktiviert.",
+                "Kommentare zu Beitr\u00e4gen sind nach %s Tagen deaktiviert."
             ],
             "Close comments after %s day.": [
-                "Fechar coment\u00e1rios depois de %s dia.",
-                "Fechar coment\u00e1rios ap\u00f3s %s dias."
+                "Kommentare nach %s Tag schlie\u00dfen.",
+                "Kommentare nach %s Tagen schlie\u00dfen."
             ],
             "Comments setting saved.": [
-                "Configura\u00e7\u00e3o de coment\u00e1rios salva."
+                "Kommentar-Einstellung gespeichert."
             ],
             "Posts will display %s comment at a time.": [
-                "Os posts exibir\u00e3o um coment\u00e1rio de %s por vez.",
-                "Os posts exibir\u00e3o %s coment\u00e1rios por vez."
+                "Beitr\u00e4ge werden gleichzeitig %s Kommentar anzeigen.",
+                "Beitr\u00e4ge werden gleichzeitig %s Kommentare anzeigen."
             ],
             "Comments to display per page": [
-                "Coment\u00e1rios a serem exibidos por p\u00e1gina"
+                "Kommentare pro Seite"
             ],
             "Comments": [
-                "coment\u00e1rios"
+                "Kommentare"
             ],
             "Comments allow visitors to provide feedback and respond to your posts or pages.": [
-                "Os coment\u00e1rios permitem que os visitantes forne\u00e7am feedback e respondam \u00e0s suas postagens ou p\u00e1ginas."
+                "Kommentare erlauben Besuchern Feedback zu geben und auf Ihre Beitr\u00e4ge oder Seiten zu antworten."
             ],
             "Trash setting saved": [
-                "Configura\u00e7\u00e3o de lixo salva"
+                "Papierkorb gespeichert"
             ],
             "Number of weeks in between emptying trash": [
-                "N\u00famero de semanas entre lixo vazio"
+                "Anzahl der Wochen zwischen Papierkorb"
             ],
             "Content Options": [
-                "Op\u00e7\u00f5es de Conte\u00fado"
+                "Inhaltsoptionen"
             ],
             "Controls for how often to empty the trash.": [
-                "Controla a frequ\u00eancia de esvaziar a lixeira."
+                "Steuert, wie oft der Papierkorb zu leeren ist."
             ],
             "Help Center Enabled": [
-                "Centro de Ajuda Habilitado"
+                "Hilfe-Center aktiviert"
             ],
             "Help Center Disabled": [
-                "Centro de Ajuda Desativado"
+                "Hilfe-Center deaktiviert"
             ],
             "Reload the page to access the Help Center.": [
-                "Recarregue a p\u00e1gina para acessar a Central de Ajuda."
+                "Seite neu laden, um auf das Hilfe-Center zuzugreifen."
             ],
             "The Help Center will no longer display.": [
-                "O Centro de Suporte n\u00e3o ser\u00e1 mais mostrado."
+                "Das Hilfe-Center wird nicht mehr angezeigt."
             ],
             "This is where you can manage common settings for your website.": [
-                "Aqui \u00e9 onde voc\u00ea pode gerenciar configura\u00e7\u00f5es comuns para o seu site."
+                "Hier k\u00f6nnen Sie allgemeine Einstellungen f\u00fcr Ihre Website verwalten."
             ],
             "Features": [
-                "Funcionalidades"
+                "Eigenschaften"
             ],
             "Customize the available features as you manage your website.": [
-                "Personalize as funcionalidades dispon\u00edveis \u00e0 medida que voc\u00ea gerencia seu site."
+                "Passen Sie die verf\u00fcgbaren Funktionen an, w\u00e4hrend Sie Ihre Website verwalten."
             ],
             "Performance Enabled": [
-                "Desempenho Ativado"
+                "Leistung aktiviert"
             ],
             "Performance Disabled": [
-                "Desempenho Desativado"
+                "Leistung deaktiviert"
             ],
             "You need to reload the page to manage Performance.": [
-                "Voc\u00ea precisa recarregar a p\u00e1gina para gerenciar o desempenho."
+                "Sie m\u00fcssen die Seite neu laden, um Performance zu verwalten."
             ],
             "Performance will no longer display.": [
-                "O desempenho n\u00e3o ir\u00e1 mais mostrar."
+                "Leistung wird nicht mehr angezeigt."
             ],
             "The performance feature provides improvements to loads faster for visitors including cache settings.": [
-                "O recurso de desempenho fornece melhorias para cargas mais r\u00e1pidas para os visitantes, incluindo as configura\u00e7\u00f5es de cache."
+                "Die Performance-Funktion verbessert die Ladung f\u00fcr Besucher schneller, einschlie\u00dflich der Cache-Einstellungen."
             ],
             "Social Media Accounts": [
-                "Contas de m\u00eddia social"
+                "Soziale Medienkonten"
             ],
             "Connect your social media accounts to your website.": [
-                "Conecte suas contas de m\u00eddia social ao seu site."
+                "Verbinden Sie Ihre Social Media Konten mit Ihrer Website."
             ],
             "Click 'Add' to connect to one of your social media accounts.": [
-                "Clique em 'Adicionar' para conectar a uma das suas contas de m\u00eddia social."
+                "Klicken Sie auf 'Hinzuf\u00fcgen', um sich mit einem Ihrer Social-Media-Konten zu verbinden."
             ],
             "Add": [
-                "Adicionar"
+                "Neu"
             ],
             "Search\u2026": [
-                "Pesquisar\u2026"
+                "Suche\u2026"
             ],
             "Facebook": [
-                "Siga-nos"
+                "Facebook"
             ],
             "Not found": [
-                "N\u00e3o encontrado"
+                "Nicht gefunden"
             ],
             "Staging Enabled": [
-                "Prepara\u00e7\u00e3o Ativada"
+                "Staging aktiviert"
             ],
             "Staging Disabled": [
-                "Staging desativado"
+                "Staging deaktiviert"
             ],
             "You need to reload the page to manage Staging.": [
-                "Voc\u00ea precisa recarregar a p\u00e1gina para gerenciar o Staging."
+                "Sie m\u00fcssen die Seite neu laden, um Staging zu verwalten."
             ],
             "Staging will no longer display.": [
-                "O Staging n\u00e3o ser\u00e1 mais exibido."
+                "Staging wird nicht mehr angezeigt."
             ],
             "WonderBlocks Enabled": [
-                "WonderBlocks habilitado"
+                "WonderBl\u00f6cke aktiviert"
             ],
             "WonderBlocks Disabled": [
-                "WonderBlocks Desativados"
+                "Wunderbl\u00f6cke deaktiviert"
             ],
             "Create new content to see WonderBlocks in action.": [
-                "Crie um novo conte\u00fado para ver o WonderBlocks em a\u00e7\u00e3o."
+                "Erstellen Sie neue Inhalte, um WonderBlocks in Aktion zu sehen."
             ],
             "WonderBlocks will no longer display.": [
-                "WonderBlocks n\u00e3o aparecer\u00e3o mais."
+                "WonderBl\u00f6cke werden nicht mehr angezeigt."
             ],
             "Cancel": [
-                "cancelar"
+                "Abbrechen"
             ],
             "Clone": [
-                "Clonar"
+                "Klonen"
             ],
             "Confirm Clone Action": [
-                "Confirmar a\u00e7\u00e3o de Clone"
+                "Klon-Aktion best\u00e4tigen"
             ],
             "This will overwrite anything in staging and update it to an exact clone of the current production site. Are you sure you want to proceed?": [
-                "Isto ir\u00e1 sobrescrever qualquer coisa em Staging e atualiz\u00e1-lo para um clone exato do site de produ\u00e7\u00e3o atual. Tem certeza que deseja continuar?"
+                "Dies wird alles in der Stagierung \u00fcberschreiben und zu einem exakten Klon der aktuellen Produktionsseite aktualisieren. Sind Sie sicher, dass Sie fortfahren m\u00f6chten?"
             ],
             "Cloned to Staging": [
-                "Clonado para o Staging"
+                "Zu Staging geklont"
             ],
             "Cloning production to staging, this should take about a minute.": [
-                "A clonagem da produ\u00e7\u00e3o para a fase de estagna\u00e7\u00e3o, isso deve demorar cerca de um minuto."
+                "Das Klonen der Produktion auf Stagnation sollte ungef\u00e4hr eine Minute dauern."
             ],
             "Clone to staging": [
-                "Clonar para o preparo"
+                "Zum Stagieren klonen"
             ],
             "Created": [
-                "Criado"
+                "Erstellt"
             ],
             "Staging Created": [
-                "Prepara\u00e7\u00e3o Criada"
+                "Staging erstellt"
             ],
             "Creating a staging site, this should take about a minute.": [
-                "Criando um staging site, isso deve levar cerca de um minuto."
+                "Erstellen einer Staging-Site sollte eine Minute dauern."
             ],
             "Create staging site": [
-                "Criar site de teste"
+                "Staging-Site erstellen"
             ],
             "Currently editing": [
-                "Edi\u00e7\u00e3o atual"
+                "Aktuell bearbeiten"
             ],
             "Delete": [
-                "excluir"
+                "L\u00f6schen"
             ],
             "Confirm Delete": [
-                "Confirmar Exclus\u00e3o"
+                "L\u00f6schen best\u00e4tigen"
             ],
             "This will permanently delete staging site. Are you sure you want to proceed? You can recreate another staging site at any time, but any specific changes you've made to this staging site will be lost.": [
-                "Isto ir\u00e1 excluir o site de staging permanentemente. Tem certeza que deseja continuar? Voc\u00ea pode recriar outro site de staging a qualquer momento, mas quaisquer altera\u00e7\u00f5es espec\u00edficas feitas neste site ser\u00e3o perdidas."
+                "Staging-Site wird dauerhaft gel\u00f6scht. Sind Sie sicher, dass Sie fortfahren m\u00f6chten? Sie k\u00f6nnen jederzeit eine andere Staging-Site neu erstellen, aber alle spezifischen \u00c4nderungen, die Sie an dieser Staging-Site vorgenommen haben, gehen verloren."
             ],
             "Deleted Staging": [
-                "Deletado Staging"
+                "Gel\u00f6schte Staging"
             ],
             "Deleting the staging site, this should take about a minute.": [
-                "Excluindo o staging site, isso deve levar cerca de um minuto."
+                "Staging Site wird gel\u00f6scht. Dies sollte ungef\u00e4hr eine Minute dauern."
             ],
             "Delete Staging Site": [
-                "Excluir Site Staging"
+                "Staging-Site l\u00f6schen"
             ],
             "Deploy": [
-                "Implantar"
+                "Deploy"
             ],
             "Deploy all changes": [
-                "Implementar todas as altera\u00e7\u00f5es"
+                "Alle \u00c4nderungen verteilen"
             ],
             "Confirm Deployment": [
-                "Confirmar implanta\u00e7\u00e3o"
+                "Einsatz best\u00e4tigen"
             ],
             "Deploy database only": [
-                "S\u00f3 implantar banco de dados"
+                "Nur Datenbank verteilen"
             ],
             "This will deploy staging to production and overwrite current production site. Are you sure you want to proceed?": [
-                "Isto ir\u00e1 implantar o staging para produ\u00e7\u00e3o e sobrescrever o site de produ\u00e7\u00e3o atual. Tem certeza que deseja continuar?"
+                "Dies wird Staging zur Produktion bereitstellen und die aktuelle Produktionsseite \u00fcberschreiben. Sind Sie sicher, dass Sie fortfahren m\u00f6chten?"
             ],
             "Deploy files only": [
-                "Implantar apenas arquivos"
+                "Nur Dateien verteilen"
             ],
             "Deployed": [
-                "Implantado"
+                "Ausgestellt"
             ],
             "Deploying from staging to production, this should take about a minute.": [
-                "Implantando da fase para a produ\u00e7\u00e3o, isto deve levar cerca de um minuto."
+                "Der Einsatz von Staging in die Produktion sollte etwa eine Minute in Anspruch nehmen."
             ],
             "Deploy Site": [
-                "Site de implanta\u00e7\u00e3o"
+                "Site verteilen"
             ],
             "Error": [
-                "Erro"
+                "Fehler"
             ],
             "You don't have a staging site yet.": [
-                "Voc\u00ea ainda n\u00e3o tem um site de preparo."
+                "Sie haben noch keine Staging-Site."
             ],
             "Not currently editing": [
-                "N\u00e3o est\u00e1 editando no momento"
+                "Derzeit nicht bearbeiten"
             ],
             "Proceed": [
-                "Continuar"
+                "Fortfahren"
             ],
             "Production Site": [
-                "Local de Produ\u00e7\u00e3o"
+                "Produktionsstandort"
             ],
             "Staging Site": [
-                "Site Staging"
+                "Staging-Seite"
             ],
             "A staging site is a duplicate of your live site, offering a secure environment to experiment, test updates, and deploy when ready.": [
-                "Um site staging \u00e9 uma duplicata do seu site ao vivo, oferecendo um ambiente seguro para experimentar, testar atualiza\u00e7\u00f5es e implantar quando estiver pronto."
+                "Eine Staging-Site ist eine Kopie Ihrer Live-Site, die eine sichere Umgebung zum Experimentieren, Testen von Aktualisierungen und Verteilen bietet, wenn sie bereit sind."
             ],
             "Switch": [
-                "Interruptor"
+                "Wechseln"
             ],
             "Switching": [
-                "Alternando"
+                "Wechseln"
             ],
             "Switch to Production": [
-                "Mudar para Produ\u00e7\u00e3o"
+                "Zur Produktion wechseln"
             ],
             "This will navigate you to the production environment": [
-                "Isto ir\u00e1 navegar para o ambiente de produ\u00e7\u00e3o"
+                "Dies wird Sie zur Produktionsumgebung navigieren"
             ],
             "Loading the production environment now.": [
-                "Carregando ambiente de produ\u00e7\u00e3o agora."
+                "Laden der Produktionsumgebung jetzt."
             ],
             "Switching to the production environment, this should take about a minute.": [
-                "Mudando para o ambiente de produ\u00e7\u00e3o, isso deve levar cerca de um minuto."
+                "Beim Wechsel auf die Produktionsumgebung sollte dies etwa eine Minute dauern."
             ],
             "Switch to Staging": [
-                "Alternar para Staging"
+                "Zu Staging wechseln"
             ],
             "This will navigate you to the staging environment": [
-                "Isto ir\u00e1 navegar para o ambiente de teste"
+                "Dies wird dich zur Staging-Umgebung navigieren"
             ],
             "Loading the staging environment now.": [
-                "Carregando o ambiente de staging agora."
+                "Laden der Staging-Umgebung jetzt."
             ],
             "Switching to the staging environment, this should take about a minute.": [
-                "Mudando para o ambiente de preparo, isso deve levar cerca de um minuto."
+                "Beim Wechsel auf die Staging-Umgebung sollte dies ungef\u00e4hr eine Minute dauern."
             ],
             "An unknown error has occurred.": [
-                "Ocorreu um erro desconhecido."
+                "Ein unbekannter Fehler ist aufgetreten."
             ],
             "Working\u2026": [
-                "Trabalhando\u2026"
+                "Arbeiten\u2026"
+            ],
+            "Add a New Plugin": [
+                "Das Bluehost-Plugin"
             ]
         }
     }

@@ -193,6 +193,10 @@ require BLUEHOST_PLUGIN_DIR . '/inc/RestApi/rest-api.php';
 require BLUEHOST_PLUGIN_DIR . '/inc/settings.php';
 require BLUEHOST_PLUGIN_DIR . '/inc/updates.php';
 require BLUEHOST_PLUGIN_DIR . '/inc/YoastAI.php';
+require BLUEHOST_PLUGIN_DIR . '/inc/widgets/bootstrap.php';
+require_once BLUEHOST_PLUGIN_DIR . '/inc/Filters.php';
+
+Filters::init();
 
 /* WordPress Admin Page & Features */
 if ( is_admin() ) {

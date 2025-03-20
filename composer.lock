@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "75149e9ba424c0e2ffb50ce9af508a6b",
+    "content-hash": "0523ddbb36401ee255e3b7f7ea3ada2d",
     "packages": [
         {
             "name": "doctrine/inflector",
@@ -623,16 +623,16 @@
         },
         {
             "name": "newfold-labs/wp-module-ai",
-            "version": "1.2.0",
+            "version": "1.2.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/newfold-labs/wp-module-ai.git",
-                "reference": "177ea636824e67dd3ff968982d2ef03773766daa"
+                "reference": "72ad4c8ad467e59047c37120aac3971dbdec8f67"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/newfold-labs/wp-module-ai/zipball/177ea636824e67dd3ff968982d2ef03773766daa",
-                "reference": "177ea636824e67dd3ff968982d2ef03773766daa",
+                "url": "https://api.github.com/repos/newfold-labs/wp-module-ai/zipball/72ad4c8ad467e59047c37120aac3971dbdec8f67",
+                "reference": "72ad4c8ad467e59047c37120aac3971dbdec8f67",
                 "shasum": ""
             },
             "require": {
@@ -693,10 +693,10 @@
             ],
             "description": "A module for providing artificial intelligence capabilities.",
             "support": {
-                "source": "https://github.com/newfold-labs/wp-module-ai/tree/1.2.0",
+                "source": "https://github.com/newfold-labs/wp-module-ai/tree/1.2.1",
                 "issues": "https://github.com/newfold-labs/wp-module-ai/issues"
             },
-            "time": "2025-03-03T18:51:30+00:00"
+            "time": "2025-03-17T22:14:25+00:00"
         },
         {
             "name": "newfold-labs/wp-module-atomic",
@@ -1797,16 +1797,16 @@
         },
         {
             "name": "newfold-labs/wp-module-onboarding",
-            "version": "2.6.2",
+            "version": "2.6.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/newfold-labs/wp-module-onboarding.git",
-                "reference": "8b157568b5998b561284e44b74495876dd605d7a"
+                "reference": "a3e677692c90bb7a140e7eceae40bdd8a0a48040"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/newfold-labs/wp-module-onboarding/zipball/8b157568b5998b561284e44b74495876dd605d7a",
-                "reference": "8b157568b5998b561284e44b74495876dd605d7a",
+                "url": "https://api.github.com/repos/newfold-labs/wp-module-onboarding/zipball/a3e677692c90bb7a140e7eceae40bdd8a0a48040",
+                "reference": "a3e677692c90bb7a140e7eceae40bdd8a0a48040",
                 "shasum": ""
             },
             "require": {
@@ -1873,10 +1873,10 @@
             ],
             "description": "Next-generation WordPress Onboarding for WordPress sites at Newfold Digital.",
             "support": {
-                "source": "https://github.com/newfold-labs/wp-module-onboarding/tree/2.6.2",
+                "source": "https://github.com/newfold-labs/wp-module-onboarding/tree/2.6.3",
                 "issues": "https://github.com/newfold-labs/wp-module-onboarding/issues"
             },
-            "time": "2025-03-11T23:01:50+00:00"
+            "time": "2025-03-19T21:54:31+00:00"
         },
         {
             "name": "newfold-labs/wp-module-onboarding-data",

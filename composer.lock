@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "8e0a88b1e90ffb0402d608a67567ef0f",
+    "content-hash": "75149e9ba424c0e2ffb50ce9af508a6b",
     "packages": [
         {
             "name": "doctrine/inflector",
@@ -1069,21 +1069,21 @@
         },
         {
             "name": "newfold-labs/wp-module-ecommerce",
-            "version": "1.6.1",
+            "version": "1.7.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/newfold-labs/wp-module-ecommerce.git",
-                "reference": "322bdb60164cb0066e0488a6829d6bdf68f2b6a4"
+                "reference": "2b31b168218f3c038617af9fecc59732fb8b90d1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/newfold-labs/wp-module-ecommerce/zipball/322bdb60164cb0066e0488a6829d6bdf68f2b6a4",
-                "reference": "322bdb60164cb0066e0488a6829d6bdf68f2b6a4",
+                "url": "https://api.github.com/repos/newfold-labs/wp-module-ecommerce/zipball/2b31b168218f3c038617af9fecc59732fb8b90d1",
+                "reference": "2b31b168218f3c038617af9fecc59732fb8b90d1",
                 "shasum": ""
             },
             "require": {
-                "newfold-labs/wp-module-installer": "^1.3.0",
-                "newfold-labs/wp-module-onboarding-data": "^1.1.8"
+                "newfold-labs/wp-module-installer": "^1.4.1",
+                "newfold-labs/wp-module-onboarding-data": "^1.2.6"
             },
             "require-dev": {
                 "newfold-labs/wp-php-standards": "@stable",
@@ -1139,10 +1139,10 @@
             ],
             "description": "Brand Agnostic eCommerce Experience",
             "support": {
-                "source": "https://github.com/newfold-labs/wp-module-ecommerce/tree/1.6.1",
+                "source": "https://github.com/newfold-labs/wp-module-ecommerce/tree/1.7.0",
                 "issues": "https://github.com/newfold-labs/wp-module-ecommerce/issues"
             },
-            "time": "2025-03-10T21:45:37+00:00"
+            "time": "2025-03-19T22:13:43+00:00"
         },
         {
             "name": "newfold-labs/wp-module-facebook",
@@ -5529,10 +5529,10 @@
     },
     "prefer-stable": false,
     "prefer-lowest": false,
-    "platform": [],
-    "platform-dev": [],
+    "platform": {},
+    "platform-dev": {},
     "platform-overrides": {
         "php": "7.3.0"
     },
-    "plugin-api-version": "2.3.0"
+    "plugin-api-version": "2.6.0"
 }

@@ -1,4 +1,5 @@
 import {
+	HomeIcon,
 	ShoppingBagIcon,
 	WrenchScrewdriverIcon,
 	BoltIcon,
@@ -12,6 +13,7 @@ import { ReactComponent as HelpIcon } from '../components/icons/HelpIcon.svg';
 import { NewfoldRuntime } from '@newfold/wp-module-runtime';
 import { getMarketplaceSubnavRoutes } from '@modules/wp-module-marketplace/components/marketplaceSubnav';
 import { Route, Routes } from 'react-router-dom';
+import Home from '../pages/home';
 import PagesAndPosts from '../pages/pages-and-posts';
 import Store from '../pages/ecommerce/page';
 import Marketplace from '../pages/marketplace';
@@ -48,7 +50,7 @@ export const AppRoutes = () => {
 						/>
 					)
 			) }
-			<Route path="/" element={ <Hosting /> } />
+			<Route path="/" element={ <Home /> } />
 			<Route
 				path="*"
 				element={
@@ -68,6 +70,7 @@ export const AppRoutes = () => {
 
 const topRoutePaths = [
 	'/home',
+	'/hosting',
 	'/pages-and-posts',
 	'/store',
 	'/marketplace',
@@ -81,6 +84,13 @@ const utilityRoutePaths = [ '/help' ];
 export const routes = [
 	{
 		name: '/home',
+		title: __( 'Home', 'wp-plugin-bluehost' ),
+		Component: Home,
+		Icon: HomeIcon,
+		condition: true,
+	},
+	{
+		name: '/hosting',
 		title: __( 'Hosting', 'wp-plugin-bluehost' ),
 		Component: Hosting,
 		Icon: ServerStackIcon,

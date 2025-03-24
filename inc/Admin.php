@@ -73,6 +73,9 @@ final class Admin {
 		$home          = array(
 			'bluehost#/home' => __( 'Home', 'wp-plugin-bluehost' ),
 		);
+		$hosting       = array(
+			'bluehost#/hosting' => __( 'Hosting', 'wp-plugin-bluehost' ),
+		);
 		$pagesAndPosts = array(
 			'bluehost#/pages-and-posts' => __( 'Pages & Posts', 'wp-plugin-bluehost' ),
 		);
@@ -109,6 +112,7 @@ final class Admin {
 
 		return array_merge(
 			$home,
+			$hosting,
 			$pagesAndPosts,
 			$store,
 			$marketplace,

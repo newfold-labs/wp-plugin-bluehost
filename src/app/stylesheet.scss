@@ -361,7 +361,7 @@ body.toplevel_page_bluehost {
             }
         }
     }
-    
+
     .nfd-card.nfd-card-mid {
         background-color: var(--color-mid);
         border-color: var(--color-mid);
@@ -412,8 +412,14 @@ body.toplevel_page_bluehost {
 
         .nfd-arrow {
             opacity: 0;
+            fill: var(--color-primary);
             padding-right: 1rem;
             transition: all 0.5s ease;
+        }
+
+        .nfd-card-hover-cta {
+            opacity: 0;
+            transition: opacity 0.25s ease;
         }
 
         &:hover {
@@ -426,6 +432,18 @@ body.toplevel_page_bluehost {
                 opacity: 1;
                 padding-right: 0;
             }
+
+            .nfd-card-hover-cta {
+                opacity: 1;
+            }
+        }
+
+
+    }
+
+    .nfd-no-stroke {
+        path {
+            stroke: none !important;
         }
     }
 }

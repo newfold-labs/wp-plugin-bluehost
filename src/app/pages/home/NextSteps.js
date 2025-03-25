@@ -1,6 +1,13 @@
 import { Button, Card, Container, Title } from '@newfold/ui-component-library';
 import { ReactComponent as Icon } from 'App/images/card-icon-explore-solutions.svg';
-import { ReactComponent as Arrow } from 'App/images/card-mini-arrow.svg';
+import {
+	ArrowLongRightIcon,
+	BuildingStorefrontIcon,
+	CalculatorIcon,
+	CreditCardIcon,
+	StarIcon,
+	TagIcon,
+} from '@heroicons/react/20/solid';
 
 const NextSteps = ( {} ) => {
 	const steps = [
@@ -9,7 +16,7 @@ const NextSteps = ( {} ) => {
 			id: 'explore-solution',
 			description:
 				'A bundle of features designed to elevate your online experience',
-			icon: Icon,
+			icon: StarIcon,
 			href: '#',
 		},
 		{
@@ -17,15 +24,15 @@ const NextSteps = ( {} ) => {
 			id: 'add-product',
 			description:
 				'Create or import a product and bring your store to life',
-			icon: Icon,
-			href: '#',
+			icon: TagIcon,
+			href: '/wp-admin/post-new.php?post_type=product',
 		},
 		{
 			title: 'Add your store info',
 			id: 'store-info',
 			description:
 				'Build trust and present yourself in the best way to your customers',
-			icon: Icon,
+			icon: BuildingStorefrontIcon,
 			href: '#',
 		},
 		{
@@ -33,22 +40,14 @@ const NextSteps = ( {} ) => {
 			id: 'payment-processor',
 			description:
 				'Get ready to receive your first payments via PayPal or credit card',
-			icon: Icon,
+			icon: CreditCardIcon,
 			href: '#',
 		},
 		{
 			title: 'Configure tax settings',
 			id: 'tax-settings',
 			description: 'Set up your tax options to start selling',
-			icon: Icon,
-			href: '#',
-		},
-		{
-			title: 'A compleded step!',
-			id: 'completed-step',
-			description:
-				'A quick way to boost traffic and sales while engaging your audience',
-			icon: Icon,
+			icon: CalculatorIcon,
 			href: '#',
 		},
 	];
@@ -71,23 +70,25 @@ const NextSteps = ( {} ) => {
 							<Card className="nfd-card nfd-p-4">
 								<Card.Content>
 									<div className="nfd-flex nfd-flex-row nfd-gap-6 nfd-justify-start nfd-align-middle">
-										<step.icon className="nfd-max-w-12" />
-										<div className="nfd-flex nfd-flex-col nfd-gap-2 nfd-self-start">
+										<div className="nfd-card-icon-wrapper nfd-bg-blue-100 nfd-p-2  nfd-rounded-xl">
+											<step.icon className="nfd-min-w-8 nfd-max-w-12 nfd-no-stroke" />
+										</div>
+										<div className="nfd-flex nfd-flex-col nfd-gap-1 nfd-self-start">
 											<Title
 												size={ 5 }
 												as="p"
-												className=""
+												className="nfd-strong"
 											>
 												{ step.title }
 											</Title>
 											<p>{ step.description }</p>
 										</div>
-										<div className="nfd-ml-auto">
+										<div className="nfd-ml-auto nfd-card-hover-cta">
 											<Button
 												className=""
 												variant="primary"
 											>
-												<Arrow className="" />
+												<ArrowLongRightIcon className="nfd-no-stroke" />
 											</Button>
 										</div>
 									</div>

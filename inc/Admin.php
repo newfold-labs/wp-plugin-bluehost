@@ -70,7 +70,7 @@ final class Admin {
 
 		$home     = array(
 			'route'	   => 'bluehost#/home',
-			'title'    => __( 'Dashboard', 'wp-plugin-bluehost' ),
+			'title'    => __( 'Home', 'wp-plugin-bluehost' ),
 			'priority' => 1,
 		);
 		$settings = array(

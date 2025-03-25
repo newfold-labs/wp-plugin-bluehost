@@ -15,8 +15,6 @@ import { store as noticesStore } from '@wordpress/notices';
 import { kebabCase, filter } from 'lodash';
 import { useHandlePageLoad } from './util/hooks';
 import { Root } from '@newfold/ui-component-library';
-import { AppNav } from './components/app-nav';
-import { SiteInfoBar } from './components/site-info';
 import { NotificationFeed } from './components/notifications';
 import Logo from './components/app-nav/logo';
 
@@ -84,7 +82,6 @@ const AppBody = ( props ) => {
 				<div className="wppbh-app-body-inner">
 					<ErrorBoundary FallbackComponent={ <ErrorCard /> }>
 						{ hasError && <ErrorCard error={ hasError } /> }
-						{/* <SiteInfoBar /> */}
 						{ ( true === booted && <AppRoutes /> ) ||
 							( ! hasError && <Spinner /> ) }
 					</ErrorBoundary>
@@ -104,7 +101,6 @@ export const App = () => (
 			<NotificationFeed>
 				<Router>
 					<div className="wppbh-app-container min-[783px]:nfd-p-8 min-[783px]:nfd-flex nfd-gap-6 nfd-max-w-full xl:nfd-max-w-screen-xl 2xl:nfd-max-w-screen-2xl nfd-my-0">
-						{/* <AppNav /> */}
 						<AppBody />
 					</div>
 				</Router>

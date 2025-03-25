@@ -1,5 +1,4 @@
 import { Button, Card, Container, Title } from '@newfold/ui-component-library';
-import { ReactComponent as Icon } from 'App/images/card-icon-explore-solutions.svg';
 import {
 	ArrowLongRightIcon,
 	BuildingStorefrontIcon,

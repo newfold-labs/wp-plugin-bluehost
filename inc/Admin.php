@@ -69,17 +69,17 @@ final class Admin {
 	public static function plugin_subpages() {
 
 		$home     = array(
-			'route'	   => 'bluehost#/home',
+			'route'    => 'bluehost#/home',
 			'title'    => __( 'Home', 'wp-plugin-bluehost' ),
 			'priority' => 1,
 		);
 		$settings = array(
-			'route'	   => 'bluehost#/settings',
+			'route'    => 'bluehost#/settings',
 			'title'    => __( 'Settings', 'wp-plugin-bluehost' ),
 			'priority' => 60,
 		);
 		$help     = array(
-			'route'	   => 'bluehost#/help',
+			'route'    => 'bluehost#/help',
 			'title'    => __( 'Help Resources', 'wp-plugin-bluehost' ),
 			'priority' => 70,
 		);
@@ -90,24 +90,24 @@ final class Admin {
 			array(
 				$settings,
 				$home,
-				$help
+				$help,
 			)
 		);
 
 		// sort subnav items by priority
 		usort(
 			$subnav,
-			function( $a, $b ) {
-				if ($a['priority'] == $b['priority']) {
+			function ( $a, $b ) {
+				if ( $a['priority'] === $b['priority'] ) {
 					return 0;
 				}
-				return ($a['priority'] < $b['priority'] ? -1 : 1);
+				return ( $a['priority'] < $b['priority'] ? -1 : 1 );
 			}
 		);
-		
+
 		$pages = array();
-		foreach ($subnav as $nav) {
-			$pages[$nav['route']] = $nav['title'];
+		foreach ( $subnav as $nav ) {
+			$pages[ $nav['route'] ] = $nav['title'];
 		}
 
 		// return subnav items sorted by priority
@@ -156,7 +156,6 @@ final class Admin {
 				array( __CLASS__, 'render' )
 			);
 		}
-
 	}
 
 	/**

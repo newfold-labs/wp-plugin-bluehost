@@ -27,7 +27,7 @@ describe( 'Help Page', { testIsolation: true }, function () {
 
 	it( 'A11y and Cards Each Exist', () => {
 		cy.injectAxe();
-		cy.wait( 500 );
+		cy.wait( 1000 );
 		cy.a11y( '.wppbh-app-body' );
 
 		cy.get( '.card-help-phone' )

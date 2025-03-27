@@ -20,7 +20,7 @@ describe( 'Home Page', { testIsolation: true }, function () {
 
 	it( 'Is Accessible', () => {
 		cy.injectAxe();
-		cy.wait( 500 );
+		cy.wait( 1000 );
 		cy.a11y( '.wppbh-app-body' );
 	} );
 

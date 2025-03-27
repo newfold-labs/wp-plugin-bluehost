@@ -17,6 +17,7 @@ const NextSteps = ( {} ) => {
 				'A bundle of features designed to elevate your online experience',
 			icon: StarIcon,
 			href: '#',
+			status: 'new',
 		},
 		{
 			title: 'Add your first product',
@@ -25,6 +26,7 @@ const NextSteps = ( {} ) => {
 				'Create or import a product and bring your store to life',
 			icon: TagIcon,
 			href: '/wp-admin/post-new.php?post_type=product',
+			status: 'new',
 		},
 		{
 			title: 'Add your store info',
@@ -33,6 +35,7 @@ const NextSteps = ( {} ) => {
 				'Build trust and present yourself in the best way to your customers',
 			icon: BuildingStorefrontIcon,
 			href: '#',
+			status: 'new',
 		},
 		{
 			title: 'Connect a payment processor',
@@ -41,6 +44,7 @@ const NextSteps = ( {} ) => {
 				'Get ready to receive your first payments via PayPal or credit card',
 			icon: CreditCardIcon,
 			href: '#',
+			status: 'new',
 		},
 		{
 			title: 'Configure tax settings',
@@ -48,6 +52,7 @@ const NextSteps = ( {} ) => {
 			description: 'Set up your tax options to start selling',
 			icon: CalculatorIcon,
 			href: '#',
+			status: 'new',
 		},
 	];
 	return (

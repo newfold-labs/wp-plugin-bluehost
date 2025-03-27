@@ -1,5 +1,6 @@
 import { Container, Page } from '@newfold/ui-component-library';
-import NextSteps from './NextSteps';
+import WelcomeSection from './welcomeSection';
+// import NextSteps from './NextSteps';
 import SolutionCard from './SolutionCard';
 import ExpertCard from './ExpertCard';
 import HelpCard from './HelpCard';
@@ -21,7 +22,7 @@ const Home = () => {
 					) }
 				</p>
 			</div>
-			<NextSteps />
+			<WelcomeSection />
 			<Container>
 				<Container.Block>
 					<div className="nfd-grid nfd-gap-6 nfd-grid-cols-1 min-[540px]:nfd-grid-cols-2 min-[960px]:nfd-grid-cols-3">

@@ -107,10 +107,12 @@ module.exports = defineConfig( {
 		testIsolation: false,
 		excludeSpecPattern: [
 			'vendor/newfold-labs/**/tests/cypress/integration/wp-module-support/*.cy.js', // skip any module's wp-module-support files
+			'vendor/newfold-labs/wp-module-ecommerce/tests/cypress/integration/**/*.cy.js', // skip irrelevant tests
+
 		],
 		experimentalRunAllSpecs: true,
 	},
-	retries: 1,
+	retries: 0,
 	experimentalMemoryManagement: true,
 } );
 

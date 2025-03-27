@@ -8,6 +8,7 @@ const ReferralProgramCard = ( {} ) => {
 			href="https://www.bluehost.com/affiliates"
 			target="_blank"
 			rel="noreferrer"
+			data-cy="referral-program-card"
 		>
 			<Card className="wppbh-help-card nfd-card nfd-card-dark nfd-card-has-bg">
 				<Card.Content>

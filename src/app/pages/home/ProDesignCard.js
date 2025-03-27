@@ -10,6 +10,7 @@ const ProDesignCard = ( {} ) => {
 			href="https://www.bluehost.com/my-account/market-place?utm_source=wp-marketplace&amp;utm_medium=brand-plugin"
 			rel="noreferrer"
 			target="_blank"
+			data-cy="pro-design-card"
 		>
 			<Card className="wppbh-help-card nfd-card nfd-card-mid nfd-card-has-bg">
 				<Card.Content>

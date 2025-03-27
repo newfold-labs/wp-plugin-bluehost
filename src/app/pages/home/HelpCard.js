@@ -3,7 +3,11 @@ import { ReactComponent as Icon } from 'App/images/card-icon-help-resources.svg'
 
 const HelpCard = ( {} ) => {
 	return (
-		<a href="#/help" className="nfd-no-underline nfd-card-link">
+		<a
+			href="#/help"
+			className="nfd-no-underline nfd-card-link"
+			data-cy="help-card"
+		>
 			<Card className="wppbh-help-card nfd-card">
 				<Card.Content>
 					<div className="nfd-flex nfd-flex-col nfd-gap-4 nfd-items-center nfd-text-center nfd-mt-4">

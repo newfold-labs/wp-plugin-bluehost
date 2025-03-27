@@ -3,7 +3,11 @@ import { ReactComponent as Icon } from 'App/images/card-icon-hire-experts.svg';
 
 const ExpertCard = ( {} ) => {
 	return (
-		<a href="#/" className="nfd-no-underline nfd-card-link">
+		<a
+			href="#/"
+			className="nfd-no-underline nfd-card-link"
+			data-cy="expert-card"
+		>
 			<Card className="wppbh-solution-card nfd-card">
 				<Card.Content>
 					<div className="nfd-flex nfd-flex-col nfd-gap-4 nfd-items-center nfd-text-center nfd-mt-4">

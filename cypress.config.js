@@ -12,7 +12,7 @@ module.exports = defineConfig( {
 		phpVersion,
 		pluginId: 'bluehost',
 		appId: 'wppbh',
-		pluginSlug: 'wp-plugin-bluehost'
+		pluginSlug: 'wp-plugin-bluehost',
 	},
 	downloadsFolder: 'tests/cypress/downloads',
 	fixturesFolder: 'tests/cypress/fixtures',
@@ -29,6 +29,19 @@ module.exports = defineConfig( {
 	],
 	e2e: {
 		setupNodeEvents( on, config ) {
+			on( 'task', {
+				log( message ) {
+					// eslint-disable-next-line no-console
+					console.log( message );
+					return null;
+				},
+				table( message ) {
+					// eslint-disable-next-line no-console
+					console.table( message );
+					return null;
+				},
+			} );
+
 			// Ensure that the base URL is always properly set.
 			if ( config.env && config.env.baseUrl ) {
 				config.baseUrl = config.env.baseUrl;

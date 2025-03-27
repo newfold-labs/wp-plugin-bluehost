@@ -3,7 +3,7 @@ import { ReactComponent as Arrow } from 'App/images/card-mini-arrow.svg';
 
 const QuickLinksCard = ( {} ) => {
 	return (
-		<div className="">
+		<div className="" data-cy="quick-links-card">
 			<Title size={ 2 } as="h3" className="nfd-mb-4">
 				{ __( 'Quick links', 'wp-plugin-bluehost' ) }
 			</Title>

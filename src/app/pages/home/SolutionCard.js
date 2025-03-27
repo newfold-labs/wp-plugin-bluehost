@@ -3,13 +3,17 @@ import { ReactComponent as Icon } from 'App/images/card-icon-explore-solutions.s
 
 const SolutionCard = ( {} ) => {
 	return (
-		<a href="#/solutions" className="nfd-no-underline nfd-card-link">
+		<a
+			href="#/solutions"
+			className="nfd-no-underline nfd-card-link"
+			data-cy="solution-card"
+		>
 			<Card className="wppbh-solution-card nfd-card">
 				<Card.Content>
 					<div className="nfd-flex nfd-flex-col nfd-gap-4 nfd-items-center nfd-text-center nfd-mt-4">
 						<Icon className="nfd-max-w-12" />
 					</div>
-					<Title size={ 2 } as="h3" className="nfd-mt-8 nfd-mb-4">
+					<Title size={ 2 } as="h2" className="nfd-mt-8 nfd-mb-4">
 						{ __( 'Explore your Solution', 'wp-plugin-bluehost' ) }
 					</Title>
 					<p>

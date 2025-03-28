@@ -1,924 +1,933 @@
 {
-    "translation-revision-date": "2025-03-18T20:07:22+00:00",
+    "translation-revision-date": "2025-02-25T20:53:21+00:00",
     "generator": "WP-CLI\/2.11.0",
-    "source": "build\/4.1.5\/index.js",
+    "source": "build\/4.2.0\/index.js",
     "domain": "messages",
     "locale_data": {
         "messages": {
             "": {
                 "domain": "messages",
-                "lang": "it_IT",
+                "lang": "en",
                 "plural-forms": "nplurals=2; plural=(n != 1);"
             },
             "Home": [
-                "Home"
+                "Startpagina"
             ],
             "Pages & Posts": [
-                "Pagine & Post"
+                "Pagina's & Berichten"
             ],
             "Store": [
-                "Negozio"
+                "Winkel"
             ],
             "Marketplace": [
-                "Marketplace"
+                "Marktplaats"
             ],
             "My Plugins & Tools": [
-                "Plugin & Strumenti"
+                "Mijn plug-ins & gereedschap"
             ],
             "Performance": [
-                "Prestazioni"
+                "Prestaties"
             ],
             "Settings": [
-                "Impostazioni"
+                "Instellingen"
             ],
             "Staging": [
-                "Messa in scena"
+                "Testboeking"
             ],
             "Help": [
-                "Aiuto"
+                "Hulp"
             ],
             "Bluehost WordPress Plugin": [
-                "Plugin WordPress Bluehost"
+                "Bluehost WordPress-plugin"
             ],
             "Oh No, An Error!": [
-                "Oh no, un errore!"
+                "Oh nee, een fout!"
             ],
             "You found an error, please refresh the page and try again!": [
-                "Hai trovato un errore, aggiorna la pagina e riprova!"
+                "U heeft een fout gevonden, ververs de pagina en probeer het opnieuw!"
             ],
             "If the error persists, please contact support.": [
-                "Se l'errore persiste, contatta l'assistenza."
+                "Als de fout zich blijft voordoen, neem dan contact op met support."
             ],
             "Error code:": [
-                "Codice errore:"
-            ],
-            "Bluehost Account": [
-                "Account Bluehost"
+                "Foutcode:"
             ],
             "There's nothing here!": [
-                "Non c'\u00e8 niente qui!"
+                "Er is hier niets!"
             ],
             "Products & Services": [
-                "Prodotti & Servizi"
+                "Producten en Diensten"
             ],
             "Sales & Promotions": [
-                "Vendite & Promozioni"
+                "Verkoop & Promoties"
             ],
             "Sales Channel": [
-                "Canale di vendita"
+                "Verkoop Kanaal"
             ],
             "Payments": [
-                "Pagamenti"
+                "Betalingen"
             ],
             "Store Details": [
-                "Dettagli negozio"
+                "Winkel Details"
             ],
             "Help with WordPress": [
-                "Aiuto con WordPress"
+                "Help met WordPress"
             ],
             "Admin": [
-                "Amministratore"
+                "Beheerder"
             ],
             "The staging feature provides a way to copy a site to test new updates, features or content.": [
-                "La funzione di staging fornisce un modo per copiare un sito per testare nuovi aggiornamenti, funzionalit\u00e0 o contenuti."
+                "De stagingfunctie biedt een manier om een site te kopi\u00ebren om nieuwe updates, functies of inhoud te testen."
             ],
             "Sorry, that is not allowed.": [
-                "Siamo spiacenti, non \u00e8 consentito."
+                "Sorry, dat is niet toegestaan."
             ],
             "This feature cannot currently be modified.": [
-                "Questa funzione non pu\u00f2 essere modificata al momento."
+                "Deze functie kan momenteel niet worden gewijzigd."
             ],
             "Oops! Something went wrong. Please try again.": [
-                "Oops! Qualcosa \u00e8 andato storto. Riprova."
+                "Oeps! Er is iets fout gegaan. Probeer het opnieuw."
             ],
             "Phone": [
-                "Telefono"
+                "Telefoonnummer"
             ],
             "Call Us": [
-                "Chiamaci"
+                "Bel ons"
             ],
             "Chat": [
-                "Chat"
+                "Chatten"
             ],
             "Chat with one of our friendly Customer Care Specialists, as we are waiting to help. Open 24 hours - 7 days.": [
-                "Chatta con uno dei nostri amichevoli specialisti di assistenza clienti, come stiamo aspettando di aiutare. Aperto 24 ore - 7 giorni."
+                "Chat met een van onze vriendelijke Customer Care Specialisten, zoals we willen helpen. Open 24 uur - 7 dagen."
             ],
             "Live Chat": [
-                "Live Chat"
+                "Live chat"
             ],
             "Tweet": [
-                "Tweet"
+                "tweet"
             ],
             "Find our team at @bluehost for updates on our products and support from our team.": [
-                "Trova il nostro team a @bluehost per aggiornamenti sui nostri prodotti e supporto dal nostro team."
+                "Vind ons team op @bluehost voor updates van onze producten en ondersteuning van ons team."
             ],
             "Tweet Us": [
-                "Tweet Us"
+                "Tweet ons"
             ],
             "YouTube": [
                 "YouTube"
             ],
             "Find tutorials, answers, interviews and guides on our YouTube channel.": [
-                "Trova tutorial, risposte, interviste e guide sul nostro canale YouTube."
+                "Vind tutorials, antwoorden, interviews en handleidingen op ons YouTube-kanaal."
             ],
             "Watch Now": [
-                "Guarda Ora"
+                "Bekijk nu"
             ],
             "Knowledge Base": [
-                "Knowledge Base"
+                "Kennisbank"
             ],
             "Articles, guides, how-tos, instructions, and answers to our client's most frequently asked questions.": [
-                "Articoli, guide, how-tos, istruzioni e risposte alle domande pi\u00f9 frequenti del nostro cliente."
+                "Artikelen, handleidingen, how-tos, instructies en antwoorden op de meest gestelde vragen van onze klant."
             ],
             "Visit Knowledge Base": [
-                "Visita Knowledge Base"
+                "Bezoek de kennisbank"
             ],
             "Resources": [
-                "Risorse"
+                "Hulpmiddelen"
             ],
             "Boost your online knowledge and get ahead of the competition.": [
-                "Migliora la tua conoscenza online e apri la concorrenza."
+                "Vergroot je online kennis en voorsprong op de competitie."
             ],
             "Explore Resources": [
-                "Esplora Risorse"
+                "Bronnen verkennen"
             ],
             "Events and Webinars": [
-                "Eventi e Webinar"
+                "Gebeurtenissen en webinars"
             ],
             "Team Bluehost organizes multiple webinars and events throughout the year. We are also sponsors and speak at most WordCamps across the world. Join us at our next event!": [
-                "Team Bluehost organizza pi\u00f9 webinar ed eventi durante tutto l'anno. Siamo anche sponsor e parliamo nella maggior parte dei WordCamps in tutto il mondo. Unisciti a noi al nostro prossimo evento!"
+                "Team Bluehost organiseert meerdere webinars en evenementen het hele jaar. We zijn ook sponsors en spreken over de meeste WordCamps over de hele wereld. Doe mee bij ons volgende evenement!"
             ],
             "More Info": [
-                "Ulteriori informazioni"
+                "Meer informatie"
             ],
             "Bluehost Website": [
-                "Sito Bluehost"
+                "Bluehost Website"
             ],
             "Not finding what you need? Visit our website for more information about our products and services.": [
-                "Non trovi quello che ti serve? Visita il nostro sito web per maggiori informazioni sui nostri prodotti e servizi."
+                "Niet gevonden wat je nodig hebt? Bezoek onze website voor meer informatie over onze producten en diensten."
             ],
             "Go to Bluehost": [
-                "Vai a Bluehost"
+                "Ga naar Bluehost"
             ],
             "Site Pages": [
-                "Pagine del sito"
+                "Site pagina's"
             ],
             "Edit your homepage and other existing pages or add new pages to your site.": [
-                "Modifica la tua homepage e altre pagine esistenti o aggiungi nuove pagine al tuo sito."
+                "Bewerk uw startpagina en andere bestaande pagina's of voeg nieuwe pagina's toe aan uw site."
             ],
             "View all": [
-                "Vedi tutto"
+                "Alles weergeven"
             ],
             "Add New": [
-                "Aggiungi nuovo"
+                "Nieuwe toevoegen"
             ],
             "This is where you can manage cache settings for your website.": [
-                "Qui puoi gestire le impostazioni della cache per il tuo sito."
+                "Hier kun je de cache-instellingen voor je website beheren."
             ],
             "The Help Center provides guided, step-by-step assistance as you build your site.": [
-                "L\u2019Help Center offre assistenza guidata e dettagliata durante la creazione del tuo sito."
+                "Het Helpcentrum biedt geleidelijke, stap-voor-stap ondersteuning als u uw site bouwt."
             ],
             "Site Status": [
-                "Stato del sito"
+                "Site status"
             ],
             "Not Live": [
-                "Non live"
+                "Niet live"
             ],
             "Live": [
-                "Live"
+                "Zichtbaar"
             ],
             "Your Bluehost Coming Soon page lets you hide your site from visitors while you make the magic happen.": [
-                "La pagina Coming Soon di Bluehost permette di nascondere il sito ai visitatori mentre compi la magia."
+                "Je Bluehost komtpagina laat je je site verbergen voor bezoekers terwijl je de magie laat gebeuren."
             ],
             "Your website is currently displaying a \"Coming Soon\" page.": [
-                "Al momento il tuo sito mostra una pagina \u201cComing Soon\u201d."
+                "Je website wordt momenteel een \"Binnenkort beschikbaar\" pagina weergegeven."
             ],
             "The trash will automatically empty every %s week.": [
-                "Il cestino si svuoter\u00e0 automaticamente ogni %s settimana.",
-                "Il cestino si svuoter\u00e0 automaticamente ogni %s settimane."
+                "De prullenbak zal automatisch elke %s week leegmaken.",
+                "De prullenbak zal automatisch elke %s weken leegmaken."
             ],
             "WonderBlocks provides a library of customizable block patterns and page templates.": [
-                "WonderBlocks offre una libreria di pattern di blocchi personalizzabili e template per le pagine."
+                "WonderBlocks biedt een bibliotheek van aanpasbare blokpatronen en paginasjablonen."
             ],
             "Hosting": [
                 "Hosting"
             ],
-            "Control Panel": [
-                "Pannello di controllo"
-            ],
-            "Renewal Center": [
-                "Area rinnovo"
-            ],
             "Products": [
-                "Prodotti"
-            ],
-            "Payment Methods": [
-                "Metodi di pagamento"
-            ],
-            "Billing": [
-                "Fatturazione"
-            ],
-            "Mail": [
-                "Posta"
-            ],
-            "Mail & Office": [
-                "Posta & Ufficio"
-            ],
-            "Security": [
-                "Sicurezza"
-            ],
-            "Profile": [
-                "Profilo"
-            ],
-            "Validation Token": [
-                "Token validazione"
+                "Producten"
             ],
             "Explore our featured collection of tools and services.": [
-                "Esplora la nostra collezione di strumenti e servizi."
+                "Ontdek onze uitgebreide collectie gereedschappen en diensten."
             ],
             "Oops, there was an error loading the marketplace, please try again later.": [
-                "Ops! Si \u00e8 verificato un errore durante il caricamento del marketplace; riprova pi\u00f9 tardi."
+                "Oeps, er is een fout opgetreden bij het laden van de markt, probeer het later opnieuw."
             ],
             "Sorry, no marketplace items. Please, try again later.": [
-                "Nessun elemento marketplace. Riprova pi\u00f9 tardi."
+                "Sorry, geen marktplaats items. Probeer het later opnieuw."
             ],
             "Load More": [
-                "Carica altro"
+                "Meer laden"
             ],
             "Oops! Something Went Wrong": [
-                "Ops! Qualcosa \u00e8 andato storto"
+                "Oeps! Er ging iets mis"
             ],
             "An error occurred while loading the content. Please try again later.": [
-                "Si \u00e8 verificato un errore durante il caricamento del contenuto. Riprova pi\u00f9 tardi."
+                "Er is een fout opgetreden tijdens het laden van de inhoud. Probeer het later opnieuw."
             ],
             "Solution": [
-                "Soluzione"
+                "Oplossing"
             ],
             "Explore the plugins and tools available with your solution.": [
-                "Esplora i plugin e gli strumenti disponibili con la tua soluzione."
+                "Ontdek de plug-ins en gereedschappen die beschikbaar zijn met jouw oplossing."
             ],
             "Oops, there was an error loading your plugins and tools, please try again later.": [
-                "Ops, si \u00e8 verificato un errore durante il caricamento dei plugin e degli strumenti. Riprova pi\u00f9 tardi."
+                "Oeps, er is een fout opgetreden bij het laden van uw plugins en tools, probeer het later opnieuw."
             ],
             "Sorry, no current plugins and tools. Please, try again later.": [
-                "Nessun plugin e strumento. Riprova pi\u00f9 tardi."
-            ],
-            "From DIY to full-service help.": [
-                "Dal fai da te al servizio completo."
-            ],
-            "Call or chat 24\/7 for support or let our experts build your site for you.": [
-                "Chiama o chatta per ricevere supporto 24\/7 o affidati ai nostri esperti per la realizzazione del tuo sito."
-            ],
-            "Get Help": [
-                "Ricevi assistenza"
-            ],
-            "View Site": [
-                "Visualizza sito"
+                "Sorry, geen huidige plugins en tools. Probeer het later opnieuw."
             ],
             "Secret page to manage admin features and settings.": [
-                "Pagina segreta per gestire funzionalit\u00e0 e impostazioni di amministratore."
+                "Geheime pagina om admin functies en instellingen te beheren."
             ],
             "We are available 24\/7 to help answer questions and solve your problems.": [
-                "Siamo disponibili 24 ore su 24, 7 giorni su 7, per rispondere alle domande e risolvere i tuoi problemi."
-            ],
-            "Need some help?": [
-                "Hai bisogno di aiuto?"
+                "We zijn 24\/7 beschikbaar om te helpen vragen te beantwoorden en uw problemen op te lossen."
             ],
             "Showcase physical and digital goods, product variations, and custom configurations.": [
-                "Mostra prodotti fisici e digitali, variazioni di prodotto e configurazioni personalizzate."
+                "Laat fysieke en digitale goederen, productvariaties en aangepaste configuraties zien."
             ],
             "Blog Posts": [
-                "Articoli del Blog"
+                "Blog berichten"
             ],
             "Add a new blog post or edit your existing posts.": [
-                "Aggiungi un nuovo post sul blog o modifica i post esistenti."
+                "Voeg een nieuwe blogpost toe of bewerk uw bestaande berichten."
             ],
             "Bookings & Appointments": [
-                "Bookings & Appointments"
+                "Boekingen & Afspraken"
             ],
             "Add your list of services, setup a booking calendar, and edit your bookings form.": [
-                "Aggiungi la lista dei servizi, imposta un calendario e modifica il form per le tue prenotazioni."
+                "Voeg jouw dienstenlijst toe, stel een reserveringskalender in en bewerk jouw reserveringsformulier."
             ],
             "Your site is not live.": [
-                "Il tuo sito non \u00e8 live."
+                "Uw site is niet productief."
             ],
             "Your site is live.": [
-                "Il tuo sito \u00e8 live."
+                "Uw site is lief."
             ],
             "Visitors to your site will see your \"Coming Soon\" page and not your actual site. Visit %1$s\"Settings\"%2$s to set your site live.": [
-                "I visitatori del sito vedranno la pagina \u201cComing Soon\u201d e non il sito reale. Vai su %1$s \u201cImpostazioni\u201d%2$s per rendere il tuo sito live."
+                "Bezoekers zien uw \"Binnenkort\" pagina en niet uw werkelijke site. Ga naar %1$s\"Instellingen\"%2$s om uw site live in te stellen."
             ],
             "Visitors to your site will see all your publicly published pages.": [
-                "I visitatori del tuo sito vedranno tutte le pagine pubbliche che hai pubblicato."
+                "Bezoekers op uw site zien al uw publiekelijk gepubliceerde pagina's."
             ],
             "No cache enabled.": [
-                "Nessuna cache abilitata."
+                "Geen cache ingeschakeld."
             ],
             "Every page load is fresh.": [
-                "Ogni caricamento della pagina \u00e8 nuovo."
+                "Elke pagina lading is nieuw."
             ],
             "Disabled": [
-                "Disabilitato"
+                "Uitgeschakeld"
             ],
             "Not recommended.": [
-                "Non consigliato."
+                "Niet aanbevolen."
             ],
             "Cache static assets like images and the appearance of your site for 1 hour.": [
-                "Memorizza cache per gli asset come le immagini e l'aspetto del tuo sito per 1 ora."
+                "Cache statische assets zoals afbeeldingen en het uiterlijk van je site gedurende 1 uur."
             ],
             "Assets Only": [
-                "Solo asset"
+                "Alleen content"
             ],
             "Cache enabled for assets only.": [
-                "Cache abilitata solo per gli asset."
+                "Cache alleen voor assets ingeschakeld."
             ],
             "Recommended for ecommerce and sites that update frequently or display info in real-time.": [
-                "Consigliato per e-commerce e siti che aggiornano frequentemente o mostrano informazioni in tempo reale."
+                "Aanbevolen voor webshop en sites die regelmatig bijwerken of informatie in real-time tonen."
             ],
             "Cache static assets for 24 hours and web pages for 2 hours.": [
-                "Memorizza cache per 24 ore per gli asset e per 2 ore per le pagine web."
+                "Cache statische activa voor 24 uur en webpagina's voor 2 uur."
             ],
             "Assets & Web Pages": [
-                "Asset & Pagine web"
+                "Activa & webpagina's"
             ],
             "Cache enabled for assets and pages.": [
-                "Cache abilitata per asset e pagine."
+                "Cache is ingeschakeld voor assets en pagina's."
             ],
             "Recommended for blogs, educational sites, and sites that update at least weekly.": [
-                "Consigliato per blog, siti didattici e siti che aggiornano almeno settimanalmente."
+                "Aanbevolen voor blogs, onderwijsagenten en sites die ten minste wekelijks bijwerken."
             ],
             "Cache static assets for 1 week and web pages for 8 hours.": [
-                "Memorizza cache per 1 settimana per gli asset e per 8 ore per le pagine web."
+                "Cache statische assets voor 1 week en web pagina's voor 8 uur."
             ],
             "Assets & Web Pages - Extended": [
-                "Asset & Pagine Web - Esteso"
+                "Assets & webpagina's - Uitgebreid"
             ],
             "Cache enabled for assets and pages (extended).": [
-                "Cache abilitata per asset e pagine (esteso)."
+                "Cache geactiveerd voor assets en pagina's (uitgebreid)."
             ],
             "Recommended for sites that update a few times a month or less like porfolios or brochure sites.": [
-                "Consigliato per siti che aggiornano poche volte al mese o meno come siti porfolio o brochure."
+                "Aanbevolen voor sites die een paar keer per maand of minder zoals porfolio's of brochuresites bijwerken."
             ],
             "Boost speed and performance by storing a copy of your website content, files, and images online so the pages of your website load faster for your visitors.": [
-                "Aumenta la velocit\u00e0 e le prestazioni memorizzando una copia del contenuto del tuo sito, i file e le immagini online in modo che le pagine carichino pi\u00f9 velocemente quando si visita il sito."
+                "Boost snelheid en prestaties door een kopie op te slaan van de inhoud van uw website, bestanden, en afbeeldingen online zodat de pagina's van uw website sneller laden voor uw bezoekers."
             ],
             "Cache setting saved": [
-                "Impostazioni cache salvate"
+                "Cache-instellingen opgeslagen"
             ],
             "Cache Level": [
-                "Livello cache"
+                "Cache niveau"
             ],
             "Clear All Cache Now": [
-                "Cancella ora tutta la cache"
+                "Wis alle cache nu"
             ],
             "We automatically clear your cache as you work (creating content, changing settings, installing plugins and more). But you can manually clear it here to be confident it's fresh.": [
-                "La cache si svuota automaticamente durante le attivit\u00e0 di lavoro (creazione di contenuti, modifica delle impostazioni, installazione di plugin e altro). Tuttavia, \u00e8 possibile svuotarla manualmente qui per garantire che sia aggiornata."
+                "De cache wordt automatisch gewist terwijl je werkt (inhoud, wijzigen van instellingen, installeren van plug-ins en meer). Maar je kunt het hier handmatig verwijderen om er zeker van te zijn dat het vers is."
             ],
             "Cache cleared": [
-                "Cache svuotata"
+                "Cache gewist"
             ],
             "Clear Cache": [
-                "Svuota cache"
+                "Cache legen"
             ],
             "Asks the browser to download and cache links on the page ahead of them being clicked on, so that when they are clicked they load almost instantly.": [
-                "Chiede al browser di scaricare e memorizzare nella cache i link sulla pagina prima che vengano cliccati affinch\u00e9, una volta cliccati, siano caricati quasi istantaneamente."
+                "Vraagt de browser om links te downloaden en te cachen op de pagina voordat er op wordt geklikt, zodat wanneer op ze wordt geklikt, ze bijna direct laden."
             ],
             "Link prefetching setting saved": [
-                "Impostazione prefetching dei link salvata"
+                "Link prefetching instelling opgeslagen"
             ],
             "Link Prefetch": [
-                "Prefetch link"
+                "Koppeling Prefetch"
             ],
             "Enable link prefetching on desktop": [
-                "Abilita il prefetching del link su desktop"
+                "Schakel link prefetching in op desktop"
             ],
             "Activate on desktop": [
-                "Attiva su desktop"
+                "Activeren op het bureaublad"
             ],
             "Behavior of the prefetch": [
-                "Comportamento del prefetch"
+                "Gedrag van de prefetch"
             ],
             "Behavior": [
-                "Comportamento"
+                "Gedrag"
             ],
             "Prefetch on Mouse Down": [
-                "Prefetch al pulsante del mouse premuto"
+                "Prefetch op Muis Down"
             ],
             "Prefetch on Mouse Down: Starts loading the page as soon as you click down, for faster response when you release the click.": [
-                "Prefetch al pulsante del mouse premuto: Il caricamento della pagina inizia non appena si clicca sul mouse, per una risposta pi\u00f9 rapida quando si rilascia il pulsante."
+                "Prefetch op Mouse Down: start met het laden van de pagina zodra je op beneden klikt, voor snellere reactie wanneer je de klik loslaten."
             ],
             "Prefetch on Mouse Hover (Recommended)": [
-                "Prefetch al passaggio del mouse (Consigliato)"
+                "Voorkeur op muis Hover (aanbevolen)"
             ],
             "Prefetch on Mouse Hover: Begins loading the page the moment your cursor hovers over a link": [
-                "Prefetch al passaggio del mouse: Prefetch al passaggio del mouse: Il caricamento della pagina inizia nel momento in cui il cursore passa sopra un link"
+                "Prefetch op Muis Hover: Begint de pagina op het moment dat je cursor over een link beweegt"
             ],
             "Enable link prefetching on mobile": [
-                "Abilita il prefetching del link su cellulare"
+                "Schakel link prefetching in op mobiel"
             ],
             "Activate on mobile": [
-                "Attiva su cellulare"
+                "Activeren op mobiel"
             ],
             "Prefetch on Touchstart (Recommended)": [
-                "Prefetch al touchstart (Consigliato)"
+                "Prefetch bij Touchstart (aanbevolen)"
             ],
             "Prefetch on Touchstart: Instantly starts loading the page as soon as you tap the screen, ensuring a quicker response when you lift your finger.": [
-                "Prefetch al touchstart: Il caricamento della pagina inizia immediatamente non appena si tocca lo schermo, garantendo una risposta pi\u00f9 rapida quando si solleva il dito."
+                "Prefetch bij Touchstart: direct begint met het laden van de pagina zodra je op het scherm tikt, wat zorgt voor een snellere reactie wanneer je je vinger optilt."
             ],
             "Prefetch Above the Fold": [
-                "Prefetch above the Fold"
+                "Prefetch boven het vouw"
             ],
             "Prefetch Above the Fold: Loads links in your current view instantly, ensuring they're ready when you need them.": [
-                "Prefetch above the fold: Il caricamento dei link nella vista corrente \u00e8 istantaneo, garantendo che siano pronti quando servono."
+                "Prefetch Boven de Mouw: Laad links in je huidige weergave en zorg ervoor dat ze klaar zijn wanneer je ze nodig hebt."
             ],
             "Exclude Keywords: A comma separated list of words or strings that will exclude a link from being prefetched. For example, excluding \"app\" will prevent https:\/\/example.com\/apple from being prefetched.": [
-                "Escludi parole chiave: Un elenco separato da virgole di parole o stringhe che escludono un link dal prefetching. Ad esempio, l\u2019esclusione di \u201capp\u201d impedir\u00e0 il prefetching di https:\/\/example.com\/apple."
+                "Trefwoorden uitsluiten: een door komma's gescheiden lijst van woorden of tekenreeksen die een link van vooraf opgehaald zullen uitsluiten. Bijvoorbeeld, zonder \"app\" kan https:\/\/example.com\/apple niet van voren af worden gehaald."
             ],
             "Exclude keywords": [
-                "Escludi parole chiave"
+                "Trefwoorden uitsluiten"
             ],
             "Advanced settings": [
-                "Impostazioni avanzate"
+                "Geavanceerde instellingen"
             ],
             "Additional speed and scalability features powered by Jetpack Boost to make your site as fast as it can be.": [
-                "Funzionalit\u00e0 aggiuntive di velocit\u00e0 e scalabilit\u00e0 fornite da Jetpack Boost per rendere il tuo sito il pi\u00f9 veloce possibile."
+                "Extra functies voor snelheid en schaalbaarheid aangedreven door Jetpack Boost om uw site zo snel mogelijk te maken."
             ],
             "Optimize Critical CSS Loading (manual)": [
-                "Ottimizza il caricamento CSS critico (Manuale)"
+                "Optimaliseren van kritisch CSS laden (handmatig)"
             ],
             "Move important styling information to the start of the page, which helps pages display your content sooner, so your users don\u2019t have to wait for the entire page to load.": [
-                "Sposta le informazioni di stile importanti all'inizio della pagina in modo i contenuti vengano mostrati prima e gli utenti non debbano aspettare il caricamento dell'intera pagina."
+                "Verplaats belangrijke opmaak informatie naar de start van de pagina, waarmee pagina's je inhoud eerder kunnen weergeven, dus hoeven je gebruikers niet te wachten tot de hele pagina geladen is."
             ],
             "Optimize Critical CSS Loading (UPGRADED)": [
-                "Ottimizza il caricamento CSS critico (Aggiornato)"
+                "Optimaliseren van kritische CSS laden (UPGRADED)"
             ],
             "Generate Critical CSS Automatically": [
-                "Genera CSS critico automaticamente"
+                "Kritische CSS automatisch genereren"
             ],
             "Move important styling information to the start of the page, which helps pages display your content sooner, so your users don\u2019t have to wait for the entire page to load.%1$s %2$sBoost will automatically generate your Critical CSS%3$s whenever you make changes to the HTML or CSS structure of your site.": [
-                "Sposta le informazioni di stile importanti all\u2019inizio della pagina, in modo che le pagine mostrino i contenuti prima e gli utenti non debbano aspettare il caricamento dell\u2019intera pagina.%1$s %2$sBoost generer\u00e0 automaticamente il CSS critico%3$s ogni volta che farai modifiche alla struttura HTML o CSS del tuo sito."
+                "Verplaats belangrijke opmaak informatie naar de start van de pagina, waarmee pagina's je inhoud eerder kunnen weergeven, dus hoeven je gebruikers niet te wachten tot de hele pagina geladen is.%1$s %2$sBoost zal automatisch je Kritische CSS%3$s genereren wanneer je wijzigingen aanbrengt in de HTML of CSS structuur van je site."
             ],
             "Defer Non-Essential JavaScript": [
-                "Caricamento ritardato del JavaScript non essenziale"
+                "Uitstellen van niet-Essenti\u00eble JavaScript"
             ],
             "Run non-essential JavaScript after the page has loaded so that styles and images can load more quickly.": [
-                "Esegui JavaScript non essenziale dopo il caricamento della pagina in modo che gli stili e le immagini si carichino pi\u00f9 rapidamente."
+                "Voer niet-essenti\u00eble JavaScript uit nadat de pagina is geladen, zodat stijlen en afbeeldingen sneller kunnen worden geladen."
             ],
             "Concatenate JS": [
-                "Concatena JS"
+                "Samengevoegde JS"
             ],
             "Scripts are grouped by their original placement, concatenated and minified to reduce site loading time and reduce the number of requests.": [
-                "Gli script sono raggruppati per il loro posizionamento originale, concatenati e minificati per ridurre i tempi di caricamento del sito e il numero di richieste."
+                "Scripts worden gegroepeerd op hun oorspronkelijke plaats, samengevoegd en geminiteerd om de laadtijd van de site te verminderen en het aantal verzoeken te verminderen."
             ],
             "Exclude JS Strings": [
-                "Escludi stringhe JS"
+                "JS tekenreeksen uitsluiten"
             ],
             "Concatenate CSS": [
-                "Concatena CSS"
+                "Concatenate CSS"
             ],
             "Styles are grouped by their original placement, concatenated and minified to reduce site loading time and reduce the number of requests.": [
-                "Gli stili sono raggruppati per il loro posizionamento originale, concatenati e minati per ridurre i tempi di caricamento del sito e il numero di richieste."
+                "Stijlen worden gegroepeerd op hun oorspronkelijke plaats, samengevoegd en geminificeerd om de laadtijd van de site te verminderen en het aantal verzoeken te verminderen."
             ],
             "Exclude CSS Strings": [
-                "Escludi stringhe CSS"
+                "CSS tekenreeksen uitsluiten"
             ],
             "Show more": [
-                "Mostra di pi\u00f9"
+                "Toon meer"
             ],
             "Show less": [
-                "Mostra meno"
+                "Minder weergeven"
             ],
             "Discover More": [
-                "Ulteriori info"
+                "Ontdek meer"
             ],
             "Install Jetpack Boost to unlock": [
-                "Installa Jetpack Boost per sbloccare"
+                "Installeer Jetpack Boost om te ontgrendelen"
             ],
             "Installing Jetpack Boost\u2026": [
-                "Installazione Jetpack Boost\u2026"
+                "Installing Jetpack Boost\u2026"
             ],
             "Jetpack Boost is now active": [
-                "Jetpack Boost ora \u00e8 attivo"
+                "Jetpack Boost is nu actief"
             ],
             "Activation failed": [
-                "Attivazione fallita"
+                "Activeren mislukt"
             ],
             "Discover more %1$shere%2$s": [
-                "Scopri di pi\u00f9 %1$squi%2$s"
+                "Ontdek meer %1$shier%2$s"
             ],
             "Option saved correctly": [
-                "Opzione salvata correttamente"
+                "Optie correct opgeslagen"
             ],
             "Error saving option": [
-                "Errore nel salvataggio dell'opzione"
+                "Fout bij opslaan optie"
             ],
             "Image Optimization": [
-                "Ottimizzazione immagine"
+                "Afbeelding optimalisatie"
             ],
             "We automatically optimize your uploaded images to WebP format for faster performance and reduced file sizes. You can also choose to delete the original images to save storage space.": [
-                "Ottimizziamo automaticamente le immagini caricate nel formato WebP per prestazioni pi\u00f9 veloci e dimensioni ridotte dei file. \u00c8 inoltre possibile scegliere di eliminare le immagini originali per risparmiare spazio di archiviazione."
+                "We optimaliseren automatisch uw ge\u00fcploade afbeeldingen naar WebP-formaat voor snellere prestaties en verminderde bestandsgrootte. U kunt ook kiezen om de originele afbeeldingen te verwijderen om ruimte te besparen."
             ],
             "Enable Image Optimization": [
-                "Abilita ottimizzazione immagini"
+                "Optimalisatie afbeelding inschakelen"
             ],
             "Enable or disable image optimization globally.": [
-                "Abilita o disabilita l'ottimizzazione dell'immagine a livello globale."
+                "Afbeeldingsoptimalisatie globaal in- of uitschakelen."
             ],
             "Automatically Optimize Uploaded Images": [
-                "Ottimizza automaticamente immagini caricate"
+                "Ge\u00fcploade afbeeldingen automatisch optimaliseren"
             ],
             "When enabled, all your new image uploads will be automatically optimized to WebP format, ensuring faster page loading and reduced file sizes.": [
-                "Se abilitata, tutti i caricamenti delle nuove immagini saranno automaticamente ottimizzati in formato WebP, garantendo un caricamento delle pagine pi\u00f9 veloce e dimensioni dei file ridotte."
+                "Wanneer ingeschakeld, zullen al uw nieuwe afbeeldingsuploads automatisch worden geoptimaliseerd naar WebP-formaat, waardoor de pagina sneller wordt geladen en de bestandsgrootte wordt verkleind."
             ],
             "Auto Delete Original Image": [
-                "Elimina automaticamente immagine originale"
+                "Originele afbeelding automatisch verwijderen"
             ],
             "When enabled, the original uploaded image is deleted and replaced with the optimized version, helping to save storage space. If disabled, the optimized image is saved as a separate file, retaining the original.": [
-                "Se abilitata, l'immagine originale caricata viene eliminata e sostituita con la versione ottimizzata, contribuendo a risparmiare spazio di archiviazione. Se disabilitata, l'immagine ottimizzata viene salvata come file separato, mantenendo l'originale."
+                "Wanneer ingeschakeld, wordt de origineel ge\u00fcploade afbeelding verwijderd en vervangen door de geoptimaliseerde versie, helpt u opslagruimte te besparen. Als dit is uitgeschakeld, wordt de geoptimaliseerde afbeelding opgeslagen als een apart bestand, waardoor het origineel behouden blijft."
             ],
             "No settings available.": [
-                "Nessuna impostazione disponibile."
+                "Geen instellingen beschikbaar."
             ],
             "Loading settings\u2026": [
-                "Caricamento impostazioni\u2026"
+                "Instellingen laden\u2026"
             ],
             "Settings updated successfully": [
-                "Impostazioni aggiornate correttamente"
+                "Instellingen met succes bijgewerkt"
             ],
             "Your image optimization settings have been saved.": [
-                "Le impostazioni di ottimizzazione dell'immagine sono state salvate."
+                "Uw instellingen voor de optimalisatie van de afbeeldingen zijn opgeslagen."
             ],
             "Enable Lazy Loading": [
-                "Abilita Lazy loading"
+                "Activeer Lazy Laden"
             ],
             "Lazy loading defers the loading of images until they are visible on the screen, improving page load speed and performance.": [
-                "Il lazy loading rallenta il caricamento delle immagini fino a quando non sono visibili sullo schermo, migliorando la velocit\u00e0 di caricamento delle pagine e le prestazioni."
+                "Lazy laadt het laden van afbeeldingen uit totdat ze zichtbaar zijn op het scherm, waardoor de laadsnelheid en prestaties van pagina's worden verbeterd."
             ],
             "Lazy loading has been updated.": [
-                "Il lazy loading \u00e8 stato aggiornato."
+                "Lazy laden is bijgewerkt."
             ],
             "Oops! There was an error updating the lazy loading settings.": [
-                "Ops! Si \u00e8 verificato un errore durante l\u2019aggiornamento delle impostazioni del lazy loading."
+                "Oeps! Er is een fout opgetreden bij het bijwerken van de luie laadinstellingen."
             ],
             "Enable Bulk Optimization of Images": [
-                "Abilita l'ottimizzazione di massa delle immagini"
+                "Bulk optimalisatie van afbeeldingen inschakelen"
             ],
             "When enabled, allows bulk optimization of images in the media library.": [
-                "Se abilitata, consente l'ottimizzazione in massa delle immagini nella libreria media."
+                "Indien ingeschakeld, staat groepsgewijze optimalisatie van afbeeldingen in de mediabibliotheek toe."
             ],
             "Go to Media Library": [
-                "Vai alla libreria media"
+                "Ga naar mediabibliotheek"
             ],
             "Error Updating Settings": [
-                "Errore nell'aggiornamento delle impostazioni"
+                "Fout bij bijwerken instellingen"
             ],
             "Prefer Optimized Image When Exists": [
-                "Usa immagine ottimizzata quando presente"
+                "Geoptimaliseerde afbeelding van voorkeur"
             ],
             "When enabled, optimized images will be served in place of original images when they exist, improving performance.": [
-                "Se abilitata, le immagini ottimizzate, quando esistono, saranno utilizzate al posto delle immagini originali migliorando le prestazioni."
+                "Wanneer ingeschakeld, worden geoptimaliseerde afbeeldingen in plaats van originele afbeeldingen geserveerd wanneer ze bestaan, verbeterde prestaties."
             ],
             "Something went wrong while updating the settings. Please try again.": [
-                "Qualcosa \u00e8 andato storto durante l'aggiornamento delle impostazioni. Riprova."
+                "Er ging iets mis tijdens het bijwerken van de instellingen. Probeer het opnieuw."
             ],
             "Enabled All auto-updates": [
-                "Abilitati tutti gli aggiornamenti automatici"
+                "Alle auto-updates ingeschakeld"
             ],
             "Disabled All auto-updates": [
-                "Disabilitati tutti gli aggiornamenti automatici"
+                "Alle auto-updates uitgeschakeld"
             ],
             "Everything will automatically update.": [
-                "Tutto si aggiorner\u00e0 automaticamente."
+                "Alles zal automatisch worden bijgewerkt."
             ],
             "Custom auto-update settings.": [
-                "Impostazioni di aggiornamento automatico personalizzate."
+                "Aangepaste instellingen voor automatisch bijwerken."
             ],
             "Automatically keep all up to date": [
-                "Mantieni tutto aggiornato automaticamente"
+                "Automatisch alles op de hoogte houden"
             ],
             "Enabled Core auto-updates": [
-                "Abilitati aggiornamenti automatici Core"
+                "Ingeschakelde Core auto-updates"
             ],
             "Disabled Core auto-updates": [
-                "Disabilitati aggiornamenti automatici Core"
+                "Kern-updates uitschakelen"
             ],
             "WordPress will automatically update.": [
-                "Tutto si aggiorner\u00e0 automaticamente."
+                "WordPress wordt automatisch bijgewerkt."
             ],
             "WordPress must be manually updated.": [
-                "WordPress deve essere aggiornato manualmente."
+                "WordPress moet handmatig worden bijgewerkt."
             ],
             "WordPress Core": [
-                "Core WordPress"
+                "WordPress Kern"
             ],
             "Enabled Plugins auto-update": [
-                "Abilitati aggiornamenti automatici dei plugin"
+                "Ingeschakelde Plugins automatisch bijwerken"
             ],
             "Disabled Plugins auto-update": [
-                "Disabilitati aggiornamenti automatici dei plugin"
+                "Uitgeschakelde Plugins automatisch bijwerken"
             ],
             "All plugins will automatically update.": [
-                "Tutti i plugin verranno aggiornati automaticamente."
+                "Alle plug-ins worden automatisch bijgewerkt."
             ],
             "Each plugin must be manually updated.": [
-                "Ogni plugin deve essere aggiornato manualmente."
+                "Elke plugin moet handmatig worden bijgewerkt."
             ],
             "Plugins": [
-                "Plugin"
+                "Plug-ins"
             ],
             "Enabled Themes auto-update": [
-                "Abilitati aggiornamenti automatici dei temi"
+                "Ingeschakelde thema's auto-update"
             ],
             "Disabled Themes auto-update": [
-                "Disabilitati aggiornamenti automatici dei temi"
+                "Uitgeschakelde thema's automatisch bijwerken"
             ],
             "All themes will automatically update.": [
-                "Tutti i temi verranno aggiornati automaticamente."
+                "Alle thema's worden automatisch bijgewerkt."
             ],
             "Each theme must be manually updated.": [
-                "Ogni tema deve essere aggiornato manualmente."
+                "Elk thema moet handmatig worden bijgewerkt."
             ],
             "Themes": [
-                "Temi"
+                "Themas"
             ],
             "Automatic Updates": [
-                "Aggiornamenti automatici"
+                "Automatische updates"
             ],
             "Keeping automatic updates on ensures timely security fixes and the latest features.": [
-                "Mantenere attivi gli aggiornamenti automatici garantisce fix di sicurezza tempestivi e le funzionalit\u00e0 pi\u00f9 recenti."
+                "Automatisch bijwerken behouden garandeert tijdige beveiligingsoplossingen en de nieuwste functies."
             ],
             "Coming soon activated": [
-                "Coming soon attivata"
+                "Komt binnenkort geactiveerd"
             ],
             "Coming soon deactivated": [
-                "Coming soon disattivata"
+                "Binnenkort gedeactiveerd"
             ],
             "Coming soon page is active. Site requires login.": [
-                "La pagina Coming soon \u00e8 attiva. Il sito richiede il login."
+                "Binnenkort pagina is actief. Site vereist inloggen."
             ],
             "Coming soon page is not active. Site is live to visitors.": [
-                "La pagina Coming soon non \u00e8 attiva. Il sito \u00e8 live per i visitatori."
+                "Binnenkort beschikbaar is niet actief. De site is live bezoekers."
             ],
             "Turn off your \"Coming Soon\" page when you are ready to launch your website.": [
-                "Disattiva la pagina \u201cComing soon\u201d quando sei pronto a lanciare il tuo sito."
+                "Schakel uw \"Binnenkort beschikbaar\" pagina uit wanneer u klaar bent om uw website te starten."
             ],
             "Turn on your \"Coming Soon\" page when you need to make major changes to your website.": [
-                "Attiva la pagina \u201cComing soon\u201d quando hai bisogno di apportare modifiche importanti al tuo sito."
+                "Schakel uw \"Binnenkort beschikbaar\" pagina in wanneer u belangrijke wijzigingen in uw website moet aanbrengen."
             ],
             "Disabled old post comments": [
-                "Disabilitati commenti dei vecchi post"
+                "Oude commentaren uitgeschakeld"
             ],
             "Enabled old post comments": [
-                "Abilitati commenti dei vecchi post"
+                "Ingeschakelde oude post reacties"
             ],
             "Comments on old posts are disabled.": [
-                "I commenti sui vecchi post sono disabilitati."
+                "Reacties op oude berichten zijn uitgeschakeld."
             ],
             "Comments are allowed on old posts.": [
-                "Commenti consentiti sui vecchi post."
+                "Reacties zijn toegestaan op oude berichten."
             ],
             "Disable comments for older posts": [
-                "Disabilita i commenti per i post pi\u00f9 vecchi"
+                "Commentaren voor oudere berichten uitschakelen"
             ],
             "Comments setting saved": [
-                "Impostazioni commenti salvate"
+                "Reacties instelling opgeslagen"
             ],
             "Comments on posts are disabled after %s day.": [
-                "I commenti sui post sono disabilitati dopo %s giorno.",
-                "I commenti sui post sono disabilitati dopo %s giorni."
+                "Reacties op berichten zijn uitgeschakeld na %s dag.",
+                "Reacties op berichten zijn uitgeschakeld na %s dagen."
             ],
             "Close comments after %s day.": [
-                "Chiudi i commenti dopo %s giorno.",
-                "Chiudi i commenti dopo %s giorni."
+                "Sluit reacties na %s dag.",
+                "Sluit reacties na %s dagen."
             ],
             "Comments setting saved.": [
-                "Impostazioni commenti salvate."
+                "Reacties instellingen opgeslagen."
             ],
             "Posts will display %s comment at a time.": [
-                "I post mostreranno %s commento alla volta.",
-                "I post mostreranno %s commenti alla volta."
+                "Berichten tonen %s reactie per keer.",
+                "Berichten tonen %s reacties tegelijk."
             ],
             "Comments to display per page": [
-                "Commenti da visualizzare per pagina"
+                "Reacties die per pagina worden weergegeven"
             ],
             "Comments": [
-                "Commenti"
+                "Opmerkingen"
             ],
             "Comments allow visitors to provide feedback and respond to your posts or pages.": [
-                "I commenti permettono ai visitatori di fornire un feedback e rispondere ai tuoi post o pagine."
+                "Met reacties kunnen bezoekers feedback geven en reageren op uw berichten of pagina's."
             ],
             "Trash setting saved": [
-                "Impostazioni cestino salvate"
+                "Prullenbak instelling opgeslagen"
             ],
             "Number of weeks in between emptying trash": [
-                "Numero di settimane tra uno svuotamento e l\u2019altro del cestino"
+                "Aantal weken tussen leegmaken van prullenbak"
             ],
             "Content Options": [
-                "Opzioni contenuto"
+                "Content opties"
             ],
             "Controls for how often to empty the trash.": [
-                "Controlla quanto spesso svuotare il cestino."
+                "Bepaalt hoe vaak de prullenbak leeg wordt gemaakt."
             ],
             "Help Center Enabled": [
-                "Help Center abilitato"
+                "Helpcentrum ingeschakeld"
             ],
             "Help Center Disabled": [
-                "Help Center disabilitato"
+                "Helpcentrum uitgeschakeld"
             ],
             "Reload the page to access the Help Center.": [
-                "Ricarica la pagina per accedere all'Help Center."
+                "Herlaad de pagina om naar het Helpcentrum te gaan."
             ],
             "The Help Center will no longer display.": [
-                "L'Help Center non verr\u00e0 pi\u00f9 mostrato."
+                "Het Helpcentrum wordt niet langer weergegeven."
             ],
             "This is where you can manage common settings for your website.": [
-                "Qui puoi gestire le impostazioni generali del tuo sito."
+                "Hier kun je algemene instellingen voor je website beheren."
             ],
             "Features": [
-                "Funzionalit\u00e0"
+                "Eigenschappen"
             ],
             "Customize the available features as you manage your website.": [
-                "Personalizza le funzionalit\u00e0 disponibili per la gestione del tuo sito."
+                "Pas de beschikbare functies aan bij het beheren van uw website."
             ],
             "Performance Enabled": [
-                "Prestazioni abilitate"
+                "Prestaties ingeschakeld"
             ],
             "Performance Disabled": [
-                "Prestazioni disabilitate"
+                "Prestaties uitgeschakeld"
             ],
             "You need to reload the page to manage Performance.": [
-                "\u00c8 necessario ricaricare la pagina per gestire le prestazioni."
+                "U moet de pagina herladen om de prestaties te beheren."
             ],
             "Performance will no longer display.": [
-                "Le prestazioni non verranno pi\u00f9 visualizzate."
+                "Prestaties worden niet langer weergegeven."
             ],
             "The performance feature provides improvements to loads faster for visitors including cache settings.": [
-                "La funzionalit\u00e0 prestazioni offre ottimizzazioni per accelerare il caricamento per i visitatori, incluse le configurazioni della cache."
+                "De prestatiefunctie biedt verbeteringen om sneller te laden voor bezoekers met inbegrip van cache-instellingen."
             ],
             "Staging Enabled": [
-                "Staging abilitato"
+                "Staging ingeschakeld"
             ],
             "Staging Disabled": [
-                "Staging disabilitato"
+                "Staging uitgeschakeld"
             ],
             "You need to reload the page to manage Staging.": [
-                "\u00c8 necessario ricaricare la pagina per gestire lo staging."
+                "Je moet de pagina herladen om Staging te beheren."
             ],
             "Staging will no longer display.": [
-                "Lo staging non verr\u00e0 pi\u00f9 visualizzato."
+                "Er zal niet langer gefaseerd worden weergegeven."
             ],
             "WonderBlocks Enabled": [
-                "WonderBlocks abilitato"
+                "WonderBlocks ingeschakeld"
             ],
             "WonderBlocks Disabled": [
-                "WonderBlocks disabilitato"
+                "WonderBlocks uitgeschakeld"
             ],
             "Create new content to see WonderBlocks in action.": [
-                "Crea un nuovo contenuto per vedere WonderBlocks in azione."
+                "Maak nieuwe inhoud om WonderBlocks in actie te zien."
             ],
             "WonderBlocks will no longer display.": [
-                "WonderBlocks non verr\u00e0 pi\u00f9 visualizzato."
+                "WonderBlocks worden niet langer weergegeven."
             ],
             "Cancel": [
-                "Annulla"
+                "Annuleren"
             ],
             "Clone": [
-                "Clona"
+                "Dupliceren"
             ],
             "Confirm Clone Action": [
-                "Conferma clonazione"
+                "Bevestig kloonactie"
             ],
             "This will overwrite anything in staging and update it to an exact clone of the current production site. Are you sure you want to proceed?": [
-                "Questo sovrascriver\u00e0 qualsiasi cosa nello staging e lo aggiorner\u00e0 in un clone esatto dell'attuale sito in produzione. Sei sicuro di voler procedere?"
+                "Dit zal alles in staging overschrijven en bijwerken naar een exacte kloon van de huidige productiesite. Weet u zeker dat u wilt doorgaan?"
             ],
             "Cloned to Staging": [
-                "Clonato a staging"
+                "Gekloond naar Staging"
             ],
             "Cloning production to staging, this should take about a minute.": [
-                "Clonazione da produzione a staging; dovrebbe richiedere circa un minuto."
+                "Het stilleggen van de productie zou ongeveer een minuut moeten duren."
             ],
             "Clone to staging": [
-                "Clona a staging"
+                "Kopieer naar staging"
             ],
             "Created": [
-                "Creato"
+                "Aangemaakt"
             ],
             "Staging Created": [
-                "Staging creato"
+                "Staging aangemaakt"
             ],
             "Creating a staging site, this should take about a minute.": [
-                "Creazione del sito di staging; dovrebbe richiedere circa un minuto."
+                "Het cre\u00ebren van een halteplaats zou ongeveer een minuut moeten duren."
             ],
             "Create staging site": [
-                "Crea sito di staging"
+                "Stageings site maken"
             ],
             "Currently editing": [
-                "Attualmente in modifica"
+                "Momenteel bewerken"
             ],
             "Delete": [
-                "Elimina"
+                "Verwijderen"
             ],
             "Confirm Delete": [
-                "Conferma eliminazione"
+                "Verwijderen bevestigen"
             ],
             "This will permanently delete staging site. Are you sure you want to proceed? You can recreate another staging site at any time, but any specific changes you've made to this staging site will be lost.": [
-                "Questo eliminer\u00e0 definitivamente il sito di staging. Sei sicuro di voler procedere? \u00c8 possibile ricreare un altro sito di staging in qualsiasi momento, ma le modifiche specifiche apportate a questo sito andranno perse."
+                "Dit zal de stagingsite permanent verwijderen. Weet u zeker dat u wilt doorgaan? Je kunt op elk moment een andere staging site aanmaken, maar eventuele specifieke wijzigingen die je hebt aangebracht in deze staging site gaan verloren."
             ],
             "Deleted Staging": [
-                "Staging eliminato"
+                "Verwijderde fasering"
             ],
             "Deleting the staging site, this should take about a minute.": [
-                "Eliminazione del sito di staging; dovrebbe richiedere circa un minuto."
+                "De voorgehouden site wordt verwijderd, dit duurt ongeveer een minuut."
             ],
             "Delete Staging Site": [
-                "Elimina sito di staging"
+                "Verwijder Staging Site"
             ],
             "Deploy": [
-                "Distribuisci"
+                "Implementeren"
             ],
             "Deploy all changes": [
-                "Distribuisci tutte le modifiche"
+                "Alle wijzigingen implementeren"
             ],
             "Confirm Deployment": [
-                "Conferma distribuzione"
+                "Bevestig implementatie"
             ],
             "Deploy database only": [
-                "Distribuisci solo il database"
+                "Alleen database implementeren"
             ],
             "This will deploy staging to production and overwrite current production site. Are you sure you want to proceed?": [
-                "Questo distribuir\u00e0 lo staging alla produzione e sovrascriver\u00e0 il sito di produzione corrente. Sei sicuro di voler procedere?"
+                "Dit zal staging implementeren naar productie en huidige productie site overschrijven. Weet u zeker dat u wilt doorgaan?"
             ],
             "Deploy files only": [
-                "Distribuisci solo file"
+                "Alleen bestanden implementeren"
             ],
             "Deployed": [
-                "Distribuito"
+                "Ge\u00efmplementeerd"
             ],
             "Deploying from staging to production, this should take about a minute.": [
-                "Distribuzione da staging a produzione; dovrebbe richiedere circa un minuto."
+                "Het inzetten van halteplaatsen op productie, dit zou ongeveer een minuut moeten duren."
             ],
             "Deploy Site": [
-                "Distribuisci sito"
+                "Site implementeren"
             ],
             "Error": [
-                "Errore"
+                "Foutmelding"
             ],
             "You don't have a staging site yet.": [
-                "Non hai ancora un sito di staging."
+                "U hebt nog geen staging site."
             ],
             "Not currently editing": [
-                "Attualmente non in modifica"
+                "Momenteel niet bewerkt"
             ],
             "Proceed": [
-                "Procedi"
+                "Doorgaan"
             ],
             "Production Site": [
-                "Sito di produzione"
+                "Productie site"
             ],
             "Staging Site": [
-                "Sito di staging"
+                "Staging Site"
             ],
             "A staging site is a duplicate of your live site, offering a secure environment to experiment, test updates, and deploy when ready.": [
-                "Un sito di staging \u00e8 un duplicato del tuo sito live che offre un ambiente sicuro in cui sperimentare, testare gli aggiornamenti e procedere al rilascio quando pronto."
+                "Een stagingsite is een duplicaat van uw website en biedt een veilige omgeving aan om te experimenteren, updates te testen en te implementeren wanneer u klaar bent."
             ],
             "Switch": [
-                "Cambia"
+                "Schakelaar"
             ],
             "Switching": [
-                "Cambio in corso"
+                "Schakelen"
             ],
             "Switch to Production": [
-                "Cambia a produzione"
+                "Overschakelen naar productie"
             ],
             "This will navigate you to the production environment": [
-                "Questo ti porter\u00e0 all'ambiente di produzione"
+                "Dit zal je naar de productieomgeving navigeren"
             ],
             "Loading the production environment now.": [
-                "Caricamento dell'ambiente di produzione adesso."
+                "De productieomgeving nu laden."
             ],
             "Switching to the production environment, this should take about a minute.": [
-                "Cambio all'ambiente di produzione; dovrebbe richiedere circa un minuto."
+                "De omschakeling naar de productieomgeving zou ongeveer een minuut moeten duren."
             ],
             "Switch to Staging": [
-                "Cambia a staging"
+                "Overschakelen naar fasering"
             ],
             "This will navigate you to the staging environment": [
-                "Questo ti porter\u00e0 all'ambiente di staging"
+                "Dit zal u navigeren naar de stagingomgeving"
             ],
             "Loading the staging environment now.": [
-                "Caricamento dell'ambiente di staging."
+                "De stagingomgeving nu laden."
             ],
             "Switching to the staging environment, this should take about a minute.": [
-                "Cambio all'ambiente di staging; dovrebbe richiedere circa un minuto."
+                "Overschakelen op de stagingomgeving, dit zou ongeveer een minuut moeten duren."
             ],
             "An unknown error has occurred.": [
-                "Si \u00e8 verificato un errore sconosciuto."
+                "Er is een onbekende fout opgetreden."
             ],
             "Working\u2026": [
-                "Lavorare\u2026"
+                "Bezig\u2026"
             ],
             "Add a New Plugin": [
-                "Aggiungi un nuovo plugin"
+                "Een nieuwe plugin toevoegen"
+            ],
+            "Hire our experts": [
+                ""
+            ],
+            "Get in touch with us, and we\u2019ll help you build the exact store you\u2019re dreaming of.": [
+                ""
+            ],
+            "Get Help & Resources": [
+                ""
+            ],
+            "Documentation and tutorials to help you get the most out of your solution.": [
+                ""
+            ],
+            "Pro Design Live": [
+                ""
+            ],
+            "We will help you build and grow your website and improve your skills in WordPress.": [
+                ""
+            ],
+            "Get Info": [
+                ""
+            ],
+            "Quick links": [
+                ""
+            ],
+            "Manage hosting": [
+                ""
+            ],
+            "Write a blog post": [
+                ""
+            ],
+            "Create a sale promotion": [
+                ""
+            ],
+            "Refer a friend to get $75": [
+                ""
+            ],
+            "Unlock exclusive benefits with our referral program!": [
+                ""
+            ],
+            "Start now": [
+                ""
+            ],
+            "Explore your Solution": [
+                ""
+            ],
+            "Discover all the features to grow your store, boost sales and loyalize your customers.": [
+                ""
+            ],
+            "Welcome to Bluehost": [
+                ""
+            ],
+            "We\u2019re very excited to get started with you!": [
+                ""
             ]
         }
     }

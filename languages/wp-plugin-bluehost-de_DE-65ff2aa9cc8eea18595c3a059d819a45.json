@@ -1,0 +1,934 @@
+{
+    "translation-revision-date": "2024-10-21 07:10-0000",
+    "generator": "WP-CLI\/2.11.0",
+    "source": "build\/4.2.0\/index.js",
+    "domain": "messages",
+    "locale_data": {
+        "messages": {
+            "": {
+                "domain": "messages",
+                "lang": "de_DE",
+                "plural-forms": "nplurals=2; plural=(n != 1);"
+            },
+            "Home": [
+                "Startseite"
+            ],
+            "Pages & Posts": [
+                "Seiten & Beitr\u00e4ge"
+            ],
+            "Store": [
+                "Shop"
+            ],
+            "Marketplace": [
+                "Marktplatz"
+            ],
+            "My Plugins & Tools": [
+                "Meine Plugins & Tools"
+            ],
+            "Performance": [
+                "Leistung"
+            ],
+            "Settings": [
+                "Einstellungen"
+            ],
+            "Staging": [
+                "Inszenierung"
+            ],
+            "Help": [
+                "Hilfe"
+            ],
+            "Bluehost WordPress Plugin": [
+                "Bluehost WordPress-Plugin"
+            ],
+            "Oh No, An Error!": [
+                "Oh Nein, ein Fehler!"
+            ],
+            "You found an error, please refresh the page and try again!": [
+                "Sie haben einen Fehler gefunden, bitte aktualisieren Sie die Seite und versuchen Sie es erneut!"
+            ],
+            "If the error persists, please contact support.": [
+                "Wenn der Fehler weiterhin besteht, wenden Sie sich bitte an den Support."
+            ],
+            "Error code:": [
+                "Fehlercode:"
+            ],
+            "There's nothing here!": [
+                "Hier ist nichts da!"
+            ],
+            "Products & Services": [
+                "Produkte & Dienstleistungen"
+            ],
+            "Sales & Promotions": [
+                "Verk\u00e4ufe & Werbeaktionen"
+            ],
+            "Sales Channel": [
+                "Vertriebskanal"
+            ],
+            "Payments": [
+                "Zahlungen"
+            ],
+            "Store Details": [
+                "Shop-Details"
+            ],
+            "Help with WordPress": [
+                "Hilfe bei WordPress"
+            ],
+            "Admin": [
+                "Admin"
+            ],
+            "The staging feature provides a way to copy a site to test new updates, features or content.": [
+                "Die Staging-Funktion bietet eine M\u00f6glichkeit, eine Website zu kopieren, um neue Updates, Funktionen oder Inhalte zu testen."
+            ],
+            "Sorry, that is not allowed.": [
+                "Entschuldigung, das ist nicht erlaubt."
+            ],
+            "This feature cannot currently be modified.": [
+                "Dieses Feature kann derzeit nicht ge\u00e4ndert werden."
+            ],
+            "Oops! Something went wrong. Please try again.": [
+                "Hoppla! Etwas ist schiefgelaufen. Bitte versuche es erneut."
+            ],
+            "Phone": [
+                "Telefon"
+            ],
+            "Call Us": [
+                "Rufe uns an"
+            ],
+            "Chat": [
+                "Chat"
+            ],
+            "Chat with one of our friendly Customer Care Specialists, as we are waiting to help. Open 24 hours - 7 days.": [
+                "Chatten Sie mit einem unserer freundlichen Kundenservice-Spezialisten, da wir darauf warten zu helfen. \u00d6ffnen Sie 24 Stunden - 7 Tage."
+            ],
+            "Live Chat": [
+                "Live-Chat"
+            ],
+            "Tweet": [
+                "Tweet"
+            ],
+            "Find our team at @bluehost for updates on our products and support from our team.": [
+                "Finden Sie unser Team bei @bluehost f\u00fcr Updates zu unseren Produkten und Support von unserem Team."
+            ],
+            "Tweet Us": [
+                "Tweet uns"
+            ],
+            "YouTube": [
+                "YouTube"
+            ],
+            "Find tutorials, answers, interviews and guides on our YouTube channel.": [
+                "Finden Sie Tutorials, Antworten, Interviews und Guides auf unserem YouTube-Kanal."
+            ],
+            "Watch Now": [
+                "Jetzt ansehen"
+            ],
+            "Knowledge Base": [
+                "Wissensdatenbank"
+            ],
+            "Articles, guides, how-tos, instructions, and answers to our client's most frequently asked questions.": [
+                "Beitr\u00e4ge, Anleitungen, Anleitungen und Antworten auf die am h\u00e4ufigsten gestellten Fragen unseres Kunden."
+            ],
+            "Visit Knowledge Base": [
+                "Wissensdatenbank besuchen"
+            ],
+            "Resources": [
+                "Ressourcen"
+            ],
+            "Boost your online knowledge and get ahead of the competition.": [
+                "Steigern Sie Ihr Online-Wissen und kommen Sie dem Wettbewerb voraus."
+            ],
+            "Explore Resources": [
+                "Ressourcen erkunden"
+            ],
+            "Events and Webinars": [
+                "Events und Webinare"
+            ],
+            "Team Bluehost organizes multiple webinars and events throughout the year. We are also sponsors and speak at most WordCamps across the world. Join us at our next event!": [
+                "Team Bluehost organisiert das ganze Jahr \u00fcber mehrere Webinare und Events. Wir sind auch Sponsoren und sprechen auf maximal WordCamps auf der ganzen Welt!"
+            ],
+            "More Info": [
+                "Mehr Info"
+            ],
+            "Bluehost Website": [
+                "Bluehost-Website"
+            ],
+            "Not finding what you need? Visit our website for more information about our products and services.": [
+                "Besuchen Sie unsere Website f\u00fcr weitere Informationen zu unseren Produkten und Dienstleistungen."
+            ],
+            "Go to Bluehost": [
+                "Gehe zu Bluehost"
+            ],
+            "Site Pages": [
+                "Site-Seiten"
+            ],
+            "Edit your homepage and other existing pages or add new pages to your site.": [
+                "Bearbeite deine Homepage und andere existierende Seiten oder f\u00fcge neue Seiten zu deiner Site hinzu."
+            ],
+            "View all": [
+                "Alle anzeigen"
+            ],
+            "Add New": [
+                "Neu"
+            ],
+            "This is where you can manage cache settings for your website.": [
+                "Hier k\u00f6nnen Sie Cache-Einstellungen f\u00fcr Ihre Webseite verwalten."
+            ],
+            "The Help Center provides guided, step-by-step assistance as you build your site.": [
+                "Das Hilfe-Center unterst\u00fctzt Sie Schritt f\u00fcr Schritt beim Aufbau Ihrer Website."
+            ],
+            "Site Status": [
+                "Site-Status"
+            ],
+            "Not Live": [
+                "Nicht live"
+            ],
+            "Live": [
+                "Live"
+            ],
+            "Your Bluehost Coming Soon page lets you hide your site from visitors while you make the magic happen.": [
+                "Ihre Bluehost Kommende Seite erm\u00f6glicht Ihnen, Ihre Website vor Besuchern zu verstecken, w\u00e4hrend Sie die Magie verwirklichen."
+            ],
+            "Your website is currently displaying a \"Coming Soon\" page.": [
+                "Ihre Webseite zeigt derzeit eine \"Kommende bald\"-Seite an."
+            ],
+            "The trash will automatically empty every %s week.": [
+                "Der Papierkorb wird jede %s Woche automatisch leer sein.",
+                "Der Papierkorb wird alle %s Wochen automatisch leer sein."
+            ],
+            "WonderBlocks provides a library of customizable block patterns and page templates.": [
+                "WonderBlocks bietet eine Bibliothek mit anpassbaren Blockmustern und Seitenvorlagen."
+            ],
+            "Hosting": [
+                "Hosting"
+            ],
+            "Products": [
+                "Produkte"
+            ],
+            "Explore our featured collection of tools and services.": [
+                "Entdecken Sie unsere Produktpalette von Tools und Dienstleistungen."
+            ],
+            "Oops, there was an error loading the marketplace, please try again later.": [
+                "Hoppla, es gab einen Fehler beim Laden des Marktplatzes, bitte versuchen Sie es sp\u00e4ter erneut."
+            ],
+            "Sorry, no marketplace items. Please, try again later.": [
+                "Leider gibt es keine Marktplatz-Artikel. Bitte versuchen Sie es sp\u00e4ter erneut."
+            ],
+            "Load More": [
+                "Mehr laden"
+            ],
+            "Oops! Something Went Wrong": [
+                "Hoppla! Etwas ist schief"
+            ],
+            "An error occurred while loading the content. Please try again later.": [
+                "Beim Laden des Inhalts ist ein Fehler aufgetreten. Bitte versuchen Sie es sp\u00e4ter erneut."
+            ],
+            "Solution": [
+                "L\u00f6sung"
+            ],
+            "Explore the plugins and tools available with your solution.": [
+                "Entdecken Sie die mit Ihrer L\u00f6sung verf\u00fcgbaren Plugins und Werkzeuge."
+            ],
+            "Oops, there was an error loading your plugins and tools, please try again later.": [
+                "Hoppla, es gab einen Fehler beim Laden deiner Plugins und Werkzeuge, bitte versuche es sp\u00e4ter erneut."
+            ],
+            "Sorry, no current plugins and tools. Please, try again later.": [
+                "Entschuldigung, keine aktuellen Plugins und Werkzeuge. Bitte versuchen Sie es sp\u00e4ter erneut."
+            ],
+            "Secret page to manage admin features and settings.": [
+                "Geheime Seite zum Verwalten von Adminfunktionen und Einstellungen."
+            ],
+            "We are available 24\/7 to help answer questions and solve your problems.": [
+                "Wir stehen Ihnen rund um die Uhr zur Verf\u00fcgung, um Fragen zu beantworten und Ihre Probleme zu l\u00f6sen."
+            ],
+            "Showcase physical and digital goods, product variations, and custom configurations.": [
+                "Pr\u00e4sentation physischer und digitaler Produkte, Produktvariationen und kundenspezifischer Konfigurationen."
+            ],
+            "Blog Posts": [
+                "Blog-Beitr\u00e4ge"
+            ],
+            "Add a new blog post or edit your existing posts.": [
+                "F\u00fcgen Sie einen neuen Blog-Beitrag hinzu oder bearbeiten Sie Ihre vorhandenen Beitr\u00e4ge."
+            ],
+            "Bookings & Appointments": [
+                "Buchungen & Termine"
+            ],
+            "Add your list of services, setup a booking calendar, and edit your bookings form.": [
+                "F\u00fcgen Sie Ihre Dienstleistungsliste hinzu, erstellen Sie einen Buchungskalender und bearbeiten Sie Ihr Buchungsformular."
+            ],
+            "Your site is not live.": [
+                "Ihre Seite ist nicht live."
+            ],
+            "Your site is live.": [
+                "Ihre Seite ist live."
+            ],
+            "Visitors to your site will see your \"Coming Soon\" page and not your actual site. Visit %1$s\"Settings\"%2$s to set your site live.": [
+                "Besucher Ihrer Website werden Ihre \"bald kommen\"-Seite und nicht Ihre aktuelle Site sehen. Besuchen Sie %1$s\"Einstellungen\"%2$s , um Ihre Site live zu setzen."
+            ],
+            "Visitors to your site will see all your publicly published pages.": [
+                "Besucher Ihrer Website werden alle \u00f6ffentlich ver\u00f6ffentlichten Seiten sehen."
+            ],
+            "No cache enabled.": [
+                "Kein Cache aktiviert."
+            ],
+            "Every page load is fresh.": [
+                "Jede Seite wird neu geladen."
+            ],
+            "Disabled": [
+                "Deaktiviert"
+            ],
+            "Not recommended.": [
+                "Nicht empfohlen."
+            ],
+            "Cache static assets like images and the appearance of your site for 1 hour.": [
+                "Cache-statische Assets wie Bilder und das Aussehen Ihrer Website f\u00fcr 1 Stunde."
+            ],
+            "Assets Only": [
+                "Nur Assets"
+            ],
+            "Cache enabled for assets only.": [
+                "Cache nur f\u00fcr Assets aktiviert."
+            ],
+            "Recommended for ecommerce and sites that update frequently or display info in real-time.": [
+                "Empfohlen f\u00fcr E-Commerce-und Sites, die regelm\u00e4\u00dfig aktualisieren oder Informationen in Echtzeit anzeigen."
+            ],
+            "Cache static assets for 24 hours and web pages for 2 hours.": [
+                "Statische Assets f\u00fcr 24 Stunden und Webseiten f\u00fcr 2 Stunden zwischenspeichern."
+            ],
+            "Assets & Web Pages": [
+                "Assets & Webseiten"
+            ],
+            "Cache enabled for assets and pages.": [
+                "Cache f\u00fcr Assets und Seiten aktiviert."
+            ],
+            "Recommended for blogs, educational sites, and sites that update at least weekly.": [
+                "Empfohlen f\u00fcr Blogs, Bildungs-Sites und Websites, die mindestens w\u00f6chentlich aktualisieren."
+            ],
+            "Cache static assets for 1 week and web pages for 8 hours.": [
+                "Statische Assets f\u00fcr 1 Woche und Webseiten f\u00fcr 8 Stunden zwischenspeichern."
+            ],
+            "Assets & Web Pages - Extended": [
+                "Assets & Webseiten - Erweitert"
+            ],
+            "Cache enabled for assets and pages (extended).": [
+                "Cache f\u00fcr Assets und Seiten aktiviert (erweitert)."
+            ],
+            "Recommended for sites that update a few times a month or less like porfolios or brochure sites.": [
+                "Empfohlen f\u00fcr Websites, die ein paar Mal im Monat oder weniger wie Porfolios oder Brosch\u00fcren Sites."
+            ],
+            "Boost speed and performance by storing a copy of your website content, files, and images online so the pages of your website load faster for your visitors.": [
+                "Beschleunigen Sie Geschwindigkeit und Leistung durch Speichern einer Kopie Ihrer Webseite, Dateien und Bilder online so dass die Seiten Ihrer Website schneller f\u00fcr Ihre Besucher geladen werden."
+            ],
+            "Cache setting saved": [
+                "Cache-Einstellung gespeichert"
+            ],
+            "Cache Level": [
+                "Cache-Level"
+            ],
+            "Clear All Cache Now": [
+                "Alle Cache jetzt l\u00f6schen"
+            ],
+            "We automatically clear your cache as you work (creating content, changing settings, installing plugins and more). But you can manually clear it here to be confident it's fresh.": [
+                "Wir l\u00f6schen Ihren Cache automatisch, w\u00e4hrend Sie arbeiten (Erstellen von Inhalten, \u00c4ndern von Einstellungen, Installation von Plugins und mehr). Aber Sie k\u00f6nnen es hier manuell l\u00f6schen, um sicher zu sein, dass es frisch ist."
+            ],
+            "Cache cleared": [
+                "Cache geleert"
+            ],
+            "Clear Cache": [
+                "Cache leeren"
+            ],
+            "Asks the browser to download and cache links on the page ahead of them being clicked on, so that when they are clicked they load almost instantly.": [
+                "Fordert den Browser auf, Links auf der vorderen Seite herunterzuladen und zu cachen so dass sie, wenn sie angeklickt werden, fast sofort geladen werden."
+            ],
+            "Link prefetching setting saved": [
+                "Link-Vorab-Einstellung gespeichert"
+            ],
+            "Link Prefetch": [
+                "Link-Prefetch"
+            ],
+            "Enable link prefetching on desktop": [
+                "Link Prefetching auf dem Desktop aktivieren"
+            ],
+            "Activate on desktop": [
+                "Auf Desktop aktivieren"
+            ],
+            "Behavior of the prefetch": [
+                "Verhalten des Vorabholvorgangs"
+            ],
+            "Behavior": [
+                "Verhalten"
+            ],
+            "Prefetch on Mouse Down": [
+                "Vorabladen bei Maus runter"
+            ],
+            "Prefetch on Mouse Down: Starts loading the page as soon as you click down, for faster response when you release the click.": [
+                "Prefetch on Maus-Down: Startet das Laden der Seite, sobald Sie nach unten klicken, um schnellere Antworten zu erhalten, wenn Sie den Klick freigeben."
+            ],
+            "Prefetch on Mouse Hover (Recommended)": [
+                "Vorabladen beim Maus-Hover (empfohlen)"
+            ],
+            "Prefetch on Mouse Hover: Begins loading the page the moment your cursor hovers over a link": [
+                "Im Maus-Hover vorabladen: Beginnt das Laden der Seite, sobald der Cursor \u00fcber einen Link schwebt"
+            ],
+            "Enable link prefetching on mobile": [
+                "Link-Prefetching auf dem Handy aktivieren"
+            ],
+            "Activate on mobile": [
+                "Auf dem Handy aktivieren"
+            ],
+            "Prefetch on Touchstart (Recommended)": [
+                "Bei Touchstart vorab laden (empfohlen)"
+            ],
+            "Prefetch on Touchstart: Instantly starts loading the page as soon as you tap the screen, ensuring a quicker response when you lift your finger.": [
+                "Beim Touchstart vorabladen: Laden Sie die Seite sofort, sobald Sie auf den Bildschirm tippen, um eine schnellere Reaktion zu gew\u00e4hrleisten, wenn Sie den Finger heben."
+            ],
+            "Prefetch Above the Fold": [
+                "Vorabladen \u00fcber dem Fold"
+            ],
+            "Prefetch Above the Fold: Loads links in your current view instantly, ensuring they're ready when you need them.": [
+                "\u00dcber dem Ordner ausw\u00e4hlen: L\u00e4dt Links in der aktuellen Ansicht sofort und stellt sicher, dass sie bereit sind, wenn Sie sie ben\u00f6tigen."
+            ],
+            "Exclude Keywords: A comma separated list of words or strings that will exclude a link from being prefetched. For example, excluding \"app\" will prevent https:\/\/example.com\/apple from being prefetched.": [
+                "Stichw\u00f6rter ausklammern: Eine kommaseparierte Liste von W\u00f6rtern oder Zeichenketten, die einen Link vom Vorabladen ausschlie\u00dfen. Durch das Ausschlie\u00dfen von \"app\" wird zum Beispiel verhindert, dass https:\/\/example.com\/apple vorgeladen wird."
+            ],
+            "Exclude keywords": [
+                "Stichw\u00f6rter ausschlie\u00dfen"
+            ],
+            "Advanced settings": [
+                "Erweiterte Einstellungen"
+            ],
+            "Additional speed and scalability features powered by Jetpack Boost to make your site as fast as it can be.": [
+                "Zus\u00e4tzliche Geschwindigkeits- und Skalierbarkeitsfunktionen mit Jetpack Boost, um Ihre Seite so schnell wie m\u00f6glich zu machen."
+            ],
+            "Optimize Critical CSS Loading (manual)": [
+                "Kritisches CSS-Laden optimieren (manuell)"
+            ],
+            "Move important styling information to the start of the page, which helps pages display your content sooner, so your users don\u2019t have to wait for the entire page to load.": [
+                "Verschieben Sie wichtige Styling-Informationen an den Anfang der Seite, was den Seiten hilft, Ihre Inhalte schneller anzuzeigen, damit Ihre Benutzer nicht warten m\u00fcssen, bis die gesamte Seite geladen wird."
+            ],
+            "Optimize Critical CSS Loading (UPGRADED)": [
+                "Kritisches CSS-Laden optimieren (UPGRADED)"
+            ],
+            "Generate Critical CSS Automatically": [
+                "Kritisches CSS automatisch generieren"
+            ],
+            "Move important styling information to the start of the page, which helps pages display your content sooner, so your users don\u2019t have to wait for the entire page to load.%1$s %2$sBoost will automatically generate your Critical CSS%3$s whenever you make changes to the HTML or CSS structure of your site.": [
+                "Verschieben Sie wichtige Styling-Informationen an den Anfang der Seite, was den Seiten hilft, Ihre Inhalte schneller anzuzeigen, damit Ihre Benutzer nicht warten m\u00fcssen, bis die gesamte Seite geladen wird.%1$s %2$sBoost generiert automatisch Ihre kritische CSS%3$s , wenn Sie \u00c4nderungen an der HTML- oder CSS-Struktur Ihrer Website vornehmen."
+            ],
+            "Defer Non-Essential JavaScript": [
+                "Verweilen Sie JavaScript"
+            ],
+            "Run non-essential JavaScript after the page has loaded so that styles and images can load more quickly.": [
+                "F\u00fchre JavaScript aus, nachdem die Seite geladen wurde, so dass Stile und Bilder schneller laden k\u00f6nnen."
+            ],
+            "Concatenate JS": [
+                "JS zusammenfassen"
+            ],
+            "Scripts are grouped by their original placement, concatenated and minified to reduce site loading time and reduce the number of requests.": [
+                "Skripte werden nach der urspr\u00fcnglichen Platzierung gruppiert, verkettet und verkleinert, um die Ladezeit der Site zu reduzieren und die Anzahl der Anfragen zu reduzieren."
+            ],
+            "Exclude JS Strings": [
+                "JS-Zeichenketten ausschlie\u00dfen"
+            ],
+            "Concatenate CSS": [
+                "Concatenate CSS"
+            ],
+            "Styles are grouped by their original placement, concatenated and minified to reduce site loading time and reduce the number of requests.": [
+                "Die Stile werden nach der urspr\u00fcnglichen Platzierung gruppiert, verkettet und verkleinert, um die Ladezeit der Site zu reduzieren und die Anzahl der Anfragen zu reduzieren."
+            ],
+            "Exclude CSS Strings": [
+                "CSS-Zeichenketten ausschlie\u00dfen"
+            ],
+            "Show more": [
+                "Mehr anzeigen"
+            ],
+            "Show less": [
+                "Weniger anzeigen"
+            ],
+            "Discover More": [
+                "Mehr entdecken"
+            ],
+            "Install Jetpack Boost to unlock": [
+                "Jetpack Boost zum Entsperren installieren"
+            ],
+            "Installing Jetpack Boost\u2026": [
+                "Installing Jetpack Boost\u2026"
+            ],
+            "Jetpack Boost is now active": [
+                "Jetpack Boost ist jetzt aktiv"
+            ],
+            "Activation failed": [
+                "Aktivierung fehlgeschlagen"
+            ],
+            "Discover more %1$shere%2$s": [
+                "Entdecke mehr %1$shier%2$s"
+            ],
+            "Option saved correctly": [
+                "Option korrekt gespeichert"
+            ],
+            "Error saving option": [
+                "Fehler beim Speichern der Option"
+            ],
+            "Image Optimization": [
+                "Bildoptimierung"
+            ],
+            "We automatically optimize your uploaded images to WebP format for faster performance and reduced file sizes. You can also choose to delete the original images to save storage space.": [
+                "Wir optimieren automatisch Ihre hochgeladenen Bilder im WebP-Format f\u00fcr schnellere Leistung und reduzierte Dateigr\u00f6\u00dfen. Sie k\u00f6nnen auch die urspr\u00fcnglichen Bilder l\u00f6schen, um Speicherplatz zu sparen."
+            ],
+            "Enable Image Optimization": [
+                "Bildoptimierung aktivieren"
+            ],
+            "Enable or disable image optimization globally.": [
+                "Bildoptimierung global aktivieren oder deaktivieren."
+            ],
+            "Automatically Optimize Uploaded Images": [
+                "Hochgeladene Bilder automatisch optimieren"
+            ],
+            "When enabled, all your new image uploads will be automatically optimized to WebP format, ensuring faster page loading and reduced file sizes.": [
+                "Wenn aktiviert, werden alle Ihre neuen Bild-Uploads automatisch auf das WebP-Format optimiert, wodurch das Laden der Seiten und die Dateigr\u00f6\u00dfen verk\u00fcrzt werden."
+            ],
+            "Auto Delete Original Image": [
+                "Originalbild automatisch l\u00f6schen"
+            ],
+            "When enabled, the original uploaded image is deleted and replaced with the optimized version, helping to save storage space. If disabled, the optimized image is saved as a separate file, retaining the original.": [
+                "Wenn aktiviert, wird das Original hochgeladene Bild gel\u00f6scht und durch die optimierte Version ersetzt, wodurch Speicherplatz eingespart werden kann. Wenn deaktiviert, wird das optimierte Bild als separate Datei gespeichert und das Original beibehalten."
+            ],
+            "No settings available.": [
+                "Keine Einstellungen verf\u00fcgbar."
+            ],
+            "Loading settings\u2026": [
+                "Lade Einstellungen\u2026"
+            ],
+            "Settings updated successfully": [
+                "Einstellungen erfolgreich aktualisiert"
+            ],
+            "Your image optimization settings have been saved.": [
+                "Ihre Bildoptimierungseinstellungen wurden gespeichert."
+            ],
+            "Enable Lazy Loading": [
+                "Lazy laden aktivieren"
+            ],
+            "Lazy loading defers the loading of images until they are visible on the screen, improving page load speed and performance.": [
+                "Lazy Laden verringert das Laden von Bildern, bis sie auf dem Bildschirm sichtbar sind, wodurch die Ladegeschwindigkeit und Leistung der Seite verbessert werden."
+            ],
+            "Lazy loading has been updated.": [
+                "Lazy Laden wurde aktualisiert."
+            ],
+            "Oops! There was an error updating the lazy loading settings.": [
+                "Hoppla! Beim Aktualisieren der Ladeeinstellungen ist ein Fehler aufgetreten."
+            ],
+            "Enable Bulk Optimization of Images": [
+                "Massenoptimierung von Bildern aktivieren"
+            ],
+            "When enabled, allows bulk optimization of images in the media library.": [
+                "Wenn aktiviert, erlaubt die Massenoptimierung von Bildern in der Medienbibliothek."
+            ],
+            "Go to Media Library": [
+                "Zur Medienbibliothek"
+            ],
+            "Error Updating Settings": [
+                "Fehler beim Aktualisieren der Einstellungen"
+            ],
+            "Prefer Optimized Image When Exists": [
+                "Optimiertes Bild bevorzugen, wenn vorhanden"
+            ],
+            "When enabled, optimized images will be served in place of original images when they exist, improving performance.": [
+                "Wenn aktiviert, werden optimierte Bilder anstelle von Originalbildern geliefert, wenn sie vorhanden sind, was die Leistung verbessert."
+            ],
+            "Something went wrong while updating the settings. Please try again.": [
+                "Beim Aktualisieren der Einstellungen ist etwas schief gelaufen. Bitte versuchen Sie es erneut."
+            ],
+            "Enabled All auto-updates": [
+                "Alle Auto-Updates aktiviert"
+            ],
+            "Disabled All auto-updates": [
+                "Alle Auto-Updates deaktiviert"
+            ],
+            "Everything will automatically update.": [
+                "Alles wird automatisch aktualisiert."
+            ],
+            "Custom auto-update settings.": [
+                "Benutzerdefinierte Auto-Update-Einstellungen."
+            ],
+            "Automatically keep all up to date": [
+                "Alles automatisch auf dem neuesten Stand halten"
+            ],
+            "Enabled Core auto-updates": [
+                "Aktivierte Core Auto-Updates"
+            ],
+            "Disabled Core auto-updates": [
+                "Deaktivierte Core Auto-Updates"
+            ],
+            "WordPress will automatically update.": [
+                "WordPress wird automatisch aktualisiert."
+            ],
+            "WordPress must be manually updated.": [
+                "WordPress muss manuell aktualisiert werden."
+            ],
+            "WordPress Core": [
+                "WordPress-Kern"
+            ],
+            "Enabled Plugins auto-update": [
+                "Aktivierte Plugins Auto-Update"
+            ],
+            "Disabled Plugins auto-update": [
+                "Deaktivierte Plugins Auto-Update"
+            ],
+            "All plugins will automatically update.": [
+                "Alle Plugins werden automatisch aktualisiert."
+            ],
+            "Each plugin must be manually updated.": [
+                "Jedes Plugin muss manuell aktualisiert werden."
+            ],
+            "Plugins": [
+                "Plugins"
+            ],
+            "Enabled Themes auto-update": [
+                "Aktivierte Themes Auto-Update"
+            ],
+            "Disabled Themes auto-update": [
+                "Deaktivierte Themes Auto-Update"
+            ],
+            "All themes will automatically update.": [
+                "Alle Themes werden automatisch aktualisiert."
+            ],
+            "Each theme must be manually updated.": [
+                "Jedes Theme muss manuell aktualisiert werden."
+            ],
+            "Themes": [
+                "Themes"
+            ],
+            "Automatic Updates": [
+                "Automatische Updates"
+            ],
+            "Keeping automatic updates on ensures timely security fixes and the latest features.": [
+                "Die Beibehaltung automatischer Aktualisierungen sorgt f\u00fcr rechtzeitige Sicherheitsbehebungen und die neuesten Funktionen."
+            ],
+            "Coming soon activated": [
+                "Demn\u00e4chst aktiviert"
+            ],
+            "Coming soon deactivated": [
+                "Demn\u00e4chst deaktiviert"
+            ],
+            "Coming soon page is active. Site requires login.": [
+                "Demn\u00e4chst ist die Seite aktiv. Die Seite ben\u00f6tigt Anmeldung."
+            ],
+            "Coming soon page is not active. Site is live to visitors.": [
+                "Demn\u00e4chst ist die Seite nicht aktiv. Die Seite ist live f\u00fcr die Besucher."
+            ],
+            "Turn off your \"Coming Soon\" page when you are ready to launch your website.": [
+                "Schalten Sie Ihre \"Kommende bald\"-Seite ab, wenn Sie bereit sind, Ihre Website zu starten."
+            ],
+            "Turn on your \"Coming Soon\" page when you need to make major changes to your website.": [
+                "Schalten Sie Ihre \"Kommende bald\"-Seite ein, wenn Sie wichtige \u00c4nderungen an Ihrer Website vornehmen m\u00fcssen."
+            ],
+            "Disabled old post comments": [
+                "Alte Kommentare f\u00fcr Beitr\u00e4ge deaktiviert"
+            ],
+            "Enabled old post comments": [
+                "Alte Kommentare f\u00fcr Beitr\u00e4ge aktiviert"
+            ],
+            "Comments on old posts are disabled.": [
+                "Kommentare zu alten Beitr\u00e4gen sind deaktiviert."
+            ],
+            "Comments are allowed on old posts.": [
+                "Kommentare sind bei alten Beitr\u00e4gen erlaubt."
+            ],
+            "Disable comments for older posts": [
+                "Kommentare f\u00fcr \u00e4ltere Beitr\u00e4ge deaktivieren"
+            ],
+            "Comments setting saved": [
+                "Kommentareinstellung gespeichert"
+            ],
+            "Comments on posts are disabled after %s day.": [
+                "Kommentare zu Beitr\u00e4gen sind nach %s Tag deaktiviert.",
+                "Kommentare zu Beitr\u00e4gen sind nach %s Tagen deaktiviert."
+            ],
+            "Close comments after %s day.": [
+                "Kommentare nach %s Tag schlie\u00dfen.",
+                "Kommentare nach %s Tagen schlie\u00dfen."
+            ],
+            "Comments setting saved.": [
+                "Kommentar-Einstellung gespeichert."
+            ],
+            "Posts will display %s comment at a time.": [
+                "Beitr\u00e4ge werden gleichzeitig %s Kommentar anzeigen.",
+                "Beitr\u00e4ge werden gleichzeitig %s Kommentare anzeigen."
+            ],
+            "Comments to display per page": [
+                "Kommentare pro Seite"
+            ],
+            "Comments": [
+                "Kommentare"
+            ],
+            "Comments allow visitors to provide feedback and respond to your posts or pages.": [
+                "Kommentare erlauben Besuchern Feedback zu geben und auf Ihre Beitr\u00e4ge oder Seiten zu antworten."
+            ],
+            "Trash setting saved": [
+                "Papierkorb gespeichert"
+            ],
+            "Number of weeks in between emptying trash": [
+                "Anzahl der Wochen zwischen Papierkorb"
+            ],
+            "Content Options": [
+                "Inhaltsoptionen"
+            ],
+            "Controls for how often to empty the trash.": [
+                "Steuert, wie oft der Papierkorb zu leeren ist."
+            ],
+            "Help Center Enabled": [
+                "Hilfe-Center aktiviert"
+            ],
+            "Help Center Disabled": [
+                "Hilfe-Center deaktiviert"
+            ],
+            "Reload the page to access the Help Center.": [
+                "Seite neu laden, um auf das Hilfe-Center zuzugreifen."
+            ],
+            "The Help Center will no longer display.": [
+                "Das Hilfe-Center wird nicht mehr angezeigt."
+            ],
+            "This is where you can manage common settings for your website.": [
+                "Hier k\u00f6nnen Sie allgemeine Einstellungen f\u00fcr Ihre Website verwalten."
+            ],
+            "Features": [
+                "Eigenschaften"
+            ],
+            "Customize the available features as you manage your website.": [
+                "Passen Sie die verf\u00fcgbaren Funktionen an, w\u00e4hrend Sie Ihre Website verwalten."
+            ],
+            "Performance Enabled": [
+                "Leistung aktiviert"
+            ],
+            "Performance Disabled": [
+                "Leistung deaktiviert"
+            ],
+            "You need to reload the page to manage Performance.": [
+                "Sie m\u00fcssen die Seite neu laden, um Performance zu verwalten."
+            ],
+            "Performance will no longer display.": [
+                "Leistung wird nicht mehr angezeigt."
+            ],
+            "The performance feature provides improvements to loads faster for visitors including cache settings.": [
+                "Die Performance-Funktion verbessert die Ladung f\u00fcr Besucher schneller, einschlie\u00dflich der Cache-Einstellungen."
+            ],
+            "Staging Enabled": [
+                "Staging aktiviert"
+            ],
+            "Staging Disabled": [
+                "Staging deaktiviert"
+            ],
+            "You need to reload the page to manage Staging.": [
+                "Sie m\u00fcssen die Seite neu laden, um Staging zu verwalten."
+            ],
+            "Staging will no longer display.": [
+                "Staging wird nicht mehr angezeigt."
+            ],
+            "WonderBlocks Enabled": [
+                "WonderBl\u00f6cke aktiviert"
+            ],
+            "WonderBlocks Disabled": [
+                "Wunderbl\u00f6cke deaktiviert"
+            ],
+            "Create new content to see WonderBlocks in action.": [
+                "Erstellen Sie neue Inhalte, um WonderBlocks in Aktion zu sehen."
+            ],
+            "WonderBlocks will no longer display.": [
+                "WonderBl\u00f6cke werden nicht mehr angezeigt."
+            ],
+            "Cancel": [
+                "Abbrechen"
+            ],
+            "Clone": [
+                "Klonen"
+            ],
+            "Confirm Clone Action": [
+                "Klon-Aktion best\u00e4tigen"
+            ],
+            "This will overwrite anything in staging and update it to an exact clone of the current production site. Are you sure you want to proceed?": [
+                "Dies wird alles in der Stagierung \u00fcberschreiben und zu einem exakten Klon der aktuellen Produktionsseite aktualisieren. Sind Sie sicher, dass Sie fortfahren m\u00f6chten?"
+            ],
+            "Cloned to Staging": [
+                "Zu Staging geklont"
+            ],
+            "Cloning production to staging, this should take about a minute.": [
+                "Das Klonen der Produktion auf Stagnation sollte ungef\u00e4hr eine Minute dauern."
+            ],
+            "Clone to staging": [
+                "Zum Stagieren klonen"
+            ],
+            "Created": [
+                "Erstellt"
+            ],
+            "Staging Created": [
+                "Staging erstellt"
+            ],
+            "Creating a staging site, this should take about a minute.": [
+                "Erstellen einer Staging-Site sollte eine Minute dauern."
+            ],
+            "Create staging site": [
+                "Staging-Site erstellen"
+            ],
+            "Currently editing": [
+                "Aktuell bearbeiten"
+            ],
+            "Delete": [
+                "L\u00f6schen"
+            ],
+            "Confirm Delete": [
+                "L\u00f6schen best\u00e4tigen"
+            ],
+            "This will permanently delete staging site. Are you sure you want to proceed? You can recreate another staging site at any time, but any specific changes you've made to this staging site will be lost.": [
+                "Staging-Site wird dauerhaft gel\u00f6scht. Sind Sie sicher, dass Sie fortfahren m\u00f6chten? Sie k\u00f6nnen jederzeit eine andere Staging-Site neu erstellen, aber alle spezifischen \u00c4nderungen, die Sie an dieser Staging-Site vorgenommen haben, gehen verloren."
+            ],
+            "Deleted Staging": [
+                "Gel\u00f6schte Staging"
+            ],
+            "Deleting the staging site, this should take about a minute.": [
+                "Staging Site wird gel\u00f6scht. Dies sollte ungef\u00e4hr eine Minute dauern."
+            ],
+            "Delete Staging Site": [
+                "Staging-Site l\u00f6schen"
+            ],
+            "Deploy": [
+                "Deploy"
+            ],
+            "Deploy all changes": [
+                "Alle \u00c4nderungen verteilen"
+            ],
+            "Confirm Deployment": [
+                "Einsatz best\u00e4tigen"
+            ],
+            "Deploy database only": [
+                "Nur Datenbank verteilen"
+            ],
+            "This will deploy staging to production and overwrite current production site. Are you sure you want to proceed?": [
+                "Dies wird Staging zur Produktion bereitstellen und die aktuelle Produktionsseite \u00fcberschreiben. Sind Sie sicher, dass Sie fortfahren m\u00f6chten?"
+            ],
+            "Deploy files only": [
+                "Nur Dateien verteilen"
+            ],
+            "Deployed": [
+                "Ausgestellt"
+            ],
+            "Deploying from staging to production, this should take about a minute.": [
+                "Der Einsatz von Staging in die Produktion sollte etwa eine Minute in Anspruch nehmen."
+            ],
+            "Deploy Site": [
+                "Site verteilen"
+            ],
+            "Error": [
+                "Fehler"
+            ],
+            "You don't have a staging site yet.": [
+                "Sie haben noch keine Staging-Site."
+            ],
+            "Not currently editing": [
+                "Derzeit nicht bearbeiten"
+            ],
+            "Proceed": [
+                "Fortfahren"
+            ],
+            "Production Site": [
+                "Produktionsstandort"
+            ],
+            "Staging Site": [
+                "Staging-Seite"
+            ],
+            "A staging site is a duplicate of your live site, offering a secure environment to experiment, test updates, and deploy when ready.": [
+                "Eine Staging-Site ist eine Kopie Ihrer Live-Site, die eine sichere Umgebung zum Experimentieren, Testen von Aktualisierungen und Verteilen bietet, wenn sie bereit sind."
+            ],
+            "Switch": [
+                "Wechseln"
+            ],
+            "Switching": [
+                "Wechseln"
+            ],
+            "Switch to Production": [
+                "Zur Produktion wechseln"
+            ],
+            "This will navigate you to the production environment": [
+                "Dies wird Sie zur Produktionsumgebung navigieren"
+            ],
+            "Loading the production environment now.": [
+                "Laden der Produktionsumgebung jetzt."
+            ],
+            "Switching to the production environment, this should take about a minute.": [
+                "Beim Wechsel auf die Produktionsumgebung sollte dies etwa eine Minute dauern."
+            ],
+            "Switch to Staging": [
+                "Zu Staging wechseln"
+            ],
+            "This will navigate you to the staging environment": [
+                "Dies wird dich zur Staging-Umgebung navigieren"
+            ],
+            "Loading the staging environment now.": [
+                "Laden der Staging-Umgebung jetzt."
+            ],
+            "Switching to the staging environment, this should take about a minute.": [
+                "Beim Wechsel auf die Staging-Umgebung sollte dies ungef\u00e4hr eine Minute dauern."
+            ],
+            "An unknown error has occurred.": [
+                "Ein unbekannter Fehler ist aufgetreten."
+            ],
+            "Working\u2026": [
+                "Arbeiten\u2026"
+            ],
+            "Add a New Plugin": [
+                "Das Bluehost-Plugin"
+            ],
+            "Hire our experts": [
+                ""
+            ],
+            "Get in touch with us, and we\u2019ll help you build the exact store you\u2019re dreaming of.": [
+                ""
+            ],
+            "Get Help & Resources": [
+                ""
+            ],
+            "Documentation and tutorials to help you get the most out of your solution.": [
+                ""
+            ],
+            "Pro Design Live": [
+                ""
+            ],
+            "We will help you build and grow your website and improve your skills in WordPress.": [
+                ""
+            ],
+            "Get Info": [
+                ""
+            ],
+            "Quick links": [
+                ""
+            ],
+            "Manage hosting": [
+                ""
+            ],
+            "Write a blog post": [
+                ""
+            ],
+            "Create a sale promotion": [
+                ""
+            ],
+            "Refer a friend to get $75": [
+                ""
+            ],
+            "Unlock exclusive benefits with our referral program!": [
+                ""
+            ],
+            "Start now": [
+                ""
+            ],
+            "Explore your Solution": [
+                ""
+            ],
+            "Discover all the features to grow your store, boost sales and loyalize your customers.": [
+                ""
+            ],
+            "Welcome to Bluehost": [
+                ""
+            ],
+            "We\u2019re very excited to get started with you!": [
+                ""
+            ]
+        }
+    }
+}

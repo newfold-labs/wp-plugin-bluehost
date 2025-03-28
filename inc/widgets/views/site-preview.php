@@ -199,7 +199,7 @@ $site_edit_url = get_admin_url( null, wp_is_block_theme() ? 'site-editor.php?can
 			</a>
 		<?php else : ?>
 			<a 
-				class="nfd-button nfd-button--secondary nfd-grow"
+				class="nfd-button nfd-button--secondary nfd-grow nfd-text-balance"
 				data-cy="nfd-coming-soon-enable"
 				href="#"
 				id="nfd-coming-soon-enable"

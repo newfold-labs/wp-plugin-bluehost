@@ -25,6 +25,15 @@
     --color-warning-contrast: #FFE3C6;
     --color-error-contrast: #F6D3D3;
     --color-canvas: #F1F5F9;
+
+    --color-mid: #91BEF7;
+    --color-mid-dark: #68A5F2;
+    // --color-mid-dark: #2B6CB0;
+
+    --color-blue: #336AD7;
+    --color-blue-dark: #1B4393;
+    --color-blue-light: #EAF4FB;
+    --color-blue-lighter: #F0F5FF;
 }
 
 html {
@@ -287,4 +296,156 @@ body.toplevel_page_bluehost {
 
 .coming-soon-status {
     text-transform: uppercase;
+}
+.nfd-root .wppbh-home {
+
+    .nfd-card-link:not(.nfd-card-link-mini) {
+        display: flex;
+    }
+
+    .nfd-card-link:not(.nfd-card-has-bg) {
+        .nfd-card {
+            transition: all 0.5s ease;
+        }
+
+        .nfd-title,
+        .nfd-button {
+            transition: color 0.5s ease, background-color 0.5s ease;
+        }
+        p {
+            color: var(--color-text);
+        }
+        svg path {
+            stroke: var(--color-text);
+            transition: all 0.5s ease;
+        }
+
+        &:hover .nfd-card:not(.nfd-card-has-bg) {
+            background-color: var(--color-blue-lighter);
+            border-color: var(--color-blue);
+
+            .nfd-title {
+                color: var(--color-blue);
+            }
+
+            svg path {
+                stroke: var(--color-blue);
+            }
+        }
+    }
+
+    .nfd-card.nfd-card-has-bg {
+        transition: all 0.5s ease;
+        min-width: 100%;
+        min-height: 320px;
+
+        .nfd-card__content {
+            position: relative;
+
+            .nfd-bg-img {
+                position: absolute;
+                z-index: 0;
+                width: 60%;
+                height: auto;
+                right: -1rem;
+                bottom: -1rem;
+            }
+
+            .nfd-title, 
+            p,
+            .nfd-card-bottom {
+                z-index: 1;
+            }
+
+            .nfd-button {
+                position: absolute;
+                bottom: 0;
+            }
+        }
+    }
+
+    .nfd-card.nfd-card-mid {
+        background-color: var(--color-mid);
+        border-color: var(--color-mid);
+
+        .nfd-title,
+        p {
+            color: var(--color-black) !important;
+        }
+
+        .nfd-button {
+            background-color: var(--color-black);
+        }
+
+        &:hover {
+            background-color: var(--color-mid-dark);
+            border-color: var(--color-mid-dark);
+
+            .nfd-button {
+                background-color: var(--color-black);
+            }
+        }
+    }
+
+    .nfd-card.nfd-card-dark {
+        background-color: var(--color-blue);
+        border-color: var(--color-blue);
+
+        .nfd-title,
+        p {
+            color: var(--color-white) !important;
+        }
+
+        .nfd-button {
+            background-color: var(--color-blue-dark);
+        }
+
+        &:hover {
+            background-color: var(--color-blue-dark);
+            border-color: var(--color-blue-dark);
+
+            .nfd-button {
+                background-color: var(--color-black);
+            }
+        }
+    }
+
+    .nfd-card-link-mini {
+
+        .nfd-arrow {
+            opacity: 0;
+            fill: var(--color-primary);
+            padding-right: 1rem;
+            transition: all 0.5s ease;
+        }
+
+        .nfd-card-hover-cta {
+            opacity: 0;
+            transition: opacity 0.25s ease;
+        }
+
+        &:hover {
+
+            p {
+                color: var(--color-primary);
+            }
+
+            .nfd-arrow {
+                opacity: 1;
+                padding-right: 0;
+            }
+
+            .nfd-card-hover-cta {
+                opacity: 1;
+            }
+        }
+
+
+    }
+
+    .nfd-no-stroke {
+        path {
+            stroke: none !important;
+        }
+    }
 }

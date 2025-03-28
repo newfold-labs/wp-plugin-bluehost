@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "340a44dbbf29a0551e2f888c03c1477b",
+    "content-hash": "3f63c83e9c6a332fc501fef5c743d326",
     "packages": [
         {
             "name": "doctrine/inflector",
@@ -1466,16 +1466,16 @@
         },
         {
             "name": "newfold-labs/wp-module-installer",
-            "version": "1.4.2",
+            "version": "1.4.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/newfold-labs/wp-module-installer.git",
-                "reference": "f4f3490180a2590d66196bde2621f0e2b48a6319"
+                "reference": "b2bc2da7271e098e4c45fd5c3f10fabf90dc1293"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/newfold-labs/wp-module-installer/zipball/f4f3490180a2590d66196bde2621f0e2b48a6319",
-                "reference": "f4f3490180a2590d66196bde2621f0e2b48a6319",
+                "url": "https://api.github.com/repos/newfold-labs/wp-module-installer/zipball/b2bc2da7271e098e4c45fd5c3f10fabf90dc1293",
+                "reference": "b2bc2da7271e098e4c45fd5c3f10fabf90dc1293",
                 "shasum": ""
             },
             "require": {
@@ -1535,10 +1535,10 @@
             ],
             "description": "An installer for WordPress plugins and themes.",
             "support": {
-                "source": "https://github.com/newfold-labs/wp-module-installer/tree/1.4.2",
+                "source": "https://github.com/newfold-labs/wp-module-installer/tree/1.4.3",
                 "issues": "https://github.com/newfold-labs/wp-module-installer/issues"
             },
-            "time": "2025-03-25T21:17:49+00:00"
+            "time": "2025-03-28T11:29:08+00:00"
         },
         {
             "name": "newfold-labs/wp-module-loader",
@@ -1797,16 +1797,16 @@
         },
         {
             "name": "newfold-labs/wp-module-onboarding",
-            "version": "2.6.4",
+            "version": "2.6.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/newfold-labs/wp-module-onboarding.git",
-                "reference": "1b17af05a3dda956e93f348dffdc1c0bfb4d9546"
+                "reference": "a76045c36a96a021edcab9f0034d88f1f572f691"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/newfold-labs/wp-module-onboarding/zipball/1b17af05a3dda956e93f348dffdc1c0bfb4d9546",
-                "reference": "1b17af05a3dda956e93f348dffdc1c0bfb4d9546",
+                "url": "https://api.github.com/repos/newfold-labs/wp-module-onboarding/zipball/a76045c36a96a021edcab9f0034d88f1f572f691",
+                "reference": "a76045c36a96a021edcab9f0034d88f1f572f691",
                 "shasum": ""
             },
             "require": {
@@ -1873,10 +1873,10 @@
             ],
             "description": "Next-generation WordPress Onboarding for WordPress sites at Newfold Digital.",
             "support": {
-                "source": "https://github.com/newfold-labs/wp-module-onboarding/tree/2.6.4",
+                "source": "https://github.com/newfold-labs/wp-module-onboarding/tree/2.6.5",
                 "issues": "https://github.com/newfold-labs/wp-module-onboarding/issues"
             },
-            "time": "2025-03-26T10:00:41+00:00"
+            "time": "2025-03-28T08:49:22+00:00"
         },
         {
             "name": "newfold-labs/wp-module-onboarding-data",
@@ -5534,10 +5534,10 @@
     },
     "prefer-stable": false,
     "prefer-lowest": false,
-    "platform": [],
-    "platform-dev": [],
+    "platform": {},
+    "platform-dev": {},
     "platform-overrides": {
         "php": "7.3.0"
     },
-    "plugin-api-version": "2.3.0"
+    "plugin-api-version": "2.6.0"
 }

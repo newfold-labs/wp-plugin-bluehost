@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "911df2101cfa72ab0822a535693fe9f6",
+    "content-hash": "e855e9a32b158a0ea29cbdaac3028fdb",
     "packages": [
         {
             "name": "doctrine/inflector",
@@ -1818,16 +1818,16 @@
         },
         {
             "name": "newfold-labs/wp-module-notifications",
-            "version": "1.6.9",
+            "version": "1.6.10",
             "source": {
                 "type": "git",
                 "url": "https://github.com/newfold-labs/wp-module-notifications.git",
-                "reference": "c18402e64619c6b8cade14276c6224492b8e13a3"
+                "reference": "5fa77bc12907bf02a3104495e6d9d340fbbd7a1a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/newfold-labs/wp-module-notifications/zipball/c18402e64619c6b8cade14276c6224492b8e13a3",
-                "reference": "c18402e64619c6b8cade14276c6224492b8e13a3",
+                "url": "https://api.github.com/repos/newfold-labs/wp-module-notifications/zipball/5fa77bc12907bf02a3104495e6d9d340fbbd7a1a",
+                "reference": "5fa77bc12907bf02a3104495e6d9d340fbbd7a1a",
                 "shasum": ""
             },
             "require": {
@@ -1867,10 +1867,10 @@
             ],
             "description": "A module for managing Newfold in-site notifications.",
             "support": {
-                "source": "https://github.com/newfold-labs/wp-module-notifications/tree/1.6.9",
+                "source": "https://github.com/newfold-labs/wp-module-notifications/tree/1.6.10",
                 "issues": "https://github.com/newfold-labs/wp-module-notifications/issues"
             },
-            "time": "2025-03-27T22:24:27+00:00"
+            "time": "2025-03-31T19:53:05+00:00"
         },
         {
             "name": "newfold-labs/wp-module-onboarding",
@@ -2381,24 +2381,24 @@
         },
         {
             "name": "newfold-labs/wp-module-solutions",
-            "version": "1.1.2",
+            "version": "2.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/newfold-labs/wp-module-solutions.git",
-                "reference": "f17bfd0967b14816f1792f5f109645eaaed01d85"
+                "reference": "8337efac7246d8eb9978d415bfcde63e09dd4e26"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/newfold-labs/wp-module-solutions/zipball/f17bfd0967b14816f1792f5f109645eaaed01d85",
-                "reference": "f17bfd0967b14816f1792f5f109645eaaed01d85",
+                "url": "https://api.github.com/repos/newfold-labs/wp-module-solutions/zipball/8337efac7246d8eb9978d415bfcde63e09dd4e26",
+                "reference": "8337efac7246d8eb9978d415bfcde63e09dd4e26",
                 "shasum": ""
             },
             "require": {
-                "newfold-labs/wp-module-data": "^2.6.3",
-                "newfold-labs/wp-module-loader": "^1.0.10"
+                "newfold-labs/wp-module-data": "^2.6.11",
+                "newfold-labs/wp-module-loader": "^1.0.12"
             },
             "require-dev": {
-                "newfold-labs/wp-php-standards": "^1.2",
+                "newfold-labs/wp-php-standards": "^1.2.5",
                 "wp-cli/i18n-command": "^2.6.3"
             },
             "type": "library",
@@ -2450,10 +2450,10 @@
             ],
             "description": "A Newfold module that handles integration of WordPress Solutions Addon packages (content creator/ service / ecommerce) for BlueHost &amp; HostGator customers",
             "support": {
-                "source": "https://github.com/newfold-labs/wp-module-solutions/tree/1.1.2",
+                "source": "https://github.com/newfold-labs/wp-module-solutions/tree/2.0.0",
                 "issues": "https://github.com/newfold-labs/wp-module-solutions/issues"
             },
-            "time": "2025-03-10T21:51:03+00:00"
+            "time": "2025-03-31T22:20:18+00:00"
         },
         {
             "name": "newfold-labs/wp-module-sso",

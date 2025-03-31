@@ -88,12 +88,6 @@ final class Admin {
 				'bluehost#/my_plugins_and_tools' => __( 'My Plugins & Tools', 'wp-plugin-bluehost' ),
 			)
 			: array();
-		// add performance if enabled
-		$performance = isEnabled( 'performance' )
-			? array(
-				'bluehost#/performance' => __( 'Performance', 'wp-plugin-bluehost' ),
-			)
-			: array();
 		$settings    = array(
 			'bluehost#/settings' => __( 'Settings', 'wp-plugin-bluehost' ),
 		);
@@ -113,7 +107,6 @@ final class Admin {
 			$store,
 			$marketplace,
 			$mypluginsandtools,
-			$performance,
 			$settings,
 			$staging,
 			$help

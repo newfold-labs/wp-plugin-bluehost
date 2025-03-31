@@ -105,13 +105,8 @@ final class Admin {
 			}
 		);
 
-		$pages = array();
-		foreach ( $subnav as $nav ) {
-			$pages[ $nav['route'] ] = $nav['title'];
-		}
-
 		// return subnav items sorted by priority
-		return $pages;
+		return $subnav;
 	}
 
 	/**
@@ -145,15 +140,15 @@ final class Admin {
 			0
 		);
 
-		// Add subpagesto menu
-		foreach ( self::plugin_subpages() as $route => $title ) {
+		// Add subpages to menu
+		foreach ( self::plugin_subpages() as $subpage ) {
 			\add_submenu_page(
 				'bluehost',
-				$title,
-				$title,
+				$subpage['title'],
+				$subpage['title'],
 				'manage_options',
-				$route,
-				array( __CLASS__, 'render' )
+				$subpage['route'],
+				array_key_exists('callback', $subpage) ? $subpage['callback'] : array( __CLASS__, 'render' )
 			);
 		}
 	}

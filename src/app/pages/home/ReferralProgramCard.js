@@ -17,7 +17,7 @@ const ReferralProgramCard = ( {} ) => {
 					<div className="nfd-flex nfd-flex-col nfd-gap-4">
 						<Title size={ 2 } as="h3" className="nfd-mt-4 nfd-mb-4">
 							{ __(
-								'Refer a friend to get $75',
+								'Refer a friend and earn money',
 								'wp-plugin-bluehost'
 							) }
 						</Title>

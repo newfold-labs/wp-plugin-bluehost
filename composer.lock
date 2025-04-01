@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "911df2101cfa72ab0822a535693fe9f6",
+    "content-hash": "7c93b63756a4704866cb94b6968d1ade",
     "packages": [
         {
             "name": "doctrine/inflector",
@@ -2381,24 +2381,24 @@
         },
         {
             "name": "newfold-labs/wp-module-solutions",
-            "version": "1.1.2",
+            "version": "2.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/newfold-labs/wp-module-solutions.git",
-                "reference": "f17bfd0967b14816f1792f5f109645eaaed01d85"
+                "reference": "8337efac7246d8eb9978d415bfcde63e09dd4e26"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/newfold-labs/wp-module-solutions/zipball/f17bfd0967b14816f1792f5f109645eaaed01d85",
-                "reference": "f17bfd0967b14816f1792f5f109645eaaed01d85",
+                "url": "https://api.github.com/repos/newfold-labs/wp-module-solutions/zipball/8337efac7246d8eb9978d415bfcde63e09dd4e26",
+                "reference": "8337efac7246d8eb9978d415bfcde63e09dd4e26",
                 "shasum": ""
             },
             "require": {
-                "newfold-labs/wp-module-data": "^2.6.3",
-                "newfold-labs/wp-module-loader": "^1.0.10"
+                "newfold-labs/wp-module-data": "^2.6.11",
+                "newfold-labs/wp-module-loader": "^1.0.12"
             },
             "require-dev": {
-                "newfold-labs/wp-php-standards": "^1.2",
+                "newfold-labs/wp-php-standards": "^1.2.5",
                 "wp-cli/i18n-command": "^2.6.3"
             },
             "type": "library",
@@ -2450,10 +2450,10 @@
             ],
             "description": "A Newfold module that handles integration of WordPress Solutions Addon packages (content creator/ service / ecommerce) for BlueHost &amp; HostGator customers",
             "support": {
-                "source": "https://github.com/newfold-labs/wp-module-solutions/tree/1.1.2",
+                "source": "https://github.com/newfold-labs/wp-module-solutions/tree/2.0.0",
                 "issues": "https://github.com/newfold-labs/wp-module-solutions/issues"
             },
-            "time": "2025-03-10T21:51:03+00:00"
+            "time": "2025-03-31T22:20:18+00:00"
         },
         {
             "name": "newfold-labs/wp-module-sso",
@@ -5615,10 +5615,10 @@
     },
     "prefer-stable": false,
     "prefer-lowest": false,
-    "platform": {},
-    "platform-dev": {},
+    "platform": [],
+    "platform-dev": [],
     "platform-overrides": {
         "php": "7.3.0"
     },
-    "plugin-api-version": "2.6.0"
+    "plugin-api-version": "2.3.0"
 }

@@ -46,7 +46,7 @@ const QuickLinksCard = ( {} ) => {
 				</a>
 				<a
 					className="nfd-no-underline nfd-card-link nfd-card-link-mini"
-					href="#/"
+					href="wp-admin/admin.php?page=bluehost#/store/sales_discounts"
 				>
 					<Card className="wppbh-promotion-card nfd-card-mini nfd-py-4">
 						<Card.Content>

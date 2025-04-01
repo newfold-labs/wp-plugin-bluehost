@@ -78,7 +78,7 @@ const AppBody = ( props ) => {
 				} }
 			/>
 			<div className="wppbh-app-body">
-				<header className="nfd-pt-2 nfd-px-3 nfd-mb-6 nfd-space-y-6">
+				<header className="nfd-mb-6">
 					<Logo />
 				</header>
 				<div className="wppbh-app-body-inner">

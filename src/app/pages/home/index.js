@@ -22,7 +22,9 @@ const Home = () => {
 					) }
 				</p>
 			</div>
-			<WelcomeSection />
+			<Container>
+				<WelcomeSection />
+			</Container>
 			<Container>
 				<Container.Block>
 					<div className="nfd-grid nfd-gap-6 nfd-grid-cols-1 min-[540px]:nfd-grid-cols-2 min-[960px]:nfd-grid-cols-3">

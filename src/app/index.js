@@ -16,7 +16,7 @@ import { kebabCase, filter } from 'lodash';
 import { useHandlePageLoad } from './util/hooks';
 import { Root } from '@newfold/ui-component-library';
 import { NotificationFeed } from './components/notifications';
-import { handleHelpLinksClick } from '../../util/helpers';
+import { handleHelpLinksClick } from './util/helpers';
 import Logo from './components/app-nav/logo';
 
 // component sourced from module

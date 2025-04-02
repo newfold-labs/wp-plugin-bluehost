@@ -1,7 +1,7 @@
 {
     "translation-revision-date": "2025-03-18T20:07:22+00:00",
     "generator": "WP-CLI\/2.11.0",
-    "source": "build\/4.1.3\/index.js",
+    "source": "build\/4.2.0\/index.js",
     "domain": "messages",
     "locale_data": {
         "messages": {
@@ -51,9 +51,6 @@
             ],
             "Error code:": [
                 "C\u00f3digo de error:"
-            ],
-            "Bluehost Account": [
-                "Cuenta Bluehost"
             ],
             "There's nothing here!": [
                 "\u00a1No hay nada aqu\u00ed!"
@@ -203,35 +200,8 @@
             "Hosting": [
                 "Alojamiento"
             ],
-            "Control Panel": [
-                "Panel de control"
-            ],
-            "Renewal Center": [
-                "Centro de renovaci\u00f3n"
-            ],
             "Products": [
                 "Productos"
-            ],
-            "Payment Methods": [
-                "M\u00e9todos de pago"
-            ],
-            "Billing": [
-                "Facturaci\u00f3n"
-            ],
-            "Mail": [
-                "Correo"
-            ],
-            "Mail & Office": [
-                "Correo y oficina"
-            ],
-            "Security": [
-                "Seguridad"
-            ],
-            "Profile": [
-                "Perfil"
-            ],
-            "Validation Token": [
-                "Token de validaci\u00f3n"
             ],
             "Explore our featured collection of tools and services.": [
                 "Explora nuestra colecci\u00f3n de herramientas y servicios."
@@ -263,26 +233,11 @@
             "Sorry, no current plugins and tools. Please, try again later.": [
                 "Lo siento, no hay plugins y herramientas actuales. Por favor, int\u00e9ntalo de nuevo m\u00e1s tarde."
             ],
-            "From DIY to full-service help.": [
-                "De \u201chazlo t\u00fa mismo\u201d a un servicio de asistencia completa."
-            ],
-            "Call or chat 24\/7 for support or let our experts build your site for you.": [
-                "Llama o chatea con nuestro equipo 24\/7 para obtener soporte o deja que nuestros expertos construyan tu sitio."
-            ],
-            "Get Help": [
-                "Obtener ayuda"
-            ],
-            "View Site": [
-                "Ver sitio"
-            ],
             "Secret page to manage admin features and settings.": [
                 "P\u00e1gina secreta para gestionar ajustes y funciones de administraci\u00f3n."
             ],
             "We are available 24\/7 to help answer questions and solve your problems.": [
                 "Estamos disponibles las 24 horas del d\u00eda para responder a tus preguntas y resolver tus problemas."
-            ],
-            "Need some help?": [
-                "\u00bfNecesitas ayuda?"
             ],
             "Showcase physical and digital goods, product variations, and custom configurations.": [
                 "Muestra art\u00edculos f\u00edsicos y digitales, variaciones de productos y configuraciones personalizadas."
@@ -919,6 +874,60 @@
             ],
             "Add a New Plugin": [
                 "A\u00f1adir un nuevo Plugin"
+            ],
+            "Hire our experts": [
+                ""
+            ],
+            "Get in touch with us, and we\u2019ll help you build the exact store you\u2019re dreaming of.": [
+                ""
+            ],
+            "Get Help & Resources": [
+                ""
+            ],
+            "Documentation and tutorials to help you get the most out of your solution.": [
+                ""
+            ],
+            "Pro Design Live": [
+                ""
+            ],
+            "We will help you build and grow your website and improve your skills in WordPress.": [
+                ""
+            ],
+            "Get Info": [
+                ""
+            ],
+            "Quick links": [
+                ""
+            ],
+            "Manage hosting": [
+                ""
+            ],
+            "Write a blog post": [
+                ""
+            ],
+            "Create a sale promotion": [
+                ""
+            ],
+            "Refer a friend to get $75": [
+                ""
+            ],
+            "Unlock exclusive benefits with our referral program!": [
+                ""
+            ],
+            "Start now": [
+                ""
+            ],
+            "Explore your Solution": [
+                ""
+            ],
+            "Discover all the features to grow your store, boost sales and loyalize your customers.": [
+                ""
+            ],
+            "Welcome to Bluehost": [
+                ""
+            ],
+            "We\u2019re very excited to get started with you!": [
+                ""
             ]
         }
     }

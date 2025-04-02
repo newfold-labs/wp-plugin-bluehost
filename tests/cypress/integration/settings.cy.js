@@ -13,7 +13,7 @@ describe( 'Settings Page', { testIsolation: true }, function () {
 	it( 'Is Accessible', () => {
 		cy.injectAxe();
 		cy.wait( 500 );
-		cy.checkA11y( '.wppbh-app-body' );
+		cy.a11y( '.wppbh-app-body' );
 	} );
 
 	it( 'Has All Settings Sections', () => {

@@ -7,6 +7,7 @@ import {
 	BuildingStorefrontIcon,
 	DocumentDuplicateIcon,
 	PuzzlePieceIcon,
+	ServerStackIcon,
 } from '@heroicons/react/24/outline';
 import { ReactComponent as HelpIcon } from '../components/icons/HelpIcon.svg';
 import { NewfoldRuntime } from '@newfold/wp-module-runtime';
@@ -17,11 +18,11 @@ import PagesAndPosts from '../pages/pages-and-posts';
 import Store from '../pages/ecommerce/page';
 import Marketplace from '../pages/marketplace';
 import Solutions from '../pages/solutions';
-import Performance from '../pages/performance';
 import Settings from '../pages/settings';
 import Staging from '../pages/staging';
 import Help from '../pages/help';
 import Admin from '../pages/admin';
+import Hosting from '../pages/hosting';
 
 const addPartialMatch = ( prefix, path ) =>
 	prefix === path ? `${ prefix }/*` : path;
@@ -68,11 +69,11 @@ export const AppRoutes = () => {
 
 const topRoutePaths = [
 	'/home',
+	'/hosting',
 	'/pages-and-posts',
 	'/store',
 	'/marketplace',
 	'/my_plugins_and_tools',
-	'/performance',
 	'/settings',
 	'/staging',
 ];
@@ -84,6 +85,13 @@ export const routes = [
 		title: __( 'Home', 'wp-plugin-bluehost' ),
 		Component: Home,
 		Icon: HomeIcon,
+		condition: true,
+	},
+	{
+		name: '/hosting',
+		title: __( 'Hosting', 'wp-plugin-bluehost' ),
+		Component: Hosting,
+		Icon: ServerStackIcon,
 		condition: true,
 	},
 	{
@@ -144,13 +152,6 @@ export const routes = [
 		Component: Solutions,
 		Icon: PuzzlePieceIcon,
 		condition: true,
-	},
-	{
-		name: '/performance',
-		title: __( 'Performance', 'wp-plugin-bluehost' ),
-		Component: Performance,
-		Icon: BoltIcon,
-		condition: await window.NewfoldFeatures.isEnabled( 'performance' ),
 	},
 	{
 		name: '/settings',

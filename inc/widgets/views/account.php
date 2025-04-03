@@ -95,7 +95,7 @@ $box_a_classes  = 'nfd-widget-account-box-a nfd-flex nfd-flex-col nfd-gap-1 nfd-
 					echo esc_url(
 						BluehostAccountWidget::add_utm_params(
 							BluehostAccountWidget::get_platform_path_url(
-								'home',
+								'email',
 								'app#/email-office'
 							)
 						)
@@ -118,7 +118,7 @@ $box_a_classes  = 'nfd-widget-account-box-a nfd-flex nfd-flex-col nfd-gap-1 nfd-
 				echo esc_url(
 					BluehostAccountWidget::add_utm_params(
 						BluehostAccountWidget::get_platform_path_url(
-							'hosting/list',
+							'security',
 							'app'
 						)
 					)

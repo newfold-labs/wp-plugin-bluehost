@@ -148,7 +148,7 @@ final class Admin {
 				$subpage['title'],
 				'manage_options',
 				$subpage['route'],
-				array_key_exists('callback', $subpage) ? $subpage['callback'] : array( __CLASS__, 'render' )
+				array_key_exists( 'callback', $subpage ) ? $subpage['callback'] : array( __CLASS__, 'render' )
 			);
 		}
 	}

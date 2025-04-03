@@ -35,7 +35,7 @@ final class Filters {
 			if ( ! isset( $args['headers'] ) || ! is_array( $args['headers'] ) ) {
 				$args['headers'] = array();
 			}
-			$args['headers']['X-WP-LOCALE'] = get_locale();
+			$args['headers']['X-WP-LOCALE']      = get_locale();
 			$args['headers']['X-HOST-PLUGIN-ID'] = $nfd_module_container->plugin()->id;
 		}
 

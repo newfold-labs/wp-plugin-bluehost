@@ -27,7 +27,7 @@ describe( 'Help Page', { testIsolation: true }, function () {
 
 	it( 'A11y and Cards Each Exist', () => {
 		cy.injectAxe();
-		cy.wait( 1000 );
+		cy.get( '.wppbh-app-help-page', { timeout: 2000 } ).should( 'exist' );
 		cy.a11y( '.wppbh-app-body' );
 
 		cy.get( '.card-help-phone' )

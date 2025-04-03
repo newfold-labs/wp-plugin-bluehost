@@ -1,26 +1,16 @@
 // <reference types="Cypress" />
-const webinarsFixture = require( '../fixtures/webinars.json' );
-const webinarsPastFixture = require( '../fixtures/webinars-past.json' );
-const webinarsInactiveFixture = require( '../fixtures/webinars-inactive.json' );
 
 describe( 'Home Page', { testIsolation: true }, function () {
-	let NewfoldRuntime;
-
 	beforeEach( () => {
 		cy.wpLogin();
 		cy.visit(
 			'/wp-admin/admin.php?page=' + Cypress.env( 'pluginId' ) + '#/home'
 		);
-		cy.window()
-			.its( 'NewfoldRuntime' )
-			.then( ( data ) => {
-				NewfoldRuntime = data;
-			} );
 	} );
 
 	it( 'Is Accessible', () => {
 		cy.injectAxe();
-		cy.wait( 1000 );
+		cy.get( '.wppbh-home', { timeout: 2000 } ).should( 'exist' );
 		cy.a11y( '.wppbh-app-body' );
 	} );
 
@@ -44,5 +34,4 @@ describe( 'Home Page', { testIsolation: true }, function () {
 			.scrollIntoView()
 			.should( 'be.visible' );
 	} );
-
 } );

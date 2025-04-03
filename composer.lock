@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "ca4a0956108e14740343d010b898300a",
+    "content-hash": "08d8f62b5ae6afcf7f98b39a69e595cb",
     "packages": [
         {
             "name": "doctrine/inflector",
@@ -1427,16 +1427,16 @@
         },
         {
             "name": "newfold-labs/wp-module-hosting",
-            "version": "1.0.3",
+            "version": "1.0.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/newfold-labs/wp-module-hosting.git",
-                "reference": "81c855b47af7b71ab1057a290e2ca3be841108a2"
+                "reference": "f7db8d4ca248a39995e6d02220f34d5faa06fcd6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/newfold-labs/wp-module-hosting/zipball/81c855b47af7b71ab1057a290e2ca3be841108a2",
-                "reference": "81c855b47af7b71ab1057a290e2ca3be841108a2",
+                "url": "https://api.github.com/repos/newfold-labs/wp-module-hosting/zipball/f7db8d4ca248a39995e6d02220f34d5faa06fcd6",
+                "reference": "f7db8d4ca248a39995e6d02220f34d5faa06fcd6",
                 "shasum": ""
             },
             "require": {
@@ -1497,10 +1497,10 @@
             ],
             "description": "A Newfold module that manages the Hosting panel on the plugin page and serves as middleware for interacting with hosting services.",
             "support": {
-                "source": "https://github.com/newfold-labs/wp-module-hosting/tree/1.0.3",
+                "source": "https://github.com/newfold-labs/wp-module-hosting/tree/1.0.4",
                 "issues": "https://github.com/newfold-labs/wp-module-hosting/issues"
             },
-            "time": "2025-03-26T12:38:22+00:00"
+            "time": "2025-04-03T07:24:49+00:00"
         },
         {
             "name": "newfold-labs/wp-module-install-checker",

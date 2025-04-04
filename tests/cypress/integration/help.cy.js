@@ -25,13 +25,11 @@ describe( 'Help Page', { testIsolation: true }, function () {
 		);
 	} );
 
-	it( 'Is Accessible', () => {
+	it( 'A11y and Cards Each Exist', () => {
 		cy.injectAxe();
-		cy.wait( 500 );
-		cy.checkA11y( '.wppbh-app-body' );
-	} );
+		cy.get( '.wppbh-app-help-page', { timeout: 2000 } ).should( 'exist' );
+		cy.a11y( '.wppbh-app-body' );
 
-	it( 'Cards Each Exist', () => {
 		cy.get( '.card-help-phone' )
 			.contains( 'h3', 'Phone' )
 			.scrollIntoView()

@@ -66,6 +66,8 @@ $box_a_classes  = 'nfd-widget-account-box-a nfd-flex nfd-flex-col nfd-gap-1 nfd-
 </style>
 <div class="nfd-root nfd-widget nfd-widget-account">
 	<ul class="nfd-grid nfd-grid-cols-4 max-[575px]:nfd-grid-cols-2 nfd-gap-3 nfd-h-full">
+
+	<?php // Profile Link ?>
 		<li class="<?php echo esc_attr( $box_li_classes ); ?>">
 			<a
 				class="<?php echo esc_attr( $box_a_classes ); ?>"
@@ -86,6 +88,8 @@ $box_a_classes  = 'nfd-widget-account-box-a nfd-flex nfd-flex-col nfd-gap-1 nfd-
 				<?php esc_html_e( 'Profile', 'wp-plugin-bluehost' ); ?>
 			</a>
 		</li>
+
+		<?php // Email Link ?>
 		<li class="<?php echo esc_attr( $box_li_classes ); ?>">
 			<a
 				class="<?php echo esc_attr( $box_a_classes ); ?>"
@@ -109,29 +113,33 @@ $box_a_classes  = 'nfd-widget-account-box-a nfd-flex nfd-flex-col nfd-gap-1 nfd-
 				<?php esc_html_e( 'Mail', 'wp-plugin-bluehost' ); ?>
 			</a>
 		</li>
+
+		<?php // Hosting Link ?>
 		<li class="<?php echo esc_attr( $box_li_classes ); ?>">
 			<a 
 				class="<?php echo esc_attr( $box_a_classes ); ?>"
-				data-cy="nfd-widget-account-link-security"
+				data-cy="nfd-widget-account-link-hosting"
 				href="
 				<?php
 				echo esc_url(
 					BluehostAccountWidget::add_utm_params(
 						BluehostAccountWidget::get_platform_path_url(
-							'security',
+							'hosting/list',
 							'app'
 						)
 					)
 				);
 				?>
 				"
-				id="nfd-widget-account-link-security"
+				id="nfd-widget-account-link-hosting"
 				target="_blank"
 			>
 				<?php echo wp_kses( $hosting_svg, KSES_ALLOWED_SVG_TAGS ); ?>
 				<?php esc_html_e( 'Hosting', 'wp-plugin-bluehost' ); ?>
 			</a>
 		</li>
+
+		<?php // Security Link ?>
 		<li class="<?php echo esc_attr( $box_li_classes ); ?>">
 			<a 
 				class="<?php echo esc_attr( $box_a_classes ); ?>"
@@ -141,7 +149,7 @@ $box_a_classes  = 'nfd-widget-account-box-a nfd-flex nfd-flex-col nfd-gap-1 nfd-
 					echo esc_url(
 						BluehostAccountWidget::add_utm_params(
 							BluehostAccountWidget::get_platform_path_url(
-								'account-center',
+								'security',
 								'account_center#security'
 							)
 						)
@@ -158,6 +166,8 @@ $box_a_classes  = 'nfd-widget-account-box-a nfd-flex nfd-flex-col nfd-gap-1 nfd-
 	</ul>
 	<p class="nfd-mt-4"><strong><?php esc_html_e( 'Quick Access', 'wp-plugin-bluehost' ); ?></strong></p>
 	<ul class="nfd-mt-4">
+
+		<?php // Billing Link ?>
 		<li>
 			<a
 				data-cy="nfd-widget-account-link-billing"
@@ -178,6 +188,8 @@ $box_a_classes  = 'nfd-widget-account-box-a nfd-flex nfd-flex-col nfd-gap-1 nfd-
 				<?php esc_html_e( 'Payment Methods', 'wp-plugin-bluehost' ); ?>
 			</a>
 		</li>
+
+		<?php // Renewal Link ?>
 		<li>
 			<a
 				data-cy="nfd-widget-account-link-renewals"

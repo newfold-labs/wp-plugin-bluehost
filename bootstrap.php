@@ -30,7 +30,7 @@ if ( is_readable( __DIR__ . '/vendor/autoload.php' ) ) {
 /*
  * Initialize module settings via container
  */
-$bluehost_module_container = new Container();
+$nfd_module_container = new Container();
 
 // Context setup
 add_action(
@@ -42,9 +42,9 @@ add_action(
 );
 
 // Set plugin to container
-$bluehost_module_container->set(
+$nfd_module_container->set(
 	'plugin',
-	$bluehost_module_container->service(
+	$nfd_module_container->service(
 		function () {
 			return new Plugin(
 				array(
@@ -62,7 +62,7 @@ $bluehost_module_container->set(
 add_action(
 	'plugins_loaded',
 	function () {
-		global $bluehost_module_container;
+		global $nfd_module_container;
 
 		// Performance default settings
 		$cache_types = array( 'browser', 'skip404' );
@@ -75,9 +75,9 @@ add_action(
 			$marketplace_brand = 'bluehost-cloud';
 		}
 
-		if ( $bluehost_module_container ) {
-			$bluehost_module_container->set( 'cache_types', $cache_types );
-			$bluehost_module_container->set( 'marketplace_brand', $marketplace_brand );
+		if ( $nfd_module_container ) {
+			$nfd_module_container->set( 'cache_types', $cache_types );
+			$nfd_module_container->set( 'marketplace_brand', $marketplace_brand );
 		}
 	}
 );
@@ -90,7 +90,7 @@ $migrate_link           = 'https://www.bluehost.com/blog/how-to-migrate-a-wordpr
 $hosting_link           = 'https://www.bluehost.com/hosting/shared';
 
 // Set coming soon values
-$bluehost_module_container->set(
+$nfd_module_container->set(
 	'comingsoon',
 	array(
 		'admin_app_url'              => admin_url( 'admin.php?page=bluehost#/home' ),
@@ -134,7 +134,7 @@ $bluehost_module_container->set(
 	)
 );
 
-setContainer( $bluehost_module_container );
+setContainer( $nfd_module_container );
 
 // Set up the updater endpoint and map values
 $updateurl     = 'https://hiive.cloud/workers/release-api/plugins/newfold-labs/wp-plugin-bluehost?slug=bluehost-wordpress-plugin&file=bluehost-wordpress-plugin.php'; // Custom API GET endpoint
@@ -204,3 +204,42 @@ if ( is_admin() ) {
 
 // Instantiate the Features singleton
 Features::getInstance();
+
+/**
+ * Handle activation tasks.
+ * TODO: Move this to the activation module
+ *
+ * @return void
+ */
+function on_activate() {
+	// clear transients
+	delete_transient( 'newfold_marketplace' );
+	delete_transient( 'newfold_notifications' );
+	delete_transient( 'newfold_solutions' );
+	delete_transient( 'nfd_site_capabilities' );
+	// Flush rewrite rules
+	flush_rewrite_rules();
+}
+
+/**
+ * Determine if the plugin was freshly activated.
+ *
+ * @return void
+ */
+function load_plugin() {
+	if ( is_admin() && BLUEHOST_PLUGIN_FILE === get_option( 'nfd_activated_fresh' ) ) {
+		delete_option( 'nfd_activated_fresh' );
+		on_activate();
+	}
+}
+
+// Check for plugin activation
+add_action( 'admin_init', __NAMESPACE__ . '\\load_plugin' );
+
+// Register activation hook to set the activation flag
+register_activation_hook(
+	BLUEHOST_PLUGIN_FILE,
+	function () {
+		add_option( 'nfd_activated_fresh', BLUEHOST_PLUGIN_FILE );
+	}
+);

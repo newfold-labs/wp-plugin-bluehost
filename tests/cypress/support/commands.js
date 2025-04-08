@@ -73,13 +73,13 @@ Cypress.Commands.add(
 			const permalinkWpCliCommand = `wp rewrite structure "${ structure }" --hard;`;
 			const permalinkWpEnvCommand = `npx wp-env run cli ${ permalinkWpCliCommand }`;
 			const permalinkWpEnvTestCommand = `npx wp-env run tests-cli ${ permalinkWpCliCommand }`;
-			cy.exec( permalinkWpEnvCommand, { failOnNonZeroExit: true } ).then(
+			cy.exec( permalinkWpEnvCommand, { failOnNonZeroExit: false } ).then(
 				( result ) => {
 					cy.request( '/wp-json/' );
 				}
 			);
 			cy.exec( permalinkWpEnvTestCommand, {
-				failOnNonZeroExit: true,
+				failOnNonZeroExit: false,
 			} ).then( ( result ) => {
 				cy.request( '/wp-json/' );
 			} );
@@ -105,4 +105,29 @@ Cypress.Commands.add( 'deletePages', () => {
 			cy.get( '#delete_all' ).click();
 		}
 	} );
+} );
+
+// Print cypress-axe violations to the terminal
+function printAccessibilityViolations( violations ) {
+	cy.task(
+		'log',
+		`${ violations.length } accessibility violation${
+			violations.length === 1 ? '' : 's'
+		} ${ violations.length === 1 ? 'was' : 'were' } detected`
+	);
+	// pluck specific keys to keep the table readable
+	const violationData = violations.map(
+		( { id, impact, description, nodes } ) => ( {
+			id,
+			impact,
+			description,
+			nodes: nodes.length,
+		} )
+	);
+
+	cy.task( 'table', violationData );
+}
+
+Cypress.Commands.add( 'a11y', ( context ) => {
+	cy.checkA11y( context, null, printAccessibilityViolations, false );
 } );

@@ -25,7 +25,7 @@ class BluehostHelpWidget {
 	 */
 	public function __construct() {
 		// Register the widget
-		\add_action( 'wp_dashboard_setup', array( __CLASS__, 'init' ) );
+		\add_action( 'wp_dashboard_setup', array( __CLASS__, 'init' ), 1 );
 	}
 	/**
 	 * Hook to wp_dashboard_setup to add the widget.
@@ -36,7 +36,11 @@ class BluehostHelpWidget {
 		\wp_add_dashboard_widget(
 			self::ID,
 			__( 'Need Some Help?', 'wp-plugin-bluehost' ),
-			array( __CLASS__, 'widget_render' )
+			array( __CLASS__, 'widget_render' ),
+			null,
+			null,
+			'side',
+			'high'
 		);
 
 		\add_action( 'admin_enqueue_scripts', array( __CLASS__, 'assets' ) );

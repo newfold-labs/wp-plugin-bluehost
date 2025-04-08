@@ -1,6 +1,5 @@
-import { Container, Page, Title } from '@newfold/ui-component-library';
+import { Container, Page } from '@newfold/ui-component-library';
 import WelcomeSection from './welcomeSection';
-// import NextSteps from './NextSteps';
 import SolutionCard from './SolutionCard';
 import ExpertCard from './ExpertCard';
 import HelpCard from './HelpCard';
@@ -11,17 +10,6 @@ import QuickLinksCard from './QuickLinksCard';
 const Home = () => {
 	return (
 		<Page className="wppbh-home">
-			<div className="nfd-page-header nfd-flex nfd-flex-col nfd-gap-y-4 nfd-mb-8">
-				<Title>
-					{ __( 'Welcome to Bluehost', 'wp-plugin-bluehost' ) }
-				</Title>
-				<p>
-					{ __(
-						'We’re very excited to get started with you!',
-						'wp-plugin-bluehost'
-					) }
-				</p>
-			</div>
 			<Container>
 				<WelcomeSection />
 			</Container>

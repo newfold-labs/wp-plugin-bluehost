@@ -449,3 +449,34 @@ body.toplevel_page_bluehost {
         }
     }
 }
+
+
+.wppbh-app-marketplace-page {
+    .nfd-marketplace-sidebar ul {
+        margin-left: 0 !important;
+    }
+
+    // TODO: generate these via tailwind config
+    // These styles should not be needed but tailwind doesn't seem to be adding these
+    .nfd-flex-col {
+        flex-direction: column !important;
+    }
+    @media (min-width: 768px) {
+        .md\:nfd-flex-row {
+            flex-direction: row !important;
+        }
+        .md\:nfd-grid-cols-2 {
+            grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+        }
+    }
+    @media (min-width: 1120px) {
+		.min-\[1120px\]\:nfd-grid-cols-2 {
+			grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+		}
+    }
+    @media (min-width: 1400px) {
+		.min-\[1400px\]\:nfd-grid-cols-3 {
+			grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+		}
+    }
+}

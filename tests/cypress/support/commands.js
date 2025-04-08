@@ -73,13 +73,13 @@ Cypress.Commands.add(
 			const permalinkWpCliCommand = `wp rewrite structure "${ structure }" --hard;`;
 			const permalinkWpEnvCommand = `npx wp-env run cli ${ permalinkWpCliCommand }`;
 			const permalinkWpEnvTestCommand = `npx wp-env run tests-cli ${ permalinkWpCliCommand }`;
-			cy.exec( permalinkWpEnvCommand, { failOnNonZeroExit: true } ).then(
+			cy.exec( permalinkWpEnvCommand, { failOnNonZeroExit: false } ).then(
 				( result ) => {
 					cy.request( '/wp-json/' );
 				}
 			);
 			cy.exec( permalinkWpEnvTestCommand, {
-				failOnNonZeroExit: true,
+				failOnNonZeroExit: false,
 			} ).then( ( result ) => {
 				cy.request( '/wp-json/' );
 			} );

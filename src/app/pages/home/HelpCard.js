@@ -2,9 +2,19 @@ import { Card, Title } from '@newfold/ui-component-library';
 import { ReactComponent as Icon } from 'App/images/card-icon-help-resources.svg';
 
 const HelpCard = ( {} ) => {
+	const toggleHelp = ( e ) => {
+		if (
+			typeof window?.newfoldEmbeddedHelp
+				?.toggleNFDLaunchedEmbeddedHelp === 'function'
+		) {
+			e.preventDefault();
+			window?.newfoldEmbeddedHelp?.toggleNFDLaunchedEmbeddedHelp();
+		}
+	};
 	return (
 		<a
 			href="#/help"
+			onClick={ toggleHelp }
 			className="nfd-no-underline nfd-card-link"
 			data-cy="help-card"
 		>

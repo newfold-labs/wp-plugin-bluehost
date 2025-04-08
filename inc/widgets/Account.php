@@ -26,7 +26,7 @@ class BluehostAccountWidget {
 	 */
 	public function __construct() {
 		// Register the widget
-		\add_action( 'wp_dashboard_setup', array( __CLASS__, 'init' ) );
+		\add_action( 'wp_dashboard_setup', array( __CLASS__, 'init' ), 1 );
 	}
 	/**
 	 * Hook to wp_dashboard_setup to add the widget.
@@ -37,7 +37,11 @@ class BluehostAccountWidget {
 		\wp_add_dashboard_widget(
 			self::ID,
 			'Bluehost Account',
-			array( __CLASS__, 'widget_render' )
+			array( __CLASS__, 'widget_render' ),
+			null,
+			null,
+			'column3',
+			'high'
 		);
 
 		\add_action( 'admin_enqueue_scripts', array( __CLASS__, 'assets' ) );

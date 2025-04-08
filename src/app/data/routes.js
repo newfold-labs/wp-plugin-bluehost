@@ -2,7 +2,6 @@ import {
 	HomeIcon,
 	ShoppingBagIcon,
 	WrenchScrewdriverIcon,
-	BoltIcon,
 	AdjustmentsHorizontalIcon,
 	BuildingStorefrontIcon,
 	DocumentDuplicateIcon,

@@ -18,7 +18,6 @@ import PagesAndPosts from '../pages/pages-and-posts';
 import Store from '../pages/ecommerce/page';
 import Marketplace from '../pages/marketplace';
 import Solutions from '../pages/solutions';
-import Performance from '../pages/performance';
 import Settings from '../pages/settings';
 import Staging from '../pages/staging';
 import Help from '../pages/help';
@@ -75,7 +74,6 @@ const topRoutePaths = [
 	'/store',
 	'/marketplace',
 	'/my_plugins_and_tools',
-	'/performance',
 	'/settings',
 	'/staging',
 ];
@@ -154,13 +152,6 @@ export const routes = [
 		Component: Solutions,
 		Icon: PuzzlePieceIcon,
 		condition: true,
-	},
-	{
-		name: '/performance',
-		title: __( 'Performance', 'wp-plugin-bluehost' ),
-		Component: Performance,
-		Icon: BoltIcon,
-		condition: await window.NewfoldFeatures.isEnabled( 'performance' ),
 	},
 	{
 		name: '/settings',

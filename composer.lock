@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "0764c7c1e4c68aeafb523fdd71c7f5fc",
+    "content-hash": "4c644dffccebeb5696198c2ebcbb6686",
     "packages": [
         {
             "name": "doctrine/inflector",
@@ -1427,16 +1427,16 @@
         },
         {
             "name": "newfold-labs/wp-module-hosting",
-            "version": "1.0.4",
+            "version": "1.0.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/newfold-labs/wp-module-hosting.git",
-                "reference": "f7db8d4ca248a39995e6d02220f34d5faa06fcd6"
+                "reference": "b71cbbbe0a7bc56e95563d81f13d06722c6f7594"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/newfold-labs/wp-module-hosting/zipball/f7db8d4ca248a39995e6d02220f34d5faa06fcd6",
-                "reference": "f7db8d4ca248a39995e6d02220f34d5faa06fcd6",
+                "url": "https://api.github.com/repos/newfold-labs/wp-module-hosting/zipball/b71cbbbe0a7bc56e95563d81f13d06722c6f7594",
+                "reference": "b71cbbbe0a7bc56e95563d81f13d06722c6f7594",
                 "shasum": ""
             },
             "require": {
@@ -1497,10 +1497,10 @@
             ],
             "description": "A Newfold module that manages the Hosting panel on the plugin page and serves as middleware for interacting with hosting services.",
             "support": {
-                "source": "https://github.com/newfold-labs/wp-module-hosting/tree/1.0.4",
+                "source": "https://github.com/newfold-labs/wp-module-hosting/tree/1.0.6",
                 "issues": "https://github.com/newfold-labs/wp-module-hosting/issues"
             },
-            "time": "2025-04-03T07:24:49+00:00"
+            "time": "2025-04-08T14:37:00+00:00"
         },
         {
             "name": "newfold-labs/wp-module-install-checker",
@@ -5616,10 +5616,10 @@
     },
     "prefer-stable": false,
     "prefer-lowest": false,
-    "platform": {},
-    "platform-dev": {},
+    "platform": [],
+    "platform-dev": [],
     "platform-overrides": {
         "php": "7.3.0"
     },
-    "plugin-api-version": "2.6.0"
+    "plugin-api-version": "2.3.0"
 }

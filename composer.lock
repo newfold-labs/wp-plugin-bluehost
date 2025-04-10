@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "47f4b7a9d95a8d380f2b2724b53d9ac9",
+    "content-hash": "1cb181021a1d917b947b0f5f7ed76250",
     "packages": [
         {
             "name": "doctrine/inflector",
@@ -4139,12 +4139,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Roave/SecurityAdvisories.git",
-                "reference": "08698342c47ffe88a3aa2f8447dc972bd808edc7"
+                "reference": "27515dc524094e01d3cc1ce47c9218e6eb52d723"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Roave/SecurityAdvisories/zipball/08698342c47ffe88a3aa2f8447dc972bd808edc7",
-                "reference": "08698342c47ffe88a3aa2f8447dc972bd808edc7",
+                "url": "https://api.github.com/repos/Roave/SecurityAdvisories/zipball/27515dc524094e01d3cc1ce47c9218e6eb52d723",
+                "reference": "27515dc524094e01d3cc1ce47c9218e6eb52d723",
                 "shasum": ""
             },
             "conflict": {
@@ -4951,7 +4951,7 @@
                 "yidashi/yii2cmf": "<=2",
                 "yii2mod/yii2-cms": "<1.9.2",
                 "yiisoft/yii": "<1.1.29",
-                "yiisoft/yii2": "<2.0.49.4-dev",
+                "yiisoft/yii2": "<2.0.52",
                 "yiisoft/yii2-authclient": "<2.2.15",
                 "yiisoft/yii2-bootstrap": "<2.0.4",
                 "yiisoft/yii2-dev": "<=2.0.45",
@@ -5037,7 +5037,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2025-04-10T13:12:16+00:00"
+            "time": "2025-04-10T21:05:09+00:00"
         },
         {
             "name": "squizlabs/php_codesniffer",

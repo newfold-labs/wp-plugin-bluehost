@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "47f4b7a9d95a8d380f2b2724b53d9ac9",
+    "content-hash": "1a7ac7370f39b230e8e6974adde7b18b",
     "packages": [
         {
             "name": "doctrine/inflector",
@@ -1069,21 +1069,21 @@
         },
         {
             "name": "newfold-labs/wp-module-ecommerce",
-            "version": "1.7.1",
+            "version": "1.7.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/newfold-labs/wp-module-ecommerce.git",
-                "reference": "5f18372c9af49be50a4c8847834da9d674abae7f"
+                "reference": "0d47dd4bfb6e934e64eb676c5000da6aae809ece"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/newfold-labs/wp-module-ecommerce/zipball/5f18372c9af49be50a4c8847834da9d674abae7f",
-                "reference": "5f18372c9af49be50a4c8847834da9d674abae7f",
+                "url": "https://api.github.com/repos/newfold-labs/wp-module-ecommerce/zipball/0d47dd4bfb6e934e64eb676c5000da6aae809ece",
+                "reference": "0d47dd4bfb6e934e64eb676c5000da6aae809ece",
                 "shasum": ""
             },
             "require": {
                 "newfold-labs/wp-module-installer": "^1.4.3",
-                "newfold-labs/wp-module-onboarding-data": "^1.2.7"
+                "newfold-labs/wp-module-onboarding-data": "^1.2.8"
             },
             "require-dev": {
                 "newfold-labs/wp-php-standards": "@stable",
@@ -1139,10 +1139,10 @@
             ],
             "description": "Brand Agnostic eCommerce Experience",
             "support": {
-                "source": "https://github.com/newfold-labs/wp-module-ecommerce/tree/1.7.1",
+                "source": "https://github.com/newfold-labs/wp-module-ecommerce/tree/1.7.2",
                 "issues": "https://github.com/newfold-labs/wp-module-ecommerce/issues"
             },
-            "time": "2025-04-01T17:54:56+00:00"
+            "time": "2025-04-11T07:47:42+00:00"
         },
         {
             "name": "newfold-labs/wp-module-facebook",
@@ -1874,23 +1874,23 @@
         },
         {
             "name": "newfold-labs/wp-module-onboarding",
-            "version": "2.6.5",
+            "version": "2.6.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/newfold-labs/wp-module-onboarding.git",
-                "reference": "a76045c36a96a021edcab9f0034d88f1f572f691"
+                "reference": "01129c83465a168eb9eb2fd66e090823b9d91578"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/newfold-labs/wp-module-onboarding/zipball/a76045c36a96a021edcab9f0034d88f1f572f691",
-                "reference": "a76045c36a96a021edcab9f0034d88f1f572f691",
+                "url": "https://api.github.com/repos/newfold-labs/wp-module-onboarding/zipball/01129c83465a168eb9eb2fd66e090823b9d91578",
+                "reference": "01129c83465a168eb9eb2fd66e090823b9d91578",
                 "shasum": ""
             },
             "require": {
                 "mustache/mustache": "^2.14.2",
                 "newfold-labs/wp-module-facebook": "^1.0.9",
                 "newfold-labs/wp-module-migration": "^1.0.12",
-                "newfold-labs/wp-module-onboarding-data": "^1.2.7",
+                "newfold-labs/wp-module-onboarding-data": "^1.2.8",
                 "newfold-labs/wp-module-patterns": "^2.6",
                 "wp-cli/wp-config-transformer": "^1.4.1",
                 "wp-forge/helpers": "^2.0"
@@ -1950,10 +1950,10 @@
             ],
             "description": "Next-generation WordPress Onboarding for WordPress sites at Newfold Digital.",
             "support": {
-                "source": "https://github.com/newfold-labs/wp-module-onboarding/tree/2.6.5",
+                "source": "https://github.com/newfold-labs/wp-module-onboarding/tree/2.6.6",
                 "issues": "https://github.com/newfold-labs/wp-module-onboarding/issues"
             },
-            "time": "2025-03-28T08:49:22+00:00"
+            "time": "2025-04-11T18:46:42+00:00"
         },
         {
             "name": "newfold-labs/wp-module-onboarding-data",
@@ -4139,12 +4139,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Roave/SecurityAdvisories.git",
-                "reference": "08698342c47ffe88a3aa2f8447dc972bd808edc7"
+                "reference": "0aed63042cf8f0e7801a3277d4b088dd04a982e7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Roave/SecurityAdvisories/zipball/08698342c47ffe88a3aa2f8447dc972bd808edc7",
-                "reference": "08698342c47ffe88a3aa2f8447dc972bd808edc7",
+                "url": "https://api.github.com/repos/Roave/SecurityAdvisories/zipball/0aed63042cf8f0e7801a3277d4b088dd04a982e7",
+                "reference": "0aed63042cf8f0e7801a3277d4b088dd04a982e7",
                 "shasum": ""
             },
             "conflict": {
@@ -4950,8 +4950,8 @@
                 "yetiforce/yetiforce-crm": "<6.5",
                 "yidashi/yii2cmf": "<=2",
                 "yii2mod/yii2-cms": "<1.9.2",
-                "yiisoft/yii": "<1.1.29",
-                "yiisoft/yii2": "<2.0.49.4-dev",
+                "yiisoft/yii": "<1.1.31",
+                "yiisoft/yii2": "<2.0.52",
                 "yiisoft/yii2-authclient": "<2.2.15",
                 "yiisoft/yii2-bootstrap": "<2.0.4",
                 "yiisoft/yii2-dev": "<=2.0.45",
@@ -5037,7 +5037,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2025-04-10T13:12:16+00:00"
+            "time": "2025-04-11T15:05:46+00:00"
         },
         {
             "name": "squizlabs/php_codesniffer",

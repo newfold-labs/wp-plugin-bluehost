@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "0764c7c1e4c68aeafb523fdd71c7f5fc",
+    "content-hash": "ac97ef011f0fe5b87b6da15d3429754f",
     "packages": [
         {
             "name": "doctrine/inflector",
@@ -1543,16 +1543,16 @@
         },
         {
             "name": "newfold-labs/wp-module-installer",
-            "version": "1.4.3",
+            "version": "1.4.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/newfold-labs/wp-module-installer.git",
-                "reference": "b2bc2da7271e098e4c45fd5c3f10fabf90dc1293"
+                "reference": "482ffb206f6ab3d3df900f88fa2c7a73919286f7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/newfold-labs/wp-module-installer/zipball/b2bc2da7271e098e4c45fd5c3f10fabf90dc1293",
-                "reference": "b2bc2da7271e098e4c45fd5c3f10fabf90dc1293",
+                "url": "https://api.github.com/repos/newfold-labs/wp-module-installer/zipball/482ffb206f6ab3d3df900f88fa2c7a73919286f7",
+                "reference": "482ffb206f6ab3d3df900f88fa2c7a73919286f7",
                 "shasum": ""
             },
             "require": {
@@ -1612,10 +1612,10 @@
             ],
             "description": "An installer for WordPress plugins and themes.",
             "support": {
-                "source": "https://github.com/newfold-labs/wp-module-installer/tree/1.4.3",
+                "source": "https://github.com/newfold-labs/wp-module-installer/tree/1.4.4",
                 "issues": "https://github.com/newfold-labs/wp-module-installer/issues"
             },
-            "time": "2025-03-28T11:29:08+00:00"
+            "time": "2025-04-10T02:55:00+00:00"
         },
         {
             "name": "newfold-labs/wp-module-loader",
@@ -5616,10 +5616,10 @@
     },
     "prefer-stable": false,
     "prefer-lowest": false,
-    "platform": {},
-    "platform-dev": {},
+    "platform": [],
+    "platform-dev": [],
     "platform-overrides": {
         "php": "7.3.0"
     },
-    "plugin-api-version": "2.6.0"
+    "plugin-api-version": "2.3.0"
 }

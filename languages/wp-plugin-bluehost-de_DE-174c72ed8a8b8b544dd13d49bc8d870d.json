@@ -1,7 +1,7 @@
 {
     "translation-revision-date": "2024-10-21 07:10-0000",
     "generator": "WP-CLI\/2.11.0",
-    "source": "build\/4.2.0\/index.js",
+    "source": "build\/4.3.0\/index.js",
     "domain": "messages",
     "locale_data": {
         "messages": {
@@ -24,9 +24,6 @@
             ],
             "My Plugins & Tools": [
                 "Meine Plugins & Tools"
-            ],
-            "Performance": [
-                "Leistung"
             ],
             "Settings": [
                 "Einstellungen"
@@ -169,9 +166,6 @@
             "Add New": [
                 "Neu"
             ],
-            "This is where you can manage cache settings for your website.": [
-                "Hier k\u00f6nnen Sie Cache-Einstellungen f\u00fcr Ihre Webseite verwalten."
-            ],
             "The Help Center provides guided, step-by-step assistance as you build your site.": [
                 "Das Hilfe-Center unterst\u00fctzt Sie Schritt f\u00fcr Schritt beim Aufbau Ihrer Website."
             ],
@@ -265,276 +259,6 @@
             ],
             "Visitors to your site will see all your publicly published pages.": [
                 "Besucher Ihrer Website werden alle \u00f6ffentlich ver\u00f6ffentlichten Seiten sehen."
-            ],
-            "No cache enabled.": [
-                "Kein Cache aktiviert."
-            ],
-            "Every page load is fresh.": [
-                "Jede Seite wird neu geladen."
-            ],
-            "Disabled": [
-                "Deaktiviert"
-            ],
-            "Not recommended.": [
-                "Nicht empfohlen."
-            ],
-            "Cache static assets like images and the appearance of your site for 1 hour.": [
-                "Cache-statische Assets wie Bilder und das Aussehen Ihrer Website f\u00fcr 1 Stunde."
-            ],
-            "Assets Only": [
-                "Nur Assets"
-            ],
-            "Cache enabled for assets only.": [
-                "Cache nur f\u00fcr Assets aktiviert."
-            ],
-            "Recommended for ecommerce and sites that update frequently or display info in real-time.": [
-                "Empfohlen f\u00fcr E-Commerce-und Sites, die regelm\u00e4\u00dfig aktualisieren oder Informationen in Echtzeit anzeigen."
-            ],
-            "Cache static assets for 24 hours and web pages for 2 hours.": [
-                "Statische Assets f\u00fcr 24 Stunden und Webseiten f\u00fcr 2 Stunden zwischenspeichern."
-            ],
-            "Assets & Web Pages": [
-                "Assets & Webseiten"
-            ],
-            "Cache enabled for assets and pages.": [
-                "Cache f\u00fcr Assets und Seiten aktiviert."
-            ],
-            "Recommended for blogs, educational sites, and sites that update at least weekly.": [
-                "Empfohlen f\u00fcr Blogs, Bildungs-Sites und Websites, die mindestens w\u00f6chentlich aktualisieren."
-            ],
-            "Cache static assets for 1 week and web pages for 8 hours.": [
-                "Statische Assets f\u00fcr 1 Woche und Webseiten f\u00fcr 8 Stunden zwischenspeichern."
-            ],
-            "Assets & Web Pages - Extended": [
-                "Assets & Webseiten - Erweitert"
-            ],
-            "Cache enabled for assets and pages (extended).": [
-                "Cache f\u00fcr Assets und Seiten aktiviert (erweitert)."
-            ],
-            "Recommended for sites that update a few times a month or less like porfolios or brochure sites.": [
-                "Empfohlen f\u00fcr Websites, die ein paar Mal im Monat oder weniger wie Porfolios oder Brosch\u00fcren Sites."
-            ],
-            "Boost speed and performance by storing a copy of your website content, files, and images online so the pages of your website load faster for your visitors.": [
-                "Beschleunigen Sie Geschwindigkeit und Leistung durch Speichern einer Kopie Ihrer Webseite, Dateien und Bilder online so dass die Seiten Ihrer Website schneller f\u00fcr Ihre Besucher geladen werden."
-            ],
-            "Cache setting saved": [
-                "Cache-Einstellung gespeichert"
-            ],
-            "Cache Level": [
-                "Cache-Level"
-            ],
-            "Clear All Cache Now": [
-                "Alle Cache jetzt l\u00f6schen"
-            ],
-            "We automatically clear your cache as you work (creating content, changing settings, installing plugins and more). But you can manually clear it here to be confident it's fresh.": [
-                "Wir l\u00f6schen Ihren Cache automatisch, w\u00e4hrend Sie arbeiten (Erstellen von Inhalten, \u00c4ndern von Einstellungen, Installation von Plugins und mehr). Aber Sie k\u00f6nnen es hier manuell l\u00f6schen, um sicher zu sein, dass es frisch ist."
-            ],
-            "Cache cleared": [
-                "Cache geleert"
-            ],
-            "Clear Cache": [
-                "Cache leeren"
-            ],
-            "Asks the browser to download and cache links on the page ahead of them being clicked on, so that when they are clicked they load almost instantly.": [
-                "Fordert den Browser auf, Links auf der vorderen Seite herunterzuladen und zu cachen so dass sie, wenn sie angeklickt werden, fast sofort geladen werden."
-            ],
-            "Link prefetching setting saved": [
-                "Link-Vorab-Einstellung gespeichert"
-            ],
-            "Link Prefetch": [
-                "Link-Prefetch"
-            ],
-            "Enable link prefetching on desktop": [
-                "Link Prefetching auf dem Desktop aktivieren"
-            ],
-            "Activate on desktop": [
-                "Auf Desktop aktivieren"
-            ],
-            "Behavior of the prefetch": [
-                "Verhalten des Vorabholvorgangs"
-            ],
-            "Behavior": [
-                "Verhalten"
-            ],
-            "Prefetch on Mouse Down": [
-                "Vorabladen bei Maus runter"
-            ],
-            "Prefetch on Mouse Down: Starts loading the page as soon as you click down, for faster response when you release the click.": [
-                "Prefetch on Maus-Down: Startet das Laden der Seite, sobald Sie nach unten klicken, um schnellere Antworten zu erhalten, wenn Sie den Klick freigeben."
-            ],
-            "Prefetch on Mouse Hover (Recommended)": [
-                "Vorabladen beim Maus-Hover (empfohlen)"
-            ],
-            "Prefetch on Mouse Hover: Begins loading the page the moment your cursor hovers over a link": [
-                "Im Maus-Hover vorabladen: Beginnt das Laden der Seite, sobald der Cursor \u00fcber einen Link schwebt"
-            ],
-            "Enable link prefetching on mobile": [
-                "Link-Prefetching auf dem Handy aktivieren"
-            ],
-            "Activate on mobile": [
-                "Auf dem Handy aktivieren"
-            ],
-            "Prefetch on Touchstart (Recommended)": [
-                "Bei Touchstart vorab laden (empfohlen)"
-            ],
-            "Prefetch on Touchstart: Instantly starts loading the page as soon as you tap the screen, ensuring a quicker response when you lift your finger.": [
-                "Beim Touchstart vorabladen: Laden Sie die Seite sofort, sobald Sie auf den Bildschirm tippen, um eine schnellere Reaktion zu gew\u00e4hrleisten, wenn Sie den Finger heben."
-            ],
-            "Prefetch Above the Fold": [
-                "Vorabladen \u00fcber dem Fold"
-            ],
-            "Prefetch Above the Fold: Loads links in your current view instantly, ensuring they're ready when you need them.": [
-                "\u00dcber dem Ordner ausw\u00e4hlen: L\u00e4dt Links in der aktuellen Ansicht sofort und stellt sicher, dass sie bereit sind, wenn Sie sie ben\u00f6tigen."
-            ],
-            "Exclude Keywords: A comma separated list of words or strings that will exclude a link from being prefetched. For example, excluding \"app\" will prevent https:\/\/example.com\/apple from being prefetched.": [
-                "Stichw\u00f6rter ausklammern: Eine kommaseparierte Liste von W\u00f6rtern oder Zeichenketten, die einen Link vom Vorabladen ausschlie\u00dfen. Durch das Ausschlie\u00dfen von \"app\" wird zum Beispiel verhindert, dass https:\/\/example.com\/apple vorgeladen wird."
-            ],
-            "Exclude keywords": [
-                "Stichw\u00f6rter ausschlie\u00dfen"
-            ],
-            "Advanced settings": [
-                "Erweiterte Einstellungen"
-            ],
-            "Additional speed and scalability features powered by Jetpack Boost to make your site as fast as it can be.": [
-                "Zus\u00e4tzliche Geschwindigkeits- und Skalierbarkeitsfunktionen mit Jetpack Boost, um Ihre Seite so schnell wie m\u00f6glich zu machen."
-            ],
-            "Optimize Critical CSS Loading (manual)": [
-                "Kritisches CSS-Laden optimieren (manuell)"
-            ],
-            "Move important styling information to the start of the page, which helps pages display your content sooner, so your users don\u2019t have to wait for the entire page to load.": [
-                "Verschieben Sie wichtige Styling-Informationen an den Anfang der Seite, was den Seiten hilft, Ihre Inhalte schneller anzuzeigen, damit Ihre Benutzer nicht warten m\u00fcssen, bis die gesamte Seite geladen wird."
-            ],
-            "Optimize Critical CSS Loading (UPGRADED)": [
-                "Kritisches CSS-Laden optimieren (UPGRADED)"
-            ],
-            "Generate Critical CSS Automatically": [
-                "Kritisches CSS automatisch generieren"
-            ],
-            "Move important styling information to the start of the page, which helps pages display your content sooner, so your users don\u2019t have to wait for the entire page to load.%1$s %2$sBoost will automatically generate your Critical CSS%3$s whenever you make changes to the HTML or CSS structure of your site.": [
-                "Verschieben Sie wichtige Styling-Informationen an den Anfang der Seite, was den Seiten hilft, Ihre Inhalte schneller anzuzeigen, damit Ihre Benutzer nicht warten m\u00fcssen, bis die gesamte Seite geladen wird.%1$s %2$sBoost generiert automatisch Ihre kritische CSS%3$s , wenn Sie \u00c4nderungen an der HTML- oder CSS-Struktur Ihrer Website vornehmen."
-            ],
-            "Defer Non-Essential JavaScript": [
-                "Verweilen Sie JavaScript"
-            ],
-            "Run non-essential JavaScript after the page has loaded so that styles and images can load more quickly.": [
-                "F\u00fchre JavaScript aus, nachdem die Seite geladen wurde, so dass Stile und Bilder schneller laden k\u00f6nnen."
-            ],
-            "Concatenate JS": [
-                "JS zusammenfassen"
-            ],
-            "Scripts are grouped by their original placement, concatenated and minified to reduce site loading time and reduce the number of requests.": [
-                "Skripte werden nach der urspr\u00fcnglichen Platzierung gruppiert, verkettet und verkleinert, um die Ladezeit der Site zu reduzieren und die Anzahl der Anfragen zu reduzieren."
-            ],
-            "Exclude JS Strings": [
-                "JS-Zeichenketten ausschlie\u00dfen"
-            ],
-            "Concatenate CSS": [
-                "Concatenate CSS"
-            ],
-            "Styles are grouped by their original placement, concatenated and minified to reduce site loading time and reduce the number of requests.": [
-                "Die Stile werden nach der urspr\u00fcnglichen Platzierung gruppiert, verkettet und verkleinert, um die Ladezeit der Site zu reduzieren und die Anzahl der Anfragen zu reduzieren."
-            ],
-            "Exclude CSS Strings": [
-                "CSS-Zeichenketten ausschlie\u00dfen"
-            ],
-            "Show more": [
-                "Mehr anzeigen"
-            ],
-            "Show less": [
-                "Weniger anzeigen"
-            ],
-            "Discover More": [
-                "Mehr entdecken"
-            ],
-            "Install Jetpack Boost to unlock": [
-                "Jetpack Boost zum Entsperren installieren"
-            ],
-            "Installing Jetpack Boost\u2026": [
-                "Installing Jetpack Boost\u2026"
-            ],
-            "Jetpack Boost is now active": [
-                "Jetpack Boost ist jetzt aktiv"
-            ],
-            "Activation failed": [
-                "Aktivierung fehlgeschlagen"
-            ],
-            "Discover more %1$shere%2$s": [
-                "Entdecke mehr %1$shier%2$s"
-            ],
-            "Option saved correctly": [
-                "Option korrekt gespeichert"
-            ],
-            "Error saving option": [
-                "Fehler beim Speichern der Option"
-            ],
-            "Image Optimization": [
-                "Bildoptimierung"
-            ],
-            "We automatically optimize your uploaded images to WebP format for faster performance and reduced file sizes. You can also choose to delete the original images to save storage space.": [
-                "Wir optimieren automatisch Ihre hochgeladenen Bilder im WebP-Format f\u00fcr schnellere Leistung und reduzierte Dateigr\u00f6\u00dfen. Sie k\u00f6nnen auch die urspr\u00fcnglichen Bilder l\u00f6schen, um Speicherplatz zu sparen."
-            ],
-            "Enable Image Optimization": [
-                "Bildoptimierung aktivieren"
-            ],
-            "Enable or disable image optimization globally.": [
-                "Bildoptimierung global aktivieren oder deaktivieren."
-            ],
-            "Automatically Optimize Uploaded Images": [
-                "Hochgeladene Bilder automatisch optimieren"
-            ],
-            "When enabled, all your new image uploads will be automatically optimized to WebP format, ensuring faster page loading and reduced file sizes.": [
-                "Wenn aktiviert, werden alle Ihre neuen Bild-Uploads automatisch auf das WebP-Format optimiert, wodurch das Laden der Seiten und die Dateigr\u00f6\u00dfen verk\u00fcrzt werden."
-            ],
-            "Auto Delete Original Image": [
-                "Originalbild automatisch l\u00f6schen"
-            ],
-            "When enabled, the original uploaded image is deleted and replaced with the optimized version, helping to save storage space. If disabled, the optimized image is saved as a separate file, retaining the original.": [
-                "Wenn aktiviert, wird das Original hochgeladene Bild gel\u00f6scht und durch die optimierte Version ersetzt, wodurch Speicherplatz eingespart werden kann. Wenn deaktiviert, wird das optimierte Bild als separate Datei gespeichert und das Original beibehalten."
-            ],
-            "No settings available.": [
-                "Keine Einstellungen verf\u00fcgbar."
-            ],
-            "Loading settings\u2026": [
-                "Lade Einstellungen\u2026"
-            ],
-            "Settings updated successfully": [
-                "Einstellungen erfolgreich aktualisiert"
-            ],
-            "Your image optimization settings have been saved.": [
-                "Ihre Bildoptimierungseinstellungen wurden gespeichert."
-            ],
-            "Enable Lazy Loading": [
-                "Lazy laden aktivieren"
-            ],
-            "Lazy loading defers the loading of images until they are visible on the screen, improving page load speed and performance.": [
-                "Lazy Laden verringert das Laden von Bildern, bis sie auf dem Bildschirm sichtbar sind, wodurch die Ladegeschwindigkeit und Leistung der Seite verbessert werden."
-            ],
-            "Lazy loading has been updated.": [
-                "Lazy Laden wurde aktualisiert."
-            ],
-            "Oops! There was an error updating the lazy loading settings.": [
-                "Hoppla! Beim Aktualisieren der Ladeeinstellungen ist ein Fehler aufgetreten."
-            ],
-            "Enable Bulk Optimization of Images": [
-                "Massenoptimierung von Bildern aktivieren"
-            ],
-            "When enabled, allows bulk optimization of images in the media library.": [
-                "Wenn aktiviert, erlaubt die Massenoptimierung von Bildern in der Medienbibliothek."
-            ],
-            "Go to Media Library": [
-                "Zur Medienbibliothek"
-            ],
-            "Error Updating Settings": [
-                "Fehler beim Aktualisieren der Einstellungen"
-            ],
-            "Prefer Optimized Image When Exists": [
-                "Optimiertes Bild bevorzugen, wenn vorhanden"
-            ],
-            "When enabled, optimized images will be served in place of original images when they exist, improving performance.": [
-                "Wenn aktiviert, werden optimierte Bilder anstelle von Originalbildern geliefert, wenn sie vorhanden sind, was die Leistung verbessert."
-            ],
-            "Something went wrong while updating the settings. Please try again.": [
-                "Beim Aktualisieren der Einstellungen ist etwas schief gelaufen. Bitte versuchen Sie es erneut."
             ],
             "Enabled All auto-updates": [
                 "Alle Auto-Updates aktiviert"
@@ -908,9 +632,6 @@
             "Create a sale promotion": [
                 ""
             ],
-            "Refer a friend to get $75": [
-                ""
-            ],
             "Unlock exclusive benefits with our referral program!": [
                 ""
             ],
@@ -923,10 +644,7 @@
             "Discover all the features to grow your store, boost sales and loyalize your customers.": [
                 ""
             ],
-            "Welcome to Bluehost": [
-                ""
-            ],
-            "We\u2019re very excited to get started with you!": [
+            "Refer a friend and earn money": [
                 ""
             ]
         }

@@ -18,7 +18,6 @@ import Store from '../pages/ecommerce/page';
 import Marketplace from '../pages/marketplace';
 import Solutions from '../pages/solutions';
 import Settings from '../pages/settings';
-import Staging from '../pages/staging';
 import Help from '../pages/help';
 import Admin from '../pages/admin';
 import Hosting from '../pages/hosting';

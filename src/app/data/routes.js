@@ -6,7 +6,6 @@ import {
 	BuildingStorefrontIcon,
 	DocumentDuplicateIcon,
 	PuzzlePieceIcon,
-	ServerStackIcon,
 } from '@heroicons/react/24/outline';
 import { ReactComponent as HelpIcon } from '../components/icons/HelpIcon.svg';
 import { NewfoldRuntime } from '@newfold/wp-module-runtime';

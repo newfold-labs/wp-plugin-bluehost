@@ -21,7 +21,6 @@ import Settings from '../pages/settings';
 import Staging from '../pages/staging';
 import Help from '../pages/help';
 import Admin from '../pages/admin';
-import Hosting from '../pages/hosting';
 
 const addPartialMatch = ( prefix, path ) =>
 	prefix === path ? `${ prefix }/*` : path;
@@ -68,7 +67,6 @@ export const AppRoutes = () => {
 
 const topRoutePaths = [
 	'/home',
-	'/hosting',
 	'/pages-and-posts',
 	'/store',
 	'/marketplace',
@@ -84,13 +82,6 @@ export const routes = [
 		title: __( 'Home', 'wp-plugin-bluehost' ),
 		Component: Home,
 		Icon: HomeIcon,
-		condition: true,
-	},
-	{
-		name: '/hosting',
-		title: __( 'Hosting', 'wp-plugin-bluehost' ),
-		Component: Hosting,
-		Icon: ServerStackIcon,
 		condition: true,
 	},
 	{

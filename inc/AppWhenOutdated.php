@@ -4,7 +4,9 @@
  *
  * @package WPPluginBluehost
  */
+
 namespace Bluehost;
+
 ?>
 <div id="wppbh-app-x" class="wppbh wppbh_app">
 	<div class="nfd-root">

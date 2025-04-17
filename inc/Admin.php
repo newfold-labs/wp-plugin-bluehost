@@ -160,8 +160,8 @@ final class Admin {
 	 */
 	public static function render() {
 		global $wp_version;
-		if( ! function_exists( 'get_plugin_data' ) ){
-			require_once( ABSPATH . 'wp-admin/includes/plugin.php' );
+		if ( ! function_exists( 'get_plugin_data' ) ) {
+			require_once ABSPATH . 'wp-admin/includes/plugin.php';
 		}
 		$plugin_data = get_plugin_data( BLUEHOST_PLUGIN_FILE );
 

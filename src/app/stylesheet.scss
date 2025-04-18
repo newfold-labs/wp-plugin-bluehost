@@ -315,9 +315,14 @@ body.toplevel_page_bluehost {
         p {
             color: var(--color-text);
         }
-        svg path {
+        svg:not(.nfd-bg-img) path {
+            stroke-width: 1.5;
             stroke: var(--color-text);
             transition: all 0.5s ease;
+        }
+
+        svg.nfd-bg-img path {
+            stroke-width: .3;
         }
 
         &:hover .nfd-card:not(.nfd-card-has-bg) {

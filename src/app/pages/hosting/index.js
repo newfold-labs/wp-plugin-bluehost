@@ -31,8 +31,11 @@ const HostingPage = () => {
 	};
 
 	return (
-		<Page title="Hosting" className="wppbh-app-settings-page">
-			<Container className="wppbh-app-settings-container">
+		<Page
+			title="Hosting"
+			className="wppbh-app-settings-page nfd-border-0 nfd-shadow-none"
+		>
+			<Container className="wppbh-app-settings-container nfd-bg-transparent nfd-shadow-none">
 				<NewfoldHosting
 					constants={ moduleConstants }
 					methods={ moduleMethods }

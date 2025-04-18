@@ -21,7 +21,7 @@ const QuickLinksCard = ( {} ) => {
 										'wp-plugin-bluehost'
 									) }
 								</p>
-								<Arrow className="nfd-arrow nfd-max-w-8" />
+								<Arrow className="nfd-arrow nfd-max-w-6" />
 							</div>
 						</Card.Content>
 					</Card>
@@ -39,7 +39,7 @@ const QuickLinksCard = ( {} ) => {
 										'wp-plugin-bluehost'
 									) }
 								</p>
-								<Arrow className="nfd-arrow nfd-max-w-8" />
+								<Arrow className="nfd-arrow nfd-max-w-6" />
 							</div>
 						</Card.Content>
 					</Card>
@@ -57,7 +57,7 @@ const QuickLinksCard = ( {} ) => {
 										'wp-plugin-bluehost'
 									) }
 								</p>
-								<Arrow className="nfd-arrow nfd-max-w-8" />
+								<Arrow className="nfd-arrow nfd-max-w-6" />
 							</div>
 						</Card.Content>
 					</Card>

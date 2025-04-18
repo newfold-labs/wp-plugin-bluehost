@@ -7,6 +7,8 @@
 
 namespace Bluehost;
 
+global $wp_version;
+$plugin_data = get_plugin_data( BLUEHOST_PLUGIN_FILE );
 ?>
 <div id="wppbh-app-x" class="wppbh wppbh_app">
 	<div class="nfd-root">
@@ -31,15 +33,19 @@ namespace Bluehost;
 								</div>
 								<div class="nfd-app-section-content">
 									<div class="nfd-pb-8">
-										<p class="nfd-pb-4">There are new WordPress components which this plugin requires in order to render the interface. Consider enabling automatic updates.</p>
-										<p class="nfd-pb-2">This plugin supports the latest 3 major versions of WordPress. Please, <a href="update-core.php">update</a> to a newer version of WordPress to continue.</p>
+										<p class="nfd-pb-4">There are new WordPress components which this plugin requires in order to render the interface.</p>
+										<p class="nfd-pb-4">Your current version is outdated. Please, <a href="update-core.php">update</a> to a newer version of WordPress to continue.</p>
+										<ul>
+											<li>Your current WordPress version: <strong style="color: var(--color-error);"><?php echo esc_html( $wp_version ); ?></strong></li>
+											<li>Minimum required WordPress version: <strong style="color: var(--color-success);"><?php echo esc_html( $plugin_data['RequiresWP'] ); ?></strong></li>
+										</ul>
 									</div>
 									<div class="nfd-px-4 nfd-py-2 nfd-rounded-lg nfd-bg-canvas nfd-flex nfd-flex-row nfd-justify-between nfd-items-center nfd-gap-4 nfd-border">
 										<div class="nfd-flex-1">
-											<h1 class="nfd-title nfd-title--4 nfd-leading-normal">Update WordPress</h1>
+										<span class="nfd-alert__message"><span class="dashicons dashicons-info-outline"></span> Consider enabling auto-updates to stay up to date.</span>
 										</div>
 										<div class="nfd-flex-none nfd-gap-4 nfd-flex nfd-flex-col">
-											<a class="nfd-button nfd-button--primary nfd-flex nfd-gap-2 nfd-items-center" href="update-core.php">Update Now</a>
+											<a class="nfd-button nfd-button--primary nfd-flex nfd-gap-2 nfd-items-center" href="<?php echo esc_url( admin_url( 'update-core.php' ) ); ?>">Update Now <span class="dashicons dashicons-update"></span></a>
 										</div>
 									</div>
 								</div>

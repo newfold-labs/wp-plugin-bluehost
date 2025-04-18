@@ -15,8 +15,8 @@ describe( 'Home Page', { testIsolation: true }, function () {
 	} );
 
 	it( 'Welcome Section Exists', () => {
-		cy.get( '.nfd-app-section-container' )
-			.contains( 'h2', 'Home' )
+		cy.get( '#nfd-app-section-home' )
+			.contains( 'h1', 'Ready to go to the next level?' )
 			.scrollIntoView()
 			.should( 'be.visible' );
 	} );

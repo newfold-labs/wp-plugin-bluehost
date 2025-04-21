@@ -41,7 +41,7 @@ $plugin_data = get_plugin_data( BLUEHOST_PLUGIN_FILE );
 											<p class="nfd-pb-4"><?php echo __( 'There are new WordPress components which this plugin requires in order to render the interface.', 'wp-plugin-bluehost' ); ?></p>
 											<p class="nfd-pb-4">
 												<?php echo __( 'Your current version is outdated.', 'wp-plugin-bluehost' ); ?>
-												<?php echo __( 'Please update to a newer version of WordPress.', 'wp-plugin-bluehost' ); ?>
+												<?php echo __( 'Please update to a newer WordPress version.', 'wp-plugin-bluehost' ); ?>
 											</p>
 											<ul>
 												<li>

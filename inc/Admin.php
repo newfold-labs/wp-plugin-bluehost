@@ -160,22 +160,21 @@ final class Admin {
 	 */
 	public static function render() {
 		global $wp_version;
+		if ( ! function_exists( 'get_plugin_data' ) ) {
+			require_once ABSPATH . 'wp-admin/includes/plugin.php';
+		}
+		$plugin_data = get_plugin_data( BLUEHOST_PLUGIN_FILE );
 
 		echo '<!-- Bluehost -->' . PHP_EOL;
 
-		if ( version_compare( $wp_version, '5.4', '>=' ) ) {
+		if ( version_compare( $wp_version, $plugin_data['RequiresWP'], '>=' ) ) {
 			echo '<div id="wppbh-app" class="wppbh wppbh_app"></div>' . PHP_EOL;
 		} else {
-			// fallback messaging for WordPress older than 5.4
-			echo '<div id="wppbh-app" class="wppbh wppbh_app">' . PHP_EOL;
-			echo '<header class="wppbh-header" style="min-height: 90px; padding: 1rem; margin-bottom: 1.5rem;"><div class="wppbh-header-inner"><div class="wppbh-logo-wrap">' . PHP_EOL;
-			echo '<img src="' . esc_url( BLUEHOST_PLUGIN_URL . 'assets/svg/bluehost-logo.svg' ) . '" alt="Bluehost logo" />' . PHP_EOL;
-			echo '</div></div></header>' . PHP_EOL;
-			echo '<div class="wrap">' . PHP_EOL;
-			echo '<div class="card" style="margin-left: 20px;"><h2 class="title">' . esc_html__( 'Please update to a newer WordPress version.', 'wp-plugin-bluehost' ) . '</h2>' . PHP_EOL;
-			echo '<p>' . esc_html__( 'There are new WordPress components which this plugin requires in order to render the interface.', 'wp-plugin-bluehost' ) . '</p>' . PHP_EOL;
-			echo '<p><a href="' . esc_url( admin_url( 'update-core.php' ) ) . '" class="button component-button is-primary button-primary" variant="primary">' . esc_html__( 'Please update now', 'wp-plugin-bluehost' ) . '</a></p>' . PHP_EOL;
-			echo '</div></div></div>' . PHP_EOL;
+			// fallback messaging for outdated WordPress
+			$appWhenOutdated = BLUEHOST_PLUGIN_DIR . '/inc/AppWhenOutdated.php';
+			if ( file_exists( $appWhenOutdated ) ) {
+				include_once $appWhenOutdated;
+			}
 		}
 
 		echo '<!-- /Bluehost -->' . PHP_EOL;

@@ -15,6 +15,11 @@ describe( 'Home Page', { testIsolation: true }, function () {
 	} );
 
 	it( 'Home Page Section and Cards all exist', () => {
+		cy.get( '.wppbh-app-body' )
+			.contains( 'h1', 'Welcome to Bluehost' )
+			.scrollIntoView()
+			.should( 'be.visible' );
+
 		cy.get( '.nfd-app-section-container' )
 			.contains( 'h2', 'Home' )
 			.scrollIntoView()

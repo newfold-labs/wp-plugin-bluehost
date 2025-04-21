@@ -1,7 +1,7 @@
 {
     "translation-revision-date": "2025-02-25T20:53:21+00:00",
     "generator": "WP-CLI\/2.11.0",
-    "source": "build\/4.2.0\/index.js",
+    "source": "build\/4.3.1\/index.js",
     "domain": "messages",
     "locale_data": {
         "messages": {
@@ -24,9 +24,6 @@
             ],
             "My Plugins & Tools": [
                 "Mijn plug-ins & gereedschap"
-            ],
-            "Performance": [
-                "Prestaties"
             ],
             "Settings": [
                 "Instellingen"
@@ -169,9 +166,6 @@
             "Add New": [
                 "Nieuwe toevoegen"
             ],
-            "This is where you can manage cache settings for your website.": [
-                "Hier kun je de cache-instellingen voor je website beheren."
-            ],
             "The Help Center provides guided, step-by-step assistance as you build your site.": [
                 "Het Helpcentrum biedt geleidelijke, stap-voor-stap ondersteuning als u uw site bouwt."
             ],
@@ -265,276 +259,6 @@
             ],
             "Visitors to your site will see all your publicly published pages.": [
                 "Bezoekers op uw site zien al uw publiekelijk gepubliceerde pagina's."
-            ],
-            "No cache enabled.": [
-                "Geen cache ingeschakeld."
-            ],
-            "Every page load is fresh.": [
-                "Elke pagina lading is nieuw."
-            ],
-            "Disabled": [
-                "Uitgeschakeld"
-            ],
-            "Not recommended.": [
-                "Niet aanbevolen."
-            ],
-            "Cache static assets like images and the appearance of your site for 1 hour.": [
-                "Cache statische assets zoals afbeeldingen en het uiterlijk van je site gedurende 1 uur."
-            ],
-            "Assets Only": [
-                "Alleen content"
-            ],
-            "Cache enabled for assets only.": [
-                "Cache alleen voor assets ingeschakeld."
-            ],
-            "Recommended for ecommerce and sites that update frequently or display info in real-time.": [
-                "Aanbevolen voor webshop en sites die regelmatig bijwerken of informatie in real-time tonen."
-            ],
-            "Cache static assets for 24 hours and web pages for 2 hours.": [
-                "Cache statische activa voor 24 uur en webpagina's voor 2 uur."
-            ],
-            "Assets & Web Pages": [
-                "Activa & webpagina's"
-            ],
-            "Cache enabled for assets and pages.": [
-                "Cache is ingeschakeld voor assets en pagina's."
-            ],
-            "Recommended for blogs, educational sites, and sites that update at least weekly.": [
-                "Aanbevolen voor blogs, onderwijsagenten en sites die ten minste wekelijks bijwerken."
-            ],
-            "Cache static assets for 1 week and web pages for 8 hours.": [
-                "Cache statische assets voor 1 week en web pagina's voor 8 uur."
-            ],
-            "Assets & Web Pages - Extended": [
-                "Assets & webpagina's - Uitgebreid"
-            ],
-            "Cache enabled for assets and pages (extended).": [
-                "Cache geactiveerd voor assets en pagina's (uitgebreid)."
-            ],
-            "Recommended for sites that update a few times a month or less like porfolios or brochure sites.": [
-                "Aanbevolen voor sites die een paar keer per maand of minder zoals porfolio's of brochuresites bijwerken."
-            ],
-            "Boost speed and performance by storing a copy of your website content, files, and images online so the pages of your website load faster for your visitors.": [
-                "Boost snelheid en prestaties door een kopie op te slaan van de inhoud van uw website, bestanden, en afbeeldingen online zodat de pagina's van uw website sneller laden voor uw bezoekers."
-            ],
-            "Cache setting saved": [
-                "Cache-instellingen opgeslagen"
-            ],
-            "Cache Level": [
-                "Cache niveau"
-            ],
-            "Clear All Cache Now": [
-                "Wis alle cache nu"
-            ],
-            "We automatically clear your cache as you work (creating content, changing settings, installing plugins and more). But you can manually clear it here to be confident it's fresh.": [
-                "De cache wordt automatisch gewist terwijl je werkt (inhoud, wijzigen van instellingen, installeren van plug-ins en meer). Maar je kunt het hier handmatig verwijderen om er zeker van te zijn dat het vers is."
-            ],
-            "Cache cleared": [
-                "Cache gewist"
-            ],
-            "Clear Cache": [
-                "Cache legen"
-            ],
-            "Asks the browser to download and cache links on the page ahead of them being clicked on, so that when they are clicked they load almost instantly.": [
-                "Vraagt de browser om links te downloaden en te cachen op de pagina voordat er op wordt geklikt, zodat wanneer op ze wordt geklikt, ze bijna direct laden."
-            ],
-            "Link prefetching setting saved": [
-                "Link prefetching instelling opgeslagen"
-            ],
-            "Link Prefetch": [
-                "Koppeling Prefetch"
-            ],
-            "Enable link prefetching on desktop": [
-                "Schakel link prefetching in op desktop"
-            ],
-            "Activate on desktop": [
-                "Activeren op het bureaublad"
-            ],
-            "Behavior of the prefetch": [
-                "Gedrag van de prefetch"
-            ],
-            "Behavior": [
-                "Gedrag"
-            ],
-            "Prefetch on Mouse Down": [
-                "Prefetch op Muis Down"
-            ],
-            "Prefetch on Mouse Down: Starts loading the page as soon as you click down, for faster response when you release the click.": [
-                "Prefetch op Mouse Down: start met het laden van de pagina zodra je op beneden klikt, voor snellere reactie wanneer je de klik loslaten."
-            ],
-            "Prefetch on Mouse Hover (Recommended)": [
-                "Voorkeur op muis Hover (aanbevolen)"
-            ],
-            "Prefetch on Mouse Hover: Begins loading the page the moment your cursor hovers over a link": [
-                "Prefetch op Muis Hover: Begint de pagina op het moment dat je cursor over een link beweegt"
-            ],
-            "Enable link prefetching on mobile": [
-                "Schakel link prefetching in op mobiel"
-            ],
-            "Activate on mobile": [
-                "Activeren op mobiel"
-            ],
-            "Prefetch on Touchstart (Recommended)": [
-                "Prefetch bij Touchstart (aanbevolen)"
-            ],
-            "Prefetch on Touchstart: Instantly starts loading the page as soon as you tap the screen, ensuring a quicker response when you lift your finger.": [
-                "Prefetch bij Touchstart: direct begint met het laden van de pagina zodra je op het scherm tikt, wat zorgt voor een snellere reactie wanneer je je vinger optilt."
-            ],
-            "Prefetch Above the Fold": [
-                "Prefetch boven het vouw"
-            ],
-            "Prefetch Above the Fold: Loads links in your current view instantly, ensuring they're ready when you need them.": [
-                "Prefetch Boven de Mouw: Laad links in je huidige weergave en zorg ervoor dat ze klaar zijn wanneer je ze nodig hebt."
-            ],
-            "Exclude Keywords: A comma separated list of words or strings that will exclude a link from being prefetched. For example, excluding \"app\" will prevent https:\/\/example.com\/apple from being prefetched.": [
-                "Trefwoorden uitsluiten: een door komma's gescheiden lijst van woorden of tekenreeksen die een link van vooraf opgehaald zullen uitsluiten. Bijvoorbeeld, zonder \"app\" kan https:\/\/example.com\/apple niet van voren af worden gehaald."
-            ],
-            "Exclude keywords": [
-                "Trefwoorden uitsluiten"
-            ],
-            "Advanced settings": [
-                "Geavanceerde instellingen"
-            ],
-            "Additional speed and scalability features powered by Jetpack Boost to make your site as fast as it can be.": [
-                "Extra functies voor snelheid en schaalbaarheid aangedreven door Jetpack Boost om uw site zo snel mogelijk te maken."
-            ],
-            "Optimize Critical CSS Loading (manual)": [
-                "Optimaliseren van kritisch CSS laden (handmatig)"
-            ],
-            "Move important styling information to the start of the page, which helps pages display your content sooner, so your users don\u2019t have to wait for the entire page to load.": [
-                "Verplaats belangrijke opmaak informatie naar de start van de pagina, waarmee pagina's je inhoud eerder kunnen weergeven, dus hoeven je gebruikers niet te wachten tot de hele pagina geladen is."
-            ],
-            "Optimize Critical CSS Loading (UPGRADED)": [
-                "Optimaliseren van kritische CSS laden (UPGRADED)"
-            ],
-            "Generate Critical CSS Automatically": [
-                "Kritische CSS automatisch genereren"
-            ],
-            "Move important styling information to the start of the page, which helps pages display your content sooner, so your users don\u2019t have to wait for the entire page to load.%1$s %2$sBoost will automatically generate your Critical CSS%3$s whenever you make changes to the HTML or CSS structure of your site.": [
-                "Verplaats belangrijke opmaak informatie naar de start van de pagina, waarmee pagina's je inhoud eerder kunnen weergeven, dus hoeven je gebruikers niet te wachten tot de hele pagina geladen is.%1$s %2$sBoost zal automatisch je Kritische CSS%3$s genereren wanneer je wijzigingen aanbrengt in de HTML of CSS structuur van je site."
-            ],
-            "Defer Non-Essential JavaScript": [
-                "Uitstellen van niet-Essenti\u00eble JavaScript"
-            ],
-            "Run non-essential JavaScript after the page has loaded so that styles and images can load more quickly.": [
-                "Voer niet-essenti\u00eble JavaScript uit nadat de pagina is geladen, zodat stijlen en afbeeldingen sneller kunnen worden geladen."
-            ],
-            "Concatenate JS": [
-                "Samengevoegde JS"
-            ],
-            "Scripts are grouped by their original placement, concatenated and minified to reduce site loading time and reduce the number of requests.": [
-                "Scripts worden gegroepeerd op hun oorspronkelijke plaats, samengevoegd en geminiteerd om de laadtijd van de site te verminderen en het aantal verzoeken te verminderen."
-            ],
-            "Exclude JS Strings": [
-                "JS tekenreeksen uitsluiten"
-            ],
-            "Concatenate CSS": [
-                "Concatenate CSS"
-            ],
-            "Styles are grouped by their original placement, concatenated and minified to reduce site loading time and reduce the number of requests.": [
-                "Stijlen worden gegroepeerd op hun oorspronkelijke plaats, samengevoegd en geminificeerd om de laadtijd van de site te verminderen en het aantal verzoeken te verminderen."
-            ],
-            "Exclude CSS Strings": [
-                "CSS tekenreeksen uitsluiten"
-            ],
-            "Show more": [
-                "Toon meer"
-            ],
-            "Show less": [
-                "Minder weergeven"
-            ],
-            "Discover More": [
-                "Ontdek meer"
-            ],
-            "Install Jetpack Boost to unlock": [
-                "Installeer Jetpack Boost om te ontgrendelen"
-            ],
-            "Installing Jetpack Boost\u2026": [
-                "Installing Jetpack Boost\u2026"
-            ],
-            "Jetpack Boost is now active": [
-                "Jetpack Boost is nu actief"
-            ],
-            "Activation failed": [
-                "Activeren mislukt"
-            ],
-            "Discover more %1$shere%2$s": [
-                "Ontdek meer %1$shier%2$s"
-            ],
-            "Option saved correctly": [
-                "Optie correct opgeslagen"
-            ],
-            "Error saving option": [
-                "Fout bij opslaan optie"
-            ],
-            "Image Optimization": [
-                "Afbeelding optimalisatie"
-            ],
-            "We automatically optimize your uploaded images to WebP format for faster performance and reduced file sizes. You can also choose to delete the original images to save storage space.": [
-                "We optimaliseren automatisch uw ge\u00fcploade afbeeldingen naar WebP-formaat voor snellere prestaties en verminderde bestandsgrootte. U kunt ook kiezen om de originele afbeeldingen te verwijderen om ruimte te besparen."
-            ],
-            "Enable Image Optimization": [
-                "Optimalisatie afbeelding inschakelen"
-            ],
-            "Enable or disable image optimization globally.": [
-                "Afbeeldingsoptimalisatie globaal in- of uitschakelen."
-            ],
-            "Automatically Optimize Uploaded Images": [
-                "Ge\u00fcploade afbeeldingen automatisch optimaliseren"
-            ],
-            "When enabled, all your new image uploads will be automatically optimized to WebP format, ensuring faster page loading and reduced file sizes.": [
-                "Wanneer ingeschakeld, zullen al uw nieuwe afbeeldingsuploads automatisch worden geoptimaliseerd naar WebP-formaat, waardoor de pagina sneller wordt geladen en de bestandsgrootte wordt verkleind."
-            ],
-            "Auto Delete Original Image": [
-                "Originele afbeelding automatisch verwijderen"
-            ],
-            "When enabled, the original uploaded image is deleted and replaced with the optimized version, helping to save storage space. If disabled, the optimized image is saved as a separate file, retaining the original.": [
-                "Wanneer ingeschakeld, wordt de origineel ge\u00fcploade afbeelding verwijderd en vervangen door de geoptimaliseerde versie, helpt u opslagruimte te besparen. Als dit is uitgeschakeld, wordt de geoptimaliseerde afbeelding opgeslagen als een apart bestand, waardoor het origineel behouden blijft."
-            ],
-            "No settings available.": [
-                "Geen instellingen beschikbaar."
-            ],
-            "Loading settings\u2026": [
-                "Instellingen laden\u2026"
-            ],
-            "Settings updated successfully": [
-                "Instellingen met succes bijgewerkt"
-            ],
-            "Your image optimization settings have been saved.": [
-                "Uw instellingen voor de optimalisatie van de afbeeldingen zijn opgeslagen."
-            ],
-            "Enable Lazy Loading": [
-                "Activeer Lazy Laden"
-            ],
-            "Lazy loading defers the loading of images until they are visible on the screen, improving page load speed and performance.": [
-                "Lazy laadt het laden van afbeeldingen uit totdat ze zichtbaar zijn op het scherm, waardoor de laadsnelheid en prestaties van pagina's worden verbeterd."
-            ],
-            "Lazy loading has been updated.": [
-                "Lazy laden is bijgewerkt."
-            ],
-            "Oops! There was an error updating the lazy loading settings.": [
-                "Oeps! Er is een fout opgetreden bij het bijwerken van de luie laadinstellingen."
-            ],
-            "Enable Bulk Optimization of Images": [
-                "Bulk optimalisatie van afbeeldingen inschakelen"
-            ],
-            "When enabled, allows bulk optimization of images in the media library.": [
-                "Indien ingeschakeld, staat groepsgewijze optimalisatie van afbeeldingen in de mediabibliotheek toe."
-            ],
-            "Go to Media Library": [
-                "Ga naar mediabibliotheek"
-            ],
-            "Error Updating Settings": [
-                "Fout bij bijwerken instellingen"
-            ],
-            "Prefer Optimized Image When Exists": [
-                "Geoptimaliseerde afbeelding van voorkeur"
-            ],
-            "When enabled, optimized images will be served in place of original images when they exist, improving performance.": [
-                "Wanneer ingeschakeld, worden geoptimaliseerde afbeeldingen in plaats van originele afbeeldingen geserveerd wanneer ze bestaan, verbeterde prestaties."
-            ],
-            "Something went wrong while updating the settings. Please try again.": [
-                "Er ging iets mis tijdens het bijwerken van de instellingen. Probeer het opnieuw."
             ],
             "Enabled All auto-updates": [
                 "Alle auto-updates ingeschakeld"
@@ -908,9 +632,6 @@
             "Create a sale promotion": [
                 ""
             ],
-            "Refer a friend to get $75": [
-                ""
-            ],
             "Unlock exclusive benefits with our referral program!": [
                 ""
             ],
@@ -923,10 +644,7 @@
             "Discover all the features to grow your store, boost sales and loyalize your customers.": [
                 ""
             ],
-            "Welcome to Bluehost": [
-                ""
-            ],
-            "We\u2019re very excited to get started with you!": [
+            "Refer a friend and earn money": [
                 ""
             ]
         }

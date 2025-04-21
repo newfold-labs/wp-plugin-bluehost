@@ -14,7 +14,7 @@ const Home = () => {
 				<Title className="nfd-mb-1 nfd-font-bold">
 					{ __( 'Welcome to Bluehost', 'wp-plugin-bluehost' ) }
 				</Title>
-				<span className="nfd-text-gray-500 nfd-text-sm">
+				<span className="nfd-text-sm">
 					{ __(
 						"We're very excited to get started with you!",
 						'wp-plugin-bluehost'

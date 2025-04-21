@@ -15,44 +15,64 @@ $plugin_data = get_plugin_data( BLUEHOST_PLUGIN_FILE );
 		<div class="wppbh-app-container min-[783px]:nfd-p-8 min-[783px]:nfd-flex nfd-gap-6 nfd-max-w-full xl:nfd-max-w-screen-xl 2xl:nfd-max-w-screen-2xl nfd-my-0">
 			<main id="wppbh-app-outdated" class="wpadmin-brand-bluehost wppbh-page-home nfd-w-full nfd-p-4 min-[783px]:nfd-p-0">
 				<div class="wppbh-app-body">
-				<header class="nfd-mb-6">
-					<div class="wppbh-logo-wrap">
-						<a href="#" aria-label="Bluehost" class="components-button logo-mark nfd-p-0 has-icon" style="width: 160px; height: auto;">
-							<span class="nfd-sr-only">Bluehost</span>
-							<img src="<?php echo esc_url( BLUEHOST_PLUGIN_URL . 'assets/svg/bluehost-logo.svg' ); ?>" alt="Bluehost" class="logo-mark__image" width="160" height="auto">
-						</a>
-					</div>
-				</header>
-				<div class="wppbh-app-body-inner">
-					<div class="nfd-page wppbh-home">
-						<div class="nfd-container">
-						<div class="nfd-app-section-container nfd-bg-white nfd-w-full nfd-rounded-lg" >
-							<div class="nfd-app-section-header nfd-p-8 nfd-border-b nfd-border-line nfd-flex nfd-flex-col nfd-items-baseline nfd-gap-4">
-								<div class="nfd-gap-3">
-									<h2 class="nfd-text-2xl nfd-font-medium nfd-text-title">WordPress Update Required</h2>
-								</div>
-								<div class="nfd-app-section-content">
-									<div class="nfd-pb-8">
-										<p class="nfd-pb-4">There are new WordPress components which this plugin requires in order to render the interface.</p>
-										<p class="nfd-pb-4">Your current version is outdated. Please, <a href="update-core.php">update</a> to a newer version of WordPress to continue.</p>
-										<ul>
-											<li>Your current WordPress version: <strong style="color: var(--color-error);"><?php echo esc_html( $wp_version ); ?></strong></li>
-											<li>Minimum required WordPress version: <strong style="color: var(--color-success);"><?php echo esc_html( $plugin_data['RequiresWP'] ); ?></strong></li>
-										</ul>
+					<header class="nfd-mb-6">
+						<div class="wppbh-logo-wrap">
+							<a href="#" aria-label="Bluehost" class="components-button logo-mark nfd-p-0 has-icon" style="width: 160px; height: auto;">
+								<span class="nfd-sr-only">Bluehost</span>
+								<img 
+									src="<?php echo esc_url( BLUEHOST_PLUGIN_URL . 'assets/svg/bluehost-logo.svg' ); ?>"
+									alt="Bluehost" class="logo-mark__image" width="160" height="auto"
+								/>
+							</a>
+						</div>
+					</header>
+					<div class="wppbh-app-body-inner">
+						<div class="nfd-page wppbh-home">
+							<div class="nfd-container">
+							<div class="nfd-app-section-container nfd-bg-white nfd-w-full nfd-rounded-lg" >
+								<div class="nfd-app-section-header nfd-p-8 nfd-border-b nfd-border-line nfd-flex nfd-flex-col nfd-items-baseline nfd-gap-4">
+									<div class="nfd-gap-3">
+										<h2 class="nfd-text-2xl nfd-font-medium nfd-text-title">
+											<?php echo __( 'WordPress Update Required', 'wp-plugin-bluehost' ); ?>
+										</h2>
 									</div>
-									<div class="nfd-px-4 nfd-py-2 nfd-rounded-lg nfd-bg-canvas nfd-flex nfd-flex-row nfd-justify-between nfd-items-center nfd-gap-4 nfd-border">
-										<div class="nfd-flex-1">
-										<span class="nfd-alert__message"><span class="dashicons dashicons-info-outline"></span> Consider enabling auto-updates to stay up to date.</span>
+									<div class="nfd-app-section-content">
+										<div class="nfd-pb-8">
+											<p class="nfd-pb-4"><?php echo __( 'There are new WordPress components which this plugin requires in order to render the interface.', 'wp-plugin-bluehost' ); ?></p>
+											<p class="nfd-pb-4">
+												<?php echo __( 'Your current version is outdated.', 'wp-plugin-bluehost' ); ?>
+												<?php echo __( 'Please update to a newer version of WordPress.', 'wp-plugin-bluehost' ); ?>
+											</p>
+											<ul>
+												<li>
+													<?php echo __( 'Your current WordPress version:', 'wp-plugin-bluehost' ); ?>
+													<strong style="color: var(--color-error);"><?php echo esc_html( $wp_version ); ?></strong>
+												</li>
+												<li>
+													<?php echo __( 'Minimum required WordPress version:', 'wp-plugin-bluehost' ); ?>
+													<strong style="color: var(--color-success);"><?php echo esc_html( $plugin_data['RequiresWP'] ); ?></strong>
+												</li>
+											</ul>
 										</div>
-										<div class="nfd-flex-none nfd-gap-4 nfd-flex nfd-flex-col">
-											<a class="nfd-button nfd-button--primary nfd-flex nfd-gap-2 nfd-items-center" href="<?php echo esc_url( admin_url( 'update-core.php' ) ); ?>">Update Now <span class="dashicons dashicons-update"></span></a>
+										<div class="nfd-px-4 nfd-py-2 nfd-rounded-lg nfd-bg-canvas nfd-flex nfd-flex-row nfd-justify-between nfd-items-center nfd-gap-4 nfd-border">
+											<div class="nfd-flex-1">
+												<span class="nfd-alert__message">
+													<span class="dashicons dashicons-info-outline"></span>
+													<?php __( 'Consider enabling auto-updates to stay up to date.', 'wp-plugin-bluehost' ); ?>
+												</span>
+											</div>
+											<div class="nfd-flex-none nfd-gap-4 nfd-flex nfd-flex-col">
+												<a class="nfd-button nfd-button--primary nfd-flex nfd-gap-2 nfd-items-center" href="<?php echo esc_url( admin_url( 'update-core.php' ) ); ?>">
+													<?php echo __( 'Update Now', 'wp-plugin-bluehost' ); ?>
+													<span class="dashicons dashicons-update"></span>
+												</a>
+											</div>
 										</div>
 									</div>
 								</div>
 							</div>
 						</div>
 					</div>
-				</div>
 				</div>
 			</main>
 		</div>

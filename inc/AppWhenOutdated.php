@@ -46,11 +46,11 @@ $plugin_data = get_plugin_data( BLUEHOST_PLUGIN_FILE );
 											<ul>
 												<li>
 													<?php esc_html_e( 'Your current WordPress version:', 'wp-plugin-bluehost' ); ?>
-													<strong style="color: var(--color-error);"><?php esc_html_e( $wp_version ); ?></strong>
+													<strong style="color: var(--color-error);"><?php echo esc_html( $wp_version ); ?></strong>
 												</li>
 												<li>
 													<?php esc_html_e( 'Minimum required WordPress version:', 'wp-plugin-bluehost' ); ?>
-													<strong style="color: var(--color-success);"><?php esc_html_e( $plugin_data['RequiresWP'] ); ?></strong>
+													<strong style="color: var(--color-success);"><?php echo esc_html( $plugin_data['RequiresWP'] ); ?></strong>
 												</li>
 											</ul>
 										</div>

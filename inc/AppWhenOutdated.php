@@ -33,24 +33,24 @@ $plugin_data = get_plugin_data( BLUEHOST_PLUGIN_FILE );
 								<div class="nfd-app-section-header nfd-p-8 nfd-border-b nfd-border-line nfd-flex nfd-flex-col nfd-items-baseline nfd-gap-4">
 									<div class="nfd-gap-3">
 										<h2 class="nfd-text-2xl nfd-font-medium nfd-text-title">
-											<?php echo __( 'WordPress Update Required', 'wp-plugin-bluehost' ); ?>
+											<?php esc_html_e( 'WordPress Update Required', 'wp-plugin-bluehost' ); ?>
 										</h2>
 									</div>
 									<div class="nfd-app-section-content">
 										<div class="nfd-pb-8">
-											<p class="nfd-pb-4"><?php echo __( 'There are new WordPress components which this plugin requires in order to render the interface.', 'wp-plugin-bluehost' ); ?></p>
+											<p class="nfd-pb-4"><?php esc_html_e( 'There are new WordPress components which this plugin requires in order to render the interface.', 'wp-plugin-bluehost' ); ?></p>
 											<p class="nfd-pb-4">
-												<?php echo __( 'Your current version is outdated.', 'wp-plugin-bluehost' ); ?>
-												<?php echo __( 'Please update to a newer WordPress version.', 'wp-plugin-bluehost' ); ?>
+												<?php esc_html_e( 'Your current version is outdated.', 'wp-plugin-bluehost' ); ?>
+												<?php esc_html_e( 'Please update to a newer WordPress version.', 'wp-plugin-bluehost' ); ?>
 											</p>
 											<ul>
 												<li>
-													<?php echo __( 'Your current WordPress version:', 'wp-plugin-bluehost' ); ?>
-													<strong style="color: var(--color-error);"><?php echo esc_html( $wp_version ); ?></strong>
+													<?php esc_html_e( 'Your current WordPress version:', 'wp-plugin-bluehost' ); ?>
+													<strong style="color: var(--color-error);"><?php esc_html_e( $wp_version ); ?></strong>
 												</li>
 												<li>
-													<?php echo __( 'Minimum required WordPress version:', 'wp-plugin-bluehost' ); ?>
-													<strong style="color: var(--color-success);"><?php echo esc_html( $plugin_data['RequiresWP'] ); ?></strong>
+													<?php esc_html_e( 'Minimum required WordPress version:', 'wp-plugin-bluehost' ); ?>
+													<strong style="color: var(--color-success);"><?php esc_html_e( $plugin_data['RequiresWP'] ); ?></strong>
 												</li>
 											</ul>
 										</div>
@@ -63,7 +63,7 @@ $plugin_data = get_plugin_data( BLUEHOST_PLUGIN_FILE );
 											</div>
 											<div class="nfd-flex-none nfd-gap-4 nfd-flex nfd-flex-col">
 												<a class="nfd-button nfd-button--primary nfd-flex nfd-gap-2 nfd-items-center" href="<?php echo esc_url( admin_url( 'update-core.php' ) ); ?>">
-													<?php echo __( 'Update Now', 'wp-plugin-bluehost' ); ?>
+													<?php esc_html_e( 'Update Now', 'wp-plugin-bluehost' ); ?>
 													<span class="dashicons dashicons-update"></span>
 												</a>
 											</div>

@@ -67,8 +67,7 @@ describe( 'Dashboard Widgets', { testIsolation: true }, function () {
 			.click(); // Enable Coming Soon
 
 		// Coming Soon Enabled
-		cy.get( '.notice-warning' )
-			.contains( 'coming soon' )
+		cy.get( 'a[title="Preview the coming soon landing page"]' )
 			.scrollIntoView()
 			.should( 'be.visible' );
 
@@ -92,7 +91,9 @@ describe( 'Dashboard Widgets', { testIsolation: true }, function () {
 			.click(); // Launch Site
 
 		// Coming Soon Disabled
-		cy.get( '.notice-warning' ).should( 'not.exist' );
+		cy.get( 'a[title="Preview the coming soon landing page"]' ).should(
+			'not.exist'
+		);
 
 		cy.get( '.iframe-preview-status' )
 			.contains( 'Live' )

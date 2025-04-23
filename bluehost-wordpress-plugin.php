@@ -28,7 +28,7 @@ namespace Bluehost;
 
 // Do not allow multiple copies of the Bluehost Plugin to be active
 if ( defined( 'BLUEHOST_PLUGIN_VERSION' ) ) {
-	exit;
+	return;
 }
 
 // Define constants

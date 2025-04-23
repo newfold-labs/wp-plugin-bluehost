@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "426231a5e9b06c89fb167d60eafa2016",
+    "content-hash": "fcd09ae1d8ecaf7666055c8b1ea49e4b",
     "packages": [
         {
             "name": "doctrine/inflector",
@@ -2046,25 +2046,25 @@
         },
         {
             "name": "newfold-labs/wp-module-patterns",
-            "version": "2.9.2",
+            "version": "2.9.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/newfold-labs/wp-module-patterns.git",
-                "reference": "dcbc9595eafb7da0b118352bd83b0c8e52bd3e5f"
+                "reference": "362c8c8c52e4a8babfec8755282552b0b886cf97"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/newfold-labs/wp-module-patterns/zipball/dcbc9595eafb7da0b118352bd83b0c8e52bd3e5f",
-                "reference": "dcbc9595eafb7da0b118352bd83b0c8e52bd3e5f",
+                "url": "https://api.github.com/repos/newfold-labs/wp-module-patterns/zipball/362c8c8c52e4a8babfec8755282552b0b886cf97",
+                "reference": "362c8c8c52e4a8babfec8755282552b0b886cf97",
                 "shasum": ""
             },
             "require": {
-                "newfold-labs/wp-module-data": "^2.6.8",
+                "newfold-labs/wp-module-data": "^2.6.13",
                 "newfold-labs/wp-module-features": "^1.5",
                 "newfold-labs/wp-module-installer": "^1.4"
             },
             "require-dev": {
-                "newfold-labs/wp-php-standards": "^1.2.2",
+                "newfold-labs/wp-php-standards": "^1.2.5",
                 "wp-cli/i18n-command": "^2.6.3"
             },
             "type": "library",
@@ -2116,10 +2116,10 @@
             ],
             "description": "WordPress Cloud Patterns",
             "support": {
-                "source": "https://github.com/newfold-labs/wp-module-patterns/tree/2.9.2",
+                "source": "https://github.com/newfold-labs/wp-module-patterns/tree/2.9.3",
                 "issues": "https://github.com/newfold-labs/wp-module-patterns/issues"
             },
-            "time": "2025-04-01T14:24:17+00:00"
+            "time": "2025-04-22T17:56:01+00:00"
         },
         {
             "name": "newfold-labs/wp-module-performance",
@@ -5674,10 +5674,10 @@
     },
     "prefer-stable": false,
     "prefer-lowest": false,
-    "platform": {},
-    "platform-dev": {},
+    "platform": [],
+    "platform-dev": [],
     "platform-overrides": {
         "php": "7.3.0"
     },
-    "plugin-api-version": "2.6.0"
+    "plugin-api-version": "2.3.0"
 }

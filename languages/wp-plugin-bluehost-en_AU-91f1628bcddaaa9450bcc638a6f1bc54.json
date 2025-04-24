@@ -7,23 +7,17 @@
         "messages": {
             "": {
                 "domain": "messages",
-                "lang": "en",
+                "lang": "en_AU",
                 "plural-forms": "nplurals=2; plural=(n != 1);"
             },
             "Home": [
                 "Home"
-            ],
-            "Pages & Posts": [
-                "Pages & Posts"
             ],
             "Store": [
                 "Store"
             ],
             "Marketplace": [
                 "Marketplace"
-            ],
-            "My Plugins & Tools": [
-                "My Plugins & Tools"
             ],
             "Settings": [
                 "Settings"
@@ -154,18 +148,6 @@
             "Go to Bluehost": [
                 "Go to Bluehost"
             ],
-            "Site Pages": [
-                "Site Pages"
-            ],
-            "Edit your homepage and other existing pages or add new pages to your site.": [
-                "Edit your homepage and other existing pages or add new pages to your site."
-            ],
-            "View all": [
-                "View all"
-            ],
-            "Add New": [
-                "Add New"
-            ],
             "The Help Center provides guided, step-by-step assistance as you build your site.": [
                 "The Help Center provides guided, step-by-step assistance as you build your site."
             ],
@@ -194,9 +176,6 @@
             "Hosting": [
                 "Hosting"
             ],
-            "Products": [
-                "Products"
-            ],
             "Explore our featured collection of tools and services.": [
                 "Explore our featured collection of tools and services."
             ],
@@ -215,50 +194,11 @@
             "An error occurred while loading the content. Please try again later.": [
                 "An error occurred while loading the content. Please try again later."
             ],
-            "Solution": [
-                "Solution"
-            ],
-            "Explore the plugins and tools available with your solution.": [
-                "Explore the plugins and tools available with your solution."
-            ],
-            "Oops, there was an error loading your plugins and tools, please try again later.": [
-                "Oops, there was an error loading your plugins and tools, please try again later."
-            ],
-            "Sorry, no current plugins and tools. Please, try again later.": [
-                "Sorry, no current plugins and tools. Please, try again later."
-            ],
             "Secret page to manage admin features and settings.": [
                 "Secret page to manage admin features and settings."
             ],
             "We are available 24\/7 to help answer questions and solve your problems.": [
                 "We are available 24\/7 to help answer questions and solve your problems."
-            ],
-            "Showcase physical and digital goods, product variations, and custom configurations.": [
-                "Showcase physical and digital goods, product variations, and custom configurations."
-            ],
-            "Blog Posts": [
-                "Blog Posts"
-            ],
-            "Add a new blog post or edit your existing posts.": [
-                "Add a new blog post or edit your existing posts."
-            ],
-            "Bookings & Appointments": [
-                "Bookings & Appointments"
-            ],
-            "Add your list of services, setup a booking calendar, and edit your bookings form.": [
-                "Add your list of services, setup a booking calendar, and edit your bookings form."
-            ],
-            "Your site is not live.": [
-                "Your site is not live."
-            ],
-            "Your site is live.": [
-                "Your site is live."
-            ],
-            "Visitors to your site will see your \"Coming Soon\" page and not your actual site. Visit %1$s\"Settings\"%2$s to set your site live.": [
-                "Visitors to your site will see your \"Coming Soon\" page and not your actual site. Visit %1$s\"Settings\"%2$s to set your site live."
-            ],
-            "Visitors to your site will see all your publicly published pages.": [
-                "Visitors to your site will see all your publicly published pages."
             ],
             "Enabled All auto-updates": [
                 "Enabled All auto-updates"
@@ -596,62 +536,59 @@
             "Working\u2026": [
                 "Working\u2026"
             ],
-            "Add a New Plugin": [
-                "Add a New Plugin"
-            ],
             "Hire our experts": [
-                ""
+                "Hire our experts"
             ],
             "Get in touch with us, and we\u2019ll help you build the exact store you\u2019re dreaming of.": [
-                ""
-            ],
-            "Get Help & Resources": [
-                ""
-            ],
-            "Documentation and tutorials to help you get the most out of your solution.": [
-                ""
-            ],
-            "Pro Design Live": [
-                ""
-            ],
-            "We will help you build and grow your website and improve your skills in WordPress.": [
-                ""
-            ],
-            "Get Info": [
-                ""
-            ],
-            "Quick links": [
-                ""
-            ],
-            "Manage hosting": [
-                ""
-            ],
-            "Write a blog post": [
-                ""
-            ],
-            "Create a sale promotion": [
-                ""
-            ],
-            "Unlock exclusive benefits with our referral program!": [
-                ""
-            ],
-            "Start now": [
-                ""
-            ],
-            "Explore your Solution": [
-                ""
+                "Get in touch with us, and we\u2019ll help you build the exact store you\u2019re dreaming of."
             ],
             "Discover all the features to grow your store, boost sales and loyalize your customers.": [
-                ""
+                "Discover all the features to grow your store, boost sales and loyalize your customers."
+            ],
+            "Quick links": [
+                "Quick links"
+            ],
+            "Manage hosting": [
+                "Manage hosting"
+            ],
+            "Write a blog post": [
+                "Write a blog post"
+            ],
+            "Create a sale promotion": [
+                "Create a sale promotion"
+            ],
+            "Get Help & Resources": [
+                "Get Help & Resources"
             ],
             "Refer a friend and earn money": [
-                ""
+                "Refer a friend and earn money"
+            ],
+            "Unlock exclusive benefits with our referral program!": [
+                "Unlock exclusive benefits with our referral program!"
+            ],
+            "Start now": [
+                "Start now"
+            ],
+            "Pro Design Live": [
+                "Pro Design Live"
+            ],
+            "We will help you build and grow your website and improve your skills in WordPress.": [
+                "We will help you build and grow your website and improve your skills in WordPress."
+            ],
+            "Get Info": [
+                "Get Info"
             ],
             "Welcome to Bluehost": [
-                ""
+                "Welcome to Bluehost"
             ],
             "We're very excited to get started with you!": [
-                ""
+                "We're very excited to get started with you!"
+            ],
+            "Explore Premium Tools": [
+                "Explore Premium Tools"
+            ],
+            "Get expert help, documentation, and tutorials to make the most of your WordPress site.": [
+                "Get expert help, documentation, and tutorials to make the most of your WordPress site."
             ]
         }
     }

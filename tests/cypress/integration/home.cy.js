@@ -28,7 +28,7 @@ describe( 'Home Page', { testIsolation: true }, function () {
 
 		// Solution Card
 		cy.get( '[data-cy="solution-card"]' )
-			.contains( 'h2', 'Solution' )
+			.contains( 'h2', 'Explore' )
 			.scrollIntoView()
 			.should( 'be.visible' );
 		cy.get( '[data-cy="solution-card"]' )

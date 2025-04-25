@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "f2a7f17b6b55bef302a4440e265f04b1",
+    "content-hash": "302d9b9d36ac4b4d09ded7a65a52325c",
     "packages": [
         {
             "name": "doctrine/inflector",
@@ -2060,25 +2060,25 @@
         },
         {
             "name": "newfold-labs/wp-module-patterns",
-            "version": "2.9.2",
+            "version": "2.9.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/newfold-labs/wp-module-patterns.git",
-                "reference": "dcbc9595eafb7da0b118352bd83b0c8e52bd3e5f"
+                "reference": "362c8c8c52e4a8babfec8755282552b0b886cf97"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/newfold-labs/wp-module-patterns/zipball/dcbc9595eafb7da0b118352bd83b0c8e52bd3e5f",
-                "reference": "dcbc9595eafb7da0b118352bd83b0c8e52bd3e5f",
+                "url": "https://api.github.com/repos/newfold-labs/wp-module-patterns/zipball/362c8c8c52e4a8babfec8755282552b0b886cf97",
+                "reference": "362c8c8c52e4a8babfec8755282552b0b886cf97",
                 "shasum": ""
             },
             "require": {
-                "newfold-labs/wp-module-data": "^2.6.8",
+                "newfold-labs/wp-module-data": "^2.6.13",
                 "newfold-labs/wp-module-features": "^1.5",
                 "newfold-labs/wp-module-installer": "^1.4"
             },
             "require-dev": {
-                "newfold-labs/wp-php-standards": "^1.2.2",
+                "newfold-labs/wp-php-standards": "^1.2.5",
                 "wp-cli/i18n-command": "^2.6.3"
             },
             "type": "library",
@@ -2130,10 +2130,10 @@
             ],
             "description": "WordPress Cloud Patterns",
             "support": {
-                "source": "https://github.com/newfold-labs/wp-module-patterns/tree/2.9.2",
+                "source": "https://github.com/newfold-labs/wp-module-patterns/tree/2.9.3",
                 "issues": "https://github.com/newfold-labs/wp-module-patterns/issues"
             },
-            "time": "2025-04-01T14:24:17+00:00"
+            "time": "2025-04-22T17:56:01+00:00"
         },
         {
             "name": "newfold-labs/wp-module-performance",
@@ -2555,20 +2555,20 @@
         },
         {
             "name": "newfold-labs/wp-module-staging",
-            "version": "2.3.2",
+            "version": "2.3.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/newfold-labs/wp-module-staging.git",
-                "reference": "e57a16b152cb0d6da07e1f726a71000c06b47b90"
+                "reference": "9744e596a0624b08d5d57daf6941956b51b1af9c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/newfold-labs/wp-module-staging/zipball/e57a16b152cb0d6da07e1f726a71000c06b47b90",
-                "reference": "e57a16b152cb0d6da07e1f726a71000c06b47b90",
+                "url": "https://api.github.com/repos/newfold-labs/wp-module-staging/zipball/9744e596a0624b08d5d57daf6941956b51b1af9c",
+                "reference": "9744e596a0624b08d5d57daf6941956b51b1af9c",
                 "shasum": ""
             },
             "require": {
-                "newfold-labs/wp-module-context": "^1.0",
+                "newfold-labs/wp-module-context": "^1.0.1",
                 "newfold-labs/wp-module-features": "^1.5.0"
             },
             "require-dev": {
@@ -2625,10 +2625,10 @@
             ],
             "description": "Newfold module for staging functionality in brand plugins",
             "support": {
-                "source": "https://github.com/newfold-labs/wp-module-staging/tree/2.3.2",
+                "source": "https://github.com/newfold-labs/wp-module-staging/tree/2.3.3",
                 "issues": "https://github.com/newfold-labs/wp-module-staging/issues"
             },
-            "time": "2025-04-14T01:23:46+00:00"
+            "time": "2025-04-25T14:06:33+00:00"
         },
         {
             "name": "newfold-labs/wp-module-survey",

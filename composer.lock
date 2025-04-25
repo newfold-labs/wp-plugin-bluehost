@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "fd6aa32feedf121c3b6bb9b4d8764717",
+    "content-hash": "76b3cc7a9be54e05fb66a68aa9292dc1",
     "packages": [
         {
             "name": "doctrine/inflector",
@@ -1441,16 +1441,16 @@
         },
         {
             "name": "newfold-labs/wp-module-hosting",
-            "version": "1.0.10",
+            "version": "1.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/newfold-labs/wp-module-hosting.git",
-                "reference": "a8fd1f08070a90e35a10b5430725d1c5869ede0c"
+                "reference": "d1681eb53e997ce309512e67dde6ff356956dac7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/newfold-labs/wp-module-hosting/zipball/a8fd1f08070a90e35a10b5430725d1c5869ede0c",
-                "reference": "a8fd1f08070a90e35a10b5430725d1c5869ede0c",
+                "url": "https://api.github.com/repos/newfold-labs/wp-module-hosting/zipball/d1681eb53e997ce309512e67dde6ff356956dac7",
+                "reference": "d1681eb53e997ce309512e67dde6ff356956dac7",
                 "shasum": ""
             },
             "require": {
@@ -1475,13 +1475,10 @@
                     "vendor/bin/phpcbf . --standard=phpcs.xml"
                 ],
                 "i18n-pot": [
-                    "vendor/bin/wp i18n make-pot . ./languages/wp-module-pls.pot --headers='{\"Report-Msgid-Bugs-To\":\"https://github.com/newfold-labs/wp-module-pls/issues\",\"POT-Creation-Date\":\"2025-02-13T09:55:55+00:00\"}'"
+                    "vendor/bin/wp i18n make-pot . ./languages/wp-module-hosting.pot --domain=wp-module-hosting --headers='{\"Report-Msgid-Bugs-To\":\"https://github.com/newfold-labs/wp-module-hosting/issues\",\"POT-Creation-Date\":\"2025-02-13T09:55:55+00:00\"}' --exclude=src,scripts,tests,webpack --include=build/*.min.js,includes"
                 ],
                 "i18n-po": [
-                    "vendor/bin/wp i18n update-po ./languages/wp-module-pls.pot ./languages"
-                ],
-                "i18n-mo": [
-                    "vendor/bin/wp i18n make-mo ./languages"
+                    "vendor/bin/wp i18n update-po ./languages/wp-module-hosting.pot ./languages"
                 ],
                 "i18n-php": [
                     "vendor/bin/wp i18n make-php ./languages"
@@ -1492,7 +1489,6 @@
                 "i18n": [
                     "@i18n-pot",
                     "@i18n-po",
-                    "@i18n-mo",
                     "@i18n-php",
                     "@i18n-json"
                 ],
@@ -1511,10 +1507,10 @@
             ],
             "description": "A Newfold module that manages the Hosting panel on the plugin page and serves as middleware for interacting with hosting services.",
             "support": {
-                "source": "https://github.com/newfold-labs/wp-module-hosting/tree/1.0.10",
+                "source": "https://github.com/newfold-labs/wp-module-hosting/tree/1.1.0",
                 "issues": "https://github.com/newfold-labs/wp-module-hosting/issues"
             },
-            "time": "2025-04-22T13:09:13+00:00"
+            "time": "2025-04-25T21:30:20+00:00"
         },
         {
             "name": "newfold-labs/wp-module-install-checker",

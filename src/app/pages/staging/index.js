@@ -7,6 +7,11 @@ import { useNotification } from 'App/components/notifications';
 import { default as NewfoldStaging } from '@modules/wp-module-staging/components/staging/';
 
 const Staging = () => {
+	// constants to pass to module
+	const moduleConstants = {
+		text: {},
+	};
+
 	// methods to pass to module
 	const moduleMethods = {
 		apiFetch,
@@ -17,7 +22,12 @@ const Staging = () => {
 		useNotification,
 	};
 
-	return <NewfoldStaging methods={ moduleMethods } />;
+	return (
+		<NewfoldStaging
+			constants={ moduleConstants }
+			methods={ moduleMethods }
+		/>
+	);
 };
 
 export default Staging;

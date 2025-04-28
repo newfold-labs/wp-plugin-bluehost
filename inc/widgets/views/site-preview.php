@@ -96,10 +96,10 @@ $site_edit_url = get_admin_url( null, wp_is_block_theme() ? 'site-editor.php?can
 		width: 1.5rem;
 	}
 	.iframe-preview-status.status-coming-soon {
-		color: rgb(225 0 1);
+		color: rgb(205 0 1);
 	}
 	.iframe-preview-status.status-live {
-		color: rgb(0 129 18);
+		color: rgb(0 109 18);
 	}
 </style>
 <div class="nfd-root nfd-widget nfd-widget-site-preview">

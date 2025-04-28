@@ -1,29 +1,23 @@
 {
     "translation-revision-date": "2025-02-25T20:53:21+00:00",
     "generator": "WP-CLI\/2.11.0",
-    "source": "build\/4.3.1\/index.js",
+    "source": "build\/4.3.2\/index.js",
     "domain": "messages",
     "locale_data": {
         "messages": {
             "": {
                 "domain": "messages",
-                "lang": "en",
+                "lang": "nl_NL",
                 "plural-forms": "nplurals=2; plural=(n != 1);"
             },
             "Home": [
                 "Startpagina"
-            ],
-            "Pages & Posts": [
-                "Pagina's & Berichten"
             ],
             "Store": [
                 "Winkel"
             ],
             "Marketplace": [
                 "Marktplaats"
-            ],
-            "My Plugins & Tools": [
-                "Mijn plug-ins & gereedschap"
             ],
             "Settings": [
                 "Instellingen"
@@ -154,18 +148,6 @@
             "Go to Bluehost": [
                 "Ga naar Bluehost"
             ],
-            "Site Pages": [
-                "Site pagina's"
-            ],
-            "Edit your homepage and other existing pages or add new pages to your site.": [
-                "Bewerk uw startpagina en andere bestaande pagina's of voeg nieuwe pagina's toe aan uw site."
-            ],
-            "View all": [
-                "Alles weergeven"
-            ],
-            "Add New": [
-                "Nieuwe toevoegen"
-            ],
             "The Help Center provides guided, step-by-step assistance as you build your site.": [
                 "Het Helpcentrum biedt geleidelijke, stap-voor-stap ondersteuning als u uw site bouwt."
             ],
@@ -194,9 +176,6 @@
             "Hosting": [
                 "Hosting"
             ],
-            "Products": [
-                "Producten"
-            ],
             "Explore our featured collection of tools and services.": [
                 "Ontdek onze uitgebreide collectie gereedschappen en diensten."
             ],
@@ -215,50 +194,11 @@
             "An error occurred while loading the content. Please try again later.": [
                 "Er is een fout opgetreden tijdens het laden van de inhoud. Probeer het later opnieuw."
             ],
-            "Solution": [
-                "Oplossing"
-            ],
-            "Explore the plugins and tools available with your solution.": [
-                "Ontdek de plug-ins en gereedschappen die beschikbaar zijn met jouw oplossing."
-            ],
-            "Oops, there was an error loading your plugins and tools, please try again later.": [
-                "Oeps, er is een fout opgetreden bij het laden van uw plugins en tools, probeer het later opnieuw."
-            ],
-            "Sorry, no current plugins and tools. Please, try again later.": [
-                "Sorry, geen huidige plugins en tools. Probeer het later opnieuw."
-            ],
             "Secret page to manage admin features and settings.": [
                 "Geheime pagina om admin functies en instellingen te beheren."
             ],
             "We are available 24\/7 to help answer questions and solve your problems.": [
                 "We zijn 24\/7 beschikbaar om te helpen vragen te beantwoorden en uw problemen op te lossen."
-            ],
-            "Showcase physical and digital goods, product variations, and custom configurations.": [
-                "Laat fysieke en digitale goederen, productvariaties en aangepaste configuraties zien."
-            ],
-            "Blog Posts": [
-                "Blog berichten"
-            ],
-            "Add a new blog post or edit your existing posts.": [
-                "Voeg een nieuwe blogpost toe of bewerk uw bestaande berichten."
-            ],
-            "Bookings & Appointments": [
-                "Boekingen & Afspraken"
-            ],
-            "Add your list of services, setup a booking calendar, and edit your bookings form.": [
-                "Voeg jouw dienstenlijst toe, stel een reserveringskalender in en bewerk jouw reserveringsformulier."
-            ],
-            "Your site is not live.": [
-                "Uw site is niet productief."
-            ],
-            "Your site is live.": [
-                "Uw site is lief."
-            ],
-            "Visitors to your site will see your \"Coming Soon\" page and not your actual site. Visit %1$s\"Settings\"%2$s to set your site live.": [
-                "Bezoekers zien uw \"Binnenkort\" pagina en niet uw werkelijke site. Ga naar %1$s\"Instellingen\"%2$s om uw site live in te stellen."
-            ],
-            "Visitors to your site will see all your publicly published pages.": [
-                "Bezoekers op uw site zien al uw publiekelijk gepubliceerde pagina's."
             ],
             "Enabled All auto-updates": [
                 "Alle auto-updates ingeschakeld"
@@ -458,194 +398,59 @@
             "WonderBlocks will no longer display.": [
                 "WonderBlocks worden niet langer weergegeven."
             ],
-            "Cancel": [
-                "Annuleren"
-            ],
-            "Clone": [
-                "Dupliceren"
-            ],
-            "Confirm Clone Action": [
-                "Bevestig kloonactie"
-            ],
-            "This will overwrite anything in staging and update it to an exact clone of the current production site. Are you sure you want to proceed?": [
-                "Dit zal alles in staging overschrijven en bijwerken naar een exacte kloon van de huidige productiesite. Weet u zeker dat u wilt doorgaan?"
-            ],
-            "Cloned to Staging": [
-                "Gekloond naar Staging"
-            ],
-            "Cloning production to staging, this should take about a minute.": [
-                "Het stilleggen van de productie zou ongeveer een minuut moeten duren."
-            ],
-            "Clone to staging": [
-                "Kopieer naar staging"
-            ],
-            "Created": [
-                "Aangemaakt"
-            ],
-            "Staging Created": [
-                "Staging aangemaakt"
-            ],
-            "Creating a staging site, this should take about a minute.": [
-                "Het cre\u00ebren van een halteplaats zou ongeveer een minuut moeten duren."
-            ],
-            "Create staging site": [
-                "Stageings site maken"
-            ],
-            "Currently editing": [
-                "Momenteel bewerken"
-            ],
-            "Delete": [
-                "Verwijderen"
-            ],
-            "Confirm Delete": [
-                "Verwijderen bevestigen"
-            ],
-            "This will permanently delete staging site. Are you sure you want to proceed? You can recreate another staging site at any time, but any specific changes you've made to this staging site will be lost.": [
-                "Dit zal de stagingsite permanent verwijderen. Weet u zeker dat u wilt doorgaan? Je kunt op elk moment een andere staging site aanmaken, maar eventuele specifieke wijzigingen die je hebt aangebracht in deze staging site gaan verloren."
-            ],
-            "Deleted Staging": [
-                "Verwijderde fasering"
-            ],
-            "Deleting the staging site, this should take about a minute.": [
-                "De voorgehouden site wordt verwijderd, dit duurt ongeveer een minuut."
-            ],
-            "Delete Staging Site": [
-                "Verwijder Staging Site"
-            ],
-            "Deploy": [
-                "Implementeren"
-            ],
-            "Deploy all changes": [
-                "Alle wijzigingen implementeren"
-            ],
-            "Confirm Deployment": [
-                "Bevestig implementatie"
-            ],
-            "Deploy database only": [
-                "Alleen database implementeren"
-            ],
-            "This will deploy staging to production and overwrite current production site. Are you sure you want to proceed?": [
-                "Dit zal staging implementeren naar productie en huidige productie site overschrijven. Weet u zeker dat u wilt doorgaan?"
-            ],
-            "Deploy files only": [
-                "Alleen bestanden implementeren"
-            ],
-            "Deployed": [
-                "Ge\u00efmplementeerd"
-            ],
-            "Deploying from staging to production, this should take about a minute.": [
-                "Het inzetten van halteplaatsen op productie, dit zou ongeveer een minuut moeten duren."
-            ],
-            "Deploy Site": [
-                "Site implementeren"
-            ],
-            "Error": [
-                "Foutmelding"
-            ],
-            "You don't have a staging site yet.": [
-                "U hebt nog geen staging site."
-            ],
-            "Not currently editing": [
-                "Momenteel niet bewerkt"
-            ],
-            "Proceed": [
-                "Doorgaan"
-            ],
-            "Production Site": [
-                "Productie site"
-            ],
-            "Staging Site": [
-                "Staging Site"
-            ],
-            "A staging site is a duplicate of your live site, offering a secure environment to experiment, test updates, and deploy when ready.": [
-                "Een stagingsite is een duplicaat van uw website en biedt een veilige omgeving aan om te experimenteren, updates te testen en te implementeren wanneer u klaar bent."
-            ],
-            "Switch": [
-                "Schakelaar"
-            ],
-            "Switching": [
-                "Schakelen"
-            ],
-            "Switch to Production": [
-                "Overschakelen naar productie"
-            ],
-            "This will navigate you to the production environment": [
-                "Dit zal je naar de productieomgeving navigeren"
-            ],
-            "Loading the production environment now.": [
-                "De productieomgeving nu laden."
-            ],
-            "Switching to the production environment, this should take about a minute.": [
-                "De omschakeling naar de productieomgeving zou ongeveer een minuut moeten duren."
-            ],
-            "Switch to Staging": [
-                "Overschakelen naar fasering"
-            ],
-            "This will navigate you to the staging environment": [
-                "Dit zal u navigeren naar de stagingomgeving"
-            ],
-            "Loading the staging environment now.": [
-                "De stagingomgeving nu laden."
-            ],
-            "Switching to the staging environment, this should take about a minute.": [
-                "Overschakelen op de stagingomgeving, dit zou ongeveer een minuut moeten duren."
-            ],
-            "An unknown error has occurred.": [
-                "Er is een onbekende fout opgetreden."
-            ],
-            "Working\u2026": [
-                "Bezig\u2026"
-            ],
-            "Add a New Plugin": [
-                "Een nieuwe plugin toevoegen"
-            ],
             "Hire our experts": [
-                ""
+                "Neem onze experts aan"
             ],
             "Get in touch with us, and we\u2019ll help you build the exact store you\u2019re dreaming of.": [
-                ""
-            ],
-            "Get Help & Resources": [
-                ""
-            ],
-            "Documentation and tutorials to help you get the most out of your solution.": [
-                ""
-            ],
-            "Pro Design Live": [
-                ""
-            ],
-            "We will help you build and grow your website and improve your skills in WordPress.": [
-                ""
-            ],
-            "Get Info": [
-                ""
-            ],
-            "Quick links": [
-                ""
-            ],
-            "Manage hosting": [
-                ""
-            ],
-            "Write a blog post": [
-                ""
-            ],
-            "Create a sale promotion": [
-                ""
-            ],
-            "Unlock exclusive benefits with our referral program!": [
-                ""
-            ],
-            "Start now": [
-                ""
-            ],
-            "Explore your Solution": [
-                ""
+                "Neem contact met ons op en wij helpen u om de exacte winkel te bouwen waarvan u droomt."
             ],
             "Discover all the features to grow your store, boost sales and loyalize your customers.": [
-                ""
+                "Ontdek alle functies om uw winkel te laten groeien, verkoop te stimuleren en uw klanten te loyaliseren."
+            ],
+            "Quick links": [
+                "Snelle links"
+            ],
+            "Manage hosting": [
+                "hosting beheren"
+            ],
+            "Write a blog post": [
+                "Schrijf een blogbericht"
+            ],
+            "Create a sale promotion": [
+                "Maak een verkooppromotie aan"
+            ],
+            "Get Help & Resources": [
+                "Krijg hulp & hulpmiddelen"
             ],
             "Refer a friend and earn money": [
-                ""
+                "Verwijs een vriend en verdien geld"
+            ],
+            "Unlock exclusive benefits with our referral program!": [
+                "Ontgrendel exclusieve voordelen met ons aanbevelingsprogramma!"
+            ],
+            "Start now": [
+                "Begin nu"
+            ],
+            "Pro Design Live": [
+                "Pro Design Live"
+            ],
+            "We will help you build and grow your website and improve your skills in WordPress.": [
+                "We zullen u helpen uw website te bouwen en te laten groeien en uw vaardigheden te verbeteren in WordPress."
+            ],
+            "Get Info": [
+                "Krijg informatie"
+            ],
+            "Welcome to Bluehost": [
+                "Welkom bij Bluehost"
+            ],
+            "We're very excited to get started with you!": [
+                "We zijn erg enthousiast om met je aan de slag te gaan!"
+            ],
+            "Explore Premium Tools": [
+                "Premium tools verkennen"
+            ],
+            "Get expert help, documentation, and tutorials to make the most of your WordPress site.": [
+                "Krijg deskundige hulp, documentatie en tutorials om het meeste uit uw WordPress-site te halen."
             ]
         }
     }

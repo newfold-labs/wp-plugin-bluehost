@@ -1,7 +1,7 @@
 {
     "translation-revision-date": "2024-10-21 07:10-0000",
     "generator": "WP-CLI\/2.11.0",
-    "source": "build\/4.3.1\/index.js",
+    "source": "build\/4.3.2\/index.js",
     "domain": "messages",
     "locale_data": {
         "messages": {
@@ -13,17 +13,11 @@
             "Home": [
                 "Startseite"
             ],
-            "Pages & Posts": [
-                "Seiten & Beitr\u00e4ge"
-            ],
             "Store": [
                 "Shop"
             ],
             "Marketplace": [
                 "Marktplatz"
-            ],
-            "My Plugins & Tools": [
-                "Meine Plugins & Tools"
             ],
             "Settings": [
                 "Einstellungen"
@@ -154,18 +148,6 @@
             "Go to Bluehost": [
                 "Gehe zu Bluehost"
             ],
-            "Site Pages": [
-                "Site-Seiten"
-            ],
-            "Edit your homepage and other existing pages or add new pages to your site.": [
-                "Bearbeite deine Homepage und andere existierende Seiten oder f\u00fcge neue Seiten zu deiner Site hinzu."
-            ],
-            "View all": [
-                "Alle anzeigen"
-            ],
-            "Add New": [
-                "Neu"
-            ],
             "The Help Center provides guided, step-by-step assistance as you build your site.": [
                 "Das Hilfe-Center unterst\u00fctzt Sie Schritt f\u00fcr Schritt beim Aufbau Ihrer Website."
             ],
@@ -194,9 +176,6 @@
             "Hosting": [
                 "Hosting"
             ],
-            "Products": [
-                "Produkte"
-            ],
             "Explore our featured collection of tools and services.": [
                 "Entdecken Sie unsere Produktpalette von Tools und Dienstleistungen."
             ],
@@ -215,50 +194,11 @@
             "An error occurred while loading the content. Please try again later.": [
                 "Beim Laden des Inhalts ist ein Fehler aufgetreten. Bitte versuchen Sie es sp\u00e4ter erneut."
             ],
-            "Solution": [
-                "L\u00f6sung"
-            ],
-            "Explore the plugins and tools available with your solution.": [
-                "Entdecken Sie die mit Ihrer L\u00f6sung verf\u00fcgbaren Plugins und Werkzeuge."
-            ],
-            "Oops, there was an error loading your plugins and tools, please try again later.": [
-                "Hoppla, es gab einen Fehler beim Laden deiner Plugins und Werkzeuge, bitte versuche es sp\u00e4ter erneut."
-            ],
-            "Sorry, no current plugins and tools. Please, try again later.": [
-                "Entschuldigung, keine aktuellen Plugins und Werkzeuge. Bitte versuchen Sie es sp\u00e4ter erneut."
-            ],
             "Secret page to manage admin features and settings.": [
                 "Geheime Seite zum Verwalten von Adminfunktionen und Einstellungen."
             ],
             "We are available 24\/7 to help answer questions and solve your problems.": [
                 "Wir stehen Ihnen rund um die Uhr zur Verf\u00fcgung, um Fragen zu beantworten und Ihre Probleme zu l\u00f6sen."
-            ],
-            "Showcase physical and digital goods, product variations, and custom configurations.": [
-                "Pr\u00e4sentation physischer und digitaler Produkte, Produktvariationen und kundenspezifischer Konfigurationen."
-            ],
-            "Blog Posts": [
-                "Blog-Beitr\u00e4ge"
-            ],
-            "Add a new blog post or edit your existing posts.": [
-                "F\u00fcgen Sie einen neuen Blog-Beitrag hinzu oder bearbeiten Sie Ihre vorhandenen Beitr\u00e4ge."
-            ],
-            "Bookings & Appointments": [
-                "Buchungen & Termine"
-            ],
-            "Add your list of services, setup a booking calendar, and edit your bookings form.": [
-                "F\u00fcgen Sie Ihre Dienstleistungsliste hinzu, erstellen Sie einen Buchungskalender und bearbeiten Sie Ihr Buchungsformular."
-            ],
-            "Your site is not live.": [
-                "Ihre Seite ist nicht live."
-            ],
-            "Your site is live.": [
-                "Ihre Seite ist live."
-            ],
-            "Visitors to your site will see your \"Coming Soon\" page and not your actual site. Visit %1$s\"Settings\"%2$s to set your site live.": [
-                "Besucher Ihrer Website werden Ihre \"bald kommen\"-Seite und nicht Ihre aktuelle Site sehen. Besuchen Sie %1$s\"Einstellungen\"%2$s , um Ihre Site live zu setzen."
-            ],
-            "Visitors to your site will see all your publicly published pages.": [
-                "Besucher Ihrer Website werden alle \u00f6ffentlich ver\u00f6ffentlichten Seiten sehen."
             ],
             "Enabled All auto-updates": [
                 "Alle Auto-Updates aktiviert"
@@ -458,194 +398,59 @@
             "WonderBlocks will no longer display.": [
                 "WonderBl\u00f6cke werden nicht mehr angezeigt."
             ],
-            "Cancel": [
-                "Abbrechen"
-            ],
-            "Clone": [
-                "Klonen"
-            ],
-            "Confirm Clone Action": [
-                "Klon-Aktion best\u00e4tigen"
-            ],
-            "This will overwrite anything in staging and update it to an exact clone of the current production site. Are you sure you want to proceed?": [
-                "Dies wird alles in der Stagierung \u00fcberschreiben und zu einem exakten Klon der aktuellen Produktionsseite aktualisieren. Sind Sie sicher, dass Sie fortfahren m\u00f6chten?"
-            ],
-            "Cloned to Staging": [
-                "Zu Staging geklont"
-            ],
-            "Cloning production to staging, this should take about a minute.": [
-                "Das Klonen der Produktion auf Stagnation sollte ungef\u00e4hr eine Minute dauern."
-            ],
-            "Clone to staging": [
-                "Zum Stagieren klonen"
-            ],
-            "Created": [
-                "Erstellt"
-            ],
-            "Staging Created": [
-                "Staging erstellt"
-            ],
-            "Creating a staging site, this should take about a minute.": [
-                "Erstellen einer Staging-Site sollte eine Minute dauern."
-            ],
-            "Create staging site": [
-                "Staging-Site erstellen"
-            ],
-            "Currently editing": [
-                "Aktuell bearbeiten"
-            ],
-            "Delete": [
-                "L\u00f6schen"
-            ],
-            "Confirm Delete": [
-                "L\u00f6schen best\u00e4tigen"
-            ],
-            "This will permanently delete staging site. Are you sure you want to proceed? You can recreate another staging site at any time, but any specific changes you've made to this staging site will be lost.": [
-                "Staging-Site wird dauerhaft gel\u00f6scht. Sind Sie sicher, dass Sie fortfahren m\u00f6chten? Sie k\u00f6nnen jederzeit eine andere Staging-Site neu erstellen, aber alle spezifischen \u00c4nderungen, die Sie an dieser Staging-Site vorgenommen haben, gehen verloren."
-            ],
-            "Deleted Staging": [
-                "Gel\u00f6schte Staging"
-            ],
-            "Deleting the staging site, this should take about a minute.": [
-                "Staging Site wird gel\u00f6scht. Dies sollte ungef\u00e4hr eine Minute dauern."
-            ],
-            "Delete Staging Site": [
-                "Staging-Site l\u00f6schen"
-            ],
-            "Deploy": [
-                "Deploy"
-            ],
-            "Deploy all changes": [
-                "Alle \u00c4nderungen verteilen"
-            ],
-            "Confirm Deployment": [
-                "Einsatz best\u00e4tigen"
-            ],
-            "Deploy database only": [
-                "Nur Datenbank verteilen"
-            ],
-            "This will deploy staging to production and overwrite current production site. Are you sure you want to proceed?": [
-                "Dies wird Staging zur Produktion bereitstellen und die aktuelle Produktionsseite \u00fcberschreiben. Sind Sie sicher, dass Sie fortfahren m\u00f6chten?"
-            ],
-            "Deploy files only": [
-                "Nur Dateien verteilen"
-            ],
-            "Deployed": [
-                "Ausgestellt"
-            ],
-            "Deploying from staging to production, this should take about a minute.": [
-                "Der Einsatz von Staging in die Produktion sollte etwa eine Minute in Anspruch nehmen."
-            ],
-            "Deploy Site": [
-                "Site verteilen"
-            ],
-            "Error": [
-                "Fehler"
-            ],
-            "You don't have a staging site yet.": [
-                "Sie haben noch keine Staging-Site."
-            ],
-            "Not currently editing": [
-                "Derzeit nicht bearbeiten"
-            ],
-            "Proceed": [
-                "Fortfahren"
-            ],
-            "Production Site": [
-                "Produktionsstandort"
-            ],
-            "Staging Site": [
-                "Staging-Seite"
-            ],
-            "A staging site is a duplicate of your live site, offering a secure environment to experiment, test updates, and deploy when ready.": [
-                "Eine Staging-Site ist eine Kopie Ihrer Live-Site, die eine sichere Umgebung zum Experimentieren, Testen von Aktualisierungen und Verteilen bietet, wenn sie bereit sind."
-            ],
-            "Switch": [
-                "Wechseln"
-            ],
-            "Switching": [
-                "Wechseln"
-            ],
-            "Switch to Production": [
-                "Zur Produktion wechseln"
-            ],
-            "This will navigate you to the production environment": [
-                "Dies wird Sie zur Produktionsumgebung navigieren"
-            ],
-            "Loading the production environment now.": [
-                "Laden der Produktionsumgebung jetzt."
-            ],
-            "Switching to the production environment, this should take about a minute.": [
-                "Beim Wechsel auf die Produktionsumgebung sollte dies etwa eine Minute dauern."
-            ],
-            "Switch to Staging": [
-                "Zu Staging wechseln"
-            ],
-            "This will navigate you to the staging environment": [
-                "Dies wird dich zur Staging-Umgebung navigieren"
-            ],
-            "Loading the staging environment now.": [
-                "Laden der Staging-Umgebung jetzt."
-            ],
-            "Switching to the staging environment, this should take about a minute.": [
-                "Beim Wechsel auf die Staging-Umgebung sollte dies ungef\u00e4hr eine Minute dauern."
-            ],
-            "An unknown error has occurred.": [
-                "Ein unbekannter Fehler ist aufgetreten."
-            ],
-            "Working\u2026": [
-                "Arbeiten\u2026"
-            ],
-            "Add a New Plugin": [
-                "Das Bluehost-Plugin"
-            ],
             "Hire our experts": [
-                ""
+                "Unsere Experten einstellen"
             ],
             "Get in touch with us, and we\u2019ll help you build the exact store you\u2019re dreaming of.": [
-                ""
-            ],
-            "Get Help & Resources": [
-                ""
-            ],
-            "Documentation and tutorials to help you get the most out of your solution.": [
-                ""
-            ],
-            "Pro Design Live": [
-                ""
-            ],
-            "We will help you build and grow your website and improve your skills in WordPress.": [
-                ""
-            ],
-            "Get Info": [
-                ""
-            ],
-            "Quick links": [
-                ""
-            ],
-            "Manage hosting": [
-                ""
-            ],
-            "Write a blog post": [
-                ""
-            ],
-            "Create a sale promotion": [
-                ""
-            ],
-            "Unlock exclusive benefits with our referral program!": [
-                ""
-            ],
-            "Start now": [
-                ""
-            ],
-            "Explore your Solution": [
-                ""
+                "Nehmen Sie Kontakt mit uns auf und wir helfen Ihnen, den genauen Shop zu bauen, von dem Sie tr\u00e4umen."
             ],
             "Discover all the features to grow your store, boost sales and loyalize your customers.": [
-                ""
+                "Entdecken Sie alle Funktionen, um Ihren Shop zu erweitern, Ihren Umsatz zu steigern und Ihre Kunden zu loyalisieren."
+            ],
+            "Quick links": [
+                "Schnelllinks"
+            ],
+            "Manage hosting": [
+                "Hosting verwalten"
+            ],
+            "Write a blog post": [
+                "Blogeintrag schreiben"
+            ],
+            "Create a sale promotion": [
+                "Verkaufsaktion erstellen"
+            ],
+            "Get Help & Resources": [
+                "Hilfe & Ressourcen erhalten"
             ],
             "Refer a friend and earn money": [
-                ""
+                "Empfehlen Sie einen Freund und verdienen Sie Geld"
+            ],
+            "Unlock exclusive benefits with our referral program!": [
+                "Schalten Sie exklusive Vorteile mit unserem Empfehlungsprogramm frei!"
+            ],
+            "Start now": [
+                "Jetzt starten"
+            ],
+            "Pro Design Live": [
+                "Pro Design Live"
+            ],
+            "We will help you build and grow your website and improve your skills in WordPress.": [
+                "Wir helfen Ihnen, Ihre Website aufzubauen und zu wachsen und Ihre F\u00e4higkeiten in WordPress zu verbessern."
+            ],
+            "Get Info": [
+                "Info abrufen"
+            ],
+            "Welcome to Bluehost": [
+                "Willkommen bei Bluehost"
+            ],
+            "We're very excited to get started with you!": [
+                "Wir freuen uns sehr, mit Ihnen loszulegen!"
+            ],
+            "Explore Premium Tools": [
+                "Entdecken Sie Premium-Tools"
+            ],
+            "Get expert help, documentation, and tutorials to make the most of your WordPress site.": [
+                "Holen Sie sich Expertenhilfe, Dokumentation und Tutorials, um das Beste aus Ihrer WordPress-Website zu machen."
             ]
         }
     }

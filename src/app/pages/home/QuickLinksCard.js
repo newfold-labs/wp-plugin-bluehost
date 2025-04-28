@@ -11,6 +11,7 @@ const QuickLinksCard = ( {} ) => {
 				<a
 					className="nfd-no-underline nfd-card-link nfd-card-link-mini"
 					href="#/hosting"
+					data-cy="hosting-card"
 				>
 					<Card className="wppbh-hosting-card nfd-card-mini nfd-py-4">
 						<Card.Content>
@@ -21,7 +22,7 @@ const QuickLinksCard = ( {} ) => {
 										'wp-plugin-bluehost'
 									) }
 								</p>
-								<Arrow className="nfd-arrow nfd-max-w-8" />
+								<Arrow className="nfd-arrow nfd-max-w-6" />
 							</div>
 						</Card.Content>
 					</Card>
@@ -29,6 +30,7 @@ const QuickLinksCard = ( {} ) => {
 				<a
 					className="nfd-no-underline nfd-card-link nfd-card-link-mini"
 					href="post-new.php?wb-library=patterns&wb-category=text"
+					data-cy="blog-card"
 				>
 					<Card className="wppbh-blog-card nfd-card-mini nfd-py-4">
 						<Card.Content>
@@ -39,7 +41,7 @@ const QuickLinksCard = ( {} ) => {
 										'wp-plugin-bluehost'
 									) }
 								</p>
-								<Arrow className="nfd-arrow nfd-max-w-8" />
+								<Arrow className="nfd-arrow nfd-max-w-6" />
 							</div>
 						</Card.Content>
 					</Card>
@@ -47,6 +49,7 @@ const QuickLinksCard = ( {} ) => {
 				<a
 					className="nfd-no-underline nfd-card-link nfd-card-link-mini"
 					href="admin.php?page=bluehost#/store/sales_discounts"
+					data-cy="promotion-card"
 				>
 					<Card className="wppbh-promotion-card nfd-card-mini nfd-py-4">
 						<Card.Content>
@@ -57,7 +60,7 @@ const QuickLinksCard = ( {} ) => {
 										'wp-plugin-bluehost'
 									) }
 								</p>
-								<Arrow className="nfd-arrow nfd-max-w-8" />
+								<Arrow className="nfd-arrow nfd-max-w-6" />
 							</div>
 						</Card.Content>
 					</Card>

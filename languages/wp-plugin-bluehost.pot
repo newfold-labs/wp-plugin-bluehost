@@ -515,6 +515,190 @@ msgid "Bluehost WordPress Plugin"
 msgstr ""
 
 #: build/4.3.2/index.js:8
+msgid "Cancel"
+msgstr ""
+
+#: build/4.3.2/index.js:8
+msgid "Clone"
+msgstr ""
+
+#: build/4.3.2/index.js:8
+msgid "Confirm Clone Action"
+msgstr ""
+
+#: build/4.3.2/index.js:8
+msgid "This will overwrite anything in staging and update it to an exact clone of the current production site. Are you sure you want to proceed?"
+msgstr ""
+
+#: build/4.3.2/index.js:8
+msgid "Cloned to Staging"
+msgstr ""
+
+#: build/4.3.2/index.js:8
+msgid "Cloning production to staging, this should take about a minute."
+msgstr ""
+
+#: build/4.3.2/index.js:8
+msgid "Clone to staging"
+msgstr ""
+
+#: build/4.3.2/index.js:8
+msgid "Created"
+msgstr ""
+
+#: build/4.3.2/index.js:8
+msgid "Staging Created"
+msgstr ""
+
+#: build/4.3.2/index.js:8
+msgid "Creating a staging site, this should take about a minute."
+msgstr ""
+
+#: build/4.3.2/index.js:8
+msgid "Create staging site"
+msgstr ""
+
+#: build/4.3.2/index.js:8
+msgid "Currently editing"
+msgstr ""
+
+#: build/4.3.2/index.js:8
+msgid "Delete"
+msgstr ""
+
+#: build/4.3.2/index.js:8
+msgid "Confirm Delete"
+msgstr ""
+
+#: build/4.3.2/index.js:8
+msgid "This will permanently delete staging site. Are you sure you want to proceed? You can recreate another staging site at any time, but any specific changes you've made to this staging site will be lost."
+msgstr ""
+
+#: build/4.3.2/index.js:8
+msgid "Deleted Staging"
+msgstr ""
+
+#: build/4.3.2/index.js:8
+msgid "Deleting the staging site, this should take about a minute."
+msgstr ""
+
+#: build/4.3.2/index.js:8
+msgid "Delete Staging Site"
+msgstr ""
+
+#: build/4.3.2/index.js:8
+msgid "Deploy"
+msgstr ""
+
+#: build/4.3.2/index.js:8
+msgid "Deploy all changes"
+msgstr ""
+
+#: build/4.3.2/index.js:8
+msgid "Confirm Deployment"
+msgstr ""
+
+#: build/4.3.2/index.js:8
+msgid "Deploy database only"
+msgstr ""
+
+#: build/4.3.2/index.js:8
+msgid "This will deploy staging to production and overwrite current production site. Are you sure you want to proceed?"
+msgstr ""
+
+#: build/4.3.2/index.js:8
+msgid "Deploy files only"
+msgstr ""
+
+#: build/4.3.2/index.js:8
+msgid "Deployed"
+msgstr ""
+
+#: build/4.3.2/index.js:8
+msgid "Deploying from staging to production, this should take about a minute."
+msgstr ""
+
+#: build/4.3.2/index.js:8
+msgid "Deploy Site"
+msgstr ""
+
+#: build/4.3.2/index.js:8
+msgid "Error"
+msgstr ""
+
+#: build/4.3.2/index.js:8
+msgid "You don't have a staging site yet."
+msgstr ""
+
+#: build/4.3.2/index.js:8
+msgid "Not currently editing"
+msgstr ""
+
+#: build/4.3.2/index.js:8
+msgid "Proceed"
+msgstr ""
+
+#: build/4.3.2/index.js:8
+msgid "Production Site"
+msgstr ""
+
+#: build/4.3.2/index.js:8
+msgid "Staging Site"
+msgstr ""
+
+#: build/4.3.2/index.js:8
+msgid "A staging site is a duplicate of your live site, offering a secure environment to experiment, test updates, and deploy when ready."
+msgstr ""
+
+#: build/4.3.2/index.js:8
+msgid "Switch"
+msgstr ""
+
+#: build/4.3.2/index.js:8
+msgid "Switching"
+msgstr ""
+
+#: build/4.3.2/index.js:8
+msgid "Switch to Production"
+msgstr ""
+
+#: build/4.3.2/index.js:8
+msgid "This will navigate you to the production environment"
+msgstr ""
+
+#: build/4.3.2/index.js:8
+msgid "Loading the production environment now."
+msgstr ""
+
+#: build/4.3.2/index.js:8
+msgid "Switching to the production environment, this should take about a minute."
+msgstr ""
+
+#: build/4.3.2/index.js:8
+msgid "Switch to Staging"
+msgstr ""
+
+#: build/4.3.2/index.js:8
+msgid "This will navigate you to the staging environment"
+msgstr ""
+
+#: build/4.3.2/index.js:8
+msgid "Loading the staging environment now."
+msgstr ""
+
+#: build/4.3.2/index.js:8
+msgid "Switching to the staging environment, this should take about a minute."
+msgstr ""
+
+#: build/4.3.2/index.js:8
+msgid "An unknown error has occurred."
+msgstr ""
+
+#: build/4.3.2/index.js:8
+msgid "Working…"
+msgstr ""
+
+#: build/4.3.2/index.js:8
 msgid "Quick links"
 msgstr ""
 

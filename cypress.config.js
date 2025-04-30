@@ -142,7 +142,7 @@ const supportsYoast = ( env ) => {
 	const semver = require( 'semver' );
 	if (
 		semver.satisfies( env.wpSemverVersion, '>=6.6.0' ) &&
-		semver.satisfies( env.phpSemverVersion, '>=7.2.5' )
+		semver.satisfies( env.phpSemverVersion, '>=7.4.0' )
 	) {
 		return true;
 	}

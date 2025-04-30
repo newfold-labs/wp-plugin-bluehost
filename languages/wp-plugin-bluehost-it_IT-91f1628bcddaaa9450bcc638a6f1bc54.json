@@ -1,7 +1,7 @@
 {
     "translation-revision-date": "2025-03-18T20:07:22+00:00",
     "generator": "WP-CLI\/2.11.0",
-    "source": "build\/4.3.1\/index.js",
+    "source": "build\/4.3.2\/index.js",
     "domain": "messages",
     "locale_data": {
         "messages": {
@@ -13,17 +13,11 @@
             "Home": [
                 "Home"
             ],
-            "Pages & Posts": [
-                "Pagine & Post"
-            ],
             "Store": [
                 "Negozio"
             ],
             "Marketplace": [
                 "Marketplace"
-            ],
-            "My Plugins & Tools": [
-                "Plugin & Strumenti"
             ],
             "Settings": [
                 "Impostazioni"
@@ -154,18 +148,6 @@
             "Go to Bluehost": [
                 "Vai a Bluehost"
             ],
-            "Site Pages": [
-                "Pagine del sito"
-            ],
-            "Edit your homepage and other existing pages or add new pages to your site.": [
-                "Modifica la tua homepage e altre pagine esistenti o aggiungi nuove pagine al tuo sito."
-            ],
-            "View all": [
-                "Vedi tutto"
-            ],
-            "Add New": [
-                "Aggiungi nuovo"
-            ],
             "The Help Center provides guided, step-by-step assistance as you build your site.": [
                 "L\u2019Help Center offre assistenza guidata e dettagliata durante la creazione del tuo sito."
             ],
@@ -194,9 +176,6 @@
             "Hosting": [
                 "Hosting"
             ],
-            "Products": [
-                "Prodotti"
-            ],
             "Explore our featured collection of tools and services.": [
                 "Esplora la nostra collezione di strumenti e servizi."
             ],
@@ -215,50 +194,11 @@
             "An error occurred while loading the content. Please try again later.": [
                 "Si \u00e8 verificato un errore durante il caricamento del contenuto. Riprova pi\u00f9 tardi."
             ],
-            "Solution": [
-                "Soluzione"
-            ],
-            "Explore the plugins and tools available with your solution.": [
-                "Esplora i plugin e gli strumenti disponibili con la tua soluzione."
-            ],
-            "Oops, there was an error loading your plugins and tools, please try again later.": [
-                "Ops, si \u00e8 verificato un errore durante il caricamento dei plugin e degli strumenti. Riprova pi\u00f9 tardi."
-            ],
-            "Sorry, no current plugins and tools. Please, try again later.": [
-                "Nessun plugin e strumento. Riprova pi\u00f9 tardi."
-            ],
             "Secret page to manage admin features and settings.": [
                 "Pagina segreta per gestire funzionalit\u00e0 e impostazioni di amministratore."
             ],
             "We are available 24\/7 to help answer questions and solve your problems.": [
                 "Siamo disponibili 24 ore su 24, 7 giorni su 7, per rispondere alle domande e risolvere i tuoi problemi."
-            ],
-            "Showcase physical and digital goods, product variations, and custom configurations.": [
-                "Mostra prodotti fisici e digitali, variazioni di prodotto e configurazioni personalizzate."
-            ],
-            "Blog Posts": [
-                "Articoli del Blog"
-            ],
-            "Add a new blog post or edit your existing posts.": [
-                "Aggiungi un nuovo post sul blog o modifica i post esistenti."
-            ],
-            "Bookings & Appointments": [
-                "Bookings & Appointments"
-            ],
-            "Add your list of services, setup a booking calendar, and edit your bookings form.": [
-                "Aggiungi la lista dei servizi, imposta un calendario e modifica il form per le tue prenotazioni."
-            ],
-            "Your site is not live.": [
-                "Il tuo sito non \u00e8 live."
-            ],
-            "Your site is live.": [
-                "Il tuo sito \u00e8 live."
-            ],
-            "Visitors to your site will see your \"Coming Soon\" page and not your actual site. Visit %1$s\"Settings\"%2$s to set your site live.": [
-                "I visitatori del sito vedranno la pagina \u201cComing Soon\u201d e non il sito reale. Vai su %1$s \u201cImpostazioni\u201d%2$s per rendere il tuo sito live."
-            ],
-            "Visitors to your site will see all your publicly published pages.": [
-                "I visitatori del tuo sito vedranno tutte le pagine pubbliche che hai pubblicato."
             ],
             "Enabled All auto-updates": [
                 "Abilitati tutti gli aggiornamenti automatici"
@@ -596,56 +536,59 @@
             "Working\u2026": [
                 "Lavorare\u2026"
             ],
-            "Add a New Plugin": [
-                "Aggiungi un nuovo plugin"
-            ],
             "Hire our experts": [
-                ""
+                "Assumi i nostri esperti"
             ],
             "Get in touch with us, and we\u2019ll help you build the exact store you\u2019re dreaming of.": [
-                ""
-            ],
-            "Get Help & Resources": [
-                ""
-            ],
-            "Documentation and tutorials to help you get the most out of your solution.": [
-                ""
-            ],
-            "Pro Design Live": [
-                ""
-            ],
-            "We will help you build and grow your website and improve your skills in WordPress.": [
-                ""
-            ],
-            "Get Info": [
-                ""
-            ],
-            "Quick links": [
-                ""
-            ],
-            "Manage hosting": [
-                ""
-            ],
-            "Write a blog post": [
-                ""
-            ],
-            "Create a sale promotion": [
-                ""
-            ],
-            "Unlock exclusive benefits with our referral program!": [
-                ""
-            ],
-            "Start now": [
-                ""
-            ],
-            "Explore your Solution": [
-                ""
+                "Mettiti in contatto con noi e ti aiuteremo a costruire il negozio esatto che stai sognando."
             ],
             "Discover all the features to grow your store, boost sales and loyalize your customers.": [
-                ""
+                "Scopri tutte le funzionalit\u00e0 per far crescere il tuo negozio, aumentare le vendite e lealizzare i tuoi clienti."
+            ],
+            "Quick links": [
+                "Collegamenti rapidi"
+            ],
+            "Manage hosting": [
+                "Gestisci hosting"
+            ],
+            "Write a blog post": [
+                "Scrivi un post sul blog"
+            ],
+            "Create a sale promotion": [
+                "Crea una promozione di vendita"
+            ],
+            "Get Help & Resources": [
+                "Ottieni Aiuto E Risorse"
             ],
             "Refer a friend and earn money": [
-                ""
+                "Fai riferimento ad un amico e guadagna denaro"
+            ],
+            "Unlock exclusive benefits with our referral program!": [
+                "Sblocca i vantaggi esclusivi con il nostro programma di segnalazione!"
+            ],
+            "Start now": [
+                "Inizia ora"
+            ],
+            "Pro Design Live": [
+                "Pro Design Live"
+            ],
+            "We will help you build and grow your website and improve your skills in WordPress.": [
+                "Ti aiuteremo a costruire e far crescere il tuo sito web e migliorare le tue abilit\u00e0 in WordPress."
+            ],
+            "Get Info": [
+                "Ottieni Informazioni"
+            ],
+            "Welcome to Bluehost": [
+                "Benvenuto su Bluehost"
+            ],
+            "We're very excited to get started with you!": [
+                "Siamo molto entusiasti di iniziare con te!"
+            ],
+            "Explore Premium Tools": [
+                "Esplora Strumenti Premium"
+            ],
+            "Get expert help, documentation, and tutorials to make the most of your WordPress site.": [
+                "Ottieni aiuto esperto, documentazione e tutorial per sfruttare al meglio il tuo sito WordPress."
             ]
         }
     }

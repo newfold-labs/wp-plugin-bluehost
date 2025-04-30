@@ -1,7 +1,7 @@
 {
     "translation-revision-date": "2025-03-18T20:07:22+00:00",
     "generator": "WP-CLI\/2.11.0",
-    "source": "build\/4.3.1\/index.js",
+    "source": "build\/4.3.2\/index.js",
     "domain": "messages",
     "locale_data": {
         "messages": {
@@ -13,17 +13,11 @@
             "Home": [
                 "Inicio"
             ],
-            "Pages & Posts": [
-                "P\u00e1ginas y entradas"
-            ],
             "Store": [
                 "Tienda"
             ],
             "Marketplace": [
                 "Marketplace"
-            ],
-            "My Plugins & Tools": [
-                "Mis plugins y herramientas"
             ],
             "Settings": [
                 "Ajustes"
@@ -154,18 +148,6 @@
             "Go to Bluehost": [
                 "Ir a Bluehost"
             ],
-            "Site Pages": [
-                "P\u00e1ginas del sitio"
-            ],
-            "Edit your homepage and other existing pages or add new pages to your site.": [
-                "Edita tu p\u00e1gina de inicio y otras p\u00e1ginas existentes o a\u00f1ade nuevas p\u00e1ginas a tu sitio."
-            ],
-            "View all": [
-                "Ver todo"
-            ],
-            "Add New": [
-                "A\u00f1adir nuevo"
-            ],
             "The Help Center provides guided, step-by-step assistance as you build your site.": [
                 "El Centro de Ayuda proporciona asistencia guiada paso a paso a medida que construyes tu sitio."
             ],
@@ -194,9 +176,6 @@
             "Hosting": [
                 "Alojamiento"
             ],
-            "Products": [
-                "Productos"
-            ],
             "Explore our featured collection of tools and services.": [
                 "Explora nuestra colecci\u00f3n de herramientas y servicios."
             ],
@@ -215,50 +194,11 @@
             "An error occurred while loading the content. Please try again later.": [
                 "Se ha producido un error al cargar el contenido. Por favor, int\u00e9ntalo de nuevo m\u00e1s tarde."
             ],
-            "Solution": [
-                "Soluci\u00f3n"
-            ],
-            "Explore the plugins and tools available with your solution.": [
-                "Explora los plugins y herramientas disponibles con tu soluci\u00f3n."
-            ],
-            "Oops, there was an error loading your plugins and tools, please try again later.": [
-                "Vaya, hubo un error al cargar tus plugins y herramientas. Por favor, int\u00e9ntalo de nuevo m\u00e1s tarde."
-            ],
-            "Sorry, no current plugins and tools. Please, try again later.": [
-                "Lo siento, no hay plugins y herramientas actuales. Por favor, int\u00e9ntalo de nuevo m\u00e1s tarde."
-            ],
             "Secret page to manage admin features and settings.": [
                 "P\u00e1gina secreta para gestionar ajustes y funciones de administraci\u00f3n."
             ],
             "We are available 24\/7 to help answer questions and solve your problems.": [
                 "Estamos disponibles las 24 horas del d\u00eda para responder a tus preguntas y resolver tus problemas."
-            ],
-            "Showcase physical and digital goods, product variations, and custom configurations.": [
-                "Muestra art\u00edculos f\u00edsicos y digitales, variaciones de productos y configuraciones personalizadas."
-            ],
-            "Blog Posts": [
-                "Entradas del blog"
-            ],
-            "Add a new blog post or edit your existing posts.": [
-                "A\u00f1ade tu lista de servicios, configura un calendario de reservas y edita el formulario de reservas."
-            ],
-            "Bookings & Appointments": [
-                "Reservas y citas"
-            ],
-            "Add your list of services, setup a booking calendar, and edit your bookings form.": [
-                "A\u00f1ada su lista de servicios, configure un calendario de reservas y edite su formulario de reservas."
-            ],
-            "Your site is not live.": [
-                "Tu sitio no est\u00e1 visible."
-            ],
-            "Your site is live.": [
-                "Tu sitio est\u00e1 visible."
-            ],
-            "Visitors to your site will see your \"Coming Soon\" page and not your actual site. Visit %1$s\"Settings\"%2$s to set your site live.": [
-                "Quienes visiten tu sitio ver\u00e1n tu p\u00e1gina \\\u201dPr\u00f3ximamente\\\u201d y no tu sitio real. Visita los %1$s\\\u201dAjustes\\\u201d%2$s para configurar tu sitio visible."
-            ],
-            "Visitors to your site will see all your publicly published pages.": [
-                "Quienes visiten tu sitio ver\u00e1n todas tus p\u00e1ginas publicadas."
             ],
             "Enabled All auto-updates": [
                 "Activar todas las actualizaciones autom\u00e1ticas"
@@ -596,56 +536,59 @@
             "Working\u2026": [
                 "Trabajando\u2026"
             ],
-            "Add a New Plugin": [
-                "A\u00f1adir un nuevo Plugin"
-            ],
             "Hire our experts": [
-                ""
+                "Contrata a nuestros expertos"
             ],
             "Get in touch with us, and we\u2019ll help you build the exact store you\u2019re dreaming of.": [
-                ""
-            ],
-            "Get Help & Resources": [
-                ""
-            ],
-            "Documentation and tutorials to help you get the most out of your solution.": [
-                ""
-            ],
-            "Pro Design Live": [
-                ""
-            ],
-            "We will help you build and grow your website and improve your skills in WordPress.": [
-                ""
-            ],
-            "Get Info": [
-                ""
-            ],
-            "Quick links": [
-                ""
-            ],
-            "Manage hosting": [
-                ""
-            ],
-            "Write a blog post": [
-                ""
-            ],
-            "Create a sale promotion": [
-                ""
-            ],
-            "Unlock exclusive benefits with our referral program!": [
-                ""
-            ],
-            "Start now": [
-                ""
-            ],
-            "Explore your Solution": [
-                ""
+                "Ponte en contacto con nosotros y te ayudaremos a construir la tienda exacta con la que est\u00e1s so\u00f1ando."
             ],
             "Discover all the features to grow your store, boost sales and loyalize your customers.": [
-                ""
+                "Descubra todas las caracter\u00edsticas para hacer crecer su tienda, incremente las ventas y fidelice a sus clientes."
+            ],
+            "Quick links": [
+                "Enlaces r\u00e1pidos"
+            ],
+            "Manage hosting": [
+                "Gestionar alojamiento"
+            ],
+            "Write a blog post": [
+                "Escribir una entrada"
+            ],
+            "Create a sale promotion": [
+                "Crear una promoci\u00f3n de venta"
+            ],
+            "Get Help & Resources": [
+                "Obt\u00e9n ayuda y recursos"
             ],
             "Refer a friend and earn money": [
-                ""
+                "Refiera a un amigo y gane dinero"
+            ],
+            "Unlock exclusive benefits with our referral program!": [
+                "\u00a1Desbloquea beneficios exclusivos con nuestro programa de referidos!"
+            ],
+            "Start now": [
+                "Empezar ahora"
+            ],
+            "Pro Design Live": [
+                "Pro Design Live"
+            ],
+            "We will help you build and grow your website and improve your skills in WordPress.": [
+                "Le ayudaremos a construir y crecer su sitio web y mejorar sus habilidades en WordPress."
+            ],
+            "Get Info": [
+                "Obtener informaci\u00f3n"
+            ],
+            "Welcome to Bluehost": [
+                "Bienvenido a Bluehost"
+            ],
+            "We're very excited to get started with you!": [
+                "\u00a1Estamos muy entusiasmados de empezar contigo!"
+            ],
+            "Explore Premium Tools": [
+                "Explorar herramientas premium"
+            ],
+            "Get expert help, documentation, and tutorials to make the most of your WordPress site.": [
+                "Obtenga ayuda experta, documentaci\u00f3n y tutoriales para aprovechar al m\u00e1ximo su sitio de WordPress."
             ]
         }
     }

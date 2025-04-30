@@ -123,4 +123,4 @@ jobs:
       - name: Output debug.log file contents
         if: always()
         continue-on-error: true
-        run: npx wp-env logs
+        run: npx wp-env logs --watch=false --debug=true

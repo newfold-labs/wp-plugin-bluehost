@@ -125,4 +125,4 @@ jobs:
         continue-on-error: true
         run: |
           npx wp-env logs --watch=false --debug=true
-          npx wp-env run wordpress "cat /var/www/html/wp-content/debug.log"
+          npx wp-env run wordpress-1 "cat /var/www/html/wp-content/debug.log"

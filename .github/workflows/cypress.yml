@@ -126,7 +126,7 @@ jobs:
         run: |
           npx wp-env run wordpress cat /var/www/html/wp-content/debug.log
 
-      - name: Output wordpress docter logs
+      - name: Output wordpress docker logs
         if: always()
         continue-on-error: true
         run: |

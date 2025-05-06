@@ -47,14 +47,19 @@ const Help = () => {
 	return (
 		<Page className={ 'wppbh-app-help-page' }>
 			<div className={ 'wppbh-app-help-page__header' }>
-				<Title as="h1">
-					{ __( 'Help', 'wp-plugin-bluehost' ) }
-				</Title>
+				<Title as="h1">{ __( 'Help', 'wp-plugin-bluehost' ) }</Title>
 				<Title as="h2" className="nfd-font-normal nfd-text-[13px]">
-					{ __( 'We are available 24/7 to help answer questions and solve your problems.', 'wp-plugin-bluehost' ) }
+					{ __(
+						'We are available 24/7 to help answer questions and solve your problems.',
+						'wp-plugin-bluehost'
+					) }
 				</Title>
 			</div>
-			<Container className={ 'wppbh-app-help-container nfd-bg-transparent nfd-shadow-none' }>
+			<Container
+				className={
+					'wppbh-app-help-container nfd-bg-transparent nfd-shadow-none'
+				}
+			>
 				<Container.Block className={ 'nfd-p-0' }>
 					{ renderHelpCards() }
 				</Container.Block>

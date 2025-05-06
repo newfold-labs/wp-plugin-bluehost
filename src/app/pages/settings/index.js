@@ -1,4 +1,4 @@
-import { Container, Page } from '@newfold/ui-component-library';
+import { Container, Page, Title } from '@newfold/ui-component-library';
 import useContainerBlockIsTarget from 'App/util/hooks/useContainerBlockTarget';
 import ComingSoon from './comingSoon';
 import AutomaticUpdates from './automaticUpdates';
@@ -11,17 +11,21 @@ import CommentSettings from './commentSettings';
 const Settings = () => {
 	return (
 		<Page title="Settings" className={ 'wppbh-app-settings-page' }>
-			<Container className={ 'wppbh-app-settings-container' }>
-				<Container.Header
-					title={ __( 'Settings', 'wp-plugin-bluehost' ) }
-					description={ __(
-						'This is where you can manage common settings for your website.',
+			<div
+				id={ 'settings-header' }
+				className={ 'wppbh-app-settings-header' }
+			>
+				<Title as={ 'h1' } className={ 'nfd-mb-2' }>
+					{ __( 'Settings', 'wp-plugin-bluehost' ) }
+				</Title>
+				<Title as={ 'h2' } className="nfd-font-normal nfd-text-[13px]">
+					{ __(
+						'Manage common settings for your website',
 						'wp-plugin-bluehost'
 					) }
-					id={ 'settings-header' }
-					className={ 'wppbh-app-settings-header' }
-				/>
-
+				</Title>
+			</div>
+			<Container className={ 'wppbh-app-settings-container' }>
 				<Container.Block
 					separator={ true }
 					id={ 'coming-soon-section' }

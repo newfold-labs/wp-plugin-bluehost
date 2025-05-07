@@ -146,8 +146,18 @@ jobs:
           name: bluehost-wordpress-plugin
           path: ./dist
 
+      - name: Get Plugin dist directory
+        id: dist
+        run: echo "PLUGIN_DIR=$(find dist -mindepth 1 -maxdepth 1 -type d)" >> $GITHUB_OUTPUT
+      
+      - name: Debug plugin dir
+        run: echo "Plugin directory is ${{ steps.dist.outputs.PLUGIN_DIR }}"
+
       - name: Configure WordPress
-        run: echo '{"plugins":[".dist/bluehost-wordpress-plugin"]}' > .wp-env.override.json
+        run: |
+          echo "{
+            \"plugins\": [\"${{ steps.dist.outputs.PLUGIN_DIR }}\"]
+          }" > .wp-env.override.json
 
       - name: Start WordPress
         uses: nick-fields/retry@ce71cc2ab81d554ebbe88c79ab5975992d79ba08 # v3.0.2
@@ -156,7 +166,7 @@ jobs:
           max_attempts: 3
           command: npx wp-env start --debug
 
-      - name: ::group::Run Cypress Tests (Container ${{ matrix.container }})
+      - name: Run Cypress Tests (Container ${{ matrix.container }})
         uses: cypress-io/github-action@v6
         with:
           record: true

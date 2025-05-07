@@ -147,9 +147,7 @@ jobs:
           path: ./dist
 
       - name: Configure WordPress
-        run: |
-          PLUGIN_PATH=$(find ./dist -type d -name "*")
-          echo "{\"config\":{\"WP_DEBUG_DISPLAY\":false},\"plugins\":[\"${PLUGIN_PATH}\"]}" > .wp-env.override.json
+        run: echo '{"plugins":[".dist/bluehost-wordpress-plugin"]}' > .wp-env.override.json
 
       - name: Start WordPress
         uses: nick-fields/retry@ce71cc2ab81d554ebbe88c79ab5975992d79ba08 # v3.0.2

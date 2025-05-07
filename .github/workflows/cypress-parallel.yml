@@ -137,6 +137,9 @@ jobs:
         with:
           php-version: '8.1'
 
+      - name: Install JS Dependencies
+        run: npm install --legacy-peer-deps
+
       - name: Download plugin dist
         uses: actions/download-artifact@v4
         with:

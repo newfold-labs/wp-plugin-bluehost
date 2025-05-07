@@ -108,7 +108,8 @@ jobs:
           path: ${{ steps.workflow.outputs.DIST }}
   
   test:
-    name: Cypress Tests (Container ${{ matrix.containers }})
+    name: Cypress Tests (${{ matrix.containers }})
+    needs: build
     runs-on: ubuntu-24.04
     timeout-minutes: 20
     strategy:

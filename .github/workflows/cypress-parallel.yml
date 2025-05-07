@@ -104,7 +104,7 @@ jobs:
       - name: Upload distribution artifact
         uses: actions/upload-artifact@v4
         with:
-          name: plugin-dist
+          name: bluehost-wordpress-plugin
           path: ${{ steps.workflow.outputs.DIST }}
 
   test:
@@ -143,13 +143,13 @@ jobs:
       - name: Download plugin dist
         uses: actions/download-artifact@v4
         with:
-          name: plugin-dist
+          name: bluehost-wordpress-plugin
           path: ./dist
 
       - name: Configure WordPress
         run: |
           PLUGIN_PATH=$(find ./dist -type d -name "*")
-          echo '{"config":{"WP_DEBUG_DISPLAY":false},"plugins":["$PLUGIN_PATH"]}' > .wp-env.override.json
+          echo "{\"config\":{\"WP_DEBUG_DISPLAY\":false},\"plugins\":[\"${PLUGIN_PATH}\"]}" > .wp-env.override.json
 
       - name: Start WordPress
         uses: nick-fields/retry@ce71cc2ab81d554ebbe88c79ab5975992d79ba08 # v3.0.2

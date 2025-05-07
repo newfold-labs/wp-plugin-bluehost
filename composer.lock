@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "2881cf83f5735a75d4bbbc81a069ef8e",
+    "content-hash": "42e0cb63fc87d088f201b47517789dbc",
     "packages": [
         {
             "name": "doctrine/inflector",
@@ -429,16 +429,16 @@
         },
         {
             "name": "instawp/connect-helpers",
-            "version": "1.0.1",
+            "version": "1.0.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/InstaWP/connect-helpers.git",
-                "reference": "2e60645a8e670973fba99dcbb9cecd8c9e3eefd1"
+                "reference": "e1a3372323f5944c88d5e6098914661027fe1df5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/InstaWP/connect-helpers/zipball/2e60645a8e670973fba99dcbb9cecd8c9e3eefd1",
-                "reference": "2e60645a8e670973fba99dcbb9cecd8c9e3eefd1",
+                "url": "https://api.github.com/repos/InstaWP/connect-helpers/zipball/e1a3372323f5944c88d5e6098914661027fe1df5",
+                "reference": "e1a3372323f5944c88d5e6098914661027fe1df5",
                 "shasum": ""
             },
             "require": {
@@ -470,10 +470,10 @@
             ],
             "description": "CLI Package for InstaWP Remote Features",
             "support": {
-                "source": "https://github.com/InstaWP/connect-helpers/tree/1.0.1",
+                "source": "https://github.com/InstaWP/connect-helpers/tree/1.0.3",
                 "issues": "https://github.com/InstaWP/connect-helpers/issues"
             },
-            "time": "2025-01-23T09:43:33+00:00"
+            "time": "2025-05-07T13:37:50+00:00"
         },
         {
             "name": "newfold-labs/container",
@@ -1713,25 +1713,25 @@
         },
         {
             "name": "newfold-labs/wp-module-migration",
-            "version": "1.4.0",
+            "version": "1.4.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/newfold-labs/wp-module-migration.git",
-                "reference": "2e7edc6fa77d209ceb9089df27673089d69fd4b0"
+                "reference": "00bd3f0da1fedde9880525cae1c2a437e7b6f2bd"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/newfold-labs/wp-module-migration/zipball/2e7edc6fa77d209ceb9089df27673089d69fd4b0",
-                "reference": "2e7edc6fa77d209ceb9089df27673089d69fd4b0",
+                "url": "https://api.github.com/repos/newfold-labs/wp-module-migration/zipball/00bd3f0da1fedde9880525cae1c2a437e7b6f2bd",
+                "reference": "00bd3f0da1fedde9880525cae1c2a437e7b6f2bd",
                 "shasum": ""
             },
             "require": {
-                "instawp/connect-helpers": "1.0.1",
+                "instawp/connect-helpers": "1.0.3",
                 "newfold-labs/wp-module-loader": "^1.0.10"
             },
             "require-dev": {
                 "newfold-labs/wp-php-standards": "^1.2",
-                "wp-cli/i18n-command": "^2.6.3"
+                "wp-cli/i18n-command": "^2.6.5"
             },
             "type": "library",
             "autoload": {
@@ -1779,10 +1779,10 @@
             ],
             "description": "Initiates the migration process",
             "support": {
-                "source": "https://github.com/newfold-labs/wp-module-migration/tree/1.4.0",
+                "source": "https://github.com/newfold-labs/wp-module-migration/tree/1.4.1",
                 "issues": "https://github.com/newfold-labs/wp-module-migration/issues"
             },
-            "time": "2025-04-30T11:35:06+00:00"
+            "time": "2025-05-07T17:47:51+00:00"
         },
         {
             "name": "newfold-labs/wp-module-notifications",

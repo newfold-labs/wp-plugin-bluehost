@@ -106,7 +106,7 @@ jobs:
         with:
           name: plugin-dist
           path: ${{ steps.workflow.outputs.DIST }}
-  
+
   test:
     name: Cypress Tests (${{ matrix.containers }})
     needs: build
@@ -145,7 +145,7 @@ jobs:
         with:
           name: plugin-dist
           path: ./dist
-      
+
       - name: Configure WordPress
         run: |
           PLUGIN_PATH=$(find ./dist -type d -name "*")

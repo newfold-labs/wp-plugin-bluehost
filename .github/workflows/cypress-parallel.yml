@@ -22,12 +22,22 @@ permissions:
   pull-requests: write
 
 jobs:
-  build:
-    name: Build Plugin
+    test:
+    name: Build and Test (${{ matrix.containers }})
+    needs: build
     runs-on: ubuntu-24.04
-    outputs:
-      dist: ${{ steps.workflow.outputs.DIST }}
-      package: ${{ steps.workflow.outputs.PACKAGE }}
+    timeout-minutes: 20
+    strategy:
+      # when one test fails, DO NOT cancel the other
+      # containers, because this will kill Cypress processes
+      # leaving Cypress Cloud hanging ...
+      # https://github.com/cypress-io/github-action/issues/48
+      fail-fast: false
+      matrix:
+        # run 4 parallel containers to speed up the tests
+        # https://docs.cypress.io/guides/guides/parallelization#Parallelization
+        containers: [1, 2, 3, 4]
+
     steps:
 
       - name: Checkout
@@ -101,63 +111,8 @@ jobs:
         working-directory: ${{ steps.workflow.outputs.DIST }}
         run: find .
 
-      - name: Upload distribution artifact
-        uses: actions/upload-artifact@v4
-        with:
-          name: bluehost-wordpress-plugin
-          path: ${{ steps.workflow.outputs.DIST }}
-
-  test:
-    name: Cypress Tests (${{ matrix.containers }})
-    needs: build
-    runs-on: ubuntu-24.04
-    timeout-minutes: 20
-    strategy:
-      # when one test fails, DO NOT cancel the other
-      # containers, because this will kill Cypress processes
-      # leaving Cypress Cloud hanging ...
-      # https://github.com/cypress-io/github-action/issues/48
-      fail-fast: false
-      matrix:
-        # run 4 parallel containers to speed up the tests
-        # https://docs.cypress.io/guides/guides/parallelization#Parallelization
-        containers: [1, 2, 3, 4]
-
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
-
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: 20.x
-
-      - name: Setup PHP
-        uses: shivammathur/setup-php@v2
-        with:
-          php-version: '8.1'
-
-      - name: Install JS Dependencies
-        run: npm install --legacy-peer-deps
-
-      - name: Download plugin dist
-        uses: actions/download-artifact@v4
-        with:
-          name: bluehost-wordpress-plugin
-          path: ./dist
-
-      - name: Get Plugin dist directory
-        id: dist
-        run: echo "PLUGIN_DIR=$(find dist -mindepth 1 -maxdepth 1 -type d)" >> $GITHUB_OUTPUT
-      
-      - name: Debug plugin dir
-        run: echo "Plugin directory is ${{ steps.dist.outputs.PLUGIN_DIR }}"
-
       - name: Configure WordPress
-        run: |
-          echo "{
-            \"plugins\": [\"${{ steps.dist.outputs.PLUGIN_DIR }}\"]
-          }" > .wp-env.override.json
+        run: echo '{"plugins":["${{ steps.workflow.outputs.DIST }}/${{ steps.workflow.outputs.PACKAGE }}"]}' > .wp-env.override.json
 
       - name: Start WordPress
         uses: nick-fields/retry@ce71cc2ab81d554ebbe88c79ab5975992d79ba08 # v3.0.2

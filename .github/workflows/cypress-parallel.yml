@@ -22,7 +22,7 @@ permissions:
   pull-requests: write
 
 jobs:
-    test:
+  test:
     name: Build and Test (${{ matrix.containers }})
     needs: build
     runs-on: ubuntu-24.04

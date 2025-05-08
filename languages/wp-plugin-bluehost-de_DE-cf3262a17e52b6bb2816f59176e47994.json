@@ -1,594 +1,591 @@
 {
-    "translation-revision-date": "2025-02-25T20:53:21+00:00",
-    "generator": "WP-CLI\/2.11.0",
-    "source": "build\/4.3.2\/index.js",
+    "translation-revision-date": "2024-10-21 07:10-0000",
+    "generator": "WP-CLI\/2.12.0",
+    "source": "build\/4.3.3\/index.js",
     "domain": "messages",
     "locale_data": {
         "messages": {
             "": {
                 "domain": "messages",
-                "lang": "en_GB",
+                "lang": "de_DE",
                 "plural-forms": "nplurals=2; plural=(n != 1);"
             },
             "Home": [
-                "Home"
+                "Startseite"
             ],
             "Store": [
-                "Store"
+                "Shop"
             ],
             "Marketplace": [
-                "Marketplace"
+                "Marktplatz"
             ],
             "Settings": [
-                "Settings"
+                "Einstellungen"
             ],
             "Staging": [
-                "Staging"
+                "Inszenierung"
             ],
             "Help": [
-                "Help"
+                "Hilfe"
             ],
             "Bluehost WordPress Plugin": [
-                "Bluehost WordPress Plugin"
+                "Bluehost WordPress-Plugin"
             ],
             "Oh No, An Error!": [
-                "Oh No, An Error!"
+                "Oh Nein, ein Fehler!"
             ],
             "You found an error, please refresh the page and try again!": [
-                "You found an error, please refresh the page and try again!"
+                "Sie haben einen Fehler gefunden, bitte aktualisieren Sie die Seite und versuchen Sie es erneut!"
             ],
             "If the error persists, please contact support.": [
-                "If the error persists, please contact support."
+                "Wenn der Fehler weiterhin besteht, wenden Sie sich bitte an den Support."
             ],
             "Error code:": [
-                "Error code:"
+                "Fehlercode:"
             ],
             "There's nothing here!": [
-                "There's nothing here!"
+                "Hier ist nichts da!"
             ],
             "Products & Services": [
-                "Products & Services"
+                "Produkte & Dienstleistungen"
             ],
             "Sales & Promotions": [
-                "Sales & Promotions"
+                "Verk\u00e4ufe & Werbeaktionen"
             ],
             "Sales Channel": [
-                "Sales Channel"
+                "Vertriebskanal"
             ],
             "Payments": [
-                "Payments"
+                "Zahlungen"
             ],
             "Store Details": [
-                "Store Details"
+                "Shop-Details"
             ],
             "Help with WordPress": [
-                "Help with WordPress"
+                "Hilfe bei WordPress"
             ],
             "Admin": [
                 "Admin"
             ],
             "The staging feature provides a way to copy a site to test new updates, features or content.": [
-                "The staging feature provides a way to copy a site to test new updates, features or content."
+                "Die Staging-Funktion bietet eine M\u00f6glichkeit, eine Website zu kopieren, um neue Updates, Funktionen oder Inhalte zu testen."
             ],
             "Sorry, that is not allowed.": [
-                "Sorry, that is not allowed."
+                "Entschuldigung, das ist nicht erlaubt."
             ],
             "This feature cannot currently be modified.": [
-                "This feature cannot currently be modified."
+                "Dieses Feature kann derzeit nicht ge\u00e4ndert werden."
             ],
             "Oops! Something went wrong. Please try again.": [
-                "Oops! Something went wrong. Please try again."
+                "Hoppla! Etwas ist schiefgelaufen. Bitte versuche es erneut."
             ],
             "Phone": [
-                "Phone"
+                "Telefon"
             ],
             "Call Us": [
-                "Call Us"
+                "Rufe uns an"
             ],
             "Chat": [
                 "Chat"
             ],
             "Chat with one of our friendly Customer Care Specialists, as we are waiting to help. Open 24 hours - 7 days.": [
-                "Chat with one of our friendly Customer Care Specialists, as we are waiting to help. Open 24 hours - 7 days."
+                "Chatten Sie mit einem unserer freundlichen Kundenservice-Spezialisten, da wir darauf warten zu helfen. \u00d6ffnen Sie 24 Stunden - 7 Tage."
             ],
             "Live Chat": [
-                "Live Chat"
+                "Live-Chat"
             ],
             "Tweet": [
                 "Tweet"
             ],
             "Find our team at @bluehost for updates on our products and support from our team.": [
-                "Find our team at @bluehost for updates on our products and support from our team."
+                "Finden Sie unser Team bei @bluehost f\u00fcr Updates zu unseren Produkten und Support von unserem Team."
             ],
             "Tweet Us": [
-                "Tweet Us"
+                "Tweet uns"
             ],
             "YouTube": [
                 "YouTube"
             ],
             "Find tutorials, answers, interviews and guides on our YouTube channel.": [
-                "Find tutorials, answers, interviews and guides on our YouTube channel."
+                "Finden Sie Tutorials, Antworten, Interviews und Guides auf unserem YouTube-Kanal."
             ],
             "Watch Now": [
-                "Watch Now"
+                "Jetzt ansehen"
             ],
             "Knowledge Base": [
-                "Knowledge Base"
+                "Wissensdatenbank"
             ],
             "Articles, guides, how-tos, instructions, and answers to our client's most frequently asked questions.": [
-                "Articles, guides, how-tos, instructions, and answers to our client's most frequently asked questions."
+                "Beitr\u00e4ge, Anleitungen, Anleitungen und Antworten auf die am h\u00e4ufigsten gestellten Fragen unseres Kunden."
             ],
             "Visit Knowledge Base": [
-                "Visit Knowledge Base"
+                "Wissensdatenbank besuchen"
             ],
             "Resources": [
-                "Resources"
+                "Ressourcen"
             ],
             "Boost your online knowledge and get ahead of the competition.": [
-                "Boost your online knowledge and get ahead of the competition."
+                "Steigern Sie Ihr Online-Wissen und kommen Sie dem Wettbewerb voraus."
             ],
             "Explore Resources": [
-                "Explore Resources"
+                "Ressourcen erkunden"
             ],
             "Events and Webinars": [
-                "Events and Webinars"
+                "Events und Webinare"
             ],
             "Team Bluehost organizes multiple webinars and events throughout the year. We are also sponsors and speak at most WordCamps across the world. Join us at our next event!": [
-                "Team Bluehost organizes multiple webinars and events throughout the year. We are also sponsors and speak at most WordCamps across the world. Join us at our next event!"
+                "Team Bluehost organisiert das ganze Jahr \u00fcber mehrere Webinare und Events. Wir sind auch Sponsoren und sprechen auf maximal WordCamps auf der ganzen Welt!"
             ],
             "More Info": [
-                "More Info"
+                "Mehr Info"
             ],
             "Bluehost Website": [
-                "Bluehost Website"
+                "Bluehost-Website"
             ],
             "Not finding what you need? Visit our website for more information about our products and services.": [
-                "Not finding what you need? Visit our website for more information about our products and services."
+                "Besuchen Sie unsere Website f\u00fcr weitere Informationen zu unseren Produkten und Dienstleistungen."
             ],
             "Go to Bluehost": [
-                "Go to Bluehost"
+                "Gehe zu Bluehost"
             ],
             "The Help Center provides guided, step-by-step assistance as you build your site.": [
-                "The Help Center provides guided, step-by-step assistance as you build your site."
+                "Das Hilfe-Center unterst\u00fctzt Sie Schritt f\u00fcr Schritt beim Aufbau Ihrer Website."
             ],
             "Site Status": [
-                "Site Status"
+                "Site-Status"
             ],
             "Not Live": [
-                "Not Live"
+                "Nicht live"
             ],
             "Live": [
                 "Live"
             ],
             "Your Bluehost Coming Soon page lets you hide your site from visitors while you make the magic happen.": [
-                "Your Bluehost Coming Soon page lets you hide your site from visitors while you make the magic happen."
+                "Ihre Bluehost Kommende Seite erm\u00f6glicht Ihnen, Ihre Website vor Besuchern zu verstecken, w\u00e4hrend Sie die Magie verwirklichen."
             ],
             "Your website is currently displaying a \"Coming Soon\" page.": [
-                "Your website is currently displaying a \"Coming Soon\" page."
+                "Ihre Webseite zeigt derzeit eine \"Kommende bald\"-Seite an."
             ],
             "The trash will automatically empty every %s week.": [
-                "The bin will automatically empty every %s week.",
-                "The bin will automatically empty every %s weeks."
+                "Der Papierkorb wird jede %s Woche automatisch leer sein.",
+                "Der Papierkorb wird alle %s Wochen automatisch leer sein."
             ],
             "WonderBlocks provides a library of customizable block patterns and page templates.": [
-                "WonderBlocks provides a library of customizable block patterns and page templates."
-            ],
-            "Hosting": [
-                "Hosting"
+                "WonderBlocks bietet eine Bibliothek mit anpassbaren Blockmustern und Seitenvorlagen."
             ],
             "Explore our featured collection of tools and services.": [
-                "Explore our featured collection of tools and services."
+                "Entdecken Sie unsere Produktpalette von Tools und Dienstleistungen."
             ],
             "Oops, there was an error loading the marketplace, please try again later.": [
-                "Oops, there was an error loading the marketplace, please try again later."
+                "Hoppla, es gab einen Fehler beim Laden des Marktplatzes, bitte versuchen Sie es sp\u00e4ter erneut."
             ],
             "Sorry, no marketplace items. Please, try again later.": [
-                "Sorry, no marketplace items. Please, try again later."
+                "Leider gibt es keine Marktplatz-Artikel. Bitte versuchen Sie es sp\u00e4ter erneut."
             ],
             "Load More": [
-                "Load More"
+                "Mehr laden"
             ],
             "Oops! Something Went Wrong": [
-                "Oops! Something Went Wrong"
+                "Hoppla! Etwas ist schief"
             ],
             "An error occurred while loading the content. Please try again later.": [
-                "An error occurred while loading the content. Please try again later."
+                "Beim Laden des Inhalts ist ein Fehler aufgetreten. Bitte versuchen Sie es sp\u00e4ter erneut."
             ],
             "Secret page to manage admin features and settings.": [
-                "Secret page to manage admin features and settings."
+                "Geheime Seite zum Verwalten von Adminfunktionen und Einstellungen."
             ],
             "We are available 24\/7 to help answer questions and solve your problems.": [
-                "We are available 24\/7 to help answer questions and solve your problems."
+                "Wir stehen Ihnen rund um die Uhr zur Verf\u00fcgung, um Fragen zu beantworten und Ihre Probleme zu l\u00f6sen."
             ],
             "Enabled All auto-updates": [
-                "Enabled All auto-updates"
+                "Alle Auto-Updates aktiviert"
             ],
             "Disabled All auto-updates": [
-                "Disabled All auto-updates"
+                "Alle Auto-Updates deaktiviert"
             ],
             "Everything will automatically update.": [
-                "Everything will automatically update."
+                "Alles wird automatisch aktualisiert."
             ],
             "Custom auto-update settings.": [
-                "Custom auto-update settings."
+                "Benutzerdefinierte Auto-Update-Einstellungen."
             ],
             "Automatically keep all up to date": [
-                "Automatically keep all up to date"
+                "Alles automatisch auf dem neuesten Stand halten"
             ],
             "Enabled Core auto-updates": [
-                "Enabled Core auto-updates"
+                "Aktivierte Core Auto-Updates"
             ],
             "Disabled Core auto-updates": [
-                "Disabled Core auto-updates"
+                "Deaktivierte Core Auto-Updates"
             ],
             "WordPress will automatically update.": [
-                "WordPress will automatically update."
+                "WordPress wird automatisch aktualisiert."
             ],
             "WordPress must be manually updated.": [
-                "WordPress must be manually updated."
+                "WordPress muss manuell aktualisiert werden."
             ],
             "WordPress Core": [
-                "WordPress Core"
+                "WordPress-Kern"
             ],
             "Enabled Plugins auto-update": [
-                "Enabled Plugins auto-update"
+                "Aktivierte Plugins Auto-Update"
             ],
             "Disabled Plugins auto-update": [
-                "Disabled Plugins auto-update"
+                "Deaktivierte Plugins Auto-Update"
             ],
             "All plugins will automatically update.": [
-                "All plugins will automatically update."
+                "Alle Plugins werden automatisch aktualisiert."
             ],
             "Each plugin must be manually updated.": [
-                "Each plugin must be manually updated."
+                "Jedes Plugin muss manuell aktualisiert werden."
             ],
             "Plugins": [
                 "Plugins"
             ],
             "Enabled Themes auto-update": [
-                "Enabled Themes auto-update"
+                "Aktivierte Themes Auto-Update"
             ],
             "Disabled Themes auto-update": [
-                "Disabled Themes auto-update"
+                "Deaktivierte Themes Auto-Update"
             ],
             "All themes will automatically update.": [
-                "All themes will automatically update."
+                "Alle Themes werden automatisch aktualisiert."
             ],
             "Each theme must be manually updated.": [
-                "Each theme must be manually updated."
+                "Jedes Theme muss manuell aktualisiert werden."
             ],
             "Themes": [
                 "Themes"
             ],
             "Automatic Updates": [
-                "Automatic Updates"
+                "Automatische Updates"
             ],
             "Keeping automatic updates on ensures timely security fixes and the latest features.": [
-                "Keeping automatic updates on ensures timely security fixes and the latest features."
+                "Die Beibehaltung automatischer Aktualisierungen sorgt f\u00fcr rechtzeitige Sicherheitsbehebungen und die neuesten Funktionen."
             ],
             "Coming soon activated": [
-                "Coming soon activated"
+                "Demn\u00e4chst aktiviert"
             ],
             "Coming soon deactivated": [
-                "Coming soon deactivated"
+                "Demn\u00e4chst deaktiviert"
             ],
             "Coming soon page is active. Site requires login.": [
-                "Coming soon page is active. Site requires login."
+                "Demn\u00e4chst ist die Seite aktiv. Die Seite ben\u00f6tigt Anmeldung."
             ],
             "Coming soon page is not active. Site is live to visitors.": [
-                "Coming soon page is not active. Site is live to visitors."
+                "Demn\u00e4chst ist die Seite nicht aktiv. Die Seite ist live f\u00fcr die Besucher."
             ],
             "Turn off your \"Coming Soon\" page when you are ready to launch your website.": [
-                "Turn off your \"Coming Soon\" page when you are ready to launch your website."
+                "Schalten Sie Ihre \"Kommende bald\"-Seite ab, wenn Sie bereit sind, Ihre Website zu starten."
             ],
             "Turn on your \"Coming Soon\" page when you need to make major changes to your website.": [
-                "Turn on your \"Coming Soon\" page when you need to make major changes to your website."
+                "Schalten Sie Ihre \"Kommende bald\"-Seite ein, wenn Sie wichtige \u00c4nderungen an Ihrer Website vornehmen m\u00fcssen."
             ],
             "Disabled old post comments": [
-                "Disabled old post comments"
+                "Alte Kommentare f\u00fcr Beitr\u00e4ge deaktiviert"
             ],
             "Enabled old post comments": [
-                "Enabled old post comments"
+                "Alte Kommentare f\u00fcr Beitr\u00e4ge aktiviert"
             ],
             "Comments on old posts are disabled.": [
-                "Comments on old posts are disabled."
+                "Kommentare zu alten Beitr\u00e4gen sind deaktiviert."
             ],
             "Comments are allowed on old posts.": [
-                "Comments are allowed on old posts."
+                "Kommentare sind bei alten Beitr\u00e4gen erlaubt."
             ],
             "Disable comments for older posts": [
-                "Disable comments for older posts"
+                "Kommentare f\u00fcr \u00e4ltere Beitr\u00e4ge deaktivieren"
             ],
             "Comments setting saved": [
-                "Comments setting saved"
+                "Kommentareinstellung gespeichert"
             ],
             "Comments on posts are disabled after %s day.": [
-                "Comments on posts are disabled after %s day.",
-                "Comments on posts are disabled after %s days."
+                "Kommentare zu Beitr\u00e4gen sind nach %s Tag deaktiviert.",
+                "Kommentare zu Beitr\u00e4gen sind nach %s Tagen deaktiviert."
             ],
             "Close comments after %s day.": [
-                "Close comments after %s day.",
-                "Close comments after %s days."
+                "Kommentare nach %s Tag schlie\u00dfen.",
+                "Kommentare nach %s Tagen schlie\u00dfen."
             ],
             "Comments setting saved.": [
-                "Comments setting saved."
+                "Kommentar-Einstellung gespeichert."
             ],
             "Posts will display %s comment at a time.": [
-                "Posts will display %s comment at a time.",
-                "Posts will display %s comments at a time."
+                "Beitr\u00e4ge werden gleichzeitig %s Kommentar anzeigen.",
+                "Beitr\u00e4ge werden gleichzeitig %s Kommentare anzeigen."
             ],
             "Comments to display per page": [
-                "Comments to display per page"
+                "Kommentare pro Seite"
             ],
             "Comments": [
-                "Comments"
+                "Kommentare"
             ],
             "Comments allow visitors to provide feedback and respond to your posts or pages.": [
-                "Comments allow visitors to provide feedback and respond to your posts or pages."
+                "Kommentare erlauben Besuchern Feedback zu geben und auf Ihre Beitr\u00e4ge oder Seiten zu antworten."
             ],
             "Trash setting saved": [
-                "Bin setting saved"
+                "Papierkorb gespeichert"
             ],
             "Number of weeks in between emptying trash": [
-                "Number of weeks in between emptying bin"
+                "Anzahl der Wochen zwischen Papierkorb"
             ],
             "Content Options": [
-                "Content Options"
+                "Inhaltsoptionen"
             ],
             "Controls for how often to empty the trash.": [
-                "Controls for how often to empty the bin."
+                "Steuert, wie oft der Papierkorb zu leeren ist."
             ],
             "Help Center Enabled": [
-                "Help Center Enabled"
+                "Hilfe-Center aktiviert"
             ],
             "Help Center Disabled": [
-                "Help Center Disabled"
+                "Hilfe-Center deaktiviert"
             ],
             "Reload the page to access the Help Center.": [
-                "Reload the page to access the Help Center."
+                "Seite neu laden, um auf das Hilfe-Center zuzugreifen."
             ],
             "The Help Center will no longer display.": [
-                "The Help Center will no longer display."
-            ],
-            "This is where you can manage common settings for your website.": [
-                "This is where you can manage common settings for your website."
+                "Das Hilfe-Center wird nicht mehr angezeigt."
             ],
             "Features": [
-                "Features"
+                "Eigenschaften"
             ],
             "Customize the available features as you manage your website.": [
-                "Customize the available features as you manage your website."
+                "Passen Sie die verf\u00fcgbaren Funktionen an, w\u00e4hrend Sie Ihre Website verwalten."
             ],
             "Performance Enabled": [
-                "Performance Enabled"
+                "Leistung aktiviert"
             ],
             "Performance Disabled": [
-                "Performance Disabled"
+                "Leistung deaktiviert"
             ],
             "You need to reload the page to manage Performance.": [
-                "You need to reload the page to manage Performance."
+                "Sie m\u00fcssen die Seite neu laden, um Performance zu verwalten."
             ],
             "Performance will no longer display.": [
-                "Performance will no longer display."
+                "Leistung wird nicht mehr angezeigt."
             ],
             "The performance feature provides improvements to loads faster for visitors including cache settings.": [
-                "The performance feature provides improvements to loads faster for visitors including cache settings."
+                "Die Performance-Funktion verbessert die Ladung f\u00fcr Besucher schneller, einschlie\u00dflich der Cache-Einstellungen."
             ],
             "Staging Enabled": [
-                "Staging Enabled"
+                "Staging aktiviert"
             ],
             "Staging Disabled": [
-                "Staging Disabled"
+                "Staging deaktiviert"
             ],
             "You need to reload the page to manage Staging.": [
-                "You need to reload the page to manage Staging."
+                "Sie m\u00fcssen die Seite neu laden, um Staging zu verwalten."
             ],
             "Staging will no longer display.": [
-                "Staging will no longer display."
+                "Staging wird nicht mehr angezeigt."
             ],
             "WonderBlocks Enabled": [
-                "WonderBlocks Enabled"
+                "WonderBl\u00f6cke aktiviert"
             ],
             "WonderBlocks Disabled": [
-                "WonderBlocks Disabled"
+                "Wunderbl\u00f6cke deaktiviert"
             ],
             "Create new content to see WonderBlocks in action.": [
-                "Create new content to see WonderBlocks in action."
+                "Erstellen Sie neue Inhalte, um WonderBlocks in Aktion zu sehen."
             ],
             "WonderBlocks will no longer display.": [
-                "WonderBlocks will no longer display."
+                "WonderBl\u00f6cke werden nicht mehr angezeigt."
             ],
             "Cancel": [
-                "Cancel"
+                "Abbrechen"
             ],
             "Clone": [
-                "Clone"
+                "Klonen"
             ],
             "Confirm Clone Action": [
-                "Confirm Clone Action"
+                "Klon-Aktion best\u00e4tigen"
             ],
             "This will overwrite anything in staging and update it to an exact clone of the current production site. Are you sure you want to proceed?": [
-                "This will overwrite anything in staging and update it to an exact clone of the current production site. Are you sure you want to proceed?"
+                "Dies wird alles in der Stagierung \u00fcberschreiben und zu einem exakten Klon der aktuellen Produktionsseite aktualisieren. Sind Sie sicher, dass Sie fortfahren m\u00f6chten?"
             ],
             "Cloned to Staging": [
-                "Cloned to Staging"
+                "Zu Staging geklont"
             ],
             "Cloning production to staging, this should take about a minute.": [
-                "Cloning production to staging, this should take about a minute."
+                "Das Klonen der Produktion auf Stagnation sollte ungef\u00e4hr eine Minute dauern."
             ],
             "Clone to staging": [
-                "Clone to staging"
+                "Zum Stagieren klonen"
             ],
             "Created": [
-                "Created"
+                "Erstellt"
             ],
             "Staging Created": [
-                "Staging Created"
+                "Staging erstellt"
             ],
             "Creating a staging site, this should take about a minute.": [
-                "Creating a staging site, this should take about a minute."
+                "Erstellen einer Staging-Site sollte eine Minute dauern."
             ],
             "Create staging site": [
-                "Create staging site"
+                "Staging-Site erstellen"
             ],
             "Currently editing": [
-                "Currently editing"
+                "Aktuell bearbeiten"
             ],
             "Delete": [
-                "Delete"
+                "L\u00f6schen"
             ],
             "Confirm Delete": [
-                "Confirm Delete"
+                "L\u00f6schen best\u00e4tigen"
             ],
             "This will permanently delete staging site. Are you sure you want to proceed? You can recreate another staging site at any time, but any specific changes you've made to this staging site will be lost.": [
-                "This will permanently delete staging site. Are you sure you want to proceed? You can recreate another staging site at any time, but any specific changes you've made to this staging site will be lost."
+                "Staging-Site wird dauerhaft gel\u00f6scht. Sind Sie sicher, dass Sie fortfahren m\u00f6chten? Sie k\u00f6nnen jederzeit eine andere Staging-Site neu erstellen, aber alle spezifischen \u00c4nderungen, die Sie an dieser Staging-Site vorgenommen haben, gehen verloren."
             ],
             "Deleted Staging": [
-                "Deleted Staging"
+                "Gel\u00f6schte Staging"
             ],
             "Deleting the staging site, this should take about a minute.": [
-                "Deleting the staging site, this should take about a minute."
+                "Staging Site wird gel\u00f6scht. Dies sollte ungef\u00e4hr eine Minute dauern."
             ],
             "Delete Staging Site": [
-                "Delete Staging Site"
+                "Staging-Site l\u00f6schen"
             ],
             "Deploy": [
                 "Deploy"
             ],
             "Deploy all changes": [
-                "Deploy all changes"
+                "Alle \u00c4nderungen verteilen"
             ],
             "Confirm Deployment": [
-                "Confirm Deployment"
+                "Einsatz best\u00e4tigen"
             ],
             "Deploy database only": [
-                "Deploy database only"
+                "Nur Datenbank verteilen"
             ],
             "This will deploy staging to production and overwrite current production site. Are you sure you want to proceed?": [
-                "This will deploy staging to production and overwrite current production site. Are you sure you want to proceed?"
+                "Dies wird Staging zur Produktion bereitstellen und die aktuelle Produktionsseite \u00fcberschreiben. Sind Sie sicher, dass Sie fortfahren m\u00f6chten?"
             ],
             "Deploy files only": [
-                "Deploy files only"
+                "Nur Dateien verteilen"
             ],
             "Deployed": [
-                "Deployed"
+                "Ausgestellt"
             ],
             "Deploying from staging to production, this should take about a minute.": [
-                "Deploying from staging to production, this should take about a minute."
+                "Der Einsatz von Staging in die Produktion sollte etwa eine Minute in Anspruch nehmen."
             ],
             "Deploy Site": [
-                "Deploy Site"
+                "Site verteilen"
             ],
             "Error": [
-                "Error"
+                "Fehler"
             ],
             "You don't have a staging site yet.": [
-                "You don't have a staging site yet."
+                "Sie haben noch keine Staging-Site."
             ],
             "Not currently editing": [
-                "Not currently editing"
+                "Derzeit nicht bearbeiten"
             ],
             "Proceed": [
-                "Proceed"
+                "Fortfahren"
             ],
             "Production Site": [
-                "Production Site"
+                "Produktionsstandort"
             ],
             "Staging Site": [
-                "Staging Site"
+                "Staging-Seite"
             ],
             "A staging site is a duplicate of your live site, offering a secure environment to experiment, test updates, and deploy when ready.": [
-                "A staging site is a duplicate of your live site, offering a secure environment to experiment, test updates, and deploy when ready."
+                "Eine Staging-Site ist eine Kopie Ihrer Live-Site, die eine sichere Umgebung zum Experimentieren, Testen von Aktualisierungen und Verteilen bietet, wenn sie bereit sind."
             ],
             "Switch": [
-                "Switch"
+                "Wechseln"
             ],
             "Switching": [
-                "Switching"
+                "Wechseln"
             ],
             "Switch to Production": [
-                "Switch to Production"
+                "Zur Produktion wechseln"
             ],
             "This will navigate you to the production environment": [
-                "This will navigate you to the production environment"
+                "Dies wird Sie zur Produktionsumgebung navigieren"
             ],
             "Loading the production environment now.": [
-                "Loading the production environment now."
+                "Laden der Produktionsumgebung jetzt."
             ],
             "Switching to the production environment, this should take about a minute.": [
-                "Switching to the production environment, this should take about a minute."
+                "Beim Wechsel auf die Produktionsumgebung sollte dies etwa eine Minute dauern."
             ],
             "Switch to Staging": [
-                "Switch to Staging"
+                "Zu Staging wechseln"
             ],
             "This will navigate you to the staging environment": [
-                "This will navigate you to the staging environment"
+                "Dies wird dich zur Staging-Umgebung navigieren"
             ],
             "Loading the staging environment now.": [
-                "Loading the staging environment now."
+                "Laden der Staging-Umgebung jetzt."
             ],
             "Switching to the staging environment, this should take about a minute.": [
-                "Switching to the staging environment, this should take about a minute."
+                "Beim Wechsel auf die Staging-Umgebung sollte dies ungef\u00e4hr eine Minute dauern."
             ],
             "An unknown error has occurred.": [
-                "An unknown error has occurred."
+                "Ein unbekannter Fehler ist aufgetreten."
             ],
             "Working\u2026": [
-                "Working\u2026"
+                "Arbeiten\u2026"
             ],
             "Hire our experts": [
-                "Hire our experts"
+                "Unsere Experten einstellen"
             ],
             "Get in touch with us, and we\u2019ll help you build the exact store you\u2019re dreaming of.": [
-                "Get in touch with us, and we\u2019ll help you build the exact store you\u2019re dreaming of."
+                "Nehmen Sie Kontakt mit uns auf und wir helfen Ihnen, den genauen Shop zu bauen, von dem Sie tr\u00e4umen."
             ],
             "Discover all the features to grow your store, boost sales and loyalize your customers.": [
-                "Discover all the features to grow your store, boost sales and loyalize your customers."
+                "Entdecken Sie alle Funktionen, um Ihren Shop zu erweitern, Ihren Umsatz zu steigern und Ihre Kunden zu loyalisieren."
             ],
             "Quick links": [
-                "Quick links"
+                "Schnelllinks"
             ],
             "Manage hosting": [
-                "Manage hosting"
+                "Hosting verwalten"
             ],
             "Write a blog post": [
-                "Write a blog post"
+                "Blogeintrag schreiben"
             ],
             "Create a sale promotion": [
-                "Create a sale promotion"
+                "Verkaufsaktion erstellen"
             ],
             "Get Help & Resources": [
-                "Get Help & Resources"
+                "Hilfe & Ressourcen erhalten"
             ],
             "Refer a friend and earn money": [
-                "Refer a friend and earn money"
+                "Empfehlen Sie einen Freund und verdienen Sie Geld"
             ],
             "Unlock exclusive benefits with our referral program!": [
-                "Unlock exclusive benefits with our referral program!"
+                "Schalten Sie exklusive Vorteile mit unserem Empfehlungsprogramm frei!"
             ],
             "Start now": [
-                "Start now"
+                "Jetzt starten"
             ],
             "Pro Design Live": [
                 "Pro Design Live"
             ],
             "We will help you build and grow your website and improve your skills in WordPress.": [
-                "We will help you build and grow your website and improve your skills in WordPress."
+                "Wir helfen Ihnen, Ihre Website aufzubauen und zu wachsen und Ihre F\u00e4higkeiten in WordPress zu verbessern."
             ],
             "Get Info": [
-                "Get Info"
+                "Info abrufen"
             ],
             "Welcome to Bluehost": [
-                "Welcome to Bluehost"
+                "Willkommen bei Bluehost"
             ],
             "We're very excited to get started with you!": [
-                "We're very excited to get started with you!"
+                "Wir freuen uns sehr, mit Ihnen loszulegen!"
             ],
             "Explore Premium Tools": [
-                "Explore Premium Tools"
+                "Entdecken Sie Premium-Tools"
             ],
             "Get expert help, documentation, and tutorials to make the most of your WordPress site.": [
-                "Get expert help, documentation, and tutorials to make the most of your WordPress site."
+                "Holen Sie sich Expertenhilfe, Dokumentation und Tutorials, um das Beste aus Ihrer WordPress-Website zu machen."
+            ],
+            "Manage common settings for your website": [
+                ""
             ]
         }
     }

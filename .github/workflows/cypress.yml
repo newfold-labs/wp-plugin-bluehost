@@ -123,4 +123,11 @@ jobs:
       - name: Output debug.log file contents
         if: always()
         continue-on-error: true
-        run: npx wp-env logs --watch=false --debug=true
+        run: |
+          npx wp-env run wordpress cat /var/www/html/wp-content/debug.log
+
+      - name: Output wordpress docker logs
+        if: always()
+        continue-on-error: true
+        run: |
+          npx wp-env logs --watch=false --debug=true

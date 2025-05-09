@@ -167,12 +167,12 @@ jobs:
       - name: Configure WordPress
         run: echo '{"plugins":["${{ steps.workflow.outputs.DIST }}/${{ needs.build.outputs.PACKAGE }}"]}' > .wp-env.override.json
 
-      # - name: Start WordPress
-      #   uses: nick-fields/retry@ce71cc2ab81d554ebbe88c79ab5975992d79ba08 # v3.0.2
-      #   with:
-      #     timeout_minutes: 4
-      #     max_attempts: 3
-      #     command: npx wp-env start --debug
+      - name: Start WordPress
+        uses: nick-fields/retry@ce71cc2ab81d554ebbe88c79ab5975992d79ba08 # v3.0.2
+        with:
+          timeout_minutes: 4
+          max_attempts: 3
+          command: npx wp-env start --debug
 
       - name: Run Cypress Tests (Container ${{ matrix.container }})
         uses: cypress-io/github-action@0ee1130f05f69098ab5c560bd198fecf5a14d75b # v6.9.0
@@ -181,7 +181,6 @@ jobs:
           parallel: true
           group: ${{ matrix.container }}
           tag: bluehost
-          build: npx wp-env start --debug
         env:
           # pass the Cypress Cloud record key as an environment variable
           CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}

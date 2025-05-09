@@ -162,7 +162,7 @@ jobs:
 
       # Only install wp-env rather than all dependencies
       - name: Install wp-env
-        run: npm install -g wp-env
+        run: npm install -g @wordpress/env
 
       - name: Configure WordPress
         run: echo '{"plugins":["${{ steps.workflow.outputs.DIST }}/${{ needs.build.outputs.PACKAGE }}"]}' > .wp-env.override.json

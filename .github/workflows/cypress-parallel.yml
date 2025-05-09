@@ -55,16 +55,6 @@ jobs:
       - name: Validate composer.json and composer.lock files
         run: composer validate
 
-      - name: Setup workflow context
-        id: workflow
-        working-directory: ${{ runner.temp }}
-        env:
-          REPO: ${{ github.repository }}
-        run: |
-          mkdir dist
-          echo "DIST=${PWD}/dist" >> $GITHUB_OUTPUT
-          echo "PACKAGE=bluehost-wordpress-plugin" >> $GITHUB_OUTPUT
-
       - name: Get npm cache directory
         id: npm-cache
         run: echo "dir=$(npm config get cache)" >> $GITHUB_OUTPUT
@@ -93,6 +83,16 @@ jobs:
 
       - name: Build JavaScript
         run: npm run build
+
+      - name: Setup workflow context
+        id: workflow
+        working-directory: ${{ runner.temp }}
+        env:
+          REPO: ${{ github.repository }}
+        run: |
+          mkdir dist
+          echo "DIST=${PWD}/dist" >> $GITHUB_OUTPUT
+          echo "PACKAGE=bluehost-wordpress-plugin" >> $GITHUB_OUTPUT
 
       - name: Create Distribution Copy
         run: rsync -r --include-from=.distinclude --exclude-from=.distignore . ${{ steps.workflow.outputs.DIST }}/${{ steps.workflow.outputs.PACKAGE }}
@@ -148,16 +148,6 @@ jobs:
 
       - name: Validate composer.json and composer.lock files
         run: composer validate
-
-      - name: Setup workflow context
-        id: workflow
-        working-directory: ${{ runner.temp }}
-        env:
-          REPO: ${{ github.repository }}
-        run: |
-          mkdir dist
-          echo "DIST=${PWD}/dist" >> $GITHUB_OUTPUT
-          echo "PACKAGE=bluehost-wordpress-plugin" >> $GITHUB_OUTPUT
 
       - name: Get npm cache directory
         id: npm-cache

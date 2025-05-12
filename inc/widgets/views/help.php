@@ -160,8 +160,8 @@ $help_svg = '<svg xmlns="http://www.w3.org/2000/svg" width="179" height="193" vi
 			data-help-center="<?php echo BluehostHelpWidget::can_access_help_center() ? 'true' : 'false'; ?>"
 			href="
 			<?php
-				echo esc_url('https://www.bluehost.com/solutions/website-design?utm_source=wp-admin%2Findex.php&utm_medium=bluehost_plugin&channelid=P99C100S1N0B3003A151D115E0000V111');
-				?>
+				echo esc_url( 'https://www.bluehost.com/solutions/website-design?utm_source=wp-admin%2Findex.php&utm_medium=bluehost_plugin&channelid=P99C100S1N0B3003A151D115E0000V111' );
+			?>
 			"
 			target="_blank"
 			id="nfd-widget-help-link"

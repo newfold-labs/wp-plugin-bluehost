@@ -130,7 +130,7 @@ const supportsWoo = ( env ) => {
 const supportsJetpack = ( env ) => {
 	const semver = require( 'semver' );
 	if (
-		semver.satisfies( env.wpSemverVersion, '>=6.6.0' ) &&
+		semver.satisfies( env.wpSemverVersion, '>=6.7.0' ) &&
 		semver.satisfies( env.phpSemverVersion, '>=7.2.0' )
 	) {
 		return true;

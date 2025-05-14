@@ -15,7 +15,7 @@ $svg    = '<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 2
 $svg_64 = base64_encode( $svg );
 
 // help illustration svg
-$help_svg = '<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 159 173">
+$help_svg = '<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 20 159 153">
   <path fill="#fff" stroke="#03243B" stroke-miterlimit="10" stroke-width=".7" d="M65.2 69.8c4.4-19 2.5-25.2-.3-27.3-1.2-.9-2.8-1.2-5-3.4-3-2.8-3.4-5-5.5-8.2-3-4.2-8.2-8.8-10.7-7.4-2.4 1.3-2.2 8.8 0 14.4 2.6 7 6.7 7.4 7.6 13.2.8 5.2-2 7-.9 10.7 1 2.9 4.1 6.3 14.8 8Z"/>
   <path fill="#03243B" d="m65 66.6-.2-.2A71.7 71.7 0 0 0 48.5 34l.1-.1h.2s2.6 2.5 6 7.7a89.4 89.4 0 0 1 10.3 25Z"/>
   <path fill="#fff" stroke="#03243B" stroke-miterlimit="10" stroke-width=".7" d="M52.3 65c-2-13-4.8-16.3-7-16.8-1-.2-2 0-4-.6-2.6-.9-3.3-2.2-5.5-3.5-2.8-1.8-7.2-3-8.4-1.5-1.2 1.6.8 6.1 3.6 9 3.3 3.5 6 2.6 8 6 1.8 3 .5 5 2.1 6.8 1.3 1.6 4.1 2.8 11.2.7Z"/>
@@ -89,7 +89,7 @@ $help_svg = '<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 15
 </style>
 <div class="nfd-root nfd-widget nfd-widget-help">
 	<div class="help-widget">
-		<div class="nfd-mb-4 nfd-w-3/4">
+		<div class="nfd-mt-4 nfd-mb-4 nfd-w-3/4">
 			<p class="nfd-font-bold nfd-mb-4">
 				<?php esc_html_e( 'From DIY to full-service help, always by your side.', 'wp-plugin-bluehost' ); ?>
 			</p>

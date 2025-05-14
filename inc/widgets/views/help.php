@@ -155,16 +155,17 @@ $help_svg = '<svg xmlns="http://www.w3.org/2000/svg" width="179" height="193" vi
 			id="nfd-widget-help-link"
 		><?php esc_html_e( 'Get Help', 'wp-plugin-bluehost' ); ?></a>
 		<a 
-			class="nfd-button nfd-button--secondary wppbh-help-link nfd-ml-2"    
-			data-cy="nfd-widget-help-link"
-			data-help-center="<?php echo BluehostHelpWidget::can_access_help_center() ? 'true' : 'false'; ?>"
+			class="nfd-button nfd-button--secondary wppbh-help-link nfd-ml-2"   
+			data-action="load-nfd-ctb"
+			data-ctb-id="838cc912-adb3-4d75-9450-262bf3ee3576"
+			rel="noreferrer"
 			href="
 			<?php
-				echo esc_url( 'https://www.bluehost.com/solutions/website-design?utm_source=wp-admin%2Findex.php&utm_medium=bluehost_plugin&channelid=P99C100S1N0B3003A151D115E0000V111' );
+				echo esc_url( 'https://www.bluehost.com/pro-design-live' );
 			?>
 			"
 			target="_blank"
-			id="nfd-widget-help-link"
+			id="nfd-widget-hire-our-pros"
 		><?php esc_html_e( 'Hire our pros', 'wp-plugin-bluehost' ); ?></a>
 	</div>
 	<div>

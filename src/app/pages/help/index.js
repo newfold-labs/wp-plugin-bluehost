@@ -21,7 +21,7 @@ const HelpCard = ( { item } ) => {
 				<Button
 					variant="secondary"
 					as="a"
-					className="nfd-w-full"
+					className="nfd-w-full nfd-transition-bg nfd-duration-100"
 					href={ item.url }
 					target="_blank"
 				>
@@ -46,16 +46,23 @@ const Help = () => {
 	};
 	return (
 		<Page className={ 'wppbh-app-help-page' }>
-			<Container className={ 'wppbh-app-help-container' }>
-				<Container.Header
-					title={ __( 'Help', 'wp-plugin-bluehost' ) }
-					description={ __(
+			<div className={ 'wppbh-app-help-page__header' }>
+				<Title as="h1">{ __( 'Help', 'wp-plugin-bluehost' ) }</Title>
+				<Title as="h2" className="nfd-font-normal nfd-text-[13px]">
+					{ __(
 						'We are available 24/7 to help answer questions and solve your problems.',
 						'wp-plugin-bluehost'
 					) }
-				/>
-
-				<Container.Block>{ renderHelpCards() }</Container.Block>
+				</Title>
+			</div>
+			<Container
+				className={
+					'wppbh-app-help-container nfd-bg-transparent nfd-shadow-none'
+				}
+			>
+				<Container.Block className={ 'nfd-p-0' }>
+					{ renderHelpCards() }
+				</Container.Block>
 			</Container>
 		</Page>
 	);

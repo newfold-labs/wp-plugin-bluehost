@@ -104,17 +104,25 @@ $help_svg = '<svg xmlns="http://www.w3.org/2000/svg" width="179" height="193" vi
 
 ?>
 <style>
+	#bluehost_help_widget h2 {
+		justify-content: start;
+		gap: .5rem;
+	}
+	#bluehost_help_widget h2:before {
+		content: url('data:image/svg+xml;base64,<?php echo esc_attr( $svg_64 ); ?>');
+		width: 24px;
+		height: 24px;
+	}
 	.helpsvg {
 		display: flex;
 		justify-content: center;
 		align-items: center;
-		margin: .5rem auto;
 		max-width: 80%;
 	}
 	.help-widget {
 		display: flex;
 		justify-content: space-between;
-		align-items: center;
+		align-items: flex-start;
 		max-width: 100%;
 	}
 	.secound-paragraph {
@@ -124,7 +132,7 @@ $help_svg = '<svg xmlns="http://www.w3.org/2000/svg" width="179" height="193" vi
 </style>
 <div class="nfd-root nfd-widget nfd-widget-help">
 	<div class="help-widget">
-		<div>
+		<div class="nfd-pt-5">
 			<p class="nfd-font-bold ">
 				<?php esc_html_e( 'From DIY to full-service help,', 'wp-plugin-bluehost' ); ?><br />
 				<?php esc_html_e( 'always by your side.', 'wp-plugin-bluehost' ); ?><br /><br />

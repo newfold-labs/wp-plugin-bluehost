@@ -62,8 +62,6 @@ $help_svg = '<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 15
   <path fill="#03243B" d="M85.9 74.4c-1 0-2.1-.1-3.1-.5a7.5 7.5 0 0 1-3.4-3.4l-.5-1c-.7-2-.7-4.3 0-6.6.6-2.3 2-4.2 3.5-5.4l.8-.6a9.7 9.7 0 0 1 8.5-.7c1.3.6 2.4 1.5 3.2 2.7a9.8 9.8 0 0 1 1.6 3.9 10 10 0 0 1-2.4 8.8 10.1 10.1 0 0 1-5 2.4c-1.1.3-2.2.4-3.2.4Zm2.4-18.6a10.3 10.3 0 0 0-5.8 1.9 9.7 9.7 0 0 0-3.4 5.2 10.2 10.2 0 0 0 .5 7.4 6.6 6.6 0 0 0 6.3 3.9c1 0 2-.2 3.1-.4a10 10 0 0 0 5-2.4c2-2 2.9-5.3 2.3-8.6a9.5 9.5 0 0 0-1.6-3.8c-.8-1.1-1.8-2-3-2.5a8 8 0 0 0-3.4-.7ZM86 74.1c-1 0-2-.1-3-.5a7.1 7.1 0 0 1-3.3-3.3l-.4-1a10 10 0 0 1 0-6.3 9.6 9.6 0 0 1 3.3-5.2l.9-.6a9.5 9.5 0 0 1 8.2-.7c2.4 1 4.1 3.4 4.6 6.4.6 3.1-.3 6.4-2.3 8.4a9.6 9.6 0 0 1-5 2.4c-1 .3-2 .4-3 .4Zm-6-4a7 7 0 0 0 3 3.2c1.6.7 3.6.8 6 .2a9.4 9.4 0 0 0 4.8-2.3c2-2 2.9-5.2 2.3-8.3a8 8 0 0 0-4.5-6.2 9.3 9.3 0 0 0-8.8 1.3 10 10 0 0 0-3.4 5 9.8 9.8 0 0 0 .5 7.2Z"/>
   <path fill="#03243B" d="M89.5 73.8h-.1a19.3 19.3 0 0 1-4.3-5.4c-.4-.9-.8-2.2-.5-3.5.4-1.3 1.4-2.2 2.5-2.2.3 0 .6 0 .8.2.2-.3.5-.5.9-.6.3 0 .6 0 .8.2.3.1.5.3.7.6.3.5.5 1 .6 1.6.5 2.6.7 5.5.8 8v.2a.2.2 0 0 1 0 .2h-.1a.1.1 0 0 1-.1 0h-.1v-.4a52.9 52.9 0 0 0-1.3-9.5l-.6-.6h-.7c-.2 0-.5.1-.6.3l.6.6c.2.2.3.5.3.8v.8a1 1 0 0 1-1 .8l-.2-.1a.8.8 0 0 1-.3-.2c-.3-.4-.3-1-.3-1.4l.4-1.2-.6-.1c-1 0-1.9.9-2.2 2a5 5 0 0 0 .4 3.2c1 2 2.9 4 4.3 5.3v.4h-.1ZM88 63.2l-.4 1.2c0 .4 0 .8.2 1 0 .2.1.2.2.2h.2c.3.1.5-.2.6-.5a1.5 1.5 0 0 0-.2-1.3 2 2 0 0 0-.6-.6Z"/>
 </svg>';
-
-
 ?>
 <style>
 	#bluehost_help_widget h2 {
@@ -79,7 +77,8 @@ $help_svg = '<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 15
 		display: flex;
 		justify-content: center;
 		align-items: center;
-		max-width: 80%;
+		max-width: 200px;
+		min-width: 50%;
 	}
 	.help-widget {
 		display: flex;
@@ -87,19 +86,14 @@ $help_svg = '<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 15
 		align-items: flex-start;
 		max-width: 100%;
 	}
-	.secound-paragraph {
-		max-width: 75%;
-	}
-
 </style>
 <div class="nfd-root nfd-widget nfd-widget-help">
 	<div class="help-widget">
-		<div class="nfd-pt-5">
-			<p class="nfd-font-bold ">
-				<?php esc_html_e( 'From DIY to full-service help,', 'wp-plugin-bluehost' ); ?><br />
-				<?php esc_html_e( 'always by your side.', 'wp-plugin-bluehost' ); ?><br /><br />
+		<div class="nfd-mb-4 nfd-w-3/4">
+			<p class="nfd-font-bold nfd-mb-4">
+				<?php esc_html_e( 'From DIY to full-service help, always by your side.', 'wp-plugin-bluehost' ); ?>
 			</p>
-			<p class="secound-paragraph">
+			<p>
 				<?php esc_html_e( 'Call or chat 24/7 for support or let our experts build your site for you.', 'wp-plugin-bluehost' ); ?><br />
 			</p>
 		</div>
@@ -107,9 +101,9 @@ $help_svg = '<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 15
 			<?php echo wp_kses( $help_svg, KSES_ALLOWED_SVG_TAGS ); ?>
 		</div>
 	</div>
-	<div>
-	<a 
-			class="nfd-button nfd-button--primary wppbh-help-link nfd-mb-4"    
+	<div class="nfd-mb-4">
+		<a
+			class="nfd-button nfd-button--primary wppbh-help-link nfd-mr-2"
 			data-cy="nfd-widget-help-link"
 			data-help-center="<?php echo BluehostHelpWidget::can_access_help_center() ? 'true' : 'false'; ?>"
 			href="
@@ -124,8 +118,9 @@ $help_svg = '<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 15
 			target="_blank"
 			id="nfd-widget-help-link"
 		><?php esc_html_e( 'Get Help', 'wp-plugin-bluehost' ); ?></a>
-		<a 
-			class="nfd-button nfd-button--secondary wppbh-help-link nfd-ml-2"   
+		<a
+			class="nfd-button nfd-button--secondary wppbh-help-link"
+			data-cy="nfd-widget-ctb-link"
 			data-action="load-nfd-ctb"
 			data-ctb-id="838cc912-adb3-4d75-9450-262bf3ee3576"
 			rel="noreferrer"
@@ -136,12 +131,8 @@ $help_svg = '<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 15
 			"
 			target="_blank"
 			id="nfd-widget-hire-our-pros"
-		><?php esc_html_e( 'Hire our pros', 'wp-plugin-bluehost' ); ?></a>
+		><?php esc_html_e( 'Hire Our Pros', 'wp-plugin-bluehost' ); ?></a>
 	</div>
-	<div>
-		
-	</div>
-	<!-- </p> -->
 </div>
 <?php
 	// only add this script if the user has access to the help center

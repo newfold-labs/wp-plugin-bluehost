@@ -154,9 +154,6 @@ jobs:
           path: ${{ steps.workflow.outputs.DIST }}
           name: ${{ needs.build.outputs.PACKAGE }}
 
-      - name: Debug plugin dir
-        run: echo "Plugin directory is ${{ steps.workflow.outputs.DIST }}/${{ needs.build.outputs.PACKAGE }}"
-
       - name: Configure WordPress
         run: echo '{"plugins":["${{ steps.workflow.outputs.DIST }}/${{ needs.build.outputs.PACKAGE }}"]}' > .wp-env.override.json
 
@@ -172,7 +169,7 @@ jobs:
         with:
           record: true
           parallel: true
-          group: parallel-${{ matrix.containers }}
+          group: parallel
           tag: bluehost
           # plugin tests, module tests, nested module tests
           # NOT onboarding tests - parallelization requires testIsolation
@@ -265,9 +262,6 @@ jobs:
           path: ${{ steps.workflow.outputs.DIST }}
           name: ${{ needs.build.outputs.PACKAGE }}
 
-      - name: Debug plugin dir
-        run: echo "Plugin directory is ${{ steps.workflow.outputs.DIST }}/${{ needs.build.outputs.PACKAGE }}"
-
       - name: Configure WordPress
         run: echo '{"plugins":["${{ steps.workflow.outputs.DIST }}/${{ needs.build.outputs.PACKAGE }}"]}' > .wp-env.override.json
 
@@ -283,7 +277,7 @@ jobs:
         with:
           record: true
           parallel: false
-          group: 'onboarding'
+          group: onboarding
           tag: bluehost
           # plugin tests, module tests, nested module tests
           # NOT onboarding tests - parallelization requires testIsolation

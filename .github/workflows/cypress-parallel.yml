@@ -210,6 +210,13 @@ jobs:
           parallel: true
           group: ${{ matrix.container }}
           tag: bluehost
+          # plugin tests, module tests, nested module tests, but NOT onboarding tests
+          spec: |
+            tests/cypress/integration/**/*.cy.js
+            vendor/newfold-labs/**/tests/cypress/integration/*.cy.js
+            vendor/newfold-labs/**/tests/cypress/integration/**/*.cy.js
+            vendor/newfold-labs/!wp-module-onboarding/tests/cypress/integration/*.cy.js
+            vendor/newfold-labs/!wp-module-onboarding/tests/cypress/integration/**/*.cy.js
         env:
           # pass the Cypress Cloud record key as an environment variable
           CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}

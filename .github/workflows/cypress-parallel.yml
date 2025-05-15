@@ -215,8 +215,7 @@ jobs:
             tests/cypress/integration/**/*.cy.js
             vendor/newfold-labs/**/tests/cypress/integration/*.cy.js
             vendor/newfold-labs/**/tests/cypress/integration/**/*.cy.js
-            vendor/newfold-labs/!wp-module-onboarding/tests/cypress/integration/*.cy.js
-            vendor/newfold-labs/!wp-module-onboarding/tests/cypress/integration/**/*.cy.js
+            !vendor/newfold-labs/wp-module-onboarding/**/*.cy.js
         env:
           # pass the Cypress Cloud record key as an environment variable
           CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}

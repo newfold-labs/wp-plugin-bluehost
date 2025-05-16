@@ -12,6 +12,16 @@ on:
           - major
         default: "patch"
         required: true
+      target-branch:
+        description: Target branch to merge the release into.
+        type: string
+        default: "main"
+        required: true
+      source-branch:
+        description: The source branch to be used for the release.
+        type: string
+        default: "develop"
+        required: true
 
 # Disable permissions for all available scopes by default.
 # Any needed permissions should be configured at the job level.
@@ -28,6 +38,7 @@ jobs:
     uses: newfold-labs/workflows/.github/workflows/reusable-plugin-prep-release.yml@main
     with:
       plugin-repo: ${{ github.repository }}
-      plugin-branch: ${{ github.ref_name }}
+      plugin-target-branch: ${{ inputs.target-branch }}
+      plugin-source-branch: ${{ inputs.source-branch }}
       level: ${{ inputs.level }}
       php-file: "bluehost-wordpress-plugin.php"

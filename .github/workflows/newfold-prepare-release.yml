@@ -25,7 +25,7 @@ jobs:
     permissions:
       contents: write
       pull-requests: write
-    uses: newfold-labs/workflows/.github/workflows/reusable-plugin-prep-release.yml@add/plugin-prep-release
+    uses: newfold-labs/workflows/.github/workflows/reusable-plugin-prep-release.yml@main
     with:
       plugin-repo: ${{ github.repository }}
       plugin-branch: ${{ env.GITHUB_REF_NAME }}

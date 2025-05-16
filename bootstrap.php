@@ -27,6 +27,8 @@ if ( is_readable( __DIR__ . '/vendor/autoload.php' ) ) {
 	return;
 }
 
+require_once __DIR__ . '/inc/GoogleSiteKit.php';
+
 /*
  * Initialize module settings via container
  */

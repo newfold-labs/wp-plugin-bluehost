@@ -1,0 +1,28 @@
+name: Newfold Prepare Release
+
+on:
+  workflow_dispatch:
+    inputs:
+      level:
+        description: The level of release to be used.
+        type: choice
+        options:
+          - patch
+          - minor
+          - major
+        default: "patch"
+        required: true
+
+jobs:
+
+  # This runs the newfold reusable-plugin-prep-release workflow for this plugin to prepare a release.
+  prep-release:
+    name: Prepare Release
+    needs: setup
+    uses: newfold-labs/workflows/.github/workflows/reusable-plugin-prep-release.yml@add/plugin-prep-release
+    with:
+      plugin-repo: ${{ github.repository }}
+      plugin-branch: ${{ env.GITHUB_REF_NAME }}
+      level: ${{ inputs.level }}
+      php-file: "bluehost-wordpress-plugin.php"
+    secrets: inherit

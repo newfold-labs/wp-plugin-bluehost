@@ -119,7 +119,7 @@ $help_svg = '<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 20 1
 			id="nfd-widget-help-link"
 		><?php esc_html_e( 'Get Help', 'wp-plugin-bluehost' ); ?></a>
 		<a
-			class="nfd-button nfd-button--secondary wppbh-help-link"
+			class="nfd-button nfd-button--secondary nfd-text-primary wppbh-help-link"
 			data-cy="nfd-widget-ctb-link"
 			data-action="load-nfd-ctb"
 			data-ctb-id="838cc912-adb3-4d75-9450-262bf3ee3576"

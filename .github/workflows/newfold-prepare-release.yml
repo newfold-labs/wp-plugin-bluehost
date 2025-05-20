@@ -35,7 +35,7 @@ jobs:
     permissions:
       contents: write
       pull-requests: write
-    uses: newfold-labs/workflows/.github/workflows/reusable-plugin-prep-release.yml@fix/prs-in-release-prep-workflow
+    uses: newfold-labs/workflows/.github/workflows/reusable-plugin-prep-release.yml@main
     with:
       plugin-repo: ${{ github.repository }}
       plugin-target-branch: ${{ inputs.target-branch }}

@@ -13,6 +13,10 @@ on:
       - master-2.x
       - develop-2.x
   workflow_dispatch:
+  workflow_run:
+    workflows: [ 'Newfold Prepare Release' ]
+    types:
+      - completed
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.event_name == 'pull_request' && github.head_ref || github.sha }}

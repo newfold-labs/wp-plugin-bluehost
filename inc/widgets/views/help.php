@@ -64,91 +64,91 @@ $help_svg = '<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 20 1
 </svg>';
 ?>
 <style>
-  #bluehost_help_widget h2 {
-    justify-content: start;
-    gap: .5rem;
-  }
-  #bluehost_help_widget h2:before {
-    content: url('data:image/svg+xml;base64,<?php echo esc_attr( $svg_64 ); ?>');
-    width: 24px;
-    height: 24px;
-  }
-  .helpsvg {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    max-width: 200px;
-    min-width: 50%;
-  }
-  .help-widget {
-    display: grid;
-    grid-template-columns: 2fr 1fr;
-  }
+	#bluehost_help_widget h2 {
+	justify-content: start;
+	gap: .5rem;
+	}
+	#bluehost_help_widget h2:before {
+	content: url('data:image/svg+xml;base64,<?php echo esc_attr( $svg_64 ); ?>');
+	width: 24px;
+	height: 24px;
+	}
+	.helpsvg {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	max-width: 200px;
+	min-width: 50%;
+	}
+	.help-widget {
+	display: grid;
+	grid-template-columns: 2fr 1fr;
+	}
 </style>
 <div class="nfd-root nfd-widget nfd-widget-help">
-  <div class="help-widget">
-    <div class="nfd-mt-4 nfd-mb-4">
-      <div >
-        <p class="nfd-font-bold nfd-mb-4">
-          <?php esc_html_e( 'From DIY to full-service help, always by your side.', 'wp-plugin-bluehost' ); ?>
-        </p>
-        <p>
-          <?php esc_html_e( 'Call or chat 24/7 for support or let our experts build your site for you.', 'wp-plugin-bluehost' ); ?><br />
-        </p>
-      </div>
-      <div class="nfd-mt-8">
-        <a
-          class="nfd-button nfd-button--primary wppbh-help-link nfd-mr-2"
-          data-cy="nfd-widget-help-link"
-          data-help-center="<?php echo BluehostHelpWidget::can_access_help_center() ? 'true' : 'false'; ?>"
-          href="
-          <?php
-            echo esc_url(
-              BluehostAccountWidget::is_jarvis() ?
-              BluehostAccountWidget::add_utm_params( BluehostAccountWidget::get_platform_base_url( '/help' ) ) :
-              BluehostAccountWidget::add_utm_params( BluehostAccountWidget::get_platform_base_url( '/hosting/help' ) )
-            );
-            ?>
-          "
-          target="_blank"
-          id="nfd-widget-help-link"
-        ><?php esc_html_e( 'Get Help', 'wp-plugin-bluehost' ); ?></a>
-        <a
-          class="nfd-button nfd-button--secondary wppbh-help-link"
-          data-cy="nfd-widget-ctb-link"
-          data-action="load-nfd-ctb"
-          data-ctb-id="838cc912-adb3-4d75-9450-262bf3ee3576"
-          rel="noreferrer"
-          href="
-          <?php
-            echo esc_url( 'https://www.bluehost.com/pro-design-live' );
-          ?>
-          "
-          target="_blank"
-          id="nfd-widget-hire-our-pros"
-        ><?php esc_html_e( 'Hire Our Pros', 'wp-plugin-bluehost' ); ?></a>
-      </div>
-    </div>
-    <div class="helpsvg">
-      <?php echo wp_kses( $help_svg, KSES_ALLOWED_SVG_TAGS ); ?>
-    </div>
-  </div>
+	<div class="help-widget">
+	<div class="nfd-mt-4 nfd-mb-4">
+		<div >
+		<p class="nfd-font-bold nfd-mb-4">
+			<?php esc_html_e( 'From DIY to full-service help, always by your side.', 'wp-plugin-bluehost' ); ?>
+		</p>
+		<p>
+			<?php esc_html_e( 'Call or chat 24/7 for support or let our experts build your site for you.', 'wp-plugin-bluehost' ); ?><br />
+		</p>
+		</div>
+		<div class="nfd-mt-8">
+		<a
+			class="nfd-button nfd-button--primary wppbh-help-link nfd-mr-2"
+			data-cy="nfd-widget-help-link"
+			data-help-center="<?php echo BluehostHelpWidget::can_access_help_center() ? 'true' : 'false'; ?>"
+			href="
+			<?php
+			echo esc_url(
+				BluehostAccountWidget::is_jarvis() ?
+				BluehostAccountWidget::add_utm_params( BluehostAccountWidget::get_platform_base_url( '/help' ) ) :
+				BluehostAccountWidget::add_utm_params( BluehostAccountWidget::get_platform_base_url( '/hosting/help' ) )
+			);
+			?>
+			"
+			target="_blank"
+			id="nfd-widget-help-link"
+		><?php esc_html_e( 'Get Help', 'wp-plugin-bluehost' ); ?></a>
+		<a
+			class="nfd-button nfd-button--secondary nfd-text-primary wppbh-help-link"
+			data-cy="nfd-widget-ctb-link"
+			data-action="load-nfd-ctb"
+			data-ctb-id="838cc912-adb3-4d75-9450-262bf3ee3576"
+			rel="noreferrer"
+			href="
+			<?php
+			echo esc_url( 'https://www.bluehost.com/pro-design-live' );
+			?>
+			"
+			target="_blank"
+			id="nfd-widget-hire-our-pros"
+		><?php esc_html_e( 'Hire Our Pros', 'wp-plugin-bluehost' ); ?></a>
+		</div>
+	</div>
+	<div class="helpsvg">
+		<?php echo wp_kses( $help_svg, KSES_ALLOWED_SVG_TAGS ); ?>
+	</div>
+	</div>
   
 </div>
 <?php
-  // only add this script if the user has access to the help center
+	// only add this script if the user has access to the help center
 if ( BluehostHelpWidget::can_access_help_center() ) :
-  ?>
+	?>
 <script>
 document.addEventListener( 'DOMContentLoaded', initHelpButtonHandler, false );
 function initHelpButtonHandler(){
-  const help_button = document.getElementById( 'nfd-widget-help-link' );
-  if ( help_button ) {
-    help_button.addEventListener( 'click', function( e ) {
-      e.preventDefault(); // stop link from opening
-      window.newfoldEmbeddedHelp.toggleNFDLaunchedEmbeddedHelp(); // open help center instead
-    });
-  }
+	const help_button = document.getElementById( 'nfd-widget-help-link' );
+	if ( help_button ) {
+	help_button.addEventListener( 'click', function( e ) {
+		e.preventDefault(); // stop link from opening
+		window.newfoldEmbeddedHelp.toggleNFDLaunchedEmbeddedHelp(); // open help center instead
+	});
+	}
 }
 </script>
 <?php endif; ?>

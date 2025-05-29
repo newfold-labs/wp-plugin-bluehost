@@ -13,7 +13,6 @@ import Home from '../pages/home';
 import Store from '../pages/ecommerce/page';
 import Marketplace from '../pages/marketplace';
 import Settings from '../pages/settings';
-import Staging from '../pages/staging';
 import Help from '../pages/help';
 import Admin from '../pages/admin';
 

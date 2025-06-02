@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "e9fa7cd0bb50a5db9e34a267894dd2e6",
+    "content-hash": "9473924a6fa69b16c466bf2d089b6129",
     "packages": [
         {
             "name": "doctrine/inflector",
@@ -2501,16 +2501,16 @@
         },
         {
             "name": "newfold-labs/wp-module-staging",
-            "version": "2.3.4",
+            "version": "2.3.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/newfold-labs/wp-module-staging.git",
-                "reference": "02d3ca215c4ed4ab24be328f2db33a2ca6ddc0c2"
+                "reference": "0da1cc10937e046a1a7009309ac6f546eb26cbf1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/newfold-labs/wp-module-staging/zipball/02d3ca215c4ed4ab24be328f2db33a2ca6ddc0c2",
-                "reference": "02d3ca215c4ed4ab24be328f2db33a2ca6ddc0c2",
+                "url": "https://api.github.com/repos/newfold-labs/wp-module-staging/zipball/0da1cc10937e046a1a7009309ac6f546eb26cbf1",
+                "reference": "0da1cc10937e046a1a7009309ac6f546eb26cbf1",
                 "shasum": ""
             },
             "require": {
@@ -2571,10 +2571,10 @@
             ],
             "description": "Newfold module for staging functionality in brand plugins",
             "support": {
-                "source": "https://github.com/newfold-labs/wp-module-staging/tree/2.3.4",
+                "source": "https://github.com/newfold-labs/wp-module-staging/tree/2.3.5",
                 "issues": "https://github.com/newfold-labs/wp-module-staging/issues"
             },
-            "time": "2025-05-07T17:46:05+00:00"
+            "time": "2025-05-22T13:49:00+00:00"
         },
         {
             "name": "newfold-labs/wp-module-survey",
@@ -5688,10 +5688,10 @@
     },
     "prefer-stable": false,
     "prefer-lowest": false,
-    "platform": [],
-    "platform-dev": [],
+    "platform": {},
+    "platform-dev": {},
     "platform-overrides": {
         "php": "7.3.0"
     },
-    "plugin-api-version": "2.3.0"
+    "plugin-api-version": "2.6.0"
 }

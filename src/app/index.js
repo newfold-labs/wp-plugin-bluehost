@@ -47,12 +47,12 @@ const Notices = () => {
 
 /**
  * Synchronizes the WordPress admin menu highlighting with the current route.
- * 
+ *
  * This function handles the menu highlighting by:
  * 1. Removing existing highlight classes from all menu items
  * 2. Finding the correct menu item based on the current path
  * 3. Adding appropriate WordPress admin menu classes
- * 
+ *
  * @param {string} path - The current route path (e.g., '/home', '/settings')
  */
 const syncWordPressMenu = ( path ) => {
@@ -76,10 +76,12 @@ const syncWordPressMenu = ( path ) => {
 
 	// Construct the full path that matches WordPress admin menu href
 	const currentPath = `admin.php?page=bluehost#${ path }`;
-	
+
 	// Find the menu item that matches our current path
-	const currentMenuItem = document.querySelector( `#adminmenu a[href*="${ currentPath }"]` );
-	
+	const currentMenuItem = document.querySelector(
+		`#adminmenu a[href*="${ currentPath }"]`
+	);
+
 	// If we found a matching menu item, highlight it
 	if ( currentMenuItem ) {
 		// Add current class to the link

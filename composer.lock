@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "0bc9a384f5356d3e7fa9f0631c8ff632",
+    "content-hash": "13ff2ca7e8fa2b71f5cf794729c8928c",
     "packages": [
         {
             "name": "doctrine/inflector",
@@ -573,16 +573,16 @@
         },
         {
             "name": "newfold-labs/wp-module-ai",
-            "version": "1.2.1",
+            "version": "1.2.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/newfold-labs/wp-module-ai.git",
-                "reference": "72ad4c8ad467e59047c37120aac3971dbdec8f67"
+                "reference": "35ceccce3d097cdb863a38223c09c22fc3533d16"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/newfold-labs/wp-module-ai/zipball/72ad4c8ad467e59047c37120aac3971dbdec8f67",
-                "reference": "72ad4c8ad467e59047c37120aac3971dbdec8f67",
+                "url": "https://api.github.com/repos/newfold-labs/wp-module-ai/zipball/35ceccce3d097cdb863a38223c09c22fc3533d16",
+                "reference": "35ceccce3d097cdb863a38223c09c22fc3533d16",
                 "shasum": ""
             },
             "require": {
@@ -643,10 +643,10 @@
             ],
             "description": "A module for providing artificial intelligence capabilities.",
             "support": {
-                "source": "https://github.com/newfold-labs/wp-module-ai/tree/1.2.1",
+                "source": "https://github.com/newfold-labs/wp-module-ai/tree/1.2.2",
                 "issues": "https://github.com/newfold-labs/wp-module-ai/issues"
             },
-            "time": "2025-03-17T22:14:25+00:00"
+            "time": "2025-06-05T10:07:04+00:00"
         },
         {
             "name": "newfold-labs/wp-module-atomic",
@@ -1464,17 +1464,25 @@
         },
         {
             "name": "newfold-labs/wp-module-install-checker",
-            "version": "1.0.3",
+            "version": "1.0.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/newfold-labs/wp-module-install-checker.git",
-                "reference": "9d43e916b8c4e752b45c868b41340b84bcb686a6"
+                "reference": "dabc9869e14a5449e26ca07d4c8f02a615b2466c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/newfold-labs/wp-module-install-checker/zipball/9d43e916b8c4e752b45c868b41340b84bcb686a6",
-                "reference": "9d43e916b8c4e752b45c868b41340b84bcb686a6",
+                "url": "https://api.github.com/repos/newfold-labs/wp-module-install-checker/zipball/dabc9869e14a5449e26ca07d4c8f02a615b2466c",
+                "reference": "dabc9869e14a5449e26ca07d4c8f02a615b2466c",
                 "shasum": ""
+            },
+            "require-dev": {
+                "johnpbloch/wordpress": "@stable",
+                "lucatume/wp-browser": "*",
+                "php": ">=7.3",
+                "phpunit/phpcov": "*",
+                "wpackagist-plugin/woocommerce": "@stable",
+                "wpackagist-theme/twentysixteen": "*"
             },
             "type": "library",
             "autoload": {
@@ -1484,6 +1492,16 @@
                 "psr-4": {
                     "NewfoldLabs\\WP\\Module\\InstallChecker\\": "includes/"
                 }
+            },
+            "scripts": {
+                "test": [
+                    "codecept run wpunit"
+                ],
+                "test-coverage": [
+                    "codecept run wpunit --coverage wpunit.cov",
+                    "phpcov merge --php tests/_output/merged.cov --html tests/_output/html tests/_output;",
+                    "echo \"open tests/_output/html/index.html\" to view the report"
+                ]
             },
             "license": [
                 "GPL-2.0-or-later"
@@ -1496,10 +1514,10 @@
             ],
             "description": "A module that handles checking a WordPress installation to see if it is a fresh install and to fetch the estimated installation date.",
             "support": {
-                "source": "https://github.com/newfold-labs/wp-module-install-checker/tree/1.0.3",
+                "source": "https://github.com/newfold-labs/wp-module-install-checker/tree/1.0.4",
                 "issues": "https://github.com/newfold-labs/wp-module-install-checker/issues"
             },
-            "time": "2024-01-31T18:12:34+00:00"
+            "time": "2025-06-03T18:28:04+00:00"
         },
         {
             "name": "newfold-labs/wp-module-installer",
@@ -1925,16 +1943,16 @@
         },
         {
             "name": "newfold-labs/wp-module-onboarding-data",
-            "version": "1.2.9",
+            "version": "1.2.10",
             "source": {
                 "type": "git",
                 "url": "https://github.com/newfold-labs/wp-module-onboarding-data.git",
-                "reference": "a4b3c7e7e7dc32f3fc169cf30da68100f115bb0a"
+                "reference": "981cd39595de9f77ae15aa282204cba8e9441f13"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/newfold-labs/wp-module-onboarding-data/zipball/a4b3c7e7e7dc32f3fc169cf30da68100f115bb0a",
-                "reference": "a4b3c7e7e7dc32f3fc169cf30da68100f115bb0a",
+                "url": "https://api.github.com/repos/newfold-labs/wp-module-onboarding-data/zipball/981cd39595de9f77ae15aa282204cba8e9441f13",
+                "reference": "981cd39595de9f77ae15aa282204cba8e9441f13",
                 "shasum": ""
             },
             "require": {
@@ -1999,10 +2017,10 @@
             ],
             "description": "A non-toggleable module containing a standardized interface for interacting with Onboarding data.",
             "support": {
-                "source": "https://github.com/newfold-labs/wp-module-onboarding-data/tree/1.2.9",
+                "source": "https://github.com/newfold-labs/wp-module-onboarding-data/tree/1.2.10",
                 "issues": "https://github.com/newfold-labs/wp-module-onboarding-data/issues"
             },
-            "time": "2025-04-24T19:16:54+00:00"
+            "time": "2025-06-05T10:15:27+00:00"
         },
         {
             "name": "newfold-labs/wp-module-patterns",

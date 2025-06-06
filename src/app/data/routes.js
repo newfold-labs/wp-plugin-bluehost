@@ -1,7 +1,6 @@
 import {
 	HomeIcon,
 	ShoppingBagIcon,
-	WrenchScrewdriverIcon,
 	AdjustmentsHorizontalIcon,
 	BuildingStorefrontIcon,
 } from '@heroicons/react/24/outline';
@@ -13,7 +12,6 @@ import Home from '../pages/home';
 import Store from '../pages/ecommerce/page';
 import Marketplace from '../pages/marketplace';
 import Settings from '../pages/settings';
-import Staging from '../pages/staging';
 import Help from '../pages/help';
 import Admin from '../pages/admin';
 
@@ -129,13 +127,6 @@ export const routes = [
 		Component: Settings,
 		Icon: AdjustmentsHorizontalIcon,
 		condition: true,
-	},
-	{
-		name: '/staging',
-		title: __( 'Staging', 'wp-plugin-bluehost' ),
-		Component: Staging,
-		Icon: WrenchScrewdriverIcon,
-		condition: await window.NewfoldFeatures.isEnabled( 'staging' ),
 	},
 	{
 		name: '/help',

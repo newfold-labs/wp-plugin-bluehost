@@ -1,447 +1,447 @@
 {
-    "translation-revision-date": "2025-03-18T20:07:22+00:00",
+    "translation-revision-date": "2025-02-25T20:53:21+00:00",
     "generator": "WP-CLI\/2.12.0",
-    "source": "build\/4.3.8\/index.js",
+    "source": "build\/4.3.9\/index.js",
     "domain": "messages",
     "locale_data": {
         "messages": {
             "": {
                 "domain": "messages",
-                "lang": "it_IT",
+                "lang": "nl_NL",
                 "plural-forms": "nplurals=2; plural=(n != 1);"
             },
             "Home": [
-                "Home"
+                "Startpagina"
             ],
             "Store": [
-                "Negozio"
+                "Winkel"
             ],
             "Marketplace": [
-                "Marketplace"
+                "Marktplaats"
             ],
             "Settings": [
-                "Impostazioni"
+                "Instellingen"
             ],
             "Help": [
-                "Aiuto"
+                "Hulp"
             ],
             "Bluehost WordPress Plugin": [
-                "Plugin WordPress Bluehost"
+                "Bluehost WordPress-plugin"
             ],
             "Oh No, An Error!": [
-                "Oh no, un errore!"
+                "Oh nee, een fout!"
             ],
             "You found an error, please refresh the page and try again!": [
-                "Hai trovato un errore, aggiorna la pagina e riprova!"
+                "U heeft een fout gevonden, ververs de pagina en probeer het opnieuw!"
             ],
             "If the error persists, please contact support.": [
-                "Se l'errore persiste, contatta l'assistenza."
+                "Als de fout zich blijft voordoen, neem dan contact op met support."
             ],
             "Error code:": [
-                "Codice errore:"
+                "Foutcode:"
             ],
             "There's nothing here!": [
-                "Non c'\u00e8 niente qui!"
+                "Er is hier niets!"
             ],
             "Products & Services": [
-                "Prodotti & Servizi"
+                "Producten en Diensten"
             ],
             "Sales & Promotions": [
-                "Vendite & Promozioni"
+                "Verkoop & Promoties"
             ],
             "Sales Channel": [
-                "Canale di vendita"
+                "Verkoop Kanaal"
             ],
             "Payments": [
-                "Pagamenti"
+                "Betalingen"
             ],
             "Store Details": [
-                "Dettagli negozio"
+                "Winkel Details"
             ],
             "Help with WordPress": [
-                "Aiuto con WordPress"
+                "Help met WordPress"
             ],
             "Admin": [
-                "Amministratore"
+                "Beheerder"
             ],
             "The staging feature provides a way to copy a site to test new updates, features or content.": [
-                "La funzione di staging fornisce un modo per copiare un sito per testare nuovi aggiornamenti, funzionalit\u00e0 o contenuti."
+                "De stagingfunctie biedt een manier om een site te kopi\u00ebren om nieuwe updates, functies of inhoud te testen."
             ],
             "Sorry, that is not allowed.": [
-                "Siamo spiacenti, non \u00e8 consentito."
+                "Sorry, dat is niet toegestaan."
             ],
             "This feature cannot currently be modified.": [
-                "Questa funzione non pu\u00f2 essere modificata al momento."
+                "Deze functie kan momenteel niet worden gewijzigd."
             ],
             "Oops! Something went wrong. Please try again.": [
-                "Oops! Qualcosa \u00e8 andato storto. Riprova."
+                "Oeps! Er is iets fout gegaan. Probeer het opnieuw."
             ],
             "Phone": [
-                "Telefono"
+                "Telefoonnummer"
             ],
             "Call Us": [
-                "Chiamaci"
+                "Bel ons"
             ],
             "Chat": [
-                "Chat"
+                "Chatten"
             ],
             "Chat with one of our friendly Customer Care Specialists, as we are waiting to help. Open 24 hours - 7 days.": [
-                "Chatta con uno dei nostri amichevoli specialisti di assistenza clienti, come stiamo aspettando di aiutare. Aperto 24 ore - 7 giorni."
+                "Chat met een van onze vriendelijke Customer Care Specialisten, zoals we willen helpen. Open 24 uur - 7 dagen."
             ],
             "Live Chat": [
-                "Live Chat"
+                "Live chat"
             ],
             "Tweet": [
-                "Tweet"
+                "tweet"
             ],
             "Find our team at @bluehost for updates on our products and support from our team.": [
-                "Trova il nostro team a @bluehost per aggiornamenti sui nostri prodotti e supporto dal nostro team."
+                "Vind ons team op @bluehost voor updates van onze producten en ondersteuning van ons team."
             ],
             "Tweet Us": [
-                "Tweet Us"
+                "Tweet ons"
             ],
             "YouTube": [
                 "YouTube"
             ],
             "Find tutorials, answers, interviews and guides on our YouTube channel.": [
-                "Trova tutorial, risposte, interviste e guide sul nostro canale YouTube."
+                "Vind tutorials, antwoorden, interviews en handleidingen op ons YouTube-kanaal."
             ],
             "Watch Now": [
-                "Guarda Ora"
+                "Bekijk nu"
             ],
             "Knowledge Base": [
-                "Knowledge Base"
+                "Kennisbank"
             ],
             "Articles, guides, how-tos, instructions, and answers to our client's most frequently asked questions.": [
-                "Articoli, guide, how-tos, istruzioni e risposte alle domande pi\u00f9 frequenti del nostro cliente."
+                "Artikelen, handleidingen, how-tos, instructies en antwoorden op de meest gestelde vragen van onze klant."
             ],
             "Visit Knowledge Base": [
-                "Visita Knowledge Base"
+                "Bezoek de kennisbank"
             ],
             "Resources": [
-                "Risorse"
+                "Hulpmiddelen"
             ],
             "Boost your online knowledge and get ahead of the competition.": [
-                "Migliora la tua conoscenza online e apri la concorrenza."
+                "Vergroot je online kennis en voorsprong op de competitie."
             ],
             "Explore Resources": [
-                "Esplora Risorse"
+                "Bronnen verkennen"
             ],
             "Events and Webinars": [
-                "Eventi e Webinar"
+                "Gebeurtenissen en webinars"
             ],
             "Team Bluehost organizes multiple webinars and events throughout the year. We are also sponsors and speak at most WordCamps across the world. Join us at our next event!": [
-                "Team Bluehost organizza pi\u00f9 webinar ed eventi durante tutto l'anno. Siamo anche sponsor e parliamo nella maggior parte dei WordCamps in tutto il mondo. Unisciti a noi al nostro prossimo evento!"
+                "Team Bluehost organiseert meerdere webinars en evenementen het hele jaar. We zijn ook sponsors en spreken over de meeste WordCamps over de hele wereld. Doe mee bij ons volgende evenement!"
             ],
             "More Info": [
-                "Ulteriori informazioni"
+                "Meer informatie"
             ],
             "Bluehost Website": [
-                "Sito Bluehost"
+                "Bluehost Website"
             ],
             "Not finding what you need? Visit our website for more information about our products and services.": [
-                "Non trovi quello che ti serve? Visita il nostro sito web per maggiori informazioni sui nostri prodotti e servizi."
+                "Niet gevonden wat je nodig hebt? Bezoek onze website voor meer informatie over onze producten en diensten."
             ],
             "Go to Bluehost": [
-                "Vai a Bluehost"
+                "Ga naar Bluehost"
             ],
             "The Help Center provides guided, step-by-step assistance as you build your site.": [
-                "L\u2019Help Center offre assistenza guidata e dettagliata durante la creazione del tuo sito."
+                "Het Helpcentrum biedt geleidelijke, stap-voor-stap ondersteuning als u uw site bouwt."
             ],
             "Site Status": [
-                "Stato del sito"
+                "Site status"
             ],
             "Not Live": [
-                "Non live"
+                "Niet live"
             ],
             "Live": [
-                "Live"
+                "Zichtbaar"
             ],
             "Your Bluehost Coming Soon page lets you hide your site from visitors while you make the magic happen.": [
-                "La pagina Coming Soon di Bluehost permette di nascondere il sito ai visitatori mentre compi la magia."
+                "Je Bluehost komtpagina laat je je site verbergen voor bezoekers terwijl je de magie laat gebeuren."
             ],
             "Your website is currently displaying a \"Coming Soon\" page.": [
-                "Al momento il tuo sito mostra una pagina \u201cComing Soon\u201d."
+                "Je website wordt momenteel een \"Binnenkort beschikbaar\" pagina weergegeven."
             ],
             "The trash will automatically empty every %s week.": [
-                "Il cestino si svuoter\u00e0 automaticamente ogni %s settimana.",
-                "Il cestino si svuoter\u00e0 automaticamente ogni %s settimane."
+                "De prullenbak zal automatisch elke %s week leegmaken.",
+                "De prullenbak zal automatisch elke %s weken leegmaken."
             ],
             "WonderBlocks provides a library of customizable block patterns and page templates.": [
-                "WonderBlocks offre una libreria di pattern di blocchi personalizzabili e template per le pagine."
+                "WonderBlocks biedt een bibliotheek van aanpasbare blokpatronen en paginasjablonen."
             ],
             "Explore our featured collection of tools and services.": [
-                "Esplora la nostra collezione di strumenti e servizi."
+                "Ontdek onze uitgebreide collectie gereedschappen en diensten."
             ],
             "Oops, there was an error loading the marketplace, please try again later.": [
-                "Ops! Si \u00e8 verificato un errore durante il caricamento del marketplace; riprova pi\u00f9 tardi."
+                "Oeps, er is een fout opgetreden bij het laden van de markt, probeer het later opnieuw."
             ],
             "Sorry, no marketplace items. Please, try again later.": [
-                "Nessun elemento marketplace. Riprova pi\u00f9 tardi."
+                "Sorry, geen marktplaats items. Probeer het later opnieuw."
             ],
             "Load More": [
-                "Carica altro"
+                "Meer laden"
             ],
             "Oops! Something Went Wrong": [
-                "Ops! Qualcosa \u00e8 andato storto"
+                "Oeps! Er ging iets mis"
             ],
             "An error occurred while loading the content. Please try again later.": [
-                "Si \u00e8 verificato un errore durante il caricamento del contenuto. Riprova pi\u00f9 tardi."
+                "Er is een fout opgetreden tijdens het laden van de inhoud. Probeer het later opnieuw."
             ],
             "Secret page to manage admin features and settings.": [
-                "Pagina segreta per gestire funzionalit\u00e0 e impostazioni di amministratore."
+                "Geheime pagina om admin functies en instellingen te beheren."
             ],
             "We are available 24\/7 to help answer questions and solve your problems.": [
-                "Siamo disponibili 24 ore su 24, 7 giorni su 7, per rispondere alle domande e risolvere i tuoi problemi."
+                "We zijn 24\/7 beschikbaar om te helpen vragen te beantwoorden en uw problemen op te lossen."
             ],
             "Enabled All auto-updates": [
-                "Abilitati tutti gli aggiornamenti automatici"
+                "Alle auto-updates ingeschakeld"
             ],
             "Disabled All auto-updates": [
-                "Disabilitati tutti gli aggiornamenti automatici"
+                "Alle auto-updates uitgeschakeld"
             ],
             "Everything will automatically update.": [
-                "Tutto si aggiorner\u00e0 automaticamente."
+                "Alles zal automatisch worden bijgewerkt."
             ],
             "Custom auto-update settings.": [
-                "Impostazioni di aggiornamento automatico personalizzate."
+                "Aangepaste instellingen voor automatisch bijwerken."
             ],
             "Automatically keep all up to date": [
-                "Mantieni tutto aggiornato automaticamente"
+                "Automatisch alles op de hoogte houden"
             ],
             "Enabled Core auto-updates": [
-                "Abilitati aggiornamenti automatici Core"
+                "Ingeschakelde Core auto-updates"
             ],
             "Disabled Core auto-updates": [
-                "Disabilitati aggiornamenti automatici Core"
+                "Kern-updates uitschakelen"
             ],
             "WordPress will automatically update.": [
-                "Tutto si aggiorner\u00e0 automaticamente."
+                "WordPress wordt automatisch bijgewerkt."
             ],
             "WordPress must be manually updated.": [
-                "WordPress deve essere aggiornato manualmente."
+                "WordPress moet handmatig worden bijgewerkt."
             ],
             "WordPress Core": [
-                "Core WordPress"
+                "WordPress Kern"
             ],
             "Enabled Plugins auto-update": [
-                "Abilitati aggiornamenti automatici dei plugin"
+                "Ingeschakelde Plugins automatisch bijwerken"
             ],
             "Disabled Plugins auto-update": [
-                "Disabilitati aggiornamenti automatici dei plugin"
+                "Uitgeschakelde Plugins automatisch bijwerken"
             ],
             "All plugins will automatically update.": [
-                "Tutti i plugin verranno aggiornati automaticamente."
+                "Alle plug-ins worden automatisch bijgewerkt."
             ],
             "Each plugin must be manually updated.": [
-                "Ogni plugin deve essere aggiornato manualmente."
+                "Elke plugin moet handmatig worden bijgewerkt."
             ],
             "Plugins": [
-                "Plugin"
+                "Plug-ins"
             ],
             "Enabled Themes auto-update": [
-                "Abilitati aggiornamenti automatici dei temi"
+                "Ingeschakelde thema's auto-update"
             ],
             "Disabled Themes auto-update": [
-                "Disabilitati aggiornamenti automatici dei temi"
+                "Uitgeschakelde thema's automatisch bijwerken"
             ],
             "All themes will automatically update.": [
-                "Tutti i temi verranno aggiornati automaticamente."
+                "Alle thema's worden automatisch bijgewerkt."
             ],
             "Each theme must be manually updated.": [
-                "Ogni tema deve essere aggiornato manualmente."
+                "Elk thema moet handmatig worden bijgewerkt."
             ],
             "Themes": [
-                "Temi"
+                "Themas"
             ],
             "Automatic Updates": [
-                "Aggiornamenti automatici"
+                "Automatische updates"
             ],
             "Keeping automatic updates on ensures timely security fixes and the latest features.": [
-                "Mantenere attivi gli aggiornamenti automatici garantisce fix di sicurezza tempestivi e le funzionalit\u00e0 pi\u00f9 recenti."
+                "Automatisch bijwerken behouden garandeert tijdige beveiligingsoplossingen en de nieuwste functies."
             ],
             "Coming soon activated": [
-                "Coming soon attivata"
+                "Komt binnenkort geactiveerd"
             ],
             "Coming soon deactivated": [
-                "Coming soon disattivata"
+                "Binnenkort gedeactiveerd"
             ],
             "Coming soon page is active. Site requires login.": [
-                "La pagina Coming soon \u00e8 attiva. Il sito richiede il login."
+                "Binnenkort pagina is actief. Site vereist inloggen."
             ],
             "Coming soon page is not active. Site is live to visitors.": [
-                "La pagina Coming soon non \u00e8 attiva. Il sito \u00e8 live per i visitatori."
+                "Binnenkort beschikbaar is niet actief. De site is live bezoekers."
             ],
             "Turn off your \"Coming Soon\" page when you are ready to launch your website.": [
-                "Disattiva la pagina \u201cComing soon\u201d quando sei pronto a lanciare il tuo sito."
+                "Schakel uw \"Binnenkort beschikbaar\" pagina uit wanneer u klaar bent om uw website te starten."
             ],
             "Turn on your \"Coming Soon\" page when you need to make major changes to your website.": [
-                "Attiva la pagina \u201cComing soon\u201d quando hai bisogno di apportare modifiche importanti al tuo sito."
+                "Schakel uw \"Binnenkort beschikbaar\" pagina in wanneer u belangrijke wijzigingen in uw website moet aanbrengen."
             ],
             "Disabled old post comments": [
-                "Disabilitati commenti dei vecchi post"
+                "Oude commentaren uitgeschakeld"
             ],
             "Enabled old post comments": [
-                "Abilitati commenti dei vecchi post"
+                "Ingeschakelde oude post reacties"
             ],
             "Comments on old posts are disabled.": [
-                "I commenti sui vecchi post sono disabilitati."
+                "Reacties op oude berichten zijn uitgeschakeld."
             ],
             "Comments are allowed on old posts.": [
-                "Commenti consentiti sui vecchi post."
+                "Reacties zijn toegestaan op oude berichten."
             ],
             "Disable comments for older posts": [
-                "Disabilita i commenti per i post pi\u00f9 vecchi"
+                "Commentaren voor oudere berichten uitschakelen"
             ],
             "Comments setting saved": [
-                "Impostazioni commenti salvate"
+                "Reacties instelling opgeslagen"
             ],
             "Comments on posts are disabled after %s day.": [
-                "I commenti sui post sono disabilitati dopo %s giorno.",
-                "I commenti sui post sono disabilitati dopo %s giorni."
+                "Reacties op berichten zijn uitgeschakeld na %s dag.",
+                "Reacties op berichten zijn uitgeschakeld na %s dagen."
             ],
             "Close comments after %s day.": [
-                "Chiudi i commenti dopo %s giorno.",
-                "Chiudi i commenti dopo %s giorni."
+                "Sluit reacties na %s dag.",
+                "Sluit reacties na %s dagen."
             ],
             "Comments setting saved.": [
-                "Impostazioni commenti salvate."
+                "Reacties instellingen opgeslagen."
             ],
             "Posts will display %s comment at a time.": [
-                "I post mostreranno %s commento alla volta.",
-                "I post mostreranno %s commenti alla volta."
+                "Berichten tonen %s reactie per keer.",
+                "Berichten tonen %s reacties tegelijk."
             ],
             "Comments to display per page": [
-                "Commenti da visualizzare per pagina"
+                "Reacties die per pagina worden weergegeven"
             ],
             "Comments": [
-                "Commenti"
+                "Opmerkingen"
             ],
             "Comments allow visitors to provide feedback and respond to your posts or pages.": [
-                "I commenti permettono ai visitatori di fornire un feedback e rispondere ai tuoi post o pagine."
+                "Met reacties kunnen bezoekers feedback geven en reageren op uw berichten of pagina's."
             ],
             "Trash setting saved": [
-                "Impostazioni cestino salvate"
+                "Prullenbak instelling opgeslagen"
             ],
             "Number of weeks in between emptying trash": [
-                "Numero di settimane tra uno svuotamento e l\u2019altro del cestino"
+                "Aantal weken tussen leegmaken van prullenbak"
             ],
             "Content Options": [
-                "Opzioni contenuto"
+                "Content opties"
             ],
             "Controls for how often to empty the trash.": [
-                "Controlla quanto spesso svuotare il cestino."
+                "Bepaalt hoe vaak de prullenbak leeg wordt gemaakt."
             ],
             "Help Center Enabled": [
-                "Help Center abilitato"
+                "Helpcentrum ingeschakeld"
             ],
             "Help Center Disabled": [
-                "Help Center disabilitato"
+                "Helpcentrum uitgeschakeld"
             ],
             "Reload the page to access the Help Center.": [
-                "Ricarica la pagina per accedere all'Help Center."
+                "Herlaad de pagina om naar het Helpcentrum te gaan."
             ],
             "The Help Center will no longer display.": [
-                "L'Help Center non verr\u00e0 pi\u00f9 mostrato."
+                "Het Helpcentrum wordt niet langer weergegeven."
             ],
             "Features": [
-                "Funzionalit\u00e0"
+                "Eigenschappen"
             ],
             "Customize the available features as you manage your website.": [
-                "Personalizza le funzionalit\u00e0 disponibili per la gestione del tuo sito."
+                "Pas de beschikbare functies aan bij het beheren van uw website."
             ],
             "Performance Enabled": [
-                "Prestazioni abilitate"
+                "Prestaties ingeschakeld"
             ],
             "Performance Disabled": [
-                "Prestazioni disabilitate"
+                "Prestaties uitgeschakeld"
             ],
             "You need to reload the page to manage Performance.": [
-                "\u00c8 necessario ricaricare la pagina per gestire le prestazioni."
+                "U moet de pagina herladen om de prestaties te beheren."
             ],
             "Performance will no longer display.": [
-                "Le prestazioni non verranno pi\u00f9 visualizzate."
+                "Prestaties worden niet langer weergegeven."
             ],
             "The performance feature provides improvements to loads faster for visitors including cache settings.": [
-                "La funzionalit\u00e0 prestazioni offre ottimizzazioni per accelerare il caricamento per i visitatori, incluse le configurazioni della cache."
+                "De prestatiefunctie biedt verbeteringen om sneller te laden voor bezoekers met inbegrip van cache-instellingen."
             ],
             "Staging Enabled": [
-                "Staging abilitato"
+                "Staging ingeschakeld"
             ],
             "Staging Disabled": [
-                "Staging disabilitato"
+                "Staging uitgeschakeld"
             ],
             "You need to reload the page to manage Staging.": [
-                "\u00c8 necessario ricaricare la pagina per gestire lo staging."
+                "Je moet de pagina herladen om Staging te beheren."
             ],
             "Staging will no longer display.": [
-                "Lo staging non verr\u00e0 pi\u00f9 visualizzato."
+                "Er zal niet langer gefaseerd worden weergegeven."
             ],
             "WonderBlocks Enabled": [
-                "WonderBlocks abilitato"
+                "WonderBlocks ingeschakeld"
             ],
             "WonderBlocks Disabled": [
-                "WonderBlocks disabilitato"
+                "WonderBlocks uitgeschakeld"
             ],
             "Create new content to see WonderBlocks in action.": [
-                "Crea un nuovo contenuto per vedere WonderBlocks in azione."
+                "Maak nieuwe inhoud om WonderBlocks in actie te zien."
             ],
             "WonderBlocks will no longer display.": [
-                "WonderBlocks non verr\u00e0 pi\u00f9 visualizzato."
+                "WonderBlocks worden niet langer weergegeven."
             ],
             "Hire our experts": [
-                "Assumi i nostri esperti"
+                "Neem onze experts aan"
             ],
             "Get in touch with us, and we\u2019ll help you build the exact store you\u2019re dreaming of.": [
-                "Mettiti in contatto con noi e ti aiuteremo a costruire il negozio esatto che stai sognando."
+                "Neem contact met ons op en wij helpen u om de exacte winkel te bouwen waarvan u droomt."
             ],
             "Discover all the features to grow your store, boost sales and loyalize your customers.": [
-                "Scopri tutte le funzionalit\u00e0 per far crescere il tuo negozio, aumentare le vendite e lealizzare i tuoi clienti."
+                "Ontdek alle functies om uw winkel te laten groeien, verkoop te stimuleren en uw klanten te loyaliseren."
             ],
             "Quick links": [
-                "Collegamenti rapidi"
+                "Snelle links"
             ],
             "Manage hosting": [
-                "Gestisci hosting"
+                "hosting beheren"
             ],
             "Write a blog post": [
-                "Scrivi un post sul blog"
+                "Schrijf een blogbericht"
             ],
             "Create a sale promotion": [
-                "Crea una promozione di vendita"
+                "Maak een verkooppromotie aan"
             ],
             "Get Help & Resources": [
-                "Ottieni Aiuto E Risorse"
+                "Krijg hulp & hulpmiddelen"
             ],
             "Refer a friend and earn money": [
-                "Fai riferimento ad un amico e guadagna denaro"
+                "Verwijs een vriend en verdien geld"
             ],
             "Unlock exclusive benefits with our referral program!": [
-                "Sblocca i vantaggi esclusivi con il nostro programma di segnalazione!"
+                "Ontgrendel exclusieve voordelen met ons aanbevelingsprogramma!"
             ],
             "Start now": [
-                "Inizia ora"
+                "Begin nu"
             ],
             "Pro Design Live": [
                 "Pro Design Live"
             ],
             "We will help you build and grow your website and improve your skills in WordPress.": [
-                "Ti aiuteremo a costruire e far crescere il tuo sito web e migliorare le tue abilit\u00e0 in WordPress."
+                "We zullen u helpen uw website te bouwen en te laten groeien en uw vaardigheden te verbeteren in WordPress."
             ],
             "Get Info": [
-                "Ottieni Informazioni"
+                "Krijg informatie"
             ],
             "Welcome to Bluehost": [
-                "Benvenuto su Bluehost"
+                "Welkom bij Bluehost"
             ],
             "We're very excited to get started with you!": [
-                "Siamo molto entusiasti di iniziare con te!"
+                "We zijn erg enthousiast om met je aan de slag te gaan!"
             ],
             "Explore Premium Tools": [
-                "Esplora Strumenti Premium"
+                "Premium tools verkennen"
             ],
             "Get expert help, documentation, and tutorials to make the most of your WordPress site.": [
-                "Ottieni aiuto esperto, documentazione e tutorial per sfruttare al meglio il tuo sito WordPress."
+                "Krijg deskundige hulp, documentatie en tutorials om het meeste uit uw WordPress-site te halen."
             ],
             "Manage common settings for your website": [
                 ""

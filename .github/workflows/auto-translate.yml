@@ -7,7 +7,7 @@ on:
   workflow_dispatch:
     inputs:
       text_domain:
-        description: "Text domain (Defaults to repository name if text domain is missing)"
+        description: 'Text domain (Defaults to repository name if text domain is missing)'
         required: false
         default: ""
 

@@ -5,21 +5,18 @@ on:
     branches:
       - 'main'
   workflow_dispatch:
-    inputs:
-      text_domain:
-        description: 'Text domain (Defaults to repository name if text domain is missing)'
-        required: false
-        default: ""
 
-permissions:
-  contents: write
-  pull-requests: write
+permissions: {}
 
 jobs:
   translate:
+    name: 'Trigger Auto-Translate Workflow'
+    permissions:
+      contents: write
+      pull-requests: write
     uses: newfold-labs/workflows/.github/workflows/auto-translate.yml@main
     with:
-      text_domain: ${{ github.event_name == 'workflow_dispatch' && github.event.inputs.text_domain || 'wp-plugin-bluehost' }}
+      text_domain: 'wp-plugin-bluehost'
     secrets:
       TRANSLATOR_API_KEY: ${{ secrets.TRANSLATOR_API_KEY }}
       NEWFOLD_ACCESS_TOKEN: ${{ secrets.NEWFOLD_ACCESS_TOKEN }}

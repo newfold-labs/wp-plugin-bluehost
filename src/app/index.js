@@ -45,6 +45,64 @@ const Notices = () => {
 	);
 };
 
+/**
+ * Synchronizes the WordPress admin menu highlighting with the current route.
+ *
+ * This function handles the menu highlighting by:
+ * 1. Removing existing highlight classes from all menu items
+ * 2. Finding the correct menu item based on the current path
+ * 3. Adding appropriate WordPress admin menu classes
+ *
+ * @param {string} path - The current route path (e.g., '/home', '/settings')
+ */
+const syncWordPressMenu = ( path ) => {
+	// Get all menu items from the WordPress admin menu
+	const menuItems = document.querySelectorAll( '#adminmenu a' );
+
+	// First, remove all active/current classes
+	menuItems.forEach( ( item ) => {
+		// Remove current class from the link
+		item.classList.remove( 'current' );
+
+		// Get the parent list item
+		const parentListItem = item.closest( 'li' );
+		if ( parentListItem ) {
+			// Remove all WordPress admin menu state classes
+			parentListItem.classList.remove( 'current' );
+			parentListItem.classList.remove( 'wp-has-current-submenu' );
+			parentListItem.classList.remove( 'wp-menu-open' );
+		}
+	} );
+
+	// Construct the full path that matches WordPress admin menu href
+	const currentPath = `admin.php?page=bluehost#${ path }`;
+
+	// Find the menu item that matches our current path
+	const currentMenuItem = document.querySelector(
+		`#adminmenu a[href*="${ currentPath }"]`
+	);
+
+	// If we found a matching menu item, highlight it
+	if ( currentMenuItem ) {
+		// Add current class to the link
+		currentMenuItem.classList.add( 'current' );
+
+		// Get the parent list item
+		const parentListItem = currentMenuItem.closest( 'li' );
+		if ( parentListItem ) {
+			// Add current class to the list item
+			parentListItem.classList.add( 'current' );
+
+			// If this is a submenu item, highlight the parent menu too
+			const topLevelParent = parentListItem.closest( '.wp-has-submenu' );
+			if ( topLevelParent ) {
+				topLevelParent.classList.add( 'wp-has-current-submenu' );
+				topLevelParent.classList.add( 'wp-menu-open' );
+			}
+		}
+	}
+};
+
 const AppBody = ( props ) => {
 	const location = useLocation();
 	const hashedPath = '#' + location.pathname;
@@ -52,6 +110,11 @@ const AppBody = ( props ) => {
 
 	useHandlePageLoad();
 	handleHelpLinksClick();
+
+	// Sync WordPress admin menu highlighting when route changes
+	useEffect( () => {
+		syncWordPressMenu( location.pathname );
+	}, [ location ] );
 
 	return (
 		<main

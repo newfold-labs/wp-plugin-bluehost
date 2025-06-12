@@ -1,7 +1,7 @@
 {
     "translation-revision-date": "2025-02-25T20:53:21+00:00",
     "generator": "WP-CLI\/2.12.0",
-    "source": "build\/4.3.5\/index.js",
+    "source": "build\/4.3.9\/index.js",
     "domain": "messages",
     "locale_data": {
         "messages": {
@@ -21,9 +21,6 @@
             ],
             "Settings": [
                 "Confirgura\u00e7\u00f5es"
-            ],
-            "Staging": [
-                "Encena\u00e7\u00e3o"
             ],
             "Help": [
                 "Ajuda"
@@ -391,144 +388,6 @@
             ],
             "WonderBlocks will no longer display.": [
                 "WonderBlocks n\u00e3o aparecer\u00e3o mais."
-            ],
-            "Cancel": [
-                "cancelar"
-            ],
-            "Clone": [
-                "Clonar"
-            ],
-            "Confirm Clone Action": [
-                "Confirmar a\u00e7\u00e3o de Clone"
-            ],
-            "This will overwrite anything in staging and update it to an exact clone of the current production site. Are you sure you want to proceed?": [
-                "Isto ir\u00e1 sobrescrever qualquer coisa em Staging e atualiz\u00e1-lo para um clone exato do site de produ\u00e7\u00e3o atual. Tem certeza que deseja continuar?"
-            ],
-            "Cloned to Staging": [
-                "Clonado para o Staging"
-            ],
-            "Cloning production to staging, this should take about a minute.": [
-                "A clonagem da produ\u00e7\u00e3o para a fase de estagna\u00e7\u00e3o, isso deve demorar cerca de um minuto."
-            ],
-            "Clone to staging": [
-                "Clonar para o preparo"
-            ],
-            "Created": [
-                "Criado"
-            ],
-            "Staging Created": [
-                "Prepara\u00e7\u00e3o Criada"
-            ],
-            "Creating a staging site, this should take about a minute.": [
-                "Criando um staging site, isso deve levar cerca de um minuto."
-            ],
-            "Create staging site": [
-                "Criar site de teste"
-            ],
-            "Currently editing": [
-                "Edi\u00e7\u00e3o atual"
-            ],
-            "Delete": [
-                "excluir"
-            ],
-            "Confirm Delete": [
-                "Confirmar Exclus\u00e3o"
-            ],
-            "This will permanently delete staging site. Are you sure you want to proceed? You can recreate another staging site at any time, but any specific changes you've made to this staging site will be lost.": [
-                "Isto ir\u00e1 excluir o site de staging permanentemente. Tem certeza que deseja continuar? Voc\u00ea pode recriar outro site de staging a qualquer momento, mas quaisquer altera\u00e7\u00f5es espec\u00edficas feitas neste site ser\u00e3o perdidas."
-            ],
-            "Deleted Staging": [
-                "Deletado Staging"
-            ],
-            "Deleting the staging site, this should take about a minute.": [
-                "Excluindo o staging site, isso deve levar cerca de um minuto."
-            ],
-            "Delete Staging Site": [
-                "Excluir Site Staging"
-            ],
-            "Deploy": [
-                "Implantar"
-            ],
-            "Deploy all changes": [
-                "Implementar todas as altera\u00e7\u00f5es"
-            ],
-            "Confirm Deployment": [
-                "Confirmar implanta\u00e7\u00e3o"
-            ],
-            "Deploy database only": [
-                "S\u00f3 implantar banco de dados"
-            ],
-            "This will deploy staging to production and overwrite current production site. Are you sure you want to proceed?": [
-                "Isto ir\u00e1 implantar o staging para produ\u00e7\u00e3o e sobrescrever o site de produ\u00e7\u00e3o atual. Tem certeza que deseja continuar?"
-            ],
-            "Deploy files only": [
-                "Implantar apenas arquivos"
-            ],
-            "Deployed": [
-                "Implantado"
-            ],
-            "Deploying from staging to production, this should take about a minute.": [
-                "Implantando da fase para a produ\u00e7\u00e3o, isto deve levar cerca de um minuto."
-            ],
-            "Deploy Site": [
-                "Site de implanta\u00e7\u00e3o"
-            ],
-            "Error": [
-                "Erro"
-            ],
-            "You don't have a staging site yet.": [
-                "Voc\u00ea ainda n\u00e3o tem um site de preparo."
-            ],
-            "Not currently editing": [
-                "N\u00e3o est\u00e1 editando no momento"
-            ],
-            "Proceed": [
-                "Continuar"
-            ],
-            "Production Site": [
-                "Local de Produ\u00e7\u00e3o"
-            ],
-            "Staging Site": [
-                "Site Staging"
-            ],
-            "A staging site is a duplicate of your live site, offering a secure environment to experiment, test updates, and deploy when ready.": [
-                "Um site staging \u00e9 uma duplicata do seu site ao vivo, oferecendo um ambiente seguro para experimentar, testar atualiza\u00e7\u00f5es e implantar quando estiver pronto."
-            ],
-            "Switch": [
-                "Interruptor"
-            ],
-            "Switching": [
-                "Alternando"
-            ],
-            "Switch to Production": [
-                "Mudar para Produ\u00e7\u00e3o"
-            ],
-            "This will navigate you to the production environment": [
-                "Isto ir\u00e1 navegar para o ambiente de produ\u00e7\u00e3o"
-            ],
-            "Loading the production environment now.": [
-                "Carregando ambiente de produ\u00e7\u00e3o agora."
-            ],
-            "Switching to the production environment, this should take about a minute.": [
-                "Mudando para o ambiente de produ\u00e7\u00e3o, isso deve levar cerca de um minuto."
-            ],
-            "Switch to Staging": [
-                "Alternar para Staging"
-            ],
-            "This will navigate you to the staging environment": [
-                "Isto ir\u00e1 navegar para o ambiente de teste"
-            ],
-            "Loading the staging environment now.": [
-                "Carregando o ambiente de staging agora."
-            ],
-            "Switching to the staging environment, this should take about a minute.": [
-                "Mudando para o ambiente de preparo, isso deve levar cerca de um minuto."
-            ],
-            "An unknown error has occurred.": [
-                "Ocorreu um erro desconhecido."
-            ],
-            "Working\u2026": [
-                "Trabalhando\u2026"
             ],
             "Hire our experts": [
                 "Contrate nossos especialistas"

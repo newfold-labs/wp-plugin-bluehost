@@ -42,10 +42,10 @@ const mostCommonImports = {
  *
  * @see https://github.com/Automattic/jetpack/blob/fdf3b72390c7fcb64508d985149de2af01b935b3/projects/js-packages/webpack-config/src/webpack/terser.js
  * @see https://github.com/terser/terser/blob/v5.9.0/lib/output.js#L171-L177
- * @param {object} comment - Comment object.
- * @param {string} comment.type - Comment type.
+ * @param {Object} comment       - Comment object.
+ * @param {string} comment.type  - Comment type.
  * @param {string} comment.value - Comment text.
- * @returns {boolean} Whether to keep it.
+ * @return {boolean} Whether to keep it.
  */
 function isSomeComments( comment ) {
 	return (
@@ -60,12 +60,12 @@ function isSomeComments( comment ) {
  * @see https://github.com/Automattic/jetpack/blob/fdf3b72390c7fcb64508d985149de2af01b935b3/projects/js-packages/webpack-config/src/webpack/terser.js
  * @see https://github.com/php-gettext/Gettext/blob/4.x/src/Utils/ParsedComment.php#L53-L73
  * @see https://github.com/wp-cli/i18n-command/blob/v2.2.9/src/JsCodeExtractor.php#L15
- * @param {object} comment - Comment object.
- * @param {string} comment.type - Comment type.
+ * @param {Object} comment       - Comment object.
+ * @param {string} comment.type  - Comment type.
  * @param {string} comment.value - Comment text.
- * @returns {boolean} Whether to keep it.
+ * @return {boolean} Whether to keep it.
  */
- function isTranslatorsComment( comment ) {
+function isTranslatorsComment( comment ) {
 	return (
 		( comment.type === 'comment2' || comment.type === 'comment1' ) &&
 		/^[#*/ \t\r\n]*[tT]ranslators/.test( comment.value )
@@ -80,9 +80,17 @@ function isSomeComments( comment ) {
  */
 const webConfig = {
 	mode: 'production',
+	entry: {
+		index: path.resolve( process.cwd(), 'src/index.js' ), // Main plugin app
+		'portal-registry': path.resolve(
+			process.cwd(),
+			'src/portalRegistry/index.js'
+		), // Shared registry
+	},
 	output: {
 		// versioned output directory i.e. /build/1.0.0, /build/1.1.0, etc.
 		path: path.resolve( process.cwd(), 'build/' + version ),
+		filename: '[name].js',
 	},
 	resolve: { alias },
 	plugins: [ new ProvidePlugin( mostCommonImports ) ],
@@ -93,7 +101,7 @@ const webConfig = {
 			new TerserPlugin( {
 				terserOptions: {
 					mangle: {
-						reserved: [ '__', '_n', '_nx', '_x' ]
+						reserved: [ '__', '_n', '_nx', '_x' ],
 					},
 					format: {
 						// The `new Function` bit here is a hack to work around the way terser-webpack-plugin serializes
@@ -112,8 +120,8 @@ const webConfig = {
 					'comment',
 					`${ isSomeComments }; return isSomeComments( comment )`
 				),
-			}),
-		]
+			} ),
+		],
 	},
 };
 

@@ -1,6 +1,6 @@
 body {
 	background-color: #fff;
-	background-image: url(../images/cs-bluehost-bg.jpg);
+	background-image: linear-gradient(115.87deg, #F2F5F9 37.06%, #B7D0F1 100.36%);
 	background-position: top right;
 	background-repeat: no-repeat;
 	font-family: "Open Sans", sans-serif;
@@ -8,6 +8,21 @@ body {
 	display: flex;
 	flex-direction: column;
 	min-height: 100vh;
+}
+
+body:before {
+	content: '';
+	background-image: url(../svg/bluehost-favicon.svg);
+	background-position: top right;
+	background-repeat: no-repeat;
+	position: absolute;
+	top: 50%;
+	right: 0;
+	transform: translate(20%, -50%) rotate(-15deg);
+	height: 20rem;
+	width: 20rem;
+	z-index: -1;
+	opacity: 5%;
 }
 
 * {

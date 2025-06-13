@@ -52,7 +52,7 @@ $nfd_module_container->set(
 				array(
 					'id'           => 'bluehost',
 					'file'         => BLUEHOST_PLUGIN_FILE,
-					'brand'        => get_option( 'mm_brand', 'bluehost' ),
+					'brand'        => get_option( 'mm_brand') ?: 'bluehost',
 					'install_date' => get_option( 'bluehost_plugin_install_date' ),
 				)
 			);

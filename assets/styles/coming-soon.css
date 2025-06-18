@@ -6,6 +6,7 @@ body {
 	font-family: "Open Sans", sans-serif;
 	overflow-x: hidden;
 	display: flex;
+	align-items:center;
 	flex-direction: column;
 	min-height: 100vh;
 }
@@ -23,6 +24,42 @@ body:before {
 	width: 20rem;
 	z-index: -1;
 	opacity: 5%;
+}
+
+header {
+	display: flex;
+	align-items: center;
+	justify-content: flex-end;
+	padding: 2rem 3rem;
+	width: 100%;
+}
+
+header .login-prompt{
+	padding-bottom: 10px;
+	border-bottom: 1px solid #ADC9ED;
+	font-size: .9rem;
+	display:flex;
+	align-items: center;
+}
+
+header .login-prompt,
+header .login-prompt a {
+	display:flex;
+	align-items: center;
+	gap: 5px;
+}
+
+header .login-prompt .login-link {
+	color: #336AD7;
+	text-decoration:none;
+}
+
+header .login-prompt .login-link .nfd-login-icon {
+	display:flex;
+}
+
+header .login-prompt .login-link .nfd-login-icon svg {
+	width: 20px;
 }
 
 * {
@@ -54,14 +91,13 @@ input {
 #wrap {
 	max-width: 560px;
 	width: 100%;
-	margin: 320px auto auto;
 	color: #444;
-	text-align: center;
 	min-height: auto !important;
+	flex: 1;
 }
 
 #wrap .content {
-	background: rgba(215, 223, 236, 0.5);
+	text-align: left;
 	padding-bottom: 2rem;
 	border-radius: 4px;
 }

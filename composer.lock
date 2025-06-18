@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "69d7790df83dbacde0b13b083bf7f139",
+    "content-hash": "5d4fd3302907b3ecf14b1352f9422dac",
     "packages": [
         {
             "name": "doctrine/inflector",
@@ -844,16 +844,16 @@
         },
         {
             "name": "newfold-labs/wp-module-data",
-            "version": "2.8.4",
+            "version": "2.8.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/newfold-labs/wp-module-data.git",
-                "reference": "17d485a474d4162dcebda7010e1675f87579bac8"
+                "reference": "c873781361a4ac3034fe488b2fe495cddd902f99"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/newfold-labs/wp-module-data/zipball/17d485a474d4162dcebda7010e1675f87579bac8",
-                "reference": "17d485a474d4162dcebda7010e1675f87579bac8",
+                "url": "https://api.github.com/repos/newfold-labs/wp-module-data/zipball/c873781361a4ac3034fe488b2fe495cddd902f99",
+                "reference": "c873781361a4ac3034fe488b2fe495cddd902f99",
                 "shasum": ""
             },
             "require": {
@@ -943,10 +943,10 @@
             ],
             "description": "Newfold Data Module",
             "support": {
-                "source": "https://github.com/newfold-labs/wp-module-data/tree/2.8.4",
+                "source": "https://github.com/newfold-labs/wp-module-data/tree/2.8.5",
                 "issues": "https://github.com/newfold-labs/wp-module-data/issues"
             },
-            "time": "2025-05-20T17:54:39+00:00"
+            "time": "2025-06-18T22:53:06+00:00"
         },
         {
             "name": "newfold-labs/wp-module-deactivation",
@@ -2145,16 +2145,16 @@
         },
         {
             "name": "newfold-labs/wp-module-performance",
-            "version": "3.1.6",
+            "version": "3.2.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/newfold-labs/wp-module-performance.git",
-                "reference": "1b4b4a70a50e113174352a015fec575a5bb49f9c"
+                "reference": "30f5dcce2c332a03abcf3592d671ef6c7926ff5a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/newfold-labs/wp-module-performance/zipball/1b4b4a70a50e113174352a015fec575a5bb49f9c",
-                "reference": "1b4b4a70a50e113174352a015fec575a5bb49f9c",
+                "url": "https://api.github.com/repos/newfold-labs/wp-module-performance/zipball/30f5dcce2c332a03abcf3592d671ef6c7926ff5a",
+                "reference": "30f5dcce2c332a03abcf3592d671ef6c7926ff5a",
                 "shasum": ""
             },
             "require": {
@@ -2167,7 +2167,7 @@
             },
             "require-dev": {
                 "10up/wp_mock": "^0.5.0|^1.0.0",
-                "johnpbloch/wordpress": "6.1.7",
+                "johnpbloch/wordpress": "6.8.1",
                 "lucatume/wp-browser": "*",
                 "newfold-labs/wp-php-standards": "^1.2",
                 "phpunit/phpcov": "*",
@@ -2235,10 +2235,10 @@
             ],
             "description": "A module for managing caching functionality.",
             "support": {
-                "source": "https://github.com/newfold-labs/wp-module-performance/tree/3.1.6",
+                "source": "https://github.com/newfold-labs/wp-module-performance/tree/3.2.0",
                 "issues": "https://github.com/newfold-labs/wp-module-performance/issues"
             },
-            "time": "2025-06-11T15:06:03+00:00"
+            "time": "2025-06-18T14:40:54+00:00"
         },
         {
             "name": "newfold-labs/wp-module-pls",

@@ -60,7 +60,7 @@ jobs:
         with:
           repo-token: ${{ secrets.GITHUB_TOKEN }}
           pattern: 'build/**/*.{js,css}'
-          compress: 'gzip'
+          compression: 'gzip'
 
       # Use marketplace action for image optimization and reporting
       - name: Image Analysis
@@ -71,14 +71,6 @@ jobs:
           jpegQuality: '60'
           pngQuality: '60'
           webpQuality: '60'
-
-      # Use marketplace action for file size monitoring
-      - name: File Size Monitoring
-        uses: andresz1/size-limit-action@v1
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          package_manager: npm
-          script: build
 
       # Custom step for total plugin size calculation
       - name: Calculate Total Plugin Size

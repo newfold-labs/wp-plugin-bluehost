@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "d1ed283227bc3e5b4b8d195da06bbf9e",
+    "content-hash": "69d7790df83dbacde0b13b083bf7f139",
     "packages": [
         {
             "name": "doctrine/inflector",
@@ -584,16 +584,16 @@
         },
         {
             "name": "newfold-labs/wp-module-ai",
-            "version": "1.2.2",
+            "version": "1.2.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/newfold-labs/wp-module-ai.git",
-                "reference": "35ceccce3d097cdb863a38223c09c22fc3533d16"
+                "reference": "e81deedd6f81d5c9568459cfe5b00f43d47c8123"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/newfold-labs/wp-module-ai/zipball/35ceccce3d097cdb863a38223c09c22fc3533d16",
-                "reference": "35ceccce3d097cdb863a38223c09c22fc3533d16",
+                "url": "https://api.github.com/repos/newfold-labs/wp-module-ai/zipball/e81deedd6f81d5c9568459cfe5b00f43d47c8123",
+                "reference": "e81deedd6f81d5c9568459cfe5b00f43d47c8123",
                 "shasum": ""
             },
             "require": {
@@ -654,10 +654,10 @@
             ],
             "description": "A module for providing artificial intelligence capabilities.",
             "support": {
-                "source": "https://github.com/newfold-labs/wp-module-ai/tree/1.2.2",
+                "source": "https://github.com/newfold-labs/wp-module-ai/tree/1.2.3",
                 "issues": "https://github.com/newfold-labs/wp-module-ai/issues"
             },
-            "time": "2025-06-05T10:07:04+00:00"
+            "time": "2025-06-16T14:17:07+00:00"
         },
         {
             "name": "newfold-labs/wp-module-atomic",

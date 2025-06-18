@@ -1,0 +1,187 @@
+name: Plugin Size and Asset Audit
+
+on:
+  pull_request:
+    branches: [main]
+  push:
+    branches: [main]
+
+env:
+  MAX_SIZE_INCREASE_PERCENT: 10
+  MAX_IMAGE_SIZE_KB: 500
+
+jobs:
+  audit:
+    name: Audit Plugin Size
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.1'
+          coverage: none
+          tools: composer
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20.x
+          cache: 'npm'
+  
+      - name: Cache Composer dependencies
+        uses: actions/cache@v4
+        with:
+          path: vendor
+          key: ${{ runner.os }}-composer-${{ hashFiles('**/composer.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-composer-
+ 
+      - name: Install PHP Dependencies
+        run: composer install --no-progress --no-dev --optimize-autoloader --prefer-dist
+
+      - name: Setup Registry
+        run: printf "\n//npm.pkg.github.com/:_authToken=${{ secrets.NEWFOLD_ACCESS_TOKEN }}" >> .npmrc
+
+      - name: Install NPM Dependencies
+        run: npm install --legacy-peer-deps
+
+      - name: Build JavaScript
+        run: npm run build
+
+      # Use marketplace action for bundle size analysis
+      - name: Bundle Size Analysis
+        uses: preactjs/compressed-size-action@v2
+        with:
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
+          pattern: 'build/**/*.{js,css}'
+          compress: 'gzip'
+
+      # Use marketplace action for image optimization and reporting
+      - name: Image Analysis
+        uses: calibreapp/image-actions@main
+        with:
+          githubToken: ${{ secrets.GITHUB_TOKEN }}
+          compressOnly: true
+          jpegQuality: '60'
+          pngQuality: '60'
+          webpQuality: '60'
+
+      # Use marketplace action for file size monitoring
+      - name: File Size Monitoring
+        uses: actions/size-limit@v1
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          package_manager: npm
+          script: build
+
+      # Custom step for total plugin size calculation
+      - name: Calculate Total Plugin Size
+        id: plugin_size
+        run: |
+          TOTAL_SIZE_BYTES=$(du -sb --exclude=.git --exclude=node_modules --exclude=vendor . | cut -f1)
+          TOTAL_SIZE_HUMAN=$(du -sh --exclude=.git --exclude=node_modules --exclude=vendor . | cut -f1)
+          
+          echo "total_size_bytes=$TOTAL_SIZE_BYTES" >> $GITHUB_OUTPUT
+          echo "total_size_human=$TOTAL_SIZE_HUMAN" >> $GITHUB_OUTPUT
+          
+          # Store for comparison
+          echo $TOTAL_SIZE_BYTES > current_size.txt
+
+      # Compare with previous size for PRs
+      - name: Compare Size Changes
+        if: github.event_name == 'pull_request'
+        id: size_comparison
+        run: |
+          git fetch origin ${{ github.base_ref }}
+          git checkout origin/${{ github.base_ref }}
+
+          # Install and build for comparison
+          composer install --no-progress --no-dev --optimize-autoloader --prefer-dist --quiet
+          printf "\n//npm.pkg.github.com/:_authToken=${{ secrets.NEWFOLD_ACCESS_TOKEN }}" >> .npmrc
+          npm install --legacy-peer-deps --silent
+          npm run build --silent
+
+          PREV_SIZE_BYTES=$(du -sb --exclude=.git --exclude=node_modules --exclude=vendor . | cut -f1)
+          echo $PREV_SIZE_BYTES > previous_size.txt
+
+          # Switch back to current branch
+          git checkout ${{ github.head_ref }}
+
+          CURRENT_SIZE=$(cat current_size.txt)
+          PREVIOUS_SIZE=$(cat previous_size.txt)
+
+          if [ "$PREVIOUS_SIZE" -gt 0 ]; then
+            INCREASE_BYTES=$((CURRENT_SIZE - PREVIOUS_SIZE))
+            INCREASE_PERCENT=$((INCREASE_BYTES * 100 / PREVIOUS_SIZE))
+            
+            echo "increase_percent=$INCREASE_PERCENT" >> $GITHUB_OUTPUT
+            
+            if [ "$INCREASE_PERCENT" -gt "$MAX_SIZE_INCREASE_PERCENT" ]; then
+              echo "size_check_failed=true" >> $GITHUB_OUTPUT
+            else
+              echo "size_check_failed=false" >> $GITHUB_OUTPUT
+            fi
+          else
+            echo "size_check_failed=false" >> $GITHUB_OUTPUT
+          fi
+
+      # Generate comprehensive report
+      - name: Generate Report
+        run: |
+          echo "## Plugin Size Audit Report" > final-report.md
+          echo "" >> final-report.md
+
+          echo "### Total Plugin Size" >> final-report.md
+          echo "- Current Size: ${{ steps.plugin_size.outputs.total_size_human }}" >> final-report.md
+
+          if [ "${{ steps.size_comparison.outputs.increase_percent }}" != "" ]; then
+            echo "- Size Change: ${{ steps.size_comparison.outputs.increase_percent }}%" >> final-report.md
+          fi
+
+          echo "" >> final-report.md
+          echo "### Bundle Analysis" >> final-report.md
+          echo "Bundle size analysis is provided by the preactjs/compressed-size-action above." >> final-report.md
+
+          echo "" >> final-report.md
+          echo "### Image Analysis" >> final-report.md
+          echo "Image optimization and analysis is provided by calibreapp/image-actions above." >> final-report.md
+
+          echo "" >> final-report.md
+          echo "### Largest Files" >> final-report.md
+          find . -type f -not -path "*/\.*" -not -path "*/node_modules/*" -not -path "*/vendor/*" -exec du -h {} + | sort -rh | head -n 10 >> final-report.md
+
+      # Comment on PR with report
+      - name: Comment PR
+        if: github.event_name == 'pull_request'
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const fs = require('fs');
+            const report = fs.readFileSync('final-report.md', 'utf8');
+            github.rest.issues.createComment({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              body: report
+            });
+
+      # Upload artifacts
+      - name: Upload Reports
+        uses: actions/upload-artifact@v4
+        with:
+          name: size-audit-reports
+          path: final-report.md
+          retention-days: 90
+
+      # Fail on violations
+      - name: Fail on Size Violations
+        if: steps.size_comparison.outputs.size_check_failed == 'true'
+        run: |
+          echo "❌ Plugin size increased by more than ${{ env.MAX_SIZE_INCREASE_PERCENT }}%"
+          exit 1

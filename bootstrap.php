@@ -254,3 +254,5 @@ register_activation_hook(
 		add_option( 'nfd_activated_fresh', BLUEHOST_PLUGIN_FILE );
 	}
 );
+
+require_once BLUEHOST_PLUGIN_DIR . 'vendor/newfold-labs/wp-module-next-steps/bootstrap.php';

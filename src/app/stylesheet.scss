@@ -34,6 +34,8 @@
     --color-blue-dark: #1B4393;
     --color-blue-light: #EAF4FB;
     --color-blue-lighter: #F0F5FF;
+    --color-pattents-blue: #E4EDF4;
+    --color-pattents-blue-light: #EAF3F976;
 }
 
 html {
@@ -483,5 +485,52 @@ body.toplevel_page_bluehost {
 		.min-\[1400px\]\:nfd-grid-cols-3 {
 			grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
 		}
+    }
+}
+
+
+.wpbh-home-welcome-banner {
+    .nfd-card__header {
+        height: 120% !important;
+        background-color: var(--color-pattents-blue) !important;
+        clip-path: polygon( 0% 0%, 100% 0%, 100% 88%, 51% 88%, 50% 100%, 49% 88%, 0% 88%);
+        position: relative;
+        
+        span {
+            margin-bottom: 2%;
+        }
+        
+        button {
+            position: absolute;
+            top: 12px;
+            right: 12px;
+            z-index: 10;
+            background: transparent;
+            border: none;
+            cursor: pointer;
+            padding: 8px;
+            border-radius: 50%;
+            transition: background-color 0.2s ease;
+            
+            &:hover {
+                background-color: rgba(255, 255, 255, 0.2) !important;
+            }
+            
+            svg {
+                width: 16px;
+                height: 16px;
+                color: var(--color-text);
+            }
+        }
+    }
+    
+    .nfd-card__content__icon_wrapper {
+        background-color: var(--color-pattents-blue-light);
+        border-radius: 10px;
+        width: 71px;
+        height: 71px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
 }

@@ -161,14 +161,12 @@ export const hideWelcomeBannerTransient = () => {
  * Can be called from browser console: window.testWelcomeBanner()
  */
 export const testWelcomeBanner = () => {
-	console.log( 'Testing Welcome Banner functionality...' );
-	
 	resetWelcomeBannerTransient()
 		.then( () => {
-			console.log( 'Welcome banner transient reset. Refresh the page to see the banner.' );
+			// Transient reset successfully
 		} )
 		.catch( ( error ) => {
-			console.error( 'Error resetting welcome banner:', error );
+			// Handle error silently or log to error tracking service
 		} );
 };
 

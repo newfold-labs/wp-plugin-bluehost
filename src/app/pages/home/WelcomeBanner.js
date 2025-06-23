@@ -13,7 +13,19 @@ const WelcomeBanner = () => {
 	const isSiteLive = !store.comingSoon;
 
 	if ( !store.showWelcomeBanner ) {
-		return null;
+		return (
+			<div className="nfd-home__title-section">
+				<Title className="nfd-mb-1 nfd-font-bold">
+					{ __( 'Welcome to Bluehost', 'wp-plugin-bluehost' ) }
+				</Title>
+				<span className="nfd-text-sm">
+					{ __(
+						"We're very excited to get started with you!",
+						'wp-plugin-bluehost'
+					) }
+				</span>
+			</div>
+		);
 	}
 
 	const handleClose = () => {
@@ -25,12 +37,12 @@ const WelcomeBanner = () => {
 				} );
 			} )
 			.catch( ( error ) => {
-				console.error( 'Error hiding welcome banner:', error );
+				// Handle error silently or log to error tracking service
 			} );
 	};
 
 	const getTitle = () => {
-		return isSiteLive 
+		return isSiteLive
 			? __( 'Congrats, your site is live!', 'wp-plugin-bluehost' )
 			: __( 'Congrats, your site is almost live!', 'wp-plugin-bluehost' );
 	};
@@ -47,13 +59,19 @@ const WelcomeBanner = () => {
 						<button
 							onClick={ handleClose }
 							className="nfd-p-1 nfd-rounded-full nfd-text-gray-500 hover:nfd-text-gray-700 hover:nfd-bg-gray-100 nfd-transition-colors"
-							aria-label={ __( 'Close welcome banner', 'wp-plugin-bluehost' ) }
+							aria-label={ __(
+								'Close welcome banner',
+								'wp-plugin-bluehost'
+							) }
 						>
 							<XMarkIcon className="nfd-w-5 nfd-h-5" />
 						</button>
 					</div>
 					<span>
-						{ __( 'Now go head with the suggested steps below - or feel free to explore your dashboard!', 'wp-plugin-bluehost' ) }
+						{ __(
+							'Now go head with the suggested steps below - or feel free to explore your dashboard!',
+							'wp-plugin-bluehost'
+						) }
 					</span>
 				</Card.Header>
 				<Card.Content>
@@ -64,10 +82,16 @@ const WelcomeBanner = () => {
 							</div>
 							<div className="nfd-flex nfd-flex-col nfd-gap-2 nfd-flex-1">
 								<Title as="h5">
-									{ __( 'Launch our Setup Wizard', 'wp-plugin-bluehost' ) }
+									{ __(
+										'Launch our Setup Wizard',
+										'wp-plugin-bluehost'
+									) }
 								</Title>
 								<span>
-									{ __( 'An easy, step-by-step process—from creating your products to setting up taxes and shipping.', 'wp-plugin-bluehost' ) }
+									{ __(
+										'An easy, step-by-step process—from creating your products to setting up taxes and shipping.',
+										'wp-plugin-bluehost'
+									) }
 								</span>
 							</div>
 						</div>
@@ -77,10 +101,16 @@ const WelcomeBanner = () => {
 							</div>
 							<div className="nfd-flex nfd-flex-col nfd-gap-2 nfd-flex-1">
 								<Title as="h5">
-									{ __( 'Watch our Quick Start Guide video', 'wp-plugin-bluehost' ) }
+									{ __(
+										'Watch our Quick Start Guide video',
+										'wp-plugin-bluehost'
+									) }
 								</Title>
 								<span>
-									{ __( 'Discover what you can do and how — in just three minutes of video: the first essential step to building your shop', 'wp-plugin-bluehost' ) }
+									{ __(
+										'Discover what you can do and how — in just three minutes of video: the first essential step to building your shop',
+										'wp-plugin-bluehost'
+									) }
 								</span>
 							</div>
 						</div>
@@ -90,10 +120,16 @@ const WelcomeBanner = () => {
 							</div>
 							<div className="nfd-flex nfd-flex-col nfd-gap-2 nfd-flex-1">
 								<Title as="h5">
-									{ __( 'Read our First steps tutorial', 'wp-plugin-bluehost' ) }
+									{ __(
+										'Read our First steps tutorial',
+										'wp-plugin-bluehost'
+									) }
 								</Title>
 								<span>
-									{ __( 'A comprehensive guide you can follow to build your store exactly the way you want it.', 'wp-plugin-bluehost' ) }
+									{ __(
+										'A comprehensive guide you can follow to build your store exactly the way you want it.',
+										'wp-plugin-bluehost'
+									) }
 								</span>
 							</div>
 						</div>

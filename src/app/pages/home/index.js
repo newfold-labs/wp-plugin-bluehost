@@ -1,4 +1,4 @@
-import { Container, Page, Title } from '@newfold/ui-component-library';
+import { Container, Page } from '@newfold/ui-component-library';
 import WelcomeSection from './welcomeSection';
 import SolutionCard from './SolutionCard';
 import ExpertCard from './ExpertCard';
@@ -11,9 +11,9 @@ import WelcomeBanner from './WelcomeBanner';
 const Home = () => {
 	return (
 		<Page className="wppbh-home xl:nfd-max-w-screen-xl">
-		<Container className="nfd-max-w-full">
+			<Container className="nfd-max-w-full">
 				<WelcomeBanner />
-			</Container>	
+			</Container>
 			<Container className="nfd-max-w-full">
 				<WelcomeSection />
 			</Container>

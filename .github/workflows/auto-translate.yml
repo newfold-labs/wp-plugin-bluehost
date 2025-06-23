@@ -16,7 +16,7 @@ permissions: {}
 
 jobs:
   translate:
-    name: 'Check and upddate translations'
+    name: 'Check and update translations'
     permissions:
       contents: write
       pull-requests: write

@@ -23,6 +23,3 @@ cypress.env.json
 *.log
 *.sql
 *.zip
-
-# GitHub Action related files and directories
-/translation-action-scripts

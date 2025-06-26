@@ -131,6 +131,51 @@ export const comingSoonAdminbarToggle = ( comingSoon ) => {
 };
 
 /**
+ * Welcome Banner Functions
+ */
+
+/**
+ * Reset welcome banner transient to show it again
+ */
+export const resetWelcomeBannerTransient = () => {
+	return apiFetch( {
+		url: NewfoldRuntime.createApiUrl( '/bluehost/v1/settings' ),
+		method: 'POST',
+		data: { resetWelcomeBanner: true },
+	} );
+};
+
+/**
+ * Hide welcome banner by setting the transient
+ */
+export const hideWelcomeBannerTransient = () => {
+	return apiFetch( {
+		url: NewfoldRuntime.createApiUrl( '/bluehost/v1/settings' ),
+		method: 'POST',
+		data: { hideWelcomeBanner: true },
+	} );
+};
+
+/**
+ * Test function for welcome banner functionality
+ * Can be called from browser console: window.testWelcomeBanner()
+ */
+export const testWelcomeBanner = () => {
+	resetWelcomeBannerTransient()
+		.then( () => {
+			// Transient reset successfully
+		} )
+		.catch( ( error ) => {
+			// Handle error silently or log to error tracking service
+		} );
+};
+
+// Make the test function available globally for testing
+if ( typeof window !== 'undefined' ) {
+	window.testWelcomeBanner = testWelcomeBanner;
+}
+
+/**
  * Decorates an external link URL with UTM params.
  *
  * The utm_term, if passed, should be the link anchor text.

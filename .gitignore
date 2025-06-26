@@ -3,6 +3,8 @@
 
 #node_modules
 /node_modules
+/.yalc
+yalc.lock
 
 # System and IDE files
 .DS_Store

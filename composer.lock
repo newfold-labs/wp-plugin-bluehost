@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "aea7d84b106e8d9f8a76d80c96066ad7",
+    "content-hash": "f2b415bccd5bcf542c2e8b166e34af3f",
     "packages": [
         {
             "name": "doctrine/inflector",
@@ -2156,16 +2156,16 @@
         },
         {
             "name": "newfold-labs/wp-module-performance",
-            "version": "3.2.2",
+            "version": "3.2.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/newfold-labs/wp-module-performance.git",
-                "reference": "006b5d1a4290a125e80adf0091cc585d2a731869"
+                "reference": "80c14076fb272d4add28fc5229a713befa122f58"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/newfold-labs/wp-module-performance/zipball/006b5d1a4290a125e80adf0091cc585d2a731869",
-                "reference": "006b5d1a4290a125e80adf0091cc585d2a731869",
+                "url": "https://api.github.com/repos/newfold-labs/wp-module-performance/zipball/80c14076fb272d4add28fc5229a713befa122f58",
+                "reference": "80c14076fb272d4add28fc5229a713befa122f58",
                 "shasum": ""
             },
             "require": {
@@ -2246,10 +2246,10 @@
             ],
             "description": "A module for managing caching functionality.",
             "support": {
-                "source": "https://github.com/newfold-labs/wp-module-performance/tree/3.2.2",
+                "source": "https://github.com/newfold-labs/wp-module-performance/tree/3.2.4",
                 "issues": "https://github.com/newfold-labs/wp-module-performance/issues"
             },
-            "time": "2025-06-24T07:50:35+00:00"
+            "time": "2025-06-30T11:54:06+00:00"
         },
         {
             "name": "newfold-labs/wp-module-pls",

@@ -25,4 +25,3 @@ jobs:
       text_domain: 'wp-plugin-bluehost'
     secrets:
       TRANSLATOR_API_KEY: ${{ secrets.TRANSLATOR_API_KEY }}
-      NEWFOLD_ACCESS_TOKEN: ${{ secrets.NEWFOLD_ACCESS_TOKEN }}

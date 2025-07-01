@@ -99,7 +99,8 @@ add_filter(
 
 		$backlinks = array(
 			sprintf(
-				esc_html__( '%1$sNeed a domain?%2$sCheck out our %3$sDomain Registration%4$s options.%5$s','wp-plugin-bluehost' ),
+			/* translators: %1$s starts the bold text, %2$s ends the bold text and adds a line break, %3$s is the link to the Domain Registration page, %4$s is the closing link for Domain Registration, %5$s wraps everything inside a span with text-center class */
+				esc_html__( '%1$sNeed a domain?%2$sCheck out our %3$sDomain Registration%4$s options.%5$s', 'wp-plugin-bluehost' ),
 				'<span class=\"text-center\"><b>',
 				'</b><br>',
 				'<a href=\"https://bluehost.com/domains\">',
@@ -107,13 +108,16 @@ add_filter(
 				'</span>',
 			),
 			sprintf(
-				esc_html__( '%1$sDiscover our hosting solutions:%2$s
-	    %3$sShared Hosting%4$s,  
-	    %5$sWordPress Hosting%6$s,  
-	    %7$sVPS Hosting%8$s, and  
-	    %9$sDedicated Hosting%10$s. 
-    %11$s',
-					'wp-plugin-bluehost' ),
+				/* translators: %1$s starts the bold text, %2$s ends the bold text and adds a line break, %3$s is the link to Shared Hosting, %4$s is the closing link for Shared Hosting, %5$s is the link to WordPress Hosting, %6$s is the closing link for WordPress Hosting, %7$s is the link to VPS Hosting, %8$s is the closing link for VPS Hosting, %9$s is the link to Dedicated Hosting, %10$s is the closing link for Dedicated Hosting, %11$s wraps everything inside a span with text-center class */
+				esc_html__(
+					'%1$sDiscover our hosting solutions:%2$s
+						      %3$sShared Hosting%4$s,  
+						      %5$sWordPress Hosting%6$s,  
+						      %7$sVPS Hosting%8$s, and  
+						      %9$sDedicated Hosting%10$s. 
+					      %11$s',
+					'wp-plugin-bluehost'
+				),
 				'<span class=\"text-center\"><b>',
 				'</b><br>',
 				'<a href=\"https://bluehost.com/shared-hosting\">',
@@ -124,24 +128,27 @@ add_filter(
 				'</a>',
 				'<a href=\"https://bluehost.com/dedicated-hosting\">',
 				'</a>',
-				'</span>',
-			)
+				'</span>'
+			),
 		);
 
 		$args = wp_parse_args(
 			array(
 				'admin_app_url'                  => admin_url( 'admin.php?page=bluehost#/home' ),
 				'template_coming_soon_backlinks' => sprintf(
-					esc_html__( '%1$s
+					/* translators: %1$s is the logo SVG, %2$s wraps the text, %3$s is the link start for Bluehost WordPress Hosting, %4$s is the closing anchor tag, %5$s wraps the text again, %6$s contains backlinks */
+					esc_html__(
+						'%1$s
 					%2$sA %3$sReliable WordPress Hosting by Bluehost%4$s powered website.%5$s
                     %6$s',
-						'wp-plugin-bluehost' ),
+						'wp-plugin-bluehost'
+					),
 					wp_kses( $logo_svg, KSES_ALLOWED_SVG_TAGS ),
 					'<span class=\"text-center\">',
 					'<a target=\"_blank\" href=\"https://bluehost.com/wordpress\" class=\"bluehost\">',
 					'</a>',
 					'</span>',
-					$backlinks[time()%2===0]
+					$backlinks[ time() % 2 === 0 ]
 				),
 				'template_page_title'            => sprintf(
 				/* translators: %s: Blog name */

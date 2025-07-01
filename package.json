@@ -80,7 +80,7 @@
         "cypress": "npm cypress open",
         "develop": "npm run start",
         "develop:analyzer": "npm run start:analyzer",
-        "i18n": "wpi18n addtextdomain && composer run i18n",
+        "i18n": "composer run i18n",
         "lint:css": "wp-scripts lint-style '**/*.css'",
         "lint:js": "wp-scripts lint-js ./src",
         "lint:js:fix": "wp-scripts lint-js ./src --fix",

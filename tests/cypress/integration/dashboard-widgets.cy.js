@@ -3,6 +3,7 @@
 describe( 'Dashboard Widgets', { testIsolation: true }, function () {
 	before( () => {
 		cy.clearCapabilities();
+		cy.setPermalinkStructure();
 	} );
 	after( () => {
 		cy.clearCapabilities();
@@ -24,6 +25,10 @@ describe( 'Dashboard Widgets', { testIsolation: true }, function () {
 	} );
 
 	it( 'Site Preview Widget', () => {
+		// ensure coming soon is disabled
+		cy.wpCli( 'option update nfd_coming_soon false' );
+		cy.reload( true );
+
 		cy.get( '#site_preview_widget' ).should( 'exist' ).and( 'be.visible' );
 
 		cy.get( '.iframe-preview-domain' )
@@ -67,7 +72,9 @@ describe( 'Dashboard Widgets', { testIsolation: true }, function () {
 			.click(); // Enable Coming Soon
 
 		// Coming Soon Enabled
-		cy.get( 'a[title="Preview the coming soon landing page"]' )
+		cy.get( 'a[title="Preview the coming soon landing page"]', {
+			timeout: 8000,
+		} )
 			.scrollIntoView()
 			.should( 'be.visible' );
 

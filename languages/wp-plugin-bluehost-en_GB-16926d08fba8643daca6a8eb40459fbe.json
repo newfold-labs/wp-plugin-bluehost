@@ -1,13 +1,13 @@
 {
     "translation-revision-date": "2025-02-25T20:53:21+00:00",
-    "generator": "WP-CLI\/2.11.0",
-    "source": "build\/4.3.2\/index.js",
+    "generator": "WP-CLI\/2.12.0",
+    "source": "build\/4.4.0\/index.js",
     "domain": "messages",
     "locale_data": {
         "messages": {
             "": {
                 "domain": "messages",
-                "lang": "en_AU",
+                "lang": "en_GB",
                 "plural-forms": "nplurals=2; plural=(n != 1);"
             },
             "Home": [
@@ -21,9 +21,6 @@
             ],
             "Settings": [
                 "Settings"
-            ],
-            "Staging": [
-                "Staging"
             ],
             "Help": [
                 "Help"
@@ -167,14 +164,11 @@
                 "Your website is currently displaying a \"Coming Soon\" page."
             ],
             "The trash will automatically empty every %s week.": [
-                "The trash will automatically empty every %s week.",
-                "The trash will automatically empty every %s weeks."
+                "The bin will automatically empty every %s week.",
+                "The bin will automatically empty every %s weeks."
             ],
             "WonderBlocks provides a library of customizable block patterns and page templates.": [
                 "WonderBlocks provides a library of customizable block patterns and page templates."
-            ],
-            "Hosting": [
-                "Hosting"
             ],
             "Explore our featured collection of tools and services.": [
                 "Explore our featured collection of tools and services."
@@ -327,16 +321,16 @@
                 "Comments allow visitors to provide feedback and respond to your posts or pages."
             ],
             "Trash setting saved": [
-                "Trash setting saved"
+                "Bin setting saved"
             ],
             "Number of weeks in between emptying trash": [
-                "Number of weeks in between emptying trash"
+                "Number of weeks in between emptying bin"
             ],
             "Content Options": [
                 "Content Options"
             ],
             "Controls for how often to empty the trash.": [
-                "Controls for how often to empty the trash."
+                "Controls for how often to empty the bin."
             ],
             "Help Center Enabled": [
                 "Help Center Enabled"
@@ -349,9 +343,6 @@
             ],
             "The Help Center will no longer display.": [
                 "The Help Center will no longer display."
-            ],
-            "This is where you can manage common settings for your website.": [
-                "This is where you can manage common settings for your website."
             ],
             "Features": [
                 "Features"
@@ -397,144 +388,6 @@
             ],
             "WonderBlocks will no longer display.": [
                 "WonderBlocks will no longer display."
-            ],
-            "Cancel": [
-                "Cancel"
-            ],
-            "Clone": [
-                "Clone"
-            ],
-            "Confirm Clone Action": [
-                "Confirm Clone Action"
-            ],
-            "This will overwrite anything in staging and update it to an exact clone of the current production site. Are you sure you want to proceed?": [
-                "This will overwrite anything in staging and update it to an exact clone of the current production site. Are you sure you want to proceed?"
-            ],
-            "Cloned to Staging": [
-                "Cloned to Staging"
-            ],
-            "Cloning production to staging, this should take about a minute.": [
-                "Cloning production to staging, this should take about a minute."
-            ],
-            "Clone to staging": [
-                "Clone to staging"
-            ],
-            "Created": [
-                "Created"
-            ],
-            "Staging Created": [
-                "Staging Created"
-            ],
-            "Creating a staging site, this should take about a minute.": [
-                "Creating a staging site, this should take about a minute."
-            ],
-            "Create staging site": [
-                "Create staging site"
-            ],
-            "Currently editing": [
-                "Currently editing"
-            ],
-            "Delete": [
-                "Delete"
-            ],
-            "Confirm Delete": [
-                "Confirm Delete"
-            ],
-            "This will permanently delete staging site. Are you sure you want to proceed? You can recreate another staging site at any time, but any specific changes you've made to this staging site will be lost.": [
-                "This will permanently delete staging site. Are you sure you want to proceed? You can recreate another staging site at any time, but any specific changes you've made to this staging site will be lost."
-            ],
-            "Deleted Staging": [
-                "Deleted Staging"
-            ],
-            "Deleting the staging site, this should take about a minute.": [
-                "Deleting the staging site, this should take about a minute."
-            ],
-            "Delete Staging Site": [
-                "Delete Staging Site"
-            ],
-            "Deploy": [
-                "Deploy"
-            ],
-            "Deploy all changes": [
-                "Deploy all changes"
-            ],
-            "Confirm Deployment": [
-                "Confirm Deployment"
-            ],
-            "Deploy database only": [
-                "Deploy database only"
-            ],
-            "This will deploy staging to production and overwrite current production site. Are you sure you want to proceed?": [
-                "This will deploy staging to production and overwrite current production site. Are you sure you want to proceed?"
-            ],
-            "Deploy files only": [
-                "Deploy files only"
-            ],
-            "Deployed": [
-                "Deployed"
-            ],
-            "Deploying from staging to production, this should take about a minute.": [
-                "Deploying from staging to production, this should take about a minute."
-            ],
-            "Deploy Site": [
-                "Deploy Site"
-            ],
-            "Error": [
-                "Error"
-            ],
-            "You don't have a staging site yet.": [
-                "You don't have a staging site yet."
-            ],
-            "Not currently editing": [
-                "Not currently editing"
-            ],
-            "Proceed": [
-                "Proceed"
-            ],
-            "Production Site": [
-                "Production Site"
-            ],
-            "Staging Site": [
-                "Staging Site"
-            ],
-            "A staging site is a duplicate of your live site, offering a secure environment to experiment, test updates, and deploy when ready.": [
-                "A staging site is a duplicate of your live site, offering a secure environment to experiment, test updates, and deploy when ready."
-            ],
-            "Switch": [
-                "Switch"
-            ],
-            "Switching": [
-                "Switching"
-            ],
-            "Switch to Production": [
-                "Switch to Production"
-            ],
-            "This will navigate you to the production environment": [
-                "This will navigate you to the production environment"
-            ],
-            "Loading the production environment now.": [
-                "Loading the production environment now."
-            ],
-            "Switching to the production environment, this should take about a minute.": [
-                "Switching to the production environment, this should take about a minute."
-            ],
-            "Switch to Staging": [
-                "Switch to Staging"
-            ],
-            "This will navigate you to the staging environment": [
-                "This will navigate you to the staging environment"
-            ],
-            "Loading the staging environment now.": [
-                "Loading the staging environment now."
-            ],
-            "Switching to the staging environment, this should take about a minute.": [
-                "Switching to the staging environment, this should take about a minute."
-            ],
-            "An unknown error has occurred.": [
-                "An unknown error has occurred."
-            ],
-            "Working\u2026": [
-                "Working\u2026"
             ],
             "Hire our experts": [
                 "Hire our experts"
@@ -589,6 +442,9 @@
             ],
             "Get expert help, documentation, and tutorials to make the most of your WordPress site.": [
                 "Get expert help, documentation, and tutorials to make the most of your WordPress site."
+            ],
+            "Manage common settings for your website": [
+                ""
             ]
         }
     }

@@ -1,7 +1,7 @@
 {
     "translation-revision-date": "2025-02-25T20:53:21+00:00",
-    "generator": "WP-CLI\/2.11.0",
-    "source": "build\/4.3.2\/index.js",
+    "generator": "WP-CLI\/2.12.0",
+    "source": "build\/4.4.0\/index.js",
     "domain": "messages",
     "locale_data": {
         "messages": {
@@ -21,9 +21,6 @@
             ],
             "Settings": [
                 "Instellingen"
-            ],
-            "Staging": [
-                "Testboeking"
             ],
             "Help": [
                 "Hulp"
@@ -172,9 +169,6 @@
             ],
             "WonderBlocks provides a library of customizable block patterns and page templates.": [
                 "WonderBlocks biedt een bibliotheek van aanpasbare blokpatronen en paginasjablonen."
-            ],
-            "Hosting": [
-                "Hosting"
             ],
             "Explore our featured collection of tools and services.": [
                 "Ontdek onze uitgebreide collectie gereedschappen en diensten."
@@ -350,9 +344,6 @@
             "The Help Center will no longer display.": [
                 "Het Helpcentrum wordt niet langer weergegeven."
             ],
-            "This is where you can manage common settings for your website.": [
-                "Hier kun je algemene instellingen voor je website beheren."
-            ],
             "Features": [
                 "Eigenschappen"
             ],
@@ -397,144 +388,6 @@
             ],
             "WonderBlocks will no longer display.": [
                 "WonderBlocks worden niet langer weergegeven."
-            ],
-            "Cancel": [
-                "Annuleren"
-            ],
-            "Clone": [
-                "Dupliceren"
-            ],
-            "Confirm Clone Action": [
-                "Bevestig kloonactie"
-            ],
-            "This will overwrite anything in staging and update it to an exact clone of the current production site. Are you sure you want to proceed?": [
-                "Dit zal alles in staging overschrijven en bijwerken naar een exacte kloon van de huidige productiesite. Weet u zeker dat u wilt doorgaan?"
-            ],
-            "Cloned to Staging": [
-                "Gekloond naar Staging"
-            ],
-            "Cloning production to staging, this should take about a minute.": [
-                "Het stilleggen van de productie zou ongeveer een minuut moeten duren."
-            ],
-            "Clone to staging": [
-                "Kopieer naar staging"
-            ],
-            "Created": [
-                "Aangemaakt"
-            ],
-            "Staging Created": [
-                "Staging aangemaakt"
-            ],
-            "Creating a staging site, this should take about a minute.": [
-                "Het cre\u00ebren van een halteplaats zou ongeveer een minuut moeten duren."
-            ],
-            "Create staging site": [
-                "Stageings site maken"
-            ],
-            "Currently editing": [
-                "Momenteel bewerken"
-            ],
-            "Delete": [
-                "Verwijderen"
-            ],
-            "Confirm Delete": [
-                "Verwijderen bevestigen"
-            ],
-            "This will permanently delete staging site. Are you sure you want to proceed? You can recreate another staging site at any time, but any specific changes you've made to this staging site will be lost.": [
-                "Dit zal de stagingsite permanent verwijderen. Weet u zeker dat u wilt doorgaan? Je kunt op elk moment een andere staging site aanmaken, maar eventuele specifieke wijzigingen die je hebt aangebracht in deze staging site gaan verloren."
-            ],
-            "Deleted Staging": [
-                "Verwijderde fasering"
-            ],
-            "Deleting the staging site, this should take about a minute.": [
-                "De voorgehouden site wordt verwijderd, dit duurt ongeveer een minuut."
-            ],
-            "Delete Staging Site": [
-                "Verwijder Staging Site"
-            ],
-            "Deploy": [
-                "Implementeren"
-            ],
-            "Deploy all changes": [
-                "Alle wijzigingen implementeren"
-            ],
-            "Confirm Deployment": [
-                "Bevestig implementatie"
-            ],
-            "Deploy database only": [
-                "Alleen database implementeren"
-            ],
-            "This will deploy staging to production and overwrite current production site. Are you sure you want to proceed?": [
-                "Dit zal staging implementeren naar productie en huidige productie site overschrijven. Weet u zeker dat u wilt doorgaan?"
-            ],
-            "Deploy files only": [
-                "Alleen bestanden implementeren"
-            ],
-            "Deployed": [
-                "Ge\u00efmplementeerd"
-            ],
-            "Deploying from staging to production, this should take about a minute.": [
-                "Het inzetten van halteplaatsen op productie, dit zou ongeveer een minuut moeten duren."
-            ],
-            "Deploy Site": [
-                "Site implementeren"
-            ],
-            "Error": [
-                "Foutmelding"
-            ],
-            "You don't have a staging site yet.": [
-                "U hebt nog geen staging site."
-            ],
-            "Not currently editing": [
-                "Momenteel niet bewerkt"
-            ],
-            "Proceed": [
-                "Doorgaan"
-            ],
-            "Production Site": [
-                "Productie site"
-            ],
-            "Staging Site": [
-                "Staging Site"
-            ],
-            "A staging site is a duplicate of your live site, offering a secure environment to experiment, test updates, and deploy when ready.": [
-                "Een stagingsite is een duplicaat van uw website en biedt een veilige omgeving aan om te experimenteren, updates te testen en te implementeren wanneer u klaar bent."
-            ],
-            "Switch": [
-                "Schakelaar"
-            ],
-            "Switching": [
-                "Schakelen"
-            ],
-            "Switch to Production": [
-                "Overschakelen naar productie"
-            ],
-            "This will navigate you to the production environment": [
-                "Dit zal je naar de productieomgeving navigeren"
-            ],
-            "Loading the production environment now.": [
-                "De productieomgeving nu laden."
-            ],
-            "Switching to the production environment, this should take about a minute.": [
-                "De omschakeling naar de productieomgeving zou ongeveer een minuut moeten duren."
-            ],
-            "Switch to Staging": [
-                "Overschakelen naar fasering"
-            ],
-            "This will navigate you to the staging environment": [
-                "Dit zal u navigeren naar de stagingomgeving"
-            ],
-            "Loading the staging environment now.": [
-                "De stagingomgeving nu laden."
-            ],
-            "Switching to the staging environment, this should take about a minute.": [
-                "Overschakelen op de stagingomgeving, dit zou ongeveer een minuut moeten duren."
-            ],
-            "An unknown error has occurred.": [
-                "Er is een onbekende fout opgetreden."
-            ],
-            "Working\u2026": [
-                "Bezig\u2026"
             ],
             "Hire our experts": [
                 "Neem onze experts aan"
@@ -589,6 +442,9 @@
             ],
             "Get expert help, documentation, and tutorials to make the most of your WordPress site.": [
                 "Krijg deskundige hulp, documentatie en tutorials om het meeste uit uw WordPress-site te halen."
+            ],
+            "Manage common settings for your website": [
+                ""
             ]
         }
     }

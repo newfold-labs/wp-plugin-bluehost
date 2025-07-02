@@ -13,6 +13,10 @@ on:
       - master-2.x
       - develop-2.x
   workflow_dispatch:
+  workflow_run:
+    workflows: [ 'Newfold Prepare Release' ]
+    types:
+      - completed
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.event_name == 'pull_request' && github.head_ref || github.sha }}
@@ -41,7 +45,7 @@ jobs:
           [[ "$pluginPackageVersion" == "$pluginConstantVersion" ]] || exit 1
 
       - name: Setup PHP
-        uses: shivammathur/setup-php@cf4cade2721270509d5b1c766ab3549210a39a2a # v2.33.0
+        uses: shivammathur/setup-php@0f7f1d08e3e32076e51cae65eb0b0c871405b16e # v2.34.1
         with:
           php-version: '8.1'
           coverage: none

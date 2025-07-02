@@ -24,6 +24,9 @@ describe( 'Dashboard Widgets', { testIsolation: true }, function () {
 	} );
 
 	it( 'Site Preview Widget', () => {
+		cy.wpCli( 'option update nfd_coming_soon false' );
+		cy.visit( '/wp-admin/index.php' );
+
 		cy.get( '#site_preview_widget' ).should( 'exist' ).and( 'be.visible' );
 
 		cy.get( '.iframe-preview-domain' )

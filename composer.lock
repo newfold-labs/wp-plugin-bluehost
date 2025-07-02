@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "bb7d218c6736a22e42c4ab6b376a0ddb",
+    "content-hash": "d7e1a21a5bee4abbf160d5437e8f8889",
     "packages": [
         {
             "name": "doctrine/inflector",
@@ -1915,23 +1915,23 @@
         },
         {
             "name": "newfold-labs/wp-module-onboarding",
-            "version": "2.7.4",
+            "version": "3.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/newfold-labs/wp-module-onboarding.git",
-                "reference": "65fbf5135aa97d87653d5b5ba9e52d6f5dfa43ab"
+                "reference": "43e3bb97ab5c154f70502ae357a87687cd763206"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/newfold-labs/wp-module-onboarding/zipball/65fbf5135aa97d87653d5b5ba9e52d6f5dfa43ab",
-                "reference": "65fbf5135aa97d87653d5b5ba9e52d6f5dfa43ab",
+                "url": "https://api.github.com/repos/newfold-labs/wp-module-onboarding/zipball/43e3bb97ab5c154f70502ae357a87687cd763206",
+                "reference": "43e3bb97ab5c154f70502ae357a87687cd763206",
                 "shasum": ""
             },
             "require": {
                 "mustache/mustache": "^2.14.2",
                 "newfold-labs/wp-module-facebook": "^1.2.1",
                 "newfold-labs/wp-module-migration": "^1.3.0",
-                "newfold-labs/wp-module-onboarding-data": "^1.2.8",
+                "newfold-labs/wp-module-onboarding-data": "^1.2.12",
                 "newfold-labs/wp-module-patterns": "^2.9.2",
                 "wp-cli/wp-config-transformer": "^1.4.1",
                 "wp-forge/helpers": "^2.0"
@@ -1991,23 +1991,23 @@
             ],
             "description": "Next-generation WordPress Onboarding for WordPress sites at Newfold Digital.",
             "support": {
-                "source": "https://github.com/newfold-labs/wp-module-onboarding/tree/2.7.4",
+                "source": "https://github.com/newfold-labs/wp-module-onboarding/tree/3.0.0",
                 "issues": "https://github.com/newfold-labs/wp-module-onboarding/issues"
             },
-            "time": "2025-06-05T19:29:51+00:00"
+            "time": "2025-07-02T15:12:52+00:00"
         },
         {
             "name": "newfold-labs/wp-module-onboarding-data",
-            "version": "1.2.11",
+            "version": "1.2.12",
             "source": {
                 "type": "git",
                 "url": "https://github.com/newfold-labs/wp-module-onboarding-data.git",
-                "reference": "268711b9c450a8ddd18b9145b0ec257c8523e36f"
+                "reference": "e714e4e62c0f0a9abe4dcc149c04dabc2eb4664b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/newfold-labs/wp-module-onboarding-data/zipball/268711b9c450a8ddd18b9145b0ec257c8523e36f",
-                "reference": "268711b9c450a8ddd18b9145b0ec257c8523e36f",
+                "url": "https://api.github.com/repos/newfold-labs/wp-module-onboarding-data/zipball/e714e4e62c0f0a9abe4dcc149c04dabc2eb4664b",
+                "reference": "e714e4e62c0f0a9abe4dcc149c04dabc2eb4664b",
                 "shasum": ""
             },
             "require": {
@@ -2083,10 +2083,10 @@
             ],
             "description": "A non-toggleable module containing a standardized interface for interacting with Onboarding data.",
             "support": {
-                "source": "https://github.com/newfold-labs/wp-module-onboarding-data/tree/1.2.11",
+                "source": "https://github.com/newfold-labs/wp-module-onboarding-data/tree/1.2.12",
                 "issues": "https://github.com/newfold-labs/wp-module-onboarding-data/issues"
             },
-            "time": "2025-06-13T23:07:13+00:00"
+            "time": "2025-07-02T14:37:59+00:00"
         },
         {
             "name": "newfold-labs/wp-module-patterns",
@@ -5792,10 +5792,10 @@
     },
     "prefer-stable": false,
     "prefer-lowest": false,
-    "platform": [],
-    "platform-dev": [],
+    "platform": {},
+    "platform-dev": {},
     "platform-overrides": {
         "php": "7.3.0"
     },
-    "plugin-api-version": "2.3.0"
+    "plugin-api-version": "2.6.0"
 }

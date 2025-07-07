@@ -7,7 +7,7 @@ import {
 import { ReactComponent as HelpIcon } from '../components/icons/HelpIcon.svg';
 import { NewfoldRuntime } from '@newfold/wp-module-runtime';
 import { getMarketplaceSubnavRoutes } from '@modules/wp-module-marketplace/components/marketplaceSubnav';
-import { Route, Routes, Navigate } from 'react-router-dom';
+import { Route, Routes } from 'react-router-dom';
 import Home from '../pages/home';
 import Store from '../pages/ecommerce/page';
 import Marketplace from '../pages/marketplace';
@@ -35,6 +35,18 @@ const MyPluginsAndToolsRedirect = () => {
 	return null;
 };
 
+/**
+ * Redirect component for staging route.
+ * Redirects users to the nfd-staging page.
+ *
+ * @return {null} Returns null as this component only handles redirection.
+ */
+const StagingRedirect = () => {
+	// Redirect to the nfd-staging page.
+	window.location.href = '/wp-admin/admin.php?page=nfd-staging';
+	return null;
+};
+
 export const AppRoutes = () => {
 	return (
 		<Routes>
@@ -53,8 +65,10 @@ export const AppRoutes = () => {
 					)
 			) }
 			<Route path="/" element={ <Home /> } />
-			{/* Add specific route for my_plugins_and_tools redirect. */}
+			{ /* Add specific route for my_plugins_and_tools redirect. */ }
 			<Route path="/my_plugins_and_tools" element={ <MyPluginsAndToolsRedirect /> } />
+			{ /* Add specific route for staging redirect. */ }
+			<Route path="/staging" element={ <StagingRedirect /> } />
 			<Route
 				path="*"
 				element={

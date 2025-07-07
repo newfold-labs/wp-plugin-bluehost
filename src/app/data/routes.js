@@ -66,9 +66,15 @@ export const AppRoutes = () => {
 			) }
 			<Route path="/" element={ <Home /> } />
 			{ /* Add specific route for my_plugins_and_tools redirect. */ }
-			<Route path="/my_plugins_and_tools" element={ <MyPluginsAndToolsRedirect /> } />
+			<Route
+				path="/my_plugins_and_tools"
+				element={ <MyPluginsAndToolsRedirect /> }
+			/>
 			{ /* Add specific route for staging redirect. */ }
-			<Route path="/staging" element={ <StagingRedirect /> } />
+			<Route
+				path="/staging"
+				element={ <StagingRedirect /> }
+			/>
 			<Route
 				path="*"
 				element={

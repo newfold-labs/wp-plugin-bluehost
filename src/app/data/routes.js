@@ -7,7 +7,7 @@ import {
 import { ReactComponent as HelpIcon } from '../components/icons/HelpIcon.svg';
 import { NewfoldRuntime } from '@newfold/wp-module-runtime';
 import { getMarketplaceSubnavRoutes } from '@modules/wp-module-marketplace/components/marketplaceSubnav';
-import { Route, Routes } from 'react-router-dom';
+import { Route, Routes, Navigate } from 'react-router-dom';
 import Home from '../pages/home';
 import Store from '../pages/ecommerce/page';
 import Marketplace from '../pages/marketplace';
@@ -21,6 +21,18 @@ const addPartialMatch = ( prefix, path ) =>
 const HelpCenterAI = ( e ) => {
 	e.preventDefault();
 	window.newfoldEmbeddedHelp.toggleNFDLaunchedEmbeddedHelp();
+};
+
+/**
+ * Redirect component for my_plugins_and_tools route.
+ * Redirects users to the solutions page with category=all parameter.
+ *
+ * @return {null} Returns null as this component only handles redirection.
+ */
+const MyPluginsAndToolsRedirect = () => {
+	// Redirect to the solutions page with category=all parameter.
+	window.location.href = '/wp-admin/admin.php?page=solutions&category=all';
+	return null;
 };
 
 export const AppRoutes = () => {
@@ -41,6 +53,8 @@ export const AppRoutes = () => {
 					)
 			) }
 			<Route path="/" element={ <Home /> } />
+			{/* Add specific route for my_plugins_and_tools redirect. */}
+			<Route path="/my_plugins_and_tools" element={ <MyPluginsAndToolsRedirect /> } />
 			<Route
 				path="*"
 				element={

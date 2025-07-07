@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "eb547c0b539dfb55e7becb201e2a5aec",
+    "content-hash": "0d330b98467a35c1bd34e423944f3ece",
     "packages": [
         {
             "name": "doctrine/inflector",
@@ -477,16 +477,16 @@
         },
         {
             "name": "newfold-labs/container",
-            "version": "1.2.2",
+            "version": "1.2.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/newfold-labs/container.git",
-                "reference": "19bb75bb4a64a282f7d142fff9f3418177022851"
+                "reference": "0c16f8a70523159c1f3842a242e9c3b20f5729a6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/newfold-labs/container/zipball/19bb75bb4a64a282f7d142fff9f3418177022851",
-                "reference": "19bb75bb4a64a282f7d142fff9f3418177022851",
+                "url": "https://api.github.com/repos/newfold-labs/container/zipball/0c16f8a70523159c1f3842a242e9c3b20f5729a6",
+                "reference": "0c16f8a70523159c1f3842a242e9c3b20f5729a6",
                 "shasum": ""
             },
             "require": {
@@ -509,9 +509,9 @@
             ],
             "description": "A lightweight, PHP 7.0+ compatible, PSR-11 dependency injection container.",
             "support": {
-                "source": "https://github.com/newfold-labs/container/tree/1.2.2"
+                "source": "https://github.com/newfold-labs/container/tree/1.2.3"
             },
-            "time": "2022-08-26T17:23:54+00:00"
+            "time": "2025-05-06T18:14:40+00:00"
         },
         {
             "name": "newfold-labs/wp-module-activation",
@@ -1870,20 +1870,20 @@
         },
         {
             "name": "newfold-labs/wp-module-next-steps",
-            "version": "dev-add/next-steps",
+            "version": "0.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/newfold-labs/wp-module-next-steps.git",
-                "reference": "f0939e16d078b579e839b5baafd301fdb030ac1a"
+                "reference": "0535972650282c79387fa736bc92380c3780eff2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/newfold-labs/wp-module-next-steps/zipball/f0939e16d078b579e839b5baafd301fdb030ac1a",
-                "reference": "f0939e16d078b579e839b5baafd301fdb030ac1a",
+                "url": "https://api.github.com/repos/newfold-labs/wp-module-next-steps/zipball/0535972650282c79387fa736bc92380c3780eff2",
+                "reference": "0535972650282c79387fa736bc92380c3780eff2",
                 "shasum": ""
             },
             "require": {
-                "newfold-labs/wp-module-data": "^2.8.4",
+                "newfold-labs/wp-module-data": "^2.8.5",
                 "newfold-labs/wp-module-loader": "^1.0.12"
             },
             "require-dev": {
@@ -1924,6 +1924,14 @@
                     "@i18n-php",
                     "@i18n-json"
                 ],
+                "i18n-ci-pre": [
+                    "@i18n-pot",
+                    "@i18n-po"
+                ],
+                "i18n-ci-post": [
+                    "@i18n-php",
+                    "@i18n-json"
+                ],
                 "lint": [
                     "vendor/bin/phpcs . --standard=phpcs.xml -s"
                 ]
@@ -1939,10 +1947,10 @@
             ],
             "description": "A Newfold module to manage next steps for a customer in a brand plugin.",
             "support": {
-                "source": "https://github.com/newfold-labs/wp-module-next-steps/tree/add/next-steps",
+                "source": "https://github.com/newfold-labs/wp-module-next-steps/tree/0.1.0",
                 "issues": "https://github.com/newfold-labs/wp-module-next-steps/issues"
             },
-            "time": "2025-06-09T20:19:47+00:00"
+            "time": "2025-07-03T19:19:21+00:00"
         },
         {
             "name": "newfold-labs/wp-module-notifications",
@@ -4382,12 +4390,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Roave/SecurityAdvisories.git",
-                "reference": "d4ca0cc4c49ba3437778e201d35844715d9b1bd9"
+                "reference": "a76f62e135c8b583602bd99df737b5c20f4d7200"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Roave/SecurityAdvisories/zipball/d4ca0cc4c49ba3437778e201d35844715d9b1bd9",
-                "reference": "d4ca0cc4c49ba3437778e201d35844715d9b1bd9",
+                "url": "https://api.github.com/repos/Roave/SecurityAdvisories/zipball/a76f62e135c8b583602bd99df737b5c20f4d7200",
+                "reference": "a76f62e135c8b583602bd99df737b5c20f4d7200",
                 "shasum": ""
             },
             "conflict": {
@@ -4493,7 +4501,7 @@
                 "ckeditor/ckeditor": "<4.25",
                 "clickstorm/cs-seo": ">=6,<6.8|>=7,<7.5|>=8,<8.4|>=9,<9.3",
                 "co-stack/fal_sftp": "<0.2.6",
-                "cockpit-hq/cockpit": "<2.7|==2.7",
+                "cockpit-hq/cockpit": "<2.11.4",
                 "codeception/codeception": "<3.1.3|>=4,<4.1.22",
                 "codeigniter/framework": "<3.1.10",
                 "codeigniter4/framework": "<4.5.8",
@@ -5065,7 +5073,8 @@
                 "spoonity/tcpdf": "<6.2.22",
                 "squizlabs/php_codesniffer": ">=1,<2.8.1|>=3,<3.0.1",
                 "ssddanbrown/bookstack": "<24.05.1",
-                "starcitizentools/citizen-skin": ">=2.4.2,<3.3.1",
+                "starcitizentools/citizen-skin": ">=1.9.4,<3.4",
+                "starcitizentools/short-description": ">=4,<4.0.1",
                 "starcitizentools/tabber-neue": ">=1.9.1,<2.7.2|>=3,<3.1.1",
                 "statamic/cms": "<=5.16",
                 "stormpath/sdk": "<9.9.99",
@@ -5328,7 +5337,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2025-06-27T21:05:09+00:00"
+            "time": "2025-07-04T13:13:44+00:00"
         },
         {
             "name": "squizlabs/php_codesniffer",
@@ -5927,7 +5936,6 @@
     "aliases": [],
     "minimum-stability": "stable",
     "stability-flags": {
-        "newfold-labs/wp-module-next-steps": 20,
         "roave/security-advisories": 20
     },
     "prefer-stable": false,

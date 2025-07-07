@@ -10,6 +10,7 @@ env:
   MAX_SIZE_INCREASE_PERCENT: 10
   MAX_IMAGE_SIZE_KB: 500
   MAX_PHP_SIZE_INCREASE_PERCENT: 15
+
 jobs:
   audit:
     name: Audit Plugin Size

@@ -23,6 +23,30 @@ const HelpCenterAI = ( e ) => {
 	window.newfoldEmbeddedHelp.toggleNFDLaunchedEmbeddedHelp();
 };
 
+/**
+ * Redirect component for my_plugins_and_tools route.
+ * Redirects users to the solutions page with category=all parameter.
+ *
+ * @return {null} Returns null as this component only handles redirection.
+ */
+const MyPluginsAndToolsRedirect = () => {
+	// Redirect to the solutions page with category=all parameter.
+	window.location.href = '/wp-admin/admin.php?page=solutions&category=all';
+	return null;
+};
+
+/**
+ * Redirect component for staging route.
+ * Redirects users to the nfd-staging page.
+ *
+ * @return {null} Returns null as this component only handles redirection.
+ */
+const StagingRedirect = () => {
+	// Redirect to the nfd-staging page.
+	window.location.href = '/wp-admin/admin.php?page=nfd-staging';
+	return null;
+};
+
 export const AppRoutes = () => {
 	return (
 		<Routes>
@@ -41,6 +65,13 @@ export const AppRoutes = () => {
 					)
 			) }
 			<Route path="/" element={ <Home /> } />
+			{ /* Add specific route for my_plugins_and_tools redirect. */ }
+			<Route
+				path="/my_plugins_and_tools"
+				element={ <MyPluginsAndToolsRedirect /> }
+			/>
+			{ /* Add specific route for staging redirect. */ }
+			<Route path="/staging" element={ <StagingRedirect /> } />
 			<Route
 				path="*"
 				element={

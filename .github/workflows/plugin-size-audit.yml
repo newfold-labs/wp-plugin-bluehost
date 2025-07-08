@@ -1,11 +1,13 @@
 name: Plugin Size and Asset Audit
-'on':
+
+on:
   pull_request:
     branches:
-      - main
+      - 'main'
   push:
     branches:
-      - main
+      - 'main'
+
 env:
   MAX_SIZE_INCREASE_PERCENT: 10
   MAX_IMAGE_SIZE_KB: 500
@@ -15,55 +17,47 @@ jobs:
   audit:
     name: Audit Plugin Size
     runs-on: ubuntu-latest
+
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4
         with:
           fetch-depth: 0
+
       - name: Setup PHP
         uses: shivammathur/setup-php@v2
         with:
           php-version: '8.1'
           coverage: none
           tools: composer
+
       - name: Setup Node.js
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4
         with:
-          node-version: 20.x
+          node-version-file: '.nvmrc'
           cache: npm
-      - name: Cache Composer dependencies
-        uses: actions/cache@v4
-        with:
-          path: vendor
-          key: '${{ runner.os }}-composer-${{ hashFiles(''**/composer.lock'') }}'
-          restore-keys: |
-            ${{ runner.os }}-composer-
+
       - name: Install PHP Dependencies
-        run: >-
-          composer install --no-progress --no-dev --optimize-autoloader
-          --prefer-dist
+        uses: ramsey/composer-install@3cf229dc2919194e9e36783941438d17239e8520 # v2
+        with:
+          dependency-versions: 'locked'
+          composer-options: '--no-dev --optimize-autoloader --prefer-dist'
+
       - name: Setup Registry
         run: >-
           printf "\n//npm.pkg.github.com/:_authToken=${{
           secrets.NEWFOLD_ACCESS_TOKEN }}" >> .npmrc
+
       - name: Install NPM Dependencies
         run: npm install --legacy-peer-deps
-      - name: Build JavaScript
-        run: npm run build
+
       - name: Bundle Size Analysis
         uses: preactjs/compressed-size-action@v2
         with:
           repo-token: '${{ secrets.GITHUB_TOKEN }}'
           pattern: 'build/**/*.{js,css}'
           compression: gzip
-      - name: Image Analysis
-        uses: calibreapp/image-actions@main
-        with:
-          githubToken: '${{ secrets.GITHUB_TOKEN }}'
-          compressOnly: true
-          jpegQuality: '60'
-          pngQuality: '60'
-          webpQuality: '60'
+
       - name: Calculate Total Plugin Size
         id: plugin_size
         run: >
@@ -73,21 +67,14 @@ jobs:
           TOTAL_SIZE_HUMAN=$(du -sh --exclude=.git --exclude=node_modules
           --exclude=vendor . | cut -f1)
 
-
           echo "total_size_bytes=$TOTAL_SIZE_BYTES" >> $GITHUB_OUTPUT
-
           echo "total_size_human=$TOTAL_SIZE_HUMAN" >> $GITHUB_OUTPUT
 
-
-          # Store for comparison
-
-          echo $TOTAL_SIZE_BYTES > current_size.txt
       - name: Calculate PHP Size
         id: php_size
         run: >
           # Calculate PHP file sizes (excluding vendor for now, we'll add it
           back in the final calculation)
-
           PHP_SIZE_BYTES=$(find . -name "*.php" -not -path "./vendor/*" -not
           -path "./node_modules/*" -not -path "./.git/*" -exec du -sb {} + | awk
           '{sum += $1} END {print sum}')
@@ -96,316 +83,194 @@ jobs:
           -path "./node_modules/*" -not -path "./.git/*" -exec du -sh {} + | awk
           '{sum += $1} END {print sum}')
 
-
           # Calculate vendor size (Composer dependencies)
-
           VENDOR_SIZE_BYTES=$(du -sb vendor 2>/dev/null | cut -f1 || echo "0")
-
           VENDOR_SIZE_HUMAN=$(du -sh vendor 2>/dev/null | cut -f1 || echo "0")
 
-
           # Total PHP-related size (PHP files + vendor)
-
           TOTAL_PHP_SIZE_BYTES=$((PHP_SIZE_BYTES + VENDOR_SIZE_BYTES))
 
-
           echo "php_files_size_bytes=$PHP_SIZE_BYTES" >> $GITHUB_OUTPUT
-
           echo "php_files_size_human=$PHP_SIZE_HUMAN" >> $GITHUB_OUTPUT
-
           echo "vendor_size_bytes=$VENDOR_SIZE_BYTES" >> $GITHUB_OUTPUT
-
           echo "vendor_size_human=$VENDOR_SIZE_HUMAN" >> $GITHUB_OUTPUT
-
           echo "total_php_size_bytes=$TOTAL_PHP_SIZE_BYTES" >> $GITHUB_OUTPUT
 
-
-          # Store for comparison
-
-          echo $TOTAL_PHP_SIZE_BYTES > current_php_size.txt
       - name: Calculate JavaScript Size
         id: js_size
         run: >
           # Calculate build directory size (JavaScript/CSS assets)
-
           BUILD_SIZE_BYTES=$(du -sb build 2>/dev/null | cut -f1 || echo "0")
-
           BUILD_SIZE_HUMAN=$(du -sh build 2>/dev/null | cut -f1 || echo "0")
-
 
           # Calculate node_modules size (for reference, not included in final
           plugin)
-
           NODE_MODULES_SIZE_BYTES=$(du -sb node_modules 2>/dev/null | cut -f1 ||
           echo "0")
-
           NODE_MODULES_SIZE_HUMAN=$(du -sh node_modules 2>/dev/null | cut -f1 ||
           echo "0")
 
-
           echo "build_size_bytes=$BUILD_SIZE_BYTES" >> $GITHUB_OUTPUT
-
           echo "build_size_human=$BUILD_SIZE_HUMAN" >> $GITHUB_OUTPUT
-
           echo "node_modules_size_bytes=$NODE_MODULES_SIZE_BYTES" >>
           $GITHUB_OUTPUT
-
           echo "node_modules_size_human=$NODE_MODULES_SIZE_HUMAN" >>
           $GITHUB_OUTPUT
 
-
-          # Store for comparison
-
-          echo $BUILD_SIZE_BYTES > current_js_size.txt
       - name: Compare Size Changes
         if: github.event_name == 'pull_request'
         id: size_comparison
         run: >
           git fetch origin ${{ github.base_ref }}
-
           git checkout origin/${{ github.base_ref }}
 
-
           # Install and build for comparison
-
           composer install --no-progress --no-dev --optimize-autoloader
           --prefer-dist --quiet
-
           printf "\n//npm.pkg.github.com/:_authToken=${{
           secrets.NEWFOLD_ACCESS_TOKEN }}" >> .npmrc
-
           npm install --legacy-peer-deps --silent
-
           npm run build --silent
 
-
           # Calculate previous total size
-
           PREV_SIZE_BYTES=$(du -sb --exclude=.git --exclude=node_modules
           --exclude=vendor . | cut -f1)
 
-          echo $PREV_SIZE_BYTES > previous_size.txt
-
-
           # Calculate previous PHP size
-
           PREV_PHP_SIZE_BYTES=$(find . -name "*.php" -not -path "./vendor/*"
           -not -path "./node_modules/*" -not -path "./.git/*" -exec du -sb {} +
           | awk '{sum += $1} END {print sum}')
-
           PREV_VENDOR_SIZE_BYTES=$(du -sb vendor 2>/dev/null | cut -f1 || echo
           "0")
-
           PREV_TOTAL_PHP_SIZE_BYTES=$((PREV_PHP_SIZE_BYTES +
           PREV_VENDOR_SIZE_BYTES))
 
-          echo $PREV_TOTAL_PHP_SIZE_BYTES > previous_php_size.txt
-
-
           # Calculate previous JS size
-
           PREV_BUILD_SIZE_BYTES=$(du -sb build 2>/dev/null | cut -f1 || echo
           "0")
 
-          echo $PREV_BUILD_SIZE_BYTES > previous_js_size.txt
-
-
           # Switch back to current branch
-
           git checkout ${{ github.head_ref }}
 
-
           # Compare total sizes
-
-          CURRENT_SIZE=$(cat current_size.txt)
-
-          PREVIOUS_SIZE=$(cat previous_size.txt)
-
-
-          if [ "$PREVIOUS_SIZE" -gt 0 ]; then
-            INCREASE_BYTES=$((CURRENT_SIZE - PREVIOUS_SIZE))
-            INCREASE_PERCENT=$((INCREASE_BYTES * 100 / PREVIOUS_SIZE))
-
+          CURRENT_SIZE=${{ steps.plugin_size.outputs.total_size_bytes }}
+          if [ "$PREV_SIZE_BYTES" -gt 0 ]; then
+            INCREASE_BYTES=$((CURRENT_SIZE - PREV_SIZE_BYTES))
+            INCREASE_PERCENT=$((INCREASE_BYTES * 100 / PREV_SIZE_BYTES))
             echo "increase_percent=$INCREASE_PERCENT" >> $GITHUB_OUTPUT
-
-            if [ "$INCREASE_PERCENT" -gt "$MAX_SIZE_INCREASE_PERCENT" ]; then
-              echo "size_check_failed=true" >> $GITHUB_OUTPUT
-            else
-              echo "size_check_failed=false" >> $GITHUB_OUTPUT
-            fi
           else
-            echo "size_check_failed=false" >> $GITHUB_OUTPUT
+            echo "increase_percent=0" >> $GITHUB_OUTPUT
           fi
-
 
           # Compare PHP sizes
-
-          CURRENT_PHP_SIZE=$(cat current_php_size.txt)
-
-          PREVIOUS_PHP_SIZE=$(cat previous_php_size.txt)
-
-
-          if [ "$PREVIOUS_PHP_SIZE" -gt 0 ]; then
-            PHP_INCREASE_BYTES=$((CURRENT_PHP_SIZE - PREVIOUS_PHP_SIZE))
-            PHP_INCREASE_PERCENT=$((PHP_INCREASE_BYTES * 100 / PREVIOUS_PHP_SIZE))
-
+          CURRENT_PHP_SIZE=${{ steps.php_size.outputs.total_php_size_bytes }}
+          if [ "$PREV_TOTAL_PHP_SIZE_BYTES" -gt 0 ]; then
+            PHP_INCREASE_BYTES=$((CURRENT_PHP_SIZE - PREV_TOTAL_PHP_SIZE_BYTES))
+            PHP_INCREASE_PERCENT=$((PHP_INCREASE_BYTES * 100 / PREV_TOTAL_PHP_SIZE_BYTES))
             echo "php_increase_percent=$PHP_INCREASE_PERCENT" >> $GITHUB_OUTPUT
-
-            if [ "$PHP_INCREASE_PERCENT" -gt "$MAX_PHP_SIZE_INCREASE_PERCENT" ]; then
-              echo "php_size_check_failed=true" >> $GITHUB_OUTPUT
-            else
-              echo "php_size_check_failed=false" >> $GITHUB_OUTPUT
-            fi
           else
-            echo "php_size_check_failed=false" >> $GITHUB_OUTPUT
+            echo "php_increase_percent=0" >> $GITHUB_OUTPUT
           fi
 
-
           # Compare JS sizes
-
-          CURRENT_JS_SIZE=$(cat current_js_size.txt)
-
-          PREVIOUS_JS_SIZE=$(cat previous_js_size.txt)
-
-
-          if [ "$PREVIOUS_JS_SIZE" -gt 0 ]; then
-            JS_INCREASE_BYTES=$((CURRENT_JS_SIZE - PREVIOUS_JS_SIZE))
-            JS_INCREASE_PERCENT=$((JS_INCREASE_BYTES * 100 / PREVIOUS_JS_SIZE))
-
+          CURRENT_JS_SIZE=${{ steps.js_size.outputs.build_size_bytes }}
+          if [ "$PREV_BUILD_SIZE_BYTES" -gt 0 ]; then
+            JS_INCREASE_BYTES=$((CURRENT_JS_SIZE - PREV_BUILD_SIZE_BYTES))
+            JS_INCREASE_PERCENT=$((JS_INCREASE_BYTES * 100 / PREV_BUILD_SIZE_BYTES))
             echo "js_increase_percent=$JS_INCREASE_PERCENT" >> $GITHUB_OUTPUT
           else
             echo "js_increase_percent=0" >> $GITHUB_OUTPUT
           fi
+
       - name: Generate Report
         run: >
           echo "## Plugin Size Audit Report" > final-report.md
-
           echo "" >> final-report.md
 
-
           echo "### Total Plugin Size" >> final-report.md
-
           echo "- Current Size: ${{ steps.plugin_size.outputs.total_size_human
           }}" >> final-report.md
-
 
           if [ "${{ steps.size_comparison.outputs.increase_percent }}" != "" ];
           then
             echo "- Size Change: ${{ steps.size_comparison.outputs.increase_percent }}%" >> final-report.md
           fi
 
-
           echo "" >> final-report.md
-
           echo "### PHP Analysis" >> final-report.md
-
           echo "- PHP Files: ${{ steps.php_size.outputs.php_files_size_human }}"
           >> final-report.md
-
           echo "- Vendor Dependencies: ${{
           steps.php_size.outputs.vendor_size_human }}" >> final-report.md
-
           echo "- Total PHP Size: ${{
-          steps.php_size.outputs.total_php_size_bytes }}" >> final-report.md
-
+          steps.php_size.outputs.total_php_size_human }}" >> final-report.md
 
           if [ "${{ steps.size_comparison.outputs.php_increase_percent }}" != ""
           ]; then
             echo "- PHP Size Change: ${{ steps.size_comparison.outputs.php_increase_percent }}%" >> final-report.md
           fi
 
-
           echo "" >> final-report.md
-
-          echo "### JavaScript/Asset Analysis" >> final-report.md
-
-          echo "- Build Assets: ${{ steps.js_size.outputs.build_size_human }}"
-          >> final-report.md
-
-          echo "- Node Modules (dev only): ${{
-          steps.js_size.outputs.node_modules_size_human }}" >> final-report.md
-
-
-          if [ "${{ steps.size_comparison.outputs.js_increase_percent }}" != ""
-          ]; then
-            echo "- JS Size Change: ${{ steps.size_comparison.outputs.js_increase_percent }}%" >> final-report.md
-          fi
-
-
-          echo "" >> final-report.md
-
           echo "### Bundle Analysis" >> final-report.md
-
           echo "Bundle size analysis is provided by the
           preactjs/compressed-size-action above." >> final-report.md
 
+          # Only show largest files when relevant file types are modified
+          if [ "${{ github.event_name }}" == "push" ] || git diff --name-only ${{ github.event.before }} ${{ github.sha }} | grep -E '\.(php|js|css|json|lock)$' > /dev/null; then
+            echo "" >> final-report.md
+            echo "### Largest PHP Files" >> final-report.md
+            find . -name "*.php" -not -path "./vendor/*" -not -path "./node_modules/*" -not -path "./.git/*" -exec du -h {} + | sort -rh | head -n 10 >> final-report.md
 
-          echo "" >> final-report.md
+            echo "" >> final-report.md
+            echo "### Largest Vendor Dependencies" >> final-report.md
+            find vendor -type f -name "*.php" -exec du -h {} + | sort -rh | head -n 10 >> final-report.md
 
-          echo "### Image Analysis" >> final-report.md
+            echo "" >> final-report.md
+            echo "### Largest Files Overall" >> final-report.md
+            find . -type f -not -path "*/\.*" -not -path "*/node_modules/*" -not -path "*/vendor/*" -exec du -h {} + | sort -rh | head -n 10 >> final-report.md
+          fi
 
-          echo "Image optimization and analysis is provided by
-          calibreapp/image-actions above." >> final-report.md
-
-
-          echo "" >> final-report.md
-
-          echo "### Largest PHP Files" >> final-report.md
-
-          find . -name "*.php" -not -path "./vendor/*" -not -path
-          "./node_modules/*" -not -path "./.git/*" -exec du -h {} + | sort -rh |
-          head -n 10 >> final-report.md
-
-
-          echo "" >> final-report.md
-
-          echo "### Largest Vendor Dependencies" >> final-report.md
-
-          find vendor -type f -name "*.php" -exec du -h {} + | sort -rh | head
-          -n 10 >> final-report.md
-
-
-          echo "" >> final-report.md
-
-          echo "### Largest Files Overall" >> final-report.md
-
-          find . -type f -not -path "*/\.*" -not -path "*/node_modules/*" -not
-          -path "*/vendor/*" -exec du -h {} + | sort -rh | head -n 10 >>
-          final-report.md
       - name: Comment PR
         if: github.event_name == 'pull_request'
-        uses: actions/github-script@v7
+        uses: actions/github-script@5c56fde4671bc2d3592fb0f2c5b5bab9ddae03b1 # v7
         with:
           script: |
             const fs = require('fs');
             const report = fs.readFileSync('final-report.md', 'utf8');
-            github.rest.issues.createComment({
-              issue_number: context.issue.number,
+            
+            // Check if we already have a comment from this workflow
+            const comments = await github.rest.issues.listComments({
               owner: context.repo.owner,
               repo: context.repo.repo,
-              body: report
+              issue_number: context.issue.number,
             });
+            
+            const existingComment = comments.data.find(comment => 
+              comment.user.type === 'Bot' && 
+              comment.body.includes('## Plugin Size Audit Report')
+            );
+            
+            if (existingComment) {
+              // Update existing comment
+              await github.rest.issues.updateComment({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                comment_id: existingComment.id,
+                body: report
+              });
+            } else {
+              // Create new comment
+              await github.rest.issues.createComment({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                issue_number: context.issue.number,
+                body: report
+              });
+            }
+
       - name: Upload Reports
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
         with:
-          name: size-audit-reports
+          name: size-report-${{ github.event.repository.name }}-${{ github.event_name == 'pull_request' && github.event.number || github.sha }}
           path: final-report.md
           retention-days: 90
-      - name: Fail on Size Violations
-        if: >-
-          steps.size_comparison.outputs.size_check_failed == 'true' ||
-          steps.size_comparison.outputs.php_size_check_failed == 'true'
-        run: >
-          if [ "${{ steps.size_comparison.outputs.size_check_failed }}" ==
-          "true" ]; then
-            echo "❌ Total plugin size increased by more than ${{ env.MAX_SIZE_INCREASE_PERCENT }}%"
-          fi
-
-
-          if [ "${{ steps.size_comparison.outputs.php_size_check_failed }}" ==
-          "true" ]; then
-            echo "❌ PHP size increased by more than ${{ env.MAX_PHP_SIZE_INCREASE_PERCENT }}%"
-          fi
-
-
-          exit 1

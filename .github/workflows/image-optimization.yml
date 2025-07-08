@@ -1,0 +1,53 @@
+name: Image Optimization
+
+on:
+  pull_request:
+    branches:
+      - 'main'
+    paths:
+      - '**/*.{png,jpg,jpeg,gif,webp,svg}'
+  push:
+    branches:
+      - 'main'
+    paths:
+      - '**/*.{png,jpg,jpeg,gif,webp,svg}'
+
+jobs:
+  optimize-images:
+    name: Optimize Images
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4
+        with:
+          fetch-depth: 0
+
+      - name: Image Optimization
+        id: image_optimization
+        uses: calibreapp/image-actions@006692e15ca7d6312e06cc49b57a466d8ed45848 # main
+        with:
+          githubToken: '${{ secrets.GITHUB_TOKEN }}'
+          compressOnly: false
+          jpegQuality: '82'
+          pngQuality: '82'
+          webpQuality: '86'
+
+      - name: Create Pull Request
+        if: github.event_name == 'push' && steps.image_optimization.outputs.markdown != ''
+        uses: peter-evans/create-pull-request@4e1beaa7521e8b457b572c090b25bd3db56bf1c5 # v5
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          commit-message: 'Optimize images'
+          title: 'Optimize images'
+          body: |
+            This PR contains optimized images with the following quality settings:
+            - JPEG: 82% quality
+            - PNG: 82% quality  
+            - WebP: 86% quality
+            
+            These settings follow WordPress Core standards for optimal balance between file size and visual quality.
+            
+            ${{ steps.image_optimization.outputs.markdown }}
+          branch: image-optimization-${{ github.sha }}
+          delete-branch: true 

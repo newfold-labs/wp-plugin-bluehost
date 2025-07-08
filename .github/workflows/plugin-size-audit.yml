@@ -237,7 +237,7 @@ jobs:
           script: |
             const fs = require('fs');
             const report = fs.readFileSync('final-report.md', 'utf8');
-            
+
             // Check if we already have a comment from this workflow
             const comments = await github.rest.issues.listComments({
               owner: context.repo.owner,

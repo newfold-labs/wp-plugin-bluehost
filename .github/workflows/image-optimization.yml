@@ -16,7 +16,7 @@ jobs:
   optimize-images:
     name: Optimize Images
     runs-on: ubuntu-latest
-    
+
     steps:
       - name: Checkout
         uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4
@@ -43,11 +43,11 @@ jobs:
           body: |
             This PR contains optimized images with the following quality settings:
             - JPEG: 82% quality
-            - PNG: 82% quality  
+            - PNG: 82% quality
             - WebP: 86% quality
-            
+
             These settings follow WordPress Core standards for optimal balance between file size and visual quality.
-            
+
             ${{ steps.image_optimization.outputs.markdown }}
           branch: image-optimization-${{ github.sha }}
-          delete-branch: true 
+          delete-branch: true

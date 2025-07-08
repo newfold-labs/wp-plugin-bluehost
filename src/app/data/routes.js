@@ -88,12 +88,15 @@ export const AppRoutes = () => {
 						/>
 					)
 			) }
-			<Route path="/" element={ <Home /> } />
-			{ /* Add specific redirect routes. */ }
-			<Route path="/my_plugins_and_tools" element={ <SolutionsRedirect /> } />
+			{ /* Add redirect routes. */ }
+			<Route
+				path="/my_plugins_and_tools"
+				element={ <SolutionsRedirect /> }
+			/>
 			<Route path="/staging" element={ <StagingRedirect /> } />
 			<Route path="/performance" element={ <PerformanceRedirect /> } />
 			<Route path="/hosting" element={ <HostingRedirect /> } />
+			<Route path="/" element={ <Home /> } />
 			<Route
 				path="*"
 				element={
@@ -111,14 +114,7 @@ export const AppRoutes = () => {
 	);
 };
 
-const topRoutePaths = [
-	'/home',
-	'/hosting',
-	'/store',
-	'/marketplace',
-	'/settings',
-	'/staging',
-];
+const topRoutePaths = [ '/home', '/store', '/marketplace', '/settings' ];
 const utilityRoutePaths = [ '/help' ];
 
 export const routes = [

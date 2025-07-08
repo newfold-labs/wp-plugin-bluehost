@@ -244,12 +244,12 @@ jobs:
               repo: context.repo.repo,
               issue_number: context.issue.number,
             });
-            
+
             const existingComment = comments.data.find(comment => 
               comment.user.type === 'Bot' && 
               comment.body.includes('## Plugin Size Audit Report')
             );
-            
+
             if (existingComment) {
               // Update existing comment
               await github.rest.issues.updateComment({

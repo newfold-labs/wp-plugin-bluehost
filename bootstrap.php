@@ -87,14 +87,6 @@ add_action(
 add_filter(
 	'newfold/coming-soon/filter/args',
 	function ( $args, $default_args ) {
-
-		// Properly get branding links depending on market
-		$wordpress_hosting_page = ( get_option( 'mm_brand' ) === 'Bluehost_India' ) ? 'https://www.bluehost.in?utm_source=coming-soon-template&amp;utm_medium=bluehost_plugin' : 'https://bluehost.com?utm_source=coming-soon-template&amp;utm_medium=bluehost_plugin';
-		$my_panel               = ( get_option( 'mm_brand' ) === 'Bluehost_India' ) ? 'https://my.bluehost.in/web-hosting/cplogin' : 'https://my.bluehost.com/web-hosting/cplogin';
-		$website_guide_link     = 'https://www.bluehost.com/blog/how-to-create-a-website-guide/';
-		$migrate_link           = 'https://www.bluehost.com/blog/how-to-migrate-a-wordpress-website-to-a-new-server/';
-		$hosting_link           = 'https://www.bluehost.com/hosting/shared';
-
 		$logo_svg = file_get_contents( BLUEHOST_PLUGIN_DIR . '/assets/svg/bluehost-logo.svg' );
 
 		$backlinks = array(

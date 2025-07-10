@@ -101,13 +101,13 @@ module.exports = defineConfig( {
 		baseUrl: 'http://localhost:8882',
 		specPattern: [
 			'tests/cypress/integration/**/*.cy.{js,jsx,ts,tsx}',
-			'vendor/newfold-labs/**/tests/cypress/integration/*.cy.{js,jsx,ts,tsx}',
 			'vendor/newfold-labs/**/tests/cypress/integration/**/*.cy.{js,jsx,ts,tsx}',
 		],
 		supportFile: 'tests/cypress/support/index.js',
 		testIsolation: false,
 		excludeSpecPattern: [
 			'vendor/newfold-labs/**/tests/cypress/integration/wp-module-support/*.cy.js', // skip any module's wp-module-support files
+			'vendor/newfold-labs/**/vendor/newfold-labs/**/*.cy.js', // skip any nested modules
 			'vendor/newfold-labs/wp-module-onboarding/tests/cypress/integration/**/*.cy.js', // Temporary: skip onboarding tests
 		],
 		experimentalRunAllSpecs: true,

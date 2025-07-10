@@ -77,7 +77,6 @@ class SettingsController extends \WP_REST_Controller {
 					case 'autoUpdatesMajorCore':
 						$new_value = ( $new_value ) ? 'true' : 'false';
 						update_option( 'allow_major_auto_core_updates', $new_value );
-
 						if ( 'true' === $new_value ) {
 							update_option( 'auto_update_core_major', 'enabled' );
 						} else {
@@ -88,20 +87,16 @@ class SettingsController extends \WP_REST_Controller {
 						update_option( 'allow_minor_auto_core_updates', $new_value );
 						break;
 					case 'autoUpdatesPlugins':
-						// Keep the WordPress Core setting in sync.
 						if ( $new_value ) {
 							\Bluehost\sync_plugin_update_settings();
 						}
-
 						$new_value = ( $new_value ) ? 'true' : 'false';
 						update_option( 'auto_update_plugin', $new_value );
 						break;
 					case 'autoUpdatesThemes':
-						// Keep the WordPress Core setting in sync.
 						if ( $new_value ) {
 							\Bluehost\sync_theme_update_settings();
 						}
-
 						$new_value = ( $new_value ) ? 'true' : 'false';
 						update_option( 'auto_update_theme', $new_value );
 						break;
@@ -134,6 +129,12 @@ class SettingsController extends \WP_REST_Controller {
 					case 'pageOnFront':
 						update_option( 'page_on_front', intval( $new_value ) );
 						break;
+					case 'resetWelcomeBanner':
+						delete_transient( 'bluehost_welcome_banner_shown' );
+						break;
+					case 'hideWelcomeBanner':
+						set_transient( 'bluehost_welcome_banner_shown', current_time( 'timestamp' ), 172800 );
+						break;
 				}
 			}
 		}
@@ -147,21 +148,19 @@ class SettingsController extends \WP_REST_Controller {
 	 * @return array $settings List of the settings and their values
 	 */
 	public function get_current_settings() {
-
-		// By default, we treat all auto updates as on
+		// Auto update settings
 		$major        = ( 'true' === get_option( 'allow_major_auto_core_updates', 'true' ) );
 		$minor        = ( 'true' === get_option( 'allow_minor_auto_core_updates', 'true' ) );
 		$plugins      = ( 'true' === get_option( 'auto_update_plugin', 'true' ) );
 		$themes       = ( 'true' === get_option( 'auto_update_theme', 'true' ) );
 		$translations = ( 'true' === get_option( 'auto_update_translation', 'true' ) );
 
-		// If the core update constant is falsey, then override core db values to force false
+		// Override core update settings if constants are defined
 		if ( defined( 'WP_AUTO_UPDATE_CORE' ) && ! WP_AUTO_UPDATE_CORE ) {
 			$major = false;
 			$minor = false;
 		}
 
-		// If auto updates are disabled entirely, override everything to be false
 		if ( defined( 'AUTOMATIC_UPDATER_DISABLED' ) && AUTOMATIC_UPDATER_DISABLED ) {
 			$major        = false;
 			$minor        = false;
@@ -170,7 +169,11 @@ class SettingsController extends \WP_REST_Controller {
 			$translations = false;
 		}
 
-		$settings = array(
+		// Welcome banner visibility
+		$welcome_banner_transient = get_transient( 'bluehost_welcome_banner_shown' );
+		$show_welcome_banner = ( false === $welcome_banner_transient );
+
+		return array(
 			'comingSoon'              => container()->get( 'comingSoon' )->is_enabled(),
 			'autoUpdatesAll'          => $major && $plugins && $themes,
 			'autoUpdatesMajorCore'    => $major,
@@ -186,9 +189,8 @@ class SettingsController extends \WP_REST_Controller {
 			'hasSetHomepage'          => (bool) get_option( 'bh_has_set_homepage', false ),
 			'showOnFront'             => (string) get_option( 'show_on_front' ),
 			'pageOnFront'             => (int) get_option( 'page_on_front' ),
+			'showWelcomeBanner'       => $show_welcome_banner,
 		);
-
-		return $settings;
 	}
 
 	/**

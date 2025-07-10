@@ -12,14 +12,12 @@ on:
       - try/*
       - master-2.x
       - develop-2.x
+  pull_request:
+    types: [ opened, synchronize, reopened, ready_for_review ]
   workflow_dispatch:
-  workflow_run:
-    workflows: [ 'Newfold Prepare Release' ]
-    types:
-      - completed
 
 concurrency:
-  group: ${{ github.workflow }}-${{ github.event_name == 'pull_request' && github.head_ref || github.sha }}
+  group: ${{ github.workflow }}-${{ github.head_ref || github.ref }}
   cancel-in-progress: true
 
 jobs:

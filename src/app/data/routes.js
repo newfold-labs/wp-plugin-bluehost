@@ -23,6 +23,54 @@ const HelpCenterAI = ( e ) => {
 	window.newfoldEmbeddedHelp.toggleNFDLaunchedEmbeddedHelp();
 };
 
+/**
+ * Redirect component for my_plugins_and_tools route.
+ * Redirects users to the solutions page with category=all parameter.
+ *
+ * @return {null} Returns null as this component only handles redirection.
+ */
+const SolutionsRedirect = () => {
+	// Redirect to the solutions page with category=all parameter.
+	window.location.href = '/wp-admin/admin.php?page=solutions&category=all';
+	return null;
+};
+
+/**
+ * Redirect component for staging route.
+ * Redirects users to the nfd-staging page.
+ *
+ * @return {null} Returns null as this component only handles redirection.
+ */
+const StagingRedirect = () => {
+	// Redirect to the nfd-staging page.
+	window.location.href = '/wp-admin/admin.php?page=nfd-staging';
+	return null;
+};
+
+/**
+ * Redirect component for performance route.
+ * Redirects users to the nfd-performance page.
+ *
+ * @return {null} Returns null as this component only handles redirection.
+ */
+const PerformanceRedirect = () => {
+	// Redirect to the nfd-performance page.
+	window.location.href = '/wp-admin/admin.php?page=nfd-performance';
+	return null;
+};
+
+/**
+ * Redirect component for hosting route.
+ * Redirects users to the nfd-hosting page.
+ *
+ * @return {null} Returns null as this component only handles redirection.
+ */
+const HostingRedirect = () => {
+	// Redirect to the nfd-hosting page.
+	window.location.href = '/wp-admin/admin.php?page=nfd-hosting';
+	return null;
+};
+
 export const AppRoutes = () => {
 	return (
 		<Routes>
@@ -40,6 +88,14 @@ export const AppRoutes = () => {
 						/>
 					)
 			) }
+			{ /* Add redirect routes. */ }
+			<Route
+				path="/my_plugins_and_tools"
+				element={ <SolutionsRedirect /> }
+			/>
+			<Route path="/staging" element={ <StagingRedirect /> } />
+			<Route path="/performance" element={ <PerformanceRedirect /> } />
+			<Route path="/hosting" element={ <HostingRedirect /> } />
 			<Route path="/" element={ <Home /> } />
 			<Route
 				path="*"
@@ -58,14 +114,7 @@ export const AppRoutes = () => {
 	);
 };
 
-const topRoutePaths = [
-	'/home',
-	'/hosting',
-	'/store',
-	'/marketplace',
-	'/settings',
-	'/staging',
-];
+const topRoutePaths = [ '/home', '/store', '/marketplace', '/settings' ];
 const utilityRoutePaths = [ '/help' ];
 
 export const routes = [

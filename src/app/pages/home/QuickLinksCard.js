@@ -10,7 +10,7 @@ const QuickLinksCard = ( {} ) => {
 			<div className="nfd-grid nfd-gap-4 nfd-grid-cols-1">
 				<a
 					className="nfd-no-underline nfd-card-link nfd-card-link-mini"
-					href="#/hosting"
+					href="admin.php?page=nfd-hosting"
 					data-cy="hosting-card"
 				>
 					<Card className="wppbh-hosting-card nfd-card-mini nfd-py-4">

@@ -26,43 +26,6 @@ body:before {
 	opacity: 5%;
 }
 
-header {
-	display: flex;
-	align-items: center;
-	justify-content: flex-end;
-	padding: 2rem 3rem;
-	width: 100%;
-}
-
-header .login-prompt{
-	padding-bottom: 10px;
-	border-bottom: 1px solid #ADC9ED;
-	font-size: .9rem;
-	display:flex;
-	align-items: center;
-	text-wrap: nowrap;
-}
-
-header .login-prompt,
-header .login-prompt a {
-	display:flex;
-	align-items: center;
-	gap: 5px;
-}
-
-header .login-prompt .login-link {
-	color: #336AD7;
-	text-decoration:none;
-}
-
-header .login-prompt .login-link .nfd-login-icon {
-	display:flex;
-}
-
-header .login-prompt .login-link .nfd-login-icon svg {
-	width: 20px;
-}
-
 * {
 	box-sizing: border-box;
 	-moz-box-sizing: border-box;
@@ -199,11 +162,6 @@ footer p a:hover {
 	text-decoration: none;
 	line-height: 18px;
 	color: #1555b3;
-}
-
-.subscription_widget img {
-	max-height: 80px;
-	max-width: 500px;
 }
 
 .subscription_widget h2 {
@@ -412,11 +370,6 @@ footer p a:hover {
 }
 
 @media (max-width: 360px) {
-
-	header .login-label{
-		display:none;
-	}
-
 	#wrap h1 {
 		font-size: 26px;
 	}

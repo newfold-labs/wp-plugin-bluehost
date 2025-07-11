@@ -297,6 +297,7 @@ body.toplevel_page_bluehost {
 .coming-soon-status {
     text-transform: uppercase;
 }
+
 .nfd-root .wppbh-home {
 
     .nfd-card-link:not(.nfd-card-link-mini) {
@@ -455,6 +456,18 @@ body.toplevel_page_bluehost {
     }
 }
 
+.nfd-help-center-tip {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    background-color: #DBE9FF;
+    border-radius: 50%;
+    max-width: 20px;
+    max-height: 20px;
+    font-weight: 600;
+    font-size: 12px;
+}
 
 .wppbh-app-marketplace-page {
     .nfd-marketplace-sidebar ul {

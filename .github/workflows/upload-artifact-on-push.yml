@@ -91,9 +91,6 @@ jobs:
         run: composer validate
 
       - name: Install PHP Dependencies
-
-      - name: Setup Registry
-        run: printf "\n//npm.pkg.github.com/:_authToken=${{ secrets.NEWFOLD_ACCESS_TOKEN }}" >> .npmrc
         run: composer install --no-progress --no-dev --optimize-autoloader --prefer-dist
 
       - name: NPM Install

@@ -129,7 +129,7 @@ jobs:
               `${commentMeta}
               ✅ A new plugin build is ready for review!
 
-              🔗 [Download artifact](${artifactUrl})
+              🔗 [Download build file](${artifactUrl})
               _(This link will expire in ~90 days)_`
             );
 

@@ -31,7 +31,7 @@ const HelpCenterAI = ( e ) => {
  */
 const SolutionsRedirect = () => {
 	// Redirect to the solutions page with category=all parameter.
-	window.location.href = '/wp-admin/admin.php?page=solutions&category=all';
+	window.location.href = window.NewfoldRuntime.adminUrl + 'admin.php?page=solutions&category=all';
 	return null;
 };
 
@@ -43,7 +43,7 @@ const SolutionsRedirect = () => {
  */
 const StagingRedirect = () => {
 	// Redirect to the nfd-staging page.
-	window.location.href = '/wp-admin/admin.php?page=nfd-staging';
+	window.location.href = window.NewfoldRuntime.adminUrl + 'admin.php?page=nfd-staging';
 	return null;
 };
 
@@ -55,7 +55,7 @@ const StagingRedirect = () => {
  */
 const PerformanceRedirect = () => {
 	// Redirect to the nfd-performance page.
-	window.location.href = '/wp-admin/admin.php?page=nfd-performance';
+	window.location.href = window.NewfoldRuntime.adminUrl + 'admin.php?page=nfd-performance';
 	return null;
 };
 
@@ -67,7 +67,7 @@ const PerformanceRedirect = () => {
  */
 const HostingRedirect = () => {
 	// Redirect to the nfd-hosting page.
-	window.location.href = '/wp-admin/admin.php?page=nfd-hosting';
+	window.location.href = window.NewfoldRuntime.adminUrl + 'admin.php?page=nfd-hosting';
 	return null;
 };
 

@@ -4,8 +4,6 @@ on:
   push:
     branches:
       - main
-      - master
-      - trunk
       - develop
       - release/*
       - feature/*
@@ -14,15 +12,11 @@ on:
       - fix/*
       - try/*
   pull_request:
-    types: [ opened, edited, reopened, ready_for_review ]
+    types: [ opened, synchronize, reopened, ready_for_review ]
   workflow_dispatch:
-  workflow_run:
-    workflows: [ 'Newfold Prepare Release' ]
-    types:
-      - completed
 
 concurrency:
-  group: ${{ github.workflow }}-${{ github.event_name == 'pull_request' && github.head_ref || github.sha }}
+  group: ${{ github.workflow }}-${{ github.head_ref || github.ref }}
   cancel-in-progress: true
 
 # Disable permissions for all available scopes by default.
@@ -87,7 +81,7 @@ jobs:
         run: composer validate
 
       - name: Install PHP Dependencies
-        run: composer install --no-progress --no-dev --optimize-autoloader --prefer-dist
+        run: composer install --no-progress --no-dev --optimize-autoloader --prefer-source
 
       - name: Setup Registry
         run: printf "\n//npm.pkg.github.com/:_authToken=${{ secrets.NEWFOLD_ACCESS_TOKEN }}" >> .npmrc

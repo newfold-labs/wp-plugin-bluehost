@@ -30,6 +30,17 @@ jobs:
         with:
           persist-credentials: false
 
+      - name: Setup PHP
+        uses: shivammathur/setup-php@0f7f1d08e3e32076e51cae65eb0b0c871405b16e # v2.34.1
+        with:
+          php-version: '8.3'
+          coverage: none
+
+      - name: Install Composer
+        uses: shivammathur/setup-composer@3cf229dc2919194e9e36783941438d17239e8520 # v3.1.1
+        with:
+          composer-options: '--no-dev --optimize-autoloader'
+
       - name: Setup Node.js
         uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4.4.0
 
@@ -42,16 +53,6 @@ jobs:
         run: |
           echo "@newfold-labs:registry=https://npm.pkg.github.com" >> .npmrc
           echo "//npm.pkg.github.com/:_authToken=${{ secrets.NEWFOLD_ACCESS_TOKEN }}" >> .npmrc
-
-      - name: Install PHP and Composer
-        run: |
-          sudo apt update
-          sudo apt install -y php-cli unzip curl
-          curl -sS https://getcomposer.org/installer | php
-          sudo mv composer.phar /usr/local/bin/composer
-
-      - name: Install Composer dependencies
-        run: composer install --no-dev --optimize-autoloader
 
       - name: Install Node dependencies and build project
         run: |

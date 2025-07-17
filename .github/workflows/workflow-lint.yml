@@ -31,4 +31,4 @@ jobs:
       security-events: write
       actions: read
       contents: read
-    uses: newfold-labs/workflows/.github/workflows/reusable-workflow-lint.yml@add/workflow-lint-workflow
+    uses: newfold-labs/workflows/.github/workflows/reusable-workflow-lint.yml@main

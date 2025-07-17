@@ -22,10 +22,16 @@ concurrency:
   group: ${{ github.workflow }}-${{ github.event_name == 'pull_request' && github.head_ref || github.sha }}
   cancel-in-progress: true
 
+# Disable permissions for all available scopes by default.
+# Any needed permissions should be configured at the job level.
+permissions: {}
+
 jobs:
   build:
     name: On Push
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
     if: ${{ github.repository == 'newfold-labs/wp-plugin-bluehost' }}
     steps:
 

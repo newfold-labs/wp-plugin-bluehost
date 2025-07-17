@@ -100,15 +100,26 @@ jobs:
         run: npm run build
 
       - name: Create Distribution Copy
-        run: rsync -r --include-from=.distinclude --exclude-from=.distignore . ${{ steps.workflow.outputs.DIST }}/${{ steps.workflow.outputs.PACKAGE }}
+        env:
+          DIST: ${{ steps.workflow.outputs.DIST }}
+          PACKAGE: ${{ steps.workflow.outputs.PACKAGE }}
+        run: rsync -r --include-from=.distinclude --exclude-from=.distignore . "$DIST/$PACKAGE"
 
       - name: List Distribution Files
         working-directory: ${{ steps.workflow.outputs.DIST }}
         run: find .
 
       - name: Configure WordPress
+        env:
+          DIST: ${{ steps.workflow.outputs.DIST }}
+          PACKAGE: ${{ steps.workflow.outputs.PACKAGE }}
         run: |
-          echo '{"core": "WordPress/WordPress#tags/${{ matrix.wpVersion }}","phpVersion": "${{ matrix.phpVersion }}","plugins": [ "${{ steps.workflow.outputs.DIST }}/${{ steps.workflow.outputs.PACKAGE }}" ] }' > .wp-env.override.json
+          jq -n \
+            --arg core "WordPress/WordPress#tags/${{ matrix.wpVersion }}" \
+            --arg phpVersion "${{ matrix.phpVersion }}" \
+            --arg plugin "$DIST/$PACKAGE" \
+            '{core: $core, phpVersion: $phpVersion, plugins: [$plugin]}' \
+            > .wp-env.override.json
 
       - name: Configure Cypress
         run: |

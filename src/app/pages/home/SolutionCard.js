@@ -14,7 +14,7 @@ const SolutionCard = ( {} ) => {
 						<Icon className="nfd-max-w-12" />
 					</div>
 					<Title size={ 2 } as="h2" className="nfd-mt-8 nfd-mb-4">
-						{ __( 'Explore your Solution', 'wp-plugin-bluehost' ) }
+						{ __( 'Explore Premium Tools', 'wp-plugin-bluehost' ) }
 					</Title>
 					<p>
 						{ __(

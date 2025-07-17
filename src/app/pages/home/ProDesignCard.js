@@ -15,11 +15,11 @@ const ProDesignCard = ( {} ) => {
 			target="_blank"
 			data-cy="pro-design-card"
 		>
-			<Card className="wppbh-help-card nfd-card nfd-card-mid nfd-card-has-bg">
+			<Card className="wppbh-help-card nfd-card nfd-card-mid nfd-card-has-bg nfd-min-h-[200px]">
 				<Card.Content>
 					<Icon className="nfd-bg-img" />
 					<div className="nfd-flex nfd-flex-col nfd-gap-4">
-						<Title size={ 2 } as="h3" className="nfd-mt-4 nfd-mb-4">
+						<Title size={ 2 } as="h3">
 							{ __( 'Pro Design Live', 'wp-plugin-bluehost' ) }
 						</Title>
 						<p>

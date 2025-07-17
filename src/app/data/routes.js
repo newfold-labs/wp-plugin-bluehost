@@ -1,29 +1,19 @@
 import {
 	HomeIcon,
 	ShoppingBagIcon,
-	WrenchScrewdriverIcon,
-	BoltIcon,
 	AdjustmentsHorizontalIcon,
 	BuildingStorefrontIcon,
-	DocumentDuplicateIcon,
-	PuzzlePieceIcon,
-	ServerStackIcon,
 } from '@heroicons/react/24/outline';
 import { ReactComponent as HelpIcon } from '../components/icons/HelpIcon.svg';
 import { NewfoldRuntime } from '@newfold/wp-module-runtime';
 import { getMarketplaceSubnavRoutes } from '@modules/wp-module-marketplace/components/marketplaceSubnav';
 import { Route, Routes } from 'react-router-dom';
 import Home from '../pages/home';
-import PagesAndPosts from '../pages/pages-and-posts';
 import Store from '../pages/ecommerce/page';
 import Marketplace from '../pages/marketplace';
-import Solutions from '../pages/solutions';
-import Performance from '../pages/performance';
 import Settings from '../pages/settings';
-import Staging from '../pages/staging';
 import Help from '../pages/help';
 import Admin from '../pages/admin';
-import Hosting from '../pages/hosting';
 
 const addPartialMatch = ( prefix, path ) =>
 	prefix === path ? `${ prefix }/*` : path;
@@ -71,11 +61,8 @@ export const AppRoutes = () => {
 const topRoutePaths = [
 	'/home',
 	'/hosting',
-	'/pages-and-posts',
 	'/store',
 	'/marketplace',
-	'/my_plugins_and_tools',
-	'/performance',
 	'/settings',
 	'/staging',
 ];
@@ -87,20 +74,6 @@ export const routes = [
 		title: __( 'Home', 'wp-plugin-bluehost' ),
 		Component: Home,
 		Icon: HomeIcon,
-		condition: true,
-	},
-	{
-		name: '/hosting',
-		title: __( 'Hosting', 'wp-plugin-bluehost' ),
-		Component: Hosting,
-		Icon: ServerStackIcon,
-		condition: true,
-	},
-	{
-		name: '/pages-and-posts',
-		title: __( 'Pages & Posts', 'wp-plugin-bluehost' ),
-		Component: PagesAndPosts,
-		Icon: DocumentDuplicateIcon,
 		condition: true,
 	},
 	{
@@ -148,33 +121,12 @@ export const routes = [
 		subRoutes: await getMarketplaceSubnavRoutes(),
 		condition: true,
 	},
-	NewfoldRuntime.hasCapability( 'hasSolution' ) && {
-		name: '/my_plugins_and_tools',
-		title: __( 'My Plugins & Tools', 'wp-plugin-bluehost' ),
-		Component: Solutions,
-		Icon: PuzzlePieceIcon,
-		condition: true,
-	},
-	{
-		name: '/performance',
-		title: __( 'Performance', 'wp-plugin-bluehost' ),
-		Component: Performance,
-		Icon: BoltIcon,
-		condition: await window.NewfoldFeatures.isEnabled( 'performance' ),
-	},
 	{
 		name: '/settings',
 		title: __( 'Settings', 'wp-plugin-bluehost' ),
 		Component: Settings,
 		Icon: AdjustmentsHorizontalIcon,
 		condition: true,
-	},
-	{
-		name: '/staging',
-		title: __( 'Staging', 'wp-plugin-bluehost' ),
-		Component: Staging,
-		Icon: WrenchScrewdriverIcon,
-		condition: await window.NewfoldFeatures.isEnabled( 'staging' ),
 	},
 	{
 		name: '/help',

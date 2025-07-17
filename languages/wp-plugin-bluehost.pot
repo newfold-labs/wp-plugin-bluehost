@@ -2,7 +2,7 @@
 # This file is distributed under the GPL 2.0 or later.
 msgid ""
 msgstr ""
-"Project-Id-Version: The Bluehost Plugin 4.2.0\n"
+"Project-Id-Version: The Bluehost Plugin 4.4.0\n"
 "Report-Msgid-Bugs-To: https://github.com/newfold-labs/wp-plugin-bluehost/issues\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -11,7 +11,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "POT-Creation-Date: 2023-03-08T20:13:41+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"X-Generator: WP-CLI 2.11.0\n"
+"X-Generator: WP-CLI 2.12.0\n"
 "X-Domain: wp-plugin-bluehost\n"
 
 #. Plugin Name of the plugin
@@ -32,8 +32,8 @@ msgstr ""
 
 #. Author of the plugin
 #: bluehost-wordpress-plugin.php
-#: inc/Admin.php:139
-#: inc/Admin.php:140
+#: inc/Admin.php:134
+#: inc/Admin.php:135
 msgid "Bluehost"
 msgstr ""
 
@@ -41,59 +41,61 @@ msgstr ""
 msgid "Please install the Bluehost Plugin dependencies."
 msgstr ""
 
-#: bootstrap.php:97
+#: bootstrap.php:101
 msgid "Coming Soon!"
 msgstr ""
 
-#: bootstrap.php:98
+#: bootstrap.php:102
 msgid "A New WordPress Site"
 msgstr ""
 
-#: bootstrap.php:101
+#: bootstrap.php:105
 msgid "How to Build a Website: A Practical Guide to WordPress on Bluehost"
 msgstr ""
 
-#: bootstrap.php:104
+#: bootstrap.php:108
 msgid "How to Migrate a Website to Bluehost?"
 msgstr ""
 
-#: bootstrap.php:107
+#: bootstrap.php:111
 msgid "Why choose Bluehost for your WordPress site?"
 msgstr ""
 
 #. translators: %1$s is replaced with opening link tag taking you to bluehost.com/wordpress, %2$s is replaced with closing link tag, %3$s is replaced with opening link tag taking you to login page, %4$s is replaced with closing link tag, %5$s is replaced with opening link tag taking you to my.bluehost.com, %6$s is replaced with closing link tag
-#: bootstrap.php:111
+#: bootstrap.php:115
+#, php-format
 msgid "A %1$sBluehost%2$s powered website. Is this your website? Log in to %3$sWordPress%4$s or %5$sBluehost%6$s."
 msgstr ""
 
 #. translators: %s: Blog name
-#: bootstrap.php:121
+#: bootstrap.php:125
+#, php-format
 msgid "%s &mdash; Coming Soon"
 msgstr ""
 
-#: bootstrap.php:124
+#: bootstrap.php:128
 msgid "Coming Soon Active"
 msgstr ""
 
 #. translators: %1$s is replaced with the opening link tag to preview the page, and %2$s is replaced with the closing link tag, %3$s is the opening link tag, %4$s is the closing link tag.
-#: bootstrap.php:127
+#: bootstrap.php:131
+#, php-format
 msgid "Your site is currently displaying a %1$scoming soon page%2$s. Once you are ready, %3$slaunch your site%4$s."
 msgstr ""
 
-#: bootstrap.php:128
+#: bootstrap.php:132
 msgid "Preview the coming soon landing page"
 msgstr ""
 
 #: inc/Admin.php:73
-#: inc/Admin.php:283
-#: build/4.2.0/index.js:1
+#: inc/Admin.php:277
+#: build/4.4.0/index.js:7
 msgid "Home"
 msgstr ""
 
 #: inc/Admin.php:78
-#: inc/Admin.php:284
-#: build/4.2.0/index.js:1
-#: build/4.2.0/index.js:15
+#: inc/Admin.php:278
+#: build/4.4.0/index.js:7
 msgid "Settings"
 msgstr ""
 
@@ -101,34 +103,57 @@ msgstr ""
 msgid "Help Resources"
 msgstr ""
 
-#: inc/Admin.php:180
-msgid "Please update to a newer WordPress version."
+#: inc/Admin.php:302
+msgid "Thank you for creating with <a href=\"https://wordpress.org/\">WordPress</a> and <a href=\"https://bluehost.com/about\">Bluehost</a>."
 msgstr ""
 
-#: inc/Admin.php:181
+#: inc/AppWhenOutdated.php:36
+msgid "WordPress Update Required"
+msgstr ""
+
+#: inc/AppWhenOutdated.php:41
 msgid "There are new WordPress components which this plugin requires in order to render the interface."
 msgstr ""
 
-#: inc/Admin.php:182
-msgid "Please update now"
+#: inc/AppWhenOutdated.php:43
+msgid "Your current version is outdated."
 msgstr ""
 
-#: inc/Admin.php:308
-msgid "Thank you for creating with <a href=\"https://wordpress.org/\">WordPress</a> and <a href=\"https://bluehost.com/about\">Bluehost</a>."
+#: inc/AppWhenOutdated.php:44
+msgid "Please update to a newer WordPress version."
+msgstr ""
+
+#: inc/AppWhenOutdated.php:48
+msgid "Your current WordPress version:"
+msgstr ""
+
+#: inc/AppWhenOutdated.php:52
+msgid "Minimum required WordPress version:"
+msgstr ""
+
+#: inc/AppWhenOutdated.php:61
+msgid "Consider enabling auto-updates to stay up to date."
+msgstr ""
+
+#: inc/AppWhenOutdated.php:66
+msgid "Update Now"
 msgstr ""
 
 #. translators: 1: plugin name 2: incompatible plugin name
 #: inc/plugin-nfd-compat-check.php:161
+#, php-format
 msgid "\"%1$s\" has self-deactivated. It is incompatible with \"%2$s\"."
 msgstr ""
 
 #. translators: 1: legacy plugin name 2: plugin name
 #: inc/plugin-nfd-compat-check.php:188
+#, php-format
 msgid "\"%1$s\" has been deactivated. It is incompatible with \"%2$s\"."
 msgstr ""
 
 #. translators: 1: plugin name 2: minimum required PHP version, current PHP version
 #: inc/plugin-php-compat-check.php:123
+#, php-format
 msgid "%1$s requires PHP version %2$s or later. You are currently running version %3$s."
 msgstr ""
 
@@ -138,21 +163,23 @@ msgstr ""
 
 #. translators: 1: plugin name 2: required PHP extension
 #: inc/plugin-php-compat-check.php:139
+#, php-format
 msgid "%1$s requires the %2$s PHP extension."
 msgstr ""
 
 #. translators: 1: plugin name 2: minimum required WordPress version 3: current WordPress version
 #: inc/plugin-php-compat-check.php:155
+#, php-format
 msgid "%1$s requires WordPress version %2$s or later. You are currently running version %3$s."
 msgstr ""
 
 #. translators: plugin name
 #: inc/plugin-php-compat-check.php:193
+#, php-format
 msgid "The \"%s\" plugin has been deactivated."
 msgstr ""
 
-#: inc/RestApi/CachingController.php:63
-#: inc/RestApi/SettingsController.php:205
+#: inc/RestApi/SettingsController.php:201
 msgid "Sorry, you are not allowed to access this endpoint."
 msgstr ""
 
@@ -160,6 +187,7 @@ msgstr ""
 #: inc/updates.php:115
 #: inc/updates.php:143
 #: inc/updates.php:170
+#, php-format
 msgid "Auto-updates enabled on the <a href=\"%s\">Bluehost > Settings</a> page."
 msgstr ""
 
@@ -177,59 +205,62 @@ msgstr ""
 msgid "Site Preview"
 msgstr ""
 
-#: inc/widgets/views/account.php:86
+#: inc/widgets/views/account.php:88
 msgid "Profile"
 msgstr ""
 
-#: inc/widgets/views/account.php:109
+#: inc/widgets/views/account.php:113
 msgid "Mail"
 msgstr ""
 
-#: inc/widgets/views/account.php:132
-#: build/4.2.0/index.js:1
+#: inc/widgets/views/account.php:138
 msgid "Hosting"
 msgstr ""
 
-#: inc/widgets/views/account.php:155
+#: inc/widgets/views/account.php:163
 msgid "Security"
 msgstr ""
 
-#: inc/widgets/views/account.php:159
+#: inc/widgets/views/account.php:167
 msgid "Quick Access"
 msgstr ""
 
-#: inc/widgets/views/account.php:178
+#: inc/widgets/views/account.php:188
 msgid "Payment Methods"
 msgstr ""
 
-#: inc/widgets/views/account.php:198
+#: inc/widgets/views/account.php:210
 msgid "Renewals Center"
 msgstr ""
 
-#: inc/widgets/views/help.php:71
-msgid "From DIY to full-service help."
+#: inc/widgets/views/help.php:93
+msgid "From DIY to full-service help, always by your side."
 msgstr ""
 
-#: inc/widgets/views/help.php:72
+#: inc/widgets/views/help.php:96
 msgid "Call or chat 24/7 for support or let our experts build your site for you."
 msgstr ""
 
-#: inc/widgets/views/help.php:90
+#: inc/widgets/views/help.php:115
 msgid "Get Help"
 msgstr ""
 
+#: inc/widgets/views/help.php:129
+msgid "Hire Our Pros"
+msgstr ""
+
 #: inc/widgets/views/site-preview.php:147
-#: build/4.2.0/index.js:7
+#: build/4.4.0/index.js:7
 msgid "Not Live"
 msgstr ""
 
 #: inc/widgets/views/site-preview.php:148
-#: build/4.2.0/index.js:7
+#: build/4.4.0/index.js:7
 msgid "Live"
 msgstr ""
 
 #: inc/widgets/views/site-preview.php:161
-#: build/4.2.0/index.js:7
+#: build/4.4.0/index.js:7
 msgid "Your website is currently displaying a \"Coming Soon\" page."
 msgstr ""
 
@@ -257,1221 +288,579 @@ msgstr ""
 msgid "Enable Coming Soon"
 msgstr ""
 
-#: build/4.2.0/index.js:1
-msgid "Bluehost WordPress Plugin"
-msgstr ""
-
-#: build/4.2.0/index.js:1
-msgid "Oh No, An Error!"
-msgstr ""
-
-#: build/4.2.0/index.js:1
-msgid "You found an error, please refresh the page and try again!"
-msgstr ""
-
-#: build/4.2.0/index.js:1
-msgid "If the error persists, please contact support."
-msgstr ""
-
-#: build/4.2.0/index.js:1
-msgid "Error code:"
-msgstr ""
-
-#: build/4.2.0/index.js:1
-msgid "Phone"
-msgstr ""
-
-#: build/4.2.0/index.js:1
-msgid "Call Us"
-msgstr ""
-
-#: build/4.2.0/index.js:1
-msgid "Chat"
-msgstr ""
-
-#: build/4.2.0/index.js:1
-msgid "Chat with one of our friendly Customer Care Specialists, as we are waiting to help. Open 24 hours - 7 days."
-msgstr ""
-
-#: build/4.2.0/index.js:1
-msgid "Live Chat"
-msgstr ""
-
-#: build/4.2.0/index.js:1
-msgid "Tweet"
-msgstr ""
-
-#: build/4.2.0/index.js:1
-msgid "Find our team at @bluehost for updates on our products and support from our team."
-msgstr ""
-
-#: build/4.2.0/index.js:1
-msgid "Tweet Us"
-msgstr ""
-
-#: build/4.2.0/index.js:1
-msgid "YouTube"
-msgstr ""
-
-#: build/4.2.0/index.js:1
-msgid "Find tutorials, answers, interviews and guides on our YouTube channel."
-msgstr ""
-
-#: build/4.2.0/index.js:1
-msgid "Watch Now"
-msgstr ""
-
-#: build/4.2.0/index.js:1
-msgid "Knowledge Base"
-msgstr ""
-
-#: build/4.2.0/index.js:1
-msgid "Articles, guides, how-tos, instructions, and answers to our client's most frequently asked questions."
-msgstr ""
-
-#: build/4.2.0/index.js:1
-msgid "Visit Knowledge Base"
-msgstr ""
-
-#: build/4.2.0/index.js:1
-msgid "Resources"
-msgstr ""
-
-#: build/4.2.0/index.js:1
-msgid "Boost your online knowledge and get ahead of the competition."
-msgstr ""
-
-#: build/4.2.0/index.js:1
-msgid "Explore Resources"
-msgstr ""
-
-#: build/4.2.0/index.js:1
-msgid "Events and Webinars"
-msgstr ""
-
-#: build/4.2.0/index.js:1
-msgid "Team Bluehost organizes multiple webinars and events throughout the year. We are also sponsors and speak at most WordCamps across the world. Join us at our next event!"
-msgstr ""
-
-#: build/4.2.0/index.js:1
-msgid "More Info"
-msgstr ""
-
-#: build/4.2.0/index.js:1
-msgid "Bluehost Website"
-msgstr ""
-
-#: build/4.2.0/index.js:1
-msgid "Not finding what you need? Visit our website for more information about our products and services."
-msgstr ""
-
-#: build/4.2.0/index.js:1
-msgid "Go to Bluehost"
-msgstr ""
-
-#: build/4.2.0/index.js:1
-msgid "There's nothing here!"
-msgstr ""
-
-#: build/4.2.0/index.js:1
-msgid "Pages & Posts"
-msgstr ""
-
-#: build/4.2.0/index.js:1
-msgid "Store"
-msgstr ""
-
-#: build/4.2.0/index.js:1
-msgid "Products & Services"
-msgstr ""
-
-#: build/4.2.0/index.js:1
-msgid "Sales & Promotions"
-msgstr ""
-
-#: build/4.2.0/index.js:1
-msgid "Sales Channel"
-msgstr ""
-
-#: build/4.2.0/index.js:1
-msgid "Payments"
-msgstr ""
-
-#: build/4.2.0/index.js:1
-msgid "Store Details"
-msgstr ""
-
-#: build/4.2.0/index.js:1
-msgid "Marketplace"
-msgstr ""
-
-#: build/4.2.0/index.js:1
-#: build/4.2.0/index.js:15
-msgid "My Plugins & Tools"
-msgstr ""
-
-#: build/4.2.0/index.js:1
-#: build/4.2.0/index.js:7
-msgid "Performance"
-msgstr ""
-
-#: build/4.2.0/index.js:1
-#: build/4.2.0/index.js:15
-msgid "Staging"
-msgstr ""
-
-#: build/4.2.0/index.js:1
-msgid "Help with WordPress"
-msgstr ""
-
-#: build/4.2.0/index.js:1
-msgid "Admin"
-msgstr ""
-
-#: build/4.2.0/index.js:1
-msgid "Secret page to manage admin features and settings."
-msgstr ""
-
-#: build/4.2.0/index.js:1
-msgid "Help"
-msgstr ""
-
-#: build/4.2.0/index.js:1
-msgid "We are available 24/7 to help answer questions and solve your problems."
-msgstr ""
-
-#: build/4.2.0/index.js:1
-msgid "Hire our experts"
-msgstr ""
-
-#: build/4.2.0/index.js:1
-msgid "Get in touch with us, and we’ll help you build the exact store you’re dreaming of."
-msgstr ""
-
-#: build/4.2.0/index.js:1
-msgid "Get Help & Resources"
-msgstr ""
-
-#: build/4.2.0/index.js:1
-msgid "Documentation and tutorials to help you get the most out of your solution."
-msgstr ""
-
-#: build/4.2.0/index.js:1
-msgid "Pro Design Live"
-msgstr ""
-
-#: build/4.2.0/index.js:1
-msgid "We will help you build and grow your website and improve your skills in WordPress."
-msgstr ""
-
-#: build/4.2.0/index.js:1
-msgid "Get Info"
-msgstr ""
-
-#: build/4.2.0/index.js:1
-msgid "Quick links"
-msgstr ""
-
-#: build/4.2.0/index.js:1
-msgid "Manage hosting"
-msgstr ""
-
-#: build/4.2.0/index.js:1
-msgid "Write a blog post"
-msgstr ""
-
-#: build/4.2.0/index.js:1
-msgid "Create a sale promotion"
-msgstr ""
-
-#: build/4.2.0/index.js:1
-msgid "Refer a friend to get $75"
-msgstr ""
-
-#: build/4.2.0/index.js:1
-msgid "Unlock exclusive benefits with our referral program!"
-msgstr ""
-
-#: build/4.2.0/index.js:1
-msgid "Start now"
-msgstr ""
-
-#: build/4.2.0/index.js:1
-msgid "Explore your Solution"
-msgstr ""
-
-#: build/4.2.0/index.js:1
-msgid "Discover all the features to grow your store, boost sales and loyalize your customers."
-msgstr ""
-
-#: build/4.2.0/index.js:1
-msgid "Welcome to Bluehost"
-msgstr ""
-
-#: build/4.2.0/index.js:1
-msgid "We’re very excited to get started with you!"
-msgstr ""
-
-#: build/4.2.0/index.js:1
-msgid "Explore our featured collection of tools and services."
-msgstr ""
-
-#: build/4.2.0/index.js:1
-msgid "Oops, there was an error loading the marketplace, please try again later."
-msgstr ""
-
-#: build/4.2.0/index.js:1
-msgid "Sorry, no marketplace items. Please, try again later."
-msgstr ""
-
-#: build/4.2.0/index.js:1
-#: build/4.2.0/index.js:15
-msgid "Load More"
-msgstr ""
-
-#: build/4.2.0/index.js:1
-msgid "Oops! Something Went Wrong"
-msgstr ""
-
-#: build/4.2.0/index.js:1
-msgid "An error occurred while loading the content. Please try again later."
-msgstr ""
-
-#: build/4.2.0/index.js:1
-msgid "Products"
-msgstr ""
-
-#: build/4.2.0/index.js:1
-msgid "Showcase physical and digital goods, product variations, and custom configurations."
-msgstr ""
-
-#: build/4.2.0/index.js:1
-#: build/4.2.0/index.js:2
-msgid "View all"
-msgstr ""
-
-#: build/4.2.0/index.js:1
-#: build/4.2.0/index.js:2
-msgid "Add New"
-msgstr ""
-
-#: build/4.2.0/index.js:1
-msgid "Blog Posts"
-msgstr ""
-
-#: build/4.2.0/index.js:1
-msgid "Add a new blog post or edit your existing posts."
-msgstr ""
-
-#: build/4.2.0/index.js:1
-msgid "Bookings & Appointments"
-msgstr ""
-
-#: build/4.2.0/index.js:1
-msgid "Add your list of services, setup a booking calendar, and edit your bookings form."
-msgstr ""
-
-#: build/4.2.0/index.js:1
-msgid "Your site is not live."
-msgstr ""
-
-#: build/4.2.0/index.js:1
-msgid "Your site is live."
-msgstr ""
-
-#. translators: %1$s: opening anchor tag, %2$s: closing anchor tag
-#: build/4.2.0/index.js:2
-msgid "Visitors to your site will see your \"Coming Soon\" page and not your actual site. Visit %1$s\"Settings\"%2$s to set your site live."
-msgstr ""
-
-#: build/4.2.0/index.js:2
-msgid "Visitors to your site will see all your publicly published pages."
-msgstr ""
-
-#: build/4.2.0/index.js:2
-msgid "Site Pages"
-msgstr ""
-
-#: build/4.2.0/index.js:2
-msgid "Edit your homepage and other existing pages or add new pages to your site."
-msgstr ""
-
-#: build/4.2.0/index.js:2
-msgid "No cache enabled."
-msgstr ""
-
-#: build/4.2.0/index.js:2
-msgid "Every page load is fresh."
-msgstr ""
-
-#: build/4.2.0/index.js:2
-msgid "Disabled"
-msgstr ""
-
-#: build/4.2.0/index.js:2
-msgid "Not recommended."
-msgstr ""
-
-#: build/4.2.0/index.js:2
-msgid "Cache static assets like images and the appearance of your site for 1 hour."
-msgstr ""
-
-#: build/4.2.0/index.js:2
-msgid "Assets Only"
-msgstr ""
-
-#: build/4.2.0/index.js:2
-msgid "Cache enabled for assets only."
-msgstr ""
-
-#: build/4.2.0/index.js:2
-msgid "Recommended for ecommerce and sites that update frequently or display info in real-time."
-msgstr ""
-
-#: build/4.2.0/index.js:2
-msgid "Cache static assets for 24 hours and web pages for 2 hours."
-msgstr ""
-
-#: build/4.2.0/index.js:2
-msgid "Assets & Web Pages"
-msgstr ""
-
-#: build/4.2.0/index.js:2
-msgid "Cache enabled for assets and pages."
-msgstr ""
-
-#: build/4.2.0/index.js:2
-msgid "Recommended for blogs, educational sites, and sites that update at least weekly."
-msgstr ""
-
-#: build/4.2.0/index.js:2
-msgid "Cache static assets for 1 week and web pages for 8 hours."
-msgstr ""
-
-#: build/4.2.0/index.js:2
-msgid "Assets & Web Pages - Extended"
-msgstr ""
-
-#: build/4.2.0/index.js:2
-msgid "Cache enabled for assets and pages (extended)."
-msgstr ""
-
-#: build/4.2.0/index.js:2
-msgid "Recommended for sites that update a few times a month or less like porfolios or brochure sites."
-msgstr ""
-
-#: build/4.2.0/index.js:2
-msgid "Boost speed and performance by storing a copy of your website content, files, and images online so the pages of your website load faster for your visitors."
-msgstr ""
-
-#: build/4.2.0/index.js:2
-msgid "Cache setting saved"
-msgstr ""
-
-#: build/4.2.0/index.js:2
-msgid "Cache Level"
-msgstr ""
-
-#: build/4.2.0/index.js:2
-msgid "Clear All Cache Now"
-msgstr ""
-
-#: build/4.2.0/index.js:2
-msgid "We automatically clear your cache as you work (creating content, changing settings, installing plugins and more). But you can manually clear it here to be confident it's fresh."
-msgstr ""
-
-#: build/4.2.0/index.js:2
-msgid "Cache cleared"
-msgstr ""
-
-#: build/4.2.0/index.js:2
-msgid "Clear Cache"
-msgstr ""
-
-#: build/4.2.0/index.js:2
-msgid "Asks the browser to download and cache links on the page ahead of them being clicked on, so that when they are clicked they load almost instantly."
-msgstr ""
-
-#: build/4.2.0/index.js:2
-msgid "Link prefetching setting saved"
-msgstr ""
-
-#: build/4.2.0/index.js:2
-msgid "Link Prefetch"
-msgstr ""
-
-#: build/4.2.0/index.js:2
-msgid "Enable link prefetching on desktop"
-msgstr ""
-
-#: build/4.2.0/index.js:2
-msgid "Activate on desktop"
-msgstr ""
-
-#: build/4.2.0/index.js:2
-msgid "Behavior of the prefetch"
-msgstr ""
-
-#: build/4.2.0/index.js:2
-msgid "Behavior"
-msgstr ""
-
-#: build/4.2.0/index.js:2
-msgid "Prefetch on Mouse Down"
-msgstr ""
-
-#: build/4.2.0/index.js:2
-msgid "Prefetch on Mouse Down: Starts loading the page as soon as you click down, for faster response when you release the click."
-msgstr ""
-
-#: build/4.2.0/index.js:2
-msgid "Prefetch on Mouse Hover (Recommended)"
-msgstr ""
-
-#: build/4.2.0/index.js:2
-msgid "Prefetch on Mouse Hover: Begins loading the page the moment your cursor hovers over a link"
-msgstr ""
-
-#: build/4.2.0/index.js:2
-msgid "Enable link prefetching on mobile"
-msgstr ""
-
-#: build/4.2.0/index.js:2
-msgid "Activate on mobile"
-msgstr ""
-
-#: build/4.2.0/index.js:2
-msgid "Prefetch on Touchstart (Recommended)"
-msgstr ""
-
-#: build/4.2.0/index.js:2
-msgid "Prefetch on Touchstart: Instantly starts loading the page as soon as you tap the screen, ensuring a quicker response when you lift your finger."
-msgstr ""
-
-#: build/4.2.0/index.js:2
-msgid "Prefetch Above the Fold"
-msgstr ""
-
-#: build/4.2.0/index.js:2
-msgid "Prefetch Above the Fold: Loads links in your current view instantly, ensuring they're ready when you need them."
-msgstr ""
-
-#: build/4.2.0/index.js:2
-msgid "Exclude Keywords: A comma separated list of words or strings that will exclude a link from being prefetched. For example, excluding \"app\" will prevent https://example.com/apple from being prefetched."
-msgstr ""
-
-#: build/4.2.0/index.js:2
-msgid "Exclude keywords"
-msgstr ""
-
-#: build/4.2.0/index.js:2
-msgid "Advanced settings"
-msgstr ""
-
-#: build/4.2.0/index.js:2
-msgid "Additional speed and scalability features powered by Jetpack Boost to make your site as fast as it can be."
-msgstr ""
-
-#: build/4.2.0/index.js:2
-msgid "Optimize Critical CSS Loading (manual)"
-msgstr ""
-
-#: build/4.2.0/index.js:2
-msgid "Move important styling information to the start of the page, which helps pages display your content sooner, so your users don’t have to wait for the entire page to load."
-msgstr ""
-
-#: build/4.2.0/index.js:2
-msgid "Optimize Critical CSS Loading (UPGRADED)"
-msgstr ""
-
-#: build/4.2.0/index.js:2
-msgid "Generate Critical CSS Automatically"
-msgstr ""
-
-#. translators: %1$s is a line break (<br>), %2$s is the opening <strong> tag, %3$s is the closing </strong> tag.
-#: build/4.2.0/index.js:5
-msgid "Move important styling information to the start of the page, which helps pages display your content sooner, so your users don’t have to wait for the entire page to load.%1$s %2$sBoost will automatically generate your Critical CSS%3$s whenever you make changes to the HTML or CSS structure of your site."
-msgstr ""
-
-#: build/4.2.0/index.js:5
-msgid "Defer Non-Essential JavaScript"
-msgstr ""
-
-#: build/4.2.0/index.js:5
-msgid "Run non-essential JavaScript after the page has loaded so that styles and images can load more quickly."
-msgstr ""
-
-#: build/4.2.0/index.js:5
-msgid "Concatenate JS"
-msgstr ""
-
-#: build/4.2.0/index.js:5
-msgid "Scripts are grouped by their original placement, concatenated and minified to reduce site loading time and reduce the number of requests."
-msgstr ""
-
-#: build/4.2.0/index.js:5
-msgid "Exclude JS Strings"
-msgstr ""
-
-#: build/4.2.0/index.js:5
-msgid "Concatenate CSS"
-msgstr ""
-
-#: build/4.2.0/index.js:5
-msgid "Styles are grouped by their original placement, concatenated and minified to reduce site loading time and reduce the number of requests."
-msgstr ""
-
-#: build/4.2.0/index.js:5
-msgid "Exclude CSS Strings"
-msgstr ""
-
-#: build/4.2.0/index.js:5
-msgid "Show more"
-msgstr ""
-
-#: build/4.2.0/index.js:5
-msgid "Show less"
-msgstr ""
-
-#: build/4.2.0/index.js:5
-msgid "Discover More"
-msgstr ""
-
-#: build/4.2.0/index.js:5
-msgid "Install Jetpack Boost to unlock"
-msgstr ""
-
-#: build/4.2.0/index.js:5
-msgid "Installing Jetpack Boost…"
-msgstr ""
-
-#: build/4.2.0/index.js:5
-msgid "Jetpack Boost is now active"
-msgstr ""
-
-#: build/4.2.0/index.js:5
-msgid "Activation failed"
-msgstr ""
-
-#. translators: %1$s is the opening <a> tag, %2$s is the closing </a> tag.
-#: build/4.2.0/index.js:7
-msgid "Discover more %1$shere%2$s"
-msgstr ""
-
-#: build/4.2.0/index.js:7
-msgid "Option saved correctly"
-msgstr ""
-
-#: build/4.2.0/index.js:7
-msgid "Error saving option"
-msgstr ""
-
-#: build/4.2.0/index.js:7
-msgid "Image Optimization"
-msgstr ""
-
-#: build/4.2.0/index.js:7
-msgid "We automatically optimize your uploaded images to WebP format for faster performance and reduced file sizes. You can also choose to delete the original images to save storage space."
-msgstr ""
-
-#: build/4.2.0/index.js:7
-msgid "Enable Image Optimization"
-msgstr ""
-
-#: build/4.2.0/index.js:7
-msgid "Enable or disable image optimization globally."
-msgstr ""
-
-#: build/4.2.0/index.js:7
-msgid "Automatically Optimize Uploaded Images"
-msgstr ""
-
-#: build/4.2.0/index.js:7
-msgid "When enabled, all your new image uploads will be automatically optimized to WebP format, ensuring faster page loading and reduced file sizes."
-msgstr ""
-
-#: build/4.2.0/index.js:7
-msgid "Auto Delete Original Image"
-msgstr ""
-
-#: build/4.2.0/index.js:7
-msgid "When enabled, the original uploaded image is deleted and replaced with the optimized version, helping to save storage space. If disabled, the optimized image is saved as a separate file, retaining the original."
-msgstr ""
-
-#: build/4.2.0/index.js:7
-msgid "No settings available."
-msgstr ""
-
-#: build/4.2.0/index.js:7
-#: build/4.2.0/index.js:13
-#: build/4.2.0/index.js:15
-msgid "Oops! Something went wrong. Please try again."
-msgstr ""
-
-#: build/4.2.0/index.js:7
-msgid "Loading settings…"
-msgstr ""
-
-#: build/4.2.0/index.js:7
-msgid "Settings updated successfully"
-msgstr ""
-
-#: build/4.2.0/index.js:7
-msgid "Your image optimization settings have been saved."
-msgstr ""
-
-#: build/4.2.0/index.js:7
-msgid "Enable Lazy Loading"
-msgstr ""
-
-#: build/4.2.0/index.js:7
-msgid "Lazy loading defers the loading of images until they are visible on the screen, improving page load speed and performance."
-msgstr ""
-
-#: build/4.2.0/index.js:7
-msgid "Lazy loading has been updated."
-msgstr ""
-
-#: build/4.2.0/index.js:7
-msgid "Oops! There was an error updating the lazy loading settings."
-msgstr ""
-
-#: build/4.2.0/index.js:7
-msgid "Enable Bulk Optimization of Images"
-msgstr ""
-
-#: build/4.2.0/index.js:7
-msgid "When enabled, allows bulk optimization of images in the media library."
-msgstr ""
-
-#: build/4.2.0/index.js:7
-msgid "Go to Media Library"
-msgstr ""
-
-#: build/4.2.0/index.js:7
-msgid "Error Updating Settings"
-msgstr ""
-
-#: build/4.2.0/index.js:7
-msgid "Prefer Optimized Image When Exists"
-msgstr ""
-
-#: build/4.2.0/index.js:7
-msgid "When enabled, optimized images will be served in place of original images when they exist, improving performance."
-msgstr ""
-
-#: build/4.2.0/index.js:7
-msgid "Something went wrong while updating the settings. Please try again."
-msgstr ""
-
-#: build/4.2.0/index.js:7
-msgid "This is where you can manage cache settings for your website."
-msgstr ""
-
-#: build/4.2.0/index.js:7
-msgid "Enabled All auto-updates"
-msgstr ""
-
-#: build/4.2.0/index.js:7
-msgid "Disabled All auto-updates"
-msgstr ""
-
-#: build/4.2.0/index.js:7
-msgid "Everything will automatically update."
-msgstr ""
-
-#: build/4.2.0/index.js:7
-msgid "Custom auto-update settings."
-msgstr ""
-
-#: build/4.2.0/index.js:7
-msgid "Automatically keep all up to date"
-msgstr ""
-
-#: build/4.2.0/index.js:7
-msgid "Enabled Core auto-updates"
-msgstr ""
-
-#: build/4.2.0/index.js:7
-msgid "Disabled Core auto-updates"
-msgstr ""
-
-#: build/4.2.0/index.js:7
-msgid "WordPress will automatically update."
-msgstr ""
-
-#: build/4.2.0/index.js:7
-msgid "WordPress must be manually updated."
-msgstr ""
-
-#: build/4.2.0/index.js:7
-msgid "WordPress Core"
-msgstr ""
-
-#: build/4.2.0/index.js:7
-msgid "Enabled Plugins auto-update"
-msgstr ""
-
-#: build/4.2.0/index.js:7
-msgid "Disabled Plugins auto-update"
-msgstr ""
-
-#: build/4.2.0/index.js:7
-msgid "All plugins will automatically update."
-msgstr ""
-
-#: build/4.2.0/index.js:7
-msgid "Each plugin must be manually updated."
-msgstr ""
-
-#: build/4.2.0/index.js:7
-msgid "Plugins"
-msgstr ""
-
-#: build/4.2.0/index.js:7
-msgid "Enabled Themes auto-update"
-msgstr ""
-
-#: build/4.2.0/index.js:7
-msgid "Disabled Themes auto-update"
-msgstr ""
-
-#: build/4.2.0/index.js:7
-msgid "All themes will automatically update."
-msgstr ""
-
-#: build/4.2.0/index.js:7
-msgid "Each theme must be manually updated."
-msgstr ""
-
-#: build/4.2.0/index.js:7
-msgid "Themes"
-msgstr ""
-
-#: build/4.2.0/index.js:7
-msgid "Automatic Updates"
-msgstr ""
-
-#: build/4.2.0/index.js:7
-msgid "Keeping automatic updates on ensures timely security fixes and the latest features."
-msgstr ""
-
-#: build/4.2.0/index.js:7
-msgid "Coming soon activated"
-msgstr ""
-
-#: build/4.2.0/index.js:7
-msgid "Coming soon deactivated"
-msgstr ""
-
-#: build/4.2.0/index.js:7
-msgid "Coming soon page is active. Site requires login."
-msgstr ""
-
-#: build/4.2.0/index.js:7
-msgid "Coming soon page is not active. Site is live to visitors."
-msgstr ""
-
-#: build/4.2.0/index.js:7
-msgid "Site Status"
-msgstr ""
-
-#: build/4.2.0/index.js:7
-msgid "Turn off your \"Coming Soon\" page when you are ready to launch your website."
-msgstr ""
-
-#: build/4.2.0/index.js:7
-msgid "Turn on your \"Coming Soon\" page when you need to make major changes to your website."
-msgstr ""
-
-#: build/4.2.0/index.js:7
-msgid "Your Bluehost Coming Soon page lets you hide your site from visitors while you make the magic happen."
-msgstr ""
-
-#: build/4.2.0/index.js:7
+#: build/4.4.0/index.js:1
 msgid "Disabled old post comments"
 msgstr ""
 
-#: build/4.2.0/index.js:7
+#: build/4.4.0/index.js:1
 msgid "Enabled old post comments"
 msgstr ""
 
-#: build/4.2.0/index.js:7
+#: build/4.4.0/index.js:1
 msgid "Comments on old posts are disabled."
 msgstr ""
 
-#: build/4.2.0/index.js:7
+#: build/4.4.0/index.js:1
 msgid "Comments are allowed on old posts."
 msgstr ""
 
-#: build/4.2.0/index.js:7
+#: build/4.4.0/index.js:1
 msgid "Disable comments for older posts"
 msgstr ""
 
-#: build/4.2.0/index.js:7
+#: build/4.4.0/index.js:1
 msgid "Comments setting saved"
 msgstr ""
 
 #. translators: %s: number of days. `Comments on posts are disabled after ${closeCommentsDays} days.`
-#: build/4.2.0/index.js:9
+#: build/4.4.0/index.js:3
+#, js-format
 msgid "Comments on posts are disabled after %s day."
 msgid_plural "Comments on posts are disabled after %s days."
 msgstr[0] ""
 msgstr[1] ""
 
 #. translators: %s: number of days. `Close comments after ${closeCommentsDays} days.`
-#: build/4.2.0/index.js:11
+#: build/4.4.0/index.js:5
+#, js-format
 msgid "Close comments after %s day."
 msgid_plural "Close comments after %s days."
 msgstr[0] ""
 msgstr[1] ""
 
-#: build/4.2.0/index.js:11
+#: build/4.4.0/index.js:5
 msgid "Comments setting saved."
 msgstr ""
 
 #. translators: %s: number of comments. `Posts will display ${commentsPerPage} comments at a time.`
-#: build/4.2.0/index.js:13
+#: build/4.4.0/index.js:7
+#, js-format
 msgid "Posts will display %s comment at a time."
 msgid_plural "Posts will display %s comments at a time."
 msgstr[0] ""
 msgstr[1] ""
 
-#: build/4.2.0/index.js:13
+#: build/4.4.0/index.js:7
 msgid "Comments to display per page"
 msgstr ""
 
-#: build/4.2.0/index.js:13
+#: build/4.4.0/index.js:7
 msgid "Comments"
 msgstr ""
 
-#: build/4.2.0/index.js:13
+#: build/4.4.0/index.js:7
 msgid "Comments allow visitors to provide feedback and respond to your posts or pages."
 msgstr ""
 
+#: build/4.4.0/index.js:7
+#: build/4.4.0/index.js:9
+msgid "Oops! Something went wrong. Please try again."
+msgstr ""
+
+#: build/4.4.0/index.js:7
+msgid "There's nothing here!"
+msgstr ""
+
+#: build/4.4.0/index.js:7
+msgid "Store"
+msgstr ""
+
+#: build/4.4.0/index.js:7
+msgid "Products & Services"
+msgstr ""
+
+#: build/4.4.0/index.js:7
+msgid "Sales & Promotions"
+msgstr ""
+
+#: build/4.4.0/index.js:7
+msgid "Sales Channel"
+msgstr ""
+
+#: build/4.4.0/index.js:7
+msgid "Payments"
+msgstr ""
+
+#: build/4.4.0/index.js:7
+msgid "Store Details"
+msgstr ""
+
+#: build/4.4.0/index.js:7
+#: build/4.4.0/index.js:9
+msgid "Marketplace"
+msgstr ""
+
+#: build/4.4.0/index.js:7
+msgid "Help with WordPress"
+msgstr ""
+
+#: build/4.4.0/index.js:7
+#: build/4.4.0/index.js:9
+msgid "Admin"
+msgstr ""
+
+#: build/4.4.0/index.js:7
+msgid "Coming soon activated"
+msgstr ""
+
+#: build/4.4.0/index.js:7
+msgid "Coming soon deactivated"
+msgstr ""
+
+#: build/4.4.0/index.js:7
+msgid "Coming soon page is active. Site requires login."
+msgstr ""
+
+#: build/4.4.0/index.js:7
+msgid "Coming soon page is not active. Site is live to visitors."
+msgstr ""
+
+#: build/4.4.0/index.js:7
+msgid "Site Status"
+msgstr ""
+
+#: build/4.4.0/index.js:7
+msgid "Turn off your \"Coming Soon\" page when you are ready to launch your website."
+msgstr ""
+
+#: build/4.4.0/index.js:7
+msgid "Turn on your \"Coming Soon\" page when you need to make major changes to your website."
+msgstr ""
+
+#: build/4.4.0/index.js:7
+msgid "Your Bluehost Coming Soon page lets you hide your site from visitors while you make the magic happen."
+msgstr ""
+
+#: build/4.4.0/index.js:7
+msgid "Staging Enabled"
+msgstr ""
+
+#: build/4.4.0/index.js:7
+msgid "Staging Disabled"
+msgstr ""
+
+#: build/4.4.0/index.js:7
+msgid "You need to reload the page to manage Staging."
+msgstr ""
+
+#: build/4.4.0/index.js:7
+msgid "Staging will no longer display."
+msgstr ""
+
+#: build/4.4.0/index.js:7
+msgid "The staging feature provides a way to copy a site to test new updates, features or content."
+msgstr ""
+
+#: build/4.4.0/index.js:7
+#: build/4.4.0/index.js:9
+msgid "Sorry, that is not allowed."
+msgstr ""
+
+#: build/4.4.0/index.js:7
+#: build/4.4.0/index.js:9
+msgid "This feature cannot currently be modified."
+msgstr ""
+
+#: build/4.4.0/index.js:7
+msgid "Hire our experts"
+msgstr ""
+
+#: build/4.4.0/index.js:7
+msgid "Get in touch with us, and we’ll help you build the exact store you’re dreaming of."
+msgstr ""
+
+#: build/4.4.0/index.js:7
+msgid "Help Center Enabled"
+msgstr ""
+
+#: build/4.4.0/index.js:7
+msgid "Help Center Disabled"
+msgstr ""
+
+#: build/4.4.0/index.js:7
+msgid "Reload the page to access the Help Center."
+msgstr ""
+
+#: build/4.4.0/index.js:7
+msgid "The Help Center will no longer display."
+msgstr ""
+
+#: build/4.4.0/index.js:7
+msgid "The Help Center provides guided, step-by-step assistance as you build your site."
+msgstr ""
+
+#: build/4.4.0/index.js:7
+msgid "Explore Premium Tools"
+msgstr ""
+
+#: build/4.4.0/index.js:7
+msgid "Discover all the features to grow your store, boost sales and loyalize your customers."
+msgstr ""
+
+#: build/4.4.0/index.js:7
+msgid "WonderBlocks Enabled"
+msgstr ""
+
+#: build/4.4.0/index.js:7
+msgid "WonderBlocks Disabled"
+msgstr ""
+
+#: build/4.4.0/index.js:7
+msgid "Create new content to see WonderBlocks in action."
+msgstr ""
+
+#: build/4.4.0/index.js:7
+msgid "WonderBlocks will no longer display."
+msgstr ""
+
+#: build/4.4.0/index.js:7
+msgid "WonderBlocks provides a library of customizable block patterns and page templates."
+msgstr ""
+
+#: build/4.4.0/index.js:7
+msgid "Bluehost WordPress Plugin"
+msgstr ""
+
+#: build/4.4.0/index.js:7
+msgid "Quick links"
+msgstr ""
+
+#: build/4.4.0/index.js:7
+msgid "Manage hosting"
+msgstr ""
+
+#: build/4.4.0/index.js:7
+msgid "Write a blog post"
+msgstr ""
+
+#: build/4.4.0/index.js:7
+msgid "Create a sale promotion"
+msgstr ""
+
+#: build/4.4.0/index.js:7
+msgid "Manage common settings for your website"
+msgstr ""
+
+#: build/4.4.0/index.js:7
+msgid "Features"
+msgstr ""
+
+#: build/4.4.0/index.js:7
+msgid "Customize the available features as you manage your website."
+msgstr ""
+
+#: build/4.4.0/index.js:7
+msgid "Enabled All auto-updates"
+msgstr ""
+
+#: build/4.4.0/index.js:7
+msgid "Disabled All auto-updates"
+msgstr ""
+
+#: build/4.4.0/index.js:7
+msgid "Everything will automatically update."
+msgstr ""
+
+#: build/4.4.0/index.js:7
+msgid "Custom auto-update settings."
+msgstr ""
+
+#: build/4.4.0/index.js:7
+msgid "Automatically keep all up to date"
+msgstr ""
+
+#: build/4.4.0/index.js:7
+msgid "Enabled Core auto-updates"
+msgstr ""
+
+#: build/4.4.0/index.js:7
+msgid "Disabled Core auto-updates"
+msgstr ""
+
+#: build/4.4.0/index.js:7
+msgid "WordPress will automatically update."
+msgstr ""
+
+#: build/4.4.0/index.js:7
+msgid "WordPress must be manually updated."
+msgstr ""
+
+#: build/4.4.0/index.js:7
+msgid "WordPress Core"
+msgstr ""
+
+#: build/4.4.0/index.js:7
+msgid "Enabled Plugins auto-update"
+msgstr ""
+
+#: build/4.4.0/index.js:7
+msgid "Disabled Plugins auto-update"
+msgstr ""
+
+#: build/4.4.0/index.js:7
+msgid "All plugins will automatically update."
+msgstr ""
+
+#: build/4.4.0/index.js:7
+msgid "Each plugin must be manually updated."
+msgstr ""
+
+#: build/4.4.0/index.js:7
+msgid "Plugins"
+msgstr ""
+
+#: build/4.4.0/index.js:7
+msgid "Enabled Themes auto-update"
+msgstr ""
+
+#: build/4.4.0/index.js:7
+msgid "Disabled Themes auto-update"
+msgstr ""
+
+#: build/4.4.0/index.js:7
+msgid "All themes will automatically update."
+msgstr ""
+
+#: build/4.4.0/index.js:7
+msgid "Each theme must be manually updated."
+msgstr ""
+
+#: build/4.4.0/index.js:7
+msgid "Themes"
+msgstr ""
+
+#: build/4.4.0/index.js:7
+msgid "Automatic Updates"
+msgstr ""
+
+#: build/4.4.0/index.js:7
+msgid "Keeping automatic updates on ensures timely security fixes and the latest features."
+msgstr ""
+
 #. translators: %s: number of weeks. `The trash will automatically empty every ${numTrashWeeks} weeks.`
-#: build/4.2.0/index.js:15
+#: build/4.4.0/index.js:9
+#, js-format
 msgid "The trash will automatically empty every %s week."
 msgid_plural "The trash will automatically empty every %s weeks."
 msgstr[0] ""
 msgstr[1] ""
 
-#: build/4.2.0/index.js:15
+#: build/4.4.0/index.js:9
 msgid "Trash setting saved"
 msgstr ""
 
-#: build/4.2.0/index.js:15
+#: build/4.4.0/index.js:9
 msgid "Number of weeks in between emptying trash"
 msgstr ""
 
-#: build/4.2.0/index.js:15
+#: build/4.4.0/index.js:9
 msgid "Content Options"
 msgstr ""
 
-#: build/4.2.0/index.js:15
+#: build/4.4.0/index.js:9
 msgid "Controls for how often to empty the trash."
 msgstr ""
 
-#: build/4.2.0/index.js:15
-msgid "Help Center Enabled"
+#: build/4.4.0/index.js:9
+msgid "Explore our featured collection of tools and services."
 msgstr ""
 
-#: build/4.2.0/index.js:15
-msgid "Help Center Disabled"
+#: build/4.4.0/index.js:9
+msgid "Oops, there was an error loading the marketplace, please try again later."
 msgstr ""
 
-#: build/4.2.0/index.js:15
-msgid "Reload the page to access the Help Center."
+#: build/4.4.0/index.js:9
+msgid "Sorry, no marketplace items. Please, try again later."
 msgstr ""
 
-#: build/4.2.0/index.js:15
-msgid "The Help Center will no longer display."
+#: build/4.4.0/index.js:9
+msgid "Load More"
 msgstr ""
 
-#: build/4.2.0/index.js:15
-msgid "The Help Center provides guided, step-by-step assistance as you build your site."
+#: build/4.4.0/index.js:9
+msgid "Oops! Something Went Wrong"
 msgstr ""
 
-#: build/4.2.0/index.js:15
-msgid "Sorry, that is not allowed."
+#: build/4.4.0/index.js:9
+msgid "An error occurred while loading the content. Please try again later."
 msgstr ""
 
-#: build/4.2.0/index.js:15
-msgid "This feature cannot currently be modified."
+#: build/4.4.0/index.js:9
+msgid "Get Help & Resources"
 msgstr ""
 
-#: build/4.2.0/index.js:15
-msgid "This is where you can manage common settings for your website."
+#: build/4.4.0/index.js:9
+msgid "Get expert help, documentation, and tutorials to make the most of your WordPress site."
 msgstr ""
 
-#: build/4.2.0/index.js:15
-msgid "Features"
+#: build/4.4.0/index.js:9
+msgid "Refer a friend and earn money"
 msgstr ""
 
-#: build/4.2.0/index.js:15
-msgid "Customize the available features as you manage your website."
+#: build/4.4.0/index.js:9
+msgid "Unlock exclusive benefits with our referral program!"
 msgstr ""
 
-#: build/4.2.0/index.js:15
+#: build/4.4.0/index.js:9
+msgid "Start now"
+msgstr ""
+
+#: build/4.4.0/index.js:9
+msgid "Phone"
+msgstr ""
+
+#: build/4.4.0/index.js:9
+msgid "Call Us"
+msgstr ""
+
+#: build/4.4.0/index.js:9
+msgid "Chat"
+msgstr ""
+
+#: build/4.4.0/index.js:9
+msgid "Chat with one of our friendly Customer Care Specialists, as we are waiting to help. Open 24 hours - 7 days."
+msgstr ""
+
+#: build/4.4.0/index.js:9
+msgid "Live Chat"
+msgstr ""
+
+#: build/4.4.0/index.js:9
+msgid "Tweet"
+msgstr ""
+
+#: build/4.4.0/index.js:9
+msgid "Find our team at @bluehost for updates on our products and support from our team."
+msgstr ""
+
+#: build/4.4.0/index.js:9
+msgid "Tweet Us"
+msgstr ""
+
+#: build/4.4.0/index.js:9
+msgid "YouTube"
+msgstr ""
+
+#: build/4.4.0/index.js:9
+msgid "Find tutorials, answers, interviews and guides on our YouTube channel."
+msgstr ""
+
+#: build/4.4.0/index.js:9
+msgid "Watch Now"
+msgstr ""
+
+#: build/4.4.0/index.js:9
+msgid "Knowledge Base"
+msgstr ""
+
+#: build/4.4.0/index.js:9
+msgid "Articles, guides, how-tos, instructions, and answers to our client's most frequently asked questions."
+msgstr ""
+
+#: build/4.4.0/index.js:9
+msgid "Visit Knowledge Base"
+msgstr ""
+
+#: build/4.4.0/index.js:9
+msgid "Resources"
+msgstr ""
+
+#: build/4.4.0/index.js:9
+msgid "Boost your online knowledge and get ahead of the competition."
+msgstr ""
+
+#: build/4.4.0/index.js:9
+msgid "Explore Resources"
+msgstr ""
+
+#: build/4.4.0/index.js:9
+msgid "Events and Webinars"
+msgstr ""
+
+#: build/4.4.0/index.js:9
+msgid "Team Bluehost organizes multiple webinars and events throughout the year. We are also sponsors and speak at most WordCamps across the world. Join us at our next event!"
+msgstr ""
+
+#: build/4.4.0/index.js:9
+msgid "More Info"
+msgstr ""
+
+#: build/4.4.0/index.js:9
+msgid "Bluehost Website"
+msgstr ""
+
+#: build/4.4.0/index.js:9
+msgid "Not finding what you need? Visit our website for more information about our products and services."
+msgstr ""
+
+#: build/4.4.0/index.js:9
+msgid "Go to Bluehost"
+msgstr ""
+
+#: build/4.4.0/index.js:9
+msgid "Help"
+msgstr ""
+
+#: build/4.4.0/index.js:9
+msgid "We are available 24/7 to help answer questions and solve your problems."
+msgstr ""
+
+#: build/4.4.0/index.js:9
+msgid "Secret page to manage admin features and settings."
+msgstr ""
+
+#: build/4.4.0/index.js:9
 msgid "Performance Enabled"
 msgstr ""
 
-#: build/4.2.0/index.js:15
+#: build/4.4.0/index.js:9
 msgid "Performance Disabled"
 msgstr ""
 
-#: build/4.2.0/index.js:15
+#: build/4.4.0/index.js:9
 msgid "You need to reload the page to manage Performance."
 msgstr ""
 
-#: build/4.2.0/index.js:15
+#: build/4.4.0/index.js:9
 msgid "Performance will no longer display."
 msgstr ""
 
-#: build/4.2.0/index.js:15
+#: build/4.4.0/index.js:9
 msgid "The performance feature provides improvements to loads faster for visitors including cache settings."
 msgstr ""
 
-#: build/4.2.0/index.js:15
-msgid "Staging Enabled"
+#: build/4.4.0/index.js:9
+msgid "Pro Design Live"
 msgstr ""
 
-#: build/4.2.0/index.js:15
-msgid "Staging Disabled"
+#: build/4.4.0/index.js:9
+msgid "We will help you build and grow your website and improve your skills in WordPress."
 msgstr ""
 
-#: build/4.2.0/index.js:15
-msgid "You need to reload the page to manage Staging."
+#: build/4.4.0/index.js:9
+msgid "Get Info"
 msgstr ""
 
-#: build/4.2.0/index.js:15
-msgid "Staging will no longer display."
+#: build/4.4.0/index.js:9
+msgid "Welcome to Bluehost"
 msgstr ""
 
-#: build/4.2.0/index.js:15
-msgid "The staging feature provides a way to copy a site to test new updates, features or content."
+#: build/4.4.0/index.js:9
+msgid "We're very excited to get started with you!"
 msgstr ""
 
-#: build/4.2.0/index.js:15
-msgid "WonderBlocks Enabled"
+#: build/4.4.0/index.js:9
+msgid "Oh No, An Error!"
 msgstr ""
 
-#: build/4.2.0/index.js:15
-msgid "WonderBlocks Disabled"
+#: build/4.4.0/index.js:9
+msgid "You found an error, please refresh the page and try again!"
 msgstr ""
 
-#: build/4.2.0/index.js:15
-msgid "Create new content to see WonderBlocks in action."
+#: build/4.4.0/index.js:9
+msgid "If the error persists, please contact support."
 msgstr ""
 
-#: build/4.2.0/index.js:15
-msgid "WonderBlocks will no longer display."
-msgstr ""
-
-#: build/4.2.0/index.js:15
-msgid "WonderBlocks provides a library of customizable block patterns and page templates."
-msgstr ""
-
-#: build/4.2.0/index.js:15
-msgid "Solution"
-msgstr ""
-
-#: build/4.2.0/index.js:15
-msgid "Explore the plugins and tools available with your solution."
-msgstr ""
-
-#: build/4.2.0/index.js:15
-msgid "Oops, there was an error loading your plugins and tools, please try again later."
-msgstr ""
-
-#: build/4.2.0/index.js:15
-msgid "Sorry, no current plugins and tools. Please, try again later."
-msgstr ""
-
-#: build/4.2.0/index.js:15
-msgid "Add a New Plugin"
-msgstr ""
-
-#: build/4.2.0/index.js:15
-msgid "Cancel"
-msgstr ""
-
-#: build/4.2.0/index.js:15
-msgid "Clone"
-msgstr ""
-
-#: build/4.2.0/index.js:15
-msgid "Confirm Clone Action"
-msgstr ""
-
-#: build/4.2.0/index.js:15
-msgid "This will overwrite anything in staging and update it to an exact clone of the current production site. Are you sure you want to proceed?"
-msgstr ""
-
-#: build/4.2.0/index.js:15
-msgid "Cloned to Staging"
-msgstr ""
-
-#: build/4.2.0/index.js:15
-msgid "Cloning production to staging, this should take about a minute."
-msgstr ""
-
-#: build/4.2.0/index.js:15
-msgid "Clone to staging"
-msgstr ""
-
-#: build/4.2.0/index.js:15
-msgid "Created"
-msgstr ""
-
-#: build/4.2.0/index.js:15
-msgid "Staging Created"
-msgstr ""
-
-#: build/4.2.0/index.js:15
-msgid "Creating a staging site, this should take about a minute."
-msgstr ""
-
-#: build/4.2.0/index.js:15
-msgid "Create staging site"
-msgstr ""
-
-#: build/4.2.0/index.js:15
-msgid "Currently editing"
-msgstr ""
-
-#: build/4.2.0/index.js:15
-msgid "Delete"
-msgstr ""
-
-#: build/4.2.0/index.js:15
-msgid "Confirm Delete"
-msgstr ""
-
-#: build/4.2.0/index.js:15
-msgid "This will permanently delete staging site. Are you sure you want to proceed? You can recreate another staging site at any time, but any specific changes you've made to this staging site will be lost."
-msgstr ""
-
-#: build/4.2.0/index.js:15
-msgid "Deleted Staging"
-msgstr ""
-
-#: build/4.2.0/index.js:15
-msgid "Deleting the staging site, this should take about a minute."
-msgstr ""
-
-#: build/4.2.0/index.js:15
-msgid "Delete Staging Site"
-msgstr ""
-
-#: build/4.2.0/index.js:15
-msgid "Deploy"
-msgstr ""
-
-#: build/4.2.0/index.js:15
-msgid "Deploy all changes"
-msgstr ""
-
-#: build/4.2.0/index.js:15
-msgid "Confirm Deployment"
-msgstr ""
-
-#: build/4.2.0/index.js:15
-msgid "Deploy database only"
-msgstr ""
-
-#: build/4.2.0/index.js:15
-msgid "This will deploy staging to production and overwrite current production site. Are you sure you want to proceed?"
-msgstr ""
-
-#: build/4.2.0/index.js:15
-msgid "Deploy files only"
-msgstr ""
-
-#: build/4.2.0/index.js:15
-msgid "Deployed"
-msgstr ""
-
-#: build/4.2.0/index.js:15
-msgid "Deploying from staging to production, this should take about a minute."
-msgstr ""
-
-#: build/4.2.0/index.js:15
-msgid "Deploy Site"
-msgstr ""
-
-#: build/4.2.0/index.js:15
-msgid "Error"
-msgstr ""
-
-#: build/4.2.0/index.js:15
-msgid "You don't have a staging site yet."
-msgstr ""
-
-#: build/4.2.0/index.js:15
-msgid "Not currently editing"
-msgstr ""
-
-#: build/4.2.0/index.js:15
-msgid "Proceed"
-msgstr ""
-
-#: build/4.2.0/index.js:15
-msgid "Production Site"
-msgstr ""
-
-#: build/4.2.0/index.js:15
-msgid "Staging Site"
-msgstr ""
-
-#: build/4.2.0/index.js:15
-msgid "A staging site is a duplicate of your live site, offering a secure environment to experiment, test updates, and deploy when ready."
-msgstr ""
-
-#: build/4.2.0/index.js:15
-msgid "Switch"
-msgstr ""
-
-#: build/4.2.0/index.js:15
-msgid "Switching"
-msgstr ""
-
-#: build/4.2.0/index.js:15
-msgid "Switch to Production"
-msgstr ""
-
-#: build/4.2.0/index.js:15
-msgid "This will navigate you to the production environment"
-msgstr ""
-
-#: build/4.2.0/index.js:15
-msgid "Loading the production environment now."
-msgstr ""
-
-#: build/4.2.0/index.js:15
-msgid "Switching to the production environment, this should take about a minute."
-msgstr ""
-
-#: build/4.2.0/index.js:15
-msgid "Switch to Staging"
-msgstr ""
-
-#: build/4.2.0/index.js:15
-msgid "This will navigate you to the staging environment"
-msgstr ""
-
-#: build/4.2.0/index.js:15
-msgid "Loading the staging environment now."
-msgstr ""
-
-#: build/4.2.0/index.js:15
-msgid "Switching to the staging environment, this should take about a minute."
-msgstr ""
-
-#: build/4.2.0/index.js:15
-msgid "An unknown error has occurred."
-msgstr ""
-
-#: build/4.2.0/index.js:15
-msgid "Working…"
+#: build/4.4.0/index.js:9
+msgid "Error code:"
 msgstr ""

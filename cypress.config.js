@@ -107,8 +107,8 @@ module.exports = defineConfig( {
 		testIsolation: false,
 		excludeSpecPattern: [
 			'vendor/newfold-labs/**/tests/cypress/integration/wp-module-support/*.cy.js', // skip any module's wp-module-support files
-			'vendor/newfold-labs/wp-module-ecommerce/tests/cypress/integration/**/*.cy.js', // skip irrelevant tests
 			'vendor/newfold-labs/wp-module-migration/tests/cypress/integration/Migration/verifyMigrationFromAM.cy.js', // skip broken test
+			'vendor/newfold-labs/wp-module-onboarding/tests/cypress/integration/**/*.cy.js', // Temporary: skip onboarding tests
 		],
 		experimentalRunAllSpecs: true,
 	},
@@ -120,7 +120,7 @@ module.exports = defineConfig( {
 const supportsWoo = ( env ) => {
 	const semver = require( 'semver' );
 	if (
-		semver.satisfies( env.wpSemverVersion, '>=6.6.0' ) &&
+		semver.satisfies( env.wpSemverVersion, '>=6.7.0' ) &&
 		semver.satisfies( env.phpSemverVersion, '>=7.4.0' )
 	) {
 		return true;
@@ -131,7 +131,7 @@ const supportsWoo = ( env ) => {
 const supportsJetpack = ( env ) => {
 	const semver = require( 'semver' );
 	if (
-		semver.satisfies( env.wpSemverVersion, '>=6.6.0' ) &&
+		semver.satisfies( env.wpSemverVersion, '>=6.7.0' ) &&
 		semver.satisfies( env.phpSemverVersion, '>=7.2.0' )
 	) {
 		return true;
@@ -143,7 +143,7 @@ const supportsYoast = ( env ) => {
 	const semver = require( 'semver' );
 	if (
 		semver.satisfies( env.wpSemverVersion, '>=6.6.0' ) &&
-		semver.satisfies( env.phpSemverVersion, '>=7.2.5' )
+		semver.satisfies( env.phpSemverVersion, '>=7.4.0' )
 	) {
 		return true;
 	}

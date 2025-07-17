@@ -35,8 +35,8 @@ msgstr "El plugin de WordPress que integra un sitio WordPress con el panel de co
 
 #. Author of the plugin
 #: bluehost-wordpress-plugin.php
-#: inc/Admin.php:139
-#: inc/Admin.php:140
+#: inc/Admin.php:134
+#: inc/Admin.php:135
 msgid "Bluehost"
 msgstr "Bluehost"
 
@@ -44,121 +44,104 @@ msgstr "Bluehost"
 msgid "Please install the Bluehost Plugin dependencies."
 msgstr "Por favor, instala las dependencias del plugin Bluehost."
 
-#: bootstrap.php:97
+#: bootstrap.php:101
 msgid "Coming Soon!"
 msgstr "¡Próximamente!"
 
-#: bootstrap.php:98
+#: bootstrap.php:102
 msgid "A New WordPress Site"
 msgstr "Un nuevo sitio WordPress"
 
-#: bootstrap.php:101
+#: bootstrap.php:105
 msgid "How to Build a Website: A Practical Guide to WordPress on Bluehost"
 msgstr "Cómo construir un sitio web: una guía práctica de WordPress en Bluehost"
 
-#: bootstrap.php:104
+#: bootstrap.php:108
 msgid "How to Migrate a Website to Bluehost?"
 msgstr "¿Cómo migrar un sitio web a Bluehost?"
 
-#: bootstrap.php:107
+#: bootstrap.php:111
 msgid "Why choose Bluehost for your WordPress site?"
 msgstr "¿Por qué elegir Bluehost para tu sitio WordPress?"
 
 #. translators: %1$s is replaced with opening link tag taking you to bluehost.com/wordpress, %2$s is replaced with closing link tag, %3$s is replaced with opening link tag taking you to login page, %4$s is replaced with closing link tag, %5$s is replaced with opening link tag taking you to my.bluehost.com, %6$s is replaced with closing link tag
-#: bootstrap.php:111
+#: bootstrap.php:115
+#, php-format
 msgid "A %1$sBluehost%2$s powered website. Is this your website? Log in to %3$sWordPress%4$s or %5$sBluehost%6$s."
 msgstr "Un sitio web con tecnología %1$sBluehost%2$s. ¿Es este tu sitio web? Inicia sesión en %3$sWordPress%4$s o %5$sBluehost%6$s."
 
 #. translators: %s: Blog name
-#: bootstrap.php:121
+#: bootstrap.php:125
+#, php-format
 msgid "%s &mdash; Coming Soon"
 msgstr "%s &mdash; Próximamente"
 
-#: bootstrap.php:124
+#: bootstrap.php:128
 msgid "Coming Soon Active"
 msgstr "\"Próximamente\" activo"
 
 #. translators: %1$s is replaced with the opening link tag to preview the page, and %2$s is replaced with the closing link tag, %3$s is the opening link tag, %4$s is the closing link tag.
-#: bootstrap.php:127
+#: bootstrap.php:131
+#, php-format
 msgid "Your site is currently displaying a %1$scoming soon page%2$s. Once you are ready, %3$slaunch your site%4$s."
 msgstr "En tu sitio actualmente se muestra la página %1$sPróximamente%2$s. Una vez que estés listo, %3$slanza tu sitio%4$s."
 
-#: bootstrap.php:128
+#: bootstrap.php:132
 msgid "Preview the coming soon landing page"
 msgstr "Vista previa de la página de destino \"Próximamente\""
 
 #: inc/Admin.php:73
-#: inc/Admin.php:283
-#: build/4.2.0/index.js:1
+#: inc/Admin.php:277
+#: build/4.4.0/index.js:7
 msgid "Home"
 msgstr "Inicio"
 
-#: build/4.2.0/index.js:1
-msgid "Pages & Posts"
-msgstr "Páginas y entradas"
-
-#: build/4.2.0/index.js:1
+#: build/4.4.0/index.js:7
 msgid "Store"
 msgstr "Tienda"
 
-#: build/4.2.0/index.js:1
+#: build/4.4.0/index.js:7
+#: build/4.4.0/index.js:9
 msgid "Marketplace"
 msgstr "Marketplace"
 
-#: build/4.2.0/index.js:1
-#: build/4.2.0/index.js:15
-msgid "My Plugins & Tools"
-msgstr "Mis plugins y herramientas"
-
-#: build/4.2.0/index.js:1
-#: build/4.2.0/index.js:7
-msgid "Performance"
-msgstr "Rendimiento"
-
 #: inc/Admin.php:78
-#: inc/Admin.php:284
-#: build/4.2.0/index.js:1
-#: build/4.2.0/index.js:15
+#: inc/Admin.php:278
+#: build/4.4.0/index.js:7
 msgid "Settings"
 msgstr "Ajustes"
 
-#: build/4.2.0/index.js:1
-#: build/4.2.0/index.js:15
-msgid "Staging"
-msgstr "Sitio de pruebas"
-
-#: build/4.2.0/index.js:1
+#: build/4.4.0/index.js:9
 msgid "Help"
 msgstr "Ayuda"
 
-#: inc/Admin.php:180
+#: inc/AppWhenOutdated.php:44
 msgid "Please update to a newer WordPress version."
 msgstr "Por favor, actualiza a una versión más reciente de WordPress."
 
-#: inc/Admin.php:181
+#: inc/AppWhenOutdated.php:41
 msgid "There are new WordPress components which this plugin requires in order to render the interface."
 msgstr "Hay nuevos componentes de WordPress que este plugin requiere para representar la interfaz."
 
-#: inc/Admin.php:182
-msgid "Please update now"
-msgstr "Por favor, actualiza ahora"
-
-#: inc/Admin.php:308
+#: inc/Admin.php:302
 msgid "Thank you for creating with <a href=\"https://wordpress.org/\">WordPress</a> and <a href=\"https://bluehost.com/about\">Bluehost</a>."
 msgstr "Gracias por crear con <a href=\"https://wordpress.org/\">WordPress</a> y <a href=\"https://bluehost.com/about\">Bluehost</a>."
 
 #. translators: 1: plugin name 2: incompatible plugin name
 #: inc/plugin-nfd-compat-check.php:161
+#, php-format
 msgid "\"%1$s\" has self-deactivated. It is incompatible with \"%2$s\"."
 msgstr "\"%1$s\" se ha desactivado. Es incompatible con \"%2$s\"."
 
 #. translators: 1: legacy plugin name 2: plugin name
 #: inc/plugin-nfd-compat-check.php:188
+#, php-format
 msgid "\"%1$s\" has been deactivated. It is incompatible with \"%2$s\"."
 msgstr "\"%1$s\" ha sido desactivado. Es incompatible con \"%2$s\"."
 
 #. translators: 1: plugin name 2: minimum required PHP version, current PHP version
 #: inc/plugin-php-compat-check.php:123
+#, php-format
 msgid "%1$s requires PHP version %2$s or later. You are currently running version %3$s."
 msgstr "%1$s requiere la versión de PHP %2$s o posterior. Actualmente estás ejecutando la versión %3$s."
 
@@ -168,21 +151,23 @@ msgstr "Por favor, ponte en contacto con tu proveedor de alojamiento web para ac
 
 #. translators: 1: plugin name 2: required PHP extension
 #: inc/plugin-php-compat-check.php:139
+#, php-format
 msgid "%1$s requires the %2$s PHP extension."
 msgstr "%1$s requiere la extensión PHP %2$s."
 
 #. translators: 1: plugin name 2: minimum required WordPress version 3: current WordPress version
 #: inc/plugin-php-compat-check.php:155
+#, php-format
 msgid "%1$s requires WordPress version %2$s or later. You are currently running version %3$s."
 msgstr "%1$s requiere la versión de WordPress %2$s o posterior. Actualmente estás ejecutando la versión %3$s."
 
 #. translators: plugin name
 #: inc/plugin-php-compat-check.php:193
+#, php-format
 msgid "The \"%s\" plugin has been deactivated."
 msgstr "El plugin \"%s\" ha sido desactivado."
 
-#: inc/RestApi/CachingController.php:63
-#: inc/RestApi/SettingsController.php:205
+#: inc/RestApi/SettingsController.php:201
 msgid "Sorry, you are not allowed to access this endpoint."
 msgstr "Lo siento, no puedes acceder a este endpoint."
 
@@ -190,6 +175,7 @@ msgstr "Lo siento, no puedes acceder a este endpoint."
 #: inc/updates.php:115
 #: inc/updates.php:143
 #: inc/updates.php:170
+#, php-format
 msgid "Auto-updates enabled on the <a href=\"%s\">Bluehost > Settings</a> page."
 msgstr "Actualizaciones automáticas activadas en la página <a href=\"%s\">Bluehost > Ajustes</a>."
 
@@ -197,293 +183,252 @@ msgstr "Actualizaciones automáticas activadas en la página <a href=\"%s\">Blue
 msgid "Auto-updates enabled"
 msgstr "Actualizaciones automáticas activadas"
 
-#: build/4.2.0/index.js:1
+#: build/4.4.0/index.js:7
 msgid "Bluehost WordPress Plugin"
 msgstr "Plugin de WordPress Bluehost"
 
-#: build/4.2.0/index.js:1
+#: build/4.4.0/index.js:9
 msgid "Oh No, An Error!"
 msgstr "¡Oh no, un error!"
 
-#: build/4.2.0/index.js:1
+#: build/4.4.0/index.js:9
 msgid "You found an error, please refresh the page and try again!"
 msgstr "Has encontrado un error. Por favor, actualiza la página e inténtalo de nuevo."
 
-#: build/4.2.0/index.js:1
+#: build/4.4.0/index.js:9
 msgid "If the error persists, please contact support."
 msgstr "Si el error persiste, ponte en contacto con el servicio de asistencia."
 
-#: build/4.2.0/index.js:1
+#: build/4.4.0/index.js:9
 msgid "Error code:"
 msgstr "Código de error:"
 
-#: build/4.2.0/index.js:1
+#: build/4.4.0/index.js:7
 msgid "There's nothing here!"
 msgstr "¡No hay nada aquí!"
 
-#: build/4.2.0/index.js:1
+#: build/4.4.0/index.js:7
 msgid "Products & Services"
 msgstr "Productos y servicios"
 
-#: build/4.2.0/index.js:1
+#: build/4.4.0/index.js:7
 msgid "Sales & Promotions"
 msgstr "Ventas y promociones"
 
-#: build/4.2.0/index.js:1
+#: build/4.4.0/index.js:7
 msgid "Sales Channel"
 msgstr "Canal de ventas"
 
-#: build/4.2.0/index.js:1
+#: build/4.4.0/index.js:7
 msgid "Payments"
 msgstr "Pagos"
 
-#: build/4.2.0/index.js:1
+#: build/4.4.0/index.js:7
 msgid "Store Details"
 msgstr "Detalles de la tienda"
 
-#: build/4.2.0/index.js:1
+#: build/4.4.0/index.js:7
 msgid "Help with WordPress"
 msgstr "Ayuda con WordPress"
 
-#: build/4.2.0/index.js:1
+#: build/4.4.0/index.js:7
+#: build/4.4.0/index.js:9
 msgid "Admin"
 msgstr "Admin"
 
-#: build/4.2.0/index.js:15
+#: build/4.4.0/index.js:7
 msgid "The staging feature provides a way to copy a site to test new updates, features or content."
 msgstr "La función de sitio de pruebas brinda una forma de copiar un sitio para probar nuevas actualizaciones, características o contenido."
 
-#: build/4.2.0/index.js:15
+#: build/4.4.0/index.js:7
+#: build/4.4.0/index.js:9
 msgid "Sorry, that is not allowed."
 msgstr "Lo siento, eso no está permitido."
 
-#: build/4.2.0/index.js:15
+#: build/4.4.0/index.js:7
+#: build/4.4.0/index.js:9
 msgid "This feature cannot currently be modified."
 msgstr "Esta característica no se puede modificar actualmente."
 
-#: build/4.2.0/index.js:7
-#: build/4.2.0/index.js:13
-#: build/4.2.0/index.js:15
+#: build/4.4.0/index.js:7
+#: build/4.4.0/index.js:9
 msgid "Oops! Something went wrong. Please try again."
 msgstr "¡Ups! Algo salió mal. Por favor, inténtalo de nuevo."
 
-#: build/4.2.0/index.js:1
+#: build/4.4.0/index.js:9
 msgid "Phone"
 msgstr "Teléfono"
 
-#: build/4.2.0/index.js:1
+#: build/4.4.0/index.js:9
 msgid "Call Us"
 msgstr "Llámanos"
 
-#: build/4.2.0/index.js:1
+#: build/4.4.0/index.js:9
 msgid "Chat"
 msgstr "Chat"
 
-#: build/4.2.0/index.js:1
+#: build/4.4.0/index.js:9
 msgid "Chat with one of our friendly Customer Care Specialists, as we are waiting to help. Open 24 hours - 7 days."
 msgstr "Chatea con uno de nuestros simpáticos especialistas en Atención al Cliente, estamos listos para ayudarte. Disponibilidad de 24 horas / 7 días a la semana."
 
-#: build/4.2.0/index.js:1
+#: build/4.4.0/index.js:9
 msgid "Live Chat"
 msgstr "Chat en vivo"
 
-#: build/4.2.0/index.js:1
+#: build/4.4.0/index.js:9
 msgid "Tweet"
 msgstr "Twitter (X)"
 
-#: build/4.2.0/index.js:1
+#: build/4.4.0/index.js:9
 msgid "Find our team at @bluehost for updates on our products and support from our team."
 msgstr "Encuentre a nuestro equipo en @bluehost para obtener actualizaciones sobre nuestros productos y el apoyo de nuestro equipo."
 
-#: build/4.2.0/index.js:1
+#: build/4.4.0/index.js:9
 msgid "Tweet Us"
 msgstr "Envíanos un tweet"
 
-#: build/4.2.0/index.js:1
+#: build/4.4.0/index.js:9
 msgid "YouTube"
 msgstr "YouTube"
 
-#: build/4.2.0/index.js:1
+#: build/4.4.0/index.js:9
 msgid "Find tutorials, answers, interviews and guides on our YouTube channel."
 msgstr "Encuentra tutoriales, respuestas, entrevistas y guías en nuestro canal de YouTube."
 
-#: build/4.2.0/index.js:1
+#: build/4.4.0/index.js:9
 msgid "Watch Now"
 msgstr "Ver ahora"
 
-#: build/4.2.0/index.js:1
+#: build/4.4.0/index.js:9
 msgid "Knowledge Base"
 msgstr "Centro de información"
 
-#: build/4.2.0/index.js:1
+#: build/4.4.0/index.js:9
 msgid "Articles, guides, how-tos, instructions, and answers to our client's most frequently asked questions."
 msgstr "Artículos, guías, instrucciones y respuestas a las preguntas más frecuentes de nuestros clientes. "
 
-#: build/4.2.0/index.js:1
+#: build/4.4.0/index.js:9
 msgid "Visit Knowledge Base"
 msgstr "Acceder"
 
-#: build/4.2.0/index.js:1
+#: build/4.4.0/index.js:9
 msgid "Resources"
 msgstr "Recursos"
 
-#: build/4.2.0/index.js:1
+#: build/4.4.0/index.js:9
 msgid "Boost your online knowledge and get ahead of the competition."
 msgstr "Aumenta tu conocimiento en línea y adelántate a la competencia."
 
-#: build/4.2.0/index.js:1
+#: build/4.4.0/index.js:9
 msgid "Explore Resources"
 msgstr "Explorar recursos"
 
-#: build/4.2.0/index.js:1
+#: build/4.4.0/index.js:9
 msgid "Events and Webinars"
 msgstr "Eventos y seminarios web"
 
-#: build/4.2.0/index.js:1
+#: build/4.4.0/index.js:9
 msgid "Team Bluehost organizes multiple webinars and events throughout the year. We are also sponsors and speak at most WordCamps across the world. Join us at our next event!"
 msgstr "El equipo de Bluehost organiza múltiples seminarios web y eventos durante todo el año. También somos patrocinadores y ponentes en la mayoría de las WordCamps de todo el mundo. ¡Únete a nosotros en nuestro próximo evento!"
 
-#: build/4.2.0/index.js:1
+#: build/4.4.0/index.js:9
 msgid "More Info"
 msgstr "Más información"
 
-#: build/4.2.0/index.js:1
+#: build/4.4.0/index.js:9
 msgid "Bluehost Website"
 msgstr "Sitio web de Bluehost"
 
-#: build/4.2.0/index.js:1
+#: build/4.4.0/index.js:9
 msgid "Not finding what you need? Visit our website for more information about our products and services."
 msgstr "¿No encuentras lo que necesitas? Visita nuestro sitio web para obtener más información sobre nuestros productos y servicios."
 
-#: build/4.2.0/index.js:1
+#: build/4.4.0/index.js:9
 msgid "Go to Bluehost"
 msgstr "Ir a Bluehost"
 
-#: build/4.2.0/index.js:2
-msgid "Site Pages"
-msgstr "Páginas del sitio"
-
-#: build/4.2.0/index.js:2
-msgid "Edit your homepage and other existing pages or add new pages to your site."
-msgstr "Edita tu página de inicio y otras páginas existentes o añade nuevas páginas a tu sitio."
-
-#: build/4.2.0/index.js:1
-#: build/4.2.0/index.js:2
-msgid "View all"
-msgstr "Ver todo"
-
-#: build/4.2.0/index.js:1
-#: build/4.2.0/index.js:2
-msgid "Add New"
-msgstr "Añadir nuevo"
-
-#: build/4.2.0/index.js:7
-msgid "This is where you can manage cache settings for your website."
-msgstr "Aquí es donde puedes administrar los ajustes de caché de tu sitio web."
-
-#: build/4.2.0/index.js:15
+#: build/4.4.0/index.js:7
 msgid "The Help Center provides guided, step-by-step assistance as you build your site."
 msgstr "El Centro de Ayuda proporciona asistencia guiada paso a paso a medida que construyes tu sitio."
 
-#: build/4.2.0/index.js:7
+#: build/4.4.0/index.js:7
 msgid "Site Status"
 msgstr "Estado del sitio"
 
 #: inc/widgets/views/site-preview.php:147
-#: build/4.2.0/index.js:7
+#: build/4.4.0/index.js:7
 msgid "Not Live"
 msgstr "No visible"
 
 #: inc/widgets/views/site-preview.php:148
-#: build/4.2.0/index.js:7
+#: build/4.4.0/index.js:7
 msgid "Live"
 msgstr "Visible"
 
-#: build/4.2.0/index.js:7
+#: build/4.4.0/index.js:7
 msgid "Your Bluehost Coming Soon page lets you hide your site from visitors while you make the magic happen."
 msgstr "Tu página “Próximamente” de Bluehost permite ocultar tu sitio a los visitantes mientras haces que la magia ocurra."
 
 #: inc/widgets/views/site-preview.php:161
-#: build/4.2.0/index.js:7
+#: build/4.4.0/index.js:7
 msgid "Your website is currently displaying a \"Coming Soon\" page."
 msgstr "Ahora mismo, en tu sitio web se muestra la página \\\"Próximamente\\\"."
 
 #. translators: %s: number of weeks. `The trash will automatically empty every ${numTrashWeeks} weeks.`
-#: build/4.2.0/index.js:15
+#: build/4.4.0/index.js:9
+#, js-format
 msgid "The trash will automatically empty every %s week."
 msgid_plural "The trash will automatically empty every %s weeks."
 msgstr[0] "La papelera se vacía automáticamente cada %s semana."
 msgstr[1] "La papelera se vacía automáticamente cada %s semanas."
 
-#: build/4.2.0/index.js:15
+#: build/4.4.0/index.js:7
 msgid "WonderBlocks provides a library of customizable block patterns and page templates."
 msgstr "WonderBlocks proporciona una biblioteca de patrones de bloques personalizables y plantillas de página."
 
-#: inc/widgets/views/account.php:132
-#: build/4.2.0/index.js:1
+#: inc/widgets/views/account.php:138
 msgid "Hosting"
 msgstr "Alojamiento"
 
-#: build/4.2.0/index.js:1
-msgid "Products"
-msgstr "Productos"
-
-#: inc/widgets/views/account.php:178
+#: inc/widgets/views/account.php:188
 msgid "Payment Methods"
 msgstr "Métodos de pago"
 
-#: inc/widgets/views/account.php:109
+#: inc/widgets/views/account.php:113
 msgid "Mail"
 msgstr "Correo"
 
-#: inc/widgets/views/account.php:155
+#: inc/widgets/views/account.php:163
 msgid "Security"
 msgstr "Seguridad"
 
-#: inc/widgets/views/account.php:86
+#: inc/widgets/views/account.php:88
 msgid "Profile"
 msgstr "Perfil"
 
-#: build/4.2.0/index.js:1
+#: build/4.4.0/index.js:9
 msgid "Explore our featured collection of tools and services."
 msgstr "Explora nuestra colección de herramientas y servicios."
 
-#: build/4.2.0/index.js:1
+#: build/4.4.0/index.js:9
 msgid "Oops, there was an error loading the marketplace, please try again later."
 msgstr "Vaya, hubo un error al cargar el marketplace. Por favor, inténtalo de nuevo más tarde."
 
-#: build/4.2.0/index.js:1
+#: build/4.4.0/index.js:9
 msgid "Sorry, no marketplace items. Please, try again later."
 msgstr "Lo siento, no hay artículos en el marketplace. Por favor, inténtalo de nuevo más tarde."
 
-#: build/4.2.0/index.js:1
-#: build/4.2.0/index.js:15
+#: build/4.4.0/index.js:9
 msgid "Load More"
 msgstr "Cargar más"
 
-#: build/4.2.0/index.js:1
+#: build/4.4.0/index.js:9
 msgid "Oops! Something Went Wrong"
 msgstr "¡Vaya! Algo salió mal"
 
-#: build/4.2.0/index.js:1
+#: build/4.4.0/index.js:9
 msgid "An error occurred while loading the content. Please try again later."
 msgstr "Se ha producido un error al cargar el contenido. Por favor, inténtalo de nuevo más tarde."
-
-#: build/4.2.0/index.js:15
-msgid "Solution"
-msgstr "Solución"
-
-#: build/4.2.0/index.js:15
-msgid "Explore the plugins and tools available with your solution."
-msgstr "Explora los plugins y herramientas disponibles con tu solución."
-
-#: build/4.2.0/index.js:15
-msgid "Oops, there was an error loading your plugins and tools, please try again later."
-msgstr "Vaya, hubo un error al cargar tus plugins y herramientas. Por favor, inténtalo de nuevo más tarde."
-
-#: build/4.2.0/index.js:15
-msgid "Sorry, no current plugins and tools. Please, try again later."
-msgstr "Lo siento, no hay plugins y herramientas actuales. Por favor, inténtalo de nuevo más tarde."
 
 #: inc/widgets/Help.php:38
 msgid "Need Some Help?"
@@ -495,23 +440,19 @@ msgstr "¿Necesitas ayuda?"
 msgid "Site Preview"
 msgstr "Vista previa del sitio"
 
-#: inc/widgets/views/account.php:159
+#: inc/widgets/views/account.php:167
 msgid "Quick Access"
 msgstr "Acceso rápido"
 
-#: inc/widgets/views/account.php:198
+#: inc/widgets/views/account.php:210
 msgid "Renewals Center"
 msgstr "Centro de renovaciones"
 
-#: inc/widgets/views/help.php:71
-msgid "From DIY to full-service help."
-msgstr "De “hazlo tú mismo” a un servicio de asistencia completa."
-
-#: inc/widgets/views/help.php:72
+#: inc/widgets/views/help.php:96
 msgid "Call or chat 24/7 for support or let our experts build your site for you."
 msgstr "Llama o chatea con nuestro equipo 24/7 para obtener soporte o deja que nuestros expertos construyan tu sitio."
 
-#: inc/widgets/views/help.php:90
+#: inc/widgets/views/help.php:115
 msgid "Get Help"
 msgstr "Obtener ayuda"
 
@@ -535,946 +476,394 @@ msgstr "Lanzar sitio"
 msgid "Enable Coming Soon"
 msgstr "Activar \"Próximamente\""
 
-#: build/4.2.0/index.js:1
+#: build/4.4.0/index.js:9
 msgid "Secret page to manage admin features and settings."
 msgstr "Página secreta para gestionar ajustes y funciones de administración."
 
-#: build/4.2.0/index.js:1
+#: build/4.4.0/index.js:9
 msgid "We are available 24/7 to help answer questions and solve your problems."
 msgstr "Estamos disponibles las 24 horas del día para responder a tus preguntas y resolver tus problemas."
 
-#: build/4.2.0/index.js:1
-msgid "Showcase physical and digital goods, product variations, and custom configurations."
-msgstr "Muestra artículos físicos y digitales, variaciones de productos y configuraciones personalizadas."
-
-#: build/4.2.0/index.js:1
-msgid "Blog Posts"
-msgstr "Entradas del blog"
-
-#: build/4.2.0/index.js:1
-msgid "Add a new blog post or edit your existing posts."
-msgstr "Añade tu lista de servicios, configura un calendario de reservas y edita el formulario de reservas."
-
-#: build/4.2.0/index.js:1
-msgid "Bookings & Appointments"
-msgstr "Reservas y citas"
-
-#: build/4.2.0/index.js:1
-msgid "Add your list of services, setup a booking calendar, and edit your bookings form."
-msgstr "Añada su lista de servicios, configure un calendario de reservas y edite su formulario de reservas."
-
-#: build/4.2.0/index.js:1
-msgid "Your site is not live."
-msgstr "Tu sitio no está visible."
-
-#: build/4.2.0/index.js:1
-msgid "Your site is live."
-msgstr "Tu sitio está visible."
-
-#. translators: %1$s: opening anchor tag, %2$s: closing anchor tag
-#: build/4.2.0/index.js:2
-msgid "Visitors to your site will see your \"Coming Soon\" page and not your actual site. Visit %1$s\"Settings\"%2$s to set your site live."
-msgstr "Quienes visiten tu sitio verán tu página \\”Próximamente\\” y no tu sitio real. Visita los %1$s\\”Ajustes\\”%2$s para configurar tu sitio visible."
-
-#: build/4.2.0/index.js:2
-msgid "Visitors to your site will see all your publicly published pages."
-msgstr "Quienes visiten tu sitio verán todas tus páginas publicadas."
-
-#: build/4.2.0/index.js:2
-msgid "No cache enabled."
-msgstr "No hay caché activo."
-
-#: build/4.2.0/index.js:2
-msgid "Every page load is fresh."
-msgstr "Se han refrescado todas las páginas."
-
-#: build/4.2.0/index.js:2
-msgid "Disabled"
-msgstr "Desactivado"
-
-#: build/4.2.0/index.js:2
-msgid "Not recommended."
-msgstr "No recomendado."
-
-#: build/4.2.0/index.js:2
-msgid "Cache static assets like images and the appearance of your site for 1 hour."
-msgstr "Almacena en caché recursos estáticos como imágenes y la apariencia de tu sitio por 1 hora."
-
-#: build/4.2.0/index.js:2
-msgid "Assets Only"
-msgstr "Solo recursos"
-
-#: build/4.2.0/index.js:2
-msgid "Cache enabled for assets only."
-msgstr "Caché activo solo para recursos."
-
-#: build/4.2.0/index.js:2
-msgid "Recommended for ecommerce and sites that update frequently or display info in real-time."
-msgstr "Recomendado para comercio electrónico y sitios que se actualizan frecuentemente o muestran información en tiempo real."
-
-#: build/4.2.0/index.js:2
-msgid "Cache static assets for 24 hours and web pages for 2 hours."
-msgstr "Almacena en caché recursos estáticos por 24 horas y páginas web por 2 horas."
-
-#: build/4.2.0/index.js:2
-msgid "Assets & Web Pages"
-msgstr "Recursos y páginas web"
-
-#: build/4.2.0/index.js:2
-msgid "Cache enabled for assets and pages."
-msgstr "Caché activo para recursos y páginas."
-
-#: build/4.2.0/index.js:2
-msgid "Recommended for blogs, educational sites, and sites that update at least weekly."
-msgstr "Recomendado para blogs, sitios educativos y sitios que se actualizan al menos semanalmente."
-
-#: build/4.2.0/index.js:2
-msgid "Cache static assets for 1 week and web pages for 8 hours."
-msgstr "Almacena en caché recursos estáticos por 1 semana y páginas web por 8 horas."
-
-#: build/4.2.0/index.js:2
-msgid "Assets & Web Pages - Extended"
-msgstr "Recursos y páginas web - extended"
-
-#: build/4.2.0/index.js:2
-msgid "Cache enabled for assets and pages (extended)."
-msgstr "Caché activo para recursos y páginas (extended)."
-
-#: build/4.2.0/index.js:2
-msgid "Recommended for sites that update a few times a month or less like porfolios or brochure sites."
-msgstr "Recomendado para sitios que se actualizan varias veces al mes o menos como sitios estilo folleto o portafolio."
-
-#: build/4.2.0/index.js:2
-msgid "Boost speed and performance by storing a copy of your website content, files, and images online so the pages of your website load faster for your visitors."
-msgstr "Aumenta la velocidad y el rendimiento al almacenar en línea una copia del contenido, archivos e imágenes de tu sitio web para que las páginas se carguen más rápido para tus visitantes."
-
-#: build/4.2.0/index.js:2
-msgid "Cache setting saved"
-msgstr "Ajustes de caché guardados"
-
-#: build/4.2.0/index.js:2
-msgid "Cache Level"
-msgstr "Nivel de caché"
-
-#: build/4.2.0/index.js:2
-msgid "Clear All Cache Now"
-msgstr "Borrar toda la caché ahora"
-
-#: build/4.2.0/index.js:2
-msgid "We automatically clear your cache as you work (creating content, changing settings, installing plugins and more). But you can manually clear it here to be confident it's fresh."
-msgstr "Limpiamos automáticamente tu caché a medida que trabajas (creando contenido, cambiando ajustes, instalando plugins y más). Pero tú puedes limpiarlo manualmente aquí para asegurarte de que está actualizado."
-
-#: build/4.2.0/index.js:2
-msgid "Cache cleared"
-msgstr "Caché borrada"
-
-#: build/4.2.0/index.js:2
-msgid "Clear Cache"
-msgstr "Limpiar caché"
-
-#: build/4.2.0/index.js:2
-msgid "Asks the browser to download and cache links on the page ahead of them being clicked on, so that when they are clicked they load almost instantly."
-msgstr "Pide al navegador que descargue y almacene en caché los enlaces de la página antes de que se haga clic en ellos para que, al hacerlo, se carguen casi al instante."
-
-#: build/4.2.0/index.js:2
-msgid "Link prefetching setting saved"
-msgstr "Ajustes de precarga de enlaces guardados"
-
-#: build/4.2.0/index.js:2
-msgid "Link Prefetch"
-msgstr "Precarga del enlace"
-
-#: build/4.2.0/index.js:2
-msgid "Enable link prefetching on desktop"
-msgstr "Activa la precarga de enlaces en el escritorio"
-
-#: build/4.2.0/index.js:2
-msgid "Activate on desktop"
-msgstr "Activar en el escritorio"
-
-#: build/4.2.0/index.js:2
-msgid "Behavior of the prefetch"
-msgstr "Comportamiento de la precarga"
-
-#: build/4.2.0/index.js:2
-msgid "Behavior"
-msgstr "Comportamiento"
-
-#: build/4.2.0/index.js:2
-msgid "Prefetch on Mouse Down"
-msgstr "Precarga al pulsar el ratón"
-
-#: build/4.2.0/index.js:2
-msgid "Prefetch on Mouse Down: Starts loading the page as soon as you click down, for faster response when you release the click."
-msgstr "Precarga al pulsar el ratón: comienza a cargar la página tan pronto como hagas clic en el botón del ratón para una respuesta más rápida cuando sueltes el clic."
-
-#: build/4.2.0/index.js:2
-msgid "Prefetch on Mouse Hover (Recommended)"
-msgstr "Precarga al pasar el cursor (recomendado)"
-
-#: build/4.2.0/index.js:2
-msgid "Prefetch on Mouse Hover: Begins loading the page the moment your cursor hovers over a link"
-msgstr "Precarga al pasar el cursor: comienza a cargar la página en el momento en que el cursor pasa por encima de un enlace."
-
-#: build/4.2.0/index.js:2
-msgid "Enable link prefetching on mobile"
-msgstr "Activa la precarga de enlaces en dispositivos móviles"
-
-#: build/4.2.0/index.js:2
-msgid "Activate on mobile"
-msgstr "Activa en dispositivos móviles"
-
-#: build/4.2.0/index.js:2
-msgid "Prefetch on Touchstart (Recommended)"
-msgstr "Precarga en pantalla táctil (recomendado)"
-
-#: build/4.2.0/index.js:2
-msgid "Prefetch on Touchstart: Instantly starts loading the page as soon as you tap the screen, ensuring a quicker response when you lift your finger."
-msgstr "Precarga en pantalla táctil: comienza a cargar la página tan pronto como toques la pantalla, garantizando una respuesta más rápida al levantar el dedo."
-
-#: build/4.2.0/index.js:2
-msgid "Prefetch Above the Fold"
-msgstr "Precarga “por encima del pliegue”"
-
-#: build/4.2.0/index.js:2
-msgid "Prefetch Above the Fold: Loads links in your current view instantly, ensuring they're ready when you need them."
-msgstr "Precarga “por encima del pliegue”: carga enlaces en tu vista actual al instante, asegurando que estén listos cuando los necesites."
-
-#: build/4.2.0/index.js:2
-msgid "Exclude Keywords: A comma separated list of words or strings that will exclude a link from being prefetched. For example, excluding \"app\" will prevent https://example.com/apple from being prefetched."
-msgstr "Excluye palabras clave: una lista de cadenas o palabras separadas por comas que evitarán que un enlace sea precargado. Por ejemplo, excluir \\\"app\\\" evitará que https://example.com/apple sea precargado."
-
-#: build/4.2.0/index.js:2
-msgid "Exclude keywords"
-msgstr "Excluye palabras clave"
-
-#: build/4.2.0/index.js:2
-msgid "Advanced settings"
-msgstr "Ajustes avanzados"
-
-#: build/4.2.0/index.js:2
-msgid "Additional speed and scalability features powered by Jetpack Boost to make your site as fast as it can be."
-msgstr "Funciones adicionales de velocidad y escalabilidad alimentadas por Jetpack Boost para que tu sitio sea lo más rápido posible."
-
-#: build/4.2.0/index.js:2
-msgid "Optimize Critical CSS Loading (manual)"
-msgstr "Optimiza la carga de CSS crítico (manual)"
-
-#: build/4.2.0/index.js:2
-msgid "Move important styling information to the start of the page, which helps pages display your content sooner, so your users don’t have to wait for the entire page to load."
-msgstr "Mueve información de estilo importante al inicio de la página, lo que ayuda a las páginas a mostrar tu contenido más rápido, para que tus usuarios no tengan que esperar a que toda la página cargue."
-
-#: build/4.2.0/index.js:2
-msgid "Optimize Critical CSS Loading (UPGRADED)"
-msgstr "Optimiza la carga de CSS crítico (ACTUALIZADO)"
-
-#: build/4.2.0/index.js:2
-msgid "Generate Critical CSS Automatically"
-msgstr "Genera CSS crítico automáticamente"
-
-#. translators: %1$s is a line break (<br>), %2$s is the opening <strong> tag, %3$s is the closing </strong> tag.
-#: build/4.2.0/index.js:5
-msgid "Move important styling information to the start of the page, which helps pages display your content sooner, so your users don’t have to wait for the entire page to load.%1$s %2$sBoost will automatically generate your Critical CSS%3$s whenever you make changes to the HTML or CSS structure of your site."
-msgstr "Mueve información de estilo importante al inicio de la página, lo que ayuda a las páginas a mostrar tu contenido más rápido, para que tus usuarios no tengan que esperar a que toda la página cargue.%1$s %2$sJetpack Boost generará automáticamente CSS crítico%3$s cada vez que realices cambios en la estructura HTML o CSS de tu sitio."
-
-#: build/4.2.0/index.js:5
-msgid "Defer Non-Essential JavaScript"
-msgstr "Aplaza JavaScript no esencial"
-
-#: build/4.2.0/index.js:5
-msgid "Run non-essential JavaScript after the page has loaded so that styles and images can load more quickly."
-msgstr "Ejecuta JavaScript no esencial después de que la página haya cargado para que los estilos e imágenes puedan cargar más rápidamente."
-
-#: build/4.2.0/index.js:5
-msgid "Concatenate JS"
-msgstr "Concatena JS"
-
-#: build/4.2.0/index.js:5
-msgid "Scripts are grouped by their original placement, concatenated and minified to reduce site loading time and reduce the number of requests."
-msgstr "Los scripts se agrupan de acuerdo con su posición original, concatenados y minimizados para reducir el tiempo de carga del sitio y reducir el número de solicitudes."
-
-#: build/4.2.0/index.js:5
-msgid "Exclude JS Strings"
-msgstr "Excluye cadenas JS"
-
-#: build/4.2.0/index.js:5
-msgid "Concatenate CSS"
-msgstr "Concatena CSS"
-
-#: build/4.2.0/index.js:5
-msgid "Styles are grouped by their original placement, concatenated and minified to reduce site loading time and reduce the number of requests."
-msgstr "Los estilos se agrupan por su colocación original, concatenados y minimizados para reducir el tiempo de carga del sitio y reducir el número de solicitudes."
-
-#: build/4.2.0/index.js:5
-msgid "Exclude CSS Strings"
-msgstr "Excluye cadenas CSS"
-
-#: build/4.2.0/index.js:5
-msgid "Show more"
-msgstr "Mostrar más"
-
-#: build/4.2.0/index.js:5
-msgid "Show less"
-msgstr "Mostrar menos"
-
-#: build/4.2.0/index.js:5
-msgid "Discover More"
-msgstr "Descubre más"
-
-#: build/4.2.0/index.js:5
-msgid "Install Jetpack Boost to unlock"
-msgstr "Instalar Jetpack Boost para desbloquear"
-
-#: build/4.2.0/index.js:5
-msgid "Installing Jetpack Boost…"
-msgstr "Instalando Jetpack Boost…"
-
-#: build/4.2.0/index.js:5
-msgid "Jetpack Boost is now active"
-msgstr "Jetpack Boost está activo"
-
-#: build/4.2.0/index.js:5
-msgid "Activation failed"
-msgstr "Activación fallida"
-
-#. translators: %1$s is the opening <a> tag, %2$s is the closing </a> tag.
-#: build/4.2.0/index.js:7
-msgid "Discover more %1$shere%2$s"
-msgstr "Descubre más %1$saquí%2$s"
-
-#: build/4.2.0/index.js:7
-msgid "Option saved correctly"
-msgstr "Opción guardada correctamente"
-
-#: build/4.2.0/index.js:7
-msgid "Error saving option"
-msgstr "Error al guardar la opción"
-
-#: build/4.2.0/index.js:7
-msgid "Image Optimization"
-msgstr "Optimización de imagen"
-
-#: build/4.2.0/index.js:7
-msgid "We automatically optimize your uploaded images to WebP format for faster performance and reduced file sizes. You can also choose to delete the original images to save storage space."
-msgstr "Optimizamos automáticamente tus imágenes subidas al formato WebP para un rendimiento más rápido y una reducción del tamaño de los archivos. También puedes optar por eliminar las imágenes originales para ahorrar espacio de almacenamiento."
-
-#: build/4.2.0/index.js:7
-msgid "Enable Image Optimization"
-msgstr "Activa la optimización de imagen"
-
-#: build/4.2.0/index.js:7
-msgid "Enable or disable image optimization globally."
-msgstr "Activa o desactiva la optimización de imágenes globalmente."
-
-#: build/4.2.0/index.js:7
-msgid "Automatically Optimize Uploaded Images"
-msgstr "Optimiza automáticamente las imágenes cargadas"
-
-#: build/4.2.0/index.js:7
-msgid "When enabled, all your new image uploads will be automatically optimized to WebP format, ensuring faster page loading and reduced file sizes."
-msgstr "Si activas esta opción, todas las nuevas subidas de imágenes se optimizarán automáticamente al formato WebP, garantizando una carga más rápida de la página y reduciendo el tamaño de los archivos."
-
-#: build/4.2.0/index.js:7
-msgid "Auto Delete Original Image"
-msgstr "Elimina la imagen original automáticamente"
-
-#: build/4.2.0/index.js:7
-msgid "When enabled, the original uploaded image is deleted and replaced with the optimized version, helping to save storage space. If disabled, the optimized image is saved as a separate file, retaining the original."
-msgstr "Si activas esta opción, la imagen original subida se elimina y se reemplaza por la versión optimizada, ayudando a ahorrar espacio de almacenamiento. Si la desactivas, la imagen optimizada se guarda como un archivo separado, conservando el original."
-
-#: build/4.2.0/index.js:7
-msgid "No settings available."
-msgstr "No hay ajustes disponibles."
-
-#: build/4.2.0/index.js:7
-msgid "Loading settings…"
-msgstr "Cargando ajustes…"
-
-#: build/4.2.0/index.js:7
-msgid "Settings updated successfully"
-msgstr "Ajustes actualizados correctamente"
-
-#: build/4.2.0/index.js:7
-msgid "Your image optimization settings have been saved."
-msgstr "Los ajustes de optimización de la imagen han sido guardados."
-
-#: build/4.2.0/index.js:7
-msgid "Enable Lazy Loading"
-msgstr "Activa la carga diferida"
-
-#: build/4.2.0/index.js:7
-msgid "Lazy loading defers the loading of images until they are visible on the screen, improving page load speed and performance."
-msgstr "La carga diferida desactiva la carga de imágenes hasta que sean visibles en la pantalla, mejorando la velocidad de carga de la página y el rendimiento."
-
-#: build/4.2.0/index.js:7
-msgid "Lazy loading has been updated."
-msgstr "La carga diferida ha sido actualizada."
-
-#: build/4.2.0/index.js:7
-msgid "Oops! There was an error updating the lazy loading settings."
-msgstr "¡Ups! Hubo un error al actualizar los ajustes de carga diferida."
-
-#: build/4.2.0/index.js:7
-msgid "Enable Bulk Optimization of Images"
-msgstr "Activa la optimización masiva de imágenes"
-
-#: build/4.2.0/index.js:7
-msgid "When enabled, allows bulk optimization of images in the media library."
-msgstr "Si activas esta opción, se permitirá la optimización masiva de imágenes en la biblioteca de medios."
-
-#: build/4.2.0/index.js:7
-msgid "Go to Media Library"
-msgstr "Ir a la biblioteca de medios"
-
-#: build/4.2.0/index.js:7
-msgid "Error Updating Settings"
-msgstr "Error al actualizar los ajustes"
-
-#: build/4.2.0/index.js:7
-msgid "Prefer Optimized Image When Exists"
-msgstr "Optar por la imagen optimizada cuando exista"
-
-#: build/4.2.0/index.js:7
-msgid "When enabled, optimized images will be served in place of original images when they exist, improving performance."
-msgstr "Si activas esta opción, las imágenes optimizadas serán utilizadas en lugar de las originales cuando existan, mejorando el rendimiento."
-
-#: build/4.2.0/index.js:7
-msgid "Something went wrong while updating the settings. Please try again."
-msgstr "Algo salió mal al actualizar los ajustes. Por favor, inténtalo de nuevo."
-
-#: build/4.2.0/index.js:7
+#: build/4.4.0/index.js:7
 msgid "Enabled All auto-updates"
 msgstr "Activar todas las actualizaciones automáticas"
 
-#: build/4.2.0/index.js:7
+#: build/4.4.0/index.js:7
 msgid "Disabled All auto-updates"
 msgstr "Desactivar todas las actualizaciones automáticas"
 
-#: build/4.2.0/index.js:7
+#: build/4.4.0/index.js:7
 msgid "Everything will automatically update."
 msgstr "Todo se actualizará automáticamente."
 
-#: build/4.2.0/index.js:7
+#: build/4.4.0/index.js:7
 msgid "Custom auto-update settings."
 msgstr "Ajustes de actualización automática personalizados."
 
-#: build/4.2.0/index.js:7
+#: build/4.4.0/index.js:7
 msgid "Automatically keep all up to date"
 msgstr "Mantener todo actualizado automáticamente"
 
-#: build/4.2.0/index.js:7
+#: build/4.4.0/index.js:7
 msgid "Enabled Core auto-updates"
 msgstr "Actualizaciones automáticas activadas"
 
-#: build/4.2.0/index.js:7
+#: build/4.4.0/index.js:7
 msgid "Disabled Core auto-updates"
 msgstr "Actualizaciones automáticas desactivadas"
 
-#: build/4.2.0/index.js:7
+#: build/4.4.0/index.js:7
 msgid "WordPress will automatically update."
 msgstr "WordPress se actualizará automáticamente."
 
-#: build/4.2.0/index.js:7
+#: build/4.4.0/index.js:7
 msgid "WordPress must be manually updated."
 msgstr "WordPress debe ser actualizado manualmente."
 
-#: build/4.2.0/index.js:7
+#: build/4.4.0/index.js:7
 msgid "WordPress Core"
 msgstr "Core de WordPress"
 
-#: build/4.2.0/index.js:7
+#: build/4.4.0/index.js:7
 msgid "Enabled Plugins auto-update"
 msgstr "Actualización automática de plugins activada"
 
-#: build/4.2.0/index.js:7
+#: build/4.4.0/index.js:7
 msgid "Disabled Plugins auto-update"
 msgstr "Actualización automática de plugins desactivada"
 
-#: build/4.2.0/index.js:7
+#: build/4.4.0/index.js:7
 msgid "All plugins will automatically update."
 msgstr "Todos los plugins se actualizarán automáticamente."
 
-#: build/4.2.0/index.js:7
+#: build/4.4.0/index.js:7
 msgid "Each plugin must be manually updated."
 msgstr "Cada plugin debe ser actualizado manualmente."
 
-#: build/4.2.0/index.js:7
+#: build/4.4.0/index.js:7
 msgid "Plugins"
 msgstr "Plugins"
 
-#: build/4.2.0/index.js:7
+#: build/4.4.0/index.js:7
 msgid "Enabled Themes auto-update"
 msgstr "Actualización automática de temas activada"
 
-#: build/4.2.0/index.js:7
+#: build/4.4.0/index.js:7
 msgid "Disabled Themes auto-update"
 msgstr "Actualización automática de temas desactivada"
 
-#: build/4.2.0/index.js:7
+#: build/4.4.0/index.js:7
 msgid "All themes will automatically update."
 msgstr "Todos los temas se actualizarán automáticamente."
 
-#: build/4.2.0/index.js:7
+#: build/4.4.0/index.js:7
 msgid "Each theme must be manually updated."
 msgstr "Cada tema debe ser actualizado manualmente."
 
-#: build/4.2.0/index.js:7
+#: build/4.4.0/index.js:7
 msgid "Themes"
 msgstr "Temas"
 
-#: build/4.2.0/index.js:7
+#: build/4.4.0/index.js:7
 msgid "Automatic Updates"
 msgstr "Actualizaciones automáticas"
 
-#: build/4.2.0/index.js:7
+#: build/4.4.0/index.js:7
 msgid "Keeping automatic updates on ensures timely security fixes and the latest features."
 msgstr "Mantener las actualizaciones automáticas activas garantiza correcciones de seguridad oportunas y las últimas características."
 
-#: build/4.2.0/index.js:7
+#: build/4.4.0/index.js:7
 msgid "Coming soon activated"
 msgstr "\"Próximamente\" activado"
 
-#: build/4.2.0/index.js:7
+#: build/4.4.0/index.js:7
 msgid "Coming soon deactivated"
 msgstr "\"Próximamente\" desactivado"
 
-#: build/4.2.0/index.js:7
+#: build/4.4.0/index.js:7
 msgid "Coming soon page is active. Site requires login."
 msgstr "La página \"Próximamente\" está activa. El sitio requiere iniciar sesión."
 
-#: build/4.2.0/index.js:7
+#: build/4.4.0/index.js:7
 msgid "Coming soon page is not active. Site is live to visitors."
 msgstr "La página “Próximamente” no está activa. El sitio está visible para los visitantes."
 
-#: build/4.2.0/index.js:7
+#: build/4.4.0/index.js:7
 msgid "Turn off your \"Coming Soon\" page when you are ready to launch your website."
 msgstr "Desactiva tu página \\\"Próximamente\\\" cuando estés listo para lanzar tu sitio web."
 
-#: build/4.2.0/index.js:7
+#: build/4.4.0/index.js:7
 msgid "Turn on your \"Coming Soon\" page when you need to make major changes to your website."
 msgstr "Activa tu página \\\"Próximamente\\\" cuando necesites realizar cambios importantes en tu sitio web. "
 
-#: build/4.2.0/index.js:7
+#: build/4.4.0/index.js:1
 msgid "Disabled old post comments"
 msgstr "Comentarios de entradas antiguas desactivados"
 
-#: build/4.2.0/index.js:7
+#: build/4.4.0/index.js:1
 msgid "Enabled old post comments"
 msgstr "Activar comentarios en entradas antiguas"
 
-#: build/4.2.0/index.js:7
+#: build/4.4.0/index.js:1
 msgid "Comments on old posts are disabled."
 msgstr "Los comentarios en entradas antiguas están desactivados."
 
-#: build/4.2.0/index.js:7
+#: build/4.4.0/index.js:1
 msgid "Comments are allowed on old posts."
 msgstr "Los comentarios en entradas antiguas están permitidos."
 
-#: build/4.2.0/index.js:7
+#: build/4.4.0/index.js:1
 msgid "Disable comments for older posts"
 msgstr "Desactivar comentarios en entradas antiguas"
 
-#: build/4.2.0/index.js:7
+#: build/4.4.0/index.js:1
 msgid "Comments setting saved"
 msgstr "Ajustes de comentarios guardados"
 
 #. translators: %s: number of days. `Comments on posts are disabled after ${closeCommentsDays} days.`
-#: build/4.2.0/index.js:9
+#: build/4.4.0/index.js:3
+#, js-format
 msgid "Comments on posts are disabled after %s day."
 msgid_plural "Comments on posts are disabled after %s days."
 msgstr[0] "Los comentarios de los mensajes se desactivan después de %s día."
 msgstr[1] "Los comentarios de los mensajes se desactivan después de %s días."
 
 #. translators: %s: number of days. `Close comments after ${closeCommentsDays} days.`
-#: build/4.2.0/index.js:11
+#: build/4.4.0/index.js:5
+#, js-format
 msgid "Close comments after %s day."
 msgid_plural "Close comments after %s days."
 msgstr[0] "Cerrar comentarios después de %s día."
 msgstr[1] "Cerrar comentarios después de %s días."
 
-#: build/4.2.0/index.js:11
+#: build/4.4.0/index.js:5
 msgid "Comments setting saved."
 msgstr "Ajustes de comentarios guardados."
 
 #. translators: %s: number of comments. `Posts will display ${commentsPerPage} comments at a time.`
-#: build/4.2.0/index.js:13
+#: build/4.4.0/index.js:7
+#, js-format
 msgid "Posts will display %s comment at a time."
 msgid_plural "Posts will display %s comments at a time."
 msgstr[0] "En las publicaciones se mostrará %s comentario a la vez."
 msgstr[1] "En las publicaciones se mostrarán %s comentarios a la vez."
 
-#: build/4.2.0/index.js:13
+#: build/4.4.0/index.js:7
 msgid "Comments to display per page"
 msgstr "Comentarios a mostrar por página"
 
-#: build/4.2.0/index.js:13
+#: build/4.4.0/index.js:7
 msgid "Comments"
 msgstr "Comentarios"
 
-#: build/4.2.0/index.js:13
+#: build/4.4.0/index.js:7
 msgid "Comments allow visitors to provide feedback and respond to your posts or pages."
 msgstr "Los comentarios permiten a los visitantes dar su opinión y responder a tus entradas o páginas."
 
-#: build/4.2.0/index.js:15
+#: build/4.4.0/index.js:9
 msgid "Trash setting saved"
 msgstr "Ajustes de papelera guardados"
 
-#: build/4.2.0/index.js:15
+#: build/4.4.0/index.js:9
 msgid "Number of weeks in between emptying trash"
 msgstr "Número de semanas entre vaciado de la papelera"
 
-#: build/4.2.0/index.js:15
+#: build/4.4.0/index.js:9
 msgid "Content Options"
 msgstr "Opciones de contenido"
 
-#: build/4.2.0/index.js:15
+#: build/4.4.0/index.js:9
 msgid "Controls for how often to empty the trash."
 msgstr "Ajustes para la frecuencia de vaciado de la papelera."
 
-#: build/4.2.0/index.js:15
+#: build/4.4.0/index.js:7
 msgid "Help Center Enabled"
 msgstr "Centro de ayuda activado"
 
-#: build/4.2.0/index.js:15
+#: build/4.4.0/index.js:7
 msgid "Help Center Disabled"
 msgstr "Centro de ayuda desactivado"
 
-#: build/4.2.0/index.js:15
+#: build/4.4.0/index.js:7
 msgid "Reload the page to access the Help Center."
 msgstr "Recarga la página para acceder al Centro de Ayuda."
 
-#: build/4.2.0/index.js:15
+#: build/4.4.0/index.js:7
 msgid "The Help Center will no longer display."
 msgstr "El Centro de Ayuda ya no se mostrará."
 
-#: build/4.2.0/index.js:15
-msgid "This is where you can manage common settings for your website."
-msgstr "Aquí es donde puedes administrar los ajustes comunes de tu sitio web."
-
-#: build/4.2.0/index.js:15
+#: build/4.4.0/index.js:7
 msgid "Features"
 msgstr "Características"
 
-#: build/4.2.0/index.js:15
+#: build/4.4.0/index.js:7
 msgid "Customize the available features as you manage your website."
 msgstr "Personaliza las características disponibles mientras administras tu sitio web."
 
-#: build/4.2.0/index.js:15
+#: build/4.4.0/index.js:9
 msgid "Performance Enabled"
 msgstr "Rendimiento activado"
 
-#: build/4.2.0/index.js:15
+#: build/4.4.0/index.js:9
 msgid "Performance Disabled"
 msgstr "Rendimiento desactivado"
 
-#: build/4.2.0/index.js:15
+#: build/4.4.0/index.js:9
 msgid "You need to reload the page to manage Performance."
 msgstr "Necesitas recargar la página para administrar el rendimiento."
 
-#: build/4.2.0/index.js:15
+#: build/4.4.0/index.js:9
 msgid "Performance will no longer display."
 msgstr "El rendimiento ya no se mostrará."
 
-#: build/4.2.0/index.js:15
+#: build/4.4.0/index.js:9
 msgid "The performance feature provides improvements to loads faster for visitors including cache settings."
 msgstr "La función de rendimiento proporciona mejoras para lograr una carga más rápida para los visitantes, incluyendo ajustes de caché."
 
-#: build/4.2.0/index.js:15
+#: build/4.4.0/index.js:7
 msgid "Staging Enabled"
 msgstr "Sitio de pruebas activado"
 
-#: build/4.2.0/index.js:15
+#: build/4.4.0/index.js:7
 msgid "Staging Disabled"
 msgstr "Sitio de pruebas desactivado"
 
-#: build/4.2.0/index.js:15
+#: build/4.4.0/index.js:7
 msgid "You need to reload the page to manage Staging."
 msgstr "Necesitas recargar la página para administrar el sitio de pruebas."
 
-#: build/4.2.0/index.js:15
+#: build/4.4.0/index.js:7
 msgid "Staging will no longer display."
 msgstr "El sitio de pruebas ya no se mostrará."
 
-#: build/4.2.0/index.js:15
+#: build/4.4.0/index.js:7
 msgid "WonderBlocks Enabled"
 msgstr "WonderBlocks activado"
 
-#: build/4.2.0/index.js:15
+#: build/4.4.0/index.js:7
 msgid "WonderBlocks Disabled"
 msgstr "WonderBlocks desactivado"
 
-#: build/4.2.0/index.js:15
+#: build/4.4.0/index.js:7
 msgid "Create new content to see WonderBlocks in action."
 msgstr "Crea nuevo contenido para ver WonderBlocks en acción."
 
-#: build/4.2.0/index.js:15
+#: build/4.4.0/index.js:7
 msgid "WonderBlocks will no longer display."
 msgstr "WonderBlocks ya no se mostrará."
-
-#: build/4.2.0/index.js:15
-msgid "Cancel"
-msgstr "Cancelar"
-
-#: build/4.2.0/index.js:15
-msgid "Clone"
-msgstr "Clonar"
-
-#: build/4.2.0/index.js:15
-msgid "Confirm Clone Action"
-msgstr "Confirmar la clonación"
-
-#: build/4.2.0/index.js:15
-msgid "This will overwrite anything in staging and update it to an exact clone of the current production site. Are you sure you want to proceed?"
-msgstr "Esto sobrescribirá cualquier cosa en el sitio de pruebas y la actualizará a un clon exacto del sitio de producción actual. ¿Estás seguro de que quieres continuar?"
-
-#: build/4.2.0/index.js:15
-msgid "Cloned to Staging"
-msgstr "Clonado al sitio de pruebas"
-
-#: build/4.2.0/index.js:15
-msgid "Cloning production to staging, this should take about a minute."
-msgstr "Clonación de la producción al sitio de pruebas, esto debería tomar aproximadamente un minuto. "
-
-#: build/4.2.0/index.js:15
-msgid "Clone to staging"
-msgstr "Clonar a sitio de pruebas"
-
-#: build/4.2.0/index.js:15
-msgid "Created"
-msgstr "Creado"
-
-#: build/4.2.0/index.js:15
-msgid "Staging Created"
-msgstr "Sitio de pruebas creado"
-
-#: build/4.2.0/index.js:15
-msgid "Creating a staging site, this should take about a minute."
-msgstr "Creando un sitio de pruebas, esto debería tomar aproximadamente un minuto."
-
-#: build/4.2.0/index.js:15
-msgid "Create staging site"
-msgstr "Crear sitio de pruebas"
-
-#: build/4.2.0/index.js:15
-msgid "Currently editing"
-msgstr "Editando actualmente"
-
-#: build/4.2.0/index.js:15
-msgid "Delete"
-msgstr "Eliminar"
-
-#: build/4.2.0/index.js:15
-msgid "Confirm Delete"
-msgstr "Confirmar eliminación"
-
-#: build/4.2.0/index.js:15
-msgid "This will permanently delete staging site. Are you sure you want to proceed? You can recreate another staging site at any time, but any specific changes you've made to this staging site will be lost."
-msgstr "Esto eliminará permanentemente el sitio de pruebas. ¿Estás seguro de que quieres continuar? Puedes volver a crear otro sitio de pruebas en cualquier momento, pero cualquier cambio específico que hayas realizado en este sitio de pruebas se perderá."
-
-#: build/4.2.0/index.js:15
-msgid "Deleted Staging"
-msgstr "Sitio de pruebas eliminado"
-
-#: build/4.2.0/index.js:15
-msgid "Deleting the staging site, this should take about a minute."
-msgstr "Eliminando el sitio de pruebas, esto tomará aproximadamente un minuto."
-
-#: build/4.2.0/index.js:15
-msgid "Delete Staging Site"
-msgstr "Eliminar sitio de pruebas"
-
-#: build/4.2.0/index.js:15
-msgid "Deploy"
-msgstr "Despliegue"
-
-#: build/4.2.0/index.js:15
-msgid "Deploy all changes"
-msgstr "Desplegar todos los cambios"
-
-#: build/4.2.0/index.js:15
-msgid "Confirm Deployment"
-msgstr "Confirmar despliegue"
-
-#: build/4.2.0/index.js:15
-msgid "Deploy database only"
-msgstr "Desplegar solo la base de datos"
-
-#: build/4.2.0/index.js:15
-msgid "This will deploy staging to production and overwrite current production site. Are you sure you want to proceed?"
-msgstr "Esto desplegará el sitio de pruebas a producción y sobrescribirá el sitio actual de producción. ¿Estás seguro de que quieres continuar?"
-
-#: build/4.2.0/index.js:15
-msgid "Deploy files only"
-msgstr "Desplegar solo archivos"
-
-#: build/4.2.0/index.js:15
-msgid "Deployed"
-msgstr "Desplegado"
-
-#: build/4.2.0/index.js:15
-msgid "Deploying from staging to production, this should take about a minute."
-msgstr "Desplegando del sitio de pruebas a producción, esto debería tomar aproximadamente un minuto. "
-
-#: build/4.2.0/index.js:15
-msgid "Deploy Site"
-msgstr "Desplegar sitio"
-
-#: build/4.2.0/index.js:15
-msgid "Error"
-msgstr "Error"
-
-#: build/4.2.0/index.js:15
-msgid "You don't have a staging site yet."
-msgstr "Todavía no tienes un sitio de pruebas."
-
-#: build/4.2.0/index.js:15
-msgid "Not currently editing"
-msgstr "Actualmente no se está editando"
-
-#: build/4.2.0/index.js:15
-msgid "Proceed"
-msgstr "Continuar"
-
-#: build/4.2.0/index.js:15
-msgid "Production Site"
-msgstr "Sitio de producción"
-
-#: build/4.2.0/index.js:15
-msgid "Staging Site"
-msgstr "Sitio de pruebas"
-
-#: build/4.2.0/index.js:15
-msgid "A staging site is a duplicate of your live site, offering a secure environment to experiment, test updates, and deploy when ready."
-msgstr "Un sitio de pruebas es un duplicado de tu sitio en vivo, ofrece un entorno seguro para experimentar, probar actualizaciones y desplegar cuando esté listo."
-
-#: build/4.2.0/index.js:15
-msgid "Switch"
-msgstr "Cambiar"
-
-#: build/4.2.0/index.js:15
-msgid "Switching"
-msgstr "Cambiando"
-
-#: build/4.2.0/index.js:15
-msgid "Switch to Production"
-msgstr "Cambiar a producción"
-
-#: build/4.2.0/index.js:15
-msgid "This will navigate you to the production environment"
-msgstr "Esto te llevará al entorno de producción"
-
-#: build/4.2.0/index.js:15
-msgid "Loading the production environment now."
-msgstr "Cargando el entorno de producción ahora."
-
-#: build/4.2.0/index.js:15
-msgid "Switching to the production environment, this should take about a minute."
-msgstr "Cambiando al entorno de producción, esto debería tomar aproximadamente un minuto."
-
-#: build/4.2.0/index.js:15
-msgid "Switch to Staging"
-msgstr "Cambiar a sitio de pruebas"
-
-#: build/4.2.0/index.js:15
-msgid "This will navigate you to the staging environment"
-msgstr "Esto lo llevará al entorno de staging"
-
-#: build/4.2.0/index.js:15
-msgid "Loading the staging environment now."
-msgstr "Cargando el entorno de pruebas ahora."
-
-#: build/4.2.0/index.js:15
-msgid "Switching to the staging environment, this should take about a minute."
-msgstr "Cambiando al entorno de pruebas, esto debería tomar aproximadamente un minuto."
-
-#: build/4.2.0/index.js:15
-msgid "An unknown error has occurred."
-msgstr "Se ha producido un error desconocido."
-
-#: build/4.2.0/index.js:15
-msgid "Working…"
-msgstr "Trabajando…"
 
 #: inc/widgets/views/site-preview.php:162
 msgid "Your website is live to the world!"
 msgstr "¡Tu sitio web está visible para el mundo!"
 
-#: build/4.2.0/index.js:15
-msgid "Add a New Plugin"
-msgstr "Añadir un nuevo Plugin"
-
 #: inc/Admin.php:83
 msgid "Help Resources"
-msgstr ""
+msgstr "Recursos de ayuda"
 
-#: build/4.2.0/index.js:1
+#: inc/AppWhenOutdated.php:36
+msgid "WordPress Update Required"
+msgstr "Actualización de WordPress requerida"
+
+#: inc/AppWhenOutdated.php:43
+msgid "Your current version is outdated."
+msgstr "Su versión actual está desactualizada."
+
+#: inc/AppWhenOutdated.php:48
+msgid "Your current WordPress version:"
+msgstr "Tu versión actual de WordPress:"
+
+#: inc/AppWhenOutdated.php:52
+msgid "Minimum required WordPress version:"
+msgstr "Versión mínima requerida de WordPress:"
+
+#: inc/AppWhenOutdated.php:61
+msgid "Consider enabling auto-updates to stay up to date."
+msgstr "Considere habilitar actualizaciones automáticas para mantenerse al día."
+
+#: inc/AppWhenOutdated.php:66
+msgid "Update Now"
+msgstr "Actualizar ahora"
+
+#: build/4.4.0/index.js:7
 msgid "Hire our experts"
-msgstr ""
+msgstr "Contrata a nuestros expertos"
 
-#: build/4.2.0/index.js:1
+#: build/4.4.0/index.js:7
 msgid "Get in touch with us, and we’ll help you build the exact store you’re dreaming of."
-msgstr ""
+msgstr "Ponte en contacto con nosotros y te ayudaremos a construir la tienda exacta con la que estás soñando."
 
-#: build/4.2.0/index.js:1
-msgid "Get Help & Resources"
-msgstr ""
-
-#: build/4.2.0/index.js:1
-msgid "Documentation and tutorials to help you get the most out of your solution."
-msgstr ""
-
-#: build/4.2.0/index.js:1
-msgid "Pro Design Live"
-msgstr ""
-
-#: build/4.2.0/index.js:1
-msgid "We will help you build and grow your website and improve your skills in WordPress."
-msgstr ""
-
-#: build/4.2.0/index.js:1
-msgid "Get Info"
-msgstr ""
-
-#: build/4.2.0/index.js:1
-msgid "Quick links"
-msgstr ""
-
-#: build/4.2.0/index.js:1
-msgid "Manage hosting"
-msgstr ""
-
-#: build/4.2.0/index.js:1
-msgid "Write a blog post"
-msgstr ""
-
-#: build/4.2.0/index.js:1
-msgid "Create a sale promotion"
-msgstr ""
-
-#: build/4.2.0/index.js:1
-msgid "Refer a friend to get $75"
-msgstr ""
-
-#: build/4.2.0/index.js:1
-msgid "Unlock exclusive benefits with our referral program!"
-msgstr ""
-
-#: build/4.2.0/index.js:1
-msgid "Start now"
-msgstr ""
-
-#: build/4.2.0/index.js:1
-msgid "Explore your Solution"
-msgstr ""
-
-#: build/4.2.0/index.js:1
+#: build/4.4.0/index.js:7
 msgid "Discover all the features to grow your store, boost sales and loyalize your customers."
-msgstr ""
+msgstr "Descubra todas las características para hacer crecer su tienda, incremente las ventas y fidelice a sus clientes."
 
-#: build/4.2.0/index.js:1
+#: build/4.4.0/index.js:7
+msgid "Quick links"
+msgstr "Enlaces rápidos"
+
+#: build/4.4.0/index.js:7
+msgid "Manage hosting"
+msgstr "Gestionar alojamiento"
+
+#: build/4.4.0/index.js:7
+msgid "Write a blog post"
+msgstr "Escribir una entrada"
+
+#: build/4.4.0/index.js:7
+msgid "Create a sale promotion"
+msgstr "Crear una promoción de venta"
+
+#: build/4.4.0/index.js:9
+msgid "Get Help & Resources"
+msgstr "Obtén ayuda y recursos"
+
+#: build/4.4.0/index.js:9
+msgid "Refer a friend and earn money"
+msgstr "Refiera a un amigo y gane dinero"
+
+#: build/4.4.0/index.js:9
+msgid "Unlock exclusive benefits with our referral program!"
+msgstr "¡Desbloquea beneficios exclusivos con nuestro programa de referidos!"
+
+#: build/4.4.0/index.js:9
+msgid "Start now"
+msgstr "Empezar ahora"
+
+#: build/4.4.0/index.js:9
+msgid "Pro Design Live"
+msgstr "Pro Design Live"
+
+#: build/4.4.0/index.js:9
+msgid "We will help you build and grow your website and improve your skills in WordPress."
+msgstr "Le ayudaremos a construir y crecer su sitio web y mejorar sus habilidades en WordPress."
+
+#: build/4.4.0/index.js:9
+msgid "Get Info"
+msgstr "Obtener información"
+
+#: build/4.4.0/index.js:9
 msgid "Welcome to Bluehost"
+msgstr "Bienvenido a Bluehost"
+
+#: build/4.4.0/index.js:9
+msgid "We're very excited to get started with you!"
+msgstr "¡Estamos muy entusiasmados de empezar contigo!"
+
+#: build/4.4.0/index.js:7
+msgid "Explore Premium Tools"
+msgstr "Explorar herramientas premium"
+
+#: build/4.4.0/index.js:9
+msgid "Get expert help, documentation, and tutorials to make the most of your WordPress site."
+msgstr "Obtenga ayuda experta, documentación y tutoriales para aprovechar al máximo su sitio de WordPress."
+
+#: build/4.4.0/index.js:7
+msgid "Manage common settings for your website"
 msgstr ""
 
-#: build/4.2.0/index.js:1
-msgid "We’re very excited to get started with you!"
+#: inc/widgets/views/help.php:93
+msgid "From DIY to full-service help, always by your side."
+msgstr ""
+
+#: inc/widgets/views/help.php:129
+msgid "Hire Our Pros"
 msgstr ""

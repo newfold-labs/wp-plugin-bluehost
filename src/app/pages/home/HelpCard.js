@@ -28,7 +28,7 @@ const HelpCard = ( {} ) => {
 					</Title>
 					<p>
 						{ __(
-							'Documentation and tutorials to help you get the most out of your solution.',
+							'Get expert help, documentation, and tutorials to make the most of your WordPress site.',
 							'wp-plugin-bluehost'
 						) }
 					</p>

@@ -9,7 +9,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "POT-Creation-Date: 2025-02-25T20:53:21+00:00\n"
 "PO-Revision-Date: 2025-02-25T20:53:21+00:00\n"
-"Language: \n"
+"Language: nl_NL\n"
 
 #. Plugin Name of the plugin
 #: bluehost-wordpress-plugin.php
@@ -29,8 +29,8 @@ msgstr "WordPress plugin die een WordPress site integreert met het Bluehost cont
 
 #. Author of the plugin
 #: bluehost-wordpress-plugin.php
-#: inc/Admin.php:139
-#: inc/Admin.php:140
+#: inc/Admin.php:134
+#: inc/Admin.php:135
 msgid "Bluehost"
 msgstr "Bluehost"
 
@@ -38,121 +38,104 @@ msgstr "Bluehost"
 msgid "Please install the Bluehost Plugin dependencies."
 msgstr "Installeer de Bluehost Plugin afhankelijkheden."
 
-#: bootstrap.php:97
+#: bootstrap.php:101
 msgid "Coming Soon!"
 msgstr "Binnenkort beschikbaar!"
 
-#: bootstrap.php:98
+#: bootstrap.php:102
 msgid "A New WordPress Site"
 msgstr "Een nieuwe WordPress-site"
 
-#: bootstrap.php:101
+#: bootstrap.php:105
 msgid "How to Build a Website: A Practical Guide to WordPress on Bluehost"
 msgstr "Hoe bouw je een Website: Een Praktische Gids naar WordPress op Bluehost"
 
-#: bootstrap.php:104
+#: bootstrap.php:108
 msgid "How to Migrate a Website to Bluehost?"
 msgstr "Hoe een Website migreren naar Bluehost?"
 
-#: bootstrap.php:107
+#: bootstrap.php:111
 msgid "Why choose Bluehost for your WordPress site?"
 msgstr "Waarom Bluehost voor uw WordPress site kiezen?"
 
 #. translators: %1$s is replaced with opening link tag taking you to bluehost.com/wordpress, %2$s is replaced with closing link tag, %3$s is replaced with opening link tag taking you to login page, %4$s is replaced with closing link tag, %5$s is replaced with opening link tag taking you to my.bluehost.com, %6$s is replaced with closing link tag
-#: bootstrap.php:111
+#: bootstrap.php:115
+#, php-format
 msgid "A %1$sBluehost%2$s powered website. Is this your website? Log in to %3$sWordPress%4$s or %5$sBluehost%6$s."
 msgstr "Een %1$sBluehost%2$s aangedreven website. Is dit je website? Log in op %3$sWordPress%4$s of %5$sBluehost%6$s."
 
 #. translators: %s: Blog name
-#: bootstrap.php:121
+#: bootstrap.php:125
+#, php-format
 msgid "%s &mdash; Coming Soon"
 msgstr "%s &mdash; Binnenkort"
 
-#: bootstrap.php:124
+#: bootstrap.php:128
 msgid "Coming Soon Active"
 msgstr "Binnenkort actief"
 
 #. translators: %1$s is replaced with the opening link tag to preview the page, and %2$s is replaced with the closing link tag, %3$s is the opening link tag, %4$s is the closing link tag.
-#: bootstrap.php:127
+#: bootstrap.php:131
+#, php-format
 msgid "Your site is currently displaying a %1$scoming soon page%2$s. Once you are ready, %3$slaunch your site%4$s."
 msgstr "Uw site toont momenteel een %1$sdie binnenkort pagina%2$skomt. Zodra u klaar bent, start %3$suw site%4$s."
 
-#: bootstrap.php:128
+#: bootstrap.php:132
 msgid "Preview the coming soon landing page"
 msgstr "Bekijk een voorbeeld van de volgende landingspagina"
 
 #: inc/Admin.php:73
-#: inc/Admin.php:283
-#: build/4.2.0/index.js:1
+#: inc/Admin.php:277
+#: build/4.4.0/index.js:7
 msgid "Home"
 msgstr "Startpagina"
 
-#: build/4.2.0/index.js:1
-msgid "Pages & Posts"
-msgstr "Pagina's & Berichten"
-
-#: build/4.2.0/index.js:1
+#: build/4.4.0/index.js:7
 msgid "Store"
 msgstr "Winkel"
 
-#: build/4.2.0/index.js:1
+#: build/4.4.0/index.js:7
+#: build/4.4.0/index.js:9
 msgid "Marketplace"
 msgstr "Marktplaats"
 
-#: build/4.2.0/index.js:1
-#: build/4.2.0/index.js:15
-msgid "My Plugins & Tools"
-msgstr "Mijn plug-ins & gereedschap"
-
-#: build/4.2.0/index.js:1
-#: build/4.2.0/index.js:7
-msgid "Performance"
-msgstr "Prestaties"
-
 #: inc/Admin.php:78
-#: inc/Admin.php:284
-#: build/4.2.0/index.js:1
-#: build/4.2.0/index.js:15
+#: inc/Admin.php:278
+#: build/4.4.0/index.js:7
 msgid "Settings"
 msgstr "Instellingen"
 
-#: build/4.2.0/index.js:1
-#: build/4.2.0/index.js:15
-msgid "Staging"
-msgstr "Testboeking"
-
-#: build/4.2.0/index.js:1
+#: build/4.4.0/index.js:9
 msgid "Help"
 msgstr "Hulp"
 
-#: inc/Admin.php:180
+#: inc/AppWhenOutdated.php:44
 msgid "Please update to a newer WordPress version."
 msgstr "Update a.u.b. naar een nieuwere WordPress versie."
 
-#: inc/Admin.php:181
+#: inc/AppWhenOutdated.php:41
 msgid "There are new WordPress components which this plugin requires in order to render the interface."
 msgstr "Er zijn nieuwe WordPress-componenten die deze plugin nodig heeft om de interface te renderen."
 
-#: inc/Admin.php:182
-msgid "Please update now"
-msgstr "Update alstublieft nu"
-
-#: inc/Admin.php:308
+#: inc/Admin.php:302
 msgid "Thank you for creating with <a href=\"https://wordpress.org/\">WordPress</a> and <a href=\"https://bluehost.com/about\">Bluehost</a>."
 msgstr "Bedankt voor het aanmaken met <a href=\"https://wordpress.org/\">WordPress</a> en <a href=\"https://bluehost.com/about\">Bluehost</a>."
 
 #. translators: 1: plugin name 2: incompatible plugin name
 #: inc/plugin-nfd-compat-check.php:161
+#, php-format
 msgid "\"%1$s\" has self-deactivated. It is incompatible with \"%2$s\"."
 msgstr "\"%1$s\" heeft zichzelf gedeactiveerd. Het is niet compatibel met \"%2$s\"."
 
 #. translators: 1: legacy plugin name 2: plugin name
 #: inc/plugin-nfd-compat-check.php:188
+#, php-format
 msgid "\"%1$s\" has been deactivated. It is incompatible with \"%2$s\"."
 msgstr "\"%1$s\" is gedeactiveerd. Het is niet compatibel met \"%2$s\"."
 
 #. translators: 1: plugin name 2: minimum required PHP version, current PHP version
 #: inc/plugin-php-compat-check.php:123
+#, php-format
 msgid "%1$s requires PHP version %2$s or later. You are currently running version %3$s."
 msgstr "%1$s vereist PHP versie %2$s of hoger. Je gebruikt momenteel versie %3$s."
 
@@ -162,21 +145,23 @@ msgstr " Neem alstublieft contact op met uw webhost over upgraden van PHP."
 
 #. translators: 1: plugin name 2: required PHP extension
 #: inc/plugin-php-compat-check.php:139
+#, php-format
 msgid "%1$s requires the %2$s PHP extension."
 msgstr "%1$s vereist de %2$s PHP-extensie."
 
 #. translators: 1: plugin name 2: minimum required WordPress version 3: current WordPress version
 #: inc/plugin-php-compat-check.php:155
+#, php-format
 msgid "%1$s requires WordPress version %2$s or later. You are currently running version %3$s."
 msgstr "%1$s vereist WordPress versie %2$s of hoger. U draait momenteel versie %3$s."
 
 #. translators: plugin name
 #: inc/plugin-php-compat-check.php:193
+#, php-format
 msgid "The \"%s\" plugin has been deactivated."
 msgstr "De \"%s\" plugin is gedeactiveerd."
 
-#: inc/RestApi/CachingController.php:63
-#: inc/RestApi/SettingsController.php:205
+#: inc/RestApi/SettingsController.php:201
 msgid "Sorry, you are not allowed to access this endpoint."
 msgstr "Sorry, je hebt geen toegang tot dit eindpunt."
 
@@ -184,6 +169,7 @@ msgstr "Sorry, je hebt geen toegang tot dit eindpunt."
 #: inc/updates.php:115
 #: inc/updates.php:143
 #: inc/updates.php:170
+#, php-format
 msgid "Auto-updates enabled on the <a href=\"%s\">Bluehost > Settings</a> page."
 msgstr "Auto-updates ingeschakeld op de <a href=\"%s\">Bluehost > Instellingen</a> pagina."
 
@@ -191,293 +177,252 @@ msgstr "Auto-updates ingeschakeld op de <a href=\"%s\">Bluehost > Instellingen</
 msgid "Auto-updates enabled"
 msgstr "Auto-update ingeschakeld"
 
-#: build/4.2.0/index.js:1
+#: build/4.4.0/index.js:7
 msgid "Bluehost WordPress Plugin"
 msgstr "Bluehost WordPress-plugin"
 
-#: build/4.2.0/index.js:1
+#: build/4.4.0/index.js:9
 msgid "Oh No, An Error!"
 msgstr "Oh nee, een fout!"
 
-#: build/4.2.0/index.js:1
+#: build/4.4.0/index.js:9
 msgid "You found an error, please refresh the page and try again!"
 msgstr "U heeft een fout gevonden, ververs de pagina en probeer het opnieuw!"
 
-#: build/4.2.0/index.js:1
+#: build/4.4.0/index.js:9
 msgid "If the error persists, please contact support."
 msgstr "Als de fout zich blijft voordoen, neem dan contact op met support."
 
-#: build/4.2.0/index.js:1
+#: build/4.4.0/index.js:9
 msgid "Error code:"
 msgstr "Foutcode:"
 
-#: build/4.2.0/index.js:1
+#: build/4.4.0/index.js:7
 msgid "There's nothing here!"
 msgstr "Er is hier niets!"
 
-#: build/4.2.0/index.js:1
+#: build/4.4.0/index.js:7
 msgid "Products & Services"
 msgstr "Producten en Diensten"
 
-#: build/4.2.0/index.js:1
+#: build/4.4.0/index.js:7
 msgid "Sales & Promotions"
 msgstr "Verkoop & Promoties"
 
-#: build/4.2.0/index.js:1
+#: build/4.4.0/index.js:7
 msgid "Sales Channel"
 msgstr "Verkoop Kanaal"
 
-#: build/4.2.0/index.js:1
+#: build/4.4.0/index.js:7
 msgid "Payments"
 msgstr "Betalingen"
 
-#: build/4.2.0/index.js:1
+#: build/4.4.0/index.js:7
 msgid "Store Details"
 msgstr "Winkel Details"
 
-#: build/4.2.0/index.js:1
+#: build/4.4.0/index.js:7
 msgid "Help with WordPress"
 msgstr "Help met WordPress"
 
-#: build/4.2.0/index.js:1
+#: build/4.4.0/index.js:7
+#: build/4.4.0/index.js:9
 msgid "Admin"
 msgstr "Beheerder"
 
-#: build/4.2.0/index.js:15
+#: build/4.4.0/index.js:7
 msgid "The staging feature provides a way to copy a site to test new updates, features or content."
 msgstr "De stagingfunctie biedt een manier om een site te kopiëren om nieuwe updates, functies of inhoud te testen."
 
-#: build/4.2.0/index.js:15
+#: build/4.4.0/index.js:7
+#: build/4.4.0/index.js:9
 msgid "Sorry, that is not allowed."
 msgstr "Sorry, dat is niet toegestaan."
 
-#: build/4.2.0/index.js:15
+#: build/4.4.0/index.js:7
+#: build/4.4.0/index.js:9
 msgid "This feature cannot currently be modified."
 msgstr "Deze functie kan momenteel niet worden gewijzigd."
 
-#: build/4.2.0/index.js:7
-#: build/4.2.0/index.js:13
-#: build/4.2.0/index.js:15
+#: build/4.4.0/index.js:7
+#: build/4.4.0/index.js:9
 msgid "Oops! Something went wrong. Please try again."
 msgstr "Oeps! Er is iets fout gegaan. Probeer het opnieuw."
 
-#: build/4.2.0/index.js:1
+#: build/4.4.0/index.js:9
 msgid "Phone"
 msgstr "Telefoonnummer"
 
-#: build/4.2.0/index.js:1
+#: build/4.4.0/index.js:9
 msgid "Call Us"
 msgstr "Bel ons"
 
-#: build/4.2.0/index.js:1
+#: build/4.4.0/index.js:9
 msgid "Chat"
 msgstr "Chatten"
 
-#: build/4.2.0/index.js:1
+#: build/4.4.0/index.js:9
 msgid "Chat with one of our friendly Customer Care Specialists, as we are waiting to help. Open 24 hours - 7 days."
 msgstr "Chat met een van onze vriendelijke Customer Care Specialisten, zoals we willen helpen. Open 24 uur - 7 dagen."
 
-#: build/4.2.0/index.js:1
+#: build/4.4.0/index.js:9
 msgid "Live Chat"
 msgstr "Live chat"
 
-#: build/4.2.0/index.js:1
+#: build/4.4.0/index.js:9
 msgid "Tweet"
 msgstr "tweet"
 
-#: build/4.2.0/index.js:1
+#: build/4.4.0/index.js:9
 msgid "Find our team at @bluehost for updates on our products and support from our team."
 msgstr "Vind ons team op @bluehost voor updates van onze producten en ondersteuning van ons team."
 
-#: build/4.2.0/index.js:1
+#: build/4.4.0/index.js:9
 msgid "Tweet Us"
 msgstr "Tweet ons"
 
-#: build/4.2.0/index.js:1
+#: build/4.4.0/index.js:9
 msgid "YouTube"
 msgstr "YouTube"
 
-#: build/4.2.0/index.js:1
+#: build/4.4.0/index.js:9
 msgid "Find tutorials, answers, interviews and guides on our YouTube channel."
 msgstr "Vind tutorials, antwoorden, interviews en handleidingen op ons YouTube-kanaal."
 
-#: build/4.2.0/index.js:1
+#: build/4.4.0/index.js:9
 msgid "Watch Now"
 msgstr "Bekijk nu"
 
-#: build/4.2.0/index.js:1
+#: build/4.4.0/index.js:9
 msgid "Knowledge Base"
 msgstr "Kennisbank"
 
-#: build/4.2.0/index.js:1
+#: build/4.4.0/index.js:9
 msgid "Articles, guides, how-tos, instructions, and answers to our client's most frequently asked questions."
 msgstr "Artikelen, handleidingen, how-tos, instructies en antwoorden op de meest gestelde vragen van onze klant."
 
-#: build/4.2.0/index.js:1
+#: build/4.4.0/index.js:9
 msgid "Visit Knowledge Base"
 msgstr "Bezoek de kennisbank"
 
-#: build/4.2.0/index.js:1
+#: build/4.4.0/index.js:9
 msgid "Resources"
 msgstr "Hulpmiddelen"
 
-#: build/4.2.0/index.js:1
+#: build/4.4.0/index.js:9
 msgid "Boost your online knowledge and get ahead of the competition."
 msgstr "Vergroot je online kennis en voorsprong op de competitie."
 
-#: build/4.2.0/index.js:1
+#: build/4.4.0/index.js:9
 msgid "Explore Resources"
 msgstr "Bronnen verkennen"
 
-#: build/4.2.0/index.js:1
+#: build/4.4.0/index.js:9
 msgid "Events and Webinars"
 msgstr "Gebeurtenissen en webinars"
 
-#: build/4.2.0/index.js:1
+#: build/4.4.0/index.js:9
 msgid "Team Bluehost organizes multiple webinars and events throughout the year. We are also sponsors and speak at most WordCamps across the world. Join us at our next event!"
 msgstr "Team Bluehost organiseert meerdere webinars en evenementen het hele jaar. We zijn ook sponsors en spreken over de meeste WordCamps over de hele wereld. Doe mee bij ons volgende evenement!"
 
-#: build/4.2.0/index.js:1
+#: build/4.4.0/index.js:9
 msgid "More Info"
 msgstr "Meer informatie"
 
-#: build/4.2.0/index.js:1
+#: build/4.4.0/index.js:9
 msgid "Bluehost Website"
 msgstr "Bluehost Website"
 
-#: build/4.2.0/index.js:1
+#: build/4.4.0/index.js:9
 msgid "Not finding what you need? Visit our website for more information about our products and services."
 msgstr "Niet gevonden wat je nodig hebt? Bezoek onze website voor meer informatie over onze producten en diensten."
 
-#: build/4.2.0/index.js:1
+#: build/4.4.0/index.js:9
 msgid "Go to Bluehost"
 msgstr "Ga naar Bluehost"
 
-#: build/4.2.0/index.js:2
-msgid "Site Pages"
-msgstr "Site pagina's"
-
-#: build/4.2.0/index.js:2
-msgid "Edit your homepage and other existing pages or add new pages to your site."
-msgstr "Bewerk uw startpagina en andere bestaande pagina's of voeg nieuwe pagina's toe aan uw site."
-
-#: build/4.2.0/index.js:1
-#: build/4.2.0/index.js:2
-msgid "View all"
-msgstr "Alles weergeven"
-
-#: build/4.2.0/index.js:1
-#: build/4.2.0/index.js:2
-msgid "Add New"
-msgstr "Nieuwe toevoegen"
-
-#: build/4.2.0/index.js:7
-msgid "This is where you can manage cache settings for your website."
-msgstr "Hier kun je de cache-instellingen voor je website beheren."
-
-#: build/4.2.0/index.js:15
+#: build/4.4.0/index.js:7
 msgid "The Help Center provides guided, step-by-step assistance as you build your site."
 msgstr "Het Helpcentrum biedt geleidelijke, stap-voor-stap ondersteuning als u uw site bouwt."
 
-#: build/4.2.0/index.js:7
+#: build/4.4.0/index.js:7
 msgid "Site Status"
 msgstr "Site status"
 
 #: inc/widgets/views/site-preview.php:147
-#: build/4.2.0/index.js:7
+#: build/4.4.0/index.js:7
 msgid "Not Live"
 msgstr "Niet live"
 
 #: inc/widgets/views/site-preview.php:148
-#: build/4.2.0/index.js:7
+#: build/4.4.0/index.js:7
 msgid "Live"
 msgstr "Zichtbaar"
 
-#: build/4.2.0/index.js:7
+#: build/4.4.0/index.js:7
 msgid "Your Bluehost Coming Soon page lets you hide your site from visitors while you make the magic happen."
 msgstr "Je Bluehost komtpagina laat je je site verbergen voor bezoekers terwijl je de magie laat gebeuren."
 
 #: inc/widgets/views/site-preview.php:161
-#: build/4.2.0/index.js:7
+#: build/4.4.0/index.js:7
 msgid "Your website is currently displaying a \"Coming Soon\" page."
 msgstr "Je website wordt momenteel een \"Binnenkort beschikbaar\" pagina weergegeven."
 
 #. translators: %s: number of weeks. `The trash will automatically empty every ${numTrashWeeks} weeks.`
-#: build/4.2.0/index.js:15
+#: build/4.4.0/index.js:9
+#, js-format
 msgid "The trash will automatically empty every %s week."
 msgid_plural "The trash will automatically empty every %s weeks."
 msgstr[0] "De prullenbak zal automatisch elke %s week leegmaken."
 msgstr[1] "De prullenbak zal automatisch elke %s weken leegmaken."
 
-#: build/4.2.0/index.js:15
+#: build/4.4.0/index.js:7
 msgid "WonderBlocks provides a library of customizable block patterns and page templates."
 msgstr "WonderBlocks biedt een bibliotheek van aanpasbare blokpatronen en paginasjablonen."
 
-#: inc/widgets/views/account.php:132
-#: build/4.2.0/index.js:1
+#: inc/widgets/views/account.php:138
 msgid "Hosting"
 msgstr "Hosting"
 
-#: build/4.2.0/index.js:1
-msgid "Products"
-msgstr "Producten"
-
-#: inc/widgets/views/account.php:178
+#: inc/widgets/views/account.php:188
 msgid "Payment Methods"
 msgstr "Betalingsmethoden"
 
-#: inc/widgets/views/account.php:109
+#: inc/widgets/views/account.php:113
 msgid "Mail"
 msgstr "E-mailen"
 
-#: inc/widgets/views/account.php:155
+#: inc/widgets/views/account.php:163
 msgid "Security"
 msgstr "Beveiliging"
 
-#: inc/widgets/views/account.php:86
+#: inc/widgets/views/account.php:88
 msgid "Profile"
 msgstr "Profiel"
 
-#: build/4.2.0/index.js:1
+#: build/4.4.0/index.js:9
 msgid "Explore our featured collection of tools and services."
 msgstr "Ontdek onze uitgebreide collectie gereedschappen en diensten."
 
-#: build/4.2.0/index.js:1
+#: build/4.4.0/index.js:9
 msgid "Oops, there was an error loading the marketplace, please try again later."
 msgstr "Oeps, er is een fout opgetreden bij het laden van de markt, probeer het later opnieuw."
 
-#: build/4.2.0/index.js:1
+#: build/4.4.0/index.js:9
 msgid "Sorry, no marketplace items. Please, try again later."
 msgstr "Sorry, geen marktplaats items. Probeer het later opnieuw."
 
-#: build/4.2.0/index.js:1
-#: build/4.2.0/index.js:15
+#: build/4.4.0/index.js:9
 msgid "Load More"
 msgstr "Meer laden"
 
-#: build/4.2.0/index.js:1
+#: build/4.4.0/index.js:9
 msgid "Oops! Something Went Wrong"
 msgstr "Oeps! Er ging iets mis"
 
-#: build/4.2.0/index.js:1
+#: build/4.4.0/index.js:9
 msgid "An error occurred while loading the content. Please try again later."
 msgstr "Er is een fout opgetreden tijdens het laden van de inhoud. Probeer het later opnieuw."
-
-#: build/4.2.0/index.js:15
-msgid "Solution"
-msgstr "Oplossing"
-
-#: build/4.2.0/index.js:15
-msgid "Explore the plugins and tools available with your solution."
-msgstr "Ontdek de plug-ins en gereedschappen die beschikbaar zijn met jouw oplossing."
-
-#: build/4.2.0/index.js:15
-msgid "Oops, there was an error loading your plugins and tools, please try again later."
-msgstr "Oeps, er is een fout opgetreden bij het laden van uw plugins en tools, probeer het later opnieuw."
-
-#: build/4.2.0/index.js:15
-msgid "Sorry, no current plugins and tools. Please, try again later."
-msgstr "Sorry, geen huidige plugins en tools. Probeer het later opnieuw."
 
 #: inc/widgets/Help.php:38
 msgid "Need Some Help?"
@@ -489,23 +434,19 @@ msgstr "Hulp nodig?"
 msgid "Site Preview"
 msgstr "Website voorbeeld"
 
-#: inc/widgets/views/account.php:159
+#: inc/widgets/views/account.php:167
 msgid "Quick Access"
 msgstr "Snelle Toegang"
 
-#: inc/widgets/views/account.php:198
+#: inc/widgets/views/account.php:210
 msgid "Renewals Center"
 msgstr "Midden voor verlengingen"
 
-#: inc/widgets/views/help.php:71
-msgid "From DIY to full-service help."
-msgstr "Van doe-het-zelf tot volledige service hulp."
-
-#: inc/widgets/views/help.php:72
+#: inc/widgets/views/help.php:96
 msgid "Call or chat 24/7 for support or let our experts build your site for you."
 msgstr "Bel of chat 24/7 voor ondersteuning of laat onze experts uw site voor u bouwen."
 
-#: inc/widgets/views/help.php:90
+#: inc/widgets/views/help.php:115
 msgid "Get Help"
 msgstr "Hulp vragen"
 
@@ -529,869 +470,281 @@ msgstr "Site starten"
 msgid "Enable Coming Soon"
 msgstr "Activeer binnenkort beschikbaar"
 
-#: build/4.2.0/index.js:1
+#: build/4.4.0/index.js:9
 msgid "Secret page to manage admin features and settings."
 msgstr "Geheime pagina om admin functies en instellingen te beheren."
 
-#: build/4.2.0/index.js:1
+#: build/4.4.0/index.js:9
 msgid "We are available 24/7 to help answer questions and solve your problems."
 msgstr "We zijn 24/7 beschikbaar om te helpen vragen te beantwoorden en uw problemen op te lossen."
 
-#: build/4.2.0/index.js:1
-msgid "Showcase physical and digital goods, product variations, and custom configurations."
-msgstr "Laat fysieke en digitale goederen, productvariaties en aangepaste configuraties zien."
-
-#: build/4.2.0/index.js:1
-msgid "Blog Posts"
-msgstr "Blog berichten"
-
-#: build/4.2.0/index.js:1
-msgid "Add a new blog post or edit your existing posts."
-msgstr "Voeg een nieuwe blogpost toe of bewerk uw bestaande berichten."
-
-#: build/4.2.0/index.js:1
-msgid "Bookings & Appointments"
-msgstr "Boekingen & Afspraken"
-
-#: build/4.2.0/index.js:1
-msgid "Add your list of services, setup a booking calendar, and edit your bookings form."
-msgstr "Voeg jouw dienstenlijst toe, stel een reserveringskalender in en bewerk jouw reserveringsformulier."
-
-#: build/4.2.0/index.js:1
-msgid "Your site is not live."
-msgstr "Uw site is niet productief."
-
-#: build/4.2.0/index.js:1
-msgid "Your site is live."
-msgstr "Uw site is lief."
-
-#. translators: %1$s: opening anchor tag, %2$s: closing anchor tag
-#: build/4.2.0/index.js:2
-msgid "Visitors to your site will see your \"Coming Soon\" page and not your actual site. Visit %1$s\"Settings\"%2$s to set your site live."
-msgstr "Bezoekers zien uw \"Binnenkort\" pagina en niet uw werkelijke site. Ga naar %1$s\"Instellingen\"%2$s om uw site live in te stellen."
-
-#: build/4.2.0/index.js:2
-msgid "Visitors to your site will see all your publicly published pages."
-msgstr "Bezoekers op uw site zien al uw publiekelijk gepubliceerde pagina's."
-
-#: build/4.2.0/index.js:2
-msgid "No cache enabled."
-msgstr "Geen cache ingeschakeld."
-
-#: build/4.2.0/index.js:2
-msgid "Every page load is fresh."
-msgstr "Elke pagina lading is nieuw."
-
-#: build/4.2.0/index.js:2
-msgid "Disabled"
-msgstr "Uitgeschakeld"
-
-#: build/4.2.0/index.js:2
-msgid "Not recommended."
-msgstr "Niet aanbevolen."
-
-#: build/4.2.0/index.js:2
-msgid "Cache static assets like images and the appearance of your site for 1 hour."
-msgstr "Cache statische assets zoals afbeeldingen en het uiterlijk van je site gedurende 1 uur."
-
-#: build/4.2.0/index.js:2
-msgid "Assets Only"
-msgstr "Alleen content"
-
-#: build/4.2.0/index.js:2
-msgid "Cache enabled for assets only."
-msgstr "Cache alleen voor assets ingeschakeld."
-
-#: build/4.2.0/index.js:2
-msgid "Recommended for ecommerce and sites that update frequently or display info in real-time."
-msgstr "Aanbevolen voor webshop en sites die regelmatig bijwerken of informatie in real-time tonen."
-
-#: build/4.2.0/index.js:2
-msgid "Cache static assets for 24 hours and web pages for 2 hours."
-msgstr "Cache statische activa voor 24 uur en webpagina's voor 2 uur."
-
-#: build/4.2.0/index.js:2
-msgid "Assets & Web Pages"
-msgstr "Activa & webpagina's"
-
-#: build/4.2.0/index.js:2
-msgid "Cache enabled for assets and pages."
-msgstr "Cache is ingeschakeld voor assets en pagina's."
-
-#: build/4.2.0/index.js:2
-msgid "Recommended for blogs, educational sites, and sites that update at least weekly."
-msgstr "Aanbevolen voor blogs, onderwijsagenten en sites die ten minste wekelijks bijwerken."
-
-#: build/4.2.0/index.js:2
-msgid "Cache static assets for 1 week and web pages for 8 hours."
-msgstr "Cache statische assets voor 1 week en web pagina's voor 8 uur."
-
-#: build/4.2.0/index.js:2
-msgid "Assets & Web Pages - Extended"
-msgstr "Assets & webpagina's - Uitgebreid"
-
-#: build/4.2.0/index.js:2
-msgid "Cache enabled for assets and pages (extended)."
-msgstr "Cache geactiveerd voor assets en pagina's (uitgebreid)."
-
-#: build/4.2.0/index.js:2
-msgid "Recommended for sites that update a few times a month or less like porfolios or brochure sites."
-msgstr "Aanbevolen voor sites die een paar keer per maand of minder zoals porfolio's of brochuresites bijwerken."
-
-#: build/4.2.0/index.js:2
-msgid "Boost speed and performance by storing a copy of your website content, files, and images online so the pages of your website load faster for your visitors."
-msgstr "Boost snelheid en prestaties door een kopie op te slaan van de inhoud van uw website, bestanden, en afbeeldingen online zodat de pagina's van uw website sneller laden voor uw bezoekers."
-
-#: build/4.2.0/index.js:2
-msgid "Cache setting saved"
-msgstr "Cache-instellingen opgeslagen"
-
-#: build/4.2.0/index.js:2
-msgid "Cache Level"
-msgstr "Cache niveau"
-
-#: build/4.2.0/index.js:2
-msgid "Clear All Cache Now"
-msgstr "Wis alle cache nu"
-
-#: build/4.2.0/index.js:2
-msgid "We automatically clear your cache as you work (creating content, changing settings, installing plugins and more). But you can manually clear it here to be confident it's fresh."
-msgstr "De cache wordt automatisch gewist terwijl je werkt (inhoud, wijzigen van instellingen, installeren van plug-ins en meer). Maar je kunt het hier handmatig verwijderen om er zeker van te zijn dat het vers is."
-
-#: build/4.2.0/index.js:2
-msgid "Cache cleared"
-msgstr "Cache gewist"
-
-#: build/4.2.0/index.js:2
-msgid "Clear Cache"
-msgstr "Cache legen"
-
-#: build/4.2.0/index.js:2
-msgid "Asks the browser to download and cache links on the page ahead of them being clicked on, so that when they are clicked they load almost instantly."
-msgstr "Vraagt de browser om links te downloaden en te cachen op de pagina voordat er op wordt geklikt, zodat wanneer op ze wordt geklikt, ze bijna direct laden."
-
-#: build/4.2.0/index.js:2
-msgid "Link prefetching setting saved"
-msgstr "Link prefetching instelling opgeslagen"
-
-#: build/4.2.0/index.js:2
-msgid "Link Prefetch"
-msgstr "Koppeling Prefetch"
-
-#: build/4.2.0/index.js:2
-msgid "Enable link prefetching on desktop"
-msgstr "Schakel link prefetching in op desktop"
-
-#: build/4.2.0/index.js:2
-msgid "Activate on desktop"
-msgstr "Activeren op het bureaublad"
-
-#: build/4.2.0/index.js:2
-msgid "Behavior of the prefetch"
-msgstr "Gedrag van de prefetch"
-
-#: build/4.2.0/index.js:2
-msgid "Behavior"
-msgstr "Gedrag"
-
-#: build/4.2.0/index.js:2
-msgid "Prefetch on Mouse Down"
-msgstr "Prefetch op Muis Down"
-
-#: build/4.2.0/index.js:2
-msgid "Prefetch on Mouse Down: Starts loading the page as soon as you click down, for faster response when you release the click."
-msgstr "Prefetch op Mouse Down: start met het laden van de pagina zodra je op beneden klikt, voor snellere reactie wanneer je de klik loslaten."
-
-#: build/4.2.0/index.js:2
-msgid "Prefetch on Mouse Hover (Recommended)"
-msgstr "Voorkeur op muis Hover (aanbevolen)"
-
-#: build/4.2.0/index.js:2
-msgid "Prefetch on Mouse Hover: Begins loading the page the moment your cursor hovers over a link"
-msgstr "Prefetch op Muis Hover: Begint de pagina op het moment dat je cursor over een link beweegt"
-
-#: build/4.2.0/index.js:2
-msgid "Enable link prefetching on mobile"
-msgstr "Schakel link prefetching in op mobiel"
-
-#: build/4.2.0/index.js:2
-msgid "Activate on mobile"
-msgstr "Activeren op mobiel"
-
-#: build/4.2.0/index.js:2
-msgid "Prefetch on Touchstart (Recommended)"
-msgstr "Prefetch bij Touchstart (aanbevolen)"
-
-#: build/4.2.0/index.js:2
-msgid "Prefetch on Touchstart: Instantly starts loading the page as soon as you tap the screen, ensuring a quicker response when you lift your finger."
-msgstr "Prefetch bij Touchstart: direct begint met het laden van de pagina zodra je op het scherm tikt, wat zorgt voor een snellere reactie wanneer je je vinger optilt."
-
-#: build/4.2.0/index.js:2
-msgid "Prefetch Above the Fold"
-msgstr "Prefetch boven het vouw"
-
-#: build/4.2.0/index.js:2
-msgid "Prefetch Above the Fold: Loads links in your current view instantly, ensuring they're ready when you need them."
-msgstr "Prefetch Boven de Mouw: Laad links in je huidige weergave en zorg ervoor dat ze klaar zijn wanneer je ze nodig hebt."
-
-#: build/4.2.0/index.js:2
-msgid "Exclude Keywords: A comma separated list of words or strings that will exclude a link from being prefetched. For example, excluding \"app\" will prevent https://example.com/apple from being prefetched."
-msgstr "Trefwoorden uitsluiten: een door komma's gescheiden lijst van woorden of tekenreeksen die een link van vooraf opgehaald zullen uitsluiten. Bijvoorbeeld, zonder \"app\" kan https://example.com/apple niet van voren af worden gehaald."
-
-#: build/4.2.0/index.js:2
-msgid "Exclude keywords"
-msgstr "Trefwoorden uitsluiten"
-
-#: build/4.2.0/index.js:2
-msgid "Advanced settings"
-msgstr "Geavanceerde instellingen"
-
-#: build/4.2.0/index.js:2
-msgid "Additional speed and scalability features powered by Jetpack Boost to make your site as fast as it can be."
-msgstr "Extra functies voor snelheid en schaalbaarheid aangedreven door Jetpack Boost om uw site zo snel mogelijk te maken."
-
-#: build/4.2.0/index.js:2
-msgid "Optimize Critical CSS Loading (manual)"
-msgstr "Optimaliseren van kritisch CSS laden (handmatig)"
-
-#: build/4.2.0/index.js:2
-msgid "Move important styling information to the start of the page, which helps pages display your content sooner, so your users don’t have to wait for the entire page to load."
-msgstr "Verplaats belangrijke opmaak informatie naar de start van de pagina, waarmee pagina's je inhoud eerder kunnen weergeven, dus hoeven je gebruikers niet te wachten tot de hele pagina geladen is."
-
-#: build/4.2.0/index.js:2
-msgid "Optimize Critical CSS Loading (UPGRADED)"
-msgstr "Optimaliseren van kritische CSS laden (UPGRADED)"
-
-#: build/4.2.0/index.js:2
-msgid "Generate Critical CSS Automatically"
-msgstr "Kritische CSS automatisch genereren"
-
-#. translators: %1$s is a line break (<br>), %2$s is the opening <strong> tag, %3$s is the closing </strong> tag.
-#: build/4.2.0/index.js:5
-msgid "Move important styling information to the start of the page, which helps pages display your content sooner, so your users don’t have to wait for the entire page to load.%1$s %2$sBoost will automatically generate your Critical CSS%3$s whenever you make changes to the HTML or CSS structure of your site."
-msgstr "Verplaats belangrijke opmaak informatie naar de start van de pagina, waarmee pagina's je inhoud eerder kunnen weergeven, dus hoeven je gebruikers niet te wachten tot de hele pagina geladen is.%1$s %2$sBoost zal automatisch je Kritische CSS%3$s genereren wanneer je wijzigingen aanbrengt in de HTML of CSS structuur van je site."
-
-#: build/4.2.0/index.js:5
-msgid "Defer Non-Essential JavaScript"
-msgstr "Uitstellen van niet-Essentiële JavaScript"
-
-#: build/4.2.0/index.js:5
-msgid "Run non-essential JavaScript after the page has loaded so that styles and images can load more quickly."
-msgstr "Voer niet-essentiële JavaScript uit nadat de pagina is geladen, zodat stijlen en afbeeldingen sneller kunnen worden geladen."
-
-#: build/4.2.0/index.js:5
-msgid "Concatenate JS"
-msgstr "Samengevoegde JS"
-
-#: build/4.2.0/index.js:5
-msgid "Scripts are grouped by their original placement, concatenated and minified to reduce site loading time and reduce the number of requests."
-msgstr "Scripts worden gegroepeerd op hun oorspronkelijke plaats, samengevoegd en geminiteerd om de laadtijd van de site te verminderen en het aantal verzoeken te verminderen."
-
-#: build/4.2.0/index.js:5
-msgid "Exclude JS Strings"
-msgstr "JS tekenreeksen uitsluiten"
-
-#: build/4.2.0/index.js:5
-msgid "Concatenate CSS"
-msgstr "Concatenate CSS"
-
-#: build/4.2.0/index.js:5
-msgid "Styles are grouped by their original placement, concatenated and minified to reduce site loading time and reduce the number of requests."
-msgstr "Stijlen worden gegroepeerd op hun oorspronkelijke plaats, samengevoegd en geminificeerd om de laadtijd van de site te verminderen en het aantal verzoeken te verminderen."
-
-#: build/4.2.0/index.js:5
-msgid "Exclude CSS Strings"
-msgstr "CSS tekenreeksen uitsluiten"
-
-#: build/4.2.0/index.js:5
-msgid "Show more"
-msgstr "Toon meer"
-
-#: build/4.2.0/index.js:5
-msgid "Show less"
-msgstr "Minder weergeven"
-
-#: build/4.2.0/index.js:5
-msgid "Discover More"
-msgstr "Ontdek meer"
-
-#: build/4.2.0/index.js:5
-msgid "Install Jetpack Boost to unlock"
-msgstr "Installeer Jetpack Boost om te ontgrendelen"
-
-#: build/4.2.0/index.js:5
-msgid "Installing Jetpack Boost…"
-msgstr "Installing Jetpack Boost…"
-
-#: build/4.2.0/index.js:5
-msgid "Jetpack Boost is now active"
-msgstr "Jetpack Boost is nu actief"
-
-#: build/4.2.0/index.js:5
-msgid "Activation failed"
-msgstr "Activeren mislukt"
-
-#. translators: %1$s is the opening <a> tag, %2$s is the closing </a> tag.
-#: build/4.2.0/index.js:7
-msgid "Discover more %1$shere%2$s"
-msgstr "Ontdek meer %1$shier%2$s"
-
-#: build/4.2.0/index.js:7
-msgid "Option saved correctly"
-msgstr "Optie correct opgeslagen"
-
-#: build/4.2.0/index.js:7
-msgid "Error saving option"
-msgstr "Fout bij opslaan optie"
-
-#: build/4.2.0/index.js:7
-msgid "Image Optimization"
-msgstr "Afbeelding optimalisatie"
-
-#: build/4.2.0/index.js:7
-msgid "We automatically optimize your uploaded images to WebP format for faster performance and reduced file sizes. You can also choose to delete the original images to save storage space."
-msgstr "We optimaliseren automatisch uw geüploade afbeeldingen naar WebP-formaat voor snellere prestaties en verminderde bestandsgrootte. U kunt ook kiezen om de originele afbeeldingen te verwijderen om ruimte te besparen."
-
-#: build/4.2.0/index.js:7
-msgid "Enable Image Optimization"
-msgstr "Optimalisatie afbeelding inschakelen"
-
-#: build/4.2.0/index.js:7
-msgid "Enable or disable image optimization globally."
-msgstr "Afbeeldingsoptimalisatie globaal in- of uitschakelen."
-
-#: build/4.2.0/index.js:7
-msgid "Automatically Optimize Uploaded Images"
-msgstr "Geüploade afbeeldingen automatisch optimaliseren"
-
-#: build/4.2.0/index.js:7
-msgid "When enabled, all your new image uploads will be automatically optimized to WebP format, ensuring faster page loading and reduced file sizes."
-msgstr "Wanneer ingeschakeld, zullen al uw nieuwe afbeeldingsuploads automatisch worden geoptimaliseerd naar WebP-formaat, waardoor de pagina sneller wordt geladen en de bestandsgrootte wordt verkleind."
-
-#: build/4.2.0/index.js:7
-msgid "Auto Delete Original Image"
-msgstr "Originele afbeelding automatisch verwijderen"
-
-#: build/4.2.0/index.js:7
-msgid "When enabled, the original uploaded image is deleted and replaced with the optimized version, helping to save storage space. If disabled, the optimized image is saved as a separate file, retaining the original."
-msgstr "Wanneer ingeschakeld, wordt de origineel geüploade afbeelding verwijderd en vervangen door de geoptimaliseerde versie, helpt u opslagruimte te besparen. Als dit is uitgeschakeld, wordt de geoptimaliseerde afbeelding opgeslagen als een apart bestand, waardoor het origineel behouden blijft."
-
-#: build/4.2.0/index.js:7
-msgid "No settings available."
-msgstr "Geen instellingen beschikbaar."
-
-#: build/4.2.0/index.js:7
-msgid "Loading settings…"
-msgstr "Instellingen laden…"
-
-#: build/4.2.0/index.js:7
-msgid "Settings updated successfully"
-msgstr "Instellingen met succes bijgewerkt"
-
-#: build/4.2.0/index.js:7
-msgid "Your image optimization settings have been saved."
-msgstr "Uw instellingen voor de optimalisatie van de afbeeldingen zijn opgeslagen."
-
-#: build/4.2.0/index.js:7
-msgid "Enable Lazy Loading"
-msgstr "Activeer Lazy Laden"
-
-#: build/4.2.0/index.js:7
-msgid "Lazy loading defers the loading of images until they are visible on the screen, improving page load speed and performance."
-msgstr "Lazy laadt het laden van afbeeldingen uit totdat ze zichtbaar zijn op het scherm, waardoor de laadsnelheid en prestaties van pagina's worden verbeterd."
-
-#: build/4.2.0/index.js:7
-msgid "Lazy loading has been updated."
-msgstr "Lazy laden is bijgewerkt."
-
-#: build/4.2.0/index.js:7
-msgid "Oops! There was an error updating the lazy loading settings."
-msgstr "Oeps! Er is een fout opgetreden bij het bijwerken van de luie laadinstellingen."
-
-#: build/4.2.0/index.js:7
-msgid "Enable Bulk Optimization of Images"
-msgstr "Bulk optimalisatie van afbeeldingen inschakelen"
-
-#: build/4.2.0/index.js:7
-msgid "When enabled, allows bulk optimization of images in the media library."
-msgstr "Indien ingeschakeld, staat groepsgewijze optimalisatie van afbeeldingen in de mediabibliotheek toe."
-
-#: build/4.2.0/index.js:7
-msgid "Go to Media Library"
-msgstr "Ga naar mediabibliotheek"
-
-#: build/4.2.0/index.js:7
-msgid "Error Updating Settings"
-msgstr "Fout bij bijwerken instellingen"
-
-#: build/4.2.0/index.js:7
-msgid "Prefer Optimized Image When Exists"
-msgstr "Geoptimaliseerde afbeelding van voorkeur"
-
-#: build/4.2.0/index.js:7
-msgid "When enabled, optimized images will be served in place of original images when they exist, improving performance."
-msgstr "Wanneer ingeschakeld, worden geoptimaliseerde afbeeldingen in plaats van originele afbeeldingen geserveerd wanneer ze bestaan, verbeterde prestaties."
-
-#: build/4.2.0/index.js:7
-msgid "Something went wrong while updating the settings. Please try again."
-msgstr "Er ging iets mis tijdens het bijwerken van de instellingen. Probeer het opnieuw."
-
-#: build/4.2.0/index.js:7
+#: build/4.4.0/index.js:7
 msgid "Enabled All auto-updates"
 msgstr "Alle auto-updates ingeschakeld"
 
-#: build/4.2.0/index.js:7
+#: build/4.4.0/index.js:7
 msgid "Disabled All auto-updates"
 msgstr "Alle auto-updates uitgeschakeld"
 
-#: build/4.2.0/index.js:7
+#: build/4.4.0/index.js:7
 msgid "Everything will automatically update."
 msgstr "Alles zal automatisch worden bijgewerkt."
 
-#: build/4.2.0/index.js:7
+#: build/4.4.0/index.js:7
 msgid "Custom auto-update settings."
 msgstr "Aangepaste instellingen voor automatisch bijwerken."
 
-#: build/4.2.0/index.js:7
+#: build/4.4.0/index.js:7
 msgid "Automatically keep all up to date"
 msgstr "Automatisch alles op de hoogte houden"
 
-#: build/4.2.0/index.js:7
+#: build/4.4.0/index.js:7
 msgid "Enabled Core auto-updates"
 msgstr "Ingeschakelde Core auto-updates"
 
-#: build/4.2.0/index.js:7
+#: build/4.4.0/index.js:7
 msgid "Disabled Core auto-updates"
 msgstr "Kern-updates uitschakelen"
 
-#: build/4.2.0/index.js:7
+#: build/4.4.0/index.js:7
 msgid "WordPress will automatically update."
 msgstr "WordPress wordt automatisch bijgewerkt."
 
-#: build/4.2.0/index.js:7
+#: build/4.4.0/index.js:7
 msgid "WordPress must be manually updated."
 msgstr "WordPress moet handmatig worden bijgewerkt."
 
-#: build/4.2.0/index.js:7
+#: build/4.4.0/index.js:7
 msgid "WordPress Core"
 msgstr "WordPress Kern"
 
-#: build/4.2.0/index.js:7
+#: build/4.4.0/index.js:7
 msgid "Enabled Plugins auto-update"
 msgstr "Ingeschakelde Plugins automatisch bijwerken"
 
-#: build/4.2.0/index.js:7
+#: build/4.4.0/index.js:7
 msgid "Disabled Plugins auto-update"
 msgstr "Uitgeschakelde Plugins automatisch bijwerken"
 
-#: build/4.2.0/index.js:7
+#: build/4.4.0/index.js:7
 msgid "All plugins will automatically update."
 msgstr "Alle plug-ins worden automatisch bijgewerkt."
 
-#: build/4.2.0/index.js:7
+#: build/4.4.0/index.js:7
 msgid "Each plugin must be manually updated."
 msgstr "Elke plugin moet handmatig worden bijgewerkt."
 
-#: build/4.2.0/index.js:7
+#: build/4.4.0/index.js:7
 msgid "Plugins"
 msgstr "Plug-ins"
 
-#: build/4.2.0/index.js:7
+#: build/4.4.0/index.js:7
 msgid "Enabled Themes auto-update"
 msgstr "Ingeschakelde thema's auto-update"
 
-#: build/4.2.0/index.js:7
+#: build/4.4.0/index.js:7
 msgid "Disabled Themes auto-update"
 msgstr "Uitgeschakelde thema's automatisch bijwerken"
 
-#: build/4.2.0/index.js:7
+#: build/4.4.0/index.js:7
 msgid "All themes will automatically update."
 msgstr "Alle thema's worden automatisch bijgewerkt."
 
-#: build/4.2.0/index.js:7
+#: build/4.4.0/index.js:7
 msgid "Each theme must be manually updated."
 msgstr "Elk thema moet handmatig worden bijgewerkt."
 
-#: build/4.2.0/index.js:7
+#: build/4.4.0/index.js:7
 msgid "Themes"
 msgstr "Themas"
 
-#: build/4.2.0/index.js:7
+#: build/4.4.0/index.js:7
 msgid "Automatic Updates"
 msgstr "Automatische updates"
 
-#: build/4.2.0/index.js:7
+#: build/4.4.0/index.js:7
 msgid "Keeping automatic updates on ensures timely security fixes and the latest features."
 msgstr "Automatisch bijwerken behouden garandeert tijdige beveiligingsoplossingen en de nieuwste functies."
 
-#: build/4.2.0/index.js:7
+#: build/4.4.0/index.js:7
 msgid "Coming soon activated"
 msgstr "Komt binnenkort geactiveerd"
 
-#: build/4.2.0/index.js:7
+#: build/4.4.0/index.js:7
 msgid "Coming soon deactivated"
 msgstr "Binnenkort gedeactiveerd"
 
-#: build/4.2.0/index.js:7
+#: build/4.4.0/index.js:7
 msgid "Coming soon page is active. Site requires login."
 msgstr "Binnenkort pagina is actief. Site vereist inloggen."
 
-#: build/4.2.0/index.js:7
+#: build/4.4.0/index.js:7
 msgid "Coming soon page is not active. Site is live to visitors."
 msgstr "Binnenkort beschikbaar is niet actief. De site is live bezoekers."
 
-#: build/4.2.0/index.js:7
+#: build/4.4.0/index.js:7
 msgid "Turn off your \"Coming Soon\" page when you are ready to launch your website."
 msgstr "Schakel uw \"Binnenkort beschikbaar\" pagina uit wanneer u klaar bent om uw website te starten."
 
-#: build/4.2.0/index.js:7
+#: build/4.4.0/index.js:7
 msgid "Turn on your \"Coming Soon\" page when you need to make major changes to your website."
 msgstr "Schakel uw \"Binnenkort beschikbaar\" pagina in wanneer u belangrijke wijzigingen in uw website moet aanbrengen."
 
-#: build/4.2.0/index.js:7
+#: build/4.4.0/index.js:1
 msgid "Disabled old post comments"
 msgstr "Oude commentaren uitgeschakeld"
 
-#: build/4.2.0/index.js:7
+#: build/4.4.0/index.js:1
 msgid "Enabled old post comments"
 msgstr "Ingeschakelde oude post reacties"
 
-#: build/4.2.0/index.js:7
+#: build/4.4.0/index.js:1
 msgid "Comments on old posts are disabled."
 msgstr "Reacties op oude berichten zijn uitgeschakeld."
 
-#: build/4.2.0/index.js:7
+#: build/4.4.0/index.js:1
 msgid "Comments are allowed on old posts."
 msgstr "Reacties zijn toegestaan op oude berichten."
 
-#: build/4.2.0/index.js:7
+#: build/4.4.0/index.js:1
 msgid "Disable comments for older posts"
 msgstr "Commentaren voor oudere berichten uitschakelen"
 
-#: build/4.2.0/index.js:7
+#: build/4.4.0/index.js:1
 msgid "Comments setting saved"
 msgstr "Reacties instelling opgeslagen"
 
 #. translators: %s: number of days. `Comments on posts are disabled after ${closeCommentsDays} days.`
-#: build/4.2.0/index.js:9
+#: build/4.4.0/index.js:3
+#, js-format
 msgid "Comments on posts are disabled after %s day."
 msgid_plural "Comments on posts are disabled after %s days."
 msgstr[0] "Reacties op berichten zijn uitgeschakeld na %s dag."
 msgstr[1] "Reacties op berichten zijn uitgeschakeld na %s dagen."
 
 #. translators: %s: number of days. `Close comments after ${closeCommentsDays} days.`
-#: build/4.2.0/index.js:11
+#: build/4.4.0/index.js:5
+#, js-format
 msgid "Close comments after %s day."
 msgid_plural "Close comments after %s days."
 msgstr[0] "Sluit reacties na %s dag."
 msgstr[1] "Sluit reacties na %s dagen."
 
-#: build/4.2.0/index.js:11
+#: build/4.4.0/index.js:5
 msgid "Comments setting saved."
 msgstr "Reacties instellingen opgeslagen."
 
 #. translators: %s: number of comments. `Posts will display ${commentsPerPage} comments at a time.`
-#: build/4.2.0/index.js:13
+#: build/4.4.0/index.js:7
+#, js-format
 msgid "Posts will display %s comment at a time."
 msgid_plural "Posts will display %s comments at a time."
 msgstr[0] "Berichten tonen %s reactie per keer."
 msgstr[1] "Berichten tonen %s reacties tegelijk."
 
-#: build/4.2.0/index.js:13
+#: build/4.4.0/index.js:7
 msgid "Comments to display per page"
 msgstr "Reacties die per pagina worden weergegeven"
 
-#: build/4.2.0/index.js:13
+#: build/4.4.0/index.js:7
 msgid "Comments"
 msgstr "Opmerkingen"
 
-#: build/4.2.0/index.js:13
+#: build/4.4.0/index.js:7
 msgid "Comments allow visitors to provide feedback and respond to your posts or pages."
 msgstr "Met reacties kunnen bezoekers feedback geven en reageren op uw berichten of pagina's."
 
-#: build/4.2.0/index.js:15
+#: build/4.4.0/index.js:9
 msgid "Trash setting saved"
 msgstr "Prullenbak instelling opgeslagen"
 
-#: build/4.2.0/index.js:15
+#: build/4.4.0/index.js:9
 msgid "Number of weeks in between emptying trash"
 msgstr "Aantal weken tussen leegmaken van prullenbak"
 
-#: build/4.2.0/index.js:15
+#: build/4.4.0/index.js:9
 msgid "Content Options"
 msgstr "Content opties"
 
-#: build/4.2.0/index.js:15
+#: build/4.4.0/index.js:9
 msgid "Controls for how often to empty the trash."
 msgstr "Bepaalt hoe vaak de prullenbak leeg wordt gemaakt."
 
-#: build/4.2.0/index.js:15
+#: build/4.4.0/index.js:7
 msgid "Help Center Enabled"
 msgstr "Helpcentrum ingeschakeld"
 
-#: build/4.2.0/index.js:15
+#: build/4.4.0/index.js:7
 msgid "Help Center Disabled"
 msgstr "Helpcentrum uitgeschakeld"
 
-#: build/4.2.0/index.js:15
+#: build/4.4.0/index.js:7
 msgid "Reload the page to access the Help Center."
 msgstr "Herlaad de pagina om naar het Helpcentrum te gaan."
 
-#: build/4.2.0/index.js:15
+#: build/4.4.0/index.js:7
 msgid "The Help Center will no longer display."
 msgstr "Het Helpcentrum wordt niet langer weergegeven."
 
-#: build/4.2.0/index.js:15
-msgid "This is where you can manage common settings for your website."
-msgstr "Hier kun je algemene instellingen voor je website beheren."
-
-#: build/4.2.0/index.js:15
+#: build/4.4.0/index.js:7
 msgid "Features"
 msgstr "Eigenschappen"
 
-#: build/4.2.0/index.js:15
+#: build/4.4.0/index.js:7
 msgid "Customize the available features as you manage your website."
 msgstr "Pas de beschikbare functies aan bij het beheren van uw website."
 
-#: build/4.2.0/index.js:15
+#: build/4.4.0/index.js:9
 msgid "Performance Enabled"
 msgstr "Prestaties ingeschakeld"
 
-#: build/4.2.0/index.js:15
+#: build/4.4.0/index.js:9
 msgid "Performance Disabled"
 msgstr "Prestaties uitgeschakeld"
 
-#: build/4.2.0/index.js:15
+#: build/4.4.0/index.js:9
 msgid "You need to reload the page to manage Performance."
 msgstr "U moet de pagina herladen om de prestaties te beheren."
 
-#: build/4.2.0/index.js:15
+#: build/4.4.0/index.js:9
 msgid "Performance will no longer display."
 msgstr "Prestaties worden niet langer weergegeven."
 
-#: build/4.2.0/index.js:15
+#: build/4.4.0/index.js:9
 msgid "The performance feature provides improvements to loads faster for visitors including cache settings."
 msgstr "De prestatiefunctie biedt verbeteringen om sneller te laden voor bezoekers met inbegrip van cache-instellingen."
 
-#: build/4.2.0/index.js:15
+#: build/4.4.0/index.js:7
 msgid "Staging Enabled"
 msgstr "Staging ingeschakeld"
 
-#: build/4.2.0/index.js:15
+#: build/4.4.0/index.js:7
 msgid "Staging Disabled"
 msgstr "Staging uitgeschakeld"
 
-#: build/4.2.0/index.js:15
+#: build/4.4.0/index.js:7
 msgid "You need to reload the page to manage Staging."
 msgstr "Je moet de pagina herladen om Staging te beheren."
 
-#: build/4.2.0/index.js:15
+#: build/4.4.0/index.js:7
 msgid "Staging will no longer display."
 msgstr "Er zal niet langer gefaseerd worden weergegeven."
 
-#: build/4.2.0/index.js:15
+#: build/4.4.0/index.js:7
 msgid "WonderBlocks Enabled"
 msgstr "WonderBlocks ingeschakeld"
 
-#: build/4.2.0/index.js:15
+#: build/4.4.0/index.js:7
 msgid "WonderBlocks Disabled"
 msgstr "WonderBlocks uitgeschakeld"
 
-#: build/4.2.0/index.js:15
+#: build/4.4.0/index.js:7
 msgid "Create new content to see WonderBlocks in action."
 msgstr "Maak nieuwe inhoud om WonderBlocks in actie te zien."
 
-#: build/4.2.0/index.js:15
+#: build/4.4.0/index.js:7
 msgid "WonderBlocks will no longer display."
 msgstr "WonderBlocks worden niet langer weergegeven."
-
-#: build/4.2.0/index.js:15
-msgid "Cancel"
-msgstr "Annuleren"
-
-#: build/4.2.0/index.js:15
-msgid "Clone"
-msgstr "Dupliceren"
-
-#: build/4.2.0/index.js:15
-msgid "Confirm Clone Action"
-msgstr "Bevestig kloonactie"
-
-#: build/4.2.0/index.js:15
-msgid "This will overwrite anything in staging and update it to an exact clone of the current production site. Are you sure you want to proceed?"
-msgstr "Dit zal alles in staging overschrijven en bijwerken naar een exacte kloon van de huidige productiesite. Weet u zeker dat u wilt doorgaan?"
-
-#: build/4.2.0/index.js:15
-msgid "Cloned to Staging"
-msgstr "Gekloond naar Staging"
-
-#: build/4.2.0/index.js:15
-msgid "Cloning production to staging, this should take about a minute."
-msgstr "Het stilleggen van de productie zou ongeveer een minuut moeten duren."
-
-#: build/4.2.0/index.js:15
-msgid "Clone to staging"
-msgstr "Kopieer naar staging"
-
-#: build/4.2.0/index.js:15
-msgid "Created"
-msgstr "Aangemaakt"
-
-#: build/4.2.0/index.js:15
-msgid "Staging Created"
-msgstr "Staging aangemaakt"
-
-#: build/4.2.0/index.js:15
-msgid "Creating a staging site, this should take about a minute."
-msgstr "Het creëren van een halteplaats zou ongeveer een minuut moeten duren."
-
-#: build/4.2.0/index.js:15
-msgid "Create staging site"
-msgstr "Stageings site maken"
-
-#: build/4.2.0/index.js:15
-msgid "Currently editing"
-msgstr "Momenteel bewerken"
-
-#: build/4.2.0/index.js:15
-msgid "Delete"
-msgstr "Verwijderen"
-
-#: build/4.2.0/index.js:15
-msgid "Confirm Delete"
-msgstr "Verwijderen bevestigen"
-
-#: build/4.2.0/index.js:15
-msgid "This will permanently delete staging site. Are you sure you want to proceed? You can recreate another staging site at any time, but any specific changes you've made to this staging site will be lost."
-msgstr "Dit zal de stagingsite permanent verwijderen. Weet u zeker dat u wilt doorgaan? Je kunt op elk moment een andere staging site aanmaken, maar eventuele specifieke wijzigingen die je hebt aangebracht in deze staging site gaan verloren."
-
-#: build/4.2.0/index.js:15
-msgid "Deleted Staging"
-msgstr "Verwijderde fasering"
-
-#: build/4.2.0/index.js:15
-msgid "Deleting the staging site, this should take about a minute."
-msgstr "De voorgehouden site wordt verwijderd, dit duurt ongeveer een minuut."
-
-#: build/4.2.0/index.js:15
-msgid "Delete Staging Site"
-msgstr "Verwijder Staging Site"
-
-#: build/4.2.0/index.js:15
-msgid "Deploy"
-msgstr "Implementeren"
-
-#: build/4.2.0/index.js:15
-msgid "Deploy all changes"
-msgstr "Alle wijzigingen implementeren"
-
-#: build/4.2.0/index.js:15
-msgid "Confirm Deployment"
-msgstr "Bevestig implementatie"
-
-#: build/4.2.0/index.js:15
-msgid "Deploy database only"
-msgstr "Alleen database implementeren"
-
-#: build/4.2.0/index.js:15
-msgid "This will deploy staging to production and overwrite current production site. Are you sure you want to proceed?"
-msgstr "Dit zal staging implementeren naar productie en huidige productie site overschrijven. Weet u zeker dat u wilt doorgaan?"
-
-#: build/4.2.0/index.js:15
-msgid "Deploy files only"
-msgstr "Alleen bestanden implementeren"
-
-#: build/4.2.0/index.js:15
-msgid "Deployed"
-msgstr "Geïmplementeerd"
-
-#: build/4.2.0/index.js:15
-msgid "Deploying from staging to production, this should take about a minute."
-msgstr "Het inzetten van halteplaatsen op productie, dit zou ongeveer een minuut moeten duren."
-
-#: build/4.2.0/index.js:15
-msgid "Deploy Site"
-msgstr "Site implementeren"
-
-#: build/4.2.0/index.js:15
-msgid "Error"
-msgstr "Foutmelding"
-
-#: build/4.2.0/index.js:15
-msgid "You don't have a staging site yet."
-msgstr "U hebt nog geen staging site."
-
-#: build/4.2.0/index.js:15
-msgid "Not currently editing"
-msgstr "Momenteel niet bewerkt"
-
-#: build/4.2.0/index.js:15
-msgid "Proceed"
-msgstr "Doorgaan"
-
-#: build/4.2.0/index.js:15
-msgid "Production Site"
-msgstr "Productie site"
-
-#: build/4.2.0/index.js:15
-msgid "Staging Site"
-msgstr "Staging Site"
-
-#: build/4.2.0/index.js:15
-msgid "A staging site is a duplicate of your live site, offering a secure environment to experiment, test updates, and deploy when ready."
-msgstr "Een stagingsite is een duplicaat van uw website en biedt een veilige omgeving aan om te experimenteren, updates te testen en te implementeren wanneer u klaar bent."
-
-#: build/4.2.0/index.js:15
-msgid "Switch"
-msgstr "Schakelaar"
-
-#: build/4.2.0/index.js:15
-msgid "Switching"
-msgstr "Schakelen"
-
-#: build/4.2.0/index.js:15
-msgid "Switch to Production"
-msgstr "Overschakelen naar productie"
-
-#: build/4.2.0/index.js:15
-msgid "This will navigate you to the production environment"
-msgstr "Dit zal je naar de productieomgeving navigeren"
-
-#: build/4.2.0/index.js:15
-msgid "Loading the production environment now."
-msgstr "De productieomgeving nu laden."
-
-#: build/4.2.0/index.js:15
-msgid "Switching to the production environment, this should take about a minute."
-msgstr "De omschakeling naar de productieomgeving zou ongeveer een minuut moeten duren."
-
-#: build/4.2.0/index.js:15
-msgid "Switch to Staging"
-msgstr "Overschakelen naar fasering"
-
-#: build/4.2.0/index.js:15
-msgid "This will navigate you to the staging environment"
-msgstr "Dit zal u navigeren naar de stagingomgeving"
-
-#: build/4.2.0/index.js:15
-msgid "Loading the staging environment now."
-msgstr "De stagingomgeving nu laden."
-
-#: build/4.2.0/index.js:15
-msgid "Switching to the staging environment, this should take about a minute."
-msgstr "Overschakelen op de stagingomgeving, dit zou ongeveer een minuut moeten duren."
-
-#: build/4.2.0/index.js:15
-msgid "An unknown error has occurred."
-msgstr "Er is een onbekende fout opgetreden."
-
-#: build/4.2.0/index.js:15
-msgid "Working…"
-msgstr "Bezig…"
-
-#: build/4.2.0/index.js:15
-msgid "Add a New Plugin"
-msgstr "Een nieuwe plugin toevoegen"
 
 #: inc/widgets/views/site-preview.php:162
 msgid "Your website is live to the world!"
@@ -1399,76 +752,112 @@ msgstr "Je website is live naar de wereld!"
 
 #: inc/Admin.php:83
 msgid "Help Resources"
-msgstr ""
+msgstr "Hulpbronnen"
 
-#: build/4.2.0/index.js:1
+#: inc/AppWhenOutdated.php:36
+msgid "WordPress Update Required"
+msgstr "WordPress update vereist"
+
+#: inc/AppWhenOutdated.php:43
+msgid "Your current version is outdated."
+msgstr "Uw huidige versie is verouderd."
+
+#: inc/AppWhenOutdated.php:48
+msgid "Your current WordPress version:"
+msgstr "Uw huidige WordPress-versie:"
+
+#: inc/AppWhenOutdated.php:52
+msgid "Minimum required WordPress version:"
+msgstr "Minimum vereiste WordPress-versie:"
+
+#: inc/AppWhenOutdated.php:61
+msgid "Consider enabling auto-updates to stay up to date."
+msgstr "Overweeg om auto-updates op de hoogte te houden."
+
+#: inc/AppWhenOutdated.php:66
+msgid "Update Now"
+msgstr "Nu bijwerken"
+
+#: build/4.4.0/index.js:7
 msgid "Hire our experts"
-msgstr ""
+msgstr "Neem onze experts aan"
 
-#: build/4.2.0/index.js:1
+#: build/4.4.0/index.js:7
 msgid "Get in touch with us, and we’ll help you build the exact store you’re dreaming of."
-msgstr ""
+msgstr "Neem contact met ons op en wij helpen u om de exacte winkel te bouwen waarvan u droomt."
 
-#: build/4.2.0/index.js:1
-msgid "Get Help & Resources"
-msgstr ""
-
-#: build/4.2.0/index.js:1
-msgid "Documentation and tutorials to help you get the most out of your solution."
-msgstr ""
-
-#: build/4.2.0/index.js:1
-msgid "Pro Design Live"
-msgstr ""
-
-#: build/4.2.0/index.js:1
-msgid "We will help you build and grow your website and improve your skills in WordPress."
-msgstr ""
-
-#: build/4.2.0/index.js:1
-msgid "Get Info"
-msgstr ""
-
-#: build/4.2.0/index.js:1
-msgid "Quick links"
-msgstr ""
-
-#: build/4.2.0/index.js:1
-msgid "Manage hosting"
-msgstr ""
-
-#: build/4.2.0/index.js:1
-msgid "Write a blog post"
-msgstr ""
-
-#: build/4.2.0/index.js:1
-msgid "Create a sale promotion"
-msgstr ""
-
-#: build/4.2.0/index.js:1
-msgid "Refer a friend to get $75"
-msgstr ""
-
-#: build/4.2.0/index.js:1
-msgid "Unlock exclusive benefits with our referral program!"
-msgstr ""
-
-#: build/4.2.0/index.js:1
-msgid "Start now"
-msgstr ""
-
-#: build/4.2.0/index.js:1
-msgid "Explore your Solution"
-msgstr ""
-
-#: build/4.2.0/index.js:1
+#: build/4.4.0/index.js:7
 msgid "Discover all the features to grow your store, boost sales and loyalize your customers."
-msgstr ""
+msgstr "Ontdek alle functies om uw winkel te laten groeien, verkoop te stimuleren en uw klanten te loyaliseren."
 
-#: build/4.2.0/index.js:1
+#: build/4.4.0/index.js:7
+msgid "Quick links"
+msgstr "Snelle links"
+
+#: build/4.4.0/index.js:7
+msgid "Manage hosting"
+msgstr "hosting beheren"
+
+#: build/4.4.0/index.js:7
+msgid "Write a blog post"
+msgstr "Schrijf een blogbericht"
+
+#: build/4.4.0/index.js:7
+msgid "Create a sale promotion"
+msgstr "Maak een verkooppromotie aan"
+
+#: build/4.4.0/index.js:9
+msgid "Get Help & Resources"
+msgstr "Krijg hulp & hulpmiddelen"
+
+#: build/4.4.0/index.js:9
+msgid "Refer a friend and earn money"
+msgstr "Verwijs een vriend en verdien geld"
+
+#: build/4.4.0/index.js:9
+msgid "Unlock exclusive benefits with our referral program!"
+msgstr "Ontgrendel exclusieve voordelen met ons aanbevelingsprogramma!"
+
+#: build/4.4.0/index.js:9
+msgid "Start now"
+msgstr "Begin nu"
+
+#: build/4.4.0/index.js:9
+msgid "Pro Design Live"
+msgstr "Pro Design Live"
+
+#: build/4.4.0/index.js:9
+msgid "We will help you build and grow your website and improve your skills in WordPress."
+msgstr "We zullen u helpen uw website te bouwen en te laten groeien en uw vaardigheden te verbeteren in WordPress."
+
+#: build/4.4.0/index.js:9
+msgid "Get Info"
+msgstr "Krijg informatie"
+
+#: build/4.4.0/index.js:9
 msgid "Welcome to Bluehost"
+msgstr "Welkom bij Bluehost"
+
+#: build/4.4.0/index.js:9
+msgid "We're very excited to get started with you!"
+msgstr "We zijn erg enthousiast om met je aan de slag te gaan!"
+
+#: build/4.4.0/index.js:7
+msgid "Explore Premium Tools"
+msgstr "Premium tools verkennen"
+
+#: build/4.4.0/index.js:9
+msgid "Get expert help, documentation, and tutorials to make the most of your WordPress site."
+msgstr "Krijg deskundige hulp, documentatie en tutorials om het meeste uit uw WordPress-site te halen."
+
+#: build/4.4.0/index.js:7
+msgid "Manage common settings for your website"
 msgstr ""
 
-#: build/4.2.0/index.js:1
-msgid "We’re very excited to get started with you!"
+#: inc/widgets/views/help.php:93
+msgid "From DIY to full-service help, always by your side."
+msgstr ""
+
+#: inc/widgets/views/help.php:129
+msgid "Hire Our Pros"
 msgstr ""

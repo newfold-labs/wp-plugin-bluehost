@@ -54,8 +54,7 @@ jobs:
         with:
           path: ${{ steps.composer-cache.outputs.dir }}
           key: ${{ runner.os }}-composer-${{ hashFiles('**/composer.lock') }}
-          restore-keys: |
-            ${{ runner.os }}-composer-
+
         if: "!! env.GIT_DIFF"
 
       - name: Validate composer.json and composer.lock

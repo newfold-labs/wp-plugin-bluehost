@@ -103,7 +103,10 @@ jobs:
         run: npm run build
 
       - name: Create Distribution Copy
-        run: rsync -r --include-from=.distinclude --exclude-from=.distignore . ${{ steps.workflow.outputs.DIST }}/${{ steps.workflow.outputs.PACKAGE }}
+        env:
+          DIST: ${{ steps.workflow.outputs.DIST }}
+          PACKAGE: ${{ steps.workflow.outputs.PACKAGE }}
+        run: rsync -r --include-from=.distinclude --exclude-from=.distignore . "$DIST/$PACKAGE"
 
       - name: List Distribution Files
         working-directory: ${{ steps.workflow.outputs.DIST }}
@@ -111,13 +114,18 @@ jobs:
 
       - name: Create Zip
         working-directory: ${{ steps.workflow.outputs.DIST }}
-        run: zip -r ${{ steps.workflow.outputs.PACKAGE }}.zip .
+        env:
+          PACKAGE: ${{ steps.workflow.outputs.PACKAGE }}
+        run: zip -r "$PACKAGE.zip" .
 
       - name: Upload Release Asset
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}'
+          TAG_NAME: ${{ github.event.release.tag_name }}
+          DIST: ${{ steps.workflow.outputs.DIST }}
+          PACKAGE: ${{ steps.workflow.outputs.PACKAGE }}
         run: |
-          gh release upload "${{ github.event.release.tag_name }}" ${{ steps.workflow.outputs.DIST }}/${{ steps.workflow.outputs.PACKAGE }}.zip
+          gh release upload "$TAG_NAME" "$DIST/$PACKAGE.zip"
 
       - name: Clear cache for release API
         if: ${{ github.repository == 'newfold-labs/wp-plugin-bluehost' }}

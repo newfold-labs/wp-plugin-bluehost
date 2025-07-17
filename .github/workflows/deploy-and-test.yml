@@ -89,7 +89,7 @@ jobs:
 
       - name: Check if the remote Server is up
         run: |
-          for i in {1..30}; do
+          for _ in {1..30}; do
             STATUS_CODE=$(curl -s -o /dev/null -w "%{http_code}" "$SITE_URL/wp-login.php")
             if [[ "$STATUS_CODE" == "200" ]]; then
               echo "Server is up with status code: $STATUS_CODE"

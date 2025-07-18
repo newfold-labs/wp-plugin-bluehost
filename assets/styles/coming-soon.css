@@ -211,7 +211,8 @@ footer p a:hover {
 }
 
 .subscription_widget #success,
-.subscription_widget #error {
+.subscription_widget #error-active,
+.subscription_widget #error-invalid {
 	border-radius: 4px;
 	font-size: 14px;
 	line-height: 24px;
@@ -226,7 +227,8 @@ footer p a:hover {
 	border: 1px solid #009013;
 }
 
-.subscription_widget #error {
+.subscription_widget #error-active,
+.subscription_widget #error-invalid {
 	background: #ffeae9;
 	border: 1px solid #f72f26;
 }

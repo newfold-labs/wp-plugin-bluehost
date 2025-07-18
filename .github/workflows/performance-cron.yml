@@ -15,6 +15,8 @@ jobs:
     name: Visit the performance test site
     runs-on: ubuntu-latest
     environment: Performance Test Site
+    env:
+      BASE_URL: ${{ vars.BASE_URL }}
     steps:
       - name: Login
         run: |

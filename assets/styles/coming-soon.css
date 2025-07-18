@@ -1,13 +1,29 @@
 body {
 	background-color: #fff;
-	background-image: url(../images/cs-bluehost-bg.jpg);
+	background-image: linear-gradient(115.87deg, #F2F5F9 37.06%, #B7D0F1 100.36%);
 	background-position: top right;
 	background-repeat: no-repeat;
 	font-family: "Open Sans", sans-serif;
 	overflow-x: hidden;
 	display: flex;
+	align-items:center;
 	flex-direction: column;
 	min-height: 100vh;
+}
+
+body:before {
+	content: '';
+	background-image: url(../svg/bluehost-favicon.svg);
+	background-position: top right;
+	background-repeat: no-repeat;
+	position: absolute;
+	top: 50%;
+	right: 0;
+	transform: translate(20%, -50%) rotate(-15deg);
+	height: 20rem;
+	width: 20rem;
+	z-index: -1;
+	opacity: 5%;
 }
 
 * {
@@ -37,29 +53,23 @@ input {
 }
 
 #wrap {
-	max-width: 560px;
-	width: 100%;
-	margin: 320px auto auto;
+	max-width: 800px;
 	color: #444;
-	text-align: center;
 	min-height: auto !important;
+	flex: 1;
 }
 
 #wrap .content {
-	background: rgba(215, 223, 236, 0.5);
+	text-align: left;
 	padding-bottom: 2rem;
 	border-radius: 4px;
+	max-width: unset;
+	min-width: 500px;
 }
 
 #wrap h1 {
 	color: #111;
-	font-weight: 300;
-	font-size: 28px;
-}
-
-#wrap h2 {
-	color: #111;
-	font-weight: 300;
+	font-weight: 400;
 	font-size: 38px;
 }
 
@@ -69,10 +79,30 @@ input {
 }
 
 footer {
-	background-color: #fff;
 	width: 100%;
 	color: #666;
 	position: initial;
+}
+
+.coming-soon-footer-banner{
+	background-color: #fff;
+	margin-bottom: 0;
+	padding-block: calc(8px + 1em);
+}
+
+.comingsoon-backlinks{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	gap: .5rem;
+	font-size: .8rem;
+	margin-bottom: 4rem;
+}
+
+.comingsoon-backlinks > svg {
+	width: 7rem;
+	margin-block: 1rem;
 }
 
 footer p {
@@ -142,6 +172,38 @@ footer p a:hover {
 	margin-bottom: 10px;
 }
 
+.subscription_widget form#subscribe {
+	display: flex;
+	flex-direction: column;
+	gap: 12px;
+	width:fit-content;
+	max-width: 500px;
+}
+
+.subscription_widget .subscription-field-wrapper {
+	position: relative;
+}
+
+.subscription_widget .subscription-field-wrapper svg {
+	width: 22px;
+	position: absolute;
+	top: 50%;
+	left: 24px;
+	transform: translate(-50%, -50%);
+	color: #929292;
+}
+
+.subscription_widget #subscribe-email {
+	display: inline-flex;
+	align-items:flex-start;
+	gap: 10px;
+}
+
+.subscription_widget #subscribe-label {
+	font-weight: bold;
+	font-size: .9rem;
+}
+
 .subscription_widget #subscribe-text p {
 	color: #5b5b5b;
 	font-size: 16px;
@@ -151,14 +213,16 @@ footer p a:hover {
 }
 
 .subscription_widget #success,
-.subscription_widget #error {
+.subscription_widget #error-active,
+.subscription_widget #error-invalid {
 	border-radius: 4px;
 	font-size: 14px;
 	line-height: 24px;
 	color: #5b5b5b;
 	margin-bottom: 25px;
 	display: none;
-	padding: 8px 40px;
+	padding: 12px 19px;
+	max-width: fit-content;
 }
 
 .subscription_widget #success {
@@ -166,7 +230,8 @@ footer p a:hover {
 	border: 1px solid #009013;
 }
 
-.subscription_widget #error {
+.subscription_widget #error-active,
+.subscription_widget #error-invalid {
 	background: #ffeae9;
 	border: 1px solid #f72f26;
 }
@@ -175,7 +240,6 @@ footer p a:hover {
 	display: inline-block;
 	position: relative;
 	vertical-align: middle;
-	margin-bottom: 10px;
 	-webkit-transition: all 0.1s ease-in-out;
 	-moz-transition: all 0.1s ease-in-out;
 	-o-transition: all 0.1s ease-in-out;
@@ -206,12 +270,10 @@ footer p a:hover {
 	background-image: url(images/icon-email.svg);
 	background-position: 10px center;
 	background-repeat: no-repeat;
-	border: 1px solid #5b5b5b;
-	border-radius: 3px;
+	border: 1px solid #D7DEE0;
+	border-radius: 5px;
 	color: #5b5b5b;
 	font-size: 13.5px;
-	margin-top: 5px;
-	margin-right: 6px;
 	min-width: 300px;
 	padding: 14px 15px 14px 45px;
 	max-height: 45px;
@@ -219,6 +281,10 @@ footer p a:hover {
 	-moz-transition: all 0.05s ease-in-out;
 	-o-transition: all 0.05s ease-in-out;
 	transition: all 0.05s ease-in-out;
+}
+
+.subscription_widget #subscribe-submit{
+	border-radius: 5px;
 }
 
 .subscription_widget form .inputs.email.active input[type="email"] {
@@ -283,8 +349,9 @@ footer p a:hover {
 		padding: 0 20px;
 	}
 
-	.content {
+	#wrap .content {
 		padding: 20px;
+		min-width: unset;
 	}
 
 	.btn {
@@ -292,9 +359,13 @@ footer p a:hover {
 	}
 
 	.subscription_widget form .inputs,
+	.subscription_widget form .subscription-field-wrapper,
 	.subscription_widget form .inputs.email input[type="email"],
 	.subscription_widget form .inputs.submit input[type="submit"] {
 		width: 100%;
+	}
+	.subscription_widget form #subscribe-email{
+		flex-direction: column;
 	}
 
 	.subscription_widget form .inputs.email input[type="email"] {
@@ -303,7 +374,6 @@ footer p a:hover {
 }
 
 @media (max-width: 360px) {
-
 	#wrap h1 {
 		font-size: 26px;
 	}

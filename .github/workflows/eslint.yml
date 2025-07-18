@@ -3,16 +3,8 @@ name: ESLint
 on:
   push:
     branches:
-      - main
-      - master
-      - trunk
-      - develop
-      - release/*
-      - feature/*
-      - add/*
-      - update/*
-      - fix/*
-      - try/*'
+      - 'main'
+      - 'develop'
     paths:
       - 'src/**/*.js'
   pull_request:

@@ -176,6 +176,8 @@ footer p a:hover {
 	display: flex;
 	flex-direction: column;
 	gap: 12px;
+	width:fit-content;
+	max-width: 500px;
 }
 
 .subscription_widget .subscription-field-wrapper {
@@ -219,7 +221,8 @@ footer p a:hover {
 	color: #5b5b5b;
 	margin-bottom: 25px;
 	display: none;
-	padding: 8px 40px;
+	padding: 12px 19px;
+	max-width: fit-content;
 }
 
 .subscription_widget #success {
@@ -237,7 +240,6 @@ footer p a:hover {
 	display: inline-block;
 	position: relative;
 	vertical-align: middle;
-	margin-bottom: 10px;
 	-webkit-transition: all 0.1s ease-in-out;
 	-moz-transition: all 0.1s ease-in-out;
 	-o-transition: all 0.1s ease-in-out;

@@ -87,7 +87,7 @@ jobs:
           SERVER_PATH: ${{ vars.SERVER_PATH }}
         run: |
           ssh -i github-actions -o StrictHostKeyChecking=no "$SERVER_USERNAME@$SERVER_IP" << 'EOF'
-            cd "$SERVER_PATH}wp-content"
+            cd "${SERVER_PATH}/wp-content"
             wp plugin install uploads/$PLUGIN_NAME.zip --force --path=./../
             rm uploads/$PLUGIN_NAME.zip
             wp plugin activate $PLUGIN_NAME --path=./../

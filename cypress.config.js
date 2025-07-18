@@ -106,9 +106,11 @@ module.exports = defineConfig( {
 		supportFile: 'tests/cypress/support/index.js',
 		testIsolation: false,
 		excludeSpecPattern: [
+			'vendor/newfold-labs/**/vendor/newfold-labs/**/*.cy.js', // skip any nested modules tests
 			'vendor/newfold-labs/**/tests/cypress/integration/wp-module-support/*.cy.js', // skip any module's wp-module-support files
-			'vendor/newfold-labs/wp-module-migration/tests/cypress/integration/Migration/verifyMigrationFromAM.cy.js', // skip broken test
 			'vendor/newfold-labs/wp-module-onboarding/tests/cypress/integration/**/*.cy.js', // Temporary: skip onboarding tests
+			'vendor/newfold-labs/wp-module-ecommerce/tests/cypress/integration/Home/migration.cy.js', // skip ecom migration test - soon to be replaced
+			'vendor/newfold-labs/wp-module-ecommerce/tests/cypress/integration/Home/ecommerce-next-steps.cy.js', // skip ecom next steps test - soon to be replaced
 		],
 		experimentalRunAllSpecs: true,
 	},
@@ -154,6 +156,17 @@ const supportsWonderTheme = ( env ) => {
 	const semver = require( 'semver' );
 	if (
 		semver.satisfies( env.wpSemverVersion, '>=6.5.0' ) &&
+		semver.satisfies( env.phpSemverVersion, '>=7.0.0' )
+	) {
+		return true;
+	}
+	return false;
+};
+// Check against theme support at https://github.com/newfold-labs/wp-theme-bluehost-blueprint/blob/master/style.css
+const supportsBlueprintTheme = ( env ) => {
+	const semver = require( 'semver' );
+	if (
+		semver.satisfies( env.wpSemverVersion, '>=6.6.0' ) &&
 		semver.satisfies( env.phpSemverVersion, '>=7.0.0' )
 	) {
 		return true;

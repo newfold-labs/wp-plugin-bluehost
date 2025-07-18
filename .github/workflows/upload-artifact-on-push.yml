@@ -41,8 +41,8 @@ jobs:
       - name: Validate version number
         if: ${{ (github.repository == 'newfold-labs/wp-plugin-bluehost') }}
         run: |
-          pluginHeaderVersion=$(grep "Version:" bluehost-wordpress-plugin.php | grep -Eo "[0-9\.]*")
-          pluginConstantVersion=$(grep "'BLUEHOST_PLUGIN_VERSION'" bluehost-wordpress-plugin.php | grep -Eo "[0-9\.]*")
+          pluginHeaderVersion=$(grep "Version:" "${PLUGIN_NAME}.php" | grep -Eo "[0-9\.]*")
+          pluginConstantVersion=$(grep "'BLUEHOST_PLUGIN_VERSION'" "${PLUGIN_NAME}.php" | grep -Eo "[0-9\.]*")
           pluginPackageVersion=$(grep '"version"' package.json | grep -Eo "[0-9\.]*")
           echo "Plugin header version: $pluginHeaderVersion"
           echo "Plugin constant version: $pluginConstantVersion"
@@ -65,7 +65,7 @@ jobs:
         run: |
           mkdir dist
           echo "DIST=${PWD}/dist" >> "$GITHUB_OUTPUT"
-          echo "PACKAGE=bluehost-wordpress-plugin" >> "$GITHUB_OUTPUT"
+          echo "PACKAGE=$PLUGIN_NAME" >> "$GITHUB_OUTPUT"
 
       - name: Use Node.js 20.x
         uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020  # v4.4.0

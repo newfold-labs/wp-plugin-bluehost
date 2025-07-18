@@ -11,7 +11,6 @@ on:
 permissions: {}
 
 env:
-  PLUGIN_NAME: bluehost-wordpress-plugin
   CYPRESS_TEST_PATH: tests/cypress/integration/help.cy.js
 
 jobs:
@@ -65,7 +64,7 @@ jobs:
         uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
         with:
           name: plugin-build-${{ matrix.environment }}
-          path: ./${{ env.PLUGIN_NAME }}.zip
+          path: ./$PLUGIN_NAME.zip
 
       - name: Setup SSH Key
         run: |
@@ -74,15 +73,15 @@ jobs:
 
       - name: Copy .zip file to server via SCP
         run: |
-          scp -i github-actions -o StrictHostKeyChecking=no ./${{ env.PLUGIN_NAME }}.zip "$SERVER_USERNAME@$SERVER_IP:$SERVER_PATH/wp-content/uploads"
+          scp -i github-actions -o StrictHostKeyChecking=no ./$PLUGIN_NAME.zip "$SERVER_USERNAME@$SERVER_IP:$SERVER_PATH/wp-content/uploads"
 
       - name: Extract Plugin and Activate
         run: |
           ssh -i github-actions -o StrictHostKeyChecking=no "$SERVER_USERNAME@$SERVER_IP" << 'EOF'
             cd "$SERVER_PATH}wp-content"
-            wp plugin install uploads/${{ env.PLUGIN_NAME }}.zip --force --path=./../
-            rm uploads/${{ env.PLUGIN_NAME }}.zip
-            wp plugin activate ${{ env.PLUGIN_NAME }} --path=./../
+            wp plugin install uploads/$PLUGIN_NAME.zip --force --path=./../
+            rm uploads/$PLUGIN_NAME.zip
+            wp plugin activate $PLUGIN_NAME --path=./../
           EOF
 
       - name: Cleanup SSH Key

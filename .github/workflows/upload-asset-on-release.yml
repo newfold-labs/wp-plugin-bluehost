@@ -31,6 +31,8 @@ jobs:
 
       - name: Validate version number
         if: ${{ (github.repository == 'newfold-labs/wp-plugin-bluehost') && (github.event.release.prerelease == false) }}
+        env:
+          PLUGIN_NAME: ${{ vars.PLUGIN_NAME }}
         run: |
           taggedVersion=${{ env.VERSION }}
           pluginHeaderVersion=$(grep "Version:" "$PLUGIN_NAME.php" | grep -Eo "[0-9\.]*")
@@ -56,6 +58,7 @@ jobs:
         working-directory: ${{ runner.temp }}
         env:
           REPO: ${{ github.repository }}
+          PLUGIN_NAME: ${{ vars.PLUGIN_NAME }}
         run: |
           mkdir dist
           echo "DIST=${PWD}/dist" >> "$GITHUB_OUTPUT"
@@ -95,6 +98,8 @@ jobs:
 
       - name: Validate WP Versions
         if: ${{ (github.repository == 'newfold-labs/wp-plugin-bluehost') && (github.event.release.prerelease == false) }}
+        env:
+          PLUGIN_NAME: ${{ vars.PLUGIN_NAME }}
         run: |
           pluginHeaderTestedVersion=$(grep "Tested up to:" "$PLUGIN_NAME.php" | grep -Eo "[0-9\.]*")
           wpEnvVersion=$(grep "WordPress/WordPress#tags/" .wp-env.json | grep -Eo "[0-9\.]*")

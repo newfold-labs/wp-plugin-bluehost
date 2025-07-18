@@ -109,7 +109,6 @@ module.exports = defineConfig( {
 			'vendor/newfold-labs/**/vendor/newfold-labs/**/*.cy.js', // skip any nested modules tests
 			'vendor/newfold-labs/**/tests/cypress/integration/wp-module-support/*.cy.js', // skip any module's wp-module-support files
 			'vendor/newfold-labs/wp-module-onboarding/tests/cypress/integration/**/*.cy.js', // Temporary: skip onboarding tests
-			'vendor/newfold-labs/wp-module-migration/tests/cypress/integration/verifyMigrationFromAM.cy.js', // skip broken migration test for now
 			'vendor/newfold-labs/wp-module-ecommerce/tests/cypress/integration/Home/migration.cy.js', // skip ecom migration test - soon to be replaced
 			'vendor/newfold-labs/wp-module-ecommerce/tests/cypress/integration/Home/ecommerce-next-steps.cy.js', // skip ecom next steps test - soon to be replaced
 		],

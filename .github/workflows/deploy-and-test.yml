@@ -73,7 +73,7 @@ jobs:
 
       - name: Copy .zip file to server via SCP
         run: |
-          scp -i github-actions -o StrictHostKeyChecking=no ./$PLUGIN_NAME.zip "$SERVER_USERNAME@$SERVER_IP:$SERVER_PATH/wp-content/uploads"
+          scp -i github-actions -o StrictHostKeyChecking=no "./$PLUGIN_NAME.zip" "$SERVER_USERNAME@$SERVER_IP:$SERVER_PATH/wp-content/uploads"
 
       - name: Extract Plugin and Activate
         run: |

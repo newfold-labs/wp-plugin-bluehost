@@ -41,8 +41,8 @@ jobs:
       - name: Validate version number
         if: ${{ (github.repository == 'newfold-labs/wp-plugin-bluehost') }}
         run: |
-          pluginHeaderVersion=$(grep "Version:" "${PLUGIN_NAME}.php" | grep -Eo "[0-9\.]*")
-          pluginConstantVersion=$(grep "'BLUEHOST_PLUGIN_VERSION'" "${PLUGIN_NAME}.php" | grep -Eo "[0-9\.]*")
+          pluginHeaderVersion=$(grep "Version:" "$PLUGIN_NAME.php" | grep -Eo "[0-9\.]*")
+          pluginConstantVersion=$(grep "'BLUEHOST_PLUGIN_VERSION'" "$PLUGIN_NAME.php" | grep -Eo "[0-9\.]*")
           pluginPackageVersion=$(grep '"version"' package.json | grep -Eo "[0-9\.]*")
           echo "Plugin header version: $pluginHeaderVersion"
           echo "Plugin constant version: $pluginConstantVersion"

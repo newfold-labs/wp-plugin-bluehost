@@ -33,8 +33,8 @@ jobs:
         if: ${{ (github.repository == 'newfold-labs/wp-plugin-bluehost') && (github.event.release.prerelease == false) }}
         run: |
           taggedVersion=${{ env.VERSION }}
-          pluginHeaderVersion=$(grep "Version:" "${PLUGIN_NAME}.php" | grep -Eo "[0-9\.]*")
-          pluginConstantVersion=$(grep "'BLUEHOST_PLUGIN_VERSION'" "${PLUGIN_NAME}.php" | grep -Eo "[0-9\.]*")
+          pluginHeaderVersion=$(grep "Version:" "$PLUGIN_NAME.php" | grep -Eo "[0-9\.]*")
+          pluginConstantVersion=$(grep "'BLUEHOST_PLUGIN_VERSION'" "$PLUGIN_NAME.php" | grep -Eo "[0-9\.]*")
           pluginPackageVersion=$(grep '"version"' package.json | grep -Eo "[0-9\.]*")
           echo "Tagged version: $taggedVersion"
           echo "Plugin header version: $pluginHeaderVersion"
@@ -96,7 +96,7 @@ jobs:
       - name: Validate WP Versions
         if: ${{ (github.repository == 'newfold-labs/wp-plugin-bluehost') && (github.event.release.prerelease == false) }}
         run: |
-          pluginHeaderTestedVersion=$(grep "Tested up to:" "${PLUGIN_NAME}.php" | grep -Eo "[0-9\.]*")
+          pluginHeaderTestedVersion=$(grep "Tested up to:" "$PLUGIN_NAME.php" | grep -Eo "[0-9\.]*")
           wpEnvVersion=$(grep "WordPress/WordPress#tags/" .wp-env.json | grep -Eo "[0-9\.]*")
           echo "Plugin header tested version: $pluginHeaderTestedVersion"
           echo "wp-env version: $wpEnvVersion"

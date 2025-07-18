@@ -4,8 +4,6 @@ on:
   push:
     branches:
       - main
-      - master
-      - trunk
       - develop
       - release/*
       - feature/*
@@ -14,15 +12,11 @@ on:
       - fix/*
       - try/*
   pull_request:
-    types: [ opened, edited, reopened, ready_for_review ]
+    types: [ opened, synchronize, reopened, ready_for_review ]
   workflow_dispatch:
-  workflow_run:
-    workflows: [ 'Newfold Prepare Release' ]
-    types:
-      - completed
 
 concurrency:
-  group: ${{ github.workflow }}-${{ github.event_name == 'pull_request' && github.head_ref || github.sha }}
+  group: ${{ github.workflow }}-${{ github.head_ref || github.ref }}
   cancel-in-progress: true
 
 jobs:
@@ -36,7 +30,7 @@ jobs:
         uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
 
       - name: Setup PHP
-        uses: shivammathur/setup-php@cf4cade2721270509d5b1c766ab3549210a39a2a # v2.33.0
+        uses: shivammathur/setup-php@0f7f1d08e3e32076e51cae65eb0b0c871405b16e # v2.34.1
         with:
           php-version: '8.1'
           coverage: none
@@ -81,7 +75,7 @@ jobs:
         run: composer validate
 
       - name: Install PHP Dependencies
-        run: composer install --no-progress --no-dev --optimize-autoloader --prefer-dist
+        run: composer install --no-progress --no-dev --optimize-autoloader --prefer-source
 
       - name: Setup Registry
         run: printf "\n//npm.pkg.github.com/:_authToken=${{ secrets.NEWFOLD_ACCESS_TOKEN }}" >> .npmrc

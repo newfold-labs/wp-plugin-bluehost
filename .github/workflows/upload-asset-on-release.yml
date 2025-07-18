@@ -37,7 +37,7 @@ jobs:
           [[ "$taggedVersion" == "$pluginPackageVersion" ]] || exit 1
 
       - name: Setup PHP
-        uses: shivammathur/setup-php@cf4cade2721270509d5b1c766ab3549210a39a2a # v2.33.0
+        uses: shivammathur/setup-php@0f7f1d08e3e32076e51cae65eb0b0c871405b16e # v2.34.1
         with:
           php-version: '8.1'
           coverage: none
@@ -83,9 +83,6 @@ jobs:
 
       - name: Install PHP Dependencies
         run: composer install --no-progress --no-dev --optimize-autoloader --prefer-dist
-
-      - name: Setup Registry
-        run: printf "\n//npm.pkg.github.com/:_authToken=${{ secrets.NEWFOLD_ACCESS_TOKEN }}" >> .npmrc
 
       - name: NPM Install
         run: npm install --legacy-peer-deps

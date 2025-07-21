@@ -10,6 +10,7 @@ namespace Bluehost;
 use NewfoldLabs\WP\Module\Data\SiteCapabilities;
 use function NewfoldLabs\WP\Context\getContext;
 use function NewfoldLabs\WP\Module\Features\isEnabled;
+use function NewfoldLabs\WP\Module\LinkTracker\Functions\build_link as buildLink;
 
 /**
  * \Bluehost\Admin
@@ -299,9 +300,10 @@ final class Admin {
 	 * @return string
 	 */
 	public static function add_brand_to_admin_footer( $footer_text ) {
-		$footer_text = \sprintf( \__( 'Thank you for creating with <a href="https://wordpress.org/">WordPress</a> and <a href="https://bluehost.com/about">Bluehost</a>.', 'wp-plugin-bluehost' ) );
-
-		return $footer_text;
+		$wordpress_url = '<a href="' . buildLink( 'https://wordpress.org/', array( 'source' => 'bluehost_admin_footer' ) ) . '">WordPress</a>';
+		$bluehost_url = '<a href="' . buildLink( 'https://bluehost.com/about', array( 'source' => 'bluehost_admin_footer' ) ) . '">Bluehost</a>';
+		
+		return \sprintf( \__( 'Thank you for creating with %1$s and %2$s', 'wp-plugin-bluehost' ), $wordpress_url, $bluehost_url );
 	}
 
 	/**

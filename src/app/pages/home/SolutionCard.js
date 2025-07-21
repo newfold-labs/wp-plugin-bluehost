@@ -4,7 +4,7 @@ import { ReactComponent as Icon } from 'App/images/card-icon-explore-solutions.s
 const SolutionCard = ( {} ) => {
 	return (
 		<a
-			href="admin.php?page=solutions"
+			href={ window.NewfoldRuntime.linkTracker.addUtmParams('admin.php?page=solutions') }
 			className="nfd-no-underline nfd-card-link"
 			data-cy="solution-card"
 		>

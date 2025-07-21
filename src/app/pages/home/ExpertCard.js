@@ -5,7 +5,7 @@ import { ReactComponent as Icon } from 'App/images/card-icon-hire-experts.svg';
 const ExpertCard = ( {} ) => {
 	return (
 		<a
-			href={ addUtmParams(
+			href={ window.NewfoldRuntime.linkTracker.addUtmParams(
 				'https://www.bluehost.com/solutions/website-design'
 			) }
 			className="nfd-no-underline nfd-card-link"

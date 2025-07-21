@@ -68,7 +68,7 @@ const NextSteps = ( {} ) => {
 					{ steps.map( ( step, index ) => (
 						<a
 							className={ `nfd-no-underline nfd-card-link nfd-card-link-mini ${ step.id } ` }
-							href={ step.href }
+							href={ window.NewfoldRuntime.linkTracker.addUtmParams(step.href) }
 							key={ index }
 						>
 							<Card className="nfd-card nfd-p-4">

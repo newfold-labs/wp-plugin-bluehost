@@ -11,6 +11,7 @@
 namespace Bluehost;
 
 use function NewfoldLabs\WP\Module\ComingSoon\isComingSoonActive;
+use function NewfoldLabs\WP\Module\LinkTracker\Functions\build_link as buildLink;
 
 $isComingSoon = isComingSoonActive();
 
@@ -45,7 +46,7 @@ $svgExternalView = '<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox=
   <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 6H5.25A2.25 2.25 0 0 0 3 8.25v10.5A2.25 2.25 0 0 0 5.25 21h10.5A2.25 2.25 0 0 0 18 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25" />
 </svg>';
 // site editor if block theme, otherwise customizer
-$site_edit_url = get_admin_url( null, wp_is_block_theme() ? 'site-editor.php?canvas=edit' : 'customize.php' );
+$site_edit_url = buildLink( get_admin_url( null, wp_is_block_theme() ? 'site-editor.php?canvas=edit' : 'customize.php' ), array( 'source' => 'widget=bluehost_account_widget' ) );
 ?>
 <style>
 	#site_preview_widget h2 {
@@ -167,7 +168,7 @@ $site_edit_url = get_admin_url( null, wp_is_block_theme() ? 'site-editor.php?can
 		<a 
 			class="nfd-button nfd-button--secondary"
 			data-cy="nfd-view-site"
-			href="<?php echo esc_url( get_bloginfo( 'url' ) ); ?>"
+			href="<?php echo esc_url( buildLink(get_bloginfo( 'url' ) , array( 'source' => 'widget=bluehost_account_widget' ) ) ); ?>"
 			id="nfd-view-site"
 			target="_blank"
 		>

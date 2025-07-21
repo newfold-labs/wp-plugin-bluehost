@@ -9,6 +9,8 @@ namespace Bluehost;
 
 use function NewfoldLabs\WP\ModuleLoader\container;
 use function NewfoldLabs\WP\Context\getContext;
+use function NewfoldLabs\WP\Module\LinkTracker\Functions\build_link as buildLink;
+
 
 /**
  * \Bluehost\BluehostAccountWidget
@@ -73,11 +75,8 @@ class BluehostAccountWidget {
 	 * @return string the URL with UTM params
 	 */
 	public static function add_utm_params( $url ) {
-		$data        = array(
-			'utm_source' => 'wp-admin/index.php?widget=bluehost_account_widget',
-			'utm_medium' => 'bluehost_plugin',
-		);
-		return $url .= '?' . http_build_query( $data );
+		
+		return buildLink( $url, array('source' => 'widget=bluehost_account_widget') );
 	}
 
 	/**

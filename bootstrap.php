@@ -15,6 +15,7 @@ use NewfoldLabs\WP\Module\Features\Features;
 use function NewfoldLabs\WP\ModuleLoader\container as setContainer;
 use function NewfoldLabs\WP\Context\setContext;
 use function NewfoldLabs\WP\Context\getContext;
+use function NewfoldLabs\WP\Module\LinkTracker\Functions\build_link as buildLink;
 
 // Composer autoloader
 if ( is_readable( __DIR__ . '/vendor/autoload.php' ) ) {
@@ -83,21 +84,20 @@ add_action(
 		}
 	}
 );
-
 add_filter(
 	'newfold/coming-soon/filter/args',
 	function ( $args, $default_args ) {
 
 		// Properly get branding links depending on market
-		$wordpress_hosting_page = ( get_option( 'mm_brand' ) === 'Bluehost_India' ) ? 'https://www.bluehost.in?utm_source=coming-soon-template&amp;utm_medium=bluehost_plugin' : 'https://bluehost.com?utm_source=coming-soon-template&amp;utm_medium=bluehost_plugin';
-		$my_panel               = ( get_option( 'mm_brand' ) === 'Bluehost_India' ) ? 'https://my.bluehost.in/web-hosting/cplogin' : 'https://my.bluehost.com/web-hosting/cplogin';
-		$website_guide_link     = 'https://www.bluehost.com/blog/how-to-create-a-website-guide/';
-		$migrate_link           = 'https://www.bluehost.com/blog/how-to-migrate-a-wordpress-website-to-a-new-server/';
-		$hosting_link           = 'https://www.bluehost.com/hosting/shared';
-
+		$wordpress_hosting_page = ( get_option( 'mm_brand' ) === 'Bluehost_India' ) ? buildLink('https://www.bluehost.in?utm_source=coming-soon-template') : buildLink('https://bluehost.com?utm_source=coming-soon-template');
+		$my_panel               = ( get_option( 'mm_brand' ) === 'Bluehost_India' ) ? buildLink('https://my.bluehost.in/web-hosting/cplogin') : buildLink( 'https://my.bluehost.com/web-hosting/cplogin');
+		$website_guide_link     = buildLink('https://www.bluehost.com/blog/how-to-create-a-website-guide/');
+		$migrate_link           = buildLink( 'https://www.bluehost.com/blog/how-to-migrate-a-wordpress-website-to-a-new-server/');
+		$hosting_link           = buildLink( 'https://www.bluehost.com/hosting/shared');
+		
 		$args = wp_parse_args(
 			array(
-				'admin_app_url'              => admin_url( 'admin.php?page=bluehost#/home' ),
+				'admin_app_url'              => buildLink( admin_url( 'admin.php?page=bluehost#/home' ) ),
 				'template_h1'                => __( 'Coming Soon!', 'wp-plugin-bluehost' ),
 				'template_h2'                => __( 'A New WordPress Site', 'wp-plugin-bluehost' ),
 				'template_coming_soon_links' =>
@@ -115,7 +115,7 @@ add_filter(
 					esc_html__( 'A %1$sBluehost%2$s powered website. Is this your website? Log in to %3$sWordPress%4$s or %5$sBluehost%6$s.', 'wp-plugin-bluehost' ) . '&nbsp;',
 					'<a href="' . esc_url( $wordpress_hosting_page ) . '" target="_blank" rel="noopener noreferrer nofollow">',
 					'</a>',
-					'<a href="' . esc_url( wp_login_url() ) . '">',
+					'<a href="' . esc_url( buildLink( wp_login_url() ) ) . '">',
 					'</a>',
 					'<a href="' . esc_url( $my_panel ) . '" target="_blank" rel="noopener noreferrer nofollow">',
 					'</a>'
@@ -131,7 +131,7 @@ add_filter(
 					__( 'Your site is currently displaying a %1$scoming soon page%2$s. Once you are ready, %3$slaunch your site%4$s.', 'wp-plugin-bluehost' ),
 					'<a href="' . get_home_url() . '?preview=coming_soon" title="' . __( 'Preview the coming soon landing page', 'wp-plugin-bluehost' ) . '">',
 					'</a>',
-					'<a href="' . esc_url( admin_url( 'admin.php?page=bluehost&nfd-target=coming-soon-section#/settings' ) ) . '">',
+					'<a href="' . esc_url( buildLink( admin_url( 'admin.php?page=bluehost&nfd-target=coming-soon-section#/settings' ) ) ) . '">',
 					'</a>'
 				),
 				'template_styles'            => esc_url( BLUEHOST_PLUGIN_URL . 'assets/styles/coming-soon.css' ),

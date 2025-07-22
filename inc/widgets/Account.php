@@ -75,8 +75,8 @@ class BluehostAccountWidget {
 	 * @return string the URL with UTM params
 	 */
 	public static function add_utm_params( $url ) {
-		
-		return buildLink( $url, array('source' => 'widget=bluehost_account_widget') );
+
+		return buildLink( $url, array( 'source' => 'widget=bluehost_account_widget' ) );
 	}
 
 	/**

@@ -89,12 +89,12 @@ add_filter(
 	function ( $args, $default_args ) {
 
 		// Properly get branding links depending on market
-		$wordpress_hosting_page = ( get_option( 'mm_brand' ) === 'Bluehost_India' ) ? buildLink('https://www.bluehost.in?utm_source=coming-soon-template') : buildLink('https://bluehost.com?utm_source=coming-soon-template');
-		$my_panel               = ( get_option( 'mm_brand' ) === 'Bluehost_India' ) ? buildLink('https://my.bluehost.in/web-hosting/cplogin') : buildLink( 'https://my.bluehost.com/web-hosting/cplogin');
-		$website_guide_link     = buildLink('https://www.bluehost.com/blog/how-to-create-a-website-guide/');
-		$migrate_link           = buildLink( 'https://www.bluehost.com/blog/how-to-migrate-a-wordpress-website-to-a-new-server/');
-		$hosting_link           = buildLink( 'https://www.bluehost.com/hosting/shared');
-		
+		$wordpress_hosting_page = ( get_option( 'mm_brand' ) === 'Bluehost_India' ) ? buildLink( 'https://www.bluehost.in?utm_source=coming-soon-template' ) : buildLink( 'https://bluehost.com?utm_source=coming-soon-template' );
+		$my_panel               = ( get_option( 'mm_brand' ) === 'Bluehost_India' ) ? buildLink( 'https://my.bluehost.in/web-hosting/cplogin' ) : buildLink( 'https://my.bluehost.com/web-hosting/cplogin' );
+		$website_guide_link     = buildLink( 'https://www.bluehost.com/blog/how-to-create-a-website-guide/' );
+		$migrate_link           = buildLink( 'https://www.bluehost.com/blog/how-to-migrate-a-wordpress-website-to-a-new-server/' );
+		$hosting_link           = buildLink( 'https://www.bluehost.com/hosting/shared' );
+
 		$args = wp_parse_args(
 			array(
 				'admin_app_url'              => buildLink( admin_url( 'admin.php?page=bluehost#/home' ) ),

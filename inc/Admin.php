@@ -301,8 +301,8 @@ final class Admin {
 	 */
 	public static function add_brand_to_admin_footer( $footer_text ) {
 		$wordpress_url = '<a href="' . buildLink( 'https://wordpress.org/', array( 'source' => 'bluehost_admin_footer' ) ) . '">WordPress</a>';
-		$bluehost_url = '<a href="' . buildLink( 'https://bluehost.com/about', array( 'source' => 'bluehost_admin_footer' ) ) . '">Bluehost</a>';
-		
+		$bluehost_url  = '<a href="' . buildLink( 'https://bluehost.com/about', array( 'source' => 'bluehost_admin_footer' ) ) . '">Bluehost</a>';
+
 		return \sprintf( \__( 'Thank you for creating with %1$s and %2$s', 'wp-plugin-bluehost' ), $wordpress_url, $bluehost_url );
 	}
 

@@ -9,6 +9,7 @@
  */
 
 namespace Bluehost;
+
 use function NewfoldLabs\WP\Module\LinkTracker\Functions\build_link as buildLink;
 
 // lifebuoy icon - in widget handle
@@ -122,7 +123,7 @@ $help_svg = '<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 20 1
 			rel="noreferrer"
 			href="
 			<?php
-			echo buildLink( 'https://www.bluehost.com/pro-design-live', array( 'source' => 'widget=bluehost_account_widget' ) );
+			echo esc_url( buildLink( 'https://www.bluehost.com/pro-design-live', array( 'source' => 'widget=bluehost_account_widget' ) ) );
 			?>
 			"
 			target="_blank"

@@ -32,7 +32,8 @@ const help = [
 		),
 		icon: false,
 		cta: __( 'Live Chat', 'wp-plugin-bluehost' ),
-		url: getPlatformBaseUrl() +
+		url:
+			getPlatformBaseUrl() +
 			'/contact/?utm_campaign=&utm_content=help_chat_link&utm_term=live_chat',
 	},
 	{

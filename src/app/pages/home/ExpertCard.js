@@ -1,5 +1,4 @@
 import { Card, Title } from '@newfold/ui-component-library';
-import { addUtmParams } from '../../util/helpers';
 import { ReactComponent as Icon } from 'App/images/card-icon-hire-experts.svg';
 
 const ExpertCard = ( {} ) => {

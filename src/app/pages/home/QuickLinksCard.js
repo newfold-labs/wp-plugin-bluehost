@@ -2,10 +2,15 @@ import { Card, Title } from '@newfold/ui-component-library';
 import { ReactComponent as Arrow } from 'App/images/card-mini-arrow.svg';
 
 const QuickLinksCard = ( {} ) => {
-
-    const manageHostingUrl =  window.NewfoldRuntime.linkTracker.addUtmParams('admin.php?page=nfd-hosting');
-    const writeBlogUrl = window.NewfoldRuntime.linkTracker.addUtmParams('post-new.php?wb-library=patterns&wb-category=text');
-    const salesDiscountUrl = window.NewfoldRuntime.linkTracker.addUtmParams('admin.php?page=bluehost#/store/sales_discounts');
+	const manageHostingUrl = window.NewfoldRuntime.linkTracker.addUtmParams(
+		'admin.php?page=nfd-hosting'
+	);
+	const writeBlogUrl = window.NewfoldRuntime.linkTracker.addUtmParams(
+		'post-new.php?wb-library=patterns&wb-category=text'
+	);
+	const salesDiscountUrl = window.NewfoldRuntime.linkTracker.addUtmParams(
+		'admin.php?page=bluehost#/store/sales_discounts'
+	);
 
 	return (
 		<div className="" data-cy="quick-links-card">
@@ -15,7 +20,7 @@ const QuickLinksCard = ( {} ) => {
 			<div className="nfd-grid nfd-gap-4 nfd-grid-cols-1">
 				<a
 					className="nfd-no-underline nfd-card-link nfd-card-link-mini"
-					href={manageHostingUrl}
+					href={ manageHostingUrl }
 					data-cy="hosting-card"
 				>
 					<Card className="wppbh-hosting-card nfd-card-mini nfd-py-4">
@@ -34,7 +39,7 @@ const QuickLinksCard = ( {} ) => {
 				</a>
 				<a
 					className="nfd-no-underline nfd-card-link nfd-card-link-mini"
-					href={writeBlogUrl}
+					href={ writeBlogUrl }
 					data-cy="blog-card"
 				>
 					<Card className="wppbh-blog-card nfd-card-mini nfd-py-4">
@@ -53,7 +58,7 @@ const QuickLinksCard = ( {} ) => {
 				</a>
 				<a
 					className="nfd-no-underline nfd-card-link nfd-card-link-mini"
-					href={salesDiscountUrl}
+					href={ salesDiscountUrl }
 					data-cy="promotion-card"
 				>
 					<Card className="wppbh-promotion-card nfd-card-mini nfd-py-4">

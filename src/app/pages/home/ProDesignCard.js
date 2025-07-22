@@ -1,5 +1,4 @@
 import { Button, Card, Title } from '@newfold/ui-component-library';
-import { addUtmParams } from '../../util/helpers';
 import { ReactComponent as Icon } from 'App/images/card-bg-pro-design.svg';
 
 const ProDesignCard = ( {} ) => {

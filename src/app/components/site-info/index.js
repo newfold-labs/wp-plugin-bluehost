@@ -3,7 +3,7 @@ import { decodeEntities } from '@wordpress/html-entities';
 import { NewfoldRuntime } from '@newfold/wp-module-runtime';
 import { Button } from '@newfold/ui-component-library';
 import { BluehostIcon, WordPressIcon } from '../icons';
-import { getPlatformPathUrl, addUtmParams } from '../../util/helpers';
+import { getPlatformPathUrl } from '../../util/helpers';
 
 export const SiteInfoBar = () => {
 	const { url, title } = NewfoldRuntime.siteDetails;

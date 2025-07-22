@@ -275,8 +275,8 @@ final class Admin {
 	public static function actions( $actions ) {
 		return array_merge(
 			array(
-				'overview' => '<a href="' . \admin_url( 'admin.php?page=bluehost#/home' ) . '">' . __( 'Home', 'wp-plugin-bluehost' ) . '</a>',
-				'settings' => '<a href="' . \admin_url( 'admin.php?page=bluehost#/settings' ) . '">' . __( 'Settings', 'wp-plugin-bluehost' ) . '</a>',
+				'overview' => '<a href="' . buildLink( admin_url( 'admin.php?page=bluehost#/home' ) ) . '">' . __( 'Home', 'wp-plugin-bluehost' ) . '</a>',
+				'settings' => '<a href="' . buildLink( admin_url( 'admin.php?page=bluehost#/settings' ) ) . '">' . __( 'Settings', 'wp-plugin-bluehost' ) . '</a>',
 			),
 			$actions
 		);

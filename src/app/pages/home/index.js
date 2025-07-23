@@ -1,6 +1,5 @@
 import { useEffect } from '@wordpress/element';
 import { Container, Page, Title } from '@newfold/ui-component-library';
-import WelcomeSection from './welcomeSection';
 import SolutionCard from './SolutionCard';
 import ExpertCard from './ExpertCard';
 import HelpCard from './HelpCard';
@@ -36,9 +35,6 @@ const Home = () => {
 					) }
 				</span>
 			</div>
-			<Container className="nfd-max-w-full">
-				<WelcomeSection />
-			</Container>
 			<Container className="nfd-max-w-full nfd-p-8">
 				<Title className="nfd-mb-1 nfd-font-bold">
 					{ __( 'Next Steps', 'wp-plugin-bluehost' ) }

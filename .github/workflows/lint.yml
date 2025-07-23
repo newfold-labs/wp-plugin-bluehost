@@ -40,7 +40,8 @@ jobs:
           coverage: none
           tools: composer, cs2pr
 
-      - uses: technote-space/get-diff-action@f27caffdd0fb9b13f4fc191c016bb4e0632844af # v6.1.2
+      - name: Check for modified files
+        uses: technote-space/get-diff-action@f27caffdd0fb9b13f4fc191c016bb4e0632844af # v6.1.2
         with:
           PATTERNS: |
             '**.php'

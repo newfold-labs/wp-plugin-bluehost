@@ -5,21 +5,27 @@ on:
     types:
       - created
 
+# Disable permissions for all available scopes by default.
+# Any needed permissions should be configured at the job level.
+permissions: {}
+
 jobs:
   webhook:
     name: Send Webhook
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
     steps:
 
       - name: Set Package
         id: package
         env:
           REPO: ${{ github.repository }}
-        run: echo "PACKAGE=${REPO##*/}" >> $GITHUB_OUTPUT
+        run: echo "PACKAGE=${REPO##*/}" >> "$GITHUB_OUTPUT"
 
       - name: Set Version
         id: tag
-        run: echo "VERSION=${GITHUB_REF##*/}" >> $GITHUB_OUTPUT
+        run: echo "VERSION=${GITHUB_REF##*/}" >> "$GITHUB_OUTPUT"
 
       - name: Repository Dispatch
         uses: peter-evans/repository-dispatch@ff45666b9427631e3450c54a1bcbee4d9ff4d7c0 # v3.0.0

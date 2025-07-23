@@ -34,7 +34,7 @@ const help = [
 		cta: __( 'Live Chat', 'wp-plugin-bluehost' ),
 		url:
 			getPlatformBaseUrl() +
-			'/contact/?utm_campaign=&utm_content=help_chat_link&utm_term=live_chat&utm_medium=brand_plugin&utm_source=wp-admin/admin.php?page=bluehost#/help',
+			'/contact/?utm_campaign=&utm_content=help_chat_link&utm_term=live_chat',
 	},
 	{
 		name: 'twitter',
@@ -69,7 +69,7 @@ const help = [
 		cta: __( 'Visit Knowledge Base', 'wp-plugin-bluehost' ),
 		url:
 			getPlatformBaseUrl() +
-			'/help/?utm_campaign=&utm_content=help_help_link&utm_term=we_can_help&utm_medium=brand_plugin&utm_source=wp-admin/admin.php?page=bluehost#/help',
+			'/help/?utm_campaign=&utm_content=help_help_link&utm_term=we_can_help',
 	},
 	{
 		name: 'resources',
@@ -82,7 +82,7 @@ const help = [
 		cta: __( 'Explore Resources', 'wp-plugin-bluehost' ),
 		url:
 			getPlatformBaseUrl() +
-			'/blog/?utm_campaign=&utm_content=help_kb_link&utm_term=find_answers&utm_medium=brand_plugin&utm_source=wp-admin/admin.php?page=bluehost#/help',
+			'/blog/?utm_campaign=&utm_content=help_kb_link&utm_term=find_answers',
 	},
 	{
 		name: 'events',
@@ -93,7 +93,7 @@ const help = [
 		),
 		icon: false,
 		cta: __( 'More Info', 'wp-plugin-bluehost' ),
-		url: 'https://www.bluehost.com/blog/events/?utm_campaign=&utm_content=help_blog_link&utm_term=learn_stuff&utm_medium=brand_plugin&utm_source=wp-admin',
+		url: 'https://www.bluehost.com/blog/events/?utm_campaign=&utm_content=help_blog_link&utm_term=learn_stuff',
 	},
 	{
 		name: 'website',

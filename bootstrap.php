@@ -87,54 +87,76 @@ add_action(
 add_filter(
 	'newfold/coming-soon/filter/args',
 	function ( $args, $default_args ) {
+		$logo_svg = file_get_contents( BLUEHOST_PLUGIN_DIR . '/assets/svg/bluehost-logo.svg' );
 
-		// Properly get branding links depending on market
-		$wordpress_hosting_page = ( get_option( 'mm_brand' ) === 'Bluehost_India' ) ? buildLink( 'https://www.bluehost.in?utm_source=coming-soon-template' ) : buildLink( 'https://bluehost.com?utm_source=coming-soon-template' );
-		$my_panel               = ( get_option( 'mm_brand' ) === 'Bluehost_India' ) ? buildLink( 'https://my.bluehost.in/web-hosting/cplogin' ) : buildLink( 'https://my.bluehost.com/web-hosting/cplogin' );
-		$website_guide_link     = buildLink( 'https://www.bluehost.com/blog/how-to-create-a-website-guide/' );
-		$migrate_link           = buildLink( 'https://www.bluehost.com/blog/how-to-migrate-a-wordpress-website-to-a-new-server/' );
-		$hosting_link           = buildLink( 'https://www.bluehost.com/hosting/shared' );
+		$backlinks = array(
+			sprintf(
+			/* translators: %1$s starts the bold text, %2$s ends the bold text and adds a line break, %3$s is the link to the Domain Registration page, %4$s is the closing link for Domain Registration, %5$s wraps everything inside a span with text-center class */
+				esc_html__( '%1$sNeed a domain?%2$sCheck out our %3$sDomain Registration%4$s options.%5$s', 'wp-plugin-bluehost' ),
+				'<span class=\"text-center\"><b>',
+				'</b><br>',
+				'<a href=\"' . esc_url( buildLink( 'https://bluehost.com/domains' ) ) . '\">',
+				'</a>',
+				'</span>',
+			),
+			sprintf(
+				/* translators: %1$s starts the bold text, %2$s ends the bold text and adds a line break, %3$s is the link to Shared Hosting, %4$s is the closing link for Shared Hosting, %5$s is the link to WordPress Hosting, %6$s is the closing link for WordPress Hosting, %7$s is the link to VPS Hosting, %8$s is the closing link for VPS Hosting, %9$s is the link to Dedicated Hosting, %10$s is the closing link for Dedicated Hosting, %11$s wraps everything inside a span with text-center class */
+				esc_html__(
+					'%1$sDiscover our hosting solutions:%2$s
+						      %3$sShared Hosting%4$s,  
+						      %5$sWordPress Hosting%6$s,  
+						      %7$sVPS Hosting%8$s, and  
+						      %9$sDedicated Hosting%10$s. 
+					      %11$s',
+					'wp-plugin-bluehost'
+				),
+				'<span class=\"text-center\"><b>',
+				'</b><br>',
+				'<a href=\"' . esc_url( buildLink( 'https://bluehost.com/shared-hosting' ) ) . '\">',
+				'</a>',
+				'<a href=\"' . esc_url( buildLink( 'https://bluehost.com/wordpress-hosting' ) ) . '\">',
+				'</a>',
+				'<a href=\"' . esc_url( buildLink( 'https://bluehost.com/vps-hosting' ) ) . '\">',
+				'</a>',
+				'<a href=\"' . esc_url( buildLink( 'https://bluehost.com/dedicated-hosting' ) ) . '\">',
+				'</a>',
+				'</span>'
+			),
+		);
 
 		$args = wp_parse_args(
 			array(
-				'admin_app_url'              => buildLink( admin_url( 'admin.php?page=bluehost#/home' ) ),
-				'template_h1'                => __( 'Coming Soon!', 'wp-plugin-bluehost' ),
-				'template_h2'                => __( 'A New WordPress Site', 'wp-plugin-bluehost' ),
-				'template_coming_soon_links' =>
-					'<a href="' . esc_url( $website_guide_link ) . '" target="_blank" rel="noopener noreferrer nofollow">' .
-					__( 'How to Build a Website: A Practical Guide to WordPress on Bluehost', 'wp-plugin-bluehost' ) .
-					'</a><br/>' .
-					'<a href="' . esc_url( $migrate_link ) . '" target="_blank" rel="noopener noreferrer nofollow">' .
-					__( 'How to Migrate a Website to Bluehost?', 'wp-plugin-bluehost' ) .
-					'</a><br/>' .
-					'<a href="' . esc_url( $hosting_link ) . '" target="_blank" rel="noopener noreferrer nofollow">' .
-					__( 'Why choose Bluehost for your WordPress site?', 'wp-plugin-bluehost' ) .
-					'</a><br/>',
-				'template_footer_t'          => sprintf(
-				/* translators: %1$s is replaced with opening link tag taking you to bluehost.com/wordpress, %2$s is replaced with closing link tag, %3$s is replaced with opening link tag taking you to login page, %4$s is replaced with closing link tag, %5$s is replaced with opening link tag taking you to my.bluehost.com, %6$s is replaced with closing link tag */
-					esc_html__( 'A %1$sBluehost%2$s powered website. Is this your website? Log in to %3$sWordPress%4$s or %5$sBluehost%6$s.', 'wp-plugin-bluehost' ) . '&nbsp;',
-					'<a href="' . esc_url( $wordpress_hosting_page ) . '" target="_blank" rel="noopener noreferrer nofollow">',
+				'admin_app_url'                  => buildLink( admin_url( 'admin.php?page=bluehost#/home' ) ),
+				'template_coming_soon_backlinks' => sprintf(
+					/* translators: %1$s is the logo SVG, %2$s wraps the text, %3$s is the link start for Bluehost WordPress Hosting, %4$s is the closing anchor tag, %5$s wraps the text again, %6$s contains backlinks */
+					esc_html__(
+						'%1$s
+					%2$sA %3$sReliable WordPress Hosting by Bluehost%4$s powered website.%5$s
+                    %6$s',
+						'wp-plugin-bluehost'
+					),
+					wp_kses( $logo_svg, KSES_ALLOWED_SVG_TAGS ),
+					'<span class=\"text-center\">',
+					'<a target=\"_blank\" href=\"' . esc_url( buildLink( 'https://bluehost.com/wordpress' ) ) . '\" class=\"bluehost\">',
 					'</a>',
-					'<a href="' . esc_url( buildLink( wp_login_url() ) ) . '">',
-					'</a>',
-					'<a href="' . esc_url( $my_panel ) . '" target="_blank" rel="noopener noreferrer nofollow">',
-					'</a>'
+					'</span>',
+					$backlinks[ time() % 2 === 0 ]
 				),
-				'template_page_title'        => sprintf(
+				'template_page_title'            => sprintf(
 				/* translators: %s: Blog name */
 					__( '%s &mdash; Coming Soon', 'wp-plugin-bluehost' ),
 					esc_html( get_option( 'blogname' ) )
 				),
-				'admin_bar_text'             => '<div style="background-color: #FEC101; color: #000; padding: 0 1rem;">' . __( 'Coming Soon Active', 'wp-plugin-bluehost' ) . '</div>',
-				'admin_notice_text'          => sprintf(
+				'admin_bar_text'                 => '<div style="background-color: #FEC101; color: #000; padding: 0 1rem;">' . __( 'Coming Soon Active', 'wp-plugin-bluehost' ) . '</div>',
+				'admin_notice_text'              => sprintf(
 				/* translators: %1$s is replaced with the opening link tag to preview the page, and %2$s is replaced with the closing link tag, %3$s is the opening link tag, %4$s is the closing link tag. */
 					__( 'Your site is currently displaying a %1$scoming soon page%2$s. Once you are ready, %3$slaunch your site%4$s.', 'wp-plugin-bluehost' ),
-					'<a href="' . get_home_url() . '?preview=coming_soon" title="' . __( 'Preview the coming soon landing page', 'wp-plugin-bluehost' ) . '">',
+					'<a href="' . esc_url( buildLink( get_home_url() . '?preview=coming_soon' ) ) . '" title="' . __( 'Preview the coming soon landing page', 'wp-plugin-bluehost' ) . '">',
 					'</a>',
 					'<a href="' . esc_url( buildLink( admin_url( 'admin.php?page=bluehost&nfd-target=coming-soon-section#/settings' ) ) ) . '">',
 					'</a>'
 				),
-				'template_styles'            => esc_url( BLUEHOST_PLUGIN_URL . 'assets/styles/coming-soon.css' ),
+				'template_styles'                => esc_url( BLUEHOST_PLUGIN_URL . 'assets/styles/coming-soon.css' ),
 			),
 			$default_args
 		);

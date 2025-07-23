@@ -60,12 +60,15 @@ jobs:
           path: '.cache/phpcs.json'
           key: ${{ runner.os }}-date-${{ steps.get-date.outputs.date }}-php-${{ env.PHP_VERSION }}-phpcs-cache-${{ hashFiles('**/composer.lock', 'phpcs.xml') }}
 
-      # Since Composer dependencies are installed using `composer update` and no lock file is in version control,
-      # passing a custom cache suffix ensures that the cache is flushed at least once per week.
       - name: Install Composer dependencies
         uses: ramsey/composer-install@a2636af0004d1c0499ffca16ac0b4cc94df70565 # v3.1.0
         with:
           composer-options: '--no-progress --optimize-autoloader --prefer-dist'
 
-      - name: Detecting PHP Code Standards Violations
-        run: vendor/bin/phpcs --standard=phpcs.xml -s
+      - name: Run PHP_CodeSniffer
+        id: phpcs-scan
+        run: phpcs --report-full --cache=./.cache/phpcs.json --report-checkstyle=./.cache/phpcs-report.xml
+
+      - name: Show scan results in pull request
+        if: ${{ always() && steps.phpcs-scan.outcome == 'failure' }}
+        run: cs2pr ./.cache/phpcs-report.xml

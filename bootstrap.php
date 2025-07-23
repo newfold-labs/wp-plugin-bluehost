@@ -15,6 +15,7 @@ use NewfoldLabs\WP\Module\Features\Features;
 use function NewfoldLabs\WP\ModuleLoader\container as setContainer;
 use function NewfoldLabs\WP\Context\setContext;
 use function NewfoldLabs\WP\Context\getContext;
+use function NewfoldLabs\WP\Module\LinkTracker\Functions\build_link as buildLink;
 
 // Composer autoloader
 if ( is_readable( __DIR__ . '/vendor/autoload.php' ) ) {
@@ -83,7 +84,6 @@ add_action(
 		}
 	}
 );
-
 add_filter(
 	'newfold/coming-soon/filter/args',
 	function ( $args, $default_args ) {
@@ -95,7 +95,7 @@ add_filter(
 				esc_html__( '%1$sNeed a domain?%2$sCheck out our %3$sDomain Registration%4$s options.%5$s', 'wp-plugin-bluehost' ),
 				'<span class=\"text-center\"><b>',
 				'</b><br>',
-				'<a href=\"https://bluehost.com/domains\">',
+				'<a href=\"' . esc_url( buildLink( 'https://bluehost.com/domains' ) ) . '\">',
 				'</a>',
 				'</span>',
 			),
@@ -112,13 +112,13 @@ add_filter(
 				),
 				'<span class=\"text-center\"><b>',
 				'</b><br>',
-				'<a href=\"https://bluehost.com/shared-hosting\">',
+				'<a href=\"' . esc_url( buildLink( 'https://bluehost.com/shared-hosting' ) ) . '\">',
 				'</a>',
-				'<a href=\"https://bluehost.com/wordpress-hosting\">',
+				'<a href=\"' . esc_url( buildLink( 'https://bluehost.com/wordpress-hosting' ) ) . '\">',
 				'</a>',
-				'<a href=\"https://bluehost.com/vps-hosting\">',
+				'<a href=\"' . esc_url( buildLink( 'https://bluehost.com/vps-hosting' ) ) . '\">',
 				'</a>',
-				'<a href=\"https://bluehost.com/dedicated-hosting\">',
+				'<a href=\"' . esc_url( buildLink( 'https://bluehost.com/dedicated-hosting' ) ) . '\">',
 				'</a>',
 				'</span>'
 			),
@@ -126,7 +126,7 @@ add_filter(
 
 		$args = wp_parse_args(
 			array(
-				'admin_app_url'                  => admin_url( 'admin.php?page=bluehost#/home' ),
+				'admin_app_url'                  => buildLink( admin_url( 'admin.php?page=bluehost#/home' ) ),
 				'template_coming_soon_backlinks' => sprintf(
 					/* translators: %1$s is the logo SVG, %2$s wraps the text, %3$s is the link start for Bluehost WordPress Hosting, %4$s is the closing anchor tag, %5$s wraps the text again, %6$s contains backlinks */
 					esc_html__(
@@ -137,7 +137,7 @@ add_filter(
 					),
 					wp_kses( $logo_svg, KSES_ALLOWED_SVG_TAGS ),
 					'<span class=\"text-center\">',
-					'<a target=\"_blank\" href=\"https://bluehost.com/wordpress\" class=\"bluehost\">',
+					'<a target=\"_blank\" href=\"' . esc_url( buildLink( 'https://bluehost.com/wordpress' ) ) . '\" class=\"bluehost\">',
 					'</a>',
 					'</span>',
 					$backlinks[ time() % 2 === 0 ]
@@ -151,9 +151,9 @@ add_filter(
 				'admin_notice_text'              => sprintf(
 				/* translators: %1$s is replaced with the opening link tag to preview the page, and %2$s is replaced with the closing link tag, %3$s is the opening link tag, %4$s is the closing link tag. */
 					__( 'Your site is currently displaying a %1$scoming soon page%2$s. Once you are ready, %3$slaunch your site%4$s.', 'wp-plugin-bluehost' ),
-					'<a href="' . get_home_url() . '?preview=coming_soon" title="' . __( 'Preview the coming soon landing page', 'wp-plugin-bluehost' ) . '">',
+					'<a href="' . esc_url( buildLink( get_home_url() . '?preview=coming_soon' ) ) . '" title="' . __( 'Preview the coming soon landing page', 'wp-plugin-bluehost' ) . '">',
 					'</a>',
-					'<a href="' . esc_url( admin_url( 'admin.php?page=bluehost&nfd-target=coming-soon-section#/settings' ) ) . '">',
+					'<a href="' . esc_url( buildLink( admin_url( 'admin.php?page=bluehost&nfd-target=coming-soon-section#/settings' ) ) ) . '">',
 					'</a>'
 				),
 				'template_styles'                => esc_url( BLUEHOST_PLUGIN_URL . 'assets/styles/coming-soon.css' ),

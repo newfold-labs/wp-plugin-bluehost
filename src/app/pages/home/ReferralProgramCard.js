@@ -1,12 +1,13 @@
 import { Button, Card, Title } from '@newfold/ui-component-library';
-import { addUtmParams } from '../../util/helpers';
 import { ReactComponent as Icon } from 'App/images/card-bg-referral-program.svg';
 
 const ReferralProgramCard = ( {} ) => {
 	return (
 		<a
 			className="nfd-no-underline nfd-card-link"
-			href={ addUtmParams( 'https://www.bluehost.com/affiliates' ) }
+			href={ window.NewfoldRuntime.linkTracker.addUtmParams(
+				'https://www.bluehost.com/affiliates'
+			) }
 			target="_blank"
 			rel="noreferrer"
 			data-cy="referral-program-card"

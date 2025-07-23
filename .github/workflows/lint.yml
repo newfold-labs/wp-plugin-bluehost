@@ -69,5 +69,5 @@ jobs:
         if: "!! env.GIT_DIFF"
 
       - name: Detecting PHP Code Standards Violations
-        run: vendor/bin/phpcs --standard=phpcs.xml -s "$GIT_DIFF"
+        run: vendor/bin/phpcs --standard=phpcs.xml -s
         if: "!! env.GIT_DIFF"

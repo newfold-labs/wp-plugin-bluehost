@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "fdab32318b95423676a4db5f3ef1cdb5",
+    "content-hash": "b67953ebb476c137a65b43875210630c",
     "packages": [
         {
             "name": "doctrine/inflector",
@@ -1908,16 +1908,16 @@
         },
         {
             "name": "newfold-labs/wp-module-next-steps",
-            "version": "0.1.0",
+            "version": "0.2.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/newfold-labs/wp-module-next-steps.git",
-                "reference": "0535972650282c79387fa736bc92380c3780eff2"
+                "reference": "0b1cb5592b0ecdf50a362c2a2a79d29d06c2895b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/newfold-labs/wp-module-next-steps/zipball/0535972650282c79387fa736bc92380c3780eff2",
-                "reference": "0535972650282c79387fa736bc92380c3780eff2",
+                "url": "https://api.github.com/repos/newfold-labs/wp-module-next-steps/zipball/0b1cb5592b0ecdf50a362c2a2a79d29d06c2895b",
+                "reference": "0b1cb5592b0ecdf50a362c2a2a79d29d06c2895b",
                 "shasum": ""
             },
             "require": {
@@ -1985,10 +1985,10 @@
             ],
             "description": "A Newfold module to manage next steps for a customer in a brand plugin.",
             "support": {
-                "source": "https://github.com/newfold-labs/wp-module-next-steps/tree/0.1.0",
+                "source": "https://github.com/newfold-labs/wp-module-next-steps/tree/0.2.0",
                 "issues": "https://github.com/newfold-labs/wp-module-next-steps/issues"
             },
-            "time": "2025-07-03T19:19:21+00:00"
+            "time": "2025-07-15T20:37:04+00:00"
         },
         {
             "name": "newfold-labs/wp-module-notifications",
@@ -4435,21 +4435,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Roave/SecurityAdvisories.git",
-<<<<<<< HEAD
-                "reference": "a76f62e135c8b583602bd99df737b5c20f4d7200"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/Roave/SecurityAdvisories/zipball/a76f62e135c8b583602bd99df737b5c20f4d7200",
-                "reference": "a76f62e135c8b583602bd99df737b5c20f4d7200",
-=======
                 "reference": "0b1f127d644a2ff8af1c8bd2955dbe3c11812017"
             },
             "dist": {
                 "type": "zip",
                 "url": "https://api.github.com/repos/Roave/SecurityAdvisories/zipball/0b1f127d644a2ff8af1c8bd2955dbe3c11812017",
                 "reference": "0b1f127d644a2ff8af1c8bd2955dbe3c11812017",
->>>>>>> develop
                 "shasum": ""
             },
             "conflict": {
@@ -5396,11 +5387,7 @@
                     "type": "tidelift"
                 }
             ],
-<<<<<<< HEAD
-            "time": "2025-07-04T13:13:44+00:00"
-=======
             "time": "2025-07-22T16:07:09+00:00"
->>>>>>> develop
         },
         {
             "name": "squizlabs/php_codesniffer",

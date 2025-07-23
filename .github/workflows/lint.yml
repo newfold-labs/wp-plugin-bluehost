@@ -24,6 +24,9 @@ concurrency:
 # Any needed permissions should be configured at the job level.
 permissions: {}
 
+env:
+  PHP_VERSION: '7.4' # Set a default PHP version for the job.
+
 jobs:
   phpcs:
     name: Run PHP Code Sniffer
@@ -41,9 +44,21 @@ jobs:
       - name: Setup PHP
         uses: shivammathur/setup-php@0f7f1d08e3e32076e51cae65eb0b0c871405b16e # v2.34.1
         with:
-          php-version: '7.4'
+          php-version: '${{ env.PHP_VERSION }}'
           coverage: none
           tools: cs2pr
+
+      # This date is used to ensure that the PHPCS cache is cleared at least once every week.
+      # http://man7.org/linux/man-pages/man1/date.1.html
+      - name: "Get last Monday's date"
+        id: get-date
+        run: echo "date=$(/bin/date -u --date='last Mon' "+%F")" >> "$GITHUB_OUTPUT"
+
+      - name: Cache PHPCS scan cache
+        uses: actions/cache@5a3ec84eff668545956fd18022155c47e93e2684 # v4.2.3
+        with:
+          path: '.cache/phpcs.json'
+          key: ${{ runner.os }}-date-${{ steps.get-date.outputs.date }}-php-${{ env.PHP_VERSION }}-phpcs-cache-${{ hashFiles('**/composer.lock', 'phpcs.xml') }}
 
       # Since Composer dependencies are installed using `composer update` and no lock file is in version control,
       # passing a custom cache suffix ensures that the cache is flushed at least once per week.

@@ -5,6 +5,9 @@
     <config name="testVersion" value="7.3-"/>
     <config name="minimum_supported_wp_version" value="6.6"/>
 
+    <!-- Whenever possible, cache the scan results and re-use those for unchanged files on the next scan. -->
+    <arg name="cache" value=".cache/phpcs.json"/>
+
     <file>.</file>
 
     <exclude-pattern>/assets</exclude-pattern>

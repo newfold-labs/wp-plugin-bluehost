@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "71383139e1e4f68dfda0bbcbdc722146",
+    "content-hash": "b45f15cc700982a44957076a1df0cf1f",
     "packages": [
         {
             "name": "doctrine/inflector",
@@ -1985,12 +1985,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/newfold-labs/wp-module-next-steps.git",
-                "reference": "4073b433d06f811f6f13a3d0b4543844356e541e"
+                "reference": "4bab5a8f0bd25f8686f94fab14432a8bcd6ed77e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/newfold-labs/wp-module-next-steps/zipball/4073b433d06f811f6f13a3d0b4543844356e541e",
-                "reference": "4073b433d06f811f6f13a3d0b4543844356e541e",
+                "url": "https://api.github.com/repos/newfold-labs/wp-module-next-steps/zipball/4bab5a8f0bd25f8686f94fab14432a8bcd6ed77e",
+                "reference": "4bab5a8f0bd25f8686f94fab14432a8bcd6ed77e",
                 "shasum": ""
             },
             "require": {
@@ -2072,7 +2072,7 @@
                 "source": "https://github.com/newfold-labs/wp-module-next-steps/tree/develop",
                 "issues": "https://github.com/newfold-labs/wp-module-next-steps/issues"
             },
-            "time": "2025-07-23T20:27:08+00:00"
+            "time": "2025-07-23T22:12:02+00:00"
         },
         {
             "name": "newfold-labs/wp-module-notifications",

@@ -67,7 +67,7 @@ jobs:
 
       - name: Run PHP_CodeSniffer
         id: phpcs-scan
-        run: phpcs --report-full --cache=./.cache/phpcs.json --report-checkstyle=./.cache/phpcs-report.xml
+        run: vendor/bin/phpcs --report-full --cache=./.cache/phpcs.json --report-checkstyle=./.cache/phpcs-report.xml
 
       - name: Show scan results in pull request
         if: ${{ always() && steps.phpcs-scan.outcome == 'failure' }}

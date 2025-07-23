@@ -48,26 +48,26 @@ jobs:
             'package{,-lock}.json'
 
       - name: Get Composer cache directory
+        if: "!! env.GIT_DIFF"
         id: composer-cache
         run: echo "dir=$(composer config cache-files-dir)" >> "$GITHUB_OUTPUT"
-        if: "!! env.GIT_DIFF"
 
       - name: Cache Composer vendor directory
         uses: actions/cache@5a3ec84eff668545956fd18022155c47e93e2684 # v4.2.3
+        if: "!! env.GIT_DIFF"
         with:
           path: ${{ steps.composer-cache.outputs.dir }}
           key: ${{ runner.os }}-composer-${{ hashFiles('**/composer.lock') }}
 
-        if: "!! env.GIT_DIFF"
 
       - name: Validate composer.json and composer.lock
-        run: composer validate
         if: "!! env.GIT_DIFF"
+        run: composer validate
 
       - name: Install dependencies
-        run: composer install --no-progress --optimize-autoloader --prefer-dist
         if: "!! env.GIT_DIFF"
+        run: composer install --no-progress --optimize-autoloader --prefer-dist
 
       - name: Detecting PHP Code Standards Violations
-        run: vendor/bin/phpcs --standard=phpcs.xml -s
         if: "!! env.GIT_DIFF"
+        run: vendor/bin/phpcs --standard=phpcs.xml -s

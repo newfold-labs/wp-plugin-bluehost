@@ -15,6 +15,11 @@ on:
       - 'synchronize'
       - 'reopened'
       - 'ready_for_review'
+    paths:
+      - '**.php'
+      - 'package*.json'
+      - 'composer.*'
+      - 'phpcs.xml'
   workflow_dispatch:
 
 concurrency:

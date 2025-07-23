@@ -42,7 +42,10 @@ jobs:
 
       - uses: technote-space/get-diff-action@f27caffdd0fb9b13f4fc191c016bb4e0632844af # v6.1.2
         with:
-          SUFFIX_FILTER: .php
+          PATTERNS: |
+            '**.php'
+            'composer.(json|lock)'
+            'package{,-lock}.json'
 
       - name: Get Composer cache directory
         id: composer-cache

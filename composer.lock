@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "7b30a9634880144bfdcf47b627c78b22",
+    "content-hash": "bb3ce0135ef08580fbf70179fce5de09",
     "packages": [
         {
             "name": "doctrine/inflector",
@@ -1379,16 +1379,16 @@
         },
         {
             "name": "newfold-labs/wp-module-help-center",
-            "version": "2.5.1",
+            "version": "2.5.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/newfold-labs/wp-module-help-center.git",
-                "reference": "e24decf67c6dac7b983dba11c0fdaca751a368a5"
+                "reference": "5680f2c1d53a56820edd6ebcc0632b8cc7f96688"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/newfold-labs/wp-module-help-center/zipball/e24decf67c6dac7b983dba11c0fdaca751a368a5",
-                "reference": "e24decf67c6dac7b983dba11c0fdaca751a368a5",
+                "url": "https://api.github.com/repos/newfold-labs/wp-module-help-center/zipball/5680f2c1d53a56820edd6ebcc0632b8cc7f96688",
+                "reference": "5680f2c1d53a56820edd6ebcc0632b8cc7f96688",
                 "shasum": ""
             },
             "require": {
@@ -1398,7 +1398,7 @@
                 "typesense/typesense-php": "^2.0.4"
             },
             "require-dev": {
-                "johnpbloch/wordpress": "6.1.7",
+                "johnpbloch/wordpress": "6.8.2",
                 "lucatume/wp-browser": "*",
                 "newfold-labs/wp-php-standards": "@stable",
                 "phpunit/phpcov": "*",
@@ -1458,10 +1458,10 @@
             ],
             "description": "HelpCenter",
             "support": {
-                "source": "https://github.com/newfold-labs/wp-module-help-center/tree/2.5.1",
+                "source": "https://github.com/newfold-labs/wp-module-help-center/tree/2.5.2",
                 "issues": "https://github.com/newfold-labs/wp-module-help-center/issues"
             },
-            "time": "2025-07-18T13:08:15+00:00"
+            "time": "2025-07-22T06:50:44+00:00"
         },
         {
             "name": "newfold-labs/wp-module-hosting",

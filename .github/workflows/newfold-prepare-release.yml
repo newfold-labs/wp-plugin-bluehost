@@ -41,4 +41,4 @@ jobs:
       plugin-target-branch: ${{ inputs.target-branch }}
       plugin-source-branch: ${{ inputs.source-branch }}
       level: ${{ inputs.level }}
-      php-file: "bluehost-wordpress-plugin.php"
+      php-file: ${{ format( '{0}.php', vars.PLUGIN_NAME ) }}

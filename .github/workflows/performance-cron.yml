@@ -5,19 +5,26 @@ on:
     # Runs "every 30 minutes" (see https://crontab.guru)
     - cron: '*/30 * * * *'
   workflow_dispatch:
+
+# Disable permissions for all available scopes by default.
+# Any needed permissions should be configured at the job level.
+permissions: {}
+
 jobs:
   visit-site:
     name: Visit the performance test site
     runs-on: ubuntu-latest
     environment: Performance Test Site
+    env:
+      BASE_URL: ${{ vars.BASE_URL }}
     steps:
       - name: Login
         run: |
-          curl --cookie-jar cookies.txt --form log="${{ secrets.USERNAME }}" --form pwd="${{ secrets.PASSWORD }}" ${{ vars.BASE_URL }}/wp-login.php
+          curl --cookie-jar cookies.txt --form log="${{ secrets.USERNAME }}" --form pwd="${{ secrets.PASSWORD }}" "$BASE_URL/wp-login.php"
       - name: Visit the posts page (3x)
         run: |
-          curl -b cookies.txt ${{ vars.BASE_URL }}/wp-admin/edit.php -v
+          curl -b cookies.txt "$BASE_URL/wp-admin/edit.php" -v
           sleep 5
-          curl -b cookies.txt ${{ vars.BASE_URL }}/wp-admin/edit.php -v
+          curl -b cookies.txt "$BASE_URL/wp-admin/edit.php" -v
           sleep 5
-          curl -b cookies.txt ${{ vars.BASE_URL }}/wp-admin/edit.php -v
+          curl -b cookies.txt "$BASE_URL/wp-admin/edit.php" -v

@@ -2,7 +2,8 @@ name: Lint
 on:
   push:
     branches:
-      - '**'
+      - 'main'
+      - 'develop'
     paths:
       - '**.php'
       - 'package*.json'

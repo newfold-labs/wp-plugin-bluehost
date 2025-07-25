@@ -170,6 +170,7 @@ final class Admin {
 
 		if ( version_compare( $wp_version, $plugin_data['RequiresWP'], '>=' ) ) {
 			echo '<div id="wppbh-app" class="wppbh wppbh_app"></div>' . PHP_EOL;
+			echo '<div id="nfd-portal-apps"><div id="nfd-next-steps-portal" /></div>' . PHP_EOL;
 		} else {
 			// fallback messaging for outdated WordPress
 			$appWhenOutdated = BLUEHOST_PLUGIN_DIR . '/inc/AppWhenOutdated.php';
@@ -196,6 +197,14 @@ final class Admin {
 		}
 
 		\wp_register_script(
+			'nfd-portal-registry',
+			BLUEHOST_BUILD_URL . '/portal-registry.js',
+			array( 'wp-components', 'wp-element' ),
+			$asset['version'],
+			true
+		);
+
+		\wp_register_script(
 			'bluehost-script',
 			BLUEHOST_BUILD_URL . '/index.js',
 			array_merge(
@@ -204,6 +213,7 @@ final class Admin {
 					'newfold-features',
 					'nfd-runtime',
 					'nfd-installer',
+					'nfd-portal-registry',
 				)
 			),
 			$asset['version'],

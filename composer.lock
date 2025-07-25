@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "5e976f6cf372467a2b6ebadab5c06bac",
+    "content-hash": "da4b6eb65e1b9f6ca3452a6b90262341",
     "packages": [
         {
             "name": "doctrine/inflector",
@@ -1978,6 +1978,101 @@
                 "issues": "https://github.com/newfold-labs/wp-module-migration/issues"
             },
             "time": "2025-07-16T11:29:03+00:00"
+        },
+        {
+            "name": "newfold-labs/wp-module-next-steps",
+            "version": "dev-develop",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/newfold-labs/wp-module-next-steps.git",
+                "reference": "b0e8cd12805ce027cdaa4b5625121cd96c0e7305"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/newfold-labs/wp-module-next-steps/zipball/b0e8cd12805ce027cdaa4b5625121cd96c0e7305",
+                "reference": "b0e8cd12805ce027cdaa4b5625121cd96c0e7305",
+                "shasum": ""
+            },
+            "require": {
+                "newfold-labs/wp-module-data": "^2.8.6",
+                "newfold-labs/wp-module-loader": "^1.0.12"
+            },
+            "require-dev": {
+                "newfold-labs/wp-php-standards": "^1.2.5",
+                "phpunit/phpunit": "^9.6",
+                "wp-cli/i18n-command": "^2.6.5",
+                "yoast/phpunit-polyfills": "^1.1"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "NewfoldLabs\\WP\\Module\\NextSteps\\": "includes"
+                },
+                "files": [
+                    "bootstrap.php"
+                ]
+            },
+            "scripts": {
+                "fix": [
+                    "vendor/bin/phpcbf . --standard=phpcs.xml"
+                ],
+                "i18n-pot": [
+                    "vendor/bin/wp i18n make-pot . ./languages/wp-module-next-steps.pot --headers='{\"Report-Msgid-Bugs-To\":\"https://github.com/newfold-labs/wp-module-next-steps/issues\",\"POT-Creation-Date\":\"2025-06-06T06:30:00+00:00\"}' --exclude=src,tests"
+                ],
+                "i18n-po": [
+                    "vendor/bin/wp i18n update-po ./languages/wp-module-next-steps.pot ./languages"
+                ],
+                "i18n-mo": [
+                    "vendor/bin/wp i18n make-mo ./languages"
+                ],
+                "i18n-php": [
+                    "vendor/bin/wp i18n make-php ./languages"
+                ],
+                "i18n-json": [
+                    "rm -f languages/*.json && vendor/bin/wp i18n make-json ./languages --no-purge --pretty-print"
+                ],
+                "i18n": [
+                    "@i18n-pot",
+                    "@i18n-po",
+                    "@i18n-php",
+                    "@i18n-json"
+                ],
+                "i18n-ci-pre": [
+                    "@i18n-pot",
+                    "@i18n-po"
+                ],
+                "i18n-ci-post": [
+                    "@i18n-php",
+                    "@i18n-json"
+                ],
+                "lint": [
+                    "vendor/bin/phpcs . --standard=phpcs.xml -s"
+                ],
+                "test": [
+                    "vendor/bin/phpunit"
+                ],
+                "test-coverage": [
+                    "vendor/bin/phpunit --coverage-text"
+                ],
+                "test-coverage-html": [
+                    "vendor/bin/phpunit --coverage-html tests/coverage"
+                ]
+            },
+            "license": [
+                "GPL-3.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "Evan Mullins",
+                    "homepage": "https://evanmullins.com"
+                }
+            ],
+            "description": "A Newfold module to manage next steps for a customer in a brand plugin.",
+            "support": {
+                "source": "https://github.com/newfold-labs/wp-module-next-steps/tree/develop",
+                "issues": "https://github.com/newfold-labs/wp-module-next-steps/issues"
+            },
+            "time": "2025-07-25T21:31:16+00:00"
         },
         {
             "name": "newfold-labs/wp-module-notifications",
@@ -5983,6 +6078,7 @@
     "aliases": [],
     "minimum-stability": "stable",
     "stability-flags": {
+        "newfold-labs/wp-module-next-steps": 20,
         "roave/security-advisories": 20
     },
     "prefer-stable": false,

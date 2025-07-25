@@ -1985,12 +1985,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/newfold-labs/wp-module-next-steps.git",
-                "reference": "a09a854ab3ad7e2a2c4f3ad94306ae9c060e1eb8"
+                "reference": "b0e8cd12805ce027cdaa4b5625121cd96c0e7305"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/newfold-labs/wp-module-next-steps/zipball/a09a854ab3ad7e2a2c4f3ad94306ae9c060e1eb8",
-                "reference": "a09a854ab3ad7e2a2c4f3ad94306ae9c060e1eb8",
+                "url": "https://api.github.com/repos/newfold-labs/wp-module-next-steps/zipball/b0e8cd12805ce027cdaa4b5625121cd96c0e7305",
+                "reference": "b0e8cd12805ce027cdaa4b5625121cd96c0e7305",
                 "shasum": ""
             },
             "require": {
@@ -2072,7 +2072,7 @@
                 "source": "https://github.com/newfold-labs/wp-module-next-steps/tree/develop",
                 "issues": "https://github.com/newfold-labs/wp-module-next-steps/issues"
             },
-            "time": "2025-07-24T20:02:05+00:00"
+            "time": "2025-07-25T21:31:16+00:00"
         },
         {
             "name": "newfold-labs/wp-module-notifications",

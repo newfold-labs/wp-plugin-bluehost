@@ -3,14 +3,8 @@ name: Cypress Tests
 on:
   push:
     branches:
-      - main
-      - develop
-      - release/*
-      - feature/*
-      - add/*
-      - update/*
-      - fix/*
-      - try/*
+      - 'main'
+      - 'develop'
   pull_request:
     types: [ opened, synchronize, reopened, ready_for_review ]
   workflow_dispatch:

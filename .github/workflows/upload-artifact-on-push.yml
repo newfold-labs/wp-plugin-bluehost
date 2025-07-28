@@ -2,16 +2,8 @@ name: Build Plugin
 on:
   push:
     branches:
-      - main
-      - develop
-      - release/*
-      - feature/*
-      - add/*
-      - update/*
-      - fix/*
-      - try/*
-      - master-2.x
-      - develop-2.x
+      - 'main'
+      - 'develop'
   pull_request:
     types: [ opened, synchronize, reopened, ready_for_review ]
   workflow_dispatch:

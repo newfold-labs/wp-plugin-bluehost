@@ -1687,16 +1687,16 @@
         },
         {
             "name": "newfold-labs/wp-module-link-tracker",
-            "version": "v1.0.4",
+            "version": "v1.0.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/newfold-labs/wp-module-link-tracker.git",
-                "reference": "796efaa614cbe5aec28445d7e07a4436f1e31931"
+                "reference": "603882c7dc44e5856b2818cf875b5336b5c178d3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/newfold-labs/wp-module-link-tracker/zipball/796efaa614cbe5aec28445d7e07a4436f1e31931",
-                "reference": "796efaa614cbe5aec28445d7e07a4436f1e31931",
+                "url": "https://api.github.com/repos/newfold-labs/wp-module-link-tracker/zipball/603882c7dc44e5856b2818cf875b5336b5c178d3",
+                "reference": "603882c7dc44e5856b2818cf875b5336b5c178d3",
                 "shasum": ""
             },
             "require-dev": {
@@ -1753,10 +1753,10 @@
             ],
             "description": "A WordPress module that adds tracking params",
             "support": {
-                "source": "https://github.com/newfold-labs/wp-module-link-tracker/tree/v1.0.4",
+                "source": "https://github.com/newfold-labs/wp-module-link-tracker/tree/v1.0.5",
                 "issues": "https://github.com/newfold-labs/wp-module-link-tracker/issues"
             },
-            "time": "2025-07-23T08:40:27+00:00"
+            "time": "2025-07-25T08:36:45+00:00"
         },
         {
             "name": "newfold-labs/wp-module-loader",

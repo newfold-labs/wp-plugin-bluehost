@@ -19,13 +19,11 @@ class GoogleSiteKit {
 	/**
 	 * Check if Google Site Kit is enabled and set the transient value.
 	 *
-	 * @param mixed  $value The transient value.
-	 * @param int    $expiration The expiration time.
-	 * @param string $transient The transient name.
+	 * @param mixed $value The transient value.
 	 *
 	 * @return mixed
 	 */
-	public function maybe_enable_google_site_kit( $value, $expiration, $transient ) {
+	public function maybe_enable_google_site_kit( $value ) {
 		if ( class_exists( 'WPSEO_Options' ) ) {
 			$option_value = \WPSEO_Options::get( 'google_site_kit_feature_enabled', null, array( 'wpseo' ) );
 			if (

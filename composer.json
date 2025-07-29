@@ -30,6 +30,10 @@
     "installer-name": "bluehost-wordpress-plugin"
   },
   "repositories": {
+    "wp-module-next-steps": {
+      "type": "vcs",
+      "url": "https://github.com/newfold-labs/wp-module-next-steps.git"
+    },
     "newfold": {
       "type": "composer",
       "url": "https://newfold-labs.github.io/satis/",
@@ -53,15 +57,15 @@
     "i18n-mo": "vendor/bin/wp i18n make-mo ./languages",
     "i18n-php": "vendor/bin/wp i18n make-php ./languages",
     "i18n-json": "rm -f languages/*.json && vendor/bin/wp i18n make-json ./languages --no-purge --pretty-print",
+    "i18n-ci-pre": [
+      "@i18n-pot",
+      "@i18n-po"
+    ],
     "i18n": [
       "@i18n-pot",
       "@i18n-po",
       "@i18n-php",
       "@i18n-json"
-    ],
-    "i18n-ci-pre": [
-      "@i18n-pot",
-      "@i18n-po"
     ],
     "i18n-ci-post": [
       "@i18n-json",
@@ -75,7 +79,9 @@
     "i18n-pot": "Generate a .pot file for translation.",
     "i18n-po": "Update existing .po files.",
     "i18n-mo": "Generate new language .mo files.",
-    "i18n-json": "Generate new language .json files."
+    "i18n-json": "Generate new language .json files.",
+    "i18n-ci-pre": "Command for CI to run before generating language files.",
+    "i18n-ci-post": "Command for CI to run after generating language files."
   },
   "require-dev": {
     "newfold-labs/wp-php-standards": "^1.2.5",
@@ -98,10 +104,11 @@
     "newfold-labs/wp-module-help-center": "^2.5.2",
     "newfold-labs/wp-module-hosting": "^1.1.5",
     "newfold-labs/wp-module-installer": "^1.6.4",
-    "newfold-labs/wp-module-link-tracker": "^1.0",
+    "newfold-labs/wp-module-link-tracker": "^1.0.5",
     "newfold-labs/wp-module-loader": "^1.0.12",
     "newfold-labs/wp-module-marketplace": "^3.0.3",
     "newfold-labs/wp-module-migration": "^1.5.8",
+    "newfold-labs/wp-module-next-steps": "^1.0.1",
     "newfold-labs/wp-module-notifications": "^1.6.12",
     "newfold-labs/wp-module-onboarding": "^3.0.3",
     "newfold-labs/wp-module-onboarding-data": "^1.2.13",
@@ -112,7 +119,7 @@
     "newfold-labs/wp-module-secure-passwords": "^1.1.2",
     "newfold-labs/wp-module-solutions": "^2.2.8",
     "newfold-labs/wp-module-sso": "^1.1.1",
-    "newfold-labs/wp-module-staging": "^2.3.8",
+    "newfold-labs/wp-module-staging": "^2.3.9",
     "wp-forge/wp-update-handler": "^1.0.2",
     "wp-forge/wp-upgrade-handler": "^1.0"
   }

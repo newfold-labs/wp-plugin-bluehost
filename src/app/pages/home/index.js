@@ -1,5 +1,5 @@
+import { useEffect } from '@wordpress/element';
 import { Container, Page, Title } from '@newfold/ui-component-library';
-import WelcomeSection from './welcomeSection';
 import SolutionCard from './SolutionCard';
 import ExpertCard from './ExpertCard';
 import HelpCard from './HelpCard';
@@ -8,6 +8,19 @@ import ReferralProgramCard from './ReferralProgramCard';
 import QuickLinksCard from './QuickLinksCard';
 
 const Home = () => {
+	useEffect( () => {
+		// run when mounts
+		const el = document.getElementById( 'next-steps-slot' );
+		if ( el ) {
+			window.NFDPortalRegistry.registerPortal( 'next-steps', el );
+		}
+
+		// run when unmounts
+		return () => {
+			window.NFDPortalRegistry.unregisterPortal( 'next-steps' );
+		};
+	}, [] );
+
 	return (
 		<Page className="wppbh-home xl:nfd-max-w-screen-lg">
 			<div className="nfd-home__title-section">
@@ -21,8 +34,8 @@ const Home = () => {
 					) }
 				</span>
 			</div>
-			<Container className="nfd-max-w-full">
-				<WelcomeSection />
+			<Container className="nfd-max-w-full nfd-p-8">
+				<div id="next-steps-slot" />
 			</Container>
 			<div className="nfd-grid nfd-gap-4 nfd-grid-cols-1 min-[783px]:nfd-gap-6 min-[540px]:nfd-grid-cols-2 min-[960px]:nfd-grid-cols-3">
 				<SolutionCard />

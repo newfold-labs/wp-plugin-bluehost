@@ -21,11 +21,6 @@ describe( 'Home Page', { testIsolation: true }, function () {
 			.scrollIntoView()
 			.should( 'be.visible' );
 
-		// Home Section
-		cy.get( '#nfd-app-section-home' )
-			.scrollIntoView()
-			.should( 'be.visible' );
-
 		// Solution Card
 		cy.get( '[data-cy="solution-card"]' )
 			.contains( 'h2', 'Explore' )

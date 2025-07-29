@@ -48,7 +48,7 @@ jobs:
 
       # User PHP 7.4 here for compatibility with the WordPress codesniffer rules.
       - name: Setup PHP
-        uses: shivammathur/setup-php@34a5396826718e0013f08e3e639d1c315d5f6b23 # v2.35.0
+        uses: shivammathur/setup-php@2282b6a082fc605c8320908a4cca3a5d1ca6c6fe # v2.35.1
         with:
           php-version: '${{ env.PHP_VERSION }}'
           coverage: none
@@ -67,7 +67,7 @@ jobs:
           key: ${{ runner.os }}-date-${{ steps.get-date.outputs.date }}-php-${{ env.PHP_VERSION }}-phpcs-cache-${{ hashFiles('**/composer.lock', 'phpcs.xml') }}
 
       - name: Install Composer dependencies
-        uses: ramsey/composer-install@a2636af0004d1c0499ffca16ac0b4cc94df70565 # v3.1.0
+        uses: ramsey/composer-install@3cf229dc2919194e9e36783941438d17239e8520 # v3.1.1
         with:
           composer-options: '--no-progress --optimize-autoloader --prefer-dist'
 

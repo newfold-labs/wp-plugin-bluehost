@@ -10,14 +10,19 @@ import QuickLinksCard from './QuickLinksCard';
 const Home = () => {
 	useEffect( () => {
 		// run when mounts
-		const el = document.getElementById( 'next-steps-slot' );
-		if ( el ) {
-			window.NFDPortalRegistry.registerPortal( 'next-steps', el );
+		const nextStepsPortal = document.getElementById( 'next-steps-portal' );
+		const comingSoonPortal = document.getElementById( 'coming-soon-portal' );
+		if ( nextStepsPortal ) {
+			window.NFDPortalRegistry.registerPortal( 'next-steps', nextStepsPortal );
+		}
+		if ( comingSoonPortal ) {
+			window.NFDPortalRegistry.registerPortal( 'coming-soon', comingSoonPortal );
 		}
 
 		// run when unmounts
 		return () => {
 			window.NFDPortalRegistry.unregisterPortal( 'next-steps' );
+			window.NFDPortalRegistry.unregisterPortal( 'coming-soon' );
 		};
 	}, [] );
 
@@ -35,7 +40,10 @@ const Home = () => {
 				</span>
 			</div>
 			<Container className="nfd-max-w-full nfd-p-8">
-				<div id="next-steps-slot" />
+				<div id="coming-soon-portal" />
+			</Container>
+			<Container className="nfd-max-w-full nfd-p-8">
+				<div id="next-steps-portal" />
 			</Container>
 			<div className="nfd-grid nfd-gap-4 nfd-grid-cols-1 min-[783px]:nfd-gap-6 min-[540px]:nfd-grid-cols-2 min-[960px]:nfd-grid-cols-3">
 				<SolutionCard />

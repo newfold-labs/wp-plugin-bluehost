@@ -11,12 +11,19 @@ const Home = () => {
 	useEffect( () => {
 		// run when mounts
 		const nextStepsPortal = document.getElementById( 'next-steps-portal' );
-		const comingSoonPortal = document.getElementById( 'coming-soon-portal' );
+		const comingSoonPortal =
+			document.getElementById( 'coming-soon-portal' );
 		if ( nextStepsPortal ) {
-			window.NFDPortalRegistry.registerPortal( 'next-steps', nextStepsPortal );
+			window.NFDPortalRegistry.registerPortal(
+				'next-steps',
+				nextStepsPortal
+			);
 		}
 		if ( comingSoonPortal ) {
-			window.NFDPortalRegistry.registerPortal( 'coming-soon', comingSoonPortal );
+			window.NFDPortalRegistry.registerPortal(
+				'coming-soon',
+				comingSoonPortal
+			);
 		}
 
 		// run when unmounts

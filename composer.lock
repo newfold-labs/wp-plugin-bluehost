@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "2c528840e61b63b5199876f0753ccd00",
+    "content-hash": "67174cb6d09805f4c2cc9c0aba3c986c",
     "packages": [
         {
             "name": "doctrine/inflector",
@@ -1473,16 +1473,16 @@
         },
         {
             "name": "newfold-labs/wp-module-hosting",
-            "version": "1.1.5",
+            "version": "1.1.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/newfold-labs/wp-module-hosting.git",
-                "reference": "7733a3d3f22b787c21b182554c67a38261c1384d"
+                "reference": "c2b2caaac1c899ce27a01ab2c9a6520f80defc41"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/newfold-labs/wp-module-hosting/zipball/7733a3d3f22b787c21b182554c67a38261c1384d",
-                "reference": "7733a3d3f22b787c21b182554c67a38261c1384d",
+                "url": "https://api.github.com/repos/newfold-labs/wp-module-hosting/zipball/c2b2caaac1c899ce27a01ab2c9a6520f80defc41",
+                "reference": "c2b2caaac1c899ce27a01ab2c9a6520f80defc41",
                 "shasum": ""
             },
             "require": {
@@ -1539,10 +1539,10 @@
             ],
             "description": "A Newfold module that manages the Hosting panel on the plugin page and serves as middleware for interacting with hosting services.",
             "support": {
-                "source": "https://github.com/newfold-labs/wp-module-hosting/tree/1.1.5",
+                "source": "https://github.com/newfold-labs/wp-module-hosting/tree/1.1.6",
                 "issues": "https://github.com/newfold-labs/wp-module-hosting/issues"
             },
-            "time": "2025-07-17T10:53:27+00:00"
+            "time": "2025-07-30T10:46:15+00:00"
         },
         {
             "name": "newfold-labs/wp-module-install-checker",
@@ -1897,16 +1897,16 @@
         },
         {
             "name": "newfold-labs/wp-module-migration",
-            "version": "1.5.8",
+            "version": "1.5.9",
             "source": {
                 "type": "git",
                 "url": "https://github.com/newfold-labs/wp-module-migration.git",
-                "reference": "d91ceb54336aa1e9fe4450c7e0602526ed19e0ef"
+                "reference": "b9577af711c35af15659665156d2ddf565da6f82"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/newfold-labs/wp-module-migration/zipball/d91ceb54336aa1e9fe4450c7e0602526ed19e0ef",
-                "reference": "d91ceb54336aa1e9fe4450c7e0602526ed19e0ef",
+                "url": "https://api.github.com/repos/newfold-labs/wp-module-migration/zipball/b9577af711c35af15659665156d2ddf565da6f82",
+                "reference": "b9577af711c35af15659665156d2ddf565da6f82",
                 "shasum": ""
             },
             "require": {
@@ -1914,7 +1914,7 @@
                 "newfold-labs/wp-module-loader": "^1.0.10"
             },
             "require-dev": {
-                "johnpbloch/wordpress": "6.8.1",
+                "johnpbloch/wordpress": "6.8.2",
                 "lucatume/wp-browser": "*",
                 "newfold-labs/wp-php-standards": "^1.2",
                 "phpunit/phpcov": "*",
@@ -1982,10 +1982,10 @@
             ],
             "description": "Initiates the migration process",
             "support": {
-                "source": "https://github.com/newfold-labs/wp-module-migration/tree/1.5.8",
+                "source": "https://github.com/newfold-labs/wp-module-migration/tree/1.5.9",
                 "issues": "https://github.com/newfold-labs/wp-module-migration/issues"
             },
-            "time": "2025-07-16T11:29:03+00:00"
+            "time": "2025-07-30T10:36:11+00:00"
         },
         {
             "name": "newfold-labs/wp-module-next-steps",
@@ -2415,16 +2415,16 @@
         },
         {
             "name": "newfold-labs/wp-module-performance",
-            "version": "3.2.9",
+            "version": "3.2.10",
             "source": {
                 "type": "git",
                 "url": "https://github.com/newfold-labs/wp-module-performance.git",
-                "reference": "a11241d38b20148cdd2749b297e2f4664077d5c7"
+                "reference": "5080c190ecca73843f2a2f88151edf0131b01779"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/newfold-labs/wp-module-performance/zipball/a11241d38b20148cdd2749b297e2f4664077d5c7",
-                "reference": "a11241d38b20148cdd2749b297e2f4664077d5c7",
+                "url": "https://api.github.com/repos/newfold-labs/wp-module-performance/zipball/5080c190ecca73843f2a2f88151edf0131b01779",
+                "reference": "5080c190ecca73843f2a2f88151edf0131b01779",
                 "shasum": ""
             },
             "require": {
@@ -2512,10 +2512,10 @@
             ],
             "description": "A module for managing caching functionality.",
             "support": {
-                "source": "https://github.com/newfold-labs/wp-module-performance/tree/3.2.9",
+                "source": "https://github.com/newfold-labs/wp-module-performance/tree/3.2.10",
                 "issues": "https://github.com/newfold-labs/wp-module-performance/issues"
             },
-            "time": "2025-07-22T06:52:48+00:00"
+            "time": "2025-07-30T10:38:56+00:00"
         },
         {
             "name": "newfold-labs/wp-module-pls",

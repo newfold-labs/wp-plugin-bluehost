@@ -30,10 +30,6 @@
     "installer-name": "bluehost-wordpress-plugin"
   },
   "repositories": {
-    "wp-module-next-steps": {
-      "type": "vcs",
-      "url": "https://github.com/newfold-labs/wp-module-next-steps.git"
-    },
     "newfold": {
       "type": "composer",
       "url": "https://newfold-labs.github.io/satis/",

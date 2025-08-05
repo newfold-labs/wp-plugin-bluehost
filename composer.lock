@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "a4a02888d66e49ec91e5a41b49db4ce3",
+    "content-hash": "875170b2b7827b37cd69f19d57cc1736",
     "packages": [
         {
             "name": "doctrine/inflector",
@@ -2327,20 +2327,20 @@
         },
         {
             "name": "newfold-labs/wp-module-patterns",
-            "version": "2.9.6",
+            "version": "2.10.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/newfold-labs/wp-module-patterns.git",
-                "reference": "cefc852725b5928c59f7793cbac6f0a93255526e"
+                "reference": "46c25da347f0622e15c72510523bd79d1d4eb902"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/newfold-labs/wp-module-patterns/zipball/cefc852725b5928c59f7793cbac6f0a93255526e",
-                "reference": "cefc852725b5928c59f7793cbac6f0a93255526e",
+                "url": "https://api.github.com/repos/newfold-labs/wp-module-patterns/zipball/46c25da347f0622e15c72510523bd79d1d4eb902",
+                "reference": "46c25da347f0622e15c72510523bd79d1d4eb902",
                 "shasum": ""
             },
             "require": {
-                "newfold-labs/wp-module-data": "^2.6.13",
+                "newfold-labs/wp-module-data": "^2.8.6",
                 "newfold-labs/wp-module-features": "^1.5",
                 "newfold-labs/wp-module-installer": "^1.6"
             },
@@ -2388,6 +2388,14 @@
                     "@i18n-php",
                     "@i18n-json"
                 ],
+                "i18n-ci-pre": [
+                    "@i18n-pot",
+                    "@i18n-po"
+                ],
+                "i18n-ci-post": [
+                    "@i18n-json",
+                    "@i18n-php"
+                ],
                 "test": [
                     "codecept run wpunit"
                 ],
@@ -2408,10 +2416,10 @@
             ],
             "description": "WordPress Cloud Patterns",
             "support": {
-                "source": "https://github.com/newfold-labs/wp-module-patterns/tree/2.9.6",
+                "source": "https://github.com/newfold-labs/wp-module-patterns/tree/2.10.1",
                 "issues": "https://github.com/newfold-labs/wp-module-patterns/issues"
             },
-            "time": "2025-06-24T14:44:14+00:00"
+            "time": "2025-08-04T19:42:43+00:00"
         },
         {
             "name": "newfold-labs/wp-module-performance",

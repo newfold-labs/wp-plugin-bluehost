@@ -1,5 +1,4 @@
 import { Button, Card, Title } from '@newfold/ui-component-library';
-import { addUtmParams } from '../../util/helpers';
 import { ReactComponent as Icon } from 'App/images/card-bg-pro-design.svg';
 
 const ProDesignCard = ( {} ) => {
@@ -8,7 +7,7 @@ const ProDesignCard = ( {} ) => {
 			className="nfd-no-underline nfd-card-link"
 			data-action="load-nfd-ctb"
 			data-ctb-id="838cc912-adb3-4d75-9450-262bf3ee3576"
-			href={ addUtmParams(
+			href={ window.NewfoldRuntime.linkTracker.addUtmParams(
 				'https://www.bluehost.com/my-account/market-place'
 			) }
 			rel="noreferrer"

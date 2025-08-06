@@ -10,6 +10,7 @@ namespace Bluehost;
 use NewfoldLabs\WP\Module\Data\SiteCapabilities;
 use function NewfoldLabs\WP\Context\getContext;
 use function NewfoldLabs\WP\Module\Features\isEnabled;
+use function NewfoldLabs\WP\Module\LinkTracker\Functions\build_link as buildLink;
 
 /**
  * \Bluehost\Admin
@@ -169,6 +170,7 @@ final class Admin {
 
 		if ( version_compare( $wp_version, $plugin_data['RequiresWP'], '>=' ) ) {
 			echo '<div id="wppbh-app" class="wppbh wppbh_app"></div>' . PHP_EOL;
+			echo '<div id="nfd-portal-apps"><div id="nfd-next-steps-portal" /><div id="nfd-coming-soon-portal" /></div>' . PHP_EOL;
 		} else {
 			// fallback messaging for outdated WordPress
 			$appWhenOutdated = BLUEHOST_PLUGIN_DIR . '/inc/AppWhenOutdated.php';
@@ -195,6 +197,14 @@ final class Admin {
 		}
 
 		\wp_register_script(
+			'nfd-portal-registry',
+			BLUEHOST_BUILD_URL . '/portal-registry.js',
+			array( 'wp-components', 'wp-element' ),
+			$asset['version'],
+			true
+		);
+
+		\wp_register_script(
 			'bluehost-script',
 			BLUEHOST_BUILD_URL . '/index.js',
 			array_merge(
@@ -203,6 +213,7 @@ final class Admin {
 					'newfold-features',
 					'nfd-runtime',
 					'nfd-installer',
+					'nfd-portal-registry',
 				)
 			),
 			$asset['version'],
@@ -274,8 +285,8 @@ final class Admin {
 	public static function actions( $actions ) {
 		return array_merge(
 			array(
-				'overview' => '<a href="' . \admin_url( 'admin.php?page=bluehost#/home' ) . '">' . __( 'Home', 'wp-plugin-bluehost' ) . '</a>',
-				'settings' => '<a href="' . \admin_url( 'admin.php?page=bluehost#/settings' ) . '">' . __( 'Settings', 'wp-plugin-bluehost' ) . '</a>',
+				'overview' => '<a href="' . buildLink( admin_url( 'admin.php?page=bluehost#/home' ) ) . '">' . __( 'Home', 'wp-plugin-bluehost' ) . '</a>',
+				'settings' => '<a href="' . buildLink( admin_url( 'admin.php?page=bluehost#/settings' ) ) . '">' . __( 'Settings', 'wp-plugin-bluehost' ) . '</a>',
 			),
 			$actions
 		);
@@ -299,9 +310,10 @@ final class Admin {
 	 * @return string
 	 */
 	public static function add_brand_to_admin_footer( $footer_text ) {
-		$footer_text = \sprintf( \__( 'Thank you for creating with <a href="https://wordpress.org/">WordPress</a> and <a href="https://bluehost.com/about">Bluehost</a>.', 'wp-plugin-bluehost' ) );
+		$wordpress_url = '<a href="' . buildLink( 'https://wordpress.org/', array( 'source' => 'bluehost_admin_footer' ) ) . '">WordPress</a>';
+		$bluehost_url  = '<a href="' . buildLink( 'https://bluehost.com/about', array( 'source' => 'bluehost_admin_footer' ) ) . '">Bluehost</a>';
 
-		return $footer_text;
+		return \sprintf( \__( 'Thank you for creating with %1$s and %2$s', 'wp-plugin-bluehost' ), $wordpress_url, $bluehost_url );
 	}
 
 	/**

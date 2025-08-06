@@ -13,7 +13,9 @@ const HelpCard = ( {} ) => {
 	};
 	return (
 		<a
-			href="#/help"
+			href={ window.NewfoldRuntime?.linkTracker?.addUtmParams(
+				'admin.php?page=bluehost#/help'
+			) }
 			onClick={ toggleHelp }
 			className="nfd-no-underline nfd-card-link"
 			data-cy="help-card"

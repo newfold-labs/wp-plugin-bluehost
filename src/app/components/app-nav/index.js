@@ -3,61 +3,60 @@ import apiFetch from '@wordpress/api-fetch';
 import { useViewportMatch } from '@wordpress/compose';
 import { addQueryArgs, cleanForSlug } from '@wordpress/url';
 import { filter } from 'lodash';
-import { Modal, SidebarNavigation } from '@newfold/ui-component-library';
+import { Modal, AppBarNavigation, useNavigationContext } from '@newfold/ui-component-library';
 import { default as NewfoldNotifications } from '@modules/wp-module-notifications/assets/js/components/notifications/';
 import { NavLink, useLocation } from 'react-router-dom';
 import { Bars3Icon } from '@heroicons/react/24/outline';
 import { topRoutes, utilityRoutes } from 'App/data/routes';
 import { handleHelpLinksClick } from '../../util/helpers';
-import Logo from './logo';
+import Logo from '../logo';
 
-export const SideNavHeader = () => {
+export const AppNavHeader = () => {
 	return (
-		<header className="nfd-pt-2 nfd-px-3 nfd-mb-6 nfd-space-y-6">
-			<Logo />
-		</header>
+		<AppBarNavigation.Item as={ 'div' }>
+			<Logo variant={ 'icon' }/>
+		</AppBarNavigation.Item>
 	);
 };
 
-export const SideNavMenu = () => {
+export const AppNavMenu = () => {
 	const location = useLocation();
+	const { setActivePath, activePath } = useNavigationContext();
 
 	const primaryMenu = () => {
 		return (
-			<ul className="nfd-flex nfd-flex-col nfd-gap-1.5">
-				{ topRoutes.map(
+			<>
+			{ topRoutes?.map(
 					( page ) =>
 						true === page.condition && (
-							<SideNavMenuItem
+							<AppBarNavigation.Item
 								key={ page.name }
 								label={ page.title }
 								name={ page.name }
-								icon={ page.Icon }
-								path={ page.name }
+								href={ `#${page.name}` }
 								action={ page.action }
 								subItems={ page.subRoutes }
 							/>
 						)
 				) }
-			</ul>
+			</>
 		);
 	};
 
 	const secondaryMenu = () => {
 		return (
-			<ul className="nfd-flex nfd-flex-col nfd-gap-1.5 nfd-mt-4 nfd-pt-4 nfd-border-t nfd-border-[#D8DEE4]">
-				{ utilityRoutes.map( ( page ) => (
-					<SideNavMenuItem
+			<>
+				{ utilityRoutes?.map( ( page ) => (
+					<AppBarNavigation.Item
 						key={ page.name }
 						label={ page.title }
 						name={ page.name }
-						icon={ page.Icon }
-						path={ page.name }
+						href={ `#${ page.name }` }
 						action={ page.action }
 						subItems={ page.subRoutes }
 					/>
 				) ) }
-			</ul>
+			</>
 		);
 	};
 
@@ -86,54 +85,20 @@ export const SideNavMenu = () => {
 	};
 
 	useEffect( () => {
+		if(location?.pathname){
+			setActivePath( `#${ location.pathname }` );
+		}
+
 		SubMenusManager();
 		document.onclick = SubMenusManager;
 	}, [ location ] );
 
 	return (
-		<div className="nfd-px-0.5 nfd-space-y-6">
+		<>
 			{ primaryMenu() }
+			<div class={'nfd-grow'} />
 			{ secondaryMenu() }
-		</div>
-	);
-};
-
-export const SideNavMenuItem = ( {
-	label,
-	icon: Icon = null,
-	path,
-	action,
-	subItems,
-} ) => {
-	return (
-		<li className="nfd-mb-0">
-			<NavLink
-				onClick={ action && action instanceof Function ? action : null }
-				to={ path }
-				className={ `wppbh-app-navitem wppbh-app-navitem-${ cleanForSlug(
-					label
-				) } nfd-flex nfd-items-center nfd-gap-3 nfd-px-3 nfd-py-2 nfd-rounded-md nfd-text-sm nfd-font-medium nfd-text-title leading-none hover:nfd-bg-slate-50 [&.active]:nfd-bg-[#E2E8F0]` }
-			>
-				{ Icon && (
-					<Icon className="nfd-flex-shrink-0 nfd--ml-1 nfd-h-6 nfd-w-6" />
-				) }
-				{ label }
-			</NavLink>
-
-			{ subItems && subItems.length > 0 && (
-				<ul className="wppbh-app-navitem-submenu nfd-hidden nfd-ml-8 nfd-m-2 nfd-space-y-1.5">
-					{ subItems.map( ( subItem ) => (
-						<SideNavMenuSubItem
-							key={ subItem.name }
-							label={ subItem.title }
-							name={ subItem.name }
-							path={ subItem.name }
-							action={ subItem.action }
-						/>
-					) ) }
-				</ul>
-			) }
-		</li>
+		</>
 	);
 };
 
@@ -153,18 +118,16 @@ export const SideNavMenuSubItem = ( { label, path, action } ) => {
 	);
 };
 
-export const SideNav = () => {
+export const AppBarNav = () => {
 	const location = useLocation();
 	const hashedPath = '#' + location.pathname;
 
 	return (
-		<aside className="wppbh-app-sidenav nfd-shrink-0 nfd-hidden min-[783px]:nfd-block nfd-pb-6 nfd-bottom-0 nfd-w-56">
-			<SidebarNavigation>
-				<SidebarNavigation.Sidebar>
-					<SideNavHeader />
-					<SideNavMenu />
-				</SidebarNavigation.Sidebar>
-			</SidebarNavigation>
+		<>
+			<AppBarNavigation.AppBar position={ 'absolute' }>
+				<AppNavHeader />
+				<AppNavMenu />
+			</AppBarNavigation.AppBar>
 			<NewfoldNotifications
 				constants={ {
 					context: 'bluehost-app-nav',
@@ -178,56 +141,14 @@ export const SideNav = () => {
 					useEffect,
 				} }
 			/>
-		</aside>
-	);
-};
-
-export const MobileNav = () => {
-	const [ isOpen, setIsOpen ] = useState( false );
-
-	const location = useLocation();
-	// Close mobile nav when location changes
-	useEffect( () => {
-		setIsOpen( false );
-	}, [ location ] );
-
-	return (
-		<header className="nfd-sticky nfd-z-30 nfd-top-0 min-[600px]:nfd-top-[46px] nfd-border-b nfd-border-line">
-			<div className="nfd-flex nfd-justify-between nfd-items-center nfd-bg-white">
-				<div className="nfd-px-4">
-					<Logo />
-				</div>
-				<button
-					id="nfd-app-mobile-nav"
-					className="nfd-h-16 nfd-px-4 nfd-text-body nfd-flex nfd-items-center focus:nfd-outline-none focus:nfd-ring-2 focus:nfd-ring-inset focus:nfd-ring-primary"
-					onClick={ () => {
-						setIsOpen( true );
-					} }
-				>
-					<span className="nfd-sr-only">Open Navingation Menu</span>
-					<Bars3Icon className="nfd-w-6 nfd-h-6" />
-				</button>
-
-				<Modal
-					isOpen={ isOpen }
-					onClose={ () => setIsOpen( false ) }
-					className="wppbh-app-sidenav-mobile nfd-z-40"
-					initialFocus
-				>
-					<Modal.Panel className="nfd-p-0 nfd-overflow-visible">
-						<div className="wppbh-app-sidenav nfd-p-5 nfd-max-h-[70vh] nfd-overflow-y-auto">
-							<SideNavMenu />
-						</div>
-					</Modal.Panel>
-				</Modal>
-			</div>
-		</header>
+		</>
 	);
 };
 
 export const AppNav = () => {
 	const isLargeViewport = useViewportMatch( 'medium' );
-	handleHelpLinksClick();
 
-	return <>{ ( isLargeViewport && <SideNav /> ) || <MobileNav /> }</>;
+	// TODO: implement mobile menu
+	// return <>{ ( isLargeViewport && <SideNav /> ) || <MobileNav /> }</>;
+	return <AppBarNav />;
 };

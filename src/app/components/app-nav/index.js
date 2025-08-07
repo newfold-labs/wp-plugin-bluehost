@@ -3,12 +3,11 @@ import apiFetch from '@wordpress/api-fetch';
 import { useViewportMatch } from '@wordpress/compose';
 import { addQueryArgs, cleanForSlug } from '@wordpress/url';
 import { filter } from 'lodash';
-import { Modal, AppBarNavigation, useNavigationContext } from '@newfold/ui-component-library';
+import { Button, AppBarNavigation, useNavigationContext } from '@newfold/ui-component-library';
 import { default as NewfoldNotifications } from '@modules/wp-module-notifications/assets/js/components/notifications/';
 import { NavLink, useLocation } from 'react-router-dom';
-import { Bars3Icon } from '@heroicons/react/24/outline';
 import { topRoutes, utilityRoutes } from 'App/data/routes';
-import { handleHelpLinksClick } from '../../util/helpers';
+import { RectangleGroupIcon, ArrowUpRightIcon } from "@heroicons/react/24/outline";
 import Logo from '../logo';
 
 export const AppNavHeader = () => {
@@ -23,10 +22,10 @@ export const AppNavMenu = () => {
 	const location = useLocation();
 	const { setActivePath, activePath } = useNavigationContext();
 
-	const primaryMenu = () => {
+	const menu = () => {
 		return (
 			<>
-			{ topRoutes?.map(
+			{ [...topRoutes, ...utilityRoutes]?.map(
 					( page ) =>
 						true === page.condition && (
 							<AppBarNavigation.Item
@@ -36,6 +35,7 @@ export const AppNavMenu = () => {
 								href={ `#${page.name}` }
 								action={ page.action }
 								subItems={ page.subRoutes }
+								className={ 'nfd-px-8 group-[.nfd-appbar-item--active]:nfd-text-[var(--color-primary)] group-[.nfd-appbar-item--active]:nfd-font-bold group-[.nfd-appbar-item--active]:nfd-bg-[#DBF1FC80]' }
 							/>
 						)
 				) }
@@ -43,22 +43,20 @@ export const AppNavMenu = () => {
 		);
 	};
 
-	const secondaryMenu = () => {
+	const actions = () =>{
 		return (
 			<>
-				{ utilityRoutes?.map( ( page ) => (
-					<AppBarNavigation.Item
-						key={ page.name }
-						label={ page.title }
-						name={ page.name }
-						href={ `#${ page.name }` }
-						action={ page.action }
-						subItems={ page.subRoutes }
-					/>
-				) ) }
+				<Button className={'nfd-flex nfd-gap-2 nfd-mr-4'}>
+					Go to AI Editor
+					<RectangleGroupIcon />
+				</Button>
+				<Button variant={'secondary'} className={'nfd-flex nfd-gap-2 nfd-mr-4'}>
+					Go to Hosting Panel
+					<ArrowUpRightIcon />
+				</Button>
 			</>
-		);
-	};
+		)
+	}
 
 	const SubMenusManager = () => {
 		// close any open submenus
@@ -95,9 +93,9 @@ export const AppNavMenu = () => {
 
 	return (
 		<>
-			{ primaryMenu() }
+			{ menu() }
 			<div class={'nfd-grow'} />
-			{ secondaryMenu() }
+			{ actions() }
 		</>
 	);
 };
@@ -124,7 +122,7 @@ export const AppBarNav = () => {
 
 	return (
 		<>
-			<AppBarNavigation.AppBar position={ 'absolute' }>
+			<AppBarNavigation.AppBar position={ 'absolute' } className={ 'nfd-pr-2' }>
 				<AppNavHeader />
 				<AppNavMenu />
 			</AppBarNavigation.AppBar>

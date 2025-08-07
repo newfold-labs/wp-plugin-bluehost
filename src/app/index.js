@@ -142,11 +142,10 @@ const AppBody = ( props ) => {
 				} }
 			/>
 			<div className="wppbh-app-body">
-				<header className="nfd-mb-6">
+				<header className="nfd-mb-20">
 					<AppNav />
-					<Logo />
 				</header>
-				<div className="wppbh-app-body-inner">
+				<div className="wppbh-app-body-inner nfd-flex nfd-justify-center">
 					<ErrorBoundary FallbackComponent={ <ErrorCard /> }>
 						{ hasError && <ErrorCard error={ hasError } /> }
 						{ ( true === booted && <AppRoutes /> ) ||

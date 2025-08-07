@@ -1,11 +1,12 @@
 import { useEffect } from '@wordpress/element';
-import { Container, Page, Title } from '@newfold/ui-component-library';
+import { Container, Page, Title, Button } from '@newfold/ui-component-library';
 import SolutionCard from './SolutionCard';
 import ExpertCard from './ExpertCard';
 import HelpCard from './HelpCard';
 import ProDesignCard from './ProDesignCard';
 import ReferralProgramCard from './ReferralProgramCard';
 import QuickLinksCard from './QuickLinksCard';
+import { PartyIcon } from 'App/components/icons';
 
 const Home = () => {
 	useEffect( () => {
@@ -32,23 +33,22 @@ const Home = () => {
 			window.NFDPortalRegistry.unregisterPortal( 'coming-soon' );
 		};
 	}, [] );
+	// TODO: retrieve dynamically the store kind.
+	const siteKind = 'store';
 
 	return (
 		<Page className="wppbh-home xl:nfd-max-w-screen-lg">
-			<div className="nfd-home__title-section">
-				<Title className="nfd-mb-1 nfd-font-bold">
-					{ __( 'Welcome to Bluehost', 'wp-plugin-bluehost' ) }
-				</Title>
-				<span className="nfd-text-sm">
-					{ __(
-						"We're very excited to get started with you!",
-						'wp-plugin-bluehost'
-					) }
+			<div className="nfd-home__title-section nfd-flex nfd-justify-between nfd-items-center">
+				<span className={'nfd-home__title-wrapper nfd-flex nfd-gap-4 nfd-items-center'}>
+					<PartyIcon />
+					<Title className="nfd-mb-1 nfd-font-semibold">
+						{ sprintf( __( 'Congrats, your %s is live!', 'wp-plugin-bluehost' ), siteKind ) }
+					</Title>
 				</span>
+				<Button variant={ 'secondary' } as={ 'a' } href={ '#' }>
+					{ __( 'Add Store Details', 'wp-plugin-bluehost' ) }
+				</Button>
 			</div>
-			<Container className="nfd-max-w-full nfd-p-8">
-				<div id="coming-soon-portal" />
-			</Container>
 			<Container className="nfd-max-w-full nfd-p-8">
 				<div id="next-steps-portal" />
 			</Container>

@@ -34,7 +34,7 @@ final class Data {
 
 		if ( class_exists( 'NewfoldLabs\WP\Module\Solutions\Solutions' ) ) {
 			$solution_data = Solutions::get_enhanced_entitlment_data();
-			$runtime['solution'] = array(
+			$runtime['solutions'] = array(
 				'solution' => $solution_data['solution'] ?: false,
 				'wondercart' => self::get_entitlement_by_id( $solution_data, 'WonderCart' ),
 			);

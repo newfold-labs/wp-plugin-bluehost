@@ -9,6 +9,8 @@ const QuickLinksCard = ( {} ) => {
 		'post-new.php?wb-library=patterns&wb-category=text'
 	);
 	// Sales and Discounts is handled by the wondercart tool/entitlement data or ctb link to ecom family ctb
+	const wondercart = window.NewfoldRuntime.solutions.wondercart;
+	const ecomFamily = window.NewfoldRuntime.ctbs.ecomFamily;
 
 	return (
 		<div className="" data-cy="quick-links-card">
@@ -55,17 +57,20 @@ const QuickLinksCard = ( {} ) => {
 					</Card>
 				</a>
 				{
-					window.NewfoldRuntime.solution.solution === 'WP_SOLUTION_COMMERCE' ? (
+					window.NewfoldRuntime.solutions.solution === 'WP_SOLUTION_COMMERCE' && wondercart ? (
 						// If the solution is ecommerce, show the promotion card as installer link to wondercard tool/entitlement
 						<a
 							className="nfd-no-underline nfd-card-link nfd-card-link-mini"
 							data-cy="promotion-card"
-							data-nfd-installer-plugin-activate={ window.NewfoldRuntime.solution.wondercart.activate }
-							data-nfd-installer-plugin-basename={ window.NewfoldRuntime.solution.wondercart.pluginBasename }
-							data-nfd-installer-plugin-name={ window.NewfoldRuntime.solution.wondercart.pluginName }
-							data-nfd-installer-pls-provider={ window.NewfoldRuntime.solution.wondercart.plsProvider }
-							data-nfd-installer-pls-slug={ window.NewfoldRuntime.solution.wondercart.plsSlug }
-							href={ window.NewfoldRuntime.linkTracker.addUtmParams( window.NewfoldRuntime.solution.wondercart.cta.url ) }
+							// still need to check if active and only display installer attrs if not
+							data-is-active={ wondercart?.isActive ? true : null }
+							data-nfd-installer-plugin-activate={ wondercart?.activate }
+							data-nfd-installer-plugin-basename={ wondercart?.pluginBasename }
+							data-nfd-installer-plugin-name={ wondercart?.pluginName }
+							data-nfd-installer-pls-provider={ wondercart?.plsProvider }
+							data-nfd-installer-pls-slug={ wondercart?.plsSlug }
+							// still need to replace the {siteUrl} with the actual site url
+							href={ window.NewfoldRuntime.linkTracker.addUtmParams( wondercart?.cta.url ) }
 						>
 							<Card className="wppbh-promotion-card nfd-card-mini nfd-py-4">
 								<Card.Content>
@@ -86,8 +91,8 @@ const QuickLinksCard = ( {} ) => {
 						<a
 							className="nfd-no-underline nfd-card-link nfd-card-link-mini"
 							data-cy="promotion-card"
-							data-ctb-id={ window.NewfoldRuntime.ctbs.ecomFamily.id }
-							href={ window.NewfoldRuntime.linkTracker.addUtmParams( window.NewfoldRuntime.ctbs.ecomFamily.url ) }
+							data-ctb-id={ ecomFamily.id }
+							href={ window.NewfoldRuntime.linkTracker.addUtmParams( ecomFamily.url ) }
 						>
 							<Card className="wppbh-promotion-card nfd-card-mini nfd-py-4">
 								<Card.Content>

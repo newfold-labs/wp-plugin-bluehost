@@ -62,15 +62,16 @@ const QuickLinksCard = ( {} ) => {
 						<a
 							className="nfd-no-underline nfd-card-link nfd-card-link-mini"
 							data-cy="promotion-card"
-							// still need to check if active and only display installer attrs if not
-							data-is-active={ wondercart?.isActive ? true : null }
-							data-nfd-installer-plugin-activate={ wondercart?.activate }
-							data-nfd-installer-plugin-basename={ wondercart?.pluginBasename }
-							data-nfd-installer-plugin-name={ wondercart?.pluginName }
-							data-nfd-installer-pls-provider={ wondercart?.plsProvider }
-							data-nfd-installer-pls-slug={ wondercart?.plsSlug }
-							// still need to replace the {siteUrl} with the actual site url
-							href={ window.NewfoldRuntime.linkTracker.addUtmParams( wondercart?.cta.url ) }
+							data-is-active={ wondercart.isActive ? true : null }
+							data-nfd-installer-plugin-activate={ wondercart.isActive ? null : wondercart.activate }
+							data-nfd-installer-plugin-basename={ wondercart.isActive ? null : wondercart.pluginBasename }
+							data-nfd-installer-plugin-name={ wondercart.isActive ? null : wondercart.pluginName }
+							data-nfd-installer-pls-provider={ wondercart.isActive ? null : wondercart.plsProvider }
+							data-nfd-installer-pls-slug={ wondercart.isActive ? null : wondercart.plsSlug }
+							href={ window.NewfoldRuntime.linkTracker.addUtmParams( 
+								// replace the {siteUrl} with the actual site url
+								wondercart.cta?.url.replace( '{siteUrl}', window.NewfoldRuntime.siteUrl )
+							) }
 						>
 							<Card className="wppbh-promotion-card nfd-card-mini nfd-py-4">
 								<Card.Content>

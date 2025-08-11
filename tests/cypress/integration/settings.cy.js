@@ -182,8 +182,8 @@ describe( 'Settings Page', { testIsolation: true }, function () {
 		cy.wait( 500 );
 		cy.get( '[data-id="empty-trash-select"]' )
 			.parent()
-			.next( 'ul.nfd-select__options' )
-			.find( 'li:nth-child(2)' )
+			.next( '.nfd-select__options' )
+			.find( '.nfd-select__option:nth-child(2)' )
 			.click(); // 2
 		cy.wait( 100 );
 		cy.get( '#empty-trash-select__description' )
@@ -194,8 +194,8 @@ describe( 'Settings Page', { testIsolation: true }, function () {
 		cy.wait( 500 );
 		cy.get( '[data-id="empty-trash-select"]' )
 			.parent()
-			.next( 'ul.nfd-select__options' )
-			.find( 'li:last' )
+			.next( '.nfd-select__options' )
+			.find( '.nfd-select__option:last' )
 			.click(); // 4
 		cy.wait( 100 );
 		cy.get( '#empty-trash-select__description' )
@@ -211,8 +211,8 @@ describe( 'Settings Page', { testIsolation: true }, function () {
 		cy.wait( 500 );
 		cy.get( '[data-id="comments-per-page-select"]' )
 			.parent()
-			.next( 'ul.nfd-select__options' )
-			.find( 'li:first' )
+			.next( '.nfd-select__options' )
+			.find( '.nfd-select__option:first' )
 			.click(); // 10
 		cy.wait( 100 );
 		cy.get( '.wppbh-app-settings-comments' )
@@ -240,8 +240,8 @@ describe( 'Settings Page', { testIsolation: true }, function () {
 		cy.wait( 100 );
 		cy.get( '[data-id="close-comments-days-select"]' )
 			.parent()
-			.next( 'ul.nfd-select__options' )
-			.find( 'li:last' )
+			.next( '.nfd-select__options' )
+			.find( '.nfd-select__option:last' )
 			.click(); // 100
 		cy.wait( 100 );
 		cy.get( '.wppbh-app-settings-comments' )
@@ -252,8 +252,8 @@ describe( 'Settings Page', { testIsolation: true }, function () {
 		cy.wait( 100 );
 		cy.get( '[data-id="close-comments-days-select"]' )
 			.parent()
-			.next( 'ul.nfd-select__options' )
-			.find( 'li:nth-child(6)' )
+			.next( '.nfd-select__options' )
+			.find( '.nfd-select__option:nth-child(6)' )
 			.click(); // 14
 		cy.wait( 100 );
 		cy.get( '.wppbh-app-settings-comments' )

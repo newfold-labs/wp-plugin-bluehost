@@ -167,7 +167,7 @@ export const App = () => (
 			<NotificationFeed>
 				<Router>
 					<NavigationProvider>
-						<div className="wppbh-app-container min-[783px]:nfd-p-8 min-[783px]:nfd-flex nfd-gap-6 nfd-max-w-full xl:nfd-max-w-screen-xl 2xl:nfd-max-w-screen-2xl nfd-my-0">
+						<div className="wppbh-app-container min-[783px]:nfd-p-8 min-[783px]:nfd-flex nfd-gap-6 nfd-max-w-full xl:nfd-max-w-screen-xl 2xl:nfd-max-w-screen-2xl nfd-my-0 nfd-mx-auto">
 							<AppBody />
 						</div>
 					</NavigationProvider>

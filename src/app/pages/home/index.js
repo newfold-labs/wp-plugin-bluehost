@@ -1,11 +1,9 @@
 import { useEffect } from '@wordpress/element';
 import { Container, Page, Title, Button } from '@newfold/ui-component-library';
-import SolutionCard from './SolutionCard';
-import ExpertCard from './ExpertCard';
-import HelpCard from './HelpCard';
-import ProDesignCard from './ProDesignCard';
-import ReferralProgramCard from './ReferralProgramCard';
-import QuickLinksCard from './QuickLinksCard';
+import Cards from './cards';
+import QuickLinks from './quick-links';
+import SuggestedVideos from './suggested-videos';
+
 import { PartyIcon } from 'App/components/icons';
 
 const Home = () => {
@@ -49,17 +47,25 @@ const Home = () => {
 					{ __( 'Add Store Details', 'wp-plugin-bluehost' ) }
 				</Button>
 			</div>
-			<Container className="nfd-max-w-full nfd-p-8">
+			<Container className="nfd-max-w-full nfd-p-8 nfd-shadow-none nfd-rounded-xl nfd-border nfd-border-[#D5D5D5]">
 				<div id="next-steps-portal" />
 			</Container>
-			<div className="nfd-grid nfd-gap-4 nfd-grid-cols-1 min-[783px]:nfd-gap-6 min-[540px]:nfd-grid-cols-2 min-[960px]:nfd-grid-cols-3">
-				<SolutionCard />
-				<ExpertCard />
-				<HelpCard />
-				<ProDesignCard />
-				<ReferralProgramCard />
-				<QuickLinksCard />
-			</div>
+			<Container className="nfd-max-w-full nfd-p-0 nfd-shadow-none nfd-bg-transparent nfd-border-0">
+				<Title as={ 'h2' } className={ 'nfd-text-xl nfd-font-semibold nfd-mb-6' }>
+					{ __( 'Quick links', 'wp-plugin-bluehost' ) }
+				</Title>
+				<div className="nfd-grid nfd-gap-4 nfd-grid-cols-1 min-[783px]:nfd-gap-6 min-[540px]:nfd-grid-cols-2 min-[960px]:nfd-grid-cols-3">
+					<QuickLinks />
+				</div>
+			</Container>
+			<Container className="nfd-max-w-full nfd-p-0 nfd-shadow-none nfd-bg-transparent nfd-border-0">
+				<Title as={ 'h2' } className={ 'nfd-text-xl nfd-font-semibold nfd-mb-6' }>
+					{ __( 'Suggested videos', 'wp-plugin-bluehost' ) }
+				</Title>
+				<div className="nfd-grid nfd-gap-4 nfd-grid-cols-1 min-[783px]:nfd-gap-6 min-[540px]:nfd-grid-cols-2 min-[960px]:nfd-grid-cols-3">
+					<SuggestedVideos />
+				</div>
+			</Container>
 		</Page>
 	);
 };

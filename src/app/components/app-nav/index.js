@@ -94,7 +94,7 @@ export const AppNavMenu = () => {
 	return (
 		<>
 			{ menu() }
-			<div class={'nfd-grow'} />
+			<div className={'nfd-grow'} />
 			{ actions() }
 		</>
 	);

@@ -1,0 +1,21 @@
+const AiEditortIcon = ( { dimension = 16, color = 'white' } ) => (
+	<svg
+		width={ dimension }
+		height={ dimension }
+		viewBox="0 0 16 16"
+		fill="none"
+		xmlns="http://www.w3.org/2000/svg"
+	>
+		<path d="M15.3476 9.34277V13.9346H10.4023V9.34277H15.3476Z" stroke="black" stroke-width="0.7"/>
+		<path d="M15.3476 4.87146V9.46326H10.4023V4.87146H15.3476Z" stroke="black" stroke-width="0.7"/>
+		<path d="M15.3496 0.400146V4.9939H10.4043V4.64331C10.4044 3.5078 10.897 2.42529 11.7617 1.63257C12.6255 0.840751 13.7918 0.400151 15 0.400146H15.3496Z" stroke="black" stroke-width="0.7"/>
+		<path d="M10.4735 9.34277V13.9346H5.5282V9.34277H10.4735Z" stroke="black" stroke-width="0.7"/>
+		<path d="M10.4735 4.87146V9.46326H5.5282V4.87146H10.4735Z" stroke="black" stroke-width="0.7"/>
+		<path d="M5.5957 9.26831V13.8601H0.650391V9.26831H5.5957Z" stroke="black" stroke-width="0.7"/>
+		<path d="M5.5957 4.87146V9.46326H0.650391V4.87146H5.5957Z" stroke="black" stroke-width="0.7"/>
+		<path d="M1 0.401855C2.20998 0.401855 3.37453 0.842501 4.23828 1.63428C5.10303 2.427 5.59562 3.5095 5.5957 4.64502V4.99561H0.650391V0.401855H1Z" stroke="black" stroke-width="0.7"/>
+	</svg>
+
+);
+
+export default AiEditortIcon;

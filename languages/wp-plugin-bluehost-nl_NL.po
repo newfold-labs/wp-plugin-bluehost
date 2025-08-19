@@ -1,15 +1,16 @@
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: Bluehost Plugi2024-10-21 07:10-00002024-10-21 07:10-0000none1.0text/plain; charset=UTF-88bitnplurals=2; plural=(n != 1);Crowdin\n"
 "Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-02-25T20:53:21+00:00\n"
+"PO-Revision-Date: 2025-02-25T20:53:21+00:00\n"
 "Last-Translator: \n"
 "Language-Team: \n"
+"Language: nl_NL\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2025-02-25T20:53:21+00:00\n"
-"PO-Revision-Date: 2025-02-25T20:53:21+00:00\n"
-"Language: nl_NL\n"
 
 #. Plugin Name of the plugin
 #: bluehost-wordpress-plugin.php
@@ -24,13 +25,15 @@ msgstr "https://bluehost.com"
 
 #. Description of the plugin
 #: bluehost-wordpress-plugin.php
-msgid "WordPress plugin that integrates a WordPress site with the Bluehost control panel, including performance, security, and update features."
-msgstr "WordPress plugin die een WordPress site integreert met het Bluehost control panel, inclusief prestaties, veiligheid en update functies."
+msgid ""
+"WordPress plugin that integrates a WordPress site with the Bluehost control "
+"panel, including performance, security, and update features."
+msgstr ""
+"WordPress plugin die een WordPress site integreert met het Bluehost control "
+"panel, inclusief prestaties, veiligheid en update functies."
 
 #. Author of the plugin
-#: bluehost-wordpress-plugin.php
-#: inc/Admin.php:135
-#: inc/Admin.php:136
+#: bluehost-wordpress-plugin.php inc/Admin.php:135 inc/Admin.php:136
 msgid "Bluehost"
 msgstr "Bluehost"
 
@@ -48,48 +51,41 @@ msgstr "%s &mdash; Binnenkort"
 msgid "Coming Soon Active"
 msgstr "Binnenkort actief"
 
-#. translators: %1$s is replaced with the opening link tag to preview the page, and %2$s is replaced with the closing link tag, %3$s is the opening link tag, %4$s is the closing link tag.
+#. translators: %1$s is replaced with the opening link tag to preview the
+#. page, and %2$s is replaced with the closing link tag, %3$s is the opening
+#. link tag, %4$s is the closing link tag.
 #: bootstrap.php:153
 #, php-format
-msgid "Your site is currently displaying a %1$scoming soon page%2$s. Once you are ready, %3$slaunch your site%4$s."
-msgstr "Uw site toont momenteel een %1$sdie binnenkort pagina%2$skomt. Zodra u klaar bent, start %3$suw site%4$s."
+msgid ""
+"Your site is currently displaying a %1$scoming soon page%2$s. Once you are "
+"ready, %3$slaunch your site%4$s."
+msgstr ""
+"Uw site toont momenteel een %1$sdie binnenkort pagina%2$skomt. Zodra u klaar"
+" bent, start %3$suw site%4$s."
 
 #: bootstrap.php:154
 msgid "Preview the coming soon landing page"
 msgstr "Bekijk een voorbeeld van de volgende landingspagina"
 
-#: inc/Admin.php:74
-#: inc/Admin.php:288
-#: build/4.5.0/index.js:7
+#: inc/Admin.php:74 inc/Admin.php:288
 msgid "Home"
 msgstr "Startpagina"
 
-#: build/4.5.0/index.js:7
-msgid "Store"
-msgstr "Winkel"
-
-#: build/4.5.0/index.js:7
-#: build/4.5.0/index.js:9
-msgid "Marketplace"
-msgstr "Marktplaats"
-
-#: inc/Admin.php:79
-#: inc/Admin.php:289
-#: build/4.5.0/index.js:7
+#: inc/Admin.php:79 inc/Admin.php:289
 msgid "Settings"
 msgstr "Instellingen"
-
-#: build/4.5.0/index.js:9
-msgid "Help"
-msgstr "Hulp"
 
 #: inc/AppWhenOutdated.php:44
 msgid "Please update to a newer WordPress version."
 msgstr "Update a.u.b. naar een nieuwere WordPress versie."
 
 #: inc/AppWhenOutdated.php:41
-msgid "There are new WordPress components which this plugin requires in order to render the interface."
-msgstr "Er zijn nieuwe WordPress-componenten die deze plugin nodig heeft om de interface te renderen."
+msgid ""
+"There are new WordPress components which this plugin requires in order to "
+"render the interface."
+msgstr ""
+"Er zijn nieuwe WordPress-componenten die deze plugin nodig heeft om de "
+"interface te renderen."
 
 #. translators: 1: plugin name 2: incompatible plugin name
 #: inc/plugin-nfd-compat-check.php:161
@@ -103,11 +99,15 @@ msgstr "\"%1$s\" heeft zichzelf gedeactiveerd. Het is niet compatibel met \"%2$s
 msgid "\"%1$s\" has been deactivated. It is incompatible with \"%2$s\"."
 msgstr "\"%1$s\" is gedeactiveerd. Het is niet compatibel met \"%2$s\"."
 
-#. translators: 1: plugin name 2: minimum required PHP version, current PHP version
+#. translators: 1: plugin name 2: minimum required PHP version, current PHP
+#. version
 #: inc/plugin-php-compat-check.php:123
 #, php-format
-msgid "%1$s requires PHP version %2$s or later. You are currently running version %3$s."
-msgstr "%1$s vereist PHP versie %2$s of hoger. Je gebruikt momenteel versie %3$s."
+msgid ""
+"%1$s requires PHP version %2$s or later. You are currently running version "
+"%3$s."
+msgstr ""
+"%1$s vereist PHP versie %2$s of hoger. Je gebruikt momenteel versie %3$s."
 
 #: inc/plugin-php-compat-check.php:124
 msgid " Please contact your web host about upgrading PHP."
@@ -119,11 +119,15 @@ msgstr " Neem alstublieft contact op met uw webhost over upgraden van PHP."
 msgid "%1$s requires the %2$s PHP extension."
 msgstr "%1$s vereist de %2$s PHP-extensie."
 
-#. translators: 1: plugin name 2: minimum required WordPress version 3: current WordPress version
+#. translators: 1: plugin name 2: minimum required WordPress version 3:
+#. current WordPress version
 #: inc/plugin-php-compat-check.php:155
 #, php-format
-msgid "%1$s requires WordPress version %2$s or later. You are currently running version %3$s."
-msgstr "%1$s vereist WordPress versie %2$s of hoger. U draait momenteel versie %3$s."
+msgid ""
+"%1$s requires WordPress version %2$s or later. You are currently running "
+"version %3$s."
+msgstr ""
+"%1$s vereist WordPress versie %2$s of hoger. U draait momenteel versie %3$s."
 
 #. translators: plugin name
 #: inc/plugin-php-compat-check.php:193
@@ -136,219 +140,30 @@ msgid "Sorry, you are not allowed to access this endpoint."
 msgstr "Sorry, je hebt geen toegang tot dit eindpunt."
 
 #. translators: %s Settings > General page URL.
-#: inc/updates.php:115
-#: inc/updates.php:143
-#: inc/updates.php:170
+#: inc/updates.php:115 inc/updates.php:143 inc/updates.php:170
 #, php-format
 msgid "Auto-updates enabled on the <a href=\"%s\">Bluehost > Settings</a> page."
-msgstr "Auto-updates ingeschakeld op de <a href=\"%s\">Bluehost > Instellingen</a> pagina."
+msgstr ""
+"Auto-updates ingeschakeld op de <a href=\"%s\">Bluehost > Instellingen</a> "
+"pagina."
 
 #: inc/updates.php:166
 msgid "Auto-updates enabled"
 msgstr "Auto-update ingeschakeld"
 
-#: build/4.5.0/index.js:7
-msgid "Bluehost WordPress Plugin"
-msgstr "Bluehost WordPress-plugin"
-
-#: build/4.5.0/index.js:9
-msgid "Oh No, An Error!"
-msgstr "Oh nee, een fout!"
-
-#: build/4.5.0/index.js:9
-msgid "You found an error, please refresh the page and try again!"
-msgstr "U heeft een fout gevonden, ververs de pagina en probeer het opnieuw!"
-
-#: build/4.5.0/index.js:9
-msgid "If the error persists, please contact support."
-msgstr "Als de fout zich blijft voordoen, neem dan contact op met support."
-
-#: build/4.5.0/index.js:9
-msgid "Error code:"
-msgstr "Foutcode:"
-
-#: build/4.5.0/index.js:7
-msgid "There's nothing here!"
-msgstr "Er is hier niets!"
-
-#: build/4.5.0/index.js:7
-msgid "Products & Services"
-msgstr "Producten en Diensten"
-
-#: build/4.5.0/index.js:7
-msgid "Sales & Promotions"
-msgstr "Verkoop & Promoties"
-
-#: build/4.5.0/index.js:7
-msgid "Sales Channel"
-msgstr "Verkoop Kanaal"
-
-#: build/4.5.0/index.js:7
-msgid "Payments"
-msgstr "Betalingen"
-
-#: build/4.5.0/index.js:7
-msgid "Store Details"
-msgstr "Winkel Details"
-
-#: build/4.5.0/index.js:7
-msgid "Help with WordPress"
-msgstr "Help met WordPress"
-
-#: build/4.5.0/index.js:7
-#: build/4.5.0/index.js:9
-msgid "Admin"
-msgstr "Beheerder"
-
-#: build/4.5.0/index.js:7
-msgid "The staging feature provides a way to copy a site to test new updates, features or content."
-msgstr "De stagingfunctie biedt een manier om een site te kopiëren om nieuwe updates, functies of inhoud te testen."
-
-#: build/4.5.0/index.js:7
-#: build/4.5.0/index.js:9
-msgid "Sorry, that is not allowed."
-msgstr "Sorry, dat is niet toegestaan."
-
-#: build/4.5.0/index.js:7
-#: build/4.5.0/index.js:9
-msgid "This feature cannot currently be modified."
-msgstr "Deze functie kan momenteel niet worden gewijzigd."
-
-#: build/4.5.0/index.js:7
-#: build/4.5.0/index.js:9
-msgid "Oops! Something went wrong. Please try again."
-msgstr "Oeps! Er is iets fout gegaan. Probeer het opnieuw."
-
-#: build/4.5.0/index.js:9
-msgid "Phone"
-msgstr "Telefoonnummer"
-
-#: build/4.5.0/index.js:9
-msgid "Call Us"
-msgstr "Bel ons"
-
-#: build/4.5.0/index.js:9
-msgid "Chat"
-msgstr "Chatten"
-
-#: build/4.5.0/index.js:9
-msgid "Chat with one of our friendly Customer Care Specialists, as we are waiting to help. Open 24 hours - 7 days."
-msgstr "Chat met een van onze vriendelijke Customer Care Specialisten, zoals we willen helpen. Open 24 uur - 7 dagen."
-
-#: build/4.5.0/index.js:9
-msgid "Live Chat"
-msgstr "Live chat"
-
-#: build/4.5.0/index.js:9
-msgid "Tweet"
-msgstr "tweet"
-
-#: build/4.5.0/index.js:9
-msgid "Find our team at @bluehost for updates on our products and support from our team."
-msgstr "Vind ons team op @bluehost voor updates van onze producten en ondersteuning van ons team."
-
-#: build/4.5.0/index.js:9
-msgid "Tweet Us"
-msgstr "Tweet ons"
-
-#: build/4.5.0/index.js:9
-msgid "YouTube"
-msgstr "YouTube"
-
-#: build/4.5.0/index.js:9
-msgid "Find tutorials, answers, interviews and guides on our YouTube channel."
-msgstr "Vind tutorials, antwoorden, interviews en handleidingen op ons YouTube-kanaal."
-
-#: build/4.5.0/index.js:9
-msgid "Watch Now"
-msgstr "Bekijk nu"
-
-#: build/4.5.0/index.js:9
-msgid "Knowledge Base"
-msgstr "Kennisbank"
-
-#: build/4.5.0/index.js:9
-msgid "Articles, guides, how-tos, instructions, and answers to our client's most frequently asked questions."
-msgstr "Artikelen, handleidingen, how-tos, instructies en antwoorden op de meest gestelde vragen van onze klant."
-
-#: build/4.5.0/index.js:9
-msgid "Visit Knowledge Base"
-msgstr "Bezoek de kennisbank"
-
-#: build/4.5.0/index.js:9
-msgid "Resources"
-msgstr "Hulpmiddelen"
-
-#: build/4.5.0/index.js:9
-msgid "Boost your online knowledge and get ahead of the competition."
-msgstr "Vergroot je online kennis en voorsprong op de competitie."
-
-#: build/4.5.0/index.js:9
-msgid "Explore Resources"
-msgstr "Bronnen verkennen"
-
-#: build/4.5.0/index.js:9
-msgid "Events and Webinars"
-msgstr "Gebeurtenissen en webinars"
-
-#: build/4.5.0/index.js:9
-msgid "Team Bluehost organizes multiple webinars and events throughout the year. We are also sponsors and speak at most WordCamps across the world. Join us at our next event!"
-msgstr "Team Bluehost organiseert meerdere webinars en evenementen het hele jaar. We zijn ook sponsors en spreken over de meeste WordCamps over de hele wereld. Doe mee bij ons volgende evenement!"
-
-#: build/4.5.0/index.js:9
-msgid "More Info"
-msgstr "Meer informatie"
-
-#: build/4.5.0/index.js:9
-msgid "Bluehost Website"
-msgstr "Bluehost Website"
-
-#: build/4.5.0/index.js:9
-msgid "Not finding what you need? Visit our website for more information about our products and services."
-msgstr "Niet gevonden wat je nodig hebt? Bezoek onze website voor meer informatie over onze producten en diensten."
-
-#: build/4.5.0/index.js:9
-msgid "Go to Bluehost"
-msgstr "Ga naar Bluehost"
-
-#: build/4.5.0/index.js:7
-msgid "The Help Center provides guided, step-by-step assistance as you build your site."
-msgstr "Het Helpcentrum biedt geleidelijke, stap-voor-stap ondersteuning als u uw site bouwt."
-
-#: build/4.5.0/index.js:7
-msgid "Site Status"
-msgstr "Site status"
-
 #: inc/widgets/views/site-preview.php:148
-#: build/4.5.0/index.js:7
 msgid "Not Live"
 msgstr "Niet live"
 
 #: inc/widgets/views/site-preview.php:149
-#: build/4.5.0/index.js:7
 msgid "Live"
 msgstr "Zichtbaar"
 
-#: build/4.5.0/index.js:7
-msgid "Your Bluehost Coming Soon page lets you hide your site from visitors while you make the magic happen."
-msgstr "Je Bluehost komtpagina laat je je site verbergen voor bezoekers terwijl je de magie laat gebeuren."
-
 #: inc/widgets/views/site-preview.php:162
-#: build/4.5.0/index.js:7
 msgid "Your website is currently displaying a \"Coming Soon\" page."
-msgstr "Je website wordt momenteel een \"Binnenkort beschikbaar\" pagina weergegeven."
-
-#. translators: %s: number of weeks. `The trash will automatically empty every ${numTrashWeeks} weeks.`
-#: build/4.5.0/index.js:9
-#, js-format
-msgid "The trash will automatically empty every %s week."
-msgid_plural "The trash will automatically empty every %s weeks."
-msgstr[0] "De prullenbak zal automatisch elke %s week leegmaken."
-msgstr[1] "De prullenbak zal automatisch elke %s weken leegmaken."
-
-#: build/4.5.0/index.js:7
-msgid "WonderBlocks provides a library of customizable block patterns and page templates."
-msgstr "WonderBlocks biedt een bibliotheek van aanpasbare blokpatronen en paginasjablonen."
+msgstr ""
+"Je website wordt momenteel een \"Binnenkort beschikbaar\" pagina "
+"weergegeven."
 
 #: inc/widgets/views/account.php:138
 msgid "Hosting"
@@ -370,36 +185,11 @@ msgstr "Beveiliging"
 msgid "Profile"
 msgstr "Profiel"
 
-#: build/4.5.0/index.js:9
-msgid "Explore our featured collection of tools and services."
-msgstr "Ontdek onze uitgebreide collectie gereedschappen en diensten."
-
-#: build/4.5.0/index.js:9
-msgid "Oops, there was an error loading the marketplace, please try again later."
-msgstr "Oeps, er is een fout opgetreden bij het laden van de markt, probeer het later opnieuw."
-
-#: build/4.5.0/index.js:9
-msgid "Sorry, no marketplace items. Please, try again later."
-msgstr "Sorry, geen marktplaats items. Probeer het later opnieuw."
-
-#: build/4.5.0/index.js:9
-msgid "Load More"
-msgstr "Meer laden"
-
-#: build/4.5.0/index.js:9
-msgid "Oops! Something Went Wrong"
-msgstr "Oeps! Er ging iets mis"
-
-#: build/4.5.0/index.js:9
-msgid "An error occurred while loading the content. Please try again later."
-msgstr "Er is een fout opgetreden tijdens het laden van de inhoud. Probeer het later opnieuw."
-
 #: inc/widgets/Help.php:38
 msgid "Need Some Help?"
 msgstr "Hulp nodig?"
 
-#: inc/widgets/SitePreview.php:36
-#: inc/widgets/views/site-preview.php:113
+#: inc/widgets/SitePreview.php:36 inc/widgets/views/site-preview.php:113
 #: inc/widgets/views/site-preview.php:118
 msgid "Site Preview"
 msgstr "Website voorbeeld"
@@ -413,8 +203,11 @@ msgid "Renewals Center"
 msgstr "Midden voor verlengingen"
 
 #: inc/widgets/views/help.php:98
-msgid "Call or chat 24/7 for support or let our experts build your site for you."
-msgstr "Bel of chat 24/7 voor ondersteuning of laat onze experts uw site voor u bouwen."
+msgid ""
+"Call or chat 24/7 for support or let our experts build your site for you."
+msgstr ""
+"Bel of chat 24/7 voor ondersteuning of laat onze experts uw site voor u "
+"bouwen."
 
 #: inc/widgets/views/help.php:117
 msgid "Get Help"
@@ -439,282 +232,6 @@ msgstr "Site starten"
 #: inc/widgets/views/site-preview.php:209
 msgid "Enable Coming Soon"
 msgstr "Activeer binnenkort beschikbaar"
-
-#: build/4.5.0/index.js:9
-msgid "Secret page to manage admin features and settings."
-msgstr "Geheime pagina om admin functies en instellingen te beheren."
-
-#: build/4.5.0/index.js:9
-msgid "We are available 24/7 to help answer questions and solve your problems."
-msgstr "We zijn 24/7 beschikbaar om te helpen vragen te beantwoorden en uw problemen op te lossen."
-
-#: build/4.5.0/index.js:7
-msgid "Enabled All auto-updates"
-msgstr "Alle auto-updates ingeschakeld"
-
-#: build/4.5.0/index.js:7
-msgid "Disabled All auto-updates"
-msgstr "Alle auto-updates uitgeschakeld"
-
-#: build/4.5.0/index.js:7
-msgid "Everything will automatically update."
-msgstr "Alles zal automatisch worden bijgewerkt."
-
-#: build/4.5.0/index.js:7
-msgid "Custom auto-update settings."
-msgstr "Aangepaste instellingen voor automatisch bijwerken."
-
-#: build/4.5.0/index.js:7
-msgid "Automatically keep all up to date"
-msgstr "Automatisch alles op de hoogte houden"
-
-#: build/4.5.0/index.js:7
-msgid "Enabled Core auto-updates"
-msgstr "Ingeschakelde Core auto-updates"
-
-#: build/4.5.0/index.js:7
-msgid "Disabled Core auto-updates"
-msgstr "Kern-updates uitschakelen"
-
-#: build/4.5.0/index.js:7
-msgid "WordPress will automatically update."
-msgstr "WordPress wordt automatisch bijgewerkt."
-
-#: build/4.5.0/index.js:7
-msgid "WordPress must be manually updated."
-msgstr "WordPress moet handmatig worden bijgewerkt."
-
-#: build/4.5.0/index.js:7
-msgid "WordPress Core"
-msgstr "WordPress Kern"
-
-#: build/4.5.0/index.js:7
-msgid "Enabled Plugins auto-update"
-msgstr "Ingeschakelde Plugins automatisch bijwerken"
-
-#: build/4.5.0/index.js:7
-msgid "Disabled Plugins auto-update"
-msgstr "Uitgeschakelde Plugins automatisch bijwerken"
-
-#: build/4.5.0/index.js:7
-msgid "All plugins will automatically update."
-msgstr "Alle plug-ins worden automatisch bijgewerkt."
-
-#: build/4.5.0/index.js:7
-msgid "Each plugin must be manually updated."
-msgstr "Elke plugin moet handmatig worden bijgewerkt."
-
-#: build/4.5.0/index.js:7
-msgid "Plugins"
-msgstr "Plug-ins"
-
-#: build/4.5.0/index.js:7
-msgid "Enabled Themes auto-update"
-msgstr "Ingeschakelde thema's auto-update"
-
-#: build/4.5.0/index.js:7
-msgid "Disabled Themes auto-update"
-msgstr "Uitgeschakelde thema's automatisch bijwerken"
-
-#: build/4.5.0/index.js:7
-msgid "All themes will automatically update."
-msgstr "Alle thema's worden automatisch bijgewerkt."
-
-#: build/4.5.0/index.js:7
-msgid "Each theme must be manually updated."
-msgstr "Elk thema moet handmatig worden bijgewerkt."
-
-#: build/4.5.0/index.js:7
-msgid "Themes"
-msgstr "Themas"
-
-#: build/4.5.0/index.js:7
-msgid "Automatic Updates"
-msgstr "Automatische updates"
-
-#: build/4.5.0/index.js:7
-msgid "Keeping automatic updates on ensures timely security fixes and the latest features."
-msgstr "Automatisch bijwerken behouden garandeert tijdige beveiligingsoplossingen en de nieuwste functies."
-
-#: build/4.5.0/index.js:7
-msgid "Coming soon activated"
-msgstr "Komt binnenkort geactiveerd"
-
-#: build/4.5.0/index.js:7
-msgid "Coming soon deactivated"
-msgstr "Binnenkort gedeactiveerd"
-
-#: build/4.5.0/index.js:7
-msgid "Coming soon page is active. Site requires login."
-msgstr "Binnenkort pagina is actief. Site vereist inloggen."
-
-#: build/4.5.0/index.js:7
-msgid "Coming soon page is not active. Site is live to visitors."
-msgstr "Binnenkort beschikbaar is niet actief. De site is live bezoekers."
-
-#: build/4.5.0/index.js:7
-msgid "Turn off your \"Coming Soon\" page when you are ready to launch your website."
-msgstr "Schakel uw \"Binnenkort beschikbaar\" pagina uit wanneer u klaar bent om uw website te starten."
-
-#: build/4.5.0/index.js:7
-msgid "Turn on your \"Coming Soon\" page when you need to make major changes to your website."
-msgstr "Schakel uw \"Binnenkort beschikbaar\" pagina in wanneer u belangrijke wijzigingen in uw website moet aanbrengen."
-
-#: build/4.5.0/index.js:1
-msgid "Disabled old post comments"
-msgstr "Oude commentaren uitgeschakeld"
-
-#: build/4.5.0/index.js:1
-msgid "Enabled old post comments"
-msgstr "Ingeschakelde oude post reacties"
-
-#: build/4.5.0/index.js:1
-msgid "Comments on old posts are disabled."
-msgstr "Reacties op oude berichten zijn uitgeschakeld."
-
-#: build/4.5.0/index.js:1
-msgid "Comments are allowed on old posts."
-msgstr "Reacties zijn toegestaan op oude berichten."
-
-#: build/4.5.0/index.js:1
-msgid "Disable comments for older posts"
-msgstr "Commentaren voor oudere berichten uitschakelen"
-
-#: build/4.5.0/index.js:1
-msgid "Comments setting saved"
-msgstr "Reacties instelling opgeslagen"
-
-#. translators: %s: number of days. `Comments on posts are disabled after ${closeCommentsDays} days.`
-#: build/4.5.0/index.js:3
-#, js-format
-msgid "Comments on posts are disabled after %s day."
-msgid_plural "Comments on posts are disabled after %s days."
-msgstr[0] "Reacties op berichten zijn uitgeschakeld na %s dag."
-msgstr[1] "Reacties op berichten zijn uitgeschakeld na %s dagen."
-
-#. translators: %s: number of days. `Close comments after ${closeCommentsDays} days.`
-#: build/4.5.0/index.js:5
-#, js-format
-msgid "Close comments after %s day."
-msgid_plural "Close comments after %s days."
-msgstr[0] "Sluit reacties na %s dag."
-msgstr[1] "Sluit reacties na %s dagen."
-
-#: build/4.5.0/index.js:5
-msgid "Comments setting saved."
-msgstr "Reacties instellingen opgeslagen."
-
-#. translators: %s: number of comments. `Posts will display ${commentsPerPage} comments at a time.`
-#: build/4.5.0/index.js:7
-#, js-format
-msgid "Posts will display %s comment at a time."
-msgid_plural "Posts will display %s comments at a time."
-msgstr[0] "Berichten tonen %s reactie per keer."
-msgstr[1] "Berichten tonen %s reacties tegelijk."
-
-#: build/4.5.0/index.js:7
-msgid "Comments to display per page"
-msgstr "Reacties die per pagina worden weergegeven"
-
-#: build/4.5.0/index.js:7
-msgid "Comments"
-msgstr "Opmerkingen"
-
-#: build/4.5.0/index.js:7
-msgid "Comments allow visitors to provide feedback and respond to your posts or pages."
-msgstr "Met reacties kunnen bezoekers feedback geven en reageren op uw berichten of pagina's."
-
-#: build/4.5.0/index.js:9
-msgid "Trash setting saved"
-msgstr "Prullenbak instelling opgeslagen"
-
-#: build/4.5.0/index.js:9
-msgid "Number of weeks in between emptying trash"
-msgstr "Aantal weken tussen leegmaken van prullenbak"
-
-#: build/4.5.0/index.js:9
-msgid "Content Options"
-msgstr "Content opties"
-
-#: build/4.5.0/index.js:9
-msgid "Controls for how often to empty the trash."
-msgstr "Bepaalt hoe vaak de prullenbak leeg wordt gemaakt."
-
-#: build/4.5.0/index.js:7
-msgid "Help Center Enabled"
-msgstr "Helpcentrum ingeschakeld"
-
-#: build/4.5.0/index.js:7
-msgid "Help Center Disabled"
-msgstr "Helpcentrum uitgeschakeld"
-
-#: build/4.5.0/index.js:7
-msgid "Reload the page to access the Help Center."
-msgstr "Herlaad de pagina om naar het Helpcentrum te gaan."
-
-#: build/4.5.0/index.js:7
-msgid "The Help Center will no longer display."
-msgstr "Het Helpcentrum wordt niet langer weergegeven."
-
-#: build/4.5.0/index.js:7
-msgid "Features"
-msgstr "Eigenschappen"
-
-#: build/4.5.0/index.js:7
-msgid "Customize the available features as you manage your website."
-msgstr "Pas de beschikbare functies aan bij het beheren van uw website."
-
-#: build/4.5.0/index.js:9
-msgid "Performance Enabled"
-msgstr "Prestaties ingeschakeld"
-
-#: build/4.5.0/index.js:9
-msgid "Performance Disabled"
-msgstr "Prestaties uitgeschakeld"
-
-#: build/4.5.0/index.js:9
-msgid "You need to reload the page to manage Performance."
-msgstr "U moet de pagina herladen om de prestaties te beheren."
-
-#: build/4.5.0/index.js:9
-msgid "Performance will no longer display."
-msgstr "Prestaties worden niet langer weergegeven."
-
-#: build/4.5.0/index.js:9
-msgid "The performance feature provides improvements to loads faster for visitors including cache settings."
-msgstr "De prestatiefunctie biedt verbeteringen om sneller te laden voor bezoekers met inbegrip van cache-instellingen."
-
-#: build/4.5.0/index.js:7
-msgid "Staging Enabled"
-msgstr "Staging ingeschakeld"
-
-#: build/4.5.0/index.js:7
-msgid "Staging Disabled"
-msgstr "Staging uitgeschakeld"
-
-#: build/4.5.0/index.js:7
-msgid "You need to reload the page to manage Staging."
-msgstr "Je moet de pagina herladen om Staging te beheren."
-
-#: build/4.5.0/index.js:7
-msgid "Staging will no longer display."
-msgstr "Er zal niet langer gefaseerd worden weergegeven."
-
-#: build/4.5.0/index.js:7
-msgid "WonderBlocks Enabled"
-msgstr "WonderBlocks ingeschakeld"
-
-#: build/4.5.0/index.js:7
-msgid "WonderBlocks Disabled"
-msgstr "WonderBlocks uitgeschakeld"
-
-#: build/4.5.0/index.js:7
-msgid "Create new content to see WonderBlocks in action."
-msgstr "Maak nieuwe inhoud om WonderBlocks in actie te zien."
-
-#: build/4.5.0/index.js:7
-msgid "WonderBlocks will no longer display."
-msgstr "WonderBlocks worden niet langer weergegeven."
 
 #: inc/widgets/views/site-preview.php:163
 msgid "Your website is live to the world!"
@@ -748,97 +265,33 @@ msgstr "Overweeg om auto-updates op de hoogte te houden."
 msgid "Update Now"
 msgstr "Nu bijwerken"
 
-#: build/4.5.0/index.js:7
-msgid "Hire our experts"
-msgstr "Neem onze experts aan"
-
-#: build/4.5.0/index.js:7
-msgid "Get in touch with us, and we’ll help you build the exact store you’re dreaming of."
-msgstr "Neem contact met ons op en wij helpen u om de exacte winkel te bouwen waarvan u droomt."
-
-#: build/4.5.0/index.js:7
-msgid "Discover all the features to grow your store, boost sales and loyalize your customers."
-msgstr "Ontdek alle functies om uw winkel te laten groeien, verkoop te stimuleren en uw klanten te loyaliseren."
-
-#: build/4.5.0/index.js:7
-msgid "Quick links"
-msgstr "Snelle links"
-
-#: build/4.5.0/index.js:7
-msgid "Manage hosting"
-msgstr "hosting beheren"
-
-#: build/4.5.0/index.js:7
-msgid "Write a blog post"
-msgstr "Schrijf een blogbericht"
-
-#: build/4.5.0/index.js:7
-msgid "Create a sale promotion"
-msgstr "Maak een verkooppromotie aan"
-
-#: build/4.5.0/index.js:9
-msgid "Get Help & Resources"
-msgstr "Krijg hulp & hulpmiddelen"
-
-#: build/4.5.0/index.js:9
-msgid "Refer a friend and earn money"
-msgstr "Verwijs een vriend en verdien geld"
-
-#: build/4.5.0/index.js:9
-msgid "Unlock exclusive benefits with our referral program!"
-msgstr "Ontgrendel exclusieve voordelen met ons aanbevelingsprogramma!"
-
-#: build/4.5.0/index.js:9
-msgid "Start now"
-msgstr "Begin nu"
-
-#: build/4.5.0/index.js:9
-msgid "Pro Design Live"
-msgstr "Pro Design Live"
-
-#: build/4.5.0/index.js:9
-msgid "We will help you build and grow your website and improve your skills in WordPress."
-msgstr "We zullen u helpen uw website te bouwen en te laten groeien en uw vaardigheden te verbeteren in WordPress."
-
-#: build/4.5.0/index.js:9
-msgid "Get Info"
-msgstr "Krijg informatie"
-
-#: build/4.5.0/index.js:9
-msgid "Welcome to Bluehost"
-msgstr "Welkom bij Bluehost"
-
-#: build/4.5.0/index.js:9
-msgid "We're very excited to get started with you!"
-msgstr "We zijn erg enthousiast om met je aan de slag te gaan!"
-
-#: build/4.5.0/index.js:7
-msgid "Explore Premium Tools"
-msgstr "Premium tools verkennen"
-
-#: build/4.5.0/index.js:9
-msgid "Get expert help, documentation, and tutorials to make the most of your WordPress site."
-msgstr "Krijg deskundige hulp, documentatie en tutorials om het meeste uit uw WordPress-site te halen."
-
-#: build/4.5.0/index.js:7
-msgid "Manage common settings for your website"
-msgstr ""
-
 #: inc/widgets/views/help.php:95
 msgid "From DIY to full-service help, always by your side."
-msgstr ""
+msgstr "Van doe-het-zelf tot full-service hulp, altijd aan uw zijde."
 
 #: inc/widgets/views/help.php:131
 msgid "Hire Our Pros"
-msgstr ""
+msgstr "Huur onze professionals in"
 
-#. translators: %1$s starts the bold text, %2$s ends the bold text and adds a line break, %3$s is the link to the Domain Registration page, %4$s is the closing link for Domain Registration, %5$s wraps everything inside a span with text-center class
+#. translators: %1$s starts the bold text, %2$s ends the bold text and adds a
+#. line break, %3$s is the link to the Domain Registration page, %4$s is the
+#. closing link for Domain Registration, %5$s wraps everything inside a span
+#. with text-center class
 #: bootstrap.php:95
 #, php-format
-msgid "%1$sNeed a domain?%2$sCheck out our %3$sDomain Registration%4$s options.%5$s"
+msgid ""
+"%1$sNeed a domain?%2$sCheck out our %3$sDomain Registration%4$s options.%5$s"
 msgstr ""
+"%1$sHeb je een domein nodig?%2$sBekijk onze %3$sDomeinregistratie%4$s "
+"opties.%5$s"
 
-#. translators: %1$s starts the bold text, %2$s ends the bold text and adds a line break, %3$s is the link to Shared Hosting, %4$s is the closing link for Shared Hosting, %5$s is the link to WordPress Hosting, %6$s is the closing link for WordPress Hosting, %7$s is the link to VPS Hosting, %8$s is the closing link for VPS Hosting, %9$s is the link to Dedicated Hosting, %10$s is the closing link for Dedicated Hosting, %11$s wraps everything inside a span with text-center class
+#. translators: %1$s starts the bold text, %2$s ends the bold text and adds a
+#. line break, %3$s is the link to Shared Hosting, %4$s is the closing link
+#. for Shared Hosting, %5$s is the link to WordPress Hosting, %6$s is the
+#. closing link for WordPress Hosting, %7$s is the link to VPS Hosting, %8$s
+#. is the closing link for VPS Hosting, %9$s is the link to Dedicated Hosting,
+#. %10$s is the closing link for Dedicated Hosting, %11$s wraps everything
+#. inside a span with text-center class
 #: bootstrap.php:104
 #, php-format
 msgid ""
@@ -849,8 +302,16 @@ msgid ""
 "\t\t\t\t\t\t      %9$sDedicated Hosting%10$s. \n"
 "\t\t\t\t\t      %11$s"
 msgstr ""
+"%1$sOntdek onze hostingoplossingen:%2$s\n"
+"\t\t\t\t\t\t      %3$sGedeelde hosting%4$s,  \n"
+"\t\t\t\t\t\t      %5$sWordPress Hosting%6$s,  \n"
+"\t\t\t\t\t\t      %7$sVPS Hosting%8$s, en  \n"
+"\t\t\t\t\t\t      %9$sToegewijde hosting%10$s. \n"
+"\t\t\t\t\t      %11$s"
 
-#. translators: %1$s is the logo SVG, %2$s wraps the text, %3$s is the link start for Bluehost WordPress Hosting, %4$s is the closing anchor tag, %5$s wraps the text again, %6$s contains backlinks
+#. translators: %1$s is the logo SVG, %2$s wraps the text, %3$s is the link
+#. start for Bluehost WordPress Hosting, %4$s is the closing anchor tag, %5$s
+#. wraps the text again, %6$s contains backlinks
 #: bootstrap.php:132
 #, php-format
 msgid ""
@@ -858,8 +319,11 @@ msgid ""
 "\t\t\t\t\t%2$sA %3$sReliable WordPress Hosting by Bluehost%4$s powered website.%5$s\n"
 "                    %6$s"
 msgstr ""
+"%1$s\n"
+"\t\t\t\t\t%2$sA %3$sBetrouwbare WordPress Hosting door Bluehost%4$s aangedreven website.%5$s\n"
+"                    %6$s"
 
 #: inc/Admin.php:316
 #, php-format
 msgid "Thank you for creating with %1$s and %2$s"
-msgstr ""
+msgstr "Bedankt voor het maken met %1$s en %2$s"

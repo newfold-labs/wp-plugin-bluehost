@@ -6,21 +6,40 @@ on:
       - main
   workflow_dispatch:
 
+# Disable permissions for all available scopes by default.
+# Any needed permissions should be configured at the job level.
+permissions: {}
+
 env:
-  PLUGIN_NAME: bluehost-wordpress-plugin
   CYPRESS_TEST_PATH: tests/cypress/integration/help.cy.js
+
 jobs:
   deploy:
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
     strategy:
       matrix:
-        environment: [bluehost-shared]
+        environment: [ bluehost-shared ]
       fail-fast: false
 
     environment: ${{ matrix.environment }}
     steps:
       - name: Checkout repository
         uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+        with:
+          persist-credentials: false
+
+      - name: Setup PHP
+        uses: shivammathur/setup-php@0f7f1d08e3e32076e51cae65eb0b0c871405b16e # v2.34.1
+        with:
+          php-version: '8.3'
+          coverage: none
+
+      - name: Install Composer
+        uses: ramsey/composer-install@3cf229dc2919194e9e36783941438d17239e8520 # v3.1.1
+        with:
+          composer-options: '--no-dev --optimize-autoloader'
 
       - name: Setup Node.js
         uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4.4.0
@@ -35,16 +54,6 @@ jobs:
           echo "@newfold-labs:registry=https://npm.pkg.github.com" >> .npmrc
           echo "//npm.pkg.github.com/:_authToken=${{ secrets.NEWFOLD_ACCESS_TOKEN }}" >> .npmrc
 
-      - name: Install PHP and Composer
-        run: |
-          sudo apt update
-          sudo apt install -y php-cli unzip curl
-          curl -sS https://getcomposer.org/installer | php
-          sudo mv composer.phar /usr/local/bin/composer
-
-      - name: Install Composer dependencies
-        run: composer install --no-dev --optimize-autoloader
-
       - name: Install Node dependencies and build project
         run: |
           npm install
@@ -55,7 +64,7 @@ jobs:
         uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
         with:
           name: plugin-build-${{ matrix.environment }}
-          path: ./${{ env.PLUGIN_NAME }}.zip
+          path: ./${{ vars.PLUGIN_NAME }}.zip
 
       - name: Setup SSH Key
         run: |
@@ -63,16 +72,19 @@ jobs:
           chmod 600 github-actions
 
       - name: Copy .zip file to server via SCP
-        run: |
-          scp -i github-actions -o StrictHostKeyChecking=no ./${{ env.PLUGIN_NAME }}.zip ${{ vars.SERVER_USERNAME }}@${{ vars.SERVER_IP }}:${{ vars.SERVER_PATH }}/wp-content/uploads
+        env:
+          PLUGIN_NAME: ${{ vars.PLUGIN_NAME }}
+        run: scp -i github-actions -o StrictHostKeyChecking=no "./$PLUGIN_NAME.zip" "$SERVER_USERNAME@$SERVER_IP:$SERVER_PATH/wp-content/uploads"
 
       - name: Extract Plugin and Activate
+        env:
+          PLUGIN_NAME: ${{ vars.PLUGIN_NAME }}
         run: |
-          ssh -i github-actions -o StrictHostKeyChecking=no ${{ vars.SERVER_USERNAME }}@${{ vars.SERVER_IP }} << 'EOF'
-            cd ${{ vars.SERVER_PATH }}/wp-content
-            wp plugin install uploads/${{ env.PLUGIN_NAME }}.zip --force --path=./../
-            rm uploads/${{ env.PLUGIN_NAME }}.zip
-            wp plugin activate ${{ env.PLUGIN_NAME }} --path=./../
+          ssh -i github-actions -o StrictHostKeyChecking=no "$SERVER_USERNAME@$SERVER_IP" << 'EOF'
+            cd "$SERVER_PATH}wp-content"
+            wp plugin install uploads/$PLUGIN_NAME.zip --force --path=./../
+            rm uploads/$PLUGIN_NAME.zip
+            wp plugin activate $PLUGIN_NAME --path=./../
           EOF
 
       - name: Cleanup SSH Key
@@ -80,8 +92,8 @@ jobs:
 
       - name: Check if the remote Server is up
         run: |
-          for i in {1..30}; do
-            STATUS_CODE=$(curl -s -o /dev/null -w "%{http_code}" "${{ vars.SITE_URL }}/wp-login.php")
+          for _ in {1..30}; do
+            STATUS_CODE=$(curl -s -o /dev/null -w "%{http_code}" "$SITE_URL/wp-login.php")
             if [[ "$STATUS_CODE" == "200" ]]; then
               echo "Server is up with status code: $STATUS_CODE"
               exit 0
@@ -92,7 +104,7 @@ jobs:
           echo "Server not ready after 5 minutes" && exit 1
 
       - name: Run Specific Cypress Tests
-        uses: cypress-io/github-action@615dcf65299b63c35268d795f4dfb79532388f64 # v6.10.0
+        uses: cypress-io/github-action@6c143abc292aa835d827652c2ea025d098311070 # v6.10.1
         with:
           install: true
           start: npm start

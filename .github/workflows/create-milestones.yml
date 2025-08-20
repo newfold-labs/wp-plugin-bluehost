@@ -10,28 +10,32 @@ on:
   schedule:
     - cron: '0 12 * * 3'  # Every Wednesday at noon UTC
 
-permissions:
-  issues: write
-  contents: read
+# Disable permissions for all available scopes by default.
+# Any needed permissions should be configured at the job level.
+permissions: {}
 
 jobs:
   create-milestone:
     runs-on: ubuntu-latest
+    permissions:
+      issues: write
+      contents: read
 
     steps:
       - name: Create Milestone
+        env:
+          DUE_DATE: ${{ github.event.inputs.due_date }}
         run: |
           #!/bin/bash
 
           # Explicitly set the timezone to UTC
           export TZ=UTC
 
-          echo "Debug: Manually Entered Due Date: ${{ github.event.inputs.due_date }}"
+          echo "Debug: Manually Entered Due Date: $DUE_DATE"
 
           # Get the input date from workflow_dispatch (if provided) or use default logic
-          if [ -n "${{ github.event.inputs.due_date }}" ]; then
+          if [ -n "$DUE_DATE" ]; then
             # Use the provided date from workflow_dispatch input
-            DUE_DATE="${{ github.event.inputs.due_date }}"
             echo "Manual input provided. Using input date: $DUE_DATE"
           else
             # No manual input, use the default: 2 weeks from now

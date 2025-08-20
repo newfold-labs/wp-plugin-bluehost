@@ -111,16 +111,13 @@ jobs:
             echo "build_size_human=${BUILD_SIZE_HUMAN}"
           } >> "${GITHUB_OUTPUT}"
 
-      - name: Checkout base ref
+      - name: Prepare base worktree
         if: github.event_name == 'pull_request'
-        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4
-        with:
-          # Use immutable base commit SHA to avoid dangerous branch-based checkout
-          ref: ${{ github.event.pull_request.base.sha }}
-          repository: ${{ github.repository }}
-          path: base
-          fetch-depth: 1
-          persist-credentials: false
+        env:
+          BASE_SHA: ${{ github.event.pull_request.base.sha }}
+        run: |
+          git fetch --no-tags --depth=1 origin "${BASE_SHA}"
+          git worktree add base "${BASE_SHA}"
 
       - name: Sanitize Git credentials (base)
         if: github.event_name == 'pull_request'

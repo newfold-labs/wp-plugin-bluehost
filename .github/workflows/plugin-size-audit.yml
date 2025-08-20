@@ -74,8 +74,7 @@ jobs:
       - name: Calculate PHP Size
         id: php_size
         run: |
-          # Calculate PHP file sizes (excluding vendor for now, we'll add it
-          back in the final calculation)
+          # Calculate PHP file sizes (excluding vendor; added back in the final calculation)
           PHP_SIZE_BYTES=$(find . -name "*.php" -not -path "./vendor/*" -not -path "./base/*" -not -path "./node_modules/*" -not -path "./.git/*" -exec du -sb {} + | awk '{sum += $1} END {print sum}')
 
           PHP_SIZE_HUMAN=$(numfmt --to=iec --suffix=B "${PHP_SIZE_BYTES}")

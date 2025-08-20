@@ -76,9 +76,7 @@ jobs:
         run: |
           # Calculate PHP file sizes (excluding vendor for now, we'll add it
           back in the final calculation)
-          PHP_SIZE_BYTES=$(find . -name "*.php" -not -path "./vendor/*" -not -path "./base/*" -not
-          -path "./node_modules/*" -not -path "./.git/*" -exec du -sb {} + | awk
-          '{sum += $1} END {print sum}')
+          PHP_SIZE_BYTES=$(find . -name "*.php" -not -path "./vendor/*" -not -path "./base/*" -not -path "./node_modules/*" -not -path "./.git/*" -exec du -sb {} + | awk '{sum += $1} END {print sum}')
 
           PHP_SIZE_HUMAN=$(numfmt --to=iec --suffix=B "${PHP_SIZE_BYTES}")
 
@@ -274,7 +272,7 @@ jobs:
           MAX_PHP_SIZE_INCREASE_PERCENT: ${{ env.MAX_PHP_SIZE_INCREASE_PERCENT }}
           SIZE_INCREASE_PERCENT: ${{ steps.size_comparison.outputs.increase_percent }}
           PHP_SIZE_INCREASE_PERCENT: ${{ steps.size_comparison.outputs.php_increase_percent }}
-        run: >
+        run: |
           FAIL=0
           if [ -n "${SIZE_INCREASE_PERCENT}" ] && [ "${SIZE_INCREASE_PERCENT}" -gt "${MAX_SIZE_INCREASE_PERCENT}" ]; then
             echo "Total plugin size increase ${SIZE_INCREASE_PERCENT}% exceeds threshold ${MAX_SIZE_INCREASE_PERCENT}%" >&2
@@ -284,20 +282,22 @@ jobs:
             echo "PHP size increase ${PHP_SIZE_INCREASE_PERCENT}% exceeds threshold ${MAX_PHP_SIZE_INCREASE_PERCENT}%" >&2
             FAIL=1
           fi
-          exit ${FAIL}
+          exit "${FAIL}"
 
       - name: Check image sizes
         env:
           MAX_IMAGE_SIZE_KB: ${{ env.MAX_IMAGE_SIZE_KB }}
-        run: >
-          OVERSIZED=$(find . \
+        run: |
+          MAPFILE_CMD=$(command -v mapfile || command -v readarray)
+          if [ -z "${MAPFILE_CMD}" ]; then MAPFILE_CMD=mapfile; fi
+          ${MAPFILE_CMD} -d '' OVERSIZED < <(find . \
             -type f \
             -not -path "./base/*" -not -path "./.git/*" -not -path "./node_modules/*" -not -path "./vendor/*" -not -path "./build/*" \
             \( -iname "*.png" -o -iname "*.jpg" -o -iname "*.jpeg" -o -iname "*.gif" -o -iname "*.svg" -o -iname "*.webp" \) \
-            -size +${MAX_IMAGE_SIZE_KB}k || true)
-          if [ -n "${OVERSIZED}" ]; then
+            -size "+${MAX_IMAGE_SIZE_KB}k" -print0)
+          if [ "${#OVERSIZED[@]}" -gt 0 ]; then
             echo "The following images exceed ${MAX_IMAGE_SIZE_KB}KB:" >&2
-            echo "${OVERSIZED}" | xargs -I{} du -h {} | sort -rh >&2
+            printf '%s\0' "${OVERSIZED[@]}" | xargs -0 du -h | sort -rh >&2
             exit 1
           fi
 

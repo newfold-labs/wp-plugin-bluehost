@@ -115,7 +115,9 @@ jobs:
         if: github.event_name == 'pull_request'
         uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4
         with:
-          ref: ${{ github.base_ref }}
+          # Use immutable base commit SHA to avoid dangerous branch-based checkout
+          ref: ${{ github.event.pull_request.base.sha }}
+          repository: ${{ github.repository }}
           path: base
           fetch-depth: 1
           persist-credentials: false

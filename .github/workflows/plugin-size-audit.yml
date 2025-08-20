@@ -26,7 +26,12 @@ jobs:
       - name: Checkout
         uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4
         with:
-          fetch-depth: 0
+          fetch-depth: 1
+          persist-credentials: false
+
+      - name: Sanitize Git credentials
+        run: |
+          git config --local --unset-all http.https://github.com/.extraheader || true
 
       - name: Setup PHP
         uses: shivammathur/setup-php@20529878ed81ef8e78ddf08b480401e6101a850f # v2
@@ -113,6 +118,12 @@ jobs:
           ref: ${{ github.base_ref }}
           path: base
           fetch-depth: 1
+          persist-credentials: false
+
+      - name: Sanitize Git credentials (base)
+        if: github.event_name == 'pull_request'
+        run: |
+          git -C base config --local --unset-all http.https://github.com/.extraheader || true
 
       - name: Setup Node.js (base)
         if: github.event_name == 'pull_request'

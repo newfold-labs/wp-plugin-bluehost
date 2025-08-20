@@ -16,12 +16,20 @@ jobs:
   optimize-images:
     name: Optimize Images
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: write
 
     steps:
       - name: Checkout
         uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4
         with:
-          fetch-depth: 0
+          fetch-depth: 1
+          persist-credentials: false
+
+      - name: Sanitize Git credentials
+        run: |
+          git config --local --unset-all http.https://github.com/.extraheader || true
 
       - name: Image Optimization
         id: image_optimization
@@ -37,7 +45,6 @@ jobs:
         if: github.event_name == 'push' && steps.image_optimization.outputs.markdown != ''
         uses: peter-evans/create-pull-request@4e1beaa7521e8b457b572c090b25bd3db56bf1c5 # v5
         with:
-          token: ${{ secrets.GITHUB_TOKEN }}
           commit-message: 'Optimize images'
           title: 'Optimize images'
           body: |

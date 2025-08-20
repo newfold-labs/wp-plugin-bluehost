@@ -50,8 +50,8 @@ jobs:
       - name: Setup Registry
         env:
           NEWFOLD_ACCESS_TOKEN: ${{ secrets.NEWFOLD_ACCESS_TOKEN }}
-        run: >-
-          printf "\n//npm.pkg.github.com/:_authToken=${NEWFOLD_ACCESS_TOKEN}" >> .npmrc
+        run: |
+          printf '\n//npm.pkg.github.com/:_authToken=%s' "${NEWFOLD_ACCESS_TOKEN}" >> .npmrc
 
       - name: Install NPM Dependencies
         run: npm ci && rm -f .npmrc
@@ -63,47 +63,51 @@ jobs:
 
       - name: Calculate Total Plugin Size
         id: plugin_size
-        run: >
+        run: |
           TOTAL_SIZE_BYTES=$(du -sb --exclude=.git --exclude=node_modules --exclude=base . | cut -f1)
-
-          TOTAL_SIZE_HUMAN=$(numfmt --to=iec --suffix=B ${TOTAL_SIZE_BYTES})
-
-          echo "total_size_bytes=$TOTAL_SIZE_BYTES" >> $GITHUB_OUTPUT
-          echo "total_size_human=$TOTAL_SIZE_HUMAN" >> $GITHUB_OUTPUT
+          TOTAL_SIZE_HUMAN=$(numfmt --to=iec --suffix=B "${TOTAL_SIZE_BYTES}")
+          {
+            echo "total_size_bytes=${TOTAL_SIZE_BYTES}"
+            echo "total_size_human=${TOTAL_SIZE_HUMAN}"
+          } >> "${GITHUB_OUTPUT}"
 
       - name: Calculate PHP Size
         id: php_size
-        run: >
+        run: |
           # Calculate PHP file sizes (excluding vendor for now, we'll add it
           back in the final calculation)
           PHP_SIZE_BYTES=$(find . -name "*.php" -not -path "./vendor/*" -not -path "./base/*" -not
           -path "./node_modules/*" -not -path "./.git/*" -exec du -sb {} + | awk
           '{sum += $1} END {print sum}')
 
-          PHP_SIZE_HUMAN=$(numfmt --to=iec --suffix=B ${PHP_SIZE_BYTES})
+          PHP_SIZE_HUMAN=$(numfmt --to=iec --suffix=B "${PHP_SIZE_BYTES}")
 
           # Calculate vendor size (Composer dependencies)
           VENDOR_SIZE_BYTES=$(du -sb vendor 2>/dev/null | cut -f1 || echo "0")
-          VENDOR_SIZE_HUMAN=$(numfmt --to=iec --suffix=B ${VENDOR_SIZE_BYTES})
+          VENDOR_SIZE_HUMAN=$(numfmt --to=iec --suffix=B "${VENDOR_SIZE_BYTES}")
 
           # Total PHP-related size (PHP files + vendor)
           TOTAL_PHP_SIZE_BYTES=$((PHP_SIZE_BYTES + VENDOR_SIZE_BYTES))
 
-          echo "php_files_size_bytes=$PHP_SIZE_BYTES" >> $GITHUB_OUTPUT
-          echo "php_files_size_human=$PHP_SIZE_HUMAN" >> $GITHUB_OUTPUT
-          echo "vendor_size_bytes=$VENDOR_SIZE_BYTES" >> $GITHUB_OUTPUT
-          echo "vendor_size_human=$VENDOR_SIZE_HUMAN" >> $GITHUB_OUTPUT
-          echo "total_php_size_bytes=$TOTAL_PHP_SIZE_BYTES" >> $GITHUB_OUTPUT
-          echo "total_php_size_human=$(numfmt --to=iec --suffix=B ${TOTAL_PHP_SIZE_BYTES})" >> $GITHUB_OUTPUT
+          {
+            echo "php_files_size_bytes=${PHP_SIZE_BYTES}"
+            echo "php_files_size_human=${PHP_SIZE_HUMAN}"
+            echo "vendor_size_bytes=${VENDOR_SIZE_BYTES}"
+            echo "vendor_size_human=${VENDOR_SIZE_HUMAN}"
+            echo "total_php_size_bytes=${TOTAL_PHP_SIZE_BYTES}"
+            echo "total_php_size_human=$(numfmt --to=iec --suffix=B "${TOTAL_PHP_SIZE_BYTES}")"
+          } >> "${GITHUB_OUTPUT}"
 
       - name: Calculate JavaScript Size
         id: js_size
-        run: >
+        run: |
           # Calculate build directory size (JavaScript/CSS assets)
           BUILD_SIZE_BYTES=$(du -sb build 2>/dev/null | cut -f1 || echo "0")
           BUILD_SIZE_HUMAN=$(du -sh build 2>/dev/null | cut -f1 || echo "0")
-          echo "build_size_bytes=$BUILD_SIZE_BYTES" >> $GITHUB_OUTPUT
-          echo "build_size_human=$BUILD_SIZE_HUMAN" >> $GITHUB_OUTPUT
+          {
+            echo "build_size_bytes=${BUILD_SIZE_BYTES}"
+            echo "build_size_human=${BUILD_SIZE_HUMAN}"
+          } >> "${GITHUB_OUTPUT}"
 
       - name: Checkout base ref
         if: github.event_name == 'pull_request'
@@ -124,10 +128,10 @@ jobs:
         if: github.event_name == 'pull_request'
         env:
           NEWFOLD_ACCESS_TOKEN: ${{ secrets.NEWFOLD_ACCESS_TOKEN }}
-        run: >
+        run: |
           pushd base >/dev/null
           composer install --no-progress --no-dev --optimize-autoloader --prefer-dist --quiet
-          printf "\n//npm.pkg.github.com/:_authToken=${NEWFOLD_ACCESS_TOKEN}" >> .npmrc
+          printf '\n//npm.pkg.github.com/:_authToken=%s' "${NEWFOLD_ACCESS_TOKEN}" >> .npmrc
           npm ci --silent
           rm -f .npmrc
           npm run build --silent
@@ -136,7 +140,7 @@ jobs:
       - name: Calculate Previous Sizes (base)
         if: github.event_name == 'pull_request'
         id: prev
-        run: >
+        run: |
           # Total size (exclude .git and node_modules, include vendor)
           PREV_SIZE_BYTES=$(du -sb --exclude=.git --exclude=node_modules base | cut -f1)
 
@@ -148,9 +152,11 @@ jobs:
           # JS build dir size
           PREV_BUILD_SIZE_BYTES=$(du -sb base/build 2>/dev/null | cut -f1 || echo "0")
 
-          echo "prev_total_bytes=$PREV_SIZE_BYTES" >> $GITHUB_OUTPUT
-          echo "prev_total_php_bytes=$PREV_TOTAL_PHP_SIZE_BYTES" >> $GITHUB_OUTPUT
-          echo "prev_build_bytes=$PREV_BUILD_SIZE_BYTES" >> $GITHUB_OUTPUT
+          {
+            echo "prev_total_bytes=${PREV_SIZE_BYTES}"
+            echo "prev_total_php_bytes=${PREV_TOTAL_PHP_SIZE_BYTES}"
+            echo "prev_build_bytes=${PREV_BUILD_SIZE_BYTES}"
+          } >> "${GITHUB_OUTPUT}"
 
       - name: Compare Size Changes
         if: github.event_name == 'pull_request'
@@ -162,15 +168,15 @@ jobs:
           PREV_TOTAL_SIZE_BYTES: ${{ steps.prev.outputs.prev_total_bytes }}
           PREV_TOTAL_PHP_SIZE_BYTES: ${{ steps.prev.outputs.prev_total_php_bytes }}
           PREV_BUILD_SIZE_BYTES: ${{ steps.prev.outputs.prev_build_bytes }}
-        run: >
+        run: |
           # Compare total sizes
           CURRENT_SIZE=${CURRENT_TOTAL_SIZE_BYTES}
           if [ "${PREV_TOTAL_SIZE_BYTES}" -gt 0 ]; then
             INCREASE_BYTES=$((CURRENT_SIZE - PREV_TOTAL_SIZE_BYTES))
             INCREASE_PERCENT=$((INCREASE_BYTES * 100 / PREV_TOTAL_SIZE_BYTES))
-            echo "increase_percent=$INCREASE_PERCENT" >> $GITHUB_OUTPUT
+            echo "increase_percent=${INCREASE_PERCENT}" >> "${GITHUB_OUTPUT}"
           else
-            echo "increase_percent=0" >> $GITHUB_OUTPUT
+            echo "increase_percent=0" >> "${GITHUB_OUTPUT}"
           fi
 
           # Compare PHP sizes
@@ -178,9 +184,9 @@ jobs:
           if [ "${PREV_TOTAL_PHP_SIZE_BYTES}" -gt 0 ]; then
             PHP_INCREASE_BYTES=$((CURRENT_PHP_SIZE - PREV_TOTAL_PHP_SIZE_BYTES))
             PHP_INCREASE_PERCENT=$((PHP_INCREASE_BYTES * 100 / PREV_TOTAL_PHP_SIZE_BYTES))
-            echo "php_increase_percent=$PHP_INCREASE_PERCENT" >> $GITHUB_OUTPUT
+            echo "php_increase_percent=${PHP_INCREASE_PERCENT}" >> "${GITHUB_OUTPUT}"
           else
-            echo "php_increase_percent=0" >> $GITHUB_OUTPUT
+            echo "php_increase_percent=0" >> "${GITHUB_OUTPUT}"
           fi
 
           # Compare JS sizes
@@ -188,9 +194,9 @@ jobs:
           if [ "${PREV_BUILD_SIZE_BYTES}" -gt 0 ]; then
             JS_INCREASE_BYTES=$((CURRENT_JS_SIZE - PREV_BUILD_SIZE_BYTES))
             JS_INCREASE_PERCENT=$((JS_INCREASE_BYTES * 100 / PREV_BUILD_SIZE_BYTES))
-            echo "js_increase_percent=$JS_INCREASE_PERCENT" >> $GITHUB_OUTPUT
+            echo "js_increase_percent=${JS_INCREASE_PERCENT}" >> "${GITHUB_OUTPUT}"
           else
-            echo "js_increase_percent=0" >> $GITHUB_OUTPUT
+            echo "js_increase_percent=0" >> "${GITHUB_OUTPUT}"
           fi
 
       - name: Generate Report
@@ -206,53 +212,59 @@ jobs:
           EVENT_NAME: ${{ github.event_name }}
           EVENT_BEFORE: ${{ github.event.before }}
           EVENT_SHA: ${{ github.sha }}
-        run: >
-          echo "## Plugin Size Audit Report" > final-report.md
-          echo "" >> final-report.md
-
-          echo "### Total Plugin Size" >> final-report.md
-          echo "- Current Size: ${TOTAL_SIZE_HUMAN}" >> final-report.md
+        run: |
+          REPORT="final-report.md"
+          {
+            echo "## Plugin Size Audit Report"
+            echo
+            echo "### Total Plugin Size"
+            echo "- Current Size: ${TOTAL_SIZE_HUMAN}"
+          } > "${REPORT}"
 
           if [ -n "${INCREASE_PERCENT}" ]; then
-            echo "- Size Change: ${INCREASE_PERCENT}%" >> final-report.md
+            echo "- Size Change: ${INCREASE_PERCENT}%" >> "${REPORT}"
           fi
 
-          echo "" >> final-report.md
-          echo "### PHP Analysis" >> final-report.md
-          echo "- PHP Files: ${PHP_FILES_SIZE_HUMAN}" >> final-report.md
-          echo "- Vendor Dependencies: ${VENDOR_SIZE_HUMAN}" >> final-report.md
-          echo "- Total PHP Size: ${TOTAL_PHP_SIZE_HUMAN}" >> final-report.md
+          {
+            echo
+            echo "### PHP Analysis"
+            echo "- PHP Files: ${PHP_FILES_SIZE_HUMAN}"
+            echo "- Vendor Dependencies: ${VENDOR_SIZE_HUMAN}"
+            echo "- Total PHP Size: ${TOTAL_PHP_SIZE_HUMAN}"
+          } >> "${REPORT}"
 
           if [ -n "${PHP_INCREASE_PERCENT}" ]; then
-            echo "- PHP Size Change: ${PHP_INCREASE_PERCENT}%" >> final-report.md
+            echo "- PHP Size Change: ${PHP_INCREASE_PERCENT}%" >> "${REPORT}"
           fi
 
-          echo "" >> final-report.md
-          echo "### Assets Analysis" >> final-report.md
-          echo "Build directory size is reported below; see largest files sections for hotspots." >> final-report.md
+          {
+            echo
+            echo "### Assets Analysis"
+            echo "Build directory size is reported below; see largest files sections for hotspots."
+            echo
+            echo "### JavaScript/CSS Assets"
+            echo "- Build Directory: ${BUILD_SIZE_HUMAN}"
+          } >> "${REPORT}"
 
-          echo "" >> final-report.md
-          echo "### JavaScript/CSS Assets" >> final-report.md
-          echo "- Build Directory: ${BUILD_SIZE_HUMAN}" >> final-report.md
           if [ -n "${JS_INCREASE_PERCENT}" ]; then
-            echo "- Build Size Change: ${JS_INCREASE_PERCENT}%" >> final-report.md
+            echo "- Build Size Change: ${JS_INCREASE_PERCENT}%" >> "${REPORT}"
           fi
-
-          # node_modules size is intentionally omitted as it is not shipped in the plugin
 
           # Only show largest files when relevant file types are modified
-          if [ "${EVENT_NAME}" == "push" ] || git diff --name-only ${EVENT_BEFORE} ${EVENT_SHA} | grep -E '\\.(php|js|css|json|lock)$' > /dev/null; then
-            echo "" >> final-report.md
-            echo "### Largest PHP Files" >> final-report.md
-            find . -name "*.php" -not -path "./base/*" -not -path "./vendor/*" -not -path "./node_modules/*" -not -path "./.git/*" -exec du -h {} + | sort -rh | head -n 10 >> final-report.md
+          if [ "${EVENT_NAME}" = "push" ] || git diff --name-only "${EVENT_BEFORE}" "${EVENT_SHA}" | grep -E '\\.(php|js|css|json|lock)$' > /dev/null; then
+            {
+              echo
+              echo "### Largest PHP Files"
+              find . -name "*.php" -not -path "./base/*" -not -path "./vendor/*" -not -path "./node_modules/*" -not -path "./.git/*" -exec du -h {} + | sort -rh | head -n 10
 
-            echo "" >> final-report.md
-            echo "### Largest Vendor Dependencies" >> final-report.md
-            find vendor -type f -name "*.php" -not -path "./base/*" -exec du -h {} + | sort -rh | head -n 10 >> final-report.md
+              echo
+              echo "### Largest Vendor Dependencies"
+              find vendor -type f -name "*.php" -not -path "./base/*" -exec du -h {} + | sort -rh | head -n 10
 
-            echo "" >> final-report.md
-            echo "### Largest Files Overall" >> final-report.md
-            find . -type f -not -path "*/base/*" -not -path "*/\.*" -not -path "*/node_modules/*" -not -path "*/vendor/*" -exec du -h {} + | sort -rh | head -n 10 >> final-report.md
+              echo
+              echo "### Largest Files Overall"
+              find . -type f -not -path "*/base/*" -not -path "*/\\.*" -not -path "*/node_modules/*" -not -path "*/vendor/*" -exec du -h {} + | sort -rh | head -n 10
+            } >> "${REPORT}"
           fi
 
       - name: Enforce thresholds

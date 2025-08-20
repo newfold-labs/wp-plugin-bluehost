@@ -297,192 +297,222 @@ body.toplevel_page_bluehost {
 .coming-soon-status {
     text-transform: uppercase;
 }
-.nfd-root .wppbh-home {
+.nfd-root {
+    .nfd-brand-logo {
+        width  : 160px;
+        height : 27px;
+        display: block;
 
-    .nfd-card-link:not(.nfd-card-link-mini) {
-        display: flex;
-    }
-
-    .nfd-card-link:not(.nfd-card-has-bg) {
-        .nfd-card {
-            transition: all 0.5s ease;
+        &:not(.nfd-brand-logo--rendered) {
+            background : url("../../assets/svg/bluehost-logo.svg") no-repeat;
         }
 
-        .nfd-title,
-        .nfd-button {
-            transition: color 0.5s ease, background-color 0.5s ease;
-        }
-        p {
-            color: var(--color-text);
-        }
-        svg:not(.nfd-bg-img) path {
-            stroke-width: 1.5;
-            stroke: var(--color-text);
-            transition: all 0.5s ease;
+        &.nfd-size-sm{
+            height: 17px;
+            width: 99px;
         }
 
-        svg.nfd-bg-img path {
-            stroke-width: .3;
+        &.nfd-size-lg{
+            height: 45px;
+            width: 259px;
         }
 
-        &:hover .nfd-card:not(.nfd-card-has-bg) {
-            background-color: var(--color-blue-lighter);
-            border-color: var(--color-blue);
-
-            .nfd-title {
-                color: var(--color-blue);
-            }
-
-            svg path {
-                stroke: var(--color-blue);
-            }
+        &.nfd-size-xl{
+            height: 89px;
+            width: 419px;
         }
     }
 
-    .nfd-card.nfd-card-has-bg {
-        transition: all 0.5s ease;
-        min-width: 100%;
-        min-height: 320px;
+    .wppbh-home {
 
-        .nfd-card__content {
-            position: relative;
+        .nfd-card-link:not(.nfd-card-link-mini) {
+            display : flex;
+        }
 
-            .nfd-bg-img {
-                position: absolute;
-                z-index: 0;
-                width: 60%;
-                height: auto;
-                right: -1rem;
-                bottom: -1rem;
+        .nfd-card-link:not(.nfd-card-has-bg) {
+            .nfd-card {
+                transition : all 0.5s ease;
             }
 
-            .nfd-title, 
-            p,
-            .nfd-card-bottom {
-                z-index: 1;
-            }
-
+            .nfd-title,
             .nfd-button {
-                position: absolute;
-                bottom: 0;
+                transition : color 0.5s ease, background-color 0.5s ease;
             }
-        }
-    }
-
-    .nfd-card.nfd-card-mid {
-        background-color: var(--color-mid);
-        border-color: var(--color-mid);
-
-        .nfd-title,
-        p {
-            color: var(--color-black) !important;
-        }
-
-        .nfd-button {
-            background-color: var(--color-black);
-        }
-
-        &:hover {
-            background-color: var(--color-mid-dark);
-            border-color: var(--color-mid-dark);
-
-            .nfd-button {
-                background-color: var(--color-black);
-            }
-        }
-    }
-
-    .nfd-card.nfd-card-dark {
-        background-color: var(--color-blue);
-        border-color: var(--color-blue);
-
-        .nfd-title,
-        p {
-            color: var(--color-white) !important;
-        }
-
-        .nfd-button {
-            background-color: var(--color-blue-dark);
-        }
-
-        &:hover {
-            background-color: var(--color-blue-dark);
-            border-color: var(--color-blue-dark);
-
-            .nfd-button {
-                background-color: var(--color-black);
-            }
-        }
-    }
-
-    .nfd-card-link-mini {
-
-        .nfd-arrow {
-            opacity: 0;
-            fill: var(--color-primary);
-            padding-right: 1rem;
-            transition: all 0.5s ease;
-        }
-
-        .nfd-card-hover-cta {
-            opacity: 0;
-            transition: opacity 0.25s ease;
-        }
-
-        &:hover {
 
             p {
-                color: var(--color-primary);
+                color : var(--color-text);
             }
 
+            svg:not(.nfd-bg-img) path {
+                stroke-width : 1.5;
+                stroke       : var(--color-text);
+                transition   : all 0.5s ease;
+            }
+
+            svg.nfd-bg-img path {
+                stroke-width : .3;
+            }
+
+            &:hover .nfd-card:not(.nfd-card-has-bg) {
+                background-color : var(--color-blue-lighter);
+                border-color     : var(--color-blue);
+
+                .nfd-title {
+                    color : var(--color-blue);
+                }
+
+                svg path {
+                    stroke : var(--color-blue);
+                }
+            }
+        }
+
+        .nfd-card.nfd-card-has-bg {
+            transition : all 0.5s ease;
+            min-width  : 100%;
+            min-height : 320px;
+
+            .nfd-card__content {
+                position : relative;
+
+                .nfd-bg-img {
+                    position : absolute;
+                    z-index  : 0;
+                    width    : 60%;
+                    height   : auto;
+                    right    : -1rem;
+                    bottom   : -1rem;
+                }
+
+                .nfd-title,
+                p,
+                .nfd-card-bottom {
+                    z-index : 1;
+                }
+
+                .nfd-button {
+                    position : absolute;
+                    bottom   : 0;
+                }
+            }
+        }
+
+        .nfd-card.nfd-card-mid {
+            background-color : var(--color-mid);
+            border-color     : var(--color-mid);
+
+            .nfd-title,
+            p {
+                color : var(--color-black) !important;
+            }
+
+            .nfd-button {
+                background-color : var(--color-black);
+            }
+
+            &:hover {
+                background-color : var(--color-mid-dark);
+                border-color     : var(--color-mid-dark);
+
+                .nfd-button {
+                    background-color : var(--color-black);
+                }
+            }
+        }
+
+        .nfd-card.nfd-card-dark {
+            background-color : var(--color-blue);
+            border-color     : var(--color-blue);
+
+            .nfd-title,
+            p {
+                color : var(--color-white) !important;
+            }
+
+            .nfd-button {
+                background-color : var(--color-blue-dark);
+            }
+
+            &:hover {
+                background-color : var(--color-blue-dark);
+                border-color     : var(--color-blue-dark);
+
+                .nfd-button {
+                    background-color : var(--color-black);
+                }
+            }
+        }
+
+        .nfd-card-link-mini {
+
             .nfd-arrow {
-                opacity: 1;
-                padding-right: 0;
+                opacity       : 0;
+                fill          : var(--color-primary);
+                padding-right : 1rem;
+                transition    : all 0.5s ease;
             }
 
             .nfd-card-hover-cta {
-                opacity: 1;
+                opacity    : 0;
+                transition : opacity 0.25s ease;
+            }
+
+            &:hover {
+
+                p {
+                    color : var(--color-primary);
+                }
+
+                .nfd-arrow {
+                    opacity       : 1;
+                    padding-right : 0;
+                }
+
+                .nfd-card-hover-cta {
+                    opacity : 1;
+                }
+            }
+
+
+        }
+
+        .nfd-no-stroke {
+            path {
+                stroke : none !important;
             }
         }
-
-
     }
 
-    .nfd-no-stroke {
-        path {
-            stroke: none !important;
+
+    .wppbh-app-marketplace-page {
+        .nfd-marketplace-sidebar ul {
+            margin-left : 0 !important;
         }
-    }
-}
 
-
-.wppbh-app-marketplace-page {
-    .nfd-marketplace-sidebar ul {
-        margin-left: 0 !important;
-    }
-
-    // TODO: generate these via tailwind config
-    // These styles should not be needed but tailwind doesn't seem to be adding these
-    .nfd-flex-col {
-        flex-direction: column !important;
-    }
-    @media (min-width: 768px) {
-        .md\:nfd-flex-row {
-            flex-direction: row !important;
+        // TODO: generate these via tailwind config
+        // These styles should not be needed but tailwind doesn't seem to be adding these
+        .nfd-flex-col {
+            flex-direction : column !important;
         }
-        .md\:nfd-grid-cols-2 {
-            grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+
+        @media (min-width : 768px) {
+            .md\:nfd-flex-row {
+                flex-direction : row !important;
+            }
+            .md\:nfd-grid-cols-2 {
+                grid-template-columns : repeat(2, minmax(0, 1fr)) !important;
+            }
         }
-    }
-    @media (min-width: 1120px) {
-		.min-\[1120px\]\:nfd-grid-cols-2 {
-			grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
-		}
-    }
-    @media (min-width: 1400px) {
-		.min-\[1400px\]\:nfd-grid-cols-3 {
-			grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
-		}
+        @media (min-width : 1120px) {
+            .min-\[1120px\]\:nfd-grid-cols-2 {
+                grid-template-columns : repeat(2, minmax(0, 1fr)) !important;
+            }
+        }
+        @media (min-width : 1400px) {
+            .min-\[1400px\]\:nfd-grid-cols-3 {
+                grid-template-columns : repeat(3, minmax(0, 1fr)) !important;
+            }
+        }
     }
 }
 

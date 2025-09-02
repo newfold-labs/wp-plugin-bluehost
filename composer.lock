@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "717797c4cbad7655dd664d91bfc18680",
+    "content-hash": "dd176337c6d91ef3cd667103e3e0c4c0",
     "packages": [
         {
             "name": "doctrine/inflector",
@@ -2149,24 +2149,24 @@
         },
         {
             "name": "newfold-labs/wp-module-onboarding",
-            "version": "3.1.1",
+            "version": "3.2.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/newfold-labs/wp-module-onboarding.git",
-                "reference": "63d6947be04ac1df8f1f9ec522e6975fbf10f147"
+                "reference": "11c44fc395d173145dd836fc1db2e1d5b477b5e1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/newfold-labs/wp-module-onboarding/zipball/63d6947be04ac1df8f1f9ec522e6975fbf10f147",
-                "reference": "63d6947be04ac1df8f1f9ec522e6975fbf10f147",
+                "url": "https://api.github.com/repos/newfold-labs/wp-module-onboarding/zipball/11c44fc395d173145dd836fc1db2e1d5b477b5e1",
+                "reference": "11c44fc395d173145dd836fc1db2e1d5b477b5e1",
                 "shasum": ""
             },
             "require": {
                 "mustache/mustache": "^2.14.2",
                 "newfold-labs/wp-module-facebook": "^1.2.1",
                 "newfold-labs/wp-module-migration": "^1.6.0",
-                "newfold-labs/wp-module-onboarding-data": "^1.2.15",
-                "newfold-labs/wp-module-patterns": "^2.10.2",
+                "newfold-labs/wp-module-onboarding-data": "^1.2.16",
+                "newfold-labs/wp-module-patterns": "^2.10.3",
                 "wp-cli/wp-config-transformer": "^1.4.1",
                 "wp-forge/helpers": "^2.0"
             },
@@ -2214,6 +2214,14 @@
                     "@i18n-php",
                     "@i18n-json"
                 ],
+                "i18n-ci-pre": [
+                    "@i18n-pot",
+                    "@i18n-po"
+                ],
+                "i18n-ci-post": [
+                    "@i18n-json",
+                    "@i18n-php"
+                ],
                 "lint": [
                     "vendor/bin/phpcs . --standard=phpcs.xml"
                 ],
@@ -2237,10 +2245,10 @@
             ],
             "description": "Next-generation WordPress Onboarding for WordPress sites at Newfold Digital.",
             "support": {
-                "source": "https://github.com/newfold-labs/wp-module-onboarding/tree/3.1.1",
+                "source": "https://github.com/newfold-labs/wp-module-onboarding/tree/3.2.2",
                 "issues": "https://github.com/newfold-labs/wp-module-onboarding/issues"
             },
-            "time": "2025-08-14T16:19:02+00:00"
+            "time": "2025-09-02T21:32:54+00:00"
         },
         {
             "name": "newfold-labs/wp-module-onboarding-data",

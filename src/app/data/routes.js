@@ -11,6 +11,7 @@ import { Route, Routes } from 'react-router-dom';
 import Home from '../pages/home';
 import Store from '../pages/ecommerce/page';
 import Marketplace from '../pages/marketplace';
+import Commerce from '../pages/commerce';
 import Settings from '../pages/settings';
 import Help from '../pages/help';
 import Admin from '../pages/admin';
@@ -119,7 +120,7 @@ export const AppRoutes = () => {
 	);
 };
 
-const topRoutePaths = [ '/home', '/store', '/marketplace', '/settings' ];
+const topRoutePaths = [ '/home', '/store', '/marketplace', '/commerce', '/settings' ];
 const utilityRoutePaths = [ '/help' ];
 
 export const routes = [
@@ -168,6 +169,12 @@ export const routes = [
 		condition: true,
 	},
 	{
+		name: '/commerce',
+		title: __( 'Commerce', 'wp-plugin-bluehost' ),
+		Component: Commerce,
+		condition: true,
+	},
+	{
 		name: '/marketplace',
 		title: __( 'Marketplace', 'wp-plugin-bluehost' ),
 		Component: Marketplace,
@@ -184,7 +191,7 @@ export const routes = [
 	},
 	{
 		name: '/help',
-		title: __( 'Help with WordPress', 'wp-plugin-bluehost' ),
+		title: __( 'Help', 'wp-plugin-bluehost' ),
 		Component: Help,
 		Icon: HelpIcon,
 		condition: true,

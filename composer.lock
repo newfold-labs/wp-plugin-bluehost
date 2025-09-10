@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "2578119d362bf1108a603396264b6023",
+    "content-hash": "812dce32b3a2719c977c870b9c135e11",
     "packages": [
         {
             "name": "doctrine/inflector",
@@ -722,16 +722,16 @@
         },
         {
             "name": "newfold-labs/wp-module-coming-soon",
-            "version": "2.1.0",
+            "version": "2.1.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/newfold-labs/wp-module-coming-soon.git",
-                "reference": "af264a350d7834080303b6e64c145c5250cfe052"
+                "reference": "094f3d7c8af0c89f79dd8c34006588a15b9a4e04"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/newfold-labs/wp-module-coming-soon/zipball/af264a350d7834080303b6e64c145c5250cfe052",
-                "reference": "af264a350d7834080303b6e64c145c5250cfe052",
+                "url": "https://api.github.com/repos/newfold-labs/wp-module-coming-soon/zipball/094f3d7c8af0c89f79dd8c34006588a15b9a4e04",
+                "reference": "094f3d7c8af0c89f79dd8c34006588a15b9a4e04",
                 "shasum": ""
             },
             "require": {
@@ -785,7 +785,7 @@
                     "vendor/bin/wp i18n update-po ./languages/wp-module-coming-soon.pot ./languages"
                 ],
                 "i18n-pot": [
-                    "vendor/bin/wp i18n make-pot . ./languages/wp-module-coming-soon.pot --headers='{\"Report-Msgid-Bugs-To\":\"https://github.com/newfold-labs/wp-module-coming-soon/issues\",\"POT-Creation-Date\":\"2025-02-13T09:55:55+00:00\"}' --exclude=wordpress,assets,tests,src"
+                    "vendor/bin/wp i18n make-pot . ./languages/wp-module-coming-soon.pot --domain=wp-module-coming-soon --headers='{\"Report-Msgid-Bugs-To\":\"https://github.com/newfold-labs/wp-module-coming-soon/issues\",\"POT-Creation-Date\":\"2025-02-13T09:55:55+00:00\"}' --exclude=wordpress,assets,tests,src"
                 ],
                 "lint": [
                     "vendor/bin/phpcs . --standard=phpcs.xml -s"
@@ -810,10 +810,10 @@
             ],
             "description": "Coming Soon module for WordPress sites.",
             "support": {
-                "source": "https://github.com/newfold-labs/wp-module-coming-soon/tree/2.1.0",
+                "source": "https://github.com/newfold-labs/wp-module-coming-soon/tree/2.1.1",
                 "issues": "https://github.com/newfold-labs/wp-module-coming-soon/issues"
             },
-            "time": "2025-08-05T20:39:27+00:00"
+            "time": "2025-09-10T18:56:04+00:00"
         },
         {
             "name": "newfold-labs/wp-module-context",

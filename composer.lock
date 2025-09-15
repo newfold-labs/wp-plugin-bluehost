@@ -1574,12 +1574,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/newfold-labs/wp-module-htaccess.git",
-                "reference": "afcc2c2e06d3dcdd825d38bd023734806f4fd809"
+                "reference": "a95ea0a03dcf8cdc6c74223c07feb6b7c1562bae"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/newfold-labs/wp-module-htaccess/zipball/afcc2c2e06d3dcdd825d38bd023734806f4fd809",
-                "reference": "afcc2c2e06d3dcdd825d38bd023734806f4fd809",
+                "url": "https://api.github.com/repos/newfold-labs/wp-module-htaccess/zipball/a95ea0a03dcf8cdc6c74223c07feb6b7c1562bae",
+                "reference": "a95ea0a03dcf8cdc6c74223c07feb6b7c1562bae",
                 "shasum": ""
             },
             "require-dev": {
@@ -1636,7 +1636,7 @@
                 "source": "https://github.com/newfold-labs/wp-module-htaccess/tree/1.0.0",
                 "issues": "https://github.com/newfold-labs/wp-module-htaccess/issues"
             },
-            "time": "2025-09-08T11:30:55+00:00"
+            "time": "2025-09-12T12:21:11+00:00"
         },
         {
             "name": "newfold-labs/wp-module-install-checker",
@@ -2549,12 +2549,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/newfold-labs/wp-module-performance.git",
-                "reference": "172b54e2543135ae9e612e9ac4cf80a503cd18d8"
+                "reference": "658a30e14b65da5f37cda39e7791e93f6ed3ef12"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/newfold-labs/wp-module-performance/zipball/172b54e2543135ae9e612e9ac4cf80a503cd18d8",
-                "reference": "172b54e2543135ae9e612e9ac4cf80a503cd18d8",
+                "url": "https://api.github.com/repos/newfold-labs/wp-module-performance/zipball/658a30e14b65da5f37cda39e7791e93f6ed3ef12",
+                "reference": "658a30e14b65da5f37cda39e7791e93f6ed3ef12",
                 "shasum": ""
             },
             "require": {
@@ -2646,7 +2646,7 @@
                 "source": "https://github.com/newfold-labs/wp-module-performance/tree/3.4.0",
                 "issues": "https://github.com/newfold-labs/wp-module-performance/issues"
             },
-            "time": "2025-09-11T07:19:53+00:00"
+            "time": "2025-09-12T13:08:45+00:00"
         },
         {
             "name": "newfold-labs/wp-module-pls",

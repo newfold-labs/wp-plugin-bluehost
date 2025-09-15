@@ -1,29 +1,29 @@
 {
     "translation-revision-date": "2025-03-18T20:07:22+00:00",
     "generator": "WP-CLI\/2.12.0",
-    "source": "build\/4.6.0\/index.js",
+    "source": "build\/4.6.1\/index.js",
     "domain": "messages",
     "locale_data": {
         "messages": {
             "": {
                 "domain": "messages",
-                "lang": "it_IT",
+                "lang": "es_ES",
                 "plural-forms": "nplurals=2; plural=(n != 1);"
             },
             "Home": [
-                "Home"
+                "Inicio"
             ],
             "Settings": [
-                "Impostazioni"
+                "Ajustes"
             ],
             "Not Live": [
-                "Non live"
+                "No visible"
             ],
             "Live": [
-                "Live"
+                "Visible"
             ],
             "Your website is currently displaying a \"Coming Soon\" page.": [
-                "Al momento il tuo sito mostra una pagina \u201cComing Soon\u201d."
+                "Ahora mismo, en tu sitio web se muestra la p\u00e1gina \\\"Pr\u00f3ximamente\\\"."
             ],
             "Disabled old post comments": [
                 ""

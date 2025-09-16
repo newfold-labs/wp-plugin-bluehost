@@ -2549,12 +2549,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/newfold-labs/wp-module-performance.git",
-                "reference": "ca820f52fac39946090061e6d2a649b38d9241ac"
+                "reference": "425dd86181a319369e01cbd30ad5318e47d26671"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/newfold-labs/wp-module-performance/zipball/ca820f52fac39946090061e6d2a649b38d9241ac",
-                "reference": "ca820f52fac39946090061e6d2a649b38d9241ac",
+                "url": "https://api.github.com/repos/newfold-labs/wp-module-performance/zipball/425dd86181a319369e01cbd30ad5318e47d26671",
+                "reference": "425dd86181a319369e01cbd30ad5318e47d26671",
                 "shasum": ""
             },
             "require": {
@@ -2646,7 +2646,7 @@
                 "source": "https://github.com/newfold-labs/wp-module-performance/tree/3.4.1",
                 "issues": "https://github.com/newfold-labs/wp-module-performance/issues"
             },
-            "time": "2025-09-16T10:06:34+00:00"
+            "time": "2025-09-16T17:07:48+00:00"
         },
         {
             "name": "newfold-labs/wp-module-pls",

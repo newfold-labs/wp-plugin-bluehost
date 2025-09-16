@@ -6,15 +6,16 @@ import { filter } from 'lodash';
 import { Button, AppBarNavigation, useNavigationContext } from '@newfold/ui-component-library';
 import { default as NewfoldNotifications } from '@modules/wp-module-notifications/assets/js/components/notifications/';
 import { NavLink, useLocation } from 'react-router-dom';
+import classnames from 'classnames';
 import { topRoutes, utilityRoutes } from 'App/data/routes';
-import { RectangleGroupIcon, ArrowUpRightIcon } from "@heroicons/react/24/outline";
+import { RectangleGroupIcon, ArrowUpRightIcon } from '@heroicons/react/24/outline';
 import Logo from '../logo';
 
 export const AppNavHeader = () => {
 	return (
-		<AppBarNavigation.Item as={ 'div' }>
+		<AppBarNavigation.AppBar.Item as={ 'div' }>
 			<Logo variant={ 'icon' }/>
-		</AppBarNavigation.Item>
+		</AppBarNavigation.AppBar.Item>
 	);
 };
 
@@ -24,35 +25,46 @@ export const AppNavMenu = () => {
 
 	const menu = () => {
 		return (
-			<>
-			{ [...topRoutes, ...utilityRoutes]?.map(
-					( page ) =>
-						true === page.condition && (
-							<AppBarNavigation.Item
+			<AppBarNavigation.AppBar.Nav>
+				{ [ ...topRoutes, ...utilityRoutes ]?.map(
+					( page ) => {
+						if ( true !== page.condition ) {
+							return null;
+						}
+
+						const { mode, setOpen } = AppBarNavigation.AppBar.useContext();
+						return (
+							<AppBarNavigation.AppBar.Item
 								key={ page.name }
 								label={ page.title }
-								name={ page.name }
-								href={ `#${page.name}` }
+								href={ `#${ page.name }` }
 								action={ page.action }
-								subItems={ page.subRoutes }
-								className={ 'nfd-px-8 group-[.nfd-appbar-item--active]:nfd-text-[var(--color-primary)] group-[.nfd-appbar-item--active]:nfd-font-bold group-[.nfd-appbar-item--active]:nfd-bg-[#DBF1FC80]' }
+								className={ classnames(
+									'group-[.nfd-appbar-item--active]:nfd-text-[var(--color-primary)]',
+									{
+										'nfd-px-8 group-[.nfd-appbar-item--active]:nfd-bg-[#DBF1FC80] group-[.nfd-appbar-item--active]:nfd-font-bold': 'inline' === mode,
+										'nfd-px-0 nfd-font-bold nfd-bg-transparent group-[.nfd-appbar-item]:!nfd-bg-transparent  hover:!nfd-bg-black': 'collapsed' === mode,
+									}
+								) }
+								onClick={ () => setOpen( false ) }
 							/>
 						)
+					}
 				) }
-			</>
+			</AppBarNavigation.AppBar.Nav>
 		);
 	};
 
-	const actions = () =>{
+	const actions = () => {
 		return (
 			<>
-				<Button className={'nfd-flex nfd-gap-2 nfd-mr-4'}>
+				<Button className={ 'nfd-flex nfd-gap-2 nfd-mr-4' }>
 					Go to AI Editor
-					<RectangleGroupIcon />
+					<RectangleGroupIcon/>
 				</Button>
-				<Button variant={'secondary'} className={'nfd-flex nfd-gap-2 nfd-mr-4'}>
+				<Button variant={ 'secondary' } className={ 'nfd-flex nfd-gap-2 nfd-mr-4' }>
 					Go to Hosting Panel
-					<ArrowUpRightIcon />
+					<ArrowUpRightIcon/>
 				</Button>
 			</>
 		)
@@ -83,7 +95,7 @@ export const AppNavMenu = () => {
 	};
 
 	useEffect( () => {
-		if(location?.pathname){
+		if ( location?.pathname ) {
 			setActivePath( `#${ location.pathname }` );
 		}
 
@@ -94,7 +106,7 @@ export const AppNavMenu = () => {
 	return (
 		<>
 			{ menu() }
-			<div className={'nfd-grow'} />
+			<div className={ 'nfd-grow' }/>
 			{ actions() }
 		</>
 	);
@@ -122,9 +134,9 @@ export const AppBarNav = () => {
 
 	return (
 		<>
-			<AppBarNavigation.AppBar position={ 'absolute' } className={ 'nfd-pr-2' }>
-				<AppNavHeader />
-				<AppNavMenu />
+			<AppBarNavigation.AppBar position={ 'absolute' } className={ 'nfd-pr-2' } collapseAt={ 'xl' }>
+				<AppNavHeader/>
+				<AppNavMenu/>
 			</AppBarNavigation.AppBar>
 			<NewfoldNotifications
 				constants={ {
@@ -148,5 +160,5 @@ export const AppNav = () => {
 
 	// TODO: implement mobile menu
 	// return <>{ ( isLargeViewport && <SideNav /> ) || <MobileNav /> }</>;
-	return <AppBarNav />;
+	return <AppBarNav/>;
 };

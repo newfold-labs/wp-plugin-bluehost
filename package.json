@@ -82,6 +82,8 @@
         "develop": "npm run start",
         "develop:analyzer": "npm run start:analyzer",
         "i18n": "composer run i18n",
+        "i18n-ci-pre": "npm run build && composer run i18n-ci-pre",
+        "i18n-ci-post": "composer run i18n-ci-post",
         "lint:css": "wp-scripts lint-style '**/*.css'",
         "lint:js": "wp-scripts lint-js ./src",
         "lint:js:fix": "wp-scripts lint-js ./src --fix",

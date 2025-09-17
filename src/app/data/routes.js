@@ -120,7 +120,7 @@ export const AppRoutes = () => {
 	);
 };
 
-const topRoutePaths = [ '/home', '/store', '/marketplace', '/commerce', '/settings' ];
+const topRoutePaths = [ '/home', '/store', '/marketplace', '/settings' ];
 const utilityRoutePaths = [ '/help' ];
 
 export const routes = [

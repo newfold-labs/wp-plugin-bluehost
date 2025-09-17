@@ -6,7 +6,7 @@ export default () => (
 	<Card className={ 'nfd-quick-links-card nfd-quick-links-yoast-card nfd-flex nfd-flex-col nfd-gap-4 nfd-border nfd-border-[#D5D5D5] nfd-shadow-none' }>
 		<div className={ 'nfd-quick-links-card__head nfd-flex nfd-items-center nfd-gap-2' }>
 			<span className={ 'nfd-quick-links-card__icon' }>
-				<YoastLogoIcon dimension={ 20 }/>
+				<YoastLogoIcon />
 			</span>
 			<Title as={ 'h2' } className={'nf-text-base nfd-font-semibold'}>
 				{ __( 'Optimize your content', 'wp-plugin-bluehost' ) }

@@ -1,5 +1,6 @@
-export { default as BluehostIcon } from './BluehostIcon';
-export { default as WordPressIcon } from './WordPressIcon';
-export { default as PartyIcon } from './PartyIcon';
-export { default as AiEditorIcon } from './AiEditorIcon';
-export { default as YoastLogoIcon } from './YoastLogoIcon';
+export { ReactComponent as BluehostIcon } from './BluehostIcon.svg';
+export { ReactComponent as WordPressIcon } from './WordPressIcon.svg';
+export { ReactComponent as PartyIcon } from './PartyIcon.svg';
+export { ReactComponent as AiEditorIcon } from './AiEditorIcon.svg';
+export { ReactComponent as YoastLogoIcon } from './YoastLogoIcon.svg';
+export { ReactComponent as HelpIcon } from './HelpIcon.svg';

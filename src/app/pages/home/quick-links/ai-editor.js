@@ -6,7 +6,7 @@ export default () => (
 	<Card className={ 'nfd-quick-links-card nfd-quick-links-ai-editor-card nfd-flex nfd-flex-col nfd-gap-4 nfd-border nfd-border-[#D5D5D5] nfd-shadow-none' }>
 		<div className={ 'nfd-quick-links-card__head nfd-flex nfd-items-center nfd-gap-2' }>
 			<span className={ 'nfd-quick-links-card__icon nfd-p-[4px] nfd-bg-[#ddecff] nfd-rounded-[5px]' }>
-				<AiEditorIcon width={ 16 }/>
+				<AiEditorIcon />
 			</span>
 			<Title as={ 'h2' } className={ 'nf-text-base nfd-font-semibold' }>
 				{ __( 'Launch our AI Editor', 'wp-plugin-bluehost' ) }

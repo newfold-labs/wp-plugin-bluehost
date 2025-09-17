@@ -38,7 +38,7 @@ export const AppNavMenu = () => {
 								key={ page.name }
 								label={ page.title }
 								href={ `#${ page.name }` }
-								action={ page.action }
+								// action={ page.action }
 								className={ classnames(
 									'group-[.nfd-appbar-item--active]:nfd-text-[var(--color-primary)]',
 									{
@@ -58,11 +58,11 @@ export const AppNavMenu = () => {
 	const actions = () => {
 		return (
 			<>
-				<Button className={ 'nfd-flex nfd-gap-2 nfd-mr-4' }>
+				<Button className={ 'nfd-flex nfd-gap-2 nfd-mr-4' } href={ '#/ai-editor' }>
 					Go to AI Editor
 					<RectangleGroupIcon/>
 				</Button>
-				<Button variant={ 'secondary' } className={ 'nfd-flex nfd-gap-2 nfd-mr-4' }>
+				<Button variant={ 'secondary' } className={ 'nfd-flex nfd-gap-2 nfd-mr-4' } href={ '#/hosting-panel' }>
 					Go to Hosting Panel
 					<ArrowUpRightIcon/>
 				</Button>
@@ -112,21 +112,21 @@ export const AppNavMenu = () => {
 	);
 };
 
-export const SideNavMenuSubItem = ( { label, path, action } ) => {
-	return (
-		<li className="nfd-m-0 nfd-pb-1">
-			<NavLink
-				onClick={ action && action instanceof Function ? action : null }
-				to={ path }
-				className={ `wppbh-app-subnavitem wppbh-app-subnavitem-${ cleanForSlug(
-					label
-				) } nfd-flex nfd-items-center nfd-gap-3 nfd-px-3 nfd-py-2 nfd-rounded-md nfd-text-sm nfd-font-medium nfd-text-body leading-none hover:nfd-bg-slate-50 [&.active]:nfd-bg-[#E2E8F0] [&.active]:nfd-text-title` }
-			>
-				{ label }
-			</NavLink>
-		</li>
-	);
-};
+// export const SideNavMenuSubItem = ( { label, path, action } ) => {
+// 	return (
+// 		<li className="nfd-m-0 nfd-pb-1">
+// 			<NavLink
+// 				onClick={ action && action instanceof Function ? action : null }
+// 				to={ path }
+// 				className={ `wppbh-app-subnavitem wppbh-app-subnavitem-${ cleanForSlug(
+// 					label
+// 				) } nfd-flex nfd-items-center nfd-gap-3 nfd-px-3 nfd-py-2 nfd-rounded-md nfd-text-sm nfd-font-medium nfd-text-body leading-none hover:nfd-bg-slate-50 [&.active]:nfd-bg-[#E2E8F0] [&.active]:nfd-text-title` }
+// 			>
+// 				{ label }
+// 			</NavLink>
+// 		</li>
+// 	);
+// };
 
 export const AppBarNav = () => {
 	const location = useLocation();

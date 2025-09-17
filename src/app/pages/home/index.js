@@ -47,9 +47,11 @@ const Home = () => {
 					{ __( 'Add Store Details', 'wp-plugin-bluehost' ) }
 				</Button>
 			</div>
+
 			<Container className="nfd-max-w-full nfd-p-8 nfd-shadow-none nfd-rounded-xl nfd-border nfd-border-[#D5D5D5]">
 				<div id="next-steps-portal" />
 			</Container>
+			
 			<Container className="nfd-max-w-full nfd-p-0 nfd-shadow-none nfd-bg-transparent nfd-border-0 nfd-mt-4">
 				<Title as={ 'h2' } className={ 'nfd-text-xl nfd-font-semibold nfd-mb-6' }>
 					{ __( 'Quick links', 'wp-plugin-bluehost' ) }

@@ -64,6 +64,7 @@
       "@i18n-json"
     ],
     "i18n-ci-post": [
+      "@i18n-po",
       "@i18n-json",
       "@i18n-php"
     ]

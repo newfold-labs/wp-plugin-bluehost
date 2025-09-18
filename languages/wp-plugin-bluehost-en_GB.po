@@ -60,13 +60,13 @@ msgstr "Preview the coming soon landing page"
 
 #: inc/Admin.php:74
 #: inc/Admin.php:288
-#: build/4.6.0/index.js:7
+#: build/4.6.1/index.js:7
 msgid "Home"
 msgstr "Home"
 
 #: inc/Admin.php:79
 #: inc/Admin.php:289
-#: build/4.6.0/index.js:7
+#: build/4.6.1/index.js:7
 msgid "Settings"
 msgstr "Settings"
 
@@ -135,17 +135,17 @@ msgid "Auto-updates enabled"
 msgstr "Auto-updates enabled"
 
 #: inc/widgets/views/site-preview.php:148
-#: build/4.6.0/index.js:7
+#: build/4.6.1/index.js:7
 msgid "Not Live"
 msgstr "Not Live"
 
 #: inc/widgets/views/site-preview.php:149
-#: build/4.6.0/index.js:7
+#: build/4.6.1/index.js:7
 msgid "Live"
 msgstr "Live"
 
 #: inc/widgets/views/site-preview.php:162
-#: build/4.6.0/index.js:7
+#: build/4.6.1/index.js:7
 msgid "Your website is currently displaying a \"Coming Soon\" page."
 msgstr "Your website is currently displaying a \"Coming Soon\" page."
 
@@ -296,32 +296,32 @@ msgstr ""
 msgid "Thank you for creating with %1$s and %2$s"
 msgstr "Thank you for creating with %1$s and %2$s"
 
-#: build/4.6.0/index.js:1
+#: build/4.6.1/index.js:1
 msgid "Disabled old post comments"
 msgstr ""
 
-#: build/4.6.0/index.js:1
+#: build/4.6.1/index.js:1
 msgid "Enabled old post comments"
 msgstr ""
 
-#: build/4.6.0/index.js:1
+#: build/4.6.1/index.js:1
 msgid "Comments on old posts are disabled."
 msgstr ""
 
-#: build/4.6.0/index.js:1
+#: build/4.6.1/index.js:1
 msgid "Comments are allowed on old posts."
 msgstr ""
 
-#: build/4.6.0/index.js:1
+#: build/4.6.1/index.js:1
 msgid "Disable comments for older posts"
 msgstr ""
 
-#: build/4.6.0/index.js:1
+#: build/4.6.1/index.js:1
 msgid "Comments setting saved"
 msgstr ""
 
 #. translators: %s: number of days. `Comments on posts are disabled after ${closeCommentsDays} days.`
-#: build/4.6.0/index.js:3
+#: build/4.6.1/index.js:3
 #, js-format
 msgid "Comments on posts are disabled after %s day."
 msgid_plural "Comments on posts are disabled after %s days."
@@ -329,546 +329,546 @@ msgstr[0] ""
 msgstr[1] ""
 
 #. translators: %s: number of days. `Close comments after ${closeCommentsDays} days.`
-#: build/4.6.0/index.js:5
+#: build/4.6.1/index.js:5
 #, js-format
 msgid "Close comments after %s day."
 msgid_plural "Close comments after %s days."
 msgstr[0] ""
 msgstr[1] ""
 
-#: build/4.6.0/index.js:5
+#: build/4.6.1/index.js:5
 msgid "Comments setting saved."
 msgstr ""
 
 #. translators: %s: number of comments. `Posts will display ${commentsPerPage} comments at a time.`
-#: build/4.6.0/index.js:7
+#: build/4.6.1/index.js:7
 #, js-format
 msgid "Posts will display %s comment at a time."
 msgid_plural "Posts will display %s comments at a time."
 msgstr[0] ""
 msgstr[1] ""
 
-#: build/4.6.0/index.js:7
+#: build/4.6.1/index.js:7
 msgid "Comments to display per page"
 msgstr ""
 
-#: build/4.6.0/index.js:7
+#: build/4.6.1/index.js:7
 msgid "Comments"
 msgstr ""
 
-#: build/4.6.0/index.js:7
+#: build/4.6.1/index.js:7
 msgid "Comments allow visitors to provide feedback and respond to your posts or pages."
 msgstr ""
 
-#: build/4.6.0/index.js:7
-#: build/4.6.0/index.js:9
+#: build/4.6.1/index.js:7
+#: build/4.6.1/index.js:9
 msgid "Oops! Something went wrong. Please try again."
 msgstr ""
 
-#: build/4.6.0/index.js:7
+#: build/4.6.1/index.js:7
 msgid "There's nothing here!"
 msgstr ""
 
-#: build/4.6.0/index.js:7
+#: build/4.6.1/index.js:7
 msgid "Store"
 msgstr ""
 
-#: build/4.6.0/index.js:7
+#: build/4.6.1/index.js:7
 msgid "Products & Services"
 msgstr ""
 
-#: build/4.6.0/index.js:7
+#: build/4.6.1/index.js:7
 msgid "Sales & Promotions"
 msgstr ""
 
-#: build/4.6.0/index.js:7
+#: build/4.6.1/index.js:7
 msgid "Sales Channel"
 msgstr ""
 
-#: build/4.6.0/index.js:7
+#: build/4.6.1/index.js:7
 msgid "Payments"
 msgstr ""
 
-#: build/4.6.0/index.js:7
+#: build/4.6.1/index.js:7
 msgid "Store Details"
 msgstr ""
 
-#: build/4.6.0/index.js:7
-#: build/4.6.0/index.js:9
+#: build/4.6.1/index.js:7
+#: build/4.6.1/index.js:9
 msgid "Marketplace"
 msgstr ""
 
-#: build/4.6.0/index.js:7
+#: build/4.6.1/index.js:7
 msgid "Help with WordPress"
 msgstr ""
 
-#: build/4.6.0/index.js:7
-#: build/4.6.0/index.js:9
+#: build/4.6.1/index.js:7
+#: build/4.6.1/index.js:9
 msgid "Admin"
 msgstr ""
 
-#: build/4.6.0/index.js:7
+#: build/4.6.1/index.js:7
 msgid "Coming soon activated"
 msgstr ""
 
-#: build/4.6.0/index.js:7
+#: build/4.6.1/index.js:7
 msgid "Coming soon deactivated"
 msgstr ""
 
-#: build/4.6.0/index.js:7
+#: build/4.6.1/index.js:7
 msgid "Coming soon page is active. Site requires login."
 msgstr ""
 
-#: build/4.6.0/index.js:7
+#: build/4.6.1/index.js:7
 msgid "Coming soon page is not active. Site is live to visitors."
 msgstr ""
 
-#: build/4.6.0/index.js:7
+#: build/4.6.1/index.js:7
 msgid "Site Status"
 msgstr ""
 
-#: build/4.6.0/index.js:7
+#: build/4.6.1/index.js:7
 msgid "Turn off your \"Coming Soon\" page when you are ready to launch your website."
 msgstr ""
 
-#: build/4.6.0/index.js:7
+#: build/4.6.1/index.js:7
 msgid "Turn on your \"Coming Soon\" page when you need to make major changes to your website."
 msgstr ""
 
-#: build/4.6.0/index.js:7
+#: build/4.6.1/index.js:7
 msgid "Your Bluehost Coming Soon page lets you hide your site from visitors while you make the magic happen."
 msgstr ""
 
-#: build/4.6.0/index.js:7
+#: build/4.6.1/index.js:7
 msgid "Staging Enabled"
 msgstr ""
 
-#: build/4.6.0/index.js:7
+#: build/4.6.1/index.js:7
 msgid "Staging Disabled"
 msgstr ""
 
-#: build/4.6.0/index.js:7
+#: build/4.6.1/index.js:7
 msgid "You need to reload the page to manage Staging."
 msgstr ""
 
-#: build/4.6.0/index.js:7
+#: build/4.6.1/index.js:7
 msgid "Staging will no longer display."
 msgstr ""
 
-#: build/4.6.0/index.js:7
+#: build/4.6.1/index.js:7
 msgid "The staging feature provides a way to copy a site to test new updates, features or content."
 msgstr ""
 
-#: build/4.6.0/index.js:7
-#: build/4.6.0/index.js:9
+#: build/4.6.1/index.js:7
+#: build/4.6.1/index.js:9
 msgid "Sorry, that is not allowed."
 msgstr ""
 
-#: build/4.6.0/index.js:7
-#: build/4.6.0/index.js:9
+#: build/4.6.1/index.js:7
+#: build/4.6.1/index.js:9
 msgid "This feature cannot currently be modified."
 msgstr ""
 
-#: build/4.6.0/index.js:7
+#: build/4.6.1/index.js:7
 msgid "Hire our experts"
 msgstr ""
 
-#: build/4.6.0/index.js:7
+#: build/4.6.1/index.js:7
 msgid "Get in touch with us, and we’ll help you build the exact store you’re dreaming of."
 msgstr ""
 
-#: build/4.6.0/index.js:7
+#: build/4.6.1/index.js:7
 msgid "Help Center Enabled"
 msgstr ""
 
-#: build/4.6.0/index.js:7
+#: build/4.6.1/index.js:7
 msgid "Help Center Disabled"
 msgstr ""
 
-#: build/4.6.0/index.js:7
+#: build/4.6.1/index.js:7
 msgid "Reload the page to access the Help Center."
 msgstr ""
 
-#: build/4.6.0/index.js:7
+#: build/4.6.1/index.js:7
 msgid "The Help Center will no longer display."
 msgstr ""
 
-#: build/4.6.0/index.js:7
+#: build/4.6.1/index.js:7
 msgid "The Help Center provides guided, step-by-step assistance as you build your site."
 msgstr ""
 
-#: build/4.6.0/index.js:7
+#: build/4.6.1/index.js:7
 msgid "Explore Premium Tools"
 msgstr ""
 
-#: build/4.6.0/index.js:7
+#: build/4.6.1/index.js:7
 msgid "Discover all the features to grow your store, boost sales and loyalize your customers."
 msgstr ""
 
-#: build/4.6.0/index.js:7
+#: build/4.6.1/index.js:7
 msgid "WonderBlocks Enabled"
 msgstr ""
 
-#: build/4.6.0/index.js:7
+#: build/4.6.1/index.js:7
 msgid "WonderBlocks Disabled"
 msgstr ""
 
-#: build/4.6.0/index.js:7
+#: build/4.6.1/index.js:7
 msgid "Create new content to see WonderBlocks in action."
 msgstr ""
 
-#: build/4.6.0/index.js:7
+#: build/4.6.1/index.js:7
 msgid "WonderBlocks will no longer display."
 msgstr ""
 
-#: build/4.6.0/index.js:7
+#: build/4.6.1/index.js:7
 msgid "WonderBlocks provides a library of customizable block patterns and page templates."
 msgstr ""
 
-#: build/4.6.0/index.js:7
+#: build/4.6.1/index.js:7
 msgid "Bluehost WordPress Plugin"
 msgstr ""
 
-#: build/4.6.0/index.js:7
+#: build/4.6.1/index.js:7
 msgid "Quick links"
 msgstr ""
 
-#: build/4.6.0/index.js:7
+#: build/4.6.1/index.js:7
 msgid "Manage hosting"
 msgstr ""
 
-#: build/4.6.0/index.js:7
+#: build/4.6.1/index.js:7
 msgid "Write a blog post"
 msgstr ""
 
-#: build/4.6.0/index.js:7
+#: build/4.6.1/index.js:7
 msgid "Create a sale promotion"
 msgstr ""
 
-#: build/4.6.0/index.js:7
+#: build/4.6.1/index.js:7
 msgid "Manage common settings for your website"
 msgstr ""
 
-#: build/4.6.0/index.js:7
+#: build/4.6.1/index.js:7
 msgid "Features"
 msgstr ""
 
-#: build/4.6.0/index.js:7
+#: build/4.6.1/index.js:7
 msgid "Customize the available features as you manage your website."
 msgstr ""
 
-#: build/4.6.0/index.js:7
+#: build/4.6.1/index.js:7
 msgid "Enabled All auto-updates"
 msgstr ""
 
-#: build/4.6.0/index.js:7
+#: build/4.6.1/index.js:7
 msgid "Disabled All auto-updates"
 msgstr ""
 
-#: build/4.6.0/index.js:7
+#: build/4.6.1/index.js:7
 msgid "Everything will automatically update."
 msgstr ""
 
-#: build/4.6.0/index.js:7
+#: build/4.6.1/index.js:7
 msgid "Custom auto-update settings."
 msgstr ""
 
-#: build/4.6.0/index.js:7
+#: build/4.6.1/index.js:7
 msgid "Automatically keep all up to date"
 msgstr ""
 
-#: build/4.6.0/index.js:7
+#: build/4.6.1/index.js:7
 msgid "Enabled Core auto-updates"
 msgstr ""
 
-#: build/4.6.0/index.js:7
+#: build/4.6.1/index.js:7
 msgid "Disabled Core auto-updates"
 msgstr ""
 
-#: build/4.6.0/index.js:7
+#: build/4.6.1/index.js:7
 msgid "WordPress will automatically update."
 msgstr ""
 
-#: build/4.6.0/index.js:7
+#: build/4.6.1/index.js:7
 msgid "WordPress must be manually updated."
 msgstr ""
 
-#: build/4.6.0/index.js:7
+#: build/4.6.1/index.js:7
 msgid "WordPress Core"
 msgstr ""
 
-#: build/4.6.0/index.js:7
+#: build/4.6.1/index.js:7
 msgid "Enabled Plugins auto-update"
 msgstr ""
 
-#: build/4.6.0/index.js:7
+#: build/4.6.1/index.js:7
 msgid "Disabled Plugins auto-update"
 msgstr ""
 
-#: build/4.6.0/index.js:7
+#: build/4.6.1/index.js:7
 msgid "All plugins will automatically update."
 msgstr ""
 
-#: build/4.6.0/index.js:7
+#: build/4.6.1/index.js:7
 msgid "Each plugin must be manually updated."
 msgstr ""
 
-#: build/4.6.0/index.js:7
+#: build/4.6.1/index.js:7
 msgid "Plugins"
 msgstr ""
 
-#: build/4.6.0/index.js:7
+#: build/4.6.1/index.js:7
 msgid "Enabled Themes auto-update"
 msgstr ""
 
-#: build/4.6.0/index.js:7
+#: build/4.6.1/index.js:7
 msgid "Disabled Themes auto-update"
 msgstr ""
 
-#: build/4.6.0/index.js:7
+#: build/4.6.1/index.js:7
 msgid "All themes will automatically update."
 msgstr ""
 
-#: build/4.6.0/index.js:7
+#: build/4.6.1/index.js:7
 msgid "Each theme must be manually updated."
 msgstr ""
 
-#: build/4.6.0/index.js:7
+#: build/4.6.1/index.js:7
 msgid "Themes"
 msgstr ""
 
-#: build/4.6.0/index.js:7
+#: build/4.6.1/index.js:7
 msgid "Automatic Updates"
 msgstr ""
 
-#: build/4.6.0/index.js:7
+#: build/4.6.1/index.js:7
 msgid "Keeping automatic updates on ensures timely security fixes and the latest features."
 msgstr ""
 
 #. translators: %s: number of weeks. `The trash will automatically empty every ${numTrashWeeks} weeks.`
-#: build/4.6.0/index.js:9
+#: build/4.6.1/index.js:9
 #, js-format
 msgid "The trash will automatically empty every %s week."
 msgid_plural "The trash will automatically empty every %s weeks."
 msgstr[0] ""
 msgstr[1] ""
 
-#: build/4.6.0/index.js:9
+#: build/4.6.1/index.js:9
 msgid "Trash setting saved"
 msgstr ""
 
-#: build/4.6.0/index.js:9
+#: build/4.6.1/index.js:9
 msgid "Number of weeks in between emptying trash"
 msgstr ""
 
-#: build/4.6.0/index.js:9
+#: build/4.6.1/index.js:9
 msgid "Content Options"
 msgstr ""
 
-#: build/4.6.0/index.js:9
+#: build/4.6.1/index.js:9
 msgid "Controls for how often to empty the trash."
 msgstr ""
 
-#: build/4.6.0/index.js:9
+#: build/4.6.1/index.js:9
 msgid "Explore our featured collection of tools and services."
 msgstr ""
 
-#: build/4.6.0/index.js:9
+#: build/4.6.1/index.js:9
 msgid "Oops, there was an error loading the marketplace, please try again later."
 msgstr ""
 
-#: build/4.6.0/index.js:9
+#: build/4.6.1/index.js:9
 msgid "Sorry, no marketplace items. Please, try again later."
 msgstr ""
 
-#: build/4.6.0/index.js:9
+#: build/4.6.1/index.js:9
 msgid "Load More"
 msgstr ""
 
-#: build/4.6.0/index.js:9
+#: build/4.6.1/index.js:9
 msgid "Oops! Something Went Wrong"
 msgstr ""
 
-#: build/4.6.0/index.js:9
+#: build/4.6.1/index.js:9
 msgid "An error occurred while loading the content. Please try again later."
 msgstr ""
 
-#: build/4.6.0/index.js:9
+#: build/4.6.1/index.js:9
 msgid "Get Help & Resources"
 msgstr ""
 
-#: build/4.6.0/index.js:9
+#: build/4.6.1/index.js:9
 msgid "Get expert help, documentation, and tutorials to make the most of your WordPress site."
 msgstr ""
 
-#: build/4.6.0/index.js:9
+#: build/4.6.1/index.js:9
 msgid "Refer a friend and earn money"
 msgstr ""
 
-#: build/4.6.0/index.js:9
+#: build/4.6.1/index.js:9
 msgid "Unlock exclusive benefits with our referral program!"
 msgstr ""
 
-#: build/4.6.0/index.js:9
+#: build/4.6.1/index.js:9
 msgid "Start now"
 msgstr ""
 
-#: build/4.6.0/index.js:9
+#: build/4.6.1/index.js:9
 msgid "Phone"
 msgstr ""
 
-#: build/4.6.0/index.js:9
+#: build/4.6.1/index.js:9
 msgid "Call Us"
 msgstr ""
 
-#: build/4.6.0/index.js:9
+#: build/4.6.1/index.js:9
 msgid "Chat"
 msgstr ""
 
-#: build/4.6.0/index.js:9
+#: build/4.6.1/index.js:9
 msgid "Chat with one of our friendly Customer Care Specialists, as we are waiting to help. Open 24 hours - 7 days."
 msgstr ""
 
-#: build/4.6.0/index.js:9
+#: build/4.6.1/index.js:9
 msgid "Live Chat"
 msgstr ""
 
-#: build/4.6.0/index.js:9
+#: build/4.6.1/index.js:9
 msgid "Tweet"
 msgstr ""
 
-#: build/4.6.0/index.js:9
+#: build/4.6.1/index.js:9
 msgid "Find our team at @bluehost for updates on our products and support from our team."
 msgstr ""
 
-#: build/4.6.0/index.js:9
+#: build/4.6.1/index.js:9
 msgid "Tweet Us"
 msgstr ""
 
-#: build/4.6.0/index.js:9
+#: build/4.6.1/index.js:9
 msgid "YouTube"
 msgstr ""
 
-#: build/4.6.0/index.js:9
+#: build/4.6.1/index.js:9
 msgid "Find tutorials, answers, interviews and guides on our YouTube channel."
 msgstr ""
 
-#: build/4.6.0/index.js:9
+#: build/4.6.1/index.js:9
 msgid "Watch Now"
 msgstr ""
 
-#: build/4.6.0/index.js:9
+#: build/4.6.1/index.js:9
 msgid "Knowledge Base"
 msgstr ""
 
-#: build/4.6.0/index.js:9
+#: build/4.6.1/index.js:9
 msgid "Articles, guides, how-tos, instructions, and answers to our client's most frequently asked questions."
 msgstr ""
 
-#: build/4.6.0/index.js:9
+#: build/4.6.1/index.js:9
 msgid "Visit Knowledge Base"
 msgstr ""
 
-#: build/4.6.0/index.js:9
+#: build/4.6.1/index.js:9
 msgid "Resources"
 msgstr ""
 
-#: build/4.6.0/index.js:9
+#: build/4.6.1/index.js:9
 msgid "Boost your online knowledge and get ahead of the competition."
 msgstr ""
 
-#: build/4.6.0/index.js:9
+#: build/4.6.1/index.js:9
 msgid "Explore Resources"
 msgstr ""
 
-#: build/4.6.0/index.js:9
+#: build/4.6.1/index.js:9
 msgid "Events and Webinars"
 msgstr ""
 
-#: build/4.6.0/index.js:9
+#: build/4.6.1/index.js:9
 msgid "Team Bluehost organizes multiple webinars and events throughout the year. We are also sponsors and speak at most WordCamps across the world. Join us at our next event!"
 msgstr ""
 
-#: build/4.6.0/index.js:9
+#: build/4.6.1/index.js:9
 msgid "More Info"
 msgstr ""
 
-#: build/4.6.0/index.js:9
+#: build/4.6.1/index.js:9
 msgid "Bluehost Website"
 msgstr ""
 
-#: build/4.6.0/index.js:9
+#: build/4.6.1/index.js:9
 msgid "Not finding what you need? Visit our website for more information about our products and services."
 msgstr ""
 
-#: build/4.6.0/index.js:9
+#: build/4.6.1/index.js:9
 msgid "Go to Bluehost"
 msgstr ""
 
-#: build/4.6.0/index.js:9
+#: build/4.6.1/index.js:9
 msgid "Help"
 msgstr ""
 
-#: build/4.6.0/index.js:9
+#: build/4.6.1/index.js:9
 msgid "We are available 24/7 to help answer questions and solve your problems."
 msgstr ""
 
-#: build/4.6.0/index.js:9
+#: build/4.6.1/index.js:9
 msgid "Secret page to manage admin features and settings."
 msgstr ""
 
-#: build/4.6.0/index.js:9
+#: build/4.6.1/index.js:9
 msgid "Performance Enabled"
 msgstr ""
 
-#: build/4.6.0/index.js:9
+#: build/4.6.1/index.js:9
 msgid "Performance Disabled"
 msgstr ""
 
-#: build/4.6.0/index.js:9
+#: build/4.6.1/index.js:9
 msgid "You need to reload the page to manage Performance."
 msgstr ""
 
-#: build/4.6.0/index.js:9
+#: build/4.6.1/index.js:9
 msgid "Performance will no longer display."
 msgstr ""
 
-#: build/4.6.0/index.js:9
+#: build/4.6.1/index.js:9
 msgid "The performance feature provides improvements to loads faster for visitors including cache settings."
 msgstr ""
 
-#: build/4.6.0/index.js:9
+#: build/4.6.1/index.js:9
 msgid "Pro Design Live"
 msgstr ""
 
-#: build/4.6.0/index.js:9
+#: build/4.6.1/index.js:9
 msgid "We will help you build and grow your website and improve your skills in WordPress."
 msgstr ""
 
-#: build/4.6.0/index.js:9
+#: build/4.6.1/index.js:9
 msgid "Get Info"
 msgstr ""
 
-#: build/4.6.0/index.js:9
+#: build/4.6.1/index.js:9
 msgid "Welcome to Bluehost"
 msgstr ""
 
-#: build/4.6.0/index.js:9
+#: build/4.6.1/index.js:9
 msgid "We're very excited to get started with you!"
 msgstr ""
 
-#: build/4.6.0/index.js:9
+#: build/4.6.1/index.js:9
 msgid "Oh No, An Error!"
 msgstr ""
 
-#: build/4.6.0/index.js:9
+#: build/4.6.1/index.js:9
 msgid "You found an error, please refresh the page and try again!"
 msgstr ""
 
-#: build/4.6.0/index.js:9
+#: build/4.6.1/index.js:9
 msgid "If the error persists, please contact support."
 msgstr ""
 
-#: build/4.6.0/index.js:9
+#: build/4.6.1/index.js:9
 msgid "Error code:"
 msgstr ""

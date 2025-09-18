@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "7cacaff50bdb8fb11948f9a6245026a9",
+    "content-hash": "d5680ef6d931851ea326a8c355dfa53b",
     "packages": [
         {
             "name": "doctrine/inflector",
@@ -2095,16 +2095,16 @@
         },
         {
             "name": "newfold-labs/wp-module-next-steps",
-            "version": "1.1.1",
+            "version": "1.2.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/newfold-labs/wp-module-next-steps.git",
-                "reference": "0f7bf38335fd84e985d3a33963ae58799c13269a"
+                "reference": "6b686f1daab4c615bb320dba163e4b2cdccccf56"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/newfold-labs/wp-module-next-steps/zipball/0f7bf38335fd84e985d3a33963ae58799c13269a",
-                "reference": "0f7bf38335fd84e985d3a33963ae58799c13269a",
+                "url": "https://api.github.com/repos/newfold-labs/wp-module-next-steps/zipball/6b686f1daab4c615bb320dba163e4b2cdccccf56",
+                "reference": "6b686f1daab4c615bb320dba163e4b2cdccccf56",
                 "shasum": ""
             },
             "require": {
@@ -2125,6 +2125,11 @@
                 "files": [
                     "bootstrap.php"
                 ]
+            },
+            "autoload-dev": {
+                "psr-4": {
+                    "NewfoldLabs\\WP\\Module\\NextSteps\\Tests\\PHPUnit\\": "tests/phpunit"
+                }
             },
             "scripts": {
                 "fix": [
@@ -2183,10 +2188,10 @@
             ],
             "description": "A Newfold module to manage next steps for a customer in a brand plugin.",
             "support": {
-                "source": "https://github.com/newfold-labs/wp-module-next-steps/tree/1.1.1",
+                "source": "https://github.com/newfold-labs/wp-module-next-steps/tree/1.2.0",
                 "issues": "https://github.com/newfold-labs/wp-module-next-steps/issues"
             },
-            "time": "2025-08-14T22:30:28+00:00"
+            "time": "2025-09-16T15:18:01+00:00"
         },
         {
             "name": "newfold-labs/wp-module-notifications",

@@ -169,8 +169,13 @@ final class Admin {
 		echo '<!-- Bluehost -->' . PHP_EOL;
 
 		if ( version_compare( $wp_version, $plugin_data['RequiresWP'], '>=' ) ) {
-			echo '<div id="wppbh-app" class="wppbh wppbh_app"></div>' . PHP_EOL;
-			echo '<div id="nfd-portal-apps"><div id="nfd-next-steps-portal" /><div id="nfd-coming-soon-portal" /></div>' . PHP_EOL;
+			echo '<div id="wppbh-app" class="wppbh wppbh_app"></div>';
+			echo '<div id="nfd-portal-apps">'; // each portal app needs a root id added here
+			echo '<div id="nfd-next-steps-portal" />';
+			echo '<div id="nfd-coming-soon-portal" />';
+			echo '<div id="nfd-marketplace-portal" />';
+			echo '<div id="nfd-solutions-portal" />';
+			echo '</div>';
 		} else {
 			// fallback messaging for outdated WordPress
 			$appWhenOutdated = BLUEHOST_PLUGIN_DIR . '/inc/AppWhenOutdated.php';

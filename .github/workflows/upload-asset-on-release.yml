@@ -135,6 +135,25 @@ jobs:
         run: |
           gh release upload "$TAG_NAME" "$DIST/$PACKAGE.zip"
 
+      - name: Upload Zip to R2
+        env:
+          AWS_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
+          AWS_DEFAULT_REGION: auto
+          R2_BUCKET_NAME: ${{ secrets.R2_BUCKET_NAME }}
+          R2_ACCOUNT_ID: ${{ secrets.R2_ACCOUNT_ID }}
+          DIST: ${{ steps.workflow.outputs.DIST }}
+          PACKAGE: ${{ steps.workflow.outputs.PACKAGE }}
+          TAG_NAME: ${{ github.event.release.tag_name }}
+        run: |
+          sudo apt-get update && sudo apt-get install -y awscli
+          ENDPOINT="https://${R2_ACCOUNT_ID}.r2.cloudflarestorage.com"
+
+          echo "Uploading $PACKAGE.zip to R2 bucket: $R2_BUCKET_NAME"
+          aws s3 cp "$DIST/$PACKAGE.zip" \
+            "s3://${R2_BUCKET_NAME}/uploads/free/$PACKAGE.zip" \
+            --endpoint-url "$ENDPOINT"
+
       - name: Clear cache for release API
         if: ${{ github.repository == 'newfold-labs/wp-plugin-bluehost' }}
         run: |

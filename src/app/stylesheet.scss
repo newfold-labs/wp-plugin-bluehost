@@ -48,7 +48,7 @@ body.toplevel_page_bluehost {
     --wp-admin-theme-color-darker-10: var(--color-primary-dark);
     --wp-admin-theme-color-darker-20: var(--color-title);
     --wp-admin-border-width-focus: 2px;
-    --bluehostbrand-focus: inset 0 0 0 1px var(--color-white),0 0 0 var(--wp-admin-border-width-focus) var(--color-primary);
+    --bluehostbrand-focus: inset 0 0 0 1px var(--color-white), 0 0 0 var(--wp-admin-border-width-focus) var(--color-primary);
     background-color: var(--color-canvas);
 
     a {
@@ -60,9 +60,11 @@ body.toplevel_page_bluehost {
             right: -190px; // only when mobile admin menu open
         }
     }
+
     #wpwrap {
         background-color: var(--color-canvas);
     }
+
     #wpcontent {
         padding-left: 0 !important;
     }
@@ -71,6 +73,7 @@ body.toplevel_page_bluehost {
         li {
             transition: opacity .33s ease;
         }
+
         .hideme {
             max-height: 32px;
             opacity: 0;
@@ -85,6 +88,7 @@ body.toplevel_page_bluehost {
     #wpbody-content .update-nag {
         display: none;
     }
+
     #wpbody-content .newfold-notifications-wrapper .notice {
         display: block;
     }
@@ -97,6 +101,7 @@ body.toplevel_page_bluehost {
 }
 
 .wppbh {
+
     /* color: var(--color-text);
 
     h1, h2, h3, h4, h5, h6 {
@@ -119,13 +124,15 @@ body.toplevel_page_bluehost {
         color: var(--color-text);
     }
 
-    .components-button, .nfd-button {
+    .components-button,
+    .nfd-button {
         font-size: 15px;
         font-weight: 500;
         transition: all 0.25s ease;
         white-space: nowrap;
 
-        .dashicons, .dashicons-before:before {
+        .dashicons,
+        .dashicons-before:before {
             transition: all .25s ease;
         }
 
@@ -140,42 +147,48 @@ body.toplevel_page_bluehost {
             color: var(--color-white);
         }
 
-		&.is-secondary,
-		&.nfd-button--secondary,
-		&[variant="secondary"] {
-			border-color : var(--color-primary);
-			color : var(--color-primary);
-			background: none;
+        &.is-secondary,
+        &.nfd-button--secondary,
+        &[variant="secondary"] {
+            border-color: var(--color-primary);
+            color: var(--color-primary);
+            background: none;
 
-			&:hover {
-				color : var(--color-primary);
-			}
-		}
+            &:hover {
+                color: var(--color-primary);
+            }
+        }
 
 
         &:last-child {
-            padding-right: 1rem; /* <= WP 5.8 */
+            padding-right: 1rem;
+            /* <= WP 5.8 */
         }
 
         &.has-icon {
             padding-right: 1rem;
 
             .dashicon {
-                margin-right: 10px; /* <= WP 5.6 */
+                margin-right: 10px;
+                /* <= WP 5.6 */
             }
         }
     }
+
     a:focus {
         box-shadow: var(--bluehostbrand-focus);
         outline: 0;
     }
+
     .components-base-control__help,
     .components-radio-control__option label span span {
         color: var(--color-text);
         margin-top: 0.25rem;
     }
 }
-.wppbh, .wppbh * {
+
+.wppbh,
+.wppbh * {
     box-sizing: border-box;
 }
 
@@ -197,6 +210,7 @@ body.toplevel_page_bluehost {
     display: grid;
     gap: clamp(0.5rem, calc(1rem + 1vw), 2rem);
     padding: 0.5rem;
+
     &.col2,
     &.col3,
     &.col4 {
@@ -204,12 +218,14 @@ body.toplevel_page_bluehost {
             grid-template-columns: repeat(2, minmax(0, 1fr));
         }
     }
+
     &.col3,
     &.col4 {
         @media screen and (min-width: 800px) {
             grid-template-columns: repeat(3, minmax(0, 1fr));
         }
     }
+
     &.col4 {
         @media screen and (min-width: 1020px) {
             grid-template-columns: repeat(4, minmax(0, 1fr));
@@ -265,45 +281,47 @@ body.toplevel_page_bluehost {
 .newfold-notifications-wrapper {
 
     .newfold-notification {
-      max-width: 1600px;
-      margin: 0 auto .75rem;
-      transition: opacity .2s ease;
+        max-width: 1600px;
+        margin: 0 auto .75rem;
+        transition: opacity .2s ease;
 
-      &:first-of-type {
-        margin-top: 1.35rem;
-      }
+        &:first-of-type {
+            margin-top: 1.35rem;
+        }
 
-      &.is-dismissed {
-        opacity: 0;
-      }
+        &.is-dismissed {
+            opacity: 0;
+        }
     }
 
     .notice {
-      margin: 0;
+        margin: 0;
     }
 
-   }
+}
 
 .wppbh-animation-blink {
     animation: blink 2.5s ease 1s 3 normal forwards;
 }
 
 @keyframes blink {
-	0%,
-	50%,
-	100% {
-		background-color: initial;
-	}
 
-	25%,
-	75% {
-		background-color: #e9f1fd;
-	}
+    0%,
+    50%,
+    100% {
+        background-color: initial;
+    }
+
+    25%,
+    75% {
+        background-color: #e9f1fd;
+    }
 }
 
 .coming-soon-status {
     text-transform: uppercase;
 }
+
 .nfd-root .wppbh-home {
 
     .nfd-card-link:not(.nfd-card-link-mini) {
@@ -319,9 +337,11 @@ body.toplevel_page_bluehost {
         .nfd-button {
             transition: color 0.5s ease, background-color 0.5s ease;
         }
+
         p {
             color: var(--color-text);
         }
+
         svg:not(.nfd-bg-img) path {
             stroke-width: 1.5;
             stroke: var(--color-text);
@@ -468,28 +488,36 @@ body.toplevel_page_bluehost {
         margin-left: 0 !important;
     }
 
+    .nfd-marketplace-categories .nfd-select.nfd-marketing-page-category-selector .nfd-select__options {
+        width: auto !important;
+    }
+
     // TODO: generate these via tailwind config
     // These styles should not be needed but tailwind doesn't seem to be adding these
     .nfd-flex-col {
         flex-direction: column !important;
     }
+
     @media (min-width: 768px) {
         .md\:nfd-flex-row {
             flex-direction: row !important;
         }
+
         .md\:nfd-grid-cols-2 {
             grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
         }
     }
+
     @media (min-width: 1120px) {
-		.min-\[1120px\]\:nfd-grid-cols-2 {
-			grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
-		}
+        .min-\[1120px\]\:nfd-grid-cols-2 {
+            grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+        }
     }
+
     @media (min-width: 1400px) {
-		.min-\[1400px\]\:nfd-grid-cols-3 {
-			grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
-		}
+        .min-\[1400px\]\:nfd-grid-cols-3 {
+            grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+        }
     }
 }
 

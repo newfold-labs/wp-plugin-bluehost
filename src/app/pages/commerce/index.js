@@ -1,10 +1,11 @@
 import { Page } from '@newfold/ui-component-library';
 // component sourced from solutions module
 // import { default as NewfoldCommerce } from '@modules/wp-module-solutions/solutions-page-component';
-// import * as SolutionsPageComponent from '@modules/wp-module-solutions/build/solutions-page-component';
+import * as SolutionsPageComponent from '@modules/wp-module-solutions/build/solutions-page-component';
 
 
 const CommercePage = () => {
+	const NewfoldCommerce = SolutionsPageComponent.Content;
 
 	useEffect( () => {
 		// run when mounts
@@ -25,7 +26,8 @@ const CommercePage = () => {
 
 	return (
 		<Page className={ 'wppbh-app-commerce-page nfd-w-full' }>
-			<div id="nfd-solutions-portal" />
+			<div id="nfd-solutions-portal"></div> {/* this is the new commerce portal */}
+			<NewfoldCommerce /> {/* this is the old commerce page */}
 		</Page>
 	);
 };

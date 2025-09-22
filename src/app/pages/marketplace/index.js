@@ -72,7 +72,7 @@ const MarketplacePage = () => {
 
 	return (
 		<Page className={ 'wppbh-app-marketplace-page' }>
-			<div id="marketplace-portal" />
+			<NewfoldMarketplace constants={ moduleConstants } methods={ moduleMethods } />
 		</Page>
 	);
 };

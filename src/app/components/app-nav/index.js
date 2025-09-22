@@ -58,11 +58,20 @@ export const AppNavMenu = () => {
 	const actions = () => {
 		return (
 			<>
-				<Button className={ 'nfd-flex nfd-gap-2 nfd-mr-4' } href={ '#/ai-editor' }>
+				<Button
+					as={ 'a' }
+					className={ 'nfd-flex nfd-gap-2 nfd-mr-4' }
+					href={ '#/ai-editor' }
+				>
 					Go to AI Editor
 					<RectangleGroupIcon/>
 				</Button>
-				<Button variant={ 'secondary' } className={ 'nfd-flex nfd-gap-2 nfd-mr-4' } href={ '#/hosting-panel' }>
+				<Button
+					as={ 'a' }
+					className={ 'nfd-flex nfd-gap-2 nfd-mr-4' }
+					href={ '#/hosting-panel' }
+					variant={ 'secondary' }
+				>
 					Go to Hosting Panel
 					<ArrowUpRightIcon/>
 				</Button>

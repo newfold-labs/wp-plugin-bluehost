@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "1c4eb7fd03496d1e22d386c7a6d495ba",
+    "content-hash": "689795e099d923cc40c6f36d38a3afda",
     "packages": [
         {
             "name": "doctrine/inflector",
@@ -1904,16 +1904,16 @@
         },
         {
             "name": "newfold-labs/wp-module-marketplace",
-            "version": "3.0.4",
+            "version": "3.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/newfold-labs/wp-module-marketplace.git",
-                "reference": "e8f0b08dc6eced1ffa2619f9da81c29e89346b1f"
+                "reference": "431df7fc8db52a73f7749d03a403eb099914b5ae"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/newfold-labs/wp-module-marketplace/zipball/e8f0b08dc6eced1ffa2619f9da81c29e89346b1f",
-                "reference": "e8f0b08dc6eced1ffa2619f9da81c29e89346b1f",
+                "url": "https://api.github.com/repos/newfold-labs/wp-module-marketplace/zipball/431df7fc8db52a73f7749d03a403eb099914b5ae",
+                "reference": "431df7fc8db52a73f7749d03a403eb099914b5ae",
                 "shasum": ""
             },
             "require": {
@@ -1996,10 +1996,10 @@
             ],
             "description": "A module for rendering product data and interacting with the Hiive marketplace API.",
             "support": {
-                "source": "https://github.com/newfold-labs/wp-module-marketplace/tree/3.0.4",
+                "source": "https://github.com/newfold-labs/wp-module-marketplace/tree/3.1.0",
                 "issues": "https://github.com/newfold-labs/wp-module-marketplace/issues"
             },
-            "time": "2025-08-12T21:47:25+00:00"
+            "time": "2025-09-22T18:22:05+00:00"
         },
         {
             "name": "newfold-labs/wp-module-migration",

@@ -88,14 +88,16 @@ add_filter(
 	'newfold/coming-soon/filter/args',
 	function ( $args, $default_args ) {
 		$logo_svg = file_get_contents( BLUEHOST_PLUGIN_DIR . '/assets/svg/bluehost-logo.svg' );
-
+		$link_params = array(
+			'utm_source' => 'coming-soon-template',
+		);
 		$backlinks = array(
 			sprintf(
 			/* translators: %1$s starts the bold text, %2$s ends the bold text and adds a line break, %3$s is the link to the Domain Registration page, %4$s is the closing link for Domain Registration, %5$s wraps everything inside a span with text-center class */
 				esc_html__( '%1$sNeed a domain?%2$sCheck out our %3$sDomain Registration%4$s options.%5$s', 'wp-plugin-bluehost' ),
 				'<span class=\"text-center\"><b>',
 				'</b><br>',
-				'<a href=\"' . esc_url( buildLink( 'https://bluehost.com/domains' ) ) . '\">',
+				'<a href=\"' . esc_url( buildLink( 'https://www.bluehost.com/domains', $link_params ) ) . '\">',
 				'</a>',
 				'</span>',
 			),
@@ -112,13 +114,13 @@ add_filter(
 				),
 				'<span class=\"text-center\"><b>',
 				'</b><br>',
-				'<a href=\"' . esc_url( buildLink( 'https://bluehost.com/shared-hosting' ) ) . '\">',
+				'<a href=\"' . esc_url( buildLink( 'https://www.bluehost.com/shared-hosting', $link_params ) ) . '\">',
 				'</a>',
-				'<a href=\"' . esc_url( buildLink( 'https://bluehost.com/wordpress-hosting' ) ) . '\">',
+				'<a href=\"' . esc_url( buildLink( 'https://www.bluehost.com/wordpress-hosting', $link_params ) ) . '\">',
 				'</a>',
-				'<a href=\"' . esc_url( buildLink( 'https://bluehost.com/vps-hosting' ) ) . '\">',
+				'<a href=\"' . esc_url( buildLink( 'https://www.bluehost.com/vps-hosting', $link_params ) ) . '\">',
 				'</a>',
-				'<a href=\"' . esc_url( buildLink( 'https://bluehost.com/dedicated-hosting' ) ) . '\">',
+				'<a href=\"' . esc_url( buildLink( 'https://www.bluehost.com/dedicated-hosting', $link_params ) ) . '\">',
 				'</a>',
 				'</span>'
 			),
@@ -137,7 +139,7 @@ add_filter(
 					),
 					wp_kses( $logo_svg, KSES_ALLOWED_SVG_TAGS ),
 					'<span class=\"text-center\">',
-					'<a target=\"_blank\" href=\"' . esc_url( buildLink( 'https://bluehost.com/wordpress' ) ) . '\" class=\"bluehost\">',
+					'<a target=\"_blank\" href=\"' . esc_url( buildLink( 'https://www.bluehost.com/wordpress', $link_params ) ) . '\" class=\"bluehost\">',
 					'</a>',
 					'</span>',
 					$backlinks[ time() % 2 === 0 ]

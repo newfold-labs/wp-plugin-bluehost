@@ -102,6 +102,7 @@ export const AppRoutes = () => {
 			<Route path="/staging" element={ <StagingRedirect /> } />
 			<Route path="/performance" element={ <PerformanceRedirect /> } />
 			<Route path="/hosting" element={ <HostingRedirect /> } />
+			<Route path="/staging" element={ <StagingRedirect /> } />
 			<Route path="/" element={ <Home /> } />
 			<Route
 				path="*"
@@ -120,7 +121,7 @@ export const AppRoutes = () => {
 	);
 };
 
-const topRoutePaths = [ '/home', '/settings', '/commerce', '/marketplace' ];
+const topRoutePaths = [ '/home', '/settings', '/commerce', '/marketplace', '/staging', '/performance', '/hosting' ];
 const utilityRoutePaths = [ '/help' ];
 
 export const routes = [
@@ -200,6 +201,24 @@ export const routes = [
 			( await window.NewfoldFeatures.isEnabled( 'helpCenter' ) )
 				? HelpCenterAI
 				: false,
+	},
+	{
+		name: '/staging',
+		title: __( 'Staging', 'wp-plugin-bluehost' ),
+		Component: StagingRedirect,
+		condition: true,
+	},
+	{
+		name: '/performance',
+		title: __( 'Performance', 'wp-plugin-bluehost' ),
+		Component: PerformanceRedirect,
+		condition: true,
+	},
+	{
+		name: '/hosting',
+		title: __( 'Hosting', 'wp-plugin-bluehost' ),
+		Component: HostingRedirect,
+		condition: true,
 	},
 	{
 		name: '/admin',

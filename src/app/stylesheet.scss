@@ -561,6 +561,7 @@ body.toplevel_page_bluehost {
     }
 
     .nfd-details-icon {
+        flex-shrink: 0;
         font-size: 2rem;
         transform: rotate(180deg);
         width: 2rem;

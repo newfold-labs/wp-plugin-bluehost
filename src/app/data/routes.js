@@ -121,7 +121,7 @@ export const AppRoutes = () => {
 	);
 };
 
-const topRoutePaths = [ '/home', '/settings', '/commerce', '/marketplace', '/staging', '/performance', '/hosting' ];
+const topRoutePaths = [ '/home', '/commerce', '/marketplace', '/settings' ];
 const utilityRoutePaths = [ '/help' ];
 
 export const routes = [
@@ -191,6 +191,27 @@ export const routes = [
 		condition: true,
 	},
 	{
+		name: '/settings/settings',
+		title: __( 'Settings', 'wp-plugin-bluehost' ),
+		Component: Settings,
+		Icon: AdjustmentsHorizontalIcon,
+		condition: true,
+	},
+	{
+		name: '/settings/staging',
+		title: __( 'Staging', 'wp-plugin-bluehost' ),
+		Component: Settings,
+		Icon: AdjustmentsHorizontalIcon,
+		condition: true,
+	},
+	{
+		name: '/settings/performance',
+		title: __( 'Performance', 'wp-plugin-bluehost' ),
+		Component: Settings,
+		Icon: AdjustmentsHorizontalIcon,
+		condition: true,
+	},
+	{
 		name: '/help',
 		title: __( 'Help', 'wp-plugin-bluehost' ),
 		Component: Help,
@@ -201,24 +222,6 @@ export const routes = [
 			( await window.NewfoldFeatures.isEnabled( 'helpCenter' ) )
 				? HelpCenterAI
 				: false,
-	},
-	{
-		name: '/staging',
-		title: __( 'Staging', 'wp-plugin-bluehost' ),
-		Component: StagingRedirect,
-		condition: true,
-	},
-	{
-		name: '/performance',
-		title: __( 'Performance', 'wp-plugin-bluehost' ),
-		Component: PerformanceRedirect,
-		condition: true,
-	},
-	{
-		name: '/hosting',
-		title: __( 'Hosting', 'wp-plugin-bluehost' ),
-		Component: HostingRedirect,
-		condition: true,
 	},
 	{
 		name: '/admin',

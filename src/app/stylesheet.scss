@@ -524,3 +524,59 @@ body.toplevel_page_bluehost {
 #nfd-portal-apps {
     display: none;
 }
+
+.wppbh-app-settings-page {
+    min-width: 100%;
+}
+
+.settings-app-wrapper {
+    width: 100%;
+}
+
+.performance-fill {
+    .nfd-page {
+        &>div:first-child {
+            display: none;
+        }
+    }
+}
+
+.staging-fill {
+    .nfd-page .newfold-staging-header {
+        display: none;
+    }
+}
+
+.settings-details {}
+
+.nfd-root .nfd-details {
+
+    summary {
+        align-items: center;
+        cursor: pointer;
+        display: flex;
+        justify-content: space-between;
+        list-style: none;
+        padding: 2rem;
+    }
+
+    .nfd-details-icon {
+        font-size: 2rem;
+        transform: rotate(180deg);
+        width: 2rem;
+        transition: color 0.25s ease;
+    }
+
+    &[open] {
+        .nfd-details-icon {
+            transform: rotate(0deg);
+        }
+    }
+
+    &:hover,
+    &[open] {
+        .nfd-details-icon {
+            color: var(--color-primary);
+        }
+    }
+}

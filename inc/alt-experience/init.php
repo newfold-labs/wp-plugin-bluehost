@@ -30,8 +30,8 @@ add_action(
 	}
 );
 
-// TEMPORARILY DISABLED DUE TO FATAL ERRORS RELATED TO THE COMPOSER AUTOLOADER NOT BEING AVAILABLE
 /*
+// TEMPORARILY DISABLED DUE TO FATAL ERRORS RELATED TO THE COMPOSER AUTOLOADER NOT BEING AVAILABLE
 $bust_mode_path = BLUEHOST_PLUGIN_DIR . 'vendor/newfold-labs/wp-module-performance/includes/BurstSafetyMode/init.php';
 if ( file_exists( $bust_mode_path ) ) {
 	require_once $bust_mode_path;

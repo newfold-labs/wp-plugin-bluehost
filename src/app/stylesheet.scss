@@ -581,3 +581,18 @@ body.toplevel_page_bluehost {
         }
     }
 }
+
+// Nav fixes
+.nfd-root .wppbh-app-body header nav>svg {
+    flex-shrink: 0;
+}
+
+@media screen and (max-width: 600px) {
+    .nfd-root .wppbh-app-body header nav {
+        top: 46px !important;
+
+        .nfd-button {
+            display: none;
+        }
+    }
+}

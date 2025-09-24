@@ -66,7 +66,7 @@ const Settings = () => {
 
 	return (
 		<Page title="Settings" className={ 'wppbh-app-settings-page' }>
-			<Container id="nfd-performance"className={ 'nfd-settings-app-wrapper nfd-performance' }>
+			<Container id="nfd-performance" className={ 'nfd-settings-app-wrapper nfd-performance' }>
 				<details className="nfd-details settings-app-wrapper performance-details">
 					<summary>
 						<div

@@ -87,11 +87,11 @@ add_action(
 add_filter(
 	'newfold/coming-soon/filter/args',
 	function ( $args, $default_args ) {
-		$logo_svg = file_get_contents( BLUEHOST_PLUGIN_DIR . '/assets/svg/bluehost-logo.svg' );
+		$logo_svg    = file_get_contents( BLUEHOST_PLUGIN_DIR . '/assets/svg/bluehost-logo.svg' );
 		$link_params = array(
 			'utm_source' => 'coming-soon-template',
 		);
-		$backlinks = array(
+		$backlinks   = array(
 			sprintf(
 			/* translators: %1$s starts the bold text, %2$s ends the bold text and adds a line break, %3$s is the link to the Domain Registration page, %4$s is the closing link for Domain Registration, %5$s wraps everything inside a span with text-center class */
 				esc_html__( '%1$sNeed a domain?%2$sCheck out our %3$sDomain Registration%4$s options.%5$s', 'wp-plugin-bluehost' ),

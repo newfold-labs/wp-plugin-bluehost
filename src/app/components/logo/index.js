@@ -16,7 +16,7 @@ const Mark = ({variant}) => {
 	};
 	return (
 		<Button
-			icon={ isIcon ? <BluehostIcon /> : <Brand className="wppbh-logo nfd-w-full nfd-h-auto"/> }
+			icon={ isIcon ? <BluehostIcon width={ 35 } height={ 35 }/> : <Brand className="wppbh-logo nfd-w-full nfd-h-auto"/> }
 			style={ { width: isIcon ? '35px' : '160px', height: 'auto' } }
 			onMouseUp={ defocus }
 			className="logo-mark nfd-p-0"

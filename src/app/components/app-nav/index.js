@@ -14,9 +14,10 @@ import { RectangleGroupIcon, ArrowUpRightIcon } from '@heroicons/react/24/outlin
 import Logo from '../logo';
 
 export const AppNavHeader = () => {
+	const { mode } = AppBarNavigation.AppBar.useContext();
 	return (
 		<AppBarNavigation.AppBar.Item as={ 'div' }>
-			<Logo variant={ 'icon' }/>
+			<Logo variant={ mode === 'inline' ? 'icon' : 'wordmark' }/>
 		</AppBarNavigation.AppBar.Item>
 	);
 };

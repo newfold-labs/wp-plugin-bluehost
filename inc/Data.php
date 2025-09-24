@@ -30,6 +30,9 @@ final class Data {
 				'assets'  => BLUEHOST_PLUGIN_URL . 'assets/',
 				'brand'   => $nfd_module_container->plugin()->brand,
 			),
+			'wordpress' => array(
+				'isBlockTheme' => function_exists( 'wp_is_block_theme' ) ? wp_is_block_theme() : false,
+			),
 		);
 
 		if ( class_exists( 'NewfoldLabs\WP\Module\Solutions\Solutions' ) ) {

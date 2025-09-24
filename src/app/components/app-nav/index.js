@@ -7,6 +7,8 @@ import { Button, AppBarNavigation, useNavigationContext } from '@newfold/ui-comp
 import { default as NewfoldNotifications } from '@modules/wp-module-notifications/assets/js/components/notifications/';
 import { NavLink, useLocation } from 'react-router-dom';
 import classnames from 'classnames';
+import { getPlatformPathUrl } from 'App/util/helpers';
+import { getEditorUrl } from 'App/util/themeUtils';
 import { topRoutes, utilityRoutes } from 'App/data/routes';
 import { RectangleGroupIcon, ArrowUpRightIcon } from '@heroicons/react/24/outline';
 import Logo from '../logo';
@@ -46,7 +48,14 @@ export const AppNavMenu = () => {
 										'nfd-px-0 nfd-font-bold nfd-bg-transparent group-[.nfd-appbar-item]:!nfd-bg-transparent  hover:!nfd-bg-black': 'collapsed' === mode,
 									}
 								) }
-								onClick={ () => setOpen( false ) }
+								onClick={ () => {
+									// set open to false
+									setOpen( false );
+									// run any actions assigned to page
+									( page.action && page.action instanceof Function ) ? 
+									page.action :
+									null;
+								} }
 							/>
 						)
 					}
@@ -61,7 +70,7 @@ export const AppNavMenu = () => {
 				<Button
 					as={ 'a' }
 					className={ 'nfd-flex nfd-gap-2 nfd-mr-4' }
-					href={ '#/ai-editor' }
+					href={ getEditorUrl( 'edit' ) }
 				>
 					Go to AI Editor
 					<RectangleGroupIcon/>
@@ -69,7 +78,12 @@ export const AppNavMenu = () => {
 				<Button
 					as={ 'a' }
 					className={ 'nfd-flex nfd-gap-2 nfd-mr-4' }
-					href={ '#/hosting-panel' }
+					href={ window.NewfoldRuntime.linkTracker.addUtmParams(
+						getPlatformPathUrl(
+							'hosting/details',
+							'app/#/sites'
+						)
+					) }
 					variant={ 'secondary' }
 				>
 					Go to Hosting Panel

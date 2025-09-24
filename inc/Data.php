@@ -24,7 +24,7 @@ final class Data {
 		global $nfd_module_container;
 
 		$runtime = array(
-			'plugin' => array(
+			'plugin'    => array(
 				'url'     => BLUEHOST_BUILD_URL,
 				'version' => BLUEHOST_PLUGIN_VERSION,
 				'assets'  => BLUEHOST_PLUGIN_URL . 'assets/',

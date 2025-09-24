@@ -180,7 +180,7 @@ final class Admin {
 			echo '<div id="wppbh-app" class="wppbh wppbh_app"></div>';
 			echo '<div id="nfd-portal-apps" class="nfd-portal-apps">'; // each portal app needs a root id added here
 			foreach ( $portal_apps as $portal_app ) {
-				echo '<div id="' . $portal_app . '"></div>';
+				echo '<div id="' . esc_attr( $portal_app ) . '"></div>';
 			}
 			echo '</div>';
 		} else {

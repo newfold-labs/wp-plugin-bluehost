@@ -12,6 +12,7 @@ import { getEditorUrl } from 'App/util/themeUtils';
 import { topRoutes, utilityRoutes } from 'App/data/routes';
 import { RectangleGroupIcon, ArrowUpRightIcon } from '@heroicons/react/24/outline';
 import Logo from '../logo';
+import { handleHelpLinksClick } from 'App/util/helpers';
 
 export const AppNavHeader = () => {
 	const { mode } = AppBarNavigation.AppBar.useContext();
@@ -53,9 +54,9 @@ export const AppNavMenu = () => {
 									// set open to false
 									setOpen( false );
 									// run any actions assigned to page
-									( page.action && page.action instanceof Function ) ? 
-									page.action :
-									null;
+									// ( page.action && page.action instanceof Function ) ? 
+									// page.action :
+									// null;
 								} }
 							/>
 						)
@@ -181,8 +182,7 @@ export const AppBarNav = () => {
 
 export const AppNav = () => {
 	const isLargeViewport = useViewportMatch( 'medium' );
-
-	// TODO: implement mobile menu
-	// return <>{ ( isLargeViewport && <SideNav /> ) || <MobileNav /> }</>;
+	handleHelpLinksClick();
+	
 	return <AppBarNav/>;
 };

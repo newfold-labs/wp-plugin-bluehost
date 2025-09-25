@@ -10,25 +10,16 @@ const Home = () => {
 	useEffect( () => {
 		// run when mounts
 		const nextStepsPortal = document.getElementById( 'next-steps-portal' );
-		const comingSoonPortal =
-			document.getElementById( 'coming-soon-portal' );
 		if ( nextStepsPortal ) {
 			window.NFDPortalRegistry.registerPortal(
 				'next-steps',
 				nextStepsPortal
 			);
 		}
-		if ( comingSoonPortal ) {
-			window.NFDPortalRegistry.registerPortal(
-				'coming-soon',
-				comingSoonPortal
-			);
-		}
 
 		// run when unmounts
 		return () => {
 			window.NFDPortalRegistry.unregisterPortal( 'next-steps' );
-			window.NFDPortalRegistry.unregisterPortal( 'coming-soon' );
 		};
 	}, [] );
 	// TODO: retrieve dynamically the store kind.

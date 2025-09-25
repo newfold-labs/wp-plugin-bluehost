@@ -17,6 +17,7 @@ const Settings = () => {
 		// run when mounts
 		const stagingPortal = document.getElementById( 'staging-portal' );
 		const performancePortal = document.getElementById( 'performance-portal' );
+		// const comingSoonPortal = document.getElementById( 'coming-soon-portal' );
 		if ( stagingPortal ) {
 			window.NFDPortalRegistry.registerPortal(
 				'staging',
@@ -29,11 +30,18 @@ const Settings = () => {
 				performancePortal
 			);
 		}
+		// if ( comingSoonPortal ) {
+		// 	window.NFDPortalRegistry.registerPortal(
+		// 		'coming-soon',
+		// 		comingSoonPortal
+		// 	);
+		// }
 
 		// run when unmounts
 		return () => {
 			window.NFDPortalRegistry.unregisterPortal( 'staging' );
 			window.NFDPortalRegistry.unregisterPortal( 'performance' );
+			// window.NFDPortalRegistry.unregisterPortal( 'coming-soon' );
 		};
 	}, [] );
 

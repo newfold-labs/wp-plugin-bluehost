@@ -176,7 +176,6 @@ const portalRegistry = ( () => {
 			// Call listeners waiting on this portal
 			if ( listeners[ name ] ) {
 				listeners[ name ].forEach( ( cb ) => cb( element ) );
-				delete listeners[ name ];
 			}
 		},
 

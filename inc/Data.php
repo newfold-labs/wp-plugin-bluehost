@@ -24,14 +24,11 @@ final class Data {
 		global $nfd_module_container;
 
 		$runtime = array(
-			'plugin'    => array(
+			'plugin' => array(
 				'url'     => BLUEHOST_BUILD_URL,
 				'version' => BLUEHOST_PLUGIN_VERSION,
 				'assets'  => BLUEHOST_PLUGIN_URL . 'assets/',
 				'brand'   => $nfd_module_container->plugin()->brand,
-			),
-			'wordpress' => array(
-				'isBlockTheme' => function_exists( 'wp_is_block_theme' ) ? wp_is_block_theme() : false,
 			),
 		);
 

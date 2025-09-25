@@ -14,10 +14,10 @@ describe( 'Home Page', { testIsolation: true }, function () {
 		cy.a11y( '.wppbh-app-body' );
 	} );
 
-	it.skip( 'Home Page Section and Cards all exist', () => {
+	it( 'Home Page Section and Cards all exist', () => {
 		// Welcome text
 		cy.get( '.wppbh-app-body' )
-			.contains( 'h1' )
+			.contains( 'h1', 'Welcome to Bluehost' )
 			.scrollIntoView()
 			.should( 'be.visible' );
 

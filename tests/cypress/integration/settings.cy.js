@@ -6,7 +6,7 @@ describe( 'Settings Page', { testIsolation: true }, function () {
 		cy.visit(
 			'/wp-admin/admin.php?page=' +
 				Cypress.env( 'pluginId' ) +
-				'#/settings/settings'
+				'#/settings'
 		);
 	} );
 

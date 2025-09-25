@@ -1,11 +1,9 @@
 import { Button } from '@wordpress/components';
 import { Title } from '@newfold/ui-component-library';
 import { ReactComponent as Brand } from 'Assets/svg/bluehost-logo.svg';
-import { BluehostIcon } from 'App/components/icons';
 import { delay } from 'lodash';
 
-const Mark = ({variant}) => {
-	const isIcon = 'icon' === variant;
+const Mark = () => {
 	const defocus = () => {
 		const button = document.querySelector( '.logo-mark' );
 		delay( () => {
@@ -16,8 +14,8 @@ const Mark = ({variant}) => {
 	};
 	return (
 		<Button
-			icon={ isIcon ? <BluehostIcon width={ 35 } height={ 35 }/> : <Brand className="wppbh-logo nfd-w-full nfd-h-auto"/> }
-			style={ { width: isIcon ? '35px' : '160px', height: 'auto' } }
+			icon={ <Brand className="wppbh-logo nfd-w-full nfd-h-auto" /> }
+			style={ { width: '160px', height: 'auto' } }
 			onMouseUp={ defocus }
 			className="logo-mark nfd-p-0"
 			href="#/home"
@@ -26,10 +24,10 @@ const Mark = ({variant}) => {
 	);
 };
 
-const Logo = ( { variant = 'wordmark' } ) => {
+const Logo = () => {
 	return (
-		<div className="wppbh-logo-wrap nfd-flex nfd-items-center nfd-justify-center">
-			<Mark variant={ variant }/>
+		<div className="wppbh-logo-wrap">
+			<Mark />
 			<Title as="h2" className="nfd-sr-only">
 				{ __( 'Bluehost WordPress Plugin', 'wp-plugin-bluehost' ) }
 			</Title>

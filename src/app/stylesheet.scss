@@ -592,7 +592,11 @@ body.toplevel_page_bluehost {
         top: 46px !important;
 
         .nfd-button {
-            display: none;
+            display: none !important;
         }
     }
+}
+
+.nfd-appbar-nav-dialog {
+    pointer-events: none !important;
 }

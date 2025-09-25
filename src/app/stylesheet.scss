@@ -623,3 +623,7 @@ body.toplevel_page_bluehost {
 .nfd-root .nfd-appbar-item .focus\:nfd-outline-none:focus-visible {
     outline-color: var(--color-primary) !important;
 }
+
+.nfd-validation-input button[data-id="nfd-marketing-page-category-selector"] .nfd-select__button-label {
+    padding-right: 2rem;
+}

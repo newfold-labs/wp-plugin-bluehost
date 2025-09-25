@@ -12,14 +12,11 @@ import { getEditorUrl } from 'App/util/themeUtils';
 import { topRoutes, utilityRoutes } from 'App/data/routes';
 import { RectangleGroupIcon, ArrowUpRightIcon } from '@heroicons/react/24/outline';
 import Logo from '../logo';
-import { handleHelpLinksClick } from 'App/util/helpers';
 
 export const AppNavHeader = () => {
 	const { mode } = AppBarNavigation.AppBar.useContext();
 	return (
-		<AppBarNavigation.AppBar.Item as={ 'div' }>
-			<Logo variant={ mode === 'inline' ? 'icon' : 'wordmark' }/>
-		</AppBarNavigation.AppBar.Item>
+		<Logo variant={ mode === 'inline' ? 'icon' : 'wordmark' }/>
 	);
 };
 
@@ -42,7 +39,6 @@ export const AppNavMenu = () => {
 								key={ page.name }
 								label={ page.title }
 								href={ `#${ page.name }` }
-								// action={ page.action }
 								className={ classnames(
 									'group-[.nfd-appbar-item--active]:nfd-text-[var(--color-primary)]',
 									{
@@ -50,13 +46,13 @@ export const AppNavMenu = () => {
 										'nfd-px-0 nfd-font-bold nfd-bg-transparent group-[.nfd-appbar-item]:!nfd-bg-transparent  hover:!nfd-bg-black': 'collapsed' === mode,
 									}
 								) }
-								onClick={ () => {
+								onClick={ ( e) => {
 									// set open to false
 									setOpen( false );
 									// run any actions assigned to page
-									// ( page.action && page.action instanceof Function ) ? 
-									// page.action :
-									// null;
+									( !! page.action && page.action instanceof Function ) ? 
+									page.action( e ) :
+									null;
 								} }
 							/>
 						)
@@ -123,7 +119,6 @@ export const AppNavMenu = () => {
 		if ( location?.pathname ) {
 			setActivePath( `#${ location.pathname }` );
 		}
-
 		SubMenusManager();
 		document.onclick = SubMenusManager;
 	}, [ location ] );
@@ -182,7 +177,5 @@ export const AppBarNav = () => {
 
 export const AppNav = () => {
 	const isLargeViewport = useViewportMatch( 'medium' );
-	handleHelpLinksClick();
-	
 	return <AppBarNav/>;
 };

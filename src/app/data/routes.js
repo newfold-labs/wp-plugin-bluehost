@@ -217,11 +217,15 @@ export const routes = [
 		Component: Help,
 		Icon: HelpIcon,
 		condition: true,
-		action:
-			NewfoldRuntime.hasCapability( 'canAccessHelpCenter' ) &&
-			( await window.NewfoldFeatures.isEnabled( 'helpCenter' ) )
-				? HelpCenterAI
-				: false,
+		action: function ( e ) {
+			if (
+				NewfoldRuntime.hasCapability( 'canAccessHelpCenter' ) &&
+				window.NewfoldFeatures.isEnabled( 'helpCenter' )
+			) {
+				e.preventDefault();
+				window.newfoldEmbeddedHelp.toggleNFDLaunchedEmbeddedHelp();
+			}
+		},
 	},
 	{
 		name: '/admin',

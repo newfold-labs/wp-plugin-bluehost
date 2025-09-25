@@ -597,6 +597,29 @@ body.toplevel_page_bluehost {
     }
 }
 
-.nfd-appbar-nav-dialog {
+.nfd-pointer-events-none+.nfd-appbar-nav-dialog {
     pointer-events: none !important;
+}
+
+// Logo styles
+.nfd-root .wppbh-app-body .wppbh-logo-wrap {
+    padding: 0 1rem;
+
+    // adjust focus styles
+    .components-button.logo-mark {
+
+        &:focus:not(:disabled) {
+            box-shadow: none !important;
+            outline: 0;
+        }
+
+        &:focus-visible {
+            box-shadow: var(--bluehostbrand-focus);
+        }
+    }
+}
+
+// give focus styles to appbar items with keyboard focus
+.nfd-root .nfd-appbar-item .focus\:nfd-outline-none:focus-visible {
+    outline-color: var(--color-primary) !important;
 }

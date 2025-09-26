@@ -1,4 +1,5 @@
 import { Page } from '@newfold/ui-component-library';
+import { useEffect } from 'react';
 // component sourced from solutions module
 // import { default as NewfoldCommerce } from '@modules/wp-module-solutions/solutions-page-component';
 import * as SolutionsPageComponent from '@modules/wp-module-solutions/build/solutions-page-component';

@@ -102,7 +102,6 @@ export const AppRoutes = () => {
 			<Route path="/staging" element={ <StagingRedirect /> } />
 			<Route path="/performance" element={ <PerformanceRedirect /> } />
 			<Route path="/hosting" element={ <HostingRedirect /> } />
-			<Route path="/staging" element={ <StagingRedirect /> } />
 			<Route path="/" element={ <Home /> } />
 			<Route
 				path="*"

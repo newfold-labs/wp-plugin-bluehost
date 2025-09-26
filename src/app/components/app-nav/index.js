@@ -40,7 +40,7 @@ export const AppNavMenu = () => {
 								label={ page.title }
 								href={ `#${ page.name }` }
 								className={ classnames(
-									'group-[.nfd-appbar-item--active]:nfd-text-[var(--color-primary)]',
+									'group-[.nfd-appbar-item--active]:nfd-text-[var(--color-primary)] nfd-whitespace-nowrap',
 									{
 										'nfd-px-4 group-[.nfd-appbar-item--active]:nfd-bg-[#DBF1FC80] group-[.nfd-appbar-item--active]:nfd-font-bold': 'inline' === mode,
 										'nfd-px-0 nfd-font-bold nfd-bg-transparent group-[.nfd-appbar-item]:!nfd-bg-transparent  hover:!nfd-bg-black': 'collapsed' === mode,
@@ -154,7 +154,7 @@ export const AppBarNav = () => {
 
 	return (
 		<>
-			<AppBarNavigation.AppBar position={ 'absolute' } className={ 'nfd-pr-2' } collapseAt={ 'l' }>
+			<AppBarNavigation.AppBar position={ 'absolute' } className={ 'nfd-pr-2' } collapseAt={ 880 }>
 				<AppNavHeader/>
 				<AppNavMenu/>
 			</AppBarNavigation.AppBar>

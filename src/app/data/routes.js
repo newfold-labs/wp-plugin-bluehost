@@ -185,7 +185,7 @@ export const routes = [
 	},
 	{
 		name: '/settings',
-		title: __( 'Settings', 'wp-plugin-bluehost' ),
+		title: __( 'Manage WordPress', 'wp-plugin-bluehost' ),
 		Component: Settings,
 		Icon: AdjustmentsHorizontalIcon,
 		condition: true,

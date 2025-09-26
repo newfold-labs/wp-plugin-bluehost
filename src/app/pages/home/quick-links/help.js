@@ -13,7 +13,10 @@ export default () => (
 			</Title>
 		</div>
 		{ __( 'Master WordPress with help from our AI assistant.', 'wp-plugin-bluehost' ) }
-		<a className={ 'nfd-mt-0 nfd-font-semibold nfd-no-underline nfd-text-[#196BDE]' }>
+		<a
+			href={ '#/help' }
+			className={ 'nfd-mt-0 nfd-font-semibold nfd-no-underline nfd-text-[#196BDE]' }
+		>
 			{ __( 'Launch our AI Help', 'wp-plugin-bluehost' ) }
 		</a>
 	</Card>

@@ -1,6 +1,7 @@
 import { Card, Title } from '@newfold/ui-component-library';
 import { __ } from '@wordpress/i18n';
-import { AiEditorIcon } from "../../../components/icons";
+import { AiEditorIcon } from "App/components/icons";
+import { getEditorUrl } from 'App/util/themeUtils';
 
 export default () => (
 	<Card className={ 'nfd-quick-links-card nfd-quick-links-ai-editor-card nfd-flex nfd-flex-col nfd-gap-4 nfd-border nfd-border-[#D5D5D5] nfd-shadow-none' }>
@@ -13,7 +14,10 @@ export default () => (
 			</Title>
 		</div>
 		{ __( 'Say hello to effortless site building with a wide library of 250+ blocks', 'wp-plugin-bluehost' ) }
-		<a className={ 'nfd-mt-0 nfd-font-semibold nfd-no-underline nfd-text-[#196BDE]' }>
+		<a
+			href={ getEditorUrl( 'edit' ) }
+			className={ 'nfd-mt-0 nfd-font-semibold nfd-no-underline nfd-text-[#196BDE]' }
+		>
 			{ __( 'Launch the Editor', 'wp-plugin-bluehost' ) }
 		</a>
 	</Card>

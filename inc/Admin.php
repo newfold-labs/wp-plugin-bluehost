@@ -165,12 +165,24 @@ final class Admin {
 			require_once ABSPATH . 'wp-admin/includes/plugin.php';
 		}
 		$plugin_data = get_plugin_data( BLUEHOST_PLUGIN_FILE );
+		$portal_apps = array(
+			'nfd-coming-soon-portal',
+			// 'nfd-marketplace-portal',
+			'nfd-next-steps-portal',
+			'nfd-performance-portal',
+			// 'nfd-solutions-portal',
+			'nfd-staging-portal',
+		);
 
 		echo '<!-- Bluehost -->' . PHP_EOL;
 
 		if ( version_compare( $wp_version, $plugin_data['RequiresWP'], '>=' ) ) {
-			echo '<div id="wppbh-app" class="wppbh wppbh_app"></div>' . PHP_EOL;
-			echo '<div id="nfd-portal-apps"><div id="nfd-next-steps-portal" /><div id="nfd-coming-soon-portal" /></div>' . PHP_EOL;
+			echo '<div id="wppbh-app" class="wppbh wppbh_app"></div>';
+			echo '<div id="nfd-portal-apps" class="nfd-portal-apps">'; // each portal app needs a root id added here
+			foreach ( $portal_apps as $portal_app ) {
+				echo '<div id="' . esc_attr( $portal_app ) . '"></div>';
+			}
+			echo '</div>';
 		} else {
 			// fallback messaging for outdated WordPress
 			$appWhenOutdated = BLUEHOST_PLUGIN_DIR . '/inc/AppWhenOutdated.php';

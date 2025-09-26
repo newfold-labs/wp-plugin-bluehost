@@ -170,7 +170,7 @@ final class Admin {
 			// 'nfd-marketplace-portal',
 			'nfd-next-steps-portal',
 			'nfd-performance-portal',
-			'nfd-solutions-portal',
+			// 'nfd-solutions-portal',
 			'nfd-staging-portal',
 		);
 

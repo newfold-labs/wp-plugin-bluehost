@@ -70,7 +70,7 @@ export const AppNavMenu = () => {
 					className={ 'nfd-flex nfd-gap-2 nfd-mr-4' }
 					href={ getEditorUrl( 'edit' ) }
 				>
-					Go to AI Editor
+					AI Editor
 					<RectangleGroupIcon/>
 				</Button>
 				<Button
@@ -84,7 +84,7 @@ export const AppNavMenu = () => {
 					) }
 					variant={ 'secondary' }
 				>
-					Go to Hosting Panel
+					Hosting Panel
 					<ArrowUpRightIcon/>
 				</Button>
 			</>
@@ -154,7 +154,7 @@ export const AppBarNav = () => {
 
 	return (
 		<>
-			<AppBarNavigation.AppBar position={ 'absolute' } className={ 'nfd-pr-2' } collapseAt={ 1200 }>
+			<AppBarNavigation.AppBar position={ 'absolute' } className={ 'nfd-pr-2' } collapseAt={ 'l' }>
 				<AppNavHeader/>
 				<AppNavMenu/>
 			</AppBarNavigation.AppBar>

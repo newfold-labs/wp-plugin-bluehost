@@ -42,7 +42,7 @@ export const AppNavMenu = () => {
 								className={ classnames(
 									'group-[.nfd-appbar-item--active]:nfd-text-[var(--color-primary)]',
 									{
-										'nfd-px-8 group-[.nfd-appbar-item--active]:nfd-bg-[#DBF1FC80] group-[.nfd-appbar-item--active]:nfd-font-bold': 'inline' === mode,
+										'nfd-px-4 group-[.nfd-appbar-item--active]:nfd-bg-[#DBF1FC80] group-[.nfd-appbar-item--active]:nfd-font-bold': 'inline' === mode,
 										'nfd-px-0 nfd-font-bold nfd-bg-transparent group-[.nfd-appbar-item]:!nfd-bg-transparent  hover:!nfd-bg-black': 'collapsed' === mode,
 									}
 								) }

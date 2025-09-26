@@ -42,13 +42,13 @@ msgid "Please install the Bluehost Plugin dependencies."
 msgstr ""
 
 #. translators: %1$s starts the bold text, %2$s ends the bold text and adds a line break, %3$s is the link to the Domain Registration page, %4$s is the closing link for Domain Registration, %5$s wraps everything inside a span with text-center class
-#: bootstrap.php:95
+#: bootstrap.php:97
 #, php-format
 msgid "%1$sNeed a domain?%2$sCheck out our %3$sDomain Registration%4$s options.%5$s"
 msgstr ""
 
 #. translators: %1$s starts the bold text, %2$s ends the bold text and adds a line break, %3$s is the link to Shared Hosting, %4$s is the closing link for Shared Hosting, %5$s is the link to WordPress Hosting, %6$s is the closing link for WordPress Hosting, %7$s is the link to VPS Hosting, %8$s is the closing link for VPS Hosting, %9$s is the link to Dedicated Hosting, %10$s is the closing link for Dedicated Hosting, %11$s wraps everything inside a span with text-center class
-#: bootstrap.php:104
+#: bootstrap.php:106
 #, php-format
 msgid ""
 "%1$sDiscover our hosting solutions:%2$s\n"
@@ -60,7 +60,7 @@ msgid ""
 msgstr ""
 
 #. translators: %1$s is the logo SVG, %2$s wraps the text, %3$s is the link start for Bluehost WordPress Hosting, %4$s is the closing anchor tag, %5$s wraps the text again, %6$s contains backlinks
-#: bootstrap.php:132
+#: bootstrap.php:134
 #, php-format
 msgid ""
 "%1$s\n"
@@ -69,33 +69,33 @@ msgid ""
 msgstr ""
 
 #. translators: %s: Blog name
-#: bootstrap.php:147
+#: bootstrap.php:149
 #, php-format
 msgid "%s &mdash; Coming Soon"
 msgstr ""
 
-#: bootstrap.php:150
+#: bootstrap.php:152
 msgid "Coming Soon Active"
 msgstr ""
 
 #. translators: %1$s is replaced with the opening link tag to preview the page, and %2$s is replaced with the closing link tag, %3$s is the opening link tag, %4$s is the closing link tag.
-#: bootstrap.php:153
+#: bootstrap.php:155
 #, php-format
 msgid "Your site is currently displaying a %1$scoming soon page%2$s. Once you are ready, %3$slaunch your site%4$s."
 msgstr ""
 
-#: bootstrap.php:154
+#: bootstrap.php:156
 msgid "Preview the coming soon landing page"
 msgstr ""
 
 #: inc/Admin.php:74
-#: inc/Admin.php:288
+#: inc/Admin.php:300
 #: build/4.6.2/index.js:7
 msgid "Home"
 msgstr ""
 
 #: inc/Admin.php:79
-#: inc/Admin.php:289
+#: inc/Admin.php:301
 #: build/4.6.2/index.js:7
 msgid "Settings"
 msgstr ""
@@ -104,7 +104,7 @@ msgstr ""
 msgid "Help Resources"
 msgstr ""
 
-#: inc/Admin.php:316
+#: inc/Admin.php:328
 #, php-format
 msgid "Thank you for creating with %1$s and %2$s"
 msgstr ""
@@ -244,6 +244,7 @@ msgid "Call or chat 24/7 for support or let our experts build your site for you.
 msgstr ""
 
 #: inc/widgets/views/help.php:117
+#: build/4.6.2/index.js:9
 msgid "Get Help"
 msgstr ""
 
@@ -288,6 +289,18 @@ msgstr ""
 
 #: inc/widgets/views/site-preview.php:209
 msgid "Enable Coming Soon"
+msgstr ""
+
+#: build/4.6.2/index.js:1
+msgid "Want a fresh start?"
+msgstr ""
+
+#: build/4.6.2/index.js:1
+msgid "Relaunch the AI Builder to replace this site with a new one."
+msgstr ""
+
+#: build/4.6.2/index.js:1
+msgid "Create a new site"
 msgstr ""
 
 #: build/4.6.2/index.js:1
@@ -356,6 +369,7 @@ msgstr ""
 
 #: build/4.6.2/index.js:7
 #: build/4.6.2/index.js:9
+#: build/4.6.2/index.js:10
 msgid "Oops! Something went wrong. Please try again."
 msgstr ""
 
@@ -388,12 +402,30 @@ msgid "Store Details"
 msgstr ""
 
 #: build/4.6.2/index.js:7
+msgid "Commerce"
+msgstr ""
+
+#: build/4.6.2/index.js:7
 #: build/4.6.2/index.js:9
 msgid "Marketplace"
 msgstr ""
 
 #: build/4.6.2/index.js:7
-msgid "Help with WordPress"
+#: build/4.6.2/index.js:9
+msgid "Manage WordPress"
+msgstr ""
+
+#: build/4.6.2/index.js:7
+msgid "Staging"
+msgstr ""
+
+#: build/4.6.2/index.js:7
+msgid "Performance"
+msgstr ""
+
+#: build/4.6.2/index.js:7
+#: build/4.6.2/index.js:9
+msgid "Help"
 msgstr ""
 
 #: build/4.6.2/index.js:7
@@ -434,6 +466,18 @@ msgid "Your Bluehost Coming Soon page lets you hide your site from visitors whil
 msgstr ""
 
 #: build/4.6.2/index.js:7
+msgid "Launch our AI Editor"
+msgstr ""
+
+#: build/4.6.2/index.js:7
+msgid "Say hello to effortless site building with a wide library of 250+ blocks"
+msgstr ""
+
+#: build/4.6.2/index.js:7
+msgid "Launch the Editor"
+msgstr ""
+
+#: build/4.6.2/index.js:7
 msgid "Staging Enabled"
 msgstr ""
 
@@ -454,21 +498,13 @@ msgid "The staging feature provides a way to copy a site to test new updates, fe
 msgstr ""
 
 #: build/4.6.2/index.js:7
-#: build/4.6.2/index.js:9
+#: build/4.6.2/index.js:10
 msgid "Sorry, that is not allowed."
 msgstr ""
 
 #: build/4.6.2/index.js:7
-#: build/4.6.2/index.js:9
+#: build/4.6.2/index.js:10
 msgid "This feature cannot currently be modified."
-msgstr ""
-
-#: build/4.6.2/index.js:7
-msgid "Hire our experts"
-msgstr ""
-
-#: build/4.6.2/index.js:7
-msgid "Get in touch with us, and we’ll help you build the exact store you’re dreaming of."
 msgstr ""
 
 #: build/4.6.2/index.js:7
@@ -492,14 +528,6 @@ msgid "The Help Center provides guided, step-by-step assistance as you build you
 msgstr ""
 
 #: build/4.6.2/index.js:7
-msgid "Explore Premium Tools"
-msgstr ""
-
-#: build/4.6.2/index.js:7
-msgid "Discover all the features to grow your store, boost sales and loyalize your customers."
-msgstr ""
-
-#: build/4.6.2/index.js:7
 msgid "WonderBlocks Enabled"
 msgstr ""
 
@@ -520,23 +548,11 @@ msgid "WonderBlocks provides a library of customizable block patterns and page t
 msgstr ""
 
 #: build/4.6.2/index.js:7
-msgid "Bluehost WordPress Plugin"
+msgid "Optimize your website by managing cache and performance settings"
 msgstr ""
 
 #: build/4.6.2/index.js:7
-msgid "Quick links"
-msgstr ""
-
-#: build/4.6.2/index.js:7
-msgid "Manage hosting"
-msgstr ""
-
-#: build/4.6.2/index.js:7
-msgid "Write a blog post"
-msgstr ""
-
-#: build/4.6.2/index.js:7
-msgid "Create a sale promotion"
+msgid "General Settings"
 msgstr ""
 
 #: build/4.6.2/index.js:7
@@ -549,6 +565,10 @@ msgstr ""
 
 #: build/4.6.2/index.js:7
 msgid "Customize the available features as you manage your website."
+msgstr ""
+
+#: build/4.6.2/index.js:7
+msgid "A staging site is a duplicate of your live site, offering a secure environment to experiment, test updates, and deploy when ready."
 msgstr ""
 
 #: build/4.6.2/index.js:7
@@ -639,6 +659,18 @@ msgstr ""
 msgid "Keeping automatic updates on ensures timely security fixes and the latest features."
 msgstr ""
 
+#: build/4.6.2/index.js:7
+msgid "Optimize your content"
+msgstr ""
+
+#: build/4.6.2/index.js:7
+msgid "Optimize your content for search engines and boost your store visibility."
+msgstr ""
+
+#: build/4.6.2/index.js:7
+msgid "Start now"
+msgstr ""
+
 #. translators: %s: number of weeks. `The trash will automatically empty every ${numTrashWeeks} weeks.`
 #: build/4.6.2/index.js:9
 #, js-format
@@ -688,23 +720,19 @@ msgid "An error occurred while loading the content. Please try again later."
 msgstr ""
 
 #: build/4.6.2/index.js:9
-msgid "Get Help & Resources"
+msgid "Security, performance, backups, staging & more."
 msgstr ""
 
 #: build/4.6.2/index.js:9
-msgid "Get expert help, documentation, and tutorials to make the most of your WordPress site."
+msgid "Manage"
 msgstr ""
 
 #: build/4.6.2/index.js:9
-msgid "Refer a friend and earn money"
+msgid "Master WordPress with help from our AI assistant."
 msgstr ""
 
 #: build/4.6.2/index.js:9
-msgid "Unlock exclusive benefits with our referral program!"
-msgstr ""
-
-#: build/4.6.2/index.js:9
-msgid "Start now"
+msgid "Launch our AI Help"
 msgstr ""
 
 #: build/4.6.2/index.js:9
@@ -800,10 +828,6 @@ msgid "Go to Bluehost"
 msgstr ""
 
 #: build/4.6.2/index.js:9
-msgid "Help"
-msgstr ""
-
-#: build/4.6.2/index.js:9
 msgid "We are available 24/7 to help answer questions and solve your problems."
 msgstr ""
 
@@ -812,57 +836,55 @@ msgid "Secret page to manage admin features and settings."
 msgstr ""
 
 #: build/4.6.2/index.js:9
+msgid "Bluehost WordPress Plugin"
+msgstr ""
+
+#. translators: %s: Search term
+#: build/4.6.2/index.js:10
 msgid "Performance Enabled"
 msgstr ""
 
-#: build/4.6.2/index.js:9
+#: build/4.6.2/index.js:10
 msgid "Performance Disabled"
 msgstr ""
 
-#: build/4.6.2/index.js:9
+#: build/4.6.2/index.js:10
 msgid "You need to reload the page to manage Performance."
 msgstr ""
 
-#: build/4.6.2/index.js:9
+#: build/4.6.2/index.js:10
 msgid "Performance will no longer display."
 msgstr ""
 
-#: build/4.6.2/index.js:9
+#: build/4.6.2/index.js:10
 msgid "The performance feature provides improvements to loads faster for visitors including cache settings."
 msgstr ""
 
-#: build/4.6.2/index.js:9
-msgid "Pro Design Live"
+#: build/4.6.2/index.js:10
+#, js-format
+msgid "Congrats, your %s is live!"
 msgstr ""
 
-#: build/4.6.2/index.js:9
-msgid "We will help you build and grow your website and improve your skills in WordPress."
+#: build/4.6.2/index.js:10
+msgid "Add Store Details"
 msgstr ""
 
-#: build/4.6.2/index.js:9
-msgid "Get Info"
+#: build/4.6.2/index.js:10
+msgid "Quick links"
 msgstr ""
 
-#: build/4.6.2/index.js:9
-msgid "Welcome to Bluehost"
-msgstr ""
-
-#: build/4.6.2/index.js:9
-msgid "We're very excited to get started with you!"
-msgstr ""
-
-#: build/4.6.2/index.js:9
+#: build/4.6.2/index.js:10
 msgid "Oh No, An Error!"
 msgstr ""
 
-#: build/4.6.2/index.js:9
+#: build/4.6.2/index.js:10
 msgid "You found an error, please refresh the page and try again!"
 msgstr ""
 
-#: build/4.6.2/index.js:9
+#: build/4.6.2/index.js:10
 msgid "If the error persists, please contact support."
 msgstr ""
 
-#: build/4.6.2/index.js:9
+#: build/4.6.2/index.js:10
 msgid "Error code:"
 msgstr ""

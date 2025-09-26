@@ -1,29 +1,32 @@
 {
-    "translation-revision-date": "2025-02-25T20:53:21+00:00",
+    "translation-revision-date": "2025-03-18T20:07:22+00:00",
     "generator": "WP-CLI\/2.12.0",
-    "source": "build\/4.6.2\/index.js",
+    "source": "build\/4.7.0\/index.js",
     "domain": "messages",
     "locale_data": {
         "messages": {
             "": {
                 "domain": "messages",
-                "lang": "en_AU",
+                "lang": "es_ES",
                 "plural-forms": "nplurals=2; plural=(n != 1);"
             },
             "Home": [
-                "Home"
+                "Inicio"
             ],
             "Settings": [
-                "Settings"
+                "Ajustes"
             ],
             "Not Live": [
-                "Not Live"
+                "No visible"
             ],
             "Live": [
-                "Live"
+                "Visible"
             ],
             "Your website is currently displaying a \"Coming Soon\" page.": [
-                "Your website is currently displaying a \"Coming Soon\" page."
+                "Ahora mismo, en tu sitio web se muestra la p\u00e1gina \\\"Pr\u00f3ximamente\\\"."
+            ],
+            "Get Help": [
+                "Obtener ayuda"
             ],
             "Disabled old post comments": [
                 ""
@@ -91,9 +94,6 @@
             "Marketplace": [
                 ""
             ],
-            "Help with WordPress": [
-                ""
-            ],
             "Admin": [
                 ""
             ],
@@ -142,12 +142,6 @@
             "This feature cannot currently be modified.": [
                 ""
             ],
-            "Hire our experts": [
-                ""
-            ],
-            "Get in touch with us, and we\u2019ll help you build the exact store you\u2019re dreaming of.": [
-                ""
-            ],
             "Help Center Enabled": [
                 ""
             ],
@@ -161,12 +155,6 @@
                 ""
             ],
             "The Help Center provides guided, step-by-step assistance as you build your site.": [
-                ""
-            ],
-            "Explore Premium Tools": [
-                ""
-            ],
-            "Discover all the features to grow your store, boost sales and loyalize your customers.": [
                 ""
             ],
             "WonderBlocks Enabled": [
@@ -188,15 +176,6 @@
                 ""
             ],
             "Quick links": [
-                ""
-            ],
-            "Manage hosting": [
-                ""
-            ],
-            "Write a blog post": [
-                ""
-            ],
-            "Create a sale promotion": [
                 ""
             ],
             "Manage common settings for your website": [
@@ -307,18 +286,6 @@
             "An error occurred while loading the content. Please try again later.": [
                 ""
             ],
-            "Get Help & Resources": [
-                ""
-            ],
-            "Get expert help, documentation, and tutorials to make the most of your WordPress site.": [
-                ""
-            ],
-            "Refer a friend and earn money": [
-                ""
-            ],
-            "Unlock exclusive benefits with our referral program!": [
-                ""
-            ],
             "Start now": [
                 ""
             ],
@@ -415,21 +382,6 @@
             "The performance feature provides improvements to loads faster for visitors including cache settings.": [
                 ""
             ],
-            "Pro Design Live": [
-                ""
-            ],
-            "We will help you build and grow your website and improve your skills in WordPress.": [
-                ""
-            ],
-            "Get Info": [
-                ""
-            ],
-            "Welcome to Bluehost": [
-                ""
-            ],
-            "We're very excited to get started with you!": [
-                ""
-            ],
             "Oh No, An Error!": [
                 ""
             ],
@@ -440,6 +392,69 @@
                 ""
             ],
             "Error code:": [
+                ""
+            ],
+            "Want a fresh start?": [
+                ""
+            ],
+            "Relaunch the AI Builder to replace this site with a new one.": [
+                ""
+            ],
+            "Create a new site": [
+                ""
+            ],
+            "Commerce": [
+                ""
+            ],
+            "Manage WordPress": [
+                ""
+            ],
+            "Staging": [
+                ""
+            ],
+            "Performance": [
+                ""
+            ],
+            "Launch our AI Editor": [
+                ""
+            ],
+            "Say hello to effortless site building with a wide library of 250+ blocks": [
+                ""
+            ],
+            "Launch the Editor": [
+                ""
+            ],
+            "Optimize your website by managing cache and performance settings": [
+                ""
+            ],
+            "General Settings": [
+                ""
+            ],
+            "A staging site is a duplicate of your live site, offering a secure environment to experiment, test updates, and deploy when ready.": [
+                ""
+            ],
+            "Optimize your content": [
+                ""
+            ],
+            "Optimize your content for search engines and boost your store visibility.": [
+                ""
+            ],
+            "Security, performance, backups, staging & more.": [
+                ""
+            ],
+            "Manage": [
+                ""
+            ],
+            "Master WordPress with help from our AI assistant.": [
+                ""
+            ],
+            "Launch our AI Help": [
+                ""
+            ],
+            "Congrats, your %s is live!": [
+                ""
+            ],
+            "Add Store Details": [
                 ""
             ]
         }

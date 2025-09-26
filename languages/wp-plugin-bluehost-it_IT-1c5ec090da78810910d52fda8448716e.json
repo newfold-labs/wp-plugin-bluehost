@@ -1,447 +1,447 @@
 {
-    "translation-revision-date": "2025-03-18T20:07:22+00:00",
-    "generator": "WP-CLI\/2.12.0",
-    "source": "build\/4.6.2\/index.js",
-    "domain": "messages",
-    "locale_data": {
-        "messages": {
-            "": {
-                "domain": "messages",
-                "lang": "it_IT",
-                "plural-forms": "nplurals=2; plural=(n != 1);"
-            },
-            "Home": [
-                "Home"
-            ],
-            "Settings": [
-                "Impostazioni"
-            ],
-            "Not Live": [
-                "Non live"
-            ],
-            "Live": [
-                "Live"
-            ],
-            "Your website is currently displaying a \"Coming Soon\" page.": [
-                "Al momento il tuo sito mostra una pagina \u201cComing Soon\u201d."
-            ],
-            "Disabled old post comments": [
-                ""
-            ],
-            "Enabled old post comments": [
-                ""
-            ],
-            "Comments on old posts are disabled.": [
-                ""
-            ],
-            "Comments are allowed on old posts.": [
-                ""
-            ],
-            "Disable comments for older posts": [
-                ""
-            ],
-            "Comments setting saved": [
-                ""
-            ],
-            "Comments on posts are disabled after %s day.": [
-                ""
-            ],
-            "Close comments after %s day.": [
-                ""
-            ],
-            "Comments setting saved.": [
-                ""
-            ],
-            "Posts will display %s comment at a time.": [
-                ""
-            ],
-            "Comments to display per page": [
-                ""
-            ],
-            "Comments": [
-                ""
-            ],
-            "Comments allow visitors to provide feedback and respond to your posts or pages.": [
-                ""
-            ],
-            "Oops! Something went wrong. Please try again.": [
-                ""
-            ],
-            "There's nothing here!": [
-                ""
-            ],
-            "Store": [
-                ""
-            ],
-            "Products & Services": [
-                ""
-            ],
-            "Sales & Promotions": [
-                ""
-            ],
-            "Sales Channel": [
-                ""
-            ],
-            "Payments": [
-                ""
-            ],
-            "Store Details": [
-                ""
-            ],
-            "Marketplace": [
-                ""
-            ],
-            "Help with WordPress": [
-                ""
-            ],
-            "Admin": [
-                ""
-            ],
-            "Coming soon activated": [
-                ""
-            ],
-            "Coming soon deactivated": [
-                ""
-            ],
-            "Coming soon page is active. Site requires login.": [
-                ""
-            ],
-            "Coming soon page is not active. Site is live to visitors.": [
-                ""
-            ],
-            "Site Status": [
-                ""
-            ],
-            "Turn off your \"Coming Soon\" page when you are ready to launch your website.": [
-                ""
-            ],
-            "Turn on your \"Coming Soon\" page when you need to make major changes to your website.": [
-                ""
-            ],
-            "Your Bluehost Coming Soon page lets you hide your site from visitors while you make the magic happen.": [
-                ""
-            ],
-            "Staging Enabled": [
-                ""
-            ],
-            "Staging Disabled": [
-                ""
-            ],
-            "You need to reload the page to manage Staging.": [
-                ""
-            ],
-            "Staging will no longer display.": [
-                ""
-            ],
-            "The staging feature provides a way to copy a site to test new updates, features or content.": [
-                ""
-            ],
-            "Sorry, that is not allowed.": [
-                ""
-            ],
-            "This feature cannot currently be modified.": [
-                ""
-            ],
-            "Hire our experts": [
-                ""
-            ],
-            "Get in touch with us, and we\u2019ll help you build the exact store you\u2019re dreaming of.": [
-                ""
-            ],
-            "Help Center Enabled": [
-                ""
-            ],
-            "Help Center Disabled": [
-                ""
-            ],
-            "Reload the page to access the Help Center.": [
-                ""
-            ],
-            "The Help Center will no longer display.": [
-                ""
-            ],
-            "The Help Center provides guided, step-by-step assistance as you build your site.": [
-                ""
-            ],
-            "Explore Premium Tools": [
-                ""
-            ],
-            "Discover all the features to grow your store, boost sales and loyalize your customers.": [
-                ""
-            ],
-            "WonderBlocks Enabled": [
-                ""
-            ],
-            "WonderBlocks Disabled": [
-                ""
-            ],
-            "Create new content to see WonderBlocks in action.": [
-                ""
-            ],
-            "WonderBlocks will no longer display.": [
-                ""
-            ],
-            "WonderBlocks provides a library of customizable block patterns and page templates.": [
-                ""
-            ],
-            "Bluehost WordPress Plugin": [
-                ""
-            ],
-            "Quick links": [
-                ""
-            ],
-            "Manage hosting": [
-                ""
-            ],
-            "Write a blog post": [
-                ""
-            ],
-            "Create a sale promotion": [
-                ""
-            ],
-            "Manage common settings for your website": [
-                ""
-            ],
-            "Features": [
-                ""
-            ],
-            "Customize the available features as you manage your website.": [
-                ""
-            ],
-            "Enabled All auto-updates": [
-                ""
-            ],
-            "Disabled All auto-updates": [
-                ""
-            ],
-            "Everything will automatically update.": [
-                ""
-            ],
-            "Custom auto-update settings.": [
-                ""
-            ],
-            "Automatically keep all up to date": [
-                ""
-            ],
-            "Enabled Core auto-updates": [
-                ""
-            ],
-            "Disabled Core auto-updates": [
-                ""
-            ],
-            "WordPress will automatically update.": [
-                ""
-            ],
-            "WordPress must be manually updated.": [
-                ""
-            ],
-            "WordPress Core": [
-                ""
-            ],
-            "Enabled Plugins auto-update": [
-                ""
-            ],
-            "Disabled Plugins auto-update": [
-                ""
-            ],
-            "All plugins will automatically update.": [
-                ""
-            ],
-            "Each plugin must be manually updated.": [
-                ""
-            ],
-            "Plugins": [
-                ""
-            ],
-            "Enabled Themes auto-update": [
-                ""
-            ],
-            "Disabled Themes auto-update": [
-                ""
-            ],
-            "All themes will automatically update.": [
-                ""
-            ],
-            "Each theme must be manually updated.": [
-                ""
-            ],
-            "Themes": [
-                ""
-            ],
-            "Automatic Updates": [
-                ""
-            ],
-            "Keeping automatic updates on ensures timely security fixes and the latest features.": [
-                ""
-            ],
-            "The trash will automatically empty every %s week.": [
-                ""
-            ],
-            "Trash setting saved": [
-                ""
-            ],
-            "Number of weeks in between emptying trash": [
-                ""
-            ],
-            "Content Options": [
-                ""
-            ],
-            "Controls for how often to empty the trash.": [
-                ""
-            ],
-            "Explore our featured collection of tools and services.": [
-                ""
-            ],
-            "Oops, there was an error loading the marketplace, please try again later.": [
-                ""
-            ],
-            "Sorry, no marketplace items. Please, try again later.": [
-                ""
-            ],
-            "Load More": [
-                ""
-            ],
-            "Oops! Something Went Wrong": [
-                ""
-            ],
-            "An error occurred while loading the content. Please try again later.": [
-                ""
-            ],
-            "Get Help & Resources": [
-                ""
-            ],
-            "Get expert help, documentation, and tutorials to make the most of your WordPress site.": [
-                ""
-            ],
-            "Refer a friend and earn money": [
-                ""
-            ],
-            "Unlock exclusive benefits with our referral program!": [
-                ""
-            ],
-            "Start now": [
-                ""
-            ],
-            "Phone": [
-                ""
-            ],
-            "Call Us": [
-                ""
-            ],
-            "Chat": [
-                ""
-            ],
-            "Chat with one of our friendly Customer Care Specialists, as we are waiting to help. Open 24 hours - 7 days.": [
-                ""
-            ],
-            "Live Chat": [
-                ""
-            ],
-            "Tweet": [
-                ""
-            ],
-            "Find our team at @bluehost for updates on our products and support from our team.": [
-                ""
-            ],
-            "Tweet Us": [
-                ""
-            ],
-            "YouTube": [
-                ""
-            ],
-            "Find tutorials, answers, interviews and guides on our YouTube channel.": [
-                ""
-            ],
-            "Watch Now": [
-                ""
-            ],
-            "Knowledge Base": [
-                ""
-            ],
-            "Articles, guides, how-tos, instructions, and answers to our client's most frequently asked questions.": [
-                ""
-            ],
-            "Visit Knowledge Base": [
-                ""
-            ],
-            "Resources": [
-                ""
-            ],
-            "Boost your online knowledge and get ahead of the competition.": [
-                ""
-            ],
-            "Explore Resources": [
-                ""
-            ],
-            "Events and Webinars": [
-                ""
-            ],
-            "Team Bluehost organizes multiple webinars and events throughout the year. We are also sponsors and speak at most WordCamps across the world. Join us at our next event!": [
-                ""
-            ],
-            "More Info": [
-                ""
-            ],
-            "Bluehost Website": [
-                ""
-            ],
-            "Not finding what you need? Visit our website for more information about our products and services.": [
-                ""
-            ],
-            "Go to Bluehost": [
-                ""
-            ],
-            "Help": [
-                ""
-            ],
-            "We are available 24\/7 to help answer questions and solve your problems.": [
-                ""
-            ],
-            "Secret page to manage admin features and settings.": [
-                ""
-            ],
-            "Performance Enabled": [
-                ""
-            ],
-            "Performance Disabled": [
-                ""
-            ],
-            "You need to reload the page to manage Performance.": [
-                ""
-            ],
-            "Performance will no longer display.": [
-                ""
-            ],
-            "The performance feature provides improvements to loads faster for visitors including cache settings.": [
-                ""
-            ],
-            "Pro Design Live": [
-                ""
-            ],
-            "We will help you build and grow your website and improve your skills in WordPress.": [
-                ""
-            ],
-            "Get Info": [
-                ""
-            ],
-            "Welcome to Bluehost": [
-                ""
-            ],
-            "We're very excited to get started with you!": [
-                ""
-            ],
-            "Oh No, An Error!": [
-                ""
-            ],
-            "You found an error, please refresh the page and try again!": [
-                ""
-            ],
-            "If the error persists, please contact support.": [
-                ""
-            ],
-            "Error code:": [
-                ""
-            ]
-        }
+  "translation-revision-date": "2025-03-18T20:07:22+00:00",
+  "generator": "WP-CLI/2.12.0",
+  "source": "build/4.6.2/index.js",
+  "domain": "messages",
+  "locale_data": {
+    "messages": {
+      "": {
+        "domain": "messages",
+        "lang": "it_IT",
+        "plural-forms": "nplurals=2; plural=(n != 1);"
+      },
+      "Home": [
+        "Home"
+      ],
+      "Settings": [
+        "Impostazioni"
+      ],
+      "Not Live": [
+        "Non live"
+      ],
+      "Live": [
+        "Live"
+      ],
+      "Your website is currently displaying a \"Coming Soon\" page.": [
+        "Al momento il tuo sito mostra una pagina “Coming Soon”."
+      ],
+      "Disabled old post comments": [
+        "Disabilitati i commenti ai vecchi post"
+      ],
+      "Enabled old post comments": [
+        "Abilitati i commenti ai vecchi post"
+      ],
+      "Comments on old posts are disabled.": [
+        "I commenti sui vecchi post sono disabilitati."
+      ],
+      "Comments are allowed on old posts.": [
+        "I commenti sono consentiti sui vecchi post."
+      ],
+      "Disable comments for older posts": [
+        "Disabilita i commenti per i post più vecchi"
+      ],
+      "Comments setting saved": [
+        "Impostazione dei commenti salvati"
+      ],
+      "Comments on posts are disabled after %s day.": [
+        "I commenti ai post sono disabilitati dopo %s giorno."
+      ],
+      "Close comments after %s day.": [
+        "Chiudi i commenti dopo %s day."
+      ],
+      "Comments setting saved.": [
+        "Impostazione dei commenti salvata."
+      ],
+      "Posts will display %s comment at a time.": [
+        "I post mostreranno %s commento alla volta."
+      ],
+      "Comments to display per page": [
+        "Commenti da visualizzare per pagina"
+      ],
+      "Comments": [
+        "Commenti"
+      ],
+      "Comments allow visitors to provide feedback and respond to your posts or pages.": [
+        "I commenti consentono ai visitatori di fornire feedback e rispondere ai tuoi post o alle tue pagine."
+      ],
+      "Oops! Something went wrong. Please try again.": [
+        "Oops! Qualcosa è andato storto. Riprova."
+      ],
+      "There's nothing here!": [
+        "Non c'è niente qui!"
+      ],
+      "Store": [
+        "Negozio"
+      ],
+      "Products & Services": [
+        "Prodotti & Servizi"
+      ],
+      "Sales & Promotions": [
+        "Vendite e promozioni"
+      ],
+      "Sales Channel": [
+        "Canale di vendita"
+      ],
+      "Payments": [
+        "Pagamenti"
+      ],
+      "Store Details": [
+        "Dettagli negozio"
+      ],
+      "Marketplace": [
+        "Mercato"
+      ],
+      "Help with WordPress": [
+        "Aiuto con WordPress"
+      ],
+      "Admin": [
+        "Admin"
+      ],
+      "Coming soon activated": [
+        "Prossimamente attivato"
+      ],
+      "Coming soon deactivated": [
+        "Prossimamente disattivato"
+      ],
+      "Coming soon page is active. Site requires login.": [
+        "La pagina Coming soon è attiva. Il sito richiede l'accesso."
+      ],
+      "Coming soon page is not active. Site is live to visitors.": [
+        "La pagina Prossimamente non è attiva. Il sito è disponibile per i visitatori."
+      ],
+      "Site Status": [
+        "Stato del sito"
+      ],
+      "Turn off your \"Coming Soon\" page when you are ready to launch your website.": [
+        "Disattiva la pagina \"Prossimamente\" quando sei pronto per avviare il tuo sito web."
+      ],
+      "Turn on your \"Coming Soon\" page when you need to make major changes to your website.": [
+        "Attiva la pagina \"Prossimamente\" quando devi apportare modifiche importanti al tuo sito web."
+      ],
+      "Your Bluehost Coming Soon page lets you hide your site from visitors while you make the magic happen.": [
+        "La tua pagina Bluehost Coming Soon ti consente di nascondere il tuo sito ai visitatori mentre fai accadere la magia."
+      ],
+      "Staging Enabled": [
+        "Staging abilitato"
+      ],
+      "Staging Disabled": [
+        "Staging disabilitato"
+      ],
+      "You need to reload the page to manage Staging.": [
+        "È necessario ricaricare la pagina per gestire lo Staging."
+      ],
+      "Staging will no longer display.": [
+        "La gestione temporanea non verrà più visualizzata."
+      ],
+      "The staging feature provides a way to copy a site to test new updates, features or content.": [
+        "La funzione di staging consente di copiare un sito per testare nuovi aggiornamenti, funzionalità o contenuti."
+      ],
+      "Sorry, that is not allowed.": [
+        "Spiacenti, non è permesso."
+      ],
+      "This feature cannot currently be modified.": [
+        "Questa funzione non può essere attualmente modificata."
+      ],
+      "Hire our experts": [
+        "Assumi i nostri esperti"
+      ],
+      "Get in touch with us, and we’ll help you build the exact store you’re dreaming of.": [
+        "Mettiti in contatto con noi e ti aiuteremo a creare il negozio esatto che stai sognando."
+      ],
+      "Help Center Enabled": [
+        "Centro assistenza abilitato"
+      ],
+      "Help Center Disabled": [
+        "Centro assistenza disabilitato"
+      ],
+      "Reload the page to access the Help Center.": [
+        "Ricarica la pagina per accedere al Centro assistenza."
+      ],
+      "The Help Center will no longer display.": [
+        "Il Centro assistenza non verrà più visualizzato."
+      ],
+      "The Help Center provides guided, step-by-step assistance as you build your site.": [
+        "Il Centro assistenza fornisce assistenza guidata passo dopo passo durante la creazione del sito."
+      ],
+      "Explore Premium Tools": [
+        "Esplora gli strumenti premium"
+      ],
+      "Discover all the features to grow your store, boost sales and loyalize your customers.": [
+        "Scopri tutte le funzionalità per far crescere il tuo negozio, aumentare le vendite e fidelizzare i tuoi clienti."
+      ],
+      "WonderBlocks Enabled": [
+        "WonderBlocks abilitato"
+      ],
+      "WonderBlocks Disabled": [
+        "WonderBlocks disabilitato"
+      ],
+      "Create new content to see WonderBlocks in action.": [
+        "Crea nuovi contenuti per vedere WonderBlocks in azione."
+      ],
+      "WonderBlocks will no longer display.": [
+        "I WonderBlock non verranno più visualizzati."
+      ],
+      "WonderBlocks provides a library of customizable block patterns and page templates.": [
+        "WonderBlocks fornisce una libreria di modelli di blocchi e modelli di pagina personalizzabili."
+      ],
+      "Bluehost WordPress Plugin": [
+        "Bluehost WordPress Plugin"
+      ],
+      "Quick links": [
+        "Collegamenti rapidi"
+      ],
+      "Manage hosting": [
+        "Gestire l'hosting"
+      ],
+      "Write a blog post": [
+        "Scrivi un post sul blog"
+      ],
+      "Create a sale promotion": [
+        "Crea una promozione di vendita"
+      ],
+      "Manage common settings for your website": [
+        "Gestire le impostazioni comuni per il tuo sito web"
+      ],
+      "Features": [
+        "Tratti somatici"
+      ],
+      "Customize the available features as you manage your website.": [
+        "Personalizza le funzionalità disponibili durante la gestione del tuo sito web."
+      ],
+      "Enabled All auto-updates": [
+        "Abilitato Tutti gli aggiornamenti automatici"
+      ],
+      "Disabled All auto-updates": [
+        "Disabilitato Tutti gli aggiornamenti automatici"
+      ],
+      "Everything will automatically update.": [
+        "Tutto si aggiornerà automaticamente."
+      ],
+      "Custom auto-update settings.": [
+        "Impostazioni di aggiornamento automatico personalizzate."
+      ],
+      "Automatically keep all up to date": [
+        "Mantieni automaticamente tutto aggiornato"
+      ],
+      "Enabled Core auto-updates": [
+        "Abilitati gli aggiornamenti automatici di base"
+      ],
+      "Disabled Core auto-updates": [
+        "Disabilitati gli aggiornamenti automatici di base"
+      ],
+      "WordPress will automatically update.": [
+        "WordPress si aggiornerà automaticamente."
+      ],
+      "WordPress must be manually updated.": [
+        "WordPress deve essere aggiornato manualmente."
+      ],
+      "WordPress Core": [
+        "Nucleo di WordPress"
+      ],
+      "Enabled Plugins auto-update": [
+        "Aggiornamento automatico dei plugin abilitati"
+      ],
+      "Disabled Plugins auto-update": [
+        "Aggiornamento automatico dei plugin disabilitato"
+      ],
+      "All plugins will automatically update.": [
+        "Tutti i plugin si aggiorneranno automaticamente."
+      ],
+      "Each plugin must be manually updated.": [
+        "Ogni plugin deve essere aggiornato manualmente."
+      ],
+      "Plugins": [
+        "Plugin"
+      ],
+      "Enabled Themes auto-update": [
+        "Abilitato l'aggiornamento automatico dei temi"
+      ],
+      "Disabled Themes auto-update": [
+        "Aggiornamento automatico dei temi disabilitato"
+      ],
+      "All themes will automatically update.": [
+        "Tutti i temi si aggiorneranno automaticamente."
+      ],
+      "Each theme must be manually updated.": [
+        "Ogni tema deve essere aggiornato manualmente."
+      ],
+      "Themes": [
+        "Temi"
+      ],
+      "Automatic Updates": [
+        "Aggiornamenti automatici"
+      ],
+      "Keeping automatic updates on ensures timely security fixes and the latest features.": [
+        "Mantenere attivi gli aggiornamenti automatici garantisce correzioni di sicurezza tempestive e le funzionalità più recenti."
+      ],
+      "The trash will automatically empty every %s week.": [
+        "Il cestino si svuoterà automaticamente ogni %s settimana."
+      ],
+      "Trash setting saved": [
+        "Impostazione cestino salvata"
+      ],
+      "Number of weeks in between emptying trash": [
+        "Numero di settimane tra lo svuotamento del cestino"
+      ],
+      "Content Options": [
+        "Opzioni di contenuto"
+      ],
+      "Controls for how often to empty the trash.": [
+        "Controlla la frequenza con cui svuotare il cestino."
+      ],
+      "Explore our featured collection of tools and services.": [
+        "Esplora la nostra raccolta di strumenti e servizi in primo piano."
+      ],
+      "Oops, there was an error loading the marketplace, please try again later.": [
+        "Oops, si è verificato un errore durante il caricamento del marketplace, riprova più tardi."
+      ],
+      "Sorry, no marketplace items. Please, try again later.": [
+        "Spiacenti, non ci sono articoli del marketplace. Per favore, riprova più tardi."
+      ],
+      "Load More": [
+        "Carica di più"
+      ],
+      "Oops! Something Went Wrong": [
+        "Oops! Qualcosa è andato storto"
+      ],
+      "An error occurred while loading the content. Please try again later.": [
+        "Si è verificato un errore durante il caricamento del contenuto. Riprova più tardi."
+      ],
+      "Get Help & Resources": [
+        "Ottieni assistenza e risorse"
+      ],
+      "Get expert help, documentation, and tutorials to make the most of your WordPress site.": [
+        "Ottenete l'aiuto di esperti, la documentazione e i tutorial per ottenere il massimo dal vostro sito WordPress."
+      ],
+      "Refer a friend and earn money": [
+        "Invita un amico e guadagna denaro"
+      ],
+      "Unlock exclusive benefits with our referral program!": [
+        "Sblocca vantaggi esclusivi con il nostro programma di referral!"
+      ],
+      "Start now": [
+        "Inizia ora"
+      ],
+      "Phone": [
+        "Telefono"
+      ],
+      "Call Us": [
+        "Chiamaci"
+      ],
+      "Chat": [
+        "Chiacchierare"
+      ],
+      "Chat with one of our friendly Customer Care Specialists, as we are waiting to help. Open 24 hours - 7 days.": [
+        "Chatta con uno dei nostri amichevoli specialisti dell'assistenza clienti, poiché stiamo aspettando di aiutarti. Aperto 24 ore su 24, 7 giorni su 7."
+      ],
+      "Live Chat": [
+        "Chat dal vivo"
+      ],
+      "Tweet": [
+        "Cinguettare"
+      ],
+      "Find our team at @bluehost for updates on our products and support from our team.": [
+        "Trova il nostro team all'@bluehost per aggiornamenti sui nostri prodotti e supporto da parte del nostro team."
+      ],
+      "Tweet Us": [
+        "Twittaci"
+      ],
+      "YouTube": [
+        "Su YouTube"
+      ],
+      "Find tutorials, answers, interviews and guides on our YouTube channel.": [
+        "Trova tutorial, risposte, interviste e guide sul nostro canale YouTube."
+      ],
+      "Watch Now": [
+        "Guarda ora"
+      ],
+      "Knowledge Base": [
+        "Knowledge base"
+      ],
+      "Articles, guides, how-tos, instructions, and answers to our client's most frequently asked questions.": [
+        "Articoli, guide, istruzioni, istruzioni e risposte alle domande più frequenti dei nostri clienti."
+      ],
+      "Visit Knowledge Base": [
+        "Visita la Knowledge Base"
+      ],
+      "Resources": [
+        "Risorse"
+      ],
+      "Boost your online knowledge and get ahead of the competition.": [
+        "Migliora le tue conoscenze online e supera la concorrenza."
+      ],
+      "Explore Resources": [
+        "Esplora le risorse"
+      ],
+      "Events and Webinars": [
+        "Eventi e Webinar"
+      ],
+      "Team Bluehost organizes multiple webinars and events throughout the year. We are also sponsors and speak at most WordCamps across the world. Join us at our next event!": [
+        "Il team Bluehost organizza più webinar ed eventi durante tutto l'anno. Siamo anche sponsor e parliamo nella maggior parte dei WordCamp in tutto il mondo. Unisciti a noi al nostro prossimo evento!"
+      ],
+      "More Info": [
+        "Ulteriori informazioni"
+      ],
+      "Bluehost Website": [
+        "Sito web Bluehost"
+      ],
+      "Not finding what you need? Visit our website for more information about our products and services.": [
+        "Non trovi quello che ti serve? Visita il nostro sito web per ulteriori informazioni sui nostri prodotti e servizi."
+      ],
+      "Go to Bluehost": [
+        "Vai a Bluehost"
+      ],
+      "Help": [
+        "Guida"
+      ],
+      "We are available 24/7 to help answer questions and solve your problems.": [
+        "Siamo disponibili 24 ore su 24, 7 giorni su 7 per aiutarti a rispondere alle domande e risolvere i tuoi problemi."
+      ],
+      "Secret page to manage admin features and settings.": [
+        "Pagina segreta per gestire le funzioni e le impostazioni dell'amministratore."
+      ],
+      "Performance Enabled": [
+        "Prestazioni abilitate"
+      ],
+      "Performance Disabled": [
+        "Prestazioni disabilitate"
+      ],
+      "You need to reload the page to manage Performance.": [
+        "È necessario ricaricare la pagina per gestire le prestazioni."
+      ],
+      "Performance will no longer display.": [
+        "Le prestazioni non verranno più visualizzate."
+      ],
+      "The performance feature provides improvements to loads faster for visitors including cache settings.": [
+        "La funzione delle prestazioni offre miglioramenti ai caricamenti più rapidi per i visitatori, comprese le impostazioni della cache."
+      ],
+      "Pro Design Live": [
+        "Pro Design dal vivo"
+      ],
+      "We will help you build and grow your website and improve your skills in WordPress.": [
+        "Ti aiuteremo a costruire e far crescere il tuo sito web e a migliorare le tue competenze in WordPress."
+      ],
+      "Get Info": [
+        "Richiedi informazioni"
+      ],
+      "Welcome to Bluehost": [
+        "Benvenuto su Bluehost"
+      ],
+      "We're very excited to get started with you!": [
+        "Siamo molto entusiasti di iniziare con te!"
+      ],
+      "Oh No, An Error!": [
+        "Oh no, un errore!"
+      ],
+      "You found an error, please refresh the page and try again!": [
+        "Hai trovato un errore, aggiorna la pagina e riprova!"
+      ],
+      "If the error persists, please contact support.": [
+        "Se l'errore persiste, contatta l'assistenza."
+      ],
+      "Error code:": [
+        "Codice errore:"
+      ]
     }
+  }
 }

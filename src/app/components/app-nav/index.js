@@ -154,7 +154,7 @@ export const AppBarNav = () => {
 
 	return (
 		<>
-			<AppBarNavigation.AppBar position={ 'absolute' } className={ 'nfd-pr-2' } collapseAt={ 'l' }>
+			<AppBarNavigation.AppBar position={ 'absolute' } className={ 'nfd-pr-2' } collapseAt={ 1200 }>
 				<AppNavHeader/>
 				<AppNavMenu/>
 			</AppBarNavigation.AppBar>

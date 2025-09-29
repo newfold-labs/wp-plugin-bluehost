@@ -33,6 +33,7 @@ export default () => (
 			className={
 				'nfd-w-fit nfd-flex nfd-gap-1 nfd-mt-2 nfd-p-2 nfd-pr-2.5 nfd-border nfd-border-[#D1D5DC] nfd-text-[#4A5565] nfd-text-sm nfd-font-semibold nfd-rounded-lg nfd-no-underline'
 			}
+			href={ '#video-url' }
 		>
 			<PlayIcon width={ 16 } strokeWidth={ 2 } />
 			{ __( 'Watch Video', 'wp-plugin-bluehost' ) }

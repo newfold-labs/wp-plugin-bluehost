@@ -35,6 +35,7 @@ const Home = () => {
 					<PartyIcon />
 					<Title className="nfd-mb-1 nfd-font-semibold">
 						{ sprintf(
+							/* translators: %s is the site kind. */
 							__(
 								'Congrats, your %s is live!',
 								'wp-plugin-bluehost'

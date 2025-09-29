@@ -25,6 +25,7 @@ export default () => (
 			'wp-plugin-bluehost'
 		) }
 		<a
+			href={ '#/yoast' }
 			className={
 				'nfd-mt-0 nfd-font-semibold nfd-no-underline nfd-text-[#196BDE]'
 			}

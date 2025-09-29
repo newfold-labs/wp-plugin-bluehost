@@ -1,6 +1,5 @@
 import { useEffect, useState } from '@wordpress/element';
 import apiFetch from '@wordpress/api-fetch';
-import { useViewportMatch } from '@wordpress/compose';
 import { addQueryArgs } from '@wordpress/url';
 import { filter } from 'lodash';
 import {
@@ -27,7 +26,7 @@ export const AppNavHeader = () => {
 
 export const AppNavMenu = () => {
 	const location = useLocation();
-	const { setActivePath, activePath } = useNavigationContext();
+	const { setActivePath } = useNavigationContext();
 
 	const menu = () => {
 		return (
@@ -57,10 +56,12 @@ export const AppNavMenu = () => {
 								// set open to false
 								setOpen( false );
 								// run any actions assigned to page
-								!! page.action &&
-								page.action instanceof Function
-									? page.action( e )
-									: null;
+								if (
+									page.action &&
+									page.action instanceof Function
+								) {
+									page.action( e );
+								}
 							} }
 						/>
 					);
@@ -184,6 +185,5 @@ export const AppBarNav = () => {
 };
 
 export const AppNav = () => {
-	const isLargeViewport = useViewportMatch( 'medium' );
 	return <AppBarNav />;
 };

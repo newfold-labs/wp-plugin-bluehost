@@ -1,0 +1,462 @@
+{
+    "translation-revision-date": "2025-02-25T20:53:21+00:00",
+    "generator": "WP-CLI\/2.12.0",
+    "source": "build\/4.7.0\/index.js",
+    "domain": "messages",
+    "locale_data": {
+        "messages": {
+            "": {
+                "domain": "messages",
+                "lang": "fr_FR",
+                "plural-forms": "nplurals=2; plural=(n != 1);"
+            },
+            "Home": [
+                "Accueil"
+            ],
+            "Settings": [
+                "R\u00e9glages"
+            ],
+            "Not Live": [
+                "Pas en ligne"
+            ],
+            "Live": [
+                "En ligne"
+            ],
+            "Your website is currently displaying a \"Coming Soon\" page.": [
+                "Votre site web affiche actuellement une page \"\u00c0 venir\"."
+            ],
+            "Get Help": [
+                "Obtenir de l'aide"
+            ],
+            "Disabled old post comments": [
+                ""
+            ],
+            "Enabled old post comments": [
+                ""
+            ],
+            "Comments on old posts are disabled.": [
+                ""
+            ],
+            "Comments are allowed on old posts.": [
+                ""
+            ],
+            "Disable comments for older posts": [
+                ""
+            ],
+            "Comments setting saved": [
+                ""
+            ],
+            "Comments on posts are disabled after %s day.": [
+                ""
+            ],
+            "Close comments after %s day.": [
+                ""
+            ],
+            "Comments setting saved.": [
+                ""
+            ],
+            "Posts will display %s comment at a time.": [
+                ""
+            ],
+            "Comments to display per page": [
+                ""
+            ],
+            "Comments": [
+                ""
+            ],
+            "Comments allow visitors to provide feedback and respond to your posts or pages.": [
+                ""
+            ],
+            "Oops! Something went wrong. Please try again.": [
+                ""
+            ],
+            "There's nothing here!": [
+                ""
+            ],
+            "Store": [
+                ""
+            ],
+            "Products & Services": [
+                ""
+            ],
+            "Sales & Promotions": [
+                ""
+            ],
+            "Sales Channel": [
+                ""
+            ],
+            "Payments": [
+                ""
+            ],
+            "Store Details": [
+                ""
+            ],
+            "Marketplace": [
+                ""
+            ],
+            "Admin": [
+                ""
+            ],
+            "Coming soon activated": [
+                ""
+            ],
+            "Coming soon deactivated": [
+                ""
+            ],
+            "Coming soon page is active. Site requires login.": [
+                ""
+            ],
+            "Coming soon page is not active. Site is live to visitors.": [
+                ""
+            ],
+            "Site Status": [
+                ""
+            ],
+            "Turn off your \"Coming Soon\" page when you are ready to launch your website.": [
+                ""
+            ],
+            "Turn on your \"Coming Soon\" page when you need to make major changes to your website.": [
+                ""
+            ],
+            "Your Bluehost Coming Soon page lets you hide your site from visitors while you make the magic happen.": [
+                ""
+            ],
+            "Staging Enabled": [
+                ""
+            ],
+            "Staging Disabled": [
+                ""
+            ],
+            "You need to reload the page to manage Staging.": [
+                ""
+            ],
+            "Staging will no longer display.": [
+                ""
+            ],
+            "The staging feature provides a way to copy a site to test new updates, features or content.": [
+                ""
+            ],
+            "Sorry, that is not allowed.": [
+                ""
+            ],
+            "This feature cannot currently be modified.": [
+                ""
+            ],
+            "Help Center Enabled": [
+                ""
+            ],
+            "Help Center Disabled": [
+                ""
+            ],
+            "Reload the page to access the Help Center.": [
+                ""
+            ],
+            "The Help Center will no longer display.": [
+                ""
+            ],
+            "The Help Center provides guided, step-by-step assistance as you build your site.": [
+                ""
+            ],
+            "WonderBlocks Enabled": [
+                ""
+            ],
+            "WonderBlocks Disabled": [
+                ""
+            ],
+            "Create new content to see WonderBlocks in action.": [
+                ""
+            ],
+            "WonderBlocks will no longer display.": [
+                ""
+            ],
+            "WonderBlocks provides a library of customizable block patterns and page templates.": [
+                ""
+            ],
+            "Bluehost WordPress Plugin": [
+                ""
+            ],
+            "Quick links": [
+                ""
+            ],
+            "Manage common settings for your website": [
+                ""
+            ],
+            "Features": [
+                ""
+            ],
+            "Customize the available features as you manage your website.": [
+                ""
+            ],
+            "Enabled All auto-updates": [
+                ""
+            ],
+            "Disabled All auto-updates": [
+                ""
+            ],
+            "Everything will automatically update.": [
+                ""
+            ],
+            "Custom auto-update settings.": [
+                ""
+            ],
+            "Automatically keep all up to date": [
+                ""
+            ],
+            "Enabled Core auto-updates": [
+                ""
+            ],
+            "Disabled Core auto-updates": [
+                ""
+            ],
+            "WordPress will automatically update.": [
+                ""
+            ],
+            "WordPress must be manually updated.": [
+                ""
+            ],
+            "WordPress Core": [
+                ""
+            ],
+            "Enabled Plugins auto-update": [
+                ""
+            ],
+            "Disabled Plugins auto-update": [
+                ""
+            ],
+            "All plugins will automatically update.": [
+                ""
+            ],
+            "Each plugin must be manually updated.": [
+                ""
+            ],
+            "Plugins": [
+                ""
+            ],
+            "Enabled Themes auto-update": [
+                ""
+            ],
+            "Disabled Themes auto-update": [
+                ""
+            ],
+            "All themes will automatically update.": [
+                ""
+            ],
+            "Each theme must be manually updated.": [
+                ""
+            ],
+            "Themes": [
+                ""
+            ],
+            "Automatic Updates": [
+                ""
+            ],
+            "Keeping automatic updates on ensures timely security fixes and the latest features.": [
+                ""
+            ],
+            "The trash will automatically empty every %s week.": [
+                ""
+            ],
+            "Trash setting saved": [
+                ""
+            ],
+            "Number of weeks in between emptying trash": [
+                ""
+            ],
+            "Content Options": [
+                ""
+            ],
+            "Controls for how often to empty the trash.": [
+                ""
+            ],
+            "Explore our featured collection of tools and services.": [
+                ""
+            ],
+            "Oops, there was an error loading the marketplace, please try again later.": [
+                ""
+            ],
+            "Sorry, no marketplace items. Please, try again later.": [
+                ""
+            ],
+            "Load More": [
+                ""
+            ],
+            "Oops! Something Went Wrong": [
+                ""
+            ],
+            "An error occurred while loading the content. Please try again later.": [
+                ""
+            ],
+            "Start now": [
+                ""
+            ],
+            "Phone": [
+                ""
+            ],
+            "Call Us": [
+                ""
+            ],
+            "Chat": [
+                ""
+            ],
+            "Chat with one of our friendly Customer Care Specialists, as we are waiting to help. Open 24 hours - 7 days.": [
+                ""
+            ],
+            "Live Chat": [
+                ""
+            ],
+            "Tweet": [
+                ""
+            ],
+            "Find our team at @bluehost for updates on our products and support from our team.": [
+                ""
+            ],
+            "Tweet Us": [
+                ""
+            ],
+            "YouTube": [
+                ""
+            ],
+            "Find tutorials, answers, interviews and guides on our YouTube channel.": [
+                ""
+            ],
+            "Watch Now": [
+                ""
+            ],
+            "Knowledge Base": [
+                ""
+            ],
+            "Articles, guides, how-tos, instructions, and answers to our client's most frequently asked questions.": [
+                ""
+            ],
+            "Visit Knowledge Base": [
+                ""
+            ],
+            "Resources": [
+                ""
+            ],
+            "Boost your online knowledge and get ahead of the competition.": [
+                ""
+            ],
+            "Explore Resources": [
+                ""
+            ],
+            "Events and Webinars": [
+                ""
+            ],
+            "Team Bluehost organizes multiple webinars and events throughout the year. We are also sponsors and speak at most WordCamps across the world. Join us at our next event!": [
+                ""
+            ],
+            "More Info": [
+                ""
+            ],
+            "Bluehost Website": [
+                ""
+            ],
+            "Not finding what you need? Visit our website for more information about our products and services.": [
+                ""
+            ],
+            "Go to Bluehost": [
+                ""
+            ],
+            "Help": [
+                ""
+            ],
+            "We are available 24\/7 to help answer questions and solve your problems.": [
+                ""
+            ],
+            "Secret page to manage admin features and settings.": [
+                ""
+            ],
+            "Performance Enabled": [
+                ""
+            ],
+            "Performance Disabled": [
+                ""
+            ],
+            "You need to reload the page to manage Performance.": [
+                ""
+            ],
+            "Performance will no longer display.": [
+                ""
+            ],
+            "The performance feature provides improvements to loads faster for visitors including cache settings.": [
+                ""
+            ],
+            "Oh No, An Error!": [
+                ""
+            ],
+            "You found an error, please refresh the page and try again!": [
+                ""
+            ],
+            "If the error persists, please contact support.": [
+                ""
+            ],
+            "Error code:": [
+                ""
+            ],
+            "Want a fresh start?": [
+                ""
+            ],
+            "Relaunch the AI Builder to replace this site with a new one.": [
+                ""
+            ],
+            "Create a new site": [
+                ""
+            ],
+            "Commerce": [
+                ""
+            ],
+            "Manage WordPress": [
+                ""
+            ],
+            "Staging": [
+                ""
+            ],
+            "Performance": [
+                ""
+            ],
+            "Launch our AI Editor": [
+                ""
+            ],
+            "Say hello to effortless site building with a wide library of 250+ blocks": [
+                ""
+            ],
+            "Launch the Editor": [
+                ""
+            ],
+            "Optimize your website by managing cache and performance settings": [
+                ""
+            ],
+            "General Settings": [
+                ""
+            ],
+            "A staging site is a duplicate of your live site, offering a secure environment to experiment, test updates, and deploy when ready.": [
+                ""
+            ],
+            "Optimize your content": [
+                ""
+            ],
+            "Optimize your content for search engines and boost your store visibility.": [
+                ""
+            ],
+            "Security, performance, backups, staging & more.": [
+                ""
+            ],
+            "Manage": [
+                ""
+            ],
+            "Master WordPress with help from our AI assistant.": [
+                ""
+            ],
+            "Launch our AI Help": [
+                ""
+            ],
+            "Congrats, your %s is live!": [
+                ""
+            ],
+            "Add Store Details": [
+                ""
+            ]
+        }
+    }
+}

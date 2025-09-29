@@ -7,11 +7,11 @@ import { NewfoldRuntime } from '@newfold/wp-module-runtime';
 import { default as NewfoldMarketplace } from '@modules/wp-module-marketplace/components/';
 
 const MarketplacePage = () => {
-
 	useEffect( () => {
 		// run when mounts
-		const marketplacePortal = document.getElementById( 'marketplace-portal' );
-		
+		const marketplacePortal =
+			document.getElementById( 'marketplace-portal' );
+
 		if ( marketplacePortal ) {
 			window.NFDPortalRegistry.registerPortal(
 				'marketplace',
@@ -72,7 +72,10 @@ const MarketplacePage = () => {
 
 	return (
 		<Page className={ 'wppbh-app-marketplace-page' }>
-			<NewfoldMarketplace constants={ moduleConstants } methods={ moduleMethods } />
+			<NewfoldMarketplace
+				constants={ moduleConstants }
+				methods={ moduleMethods }
+			/>
 		</Page>
 	);
 };

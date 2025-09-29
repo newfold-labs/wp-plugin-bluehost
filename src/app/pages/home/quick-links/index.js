@@ -4,7 +4,6 @@ import { default as AiBuilderQuickLink } from './ai-builder';
 import { default as AiEditorQuickLink } from './ai-editor';
 import { default as HelpQuickLink } from './help';
 
-
 export default () => (
 	<>
 		<YoastQuickLink />
@@ -13,4 +12,4 @@ export default () => (
 		<AiEditorQuickLink />
 		<HelpQuickLink />
 	</>
-)
+);

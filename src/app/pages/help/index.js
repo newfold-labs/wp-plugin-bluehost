@@ -48,9 +48,9 @@ const Help = () => {
 	};
 	return (
 		<Page className={ 'wppbh-app-help-page' }>
-			<div className={ 'wppbh-app-help-page__header' }>
+			<div className={ 'wppbh-app-help-page__header nfd-flex nfd-flex-col nfd-gap-y-4' }>
 				<Title as="h1">{ __( 'Help', 'wp-plugin-bluehost' ) }</Title>
-				<Title as="h2" className="nfd-font-normal nfd-text-[13px]">
+				<Title as="h2" className="nfd-font-normal nfd-text-[13px] nfd-color-body">
 					{ __(
 						'We are available 24/7 to help answer questions and solve your problems.',
 						'wp-plugin-bluehost'

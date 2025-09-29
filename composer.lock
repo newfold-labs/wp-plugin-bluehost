@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "f411492bc182de70d8377478e4e42547",
+    "content-hash": "e7f5a892ffd0e3a2bbcc40708c237d9d",
     "packages": [
         {
             "name": "doctrine/inflector",
@@ -714,16 +714,16 @@
         },
         {
             "name": "newfold-labs/wp-module-coming-soon",
-            "version": "2.1.1",
+            "version": "2.1.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/newfold-labs/wp-module-coming-soon.git",
-                "reference": "094f3d7c8af0c89f79dd8c34006588a15b9a4e04"
+                "reference": "e9f8f45821a149227ce2cd4033d87a0fc79bc073"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/newfold-labs/wp-module-coming-soon/zipball/094f3d7c8af0c89f79dd8c34006588a15b9a4e04",
-                "reference": "094f3d7c8af0c89f79dd8c34006588a15b9a4e04",
+                "url": "https://api.github.com/repos/newfold-labs/wp-module-coming-soon/zipball/e9f8f45821a149227ce2cd4033d87a0fc79bc073",
+                "reference": "e9f8f45821a149227ce2cd4033d87a0fc79bc073",
                 "shasum": ""
             },
             "require": {
@@ -802,10 +802,10 @@
             ],
             "description": "Coming Soon module for WordPress sites.",
             "support": {
-                "source": "https://github.com/newfold-labs/wp-module-coming-soon/tree/2.1.1",
+                "source": "https://github.com/newfold-labs/wp-module-coming-soon/tree/2.1.2",
                 "issues": "https://github.com/newfold-labs/wp-module-coming-soon/issues"
             },
-            "time": "2025-09-10T18:56:04+00:00"
+            "time": "2025-09-29T14:59:51+00:00"
         },
         {
             "name": "newfold-labs/wp-module-context",

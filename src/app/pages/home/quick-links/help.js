@@ -4,9 +4,15 @@ import { LightBulbIcon } from '@heroicons/react/24/outline';
 
 export default () => (
 	<Card
+		as="a"
 		className={
-			'nfd-quick-links-card nfd-quick-links-help-card nfd-flex nfd-flex-col nfd-gap-4 nfd-border nfd-border-[#D5D5D5] nfd-shadow-none'
+			classNames(
+				'nfd-quick-links-card nfd-quick-links-help-card',
+				'nfd-flex nfd-flex-col nfd-gap-4 nfd-border nfd-border-[#D5D5D5]',
+				'nfd-no-underline nfd-shadow-none nfd-transition-all hover:nfd-shadow-md'
+			)
 		}
+		href={ '#/help' }
 	>
 		<div
 			className={
@@ -24,17 +30,18 @@ export default () => (
 				{ __( 'Get Help', 'wp-plugin-bluehost' ) }
 			</Title>
 		</div>
-		{ __(
-			'Master WordPress with help from our AI assistant.',
-			'wp-plugin-bluehost'
-		) }
-		<a
-			href={ '#/help' }
+		<p className="nfd-mt-0 nfd-text-body">
+			{ __(
+				'Master WordPress with help from our AI assistant.',
+				'wp-plugin-bluehost'
+			) }
+		</p>
+		<p
 			className={
 				'nfd-mt-0 nfd-font-semibold nfd-no-underline nfd-text-[#196BDE]'
 			}
 		>
 			{ __( 'Launch our AI Help', 'wp-plugin-bluehost' ) }
-		</a>
+		</p>
 	</Card>
 );

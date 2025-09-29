@@ -4,9 +4,15 @@ import { SparklesIcon } from '@heroicons/react/24/outline';
 
 export default () => (
 	<Card
+		as="a"
 		className={
-			'nfd-quick-links-card nfd-quick-links-ai-builder-card nfd-flex nfd-flex-col nfd-gap-4 nfd-border nfd-border-[#D5D5D5] nfd-shadow-none'
+			classNames(
+				'nfd-quick-links-card nfd-quick-links-ai-builder-card',
+				'nfd-flex nfd-flex-col nfd-gap-4 nfd-border nfd-border-[#D5D5D5]',
+				'nfd-no-underline nfd-shadow-none nfd-transition-all hover:nfd-shadow-md'
+			)
 		}
+		href={ '#/ai-builder' }
 	>
 		<div
 			className={
@@ -24,17 +30,18 @@ export default () => (
 				{ __( 'Want a fresh start?', 'wp-plugin-bluehost' ) }
 			</Title>
 		</div>
-		{ __(
-			'Relaunch the AI Builder to replace this site with a new one.',
-			'wp-plugin-bluehost'
-		) }
-		<a
-			href={ '#/ai-builder' }
+		<p className="nfd-mt-0 nfd-text-body">
+			{ __(
+				'Relaunch the AI Builder to replace this site with a new one.',
+				'wp-plugin-bluehost'
+			) }
+		</p>
+		<p
 			className={
 				'nfd-mt-0 nfd-font-semibold nfd-no-underline nfd-text-[#196BDE]'
 			}
 		>
 			{ __( 'Create a new site', 'wp-plugin-bluehost' ) }
-		</a>
+		</p>
 	</Card>
 );

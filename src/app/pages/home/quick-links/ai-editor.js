@@ -5,9 +5,15 @@ import { getEditorUrl } from 'App/util/themeUtils';
 
 export default () => (
 	<Card
+		as="a"
 		className={
-			'nfd-quick-links-card nfd-quick-links-ai-editor-card nfd-flex nfd-flex-col nfd-gap-4 nfd-border nfd-border-[#D5D5D5] nfd-shadow-none'
+			classNames(
+				'nfd-quick-links-card nfd-quick-links-ai-editor-card',
+				'nfd-flex nfd-flex-col nfd-gap-4 nfd-border nfd-border-[#D5D5D5]',
+				'nfd-no-underline nfd-shadow-none nfd-transition-all hover:nfd-shadow-md'
+			)
 		}
+		href={ getEditorUrl( 'edit' ) }
 	>
 		<div
 			className={
@@ -25,17 +31,18 @@ export default () => (
 				{ __( 'Launch our AI Editor', 'wp-plugin-bluehost' ) }
 			</Title>
 		</div>
-		{ __(
-			'Say hello to effortless site building with a wide library of 250+ blocks',
-			'wp-plugin-bluehost'
-		) }
-		<a
-			href={ getEditorUrl( 'edit' ) }
+		<p className="nfd-mt-0 nfd-text-body">
+			{ __(
+				'Say hello to effortless site building with a wide library of 250+ blocks',
+				'wp-plugin-bluehost'
+			) }
+		</p>
+		<p
 			className={
 				'nfd-mt-0 nfd-font-semibold nfd-no-underline nfd-text-[#196BDE]'
 			}
 		>
 			{ __( 'Launch the Editor', 'wp-plugin-bluehost' ) }
-		</a>
+		</p>
 	</Card>
 );

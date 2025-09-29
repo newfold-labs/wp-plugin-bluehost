@@ -1,12 +1,18 @@
 import { Card, Title } from '@newfold/ui-component-library';
-import { YoastLogoIcon } from '../../../components/icons';
 import { __ } from '@wordpress/i18n';
+import { YoastLogoIcon } from '../../../components/icons';
 
 export default () => (
 	<Card
+		as="a"
 		className={
-			'nfd-quick-links-card nfd-quick-links-yoast-card nfd-flex nfd-flex-col nfd-gap-4 nfd-border nfd-border-[#D5D5D5] nfd-shadow-none'
+			classNames(
+				'nfd-quick-links-card nfd-quick-links-yoast-card',
+				'nfd-flex nfd-flex-col nfd-gap-4 nfd-border nfd-border-[#D5D5D5]',
+				'nfd-no-underline nfd-shadow-none nfd-transition-all hover:nfd-shadow-md'
+			)
 		}
+		href={ '#/yoast' }
 	>
 		<div
 			className={
@@ -20,17 +26,18 @@ export default () => (
 				{ __( 'Optimize your content', 'wp-plugin-bluehost' ) }
 			</Title>
 		</div>
-		{ __(
-			'Optimize your content for search engines and boost your store visibility.',
-			'wp-plugin-bluehost'
-		) }
-		<a
-			href={ '#/yoast' }
+		<p className="nfd-mt-0 nfd-text-body">
+			{ __(
+				'Optimize your content for search engines and boost your store visibility.',
+				'wp-plugin-bluehost'
+			) }
+		</p>
+		<p
 			className={
 				'nfd-mt-0 nfd-font-semibold nfd-no-underline nfd-text-[#196BDE]'
 			}
 		>
 			{ __( 'Start now', 'wp-plugin-bluehost' ) }
-		</a>
+		</p>
 	</Card>
 );

@@ -21,8 +21,8 @@ const Home = () => {
 			window.NFDPortalRegistry.unregisterPortal( 'next-steps' );
 		};
 	}, [] );
-	// TODO: retrieve dynamically the store kind.
-	const siteKind = 'store';
+
+	const siteKind = window.NewfoldRuntime.siteType || 'website';
 
 	return (
 		<Page className="wppbh-home xl:nfd-max-w-screen-lg">
@@ -44,9 +44,16 @@ const Home = () => {
 						) }
 					</Title>
 				</span>
-				<Button variant={ 'secondary' } as={ 'a' } href={ '#' }>
-					{ __( 'Add Store Details', 'wp-plugin-bluehost' ) }
-				</Button>
+				{ siteKind === 'store' && (
+				<Button
+					as={ 'a' }
+					href={ '#' }
+					data-store-info-trigger
+					variant={ 'secondary' }
+				>
+						{ __( 'Add Store Details', 'wp-plugin-bluehost' ) }
+					</Button>
+				) }
 			</div>
 
 			<Container className="nfd-max-w-full nfd-p-8 nfd-shadow-none nfd-rounded-xl nfd-border nfd-border-[#D5D5D5]">

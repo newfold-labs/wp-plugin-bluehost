@@ -34,14 +34,11 @@ const Home = () => {
 				>
 					<PartyIcon />
 					<Title className="nfd-mb-1 nfd-font-semibold">
-						{ sprintf(
-							/* translators: %s is the site kind. */
-							__(
-								'Congrats, your %s is live!',
-								'wp-plugin-bluehost'
-							),
-							siteKind
-						) }
+						{ 
+							siteKind === 'store'
+							? __( 'Congrats, your store is live!', 'wp-plugin-bluehost' )
+							: __( 'Congrats, your website is live!', 'wp-plugin-bluehost' ), 
+						}
 					</Title>
 				</span>
 				{ siteKind === 'store' && (

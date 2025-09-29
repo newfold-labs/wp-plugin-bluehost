@@ -1,23 +1,28 @@
 import { useEffect, useState } from '@wordpress/element';
 import apiFetch from '@wordpress/api-fetch';
 import { useViewportMatch } from '@wordpress/compose';
-import { addQueryArgs, cleanForSlug } from '@wordpress/url';
+import { addQueryArgs } from '@wordpress/url';
 import { filter } from 'lodash';
-import { Button, AppBarNavigation, useNavigationContext } from '@newfold/ui-component-library';
+import {
+	Button,
+	AppBarNavigation,
+	useNavigationContext,
+} from '@newfold/ui-component-library';
 import { default as NewfoldNotifications } from '@modules/wp-module-notifications/assets/js/components/notifications/';
-import { NavLink, useLocation } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
 import classnames from 'classnames';
 import { getPlatformPathUrl } from 'App/util/helpers';
 import { getEditorUrl } from 'App/util/themeUtils';
 import { topRoutes, utilityRoutes } from 'App/data/routes';
-import { RectangleGroupIcon, ArrowUpRightIcon } from '@heroicons/react/24/outline';
+import {
+	RectangleGroupIcon,
+	ArrowUpRightIcon,
+} from '@heroicons/react/24/outline';
 import Logo from '../logo';
 
 export const AppNavHeader = () => {
 	const { mode } = AppBarNavigation.AppBar.useContext();
-	return (
-		<Logo variant={ mode === 'inline' ? 'icon' : 'wordmark' }/>
-	);
+	return <Logo variant={ mode === 'inline' ? 'icon' : 'wordmark' } />;
 };
 
 export const AppNavMenu = () => {
@@ -27,37 +32,39 @@ export const AppNavMenu = () => {
 	const menu = () => {
 		return (
 			<AppBarNavigation.AppBar.Nav>
-				{ [ ...topRoutes, ...utilityRoutes ]?.map(
-					( page ) => {
-						if ( true !== page.condition ) {
-							return null;
-						}
-
-						const { mode, setOpen } = AppBarNavigation.AppBar.useContext();
-						return (
-							<AppBarNavigation.AppBar.Item
-								key={ page.name }
-								label={ page.title }
-								href={ `#${ page.name }` }
-								className={ classnames(
-									'group-[.nfd-appbar-item--active]:nfd-text-[var(--color-primary)] nfd-whitespace-nowrap',
-									{
-										'nfd-px-4 group-[.nfd-appbar-item--active]:nfd-bg-[#DBF1FC80] group-[.nfd-appbar-item--active]:nfd-font-bold': 'inline' === mode,
-										'nfd-px-0 nfd-font-bold nfd-bg-transparent group-[.nfd-appbar-item]:!nfd-bg-transparent  hover:!nfd-bg-black': 'collapsed' === mode,
-									}
-								) }
-								onClick={ ( e) => {
-									// set open to false
-									setOpen( false );
-									// run any actions assigned to page
-									( !! page.action && page.action instanceof Function ) ? 
-									page.action( e ) :
-									null;
-								} }
-							/>
-						)
+				{ [ ...topRoutes, ...utilityRoutes ]?.map( ( page ) => {
+					if ( true !== page.condition ) {
+						return null;
 					}
-				) }
+
+					const { mode, setOpen } =
+						AppBarNavigation.AppBar.useContext();
+					return (
+						<AppBarNavigation.AppBar.Item
+							key={ page.name }
+							label={ page.title }
+							href={ `#${ page.name }` }
+							className={ classnames(
+								'group-[.nfd-appbar-item--active]:nfd-text-[var(--color-primary)] nfd-whitespace-nowrap',
+								{
+									'nfd-px-4 group-[.nfd-appbar-item--active]:nfd-bg-[#DBF1FC80] group-[.nfd-appbar-item--active]:nfd-font-bold':
+										'inline' === mode,
+									'nfd-px-0 nfd-font-bold nfd-bg-transparent group-[.nfd-appbar-item]:!nfd-bg-transparent  hover:!nfd-bg-black':
+										'collapsed' === mode,
+								}
+							) }
+							onClick={ ( e ) => {
+								// set open to false
+								setOpen( false );
+								// run any actions assigned to page
+								!! page.action &&
+								page.action instanceof Function
+									? page.action( e )
+									: null;
+							} }
+						/>
+					);
+				} ) }
 			</AppBarNavigation.AppBar.Nav>
 		);
 	};
@@ -71,25 +78,22 @@ export const AppNavMenu = () => {
 					href={ getEditorUrl( 'edit' ) }
 				>
 					AI Editor
-					<RectangleGroupIcon/>
+					<RectangleGroupIcon />
 				</Button>
 				<Button
 					as={ 'a' }
 					className={ 'nfd-flex nfd-gap-2 nfd-mr-4' }
 					href={ window.NewfoldRuntime.linkTracker.addUtmParams(
-						getPlatformPathUrl(
-							'hosting/details',
-							'app/#/sites'
-						)
+						getPlatformPathUrl( 'hosting/details', 'app/#/sites' )
 					) }
 					variant={ 'secondary' }
 				>
 					Hosting Panel
-					<ArrowUpRightIcon/>
+					<ArrowUpRightIcon />
 				</Button>
 			</>
-		)
-	}
+		);
+	};
 
 	const SubMenusManager = () => {
 		// close any open submenus
@@ -126,7 +130,7 @@ export const AppNavMenu = () => {
 	return (
 		<>
 			{ menu() }
-			<div className={ 'nfd-grow' }/>
+			<div className={ 'nfd-grow' } />
 			{ actions() }
 		</>
 	);
@@ -154,9 +158,13 @@ export const AppBarNav = () => {
 
 	return (
 		<>
-			<AppBarNavigation.AppBar position={ 'absolute' } className={ 'nfd-pr-2' } collapseAt={ 880 }>
-				<AppNavHeader/>
-				<AppNavMenu/>
+			<AppBarNavigation.AppBar
+				position={ 'absolute' }
+				className={ 'nfd-pr-2' }
+				collapseAt={ 880 }
+			>
+				<AppNavHeader />
+				<AppNavMenu />
 			</AppBarNavigation.AppBar>
 			<NewfoldNotifications
 				constants={ {
@@ -177,5 +185,5 @@ export const AppBarNav = () => {
 
 export const AppNav = () => {
 	const isLargeViewport = useViewportMatch( 'medium' );
-	return <AppBarNav/>;
+	return <AppBarNav />;
 };

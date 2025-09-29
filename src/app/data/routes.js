@@ -19,11 +19,6 @@ import Admin from '../pages/admin';
 const addPartialMatch = ( prefix, path ) =>
 	prefix === path ? `${ prefix }/*` : path;
 
-const HelpCenterAI = ( e ) => {
-	e.preventDefault();
-	window.newfoldEmbeddedHelp.toggleNFDLaunchedEmbeddedHelp();
-};
-
 /**
  * Redirect component for my_plugins_and_tools route.
  * Redirects users to the solutions page with category=all parameter.
@@ -216,7 +211,7 @@ export const routes = [
 		Component: Help,
 		Icon: HelpIcon,
 		condition: true,
-		action: function ( e ) {
+		action( e ) {
 			if (
 				NewfoldRuntime.hasCapability( 'canAccessHelpCenter' ) &&
 				window.NewfoldFeatures.isEnabled( 'helpCenter' )

@@ -16,13 +16,11 @@ const Settings = () => {
 	useEffect( () => {
 		// run when mounts
 		const stagingPortal = document.getElementById( 'staging-portal' );
-		const performancePortal = document.getElementById( 'performance-portal' );
+		const performancePortal =
+			document.getElementById( 'performance-portal' );
 		// const comingSoonPortal = document.getElementById( 'coming-soon-portal' );
 		if ( stagingPortal ) {
-			window.NFDPortalRegistry.registerPortal(
-				'staging',
-				stagingPortal
-			);
+			window.NFDPortalRegistry.registerPortal( 'staging', stagingPortal );
 		}
 		if ( performancePortal ) {
 			window.NFDPortalRegistry.registerPortal(
@@ -48,33 +46,36 @@ const Settings = () => {
 	// Auto-open accordion sections based on URL hash
 	useEffect( () => {
 		const path = location.pathname;
-		
+
 		// Close all accordion sections first
 		const allDetails = document.querySelectorAll( '.nfd-details' );
-		allDetails.forEach( details => {
+		allDetails.forEach( ( details ) => {
 			details.removeAttribute( 'open' );
-		});
+		} );
 
 		// Map URL paths to accordion selectors
 		const accordionMap = {
 			'/settings/performance': '.performance-details',
-			'/settings/staging': '.staging-details', 
-			'/settings/settings': '.settings-details'
+			'/settings/staging': '.staging-details',
+			'/settings/settings': '.settings-details',
 		};
 
 		// Open the appropriate accordion section
-		const targetSelector = accordionMap[path];
+		const targetSelector = accordionMap[ path ];
 		if ( targetSelector ) {
 			const targetDetails = document.querySelector( targetSelector );
 			if ( targetDetails ) {
 				targetDetails.setAttribute( 'open', 'true' );
 			}
 		}
-	}, [location.pathname] );
+	}, [ location.pathname ] );
 
 	return (
 		<Page title="Settings" className={ 'wppbh-app-settings-page' }>
-			<Container id="nfd-performance" className={ 'nfd-settings-app-wrapper nfd-performance' }>
+			<Container
+				id="nfd-performance"
+				className={ 'nfd-settings-app-wrapper nfd-performance' }
+			>
 				<details className="nfd-details settings-app-wrapper performance-details">
 					<summary>
 						<div
@@ -84,21 +85,30 @@ const Settings = () => {
 							<Title as={ 'h1' } className={ 'nfd-mb-2' }>
 								{ __( 'Performance', 'wp-plugin-bluehost' ) }
 							</Title>
-							<Title as={ 'h2' } className="nfd-font-normal nfd-text-[13px]">
+							<Title
+								as={ 'h2' }
+								className="nfd-font-normal nfd-text-[13px]"
+							>
 								{ __(
 									'Optimize your website by managing cache and performance settings',
 									'wp-plugin-bluehost'
 								) }
 							</Title>
 						</div>
-						<span className="nfd-details-icon"><ChevronUpIcon /></span>
+						<span className="nfd-details-icon">
+							<ChevronUpIcon />
+						</span>
 					</summary>
 					<div id="nfd-performance-portal-wrapper">
 						<div id="performance-portal"></div>
 					</div>
 				</details>
 			</Container>
-			<Container className={ 'nfd-settings-app-wrapper wppbh-app-settings-container' }>
+			<Container
+				className={
+					'nfd-settings-app-wrapper wppbh-app-settings-container'
+				}
+			>
 				<details className="nfd-details settings-app-wrapper settings-details">
 					<summary>
 						<div
@@ -106,69 +116,78 @@ const Settings = () => {
 							className={ 'wppbh-app-settings-header' }
 						>
 							<Title as={ 'h1' } className={ 'nfd-mb-2' }>
-								{ __( 'General Settings', 'wp-plugin-bluehost' ) }
+								{ __(
+									'General Settings',
+									'wp-plugin-bluehost'
+								) }
 							</Title>
-							<Title as={ 'h2' } className="nfd-font-normal nfd-text-[13px]">
+							<Title
+								as={ 'h2' }
+								className="nfd-font-normal nfd-text-[13px]"
+							>
 								{ __(
 									'Manage common settings for your website',
 									'wp-plugin-bluehost'
 								) }
 							</Title>
 						</div>
-						<span className="nfd-details-icon"><ChevronUpIcon /></span>
+						<span className="nfd-details-icon">
+							<ChevronUpIcon />
+						</span>
 					</summary>
-					
-						<Container.Block
-							separator={ true }
-							id={ 'coming-soon-section' }
-							className={ classNames(
-								'wppbh-app-settings-coming-soon',
-								useContainerBlockIsTarget( 'coming-soon-section' ) &&
-									'wppbh-animation-blink'
+
+					<Container.Block
+						separator={ true }
+						id={ 'coming-soon-section' }
+						className={ classNames(
+							'wppbh-app-settings-coming-soon',
+							useContainerBlockIsTarget(
+								'coming-soon-section'
+							) && 'wppbh-animation-blink'
+						) }
+					>
+						<ComingSoon />
+					</Container.Block>
+
+					<Container.Block
+						separator={ true }
+						id={ 'wonder-blocks-section' }
+						className={ 'wppbh-app-settings-wonder-blocks' }
+					>
+						<Container.SettingsField
+							title={ __( 'Features', 'wp-plugin-bluehost' ) }
+							description={ __(
+								'Customize the available features as you manage your website.',
+								'wp-plugin-bluehost'
 							) }
 						>
-							<ComingSoon />
-						</Container.Block>
+							<WonderBlocksSettings />
+							<br />
+							<HelpCenterSettings />
+						</Container.SettingsField>
+					</Container.Block>
 
-						<Container.Block
-							separator={ true }
-							id={ 'wonder-blocks-section' }
-							className={ 'wppbh-app-settings-wonder-blocks' }
-						>
-							<Container.SettingsField
-								title={ __( 'Features', 'wp-plugin-bluehost' ) }
-								description={ __(
-									'Customize the available features as you manage your website.',
-									'wp-plugin-bluehost'
-								) }
-							>
-								<WonderBlocksSettings />
-								<br />
-								<HelpCenterSettings />
-							</Container.SettingsField>
-						</Container.Block>
+					<Container.Block
+						separator={ true }
+						className={ 'wppbh-app-settings-update' }
+					>
+						<AutomaticUpdates />
+					</Container.Block>
 
-						<Container.Block
-							separator={ true }
-							className={ 'wppbh-app-settings-update' }
-						>
-							<AutomaticUpdates />
-						</Container.Block>
+					<Container.Block
+						separator={ true }
+						id={ 'content-section' }
+						className={ 'wppbh-app-settings-content' }
+					>
+						<ContentSettings />
+					</Container.Block>
 
-						<Container.Block
-							separator={ true }
-							id={ 'content-section' }
-							className={ 'wppbh-app-settings-content' }
-						>
-							<ContentSettings />
-						</Container.Block>
-
-						<Container.Block
-							id={ 'comments-section' }
-							className={ 'wppbh-app-settings-comments' }
-						>
-							<CommentSettings />
-						</Container.Block>
+					<Container.Block
+						id={ 'comments-section' }
+						className={ 'wppbh-app-settings-comments' }
+					>
+						<CommentSettings />
+					</Container.Block>
 				</details>
 			</Container>
 			<Container className={ 'nfd-settings-app-wrapper nfd-staging' }>
@@ -178,19 +197,27 @@ const Settings = () => {
 							id={ 'staging-header' }
 							className={ 'wppbh-app-staging-header' }
 						>
-						<Title as={ 'h1' } className={ 'nfd-mb-2' }>
-							{ __( 'Staging', 'wp-plugin-bluehost' ) }
-						</Title>
-						<Title as={ 'h2' } className="nfd-font-normal nfd-text-[13px]">
-							{ __(
-								'A staging site is a duplicate of your live site, offering a secure environment to experiment, test updates, and deploy when ready.',
-								'wp-plugin-bluehost'
+							<Title as={ 'h1' } className={ 'nfd-mb-2' }>
+								{ __( 'Staging', 'wp-plugin-bluehost' ) }
+							</Title>
+							<Title
+								as={ 'h2' }
+								className="nfd-font-normal nfd-text-[13px]"
+							>
+								{ __(
+									'A staging site is a duplicate of your live site, offering a secure environment to experiment, test updates, and deploy when ready.',
+									'wp-plugin-bluehost'
 								) }
 							</Title>
 						</div>
-						<span className="nfd-details-icon"><ChevronUpIcon /></span>
+						<span className="nfd-details-icon">
+							<ChevronUpIcon />
+						</span>
 					</summary>
-					<div id="nfd-staging-portal-wrapper" className="nfd-staging">
+					<div
+						id="nfd-staging-portal-wrapper"
+						className="nfd-staging"
+					>
 						<div id="staging-portal"></div>
 					</div>
 				</details>

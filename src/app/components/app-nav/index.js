@@ -126,7 +126,7 @@ export const AppNavMenu = () => {
 		}
 		SubMenusManager();
 		document.onclick = SubMenusManager;
-	}, [ location ] );
+	}, [ location, setActivePath ] );
 
 	return (
 		<>

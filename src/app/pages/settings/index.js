@@ -77,7 +77,6 @@ const Settings = () => {
 				id="nfd-performance"
 				className={ 'nfd-settings-app-wrapper nfd-performance' }
 			>
-				
 				<details className="nfd-details settings-app-wrapper performance-details">
 					<summary>
 						<div

@@ -13,7 +13,10 @@ export default () => (
 			</Title>
 		</div>
 		{ __( 'Relaunch the AI Builder to replace this site with a new one.', 'wp-plugin-bluehost' ) }
-		<a className={ 'nfd-mt-0 nfd-font-semibold nfd-no-underline nfd-text-[#196BDE]' }>
+		<a
+			href={ '#/ai-builder' }
+			className={ 'nfd-mt-0 nfd-font-semibold nfd-no-underline nfd-text-[#196BDE]' }
+		>
 			{ __( 'Create a new site', 'wp-plugin-bluehost' ) }
 		</a>
 	</Card>

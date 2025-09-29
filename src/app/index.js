@@ -142,7 +142,7 @@ const AppBody = ( props ) => {
 				} }
 			/>
 			<div className="wppbh-app-body">
-				<header className="nfd-mb-20">
+				<header>
 					<AppNav />
 				</header>
 				<div className="wppbh-app-body-inner nfd-flex nfd-justify-center">

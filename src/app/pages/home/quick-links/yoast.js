@@ -13,7 +13,10 @@ export default () => (
 			</Title>
 		</div>
 		{ __( 'Optimize your content for search engines and boost your store visibility.', 'wp-plugin-bluehost' ) }
-		<a className={ 'nfd-mt-0 nfd-font-semibold nfd-no-underline nfd-text-[#196BDE]' }>
+		<a
+			href={ '#/yoast' }
+			className={ 'nfd-mt-0 nfd-font-semibold nfd-no-underline nfd-text-[#196BDE]' }
+		>
 			{ __( 'Start now', 'wp-plugin-bluehost' ) }
 		</a>
 	</Card>

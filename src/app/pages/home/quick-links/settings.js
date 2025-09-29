@@ -13,7 +13,10 @@ export default () => (
 			</Title>
 		</div>
 		{ __( 'Security, performance, backups, staging & more.', 'wp-plugin-bluehost' ) }
-		<a className={ 'nfd-mt-0 nfd-font-semibold nfd-no-underline nfd-text-[#196BDE]' }>
+		<a 
+			href={ '#/settings' }
+			className={ 'nfd-mt-0 nfd-font-semibold nfd-no-underline nfd-text-[#196BDE]' }
+		>
 			{ __( 'Manage', 'wp-plugin-bluehost' ) }
 		</a>
 	</Card>

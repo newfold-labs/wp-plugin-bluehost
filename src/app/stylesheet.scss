@@ -89,6 +89,10 @@ body.toplevel_page_bluehost {
         display: none;
     }
 
+    #wpbody-content .newfold-notifications-wrapper {
+        padding-top: 2rem; // to avoid being hidden by the appbar
+    }
+
     #wpbody-content .newfold-notifications-wrapper .notice {
         display: block;
     }

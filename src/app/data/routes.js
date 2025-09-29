@@ -216,7 +216,6 @@ export const routes = [
 				NewfoldRuntime.hasCapability( 'canAccessHelpCenter' ) &&
 				window.NewfoldFeatures.isEnabled( 'helpCenter' )
 			) {
-				e.preventDefault();
 				window.newfoldEmbeddedHelp.toggleNFDLaunchedEmbeddedHelp();
 			}
 		},

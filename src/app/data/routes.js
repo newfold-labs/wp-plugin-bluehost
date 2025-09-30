@@ -211,11 +211,14 @@ export const routes = [
 		Component: Help,
 		Icon: HelpIcon,
 		condition: true,
-		action( e ) {
+		action( e, preventDefault = false ) {
 			if (
 				NewfoldRuntime.hasCapability( 'canAccessHelpCenter' ) &&
 				window.NewfoldFeatures.isEnabled( 'helpCenter' )
 			) {
+				if ( preventDefault ) {
+					e.preventDefault();
+				}
 				window.newfoldEmbeddedHelp.toggleNFDLaunchedEmbeddedHelp();
 			}
 		},

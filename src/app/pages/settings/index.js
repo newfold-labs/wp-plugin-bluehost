@@ -64,9 +64,18 @@ const Settings = () => {
 
 	return (
 		<Page title="Settings" className={ 'wppbh-app-settings-page' }>
-			<div className={ 'wppbh-app-settings-page__header' }>
-				<Title as="h1">{ __( 'Manage WordPress', 'wp-plugin-bluehost' ) }</Title>
-				<Title as="h2" className="nfd-font-normal nfd-text-[13px]">
+			<div
+				className={
+					'wppbh-app-settings-page__header nfd-flex nfd-flex-col nfd-gap-y-4'
+				}
+			>
+				<Title as="h1">
+					{ __( 'Manage WordPress', 'wp-plugin-bluehost' ) }
+				</Title>
+				<Title
+					as="h2"
+					className="nfd-font-normal nfd-text-[13px] nfd-color-body"
+				>
 					{ __(
 						'Optimize your website my managing cache, security and performance settings.',
 						'wp-plugin-bluehost'
@@ -77,7 +86,6 @@ const Settings = () => {
 				id="nfd-performance"
 				className={ 'nfd-settings-app-wrapper nfd-performance' }
 			>
-				
 				<details className="nfd-details settings-app-wrapper performance-details">
 					<summary>
 						<div

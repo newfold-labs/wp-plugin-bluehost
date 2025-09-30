@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "e7f5a892ffd0e3a2bbcc40708c237d9d",
+    "content-hash": "38be02f60df5982ac40172e16c120d2b",
     "packages": [
         {
             "name": "doctrine/inflector",
@@ -1070,16 +1070,16 @@
         },
         {
             "name": "newfold-labs/wp-module-ecommerce",
-            "version": "1.10.0",
+            "version": "1.10.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/newfold-labs/wp-module-ecommerce.git",
-                "reference": "0da6db53f1495ed6b470ffbb101d77381bdfac11"
+                "reference": "e0877da912c56c6cbd0f430e5c9ba0091494c350"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/newfold-labs/wp-module-ecommerce/zipball/0da6db53f1495ed6b470ffbb101d77381bdfac11",
-                "reference": "0da6db53f1495ed6b470ffbb101d77381bdfac11",
+                "url": "https://api.github.com/repos/newfold-labs/wp-module-ecommerce/zipball/e0877da912c56c6cbd0f430e5c9ba0091494c350",
+                "reference": "e0877da912c56c6cbd0f430e5c9ba0091494c350",
                 "shasum": ""
             },
             "require": {
@@ -1159,10 +1159,10 @@
             ],
             "description": "Brand Agnostic eCommerce Experience",
             "support": {
-                "source": "https://github.com/newfold-labs/wp-module-ecommerce/tree/1.10.0",
+                "source": "https://github.com/newfold-labs/wp-module-ecommerce/tree/1.10.1",
                 "issues": "https://github.com/newfold-labs/wp-module-ecommerce/issues"
             },
-            "time": "2025-09-25T22:41:01+00:00"
+            "time": "2025-09-29T21:04:35+00:00"
         },
         {
             "name": "newfold-labs/wp-module-facebook",
@@ -2535,16 +2535,16 @@
         },
         {
             "name": "newfold-labs/wp-module-performance",
-            "version": "3.5.0",
+            "version": "3.5.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/newfold-labs/wp-module-performance.git",
-                "reference": "330c65493699b172ba92c1e30f4d940437d87435"
+                "reference": "5d65f47f22a2565a81fe148eb218550add4e0eca"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/newfold-labs/wp-module-performance/zipball/330c65493699b172ba92c1e30f4d940437d87435",
-                "reference": "330c65493699b172ba92c1e30f4d940437d87435",
+                "url": "https://api.github.com/repos/newfold-labs/wp-module-performance/zipball/5d65f47f22a2565a81fe148eb218550add4e0eca",
+                "reference": "5d65f47f22a2565a81fe148eb218550add4e0eca",
                 "shasum": ""
             },
             "require": {
@@ -2633,10 +2633,10 @@
             ],
             "description": "A module for managing caching functionality.",
             "support": {
-                "source": "https://github.com/newfold-labs/wp-module-performance/tree/3.5.0",
+                "source": "https://github.com/newfold-labs/wp-module-performance/tree/3.5.1",
                 "issues": "https://github.com/newfold-labs/wp-module-performance/issues"
             },
-            "time": "2025-09-25T22:39:38+00:00"
+            "time": "2025-09-29T21:04:17+00:00"
         },
         {
             "name": "newfold-labs/wp-module-pls",

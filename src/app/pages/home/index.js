@@ -5,7 +5,12 @@ import { sprintf, __ } from '@wordpress/i18n';
 import { PartyIcon } from 'App/components/icons';
 
 const Home = () => {
-	const [ hasStoreInfo, setHasStoreInfo ] = useState( !! (window?.NFDStoreInfo?.data?.address && window?.NFDStoreInfo?.data?.city) );
+	const [ hasStoreInfo, setHasStoreInfo ] = useState(
+		!! (
+			window?.NFDStoreInfo?.data?.address &&
+			window?.NFDStoreInfo?.data?.city
+		)
+	);
 
 	useEffect( () => {
 		// run when mounts
@@ -28,11 +33,22 @@ const Home = () => {
 	useEffect( () => {
 		// Update hasStoreInfo when storeInfo changes
 		const handleStoreInfoChange = () => {
-			setHasStoreInfo( !! (window?.NFDStoreInfo?.data?.address && window?.NFDStoreInfo?.data?.city) );
-		}
-		document.addEventListener( 'nfd-submit-store-info-form', handleStoreInfoChange );
+			setHasStoreInfo(
+				!! (
+					window?.NFDStoreInfo?.data?.address &&
+					window?.NFDStoreInfo?.data?.city
+				)
+			);
+		};
+		document.addEventListener(
+			'nfd-submit-store-info-form',
+			handleStoreInfoChange
+		);
 		return () => {
-			document.removeEventListener( 'nfd-submit-store-info-form', handleStoreInfoChange );
+			document.removeEventListener(
+				'nfd-submit-store-info-form',
+				handleStoreInfoChange
+			);
 		};
 	}, [] );
 
@@ -44,7 +60,7 @@ const Home = () => {
 						'nfd-home__title-wrapper nfd-flex nfd-gap-4 nfd-items-center'
 					}
 				>
-					<PartyIcon/>
+					<PartyIcon />
 					<Title className="nfd-mb-1 nfd-font-semibold">
 						{ sprintf(
 							/* translators: %s is the site kind. */
@@ -62,17 +78,14 @@ const Home = () => {
 					data-store-info-trigger
 					variant={ 'secondary' }
 				>
-					{
-						hasStoreInfo ?
-							__( 'Store Details', 'wp-plugin-bluehost' )
-							:
-							__( 'Add Store Details', 'wp-plugin-bluehost' )
-					}
+					{ hasStoreInfo
+						? __( 'Store Details', 'wp-plugin-bluehost' )
+						: __( 'Add Store Details', 'wp-plugin-bluehost' ) }
 				</Button>
 			</div>
 
 			<Container className="nfd-max-w-full nfd-p-8 nfd-shadow-none nfd-rounded-xl nfd-border nfd-border-[#D5D5D5]">
-				<div id="next-steps-portal"/>
+				<div id="next-steps-portal" />
 			</Container>
 
 			<Container className="nfd-max-w-full nfd-p-0 nfd-shadow-none nfd-bg-transparent nfd-border-0 nfd-mt-4">
@@ -83,7 +96,7 @@ const Home = () => {
 					{ __( 'Quick links', 'wp-plugin-bluehost' ) }
 				</Title>
 				<div className="nfd-grid nfd-gap-4 nfd-grid-cols-1 min-[783px]:nfd-gap-6 min-[540px]:nfd-grid-cols-2 min-[960px]:nfd-grid-cols-3">
-					<QuickLinks/>
+					<QuickLinks />
 				</div>
 			</Container>
 		</Page>

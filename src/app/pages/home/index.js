@@ -1,11 +1,17 @@
-import { useEffect } from '@wordpress/element';
+import { useState, useEffect } from '@wordpress/element';
 import { Container, Page, Title, Button } from '@newfold/ui-component-library';
 import QuickLinks from './quick-links';
 import { sprintf, __ } from '@wordpress/i18n';
-
 import { PartyIcon } from 'App/components/icons';
 
 const Home = () => {
+	const [ hasStoreInfo, setHasStoreInfo ] = useState(
+		!! (
+			window?.NFDStoreInfo?.data?.address &&
+			window?.NFDStoreInfo?.data?.city
+		)
+	);
+
 	useEffect( () => {
 		// run when mounts
 		const nextStepsPortal = document.getElementById( 'next-steps-portal' );
@@ -23,6 +29,28 @@ const Home = () => {
 	}, [] );
 	// TODO: retrieve dynamically the store kind.
 	const siteKind = 'store';
+
+	useEffect( () => {
+		// Update hasStoreInfo when storeInfo changes
+		const handleStoreInfoChange = () => {
+			setHasStoreInfo(
+				!! (
+					window?.NFDStoreInfo?.data?.address &&
+					window?.NFDStoreInfo?.data?.city
+				)
+			);
+		};
+		document.addEventListener(
+			'nfd-submit-store-info-form',
+			handleStoreInfoChange
+		);
+		return () => {
+			document.removeEventListener(
+				'nfd-submit-store-info-form',
+				handleStoreInfoChange
+			);
+		};
+	}, [] );
 
 	return (
 		<Page className="wppbh-home xl:nfd-max-w-screen-lg">
@@ -44,8 +72,15 @@ const Home = () => {
 						) }
 					</Title>
 				</span>
-				<Button variant={ 'secondary' } as={ 'a' } href={ '#' }>
-					{ __( 'Add Store Details', 'wp-plugin-bluehost' ) }
+				<Button
+					as={ 'a' }
+					href={ '#' }
+					data-store-info-trigger
+					variant={ 'secondary' }
+				>
+					{ hasStoreInfo
+						? __( 'Store Details', 'wp-plugin-bluehost' )
+						: __( 'Add Store Details', 'wp-plugin-bluehost' ) }
 				</Button>
 			</div>
 

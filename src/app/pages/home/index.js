@@ -1,11 +1,17 @@
-import { useEffect } from '@wordpress/element';
+import { useState, useEffect } from '@wordpress/element';
+import { __ } from '@wordpress/i18n';
 import { Container, Page, Title, Button } from '@newfold/ui-component-library';
-import QuickLinks from './quick-links';
-import { sprintf, __ } from '@wordpress/i18n';
-
 import { PartyIcon } from 'App/components/icons';
+import QuickLinks from './quick-links';
 
 const Home = () => {
+	const [ hasStoreInfo, setHasStoreInfo ] = useState(
+		!! (
+			window?.NFDStoreInfo?.data?.address &&
+			window?.NFDStoreInfo?.data?.city
+		)
+	);
+
 	useEffect( () => {
 		// run when mounts
 		const nextStepsPortal = document.getElementById( 'next-steps-portal' );
@@ -24,6 +30,28 @@ const Home = () => {
 
 	const siteKind = window.NewfoldRuntime.siteType || 'website';
 
+	useEffect( () => {
+		// Update hasStoreInfo when storeInfo changes
+		const handleStoreInfoChange = () => {
+			setHasStoreInfo(
+				!! (
+					window?.NFDStoreInfo?.data?.address &&
+					window?.NFDStoreInfo?.data?.city
+				)
+			);
+		};
+		document.addEventListener(
+			'nfd-submit-store-info-form',
+			handleStoreInfoChange
+		);
+		return () => {
+			document.removeEventListener(
+				'nfd-submit-store-info-form',
+				handleStoreInfoChange
+			);
+		};
+	}, [] );
+
 	return (
 		<Page className="wppbh-home xl:nfd-max-w-screen-lg">
 			<div className="nfd-home__title-section nfd-flex nfd-justify-between nfd-items-center">
@@ -34,21 +62,27 @@ const Home = () => {
 				>
 					<PartyIcon />
 					<Title className="nfd-mb-1 nfd-font-semibold">
-						{ 
-							siteKind === 'store'
-							? __( 'Congrats, your store is live!', 'wp-plugin-bluehost' )
-							: __( 'Congrats, your website is live!', 'wp-plugin-bluehost' ), 
-						}
+						{ siteKind === 'store'
+							? __(
+									'Congrats, your store is live!',
+									'wp-plugin-bluehost'
+							  )
+							: __(
+									'Congrats, your website is live!',
+									'wp-plugin-bluehost'
+							  ) }
 					</Title>
 				</span>
 				{ siteKind === 'store' && (
-				<Button
-					as={ 'a' }
-					href={ '#' }
-					data-store-info-trigger
-					variant={ 'secondary' }
-				>
-						{ __( 'Add Store Details', 'wp-plugin-bluehost' ) }
+					<Button
+						as={ 'a' }
+						href={ '#' }
+						data-store-info-trigger
+						variant={ 'secondary' }
+					>
+						{ hasStoreInfo
+							? __( 'Store Details', 'wp-plugin-bluehost' )
+							: __( 'Add Store Details', 'wp-plugin-bluehost' ) }
 					</Button>
 				) }
 			</div>

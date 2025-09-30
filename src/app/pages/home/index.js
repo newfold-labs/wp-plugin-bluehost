@@ -5,7 +5,7 @@ import { sprintf, __ } from '@wordpress/i18n';
 import { PartyIcon } from 'App/components/icons';
 
 const Home = () => {
-	const [ hasStoreInfo, setHasStoreInfo ] = useState( !! (window?.storeInfo?.data?.address && window?.storeInfo?.data?.city) );
+	const [ hasStoreInfo, setHasStoreInfo ] = useState( !! (window?.NFDStoreInfo?.data?.address && window?.NFDStoreInfo?.data?.city) );
 
 	useEffect( () => {
 		// run when mounts
@@ -28,7 +28,7 @@ const Home = () => {
 	useEffect( () => {
 		// Update hasStoreInfo when storeInfo changes
 		const handleStoreInfoChange = () => {
-			setHasStoreInfo( !! (window?.storeInfo?.data?.address && window?.storeInfo?.data?.city) );
+			setHasStoreInfo( !! (window?.NFDStoreInfo?.data?.address && window?.NFDStoreInfo?.data?.city) );
 		}
 		document.addEventListener( 'nfd-submit-store-info-form', handleStoreInfoChange );
 		return () => {

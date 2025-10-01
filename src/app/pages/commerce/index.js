@@ -4,7 +4,7 @@ import { __ } from '@wordpress/i18n';
 
 const CommercePage = () => {
 	return (
-		<Page className={ 'wppbh-app-commerce-page nfd-w-full' }>
+		<Page className={ 'wppbh-app-commerce-page nfd-page-solutions nfd-w-full' }>
 			<div
 				className={
 					'wppbh-app-help-page__header nfd-flex nfd-flex-col nfd-gap-y-4'

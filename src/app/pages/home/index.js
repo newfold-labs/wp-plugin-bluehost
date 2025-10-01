@@ -1,8 +1,8 @@
 import { useState, useEffect } from '@wordpress/element';
+import { __ } from '@wordpress/i18n';
 import { Container, Page, Title, Button } from '@newfold/ui-component-library';
-import QuickLinks from './quick-links';
-import { sprintf, __ } from '@wordpress/i18n';
 import { PartyIcon } from 'App/components/icons';
+import QuickLinks from './quick-links';
 
 const Home = () => {
 	const [ hasStoreInfo, setHasStoreInfo ] = useState(
@@ -27,8 +27,8 @@ const Home = () => {
 			window.NFDPortalRegistry.unregisterPortal( 'next-steps' );
 		};
 	}, [] );
-	// TODO: retrieve dynamically the store kind.
-	const siteKind = 'store';
+
+	const siteKind = window.NewfoldRuntime.siteType || 'website';
 
 	useEffect( () => {
 		// Update hasStoreInfo when storeInfo changes
@@ -62,26 +62,29 @@ const Home = () => {
 				>
 					<PartyIcon />
 					<Title className="nfd-mb-1 nfd-font-semibold">
-						{ sprintf(
-							/* translators: %s is the site kind. */
-							__(
-								'Congrats, your %s is live!',
-								'wp-plugin-bluehost'
-							),
-							siteKind
-						) }
+						{ siteKind === 'store'
+							? __(
+									'Congrats, your store is live!',
+									'wp-plugin-bluehost'
+							  )
+							: __(
+									'Congrats, your website is live!',
+									'wp-plugin-bluehost'
+							  ) }
 					</Title>
 				</span>
-				<Button
-					as={ 'a' }
-					href={ '#' }
-					data-store-info-trigger
-					variant={ 'secondary' }
-				>
-					{ hasStoreInfo
-						? __( 'Store Details', 'wp-plugin-bluehost' )
-						: __( 'Add Store Details', 'wp-plugin-bluehost' ) }
-				</Button>
+				{ siteKind === 'store' && (
+					<Button
+						as={ 'a' }
+						href={ '#' }
+						data-store-info-trigger
+						variant={ 'secondary' }
+					>
+						{ hasStoreInfo
+							? __( 'Store Details', 'wp-plugin-bluehost' )
+							: __( 'Add Store Details', 'wp-plugin-bluehost' ) }
+					</Button>
+				) }
 			</div>
 
 			<Container className="nfd-max-w-full nfd-p-8 nfd-shadow-none nfd-rounded-xl nfd-border nfd-border-[#D5D5D5]">

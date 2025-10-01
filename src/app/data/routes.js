@@ -29,7 +29,7 @@ const SolutionsRedirect = () => {
 	// Redirect to the solutions page with category=all parameter.
 	window.location.href =
 		window.NewfoldRuntime.adminUrl +
-		'admin.php?page=solutions&category=all';
+		'admin.php?page=bluehost&category=all#/commerce';
 	return null;
 };
 

@@ -631,3 +631,15 @@ body.toplevel_page_bluehost {
 .nfd-validation-input button[data-id="nfd-marketing-page-category-selector"] .nfd-select__button-label {
     padding-right: 2rem;
 }
+
+
+.wppbh-app-marketplace-page {
+    width: 100%;
+
+    .nfd-pp-yoast-hero-content > div {
+        min-width: 400px;
+        max-width: 50%;
+        margin-left: auto;
+        align-items: center;
+    }
+}

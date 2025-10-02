@@ -72,11 +72,7 @@ export const SideNavMenu = () => {
 		document.onclick = SubMenusManager;
 	}, [ location ] );
 
-	return (
-		<div className="nfd-px-0.5 nfd-space-y-6">
-			{ primaryMenu() }
-		</div>
-	);
+	return <div className="nfd-px-0.5 nfd-space-y-6">{ primaryMenu() }</div>;
 };
 
 export const SideNavMenuItem = ( {

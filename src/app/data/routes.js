@@ -115,7 +115,13 @@ export const AppRoutes = () => {
 	);
 };
 
-const topRoutePaths = [ '/home', '/settings', '/commerce', '/marketplace', '/help' ];
+const topRoutePaths = [
+	'/home',
+	'/settings',
+	'/commerce',
+	'/marketplace',
+	'/help',
+];
 
 export const routes = [
 	{

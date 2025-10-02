@@ -10,7 +10,7 @@ export default () => (
 			'nfd-flex nfd-flex-col nfd-gap-4 nfd-border nfd-border-[#D5D5D5]',
 			'nfd-no-underline nfd-shadow-none nfd-transition-all hover:nfd-shadow-md'
 		) }
-		href={ '#/yoast' }
+		href={ 'admin.php?page=redirect-check&type=plugin&p=yoast-seo&f=plugin-install.php%3Fs%3Dyoast%26tab%3Dsearch%26type%3Dterm' }
 	>
 		<div
 			className={

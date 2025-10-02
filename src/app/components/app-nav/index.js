@@ -12,7 +12,7 @@ import { useLocation } from 'react-router-dom';
 import classnames from 'classnames';
 import { getPlatformPathUrl } from 'App/util/helpers';
 import { getEditorUrl } from 'App/util/themeUtils';
-import { topRoutes, utilityRoutes } from 'App/data/routes';
+import { topRoutes } from 'App/data/routes';
 import {
 	RectangleGroupIcon,
 	ArrowUpRightIcon,
@@ -31,7 +31,7 @@ export const AppNavMenu = () => {
 	const menu = () => {
 		return (
 			<AppBarNavigation.AppBar.Nav>
-				{ [ ...topRoutes, ...utilityRoutes ]?.map( ( page ) => {
+				{ [ ...topRoutes ]?.map( ( page ) => {
 					if ( true !== page.condition ) {
 						return null;
 					}

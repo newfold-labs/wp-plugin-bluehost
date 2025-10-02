@@ -115,8 +115,7 @@ export const AppRoutes = () => {
 	);
 };
 
-const topRoutePaths = [ '/home', '/commerce', '/marketplace', '/settings' ];
-const utilityRoutePaths = [ '/help' ];
+const topRoutePaths = [ '/home', '/settings', '/commerce', '/marketplace', '/help' ];
 
 export const routes = [
 	{
@@ -233,10 +232,6 @@ export const routes = [
 
 export const topRoutes = _filter( routes, ( route ) =>
 	topRoutePaths.includes( route.name )
-);
-
-export const utilityRoutes = _filter( routes, ( route ) =>
-	utilityRoutePaths.includes( route.name )
 );
 
 export default AppRoutes;

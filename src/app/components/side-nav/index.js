@@ -7,7 +7,7 @@ import { Modal, SidebarNavigation } from '@newfold/ui-component-library';
 import { default as NewfoldNotifications } from '@modules/wp-module-notifications/assets/js/components/notifications/';
 import { NavLink, useLocation } from 'react-router-dom';
 import { Bars3Icon } from '@heroicons/react/24/outline';
-import { topRoutes, utilityRoutes } from 'App/data/routes';
+import { topRoutes } from 'App/data/routes';
 import { handleHelpLinksClick } from '../../util/helpers';
 import Logo from '../logo';
 
@@ -39,24 +39,6 @@ export const SideNavMenu = () => {
 							/>
 						)
 				) }
-			</ul>
-		);
-	};
-
-	const secondaryMenu = () => {
-		return (
-			<ul className="nfd-flex nfd-flex-col nfd-gap-1.5 nfd-mt-4 nfd-pt-4 nfd-border-t nfd-border-[#D8DEE4]">
-				{ utilityRoutes.map( ( page ) => (
-					<SideNavMenuItem
-						key={ page.name }
-						label={ page.title }
-						name={ page.name }
-						icon={ page.Icon }
-						path={ page.name }
-						action={ page.action }
-						subItems={ page.subRoutes }
-					/>
-				) ) }
 			</ul>
 		);
 	};
@@ -93,7 +75,6 @@ export const SideNavMenu = () => {
 	return (
 		<div className="nfd-px-0.5 nfd-space-y-6">
 			{ primaryMenu() }
-			{ secondaryMenu() }
 		</div>
 	);
 };

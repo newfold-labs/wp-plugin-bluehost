@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "770a4e23c360bb269fa903de858c0bb5",
+    "content-hash": "9babae2cadcc1673f292d7412c3b58a6",
     "packages": [
         {
             "name": "doctrine/inflector",
@@ -1819,20 +1819,20 @@
         },
         {
             "name": "newfold-labs/wp-module-marketplace",
-            "version": "3.1.0",
+            "version": "3.1.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/newfold-labs/wp-module-marketplace.git",
-                "reference": "431df7fc8db52a73f7749d03a403eb099914b5ae"
+                "reference": "123590d5ebb999d06e9b966001ace52734d4258d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/newfold-labs/wp-module-marketplace/zipball/431df7fc8db52a73f7749d03a403eb099914b5ae",
-                "reference": "431df7fc8db52a73f7749d03a403eb099914b5ae",
+                "url": "https://api.github.com/repos/newfold-labs/wp-module-marketplace/zipball/123590d5ebb999d06e9b966001ace52734d4258d",
+                "reference": "123590d5ebb999d06e9b966001ace52734d4258d",
                 "shasum": ""
             },
             "require": {
-                "newfold-labs/wp-module-data": "^2.8.6"
+                "newfold-labs/wp-module-data": "^2.8.7"
             },
             "require-dev": {
                 "johnpbloch/wordpress": "@stable",
@@ -1911,10 +1911,10 @@
             ],
             "description": "A module for rendering product data and interacting with the Hiive marketplace API.",
             "support": {
-                "source": "https://github.com/newfold-labs/wp-module-marketplace/tree/3.1.0",
+                "source": "https://github.com/newfold-labs/wp-module-marketplace/tree/3.1.1",
                 "issues": "https://github.com/newfold-labs/wp-module-marketplace/issues"
             },
-            "time": "2025-09-22T18:22:05+00:00"
+            "time": "2025-10-03T14:52:03+00:00"
         },
         {
             "name": "newfold-labs/wp-module-migration",
@@ -2737,20 +2737,20 @@
         },
         {
             "name": "newfold-labs/wp-module-solutions",
-            "version": "2.6.0",
+            "version": "2.6.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/newfold-labs/wp-module-solutions.git",
-                "reference": "87cb73fbf8d5a37156082773d51269597c8aca37"
+                "reference": "4f5c9cb1d5d6e2eded4f1cb5a1545e2ba630f699"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/newfold-labs/wp-module-solutions/zipball/87cb73fbf8d5a37156082773d51269597c8aca37",
-                "reference": "87cb73fbf8d5a37156082773d51269597c8aca37",
+                "url": "https://api.github.com/repos/newfold-labs/wp-module-solutions/zipball/4f5c9cb1d5d6e2eded4f1cb5a1545e2ba630f699",
+                "reference": "4f5c9cb1d5d6e2eded4f1cb5a1545e2ba630f699",
                 "shasum": ""
             },
             "require": {
-                "newfold-labs/wp-module-data": "^2.8.6",
+                "newfold-labs/wp-module-data": "^2.8.7",
                 "newfold-labs/wp-module-link-tracker": "^1.1",
                 "newfold-labs/wp-module-loader": "^1.0.12"
             },
@@ -2815,10 +2815,10 @@
             ],
             "description": "A Newfold module that handles integration of WordPress Solutions Addon packages (content creator/ service / ecommerce) for BlueHost &amp; HostGator customers",
             "support": {
-                "source": "https://github.com/newfold-labs/wp-module-solutions/tree/2.6.0",
+                "source": "https://github.com/newfold-labs/wp-module-solutions/tree/2.6.1",
                 "issues": "https://github.com/newfold-labs/wp-module-solutions/issues"
             },
-            "time": "2025-10-01T19:00:54+00:00"
+            "time": "2025-10-03T15:58:05+00:00"
         },
         {
             "name": "newfold-labs/wp-module-sso",

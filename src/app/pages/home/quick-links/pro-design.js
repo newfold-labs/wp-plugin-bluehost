@@ -1,29 +1,23 @@
 import { Card, Title } from '@newfold/ui-component-library';
 import { __ } from '@wordpress/i18n';
-import { LightBulbIcon } from '@heroicons/react/24/outline';
+import { PaintBrushIcon } from '@heroicons/react/24/outline';
 
 export default () => (
 	<Card
 		as="a"
 		className={ classNames(
-			'nfd-quick-links-card nfd-quick-links-help-card',
+			'nfd-quick-links-card nfd-quick-links-pro-design-card',
 			'nfd-flex nfd-flex-col nfd-gap-4 nfd-border nfd-border-[#D5D5D5]',
 			'nfd-no-underline nfd-shadow-none nfd-transition-all hover:nfd-shadow-md'
 		) }
-		data-nfd-click="newfold-quick-links-help"
-		data-cy="quick-links-help-link"
-		href={ '#/help' }
-		onClick={ ( e ) => { 
-			if (
-				NewfoldRuntime.hasCapability( 'canAccessHelpCenter' ) &&
-				window.NewfoldFeatures.isEnabled( 'helpCenter' )
-			) {
-				if ( preventDefault ) {
-					e.preventDefault();
-				}
-				window.newfoldEmbeddedHelp.toggleNFDLaunchedEmbeddedHelp();
-			}
-		}}
+        data-action="load-nfd-ctb"
+        data-cy="quick-links-pro-design-link"
+        data-ctb-id="838cc912-adb3-4d75-9450-262bf3ee3576"
+		data-nfd-click="newfold-quick-links-pro-design"
+        href={ window.NewfoldRuntime.linkTracker.addUtmParams(
+            'https://www.bluehost.com/my-account/market-place'
+        ) }
+        target="_blank"
 	>
 		<div
 			className={
@@ -35,15 +29,15 @@ export default () => (
 					'nfd-quick-links-card__icon nfd-p-[4px] nfd-bg-[#ddecff] nfd-rounded-[5px]'
 				}
 			>
-				<LightBulbIcon width={ 16 } />
+				<PaintBrushIcon width={ 16 } />
 			</span>
 			<Title as={ 'h2' } className={ 'nf-text-base nfd-font-semibold' }>
-				{ __( 'Get Help', 'wp-plugin-bluehost' ) }
+				{ __( 'Pro Design Live', 'wp-plugin-bluehost' ) }
 			</Title>
 		</div>
 		<p className="nfd-mt-0 nfd-text-body">
 			{ __(
-				'Master WordPress with help from our AI assistant.',
+				'We will help you build and grow your website and improve your skills in WordPress.',
 				'wp-plugin-bluehost'
 			) }
 		</p>
@@ -52,7 +46,7 @@ export default () => (
 				'nfd-mt-0 nfd-font-semibold nfd-no-underline nfd-text-[#196BDE]'
 			}
 		>
-			{ __( 'Launch our AI Help', 'wp-plugin-bluehost' ) }
+			{ __( 'Get Info', 'wp-plugin-bluehost' ) }
 		</p>
 	</Card>
 );

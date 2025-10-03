@@ -10,9 +10,14 @@ export default () => (
 			'nfd-flex nfd-flex-col nfd-gap-4 nfd-border nfd-border-[#D5D5D5]',
 			'nfd-no-underline nfd-shadow-none nfd-transition-all hover:nfd-shadow-md'
 		) }
+		data-action="load-nfd-ctb"
+		data-ctb-id="57d6a568-783c-45e2-a388-847cff155897"
+		data-nfd-click="newfold-quick-links-yoast"
+		data-cy="quick-links-yoast-link"
 		href={
-			'admin.php?page=redirect-check&type=plugin&p=yoast-seo&f=plugin-install.php%3Fs%3Dyoast%26tab%3Dsearch%26type%3Dterm'
+			'https://yoast.com/?yst-add-to-cart=2811749&utm_source=plugin-home&utm_medium=brand-plugin&channelid=P99C100S1N0B3003A151D115E0000V112'
 		}
+		target="_blank"
 	>
 		<div
 			className={

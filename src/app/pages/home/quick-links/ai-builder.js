@@ -10,6 +10,8 @@ export default () => (
 			'nfd-flex nfd-flex-col nfd-gap-4 nfd-border nfd-border-[#D5D5D5]',
 			'nfd-no-underline nfd-shadow-none nfd-transition-all hover:nfd-shadow-md'
 		) }
+		data-nfd-click="newfold-quick-links-ai-builder"
+		data-cy="quick-links-ai-builder-link"
 		href={ '#/ai-builder' }
 	>
 		<div

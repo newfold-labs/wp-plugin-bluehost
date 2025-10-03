@@ -11,9 +11,9 @@ export default () => (
 			'nfd-no-underline nfd-shadow-none nfd-transition-all hover:nfd-shadow-md'
 		) }
         data-action="load-nfd-ctb"
-        data-cy="quick-links-pro-design-link"
         data-ctb-id="838cc912-adb3-4d75-9450-262bf3ee3576"
 		data-nfd-click="newfold-quick-links-pro-design"
+        data-test-id="quick-links-pro-design-link"
         href={ window.NewfoldRuntime.linkTracker.addUtmParams(
             'https://www.bluehost.com/my-account/market-place'
         ) }

@@ -11,7 +11,7 @@ export default () => (
 			'nfd-no-underline nfd-shadow-none nfd-transition-all hover:nfd-shadow-md'
 		) }
 		data-nfd-click="newfold-quick-links-ai-builder"
-		data-cy="quick-links-ai-builder-link"
+		data-test-id="quick-links-ai-builder-link"
 		href={ '#/ai-builder' }
 	>
 		<div

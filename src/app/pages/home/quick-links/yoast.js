@@ -13,7 +13,7 @@ export default () => (
 		data-action="load-nfd-ctb"
 		data-ctb-id="57d6a568-783c-45e2-a388-847cff155897"
 		data-nfd-click="newfold-quick-links-yoast"
-		data-cy="quick-links-yoast-link"
+		data-test-id="quick-links-yoast-link"
 		href={
 			'https://yoast.com/?yst-add-to-cart=2811749&utm_source=plugin-home&utm_medium=brand-plugin&channelid=P99C100S1N0B3003A151D115E0000V112'
 		}

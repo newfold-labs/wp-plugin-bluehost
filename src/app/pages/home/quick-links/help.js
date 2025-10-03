@@ -11,7 +11,7 @@ export default () => (
 			'nfd-no-underline nfd-shadow-none nfd-transition-all hover:nfd-shadow-md'
 		) }
 		data-nfd-click="newfold-quick-links-help"
-		data-cy="quick-links-help-link"
+		data-test-id="quick-links-help-link"
 		href={ '#/help' }
 		onClick={ ( e ) => { 
 			if (

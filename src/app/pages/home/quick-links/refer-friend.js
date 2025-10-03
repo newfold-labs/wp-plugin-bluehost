@@ -10,8 +10,8 @@ export default () => (
 			'nfd-flex nfd-flex-col nfd-gap-4 nfd-border nfd-border-[#D5D5D5]',
 			'nfd-no-underline nfd-shadow-none nfd-transition-all hover:nfd-shadow-md'
 		) }
-        data-cy="quick-links-refer-friend-link"
 		data-nfd-click="newfold-quick-links-refer-friend"
+        data-test-id="quick-links-refer-friend-link"
         href={ window.NewfoldRuntime.linkTracker.addUtmParams(
             'https://www.bluehost.com/affiliates'
         ) }

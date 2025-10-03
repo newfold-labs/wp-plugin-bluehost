@@ -12,7 +12,7 @@ export default () => (
 			'nfd-no-underline nfd-shadow-none nfd-transition-all hover:nfd-shadow-md'
 		) }
 		data-nfd-click="newfold-quick-links-ai-editor"
-		data-cy="quick-links-ai-editor-link"
+		data-test-id="quick-links-ai-editor-link"
 		href={ getEditorUrl( 'edit' ) }
 	>
 		<div

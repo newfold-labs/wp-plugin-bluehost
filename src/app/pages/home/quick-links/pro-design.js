@@ -10,14 +10,14 @@ export default () => (
 			'nfd-flex nfd-flex-col nfd-gap-4 nfd-border nfd-border-[#D5D5D5]',
 			'nfd-no-underline nfd-shadow-none nfd-transition-all hover:nfd-shadow-md'
 		) }
-        data-action="load-nfd-ctb"
-        data-ctb-id="838cc912-adb3-4d75-9450-262bf3ee3576"
+		data-action="load-nfd-ctb"
+		data-ctb-id="838cc912-adb3-4d75-9450-262bf3ee3576"
 		data-nfd-click="newfold-quick-links-pro-design"
-        data-test-id="quick-links-pro-design-link"
-        href={ window.NewfoldRuntime.linkTracker.addUtmParams(
-            'https://www.bluehost.com/my-account/market-place'
-        ) }
-        target="_blank"
+		data-test-id="quick-links-pro-design-link"
+		href={ window.NewfoldRuntime.linkTracker.addUtmParams(
+			'https://www.bluehost.com/my-account/market-place'
+		) }
+		target="_blank"
 	>
 		<div
 			className={

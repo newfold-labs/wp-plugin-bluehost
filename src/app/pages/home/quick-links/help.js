@@ -1,6 +1,7 @@
-import { Card, Title } from '@newfold/ui-component-library';
 import { __ } from '@wordpress/i18n';
 import { LightBulbIcon } from '@heroicons/react/24/outline';
+import { Card, Title } from '@newfold/ui-component-library';
+import { NewfoldRuntime } from '@newfold/wp-module-runtime';
 
 export default () => (
 	<Card
@@ -13,17 +14,15 @@ export default () => (
 		data-nfd-click="newfold-quick-links-help"
 		data-test-id="quick-links-help-link"
 		href={ '#/help' }
-		onClick={ ( e ) => { 
+		onClick={ ( e ) => {
 			if (
 				NewfoldRuntime.hasCapability( 'canAccessHelpCenter' ) &&
 				window.NewfoldFeatures.isEnabled( 'helpCenter' )
 			) {
-				if ( preventDefault ) {
-					e.preventDefault();
-				}
+				e.preventDefault();
 				window.newfoldEmbeddedHelp.toggleNFDLaunchedEmbeddedHelp();
 			}
-		}}
+		} }
 	>
 		<div
 			className={

@@ -11,7 +11,7 @@ export default () => (
 			'nfd-no-underline nfd-shadow-none nfd-transition-all hover:nfd-shadow-md'
 		) }
 		data-nfd-click="newfold-quick-links-settings"
-        data-test-id="quick-links-settings-link"
+		data-test-id="quick-links-settings-link"
 		href={ '#/settings' }
 	>
 		<div

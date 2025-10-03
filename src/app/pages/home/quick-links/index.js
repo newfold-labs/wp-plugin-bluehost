@@ -6,7 +6,6 @@ import { default as ProDesignQuickLink } from './pro-design';
 import { default as ReferFriendQuickLink } from './refer-friend';
 // import { default as AiBuilderQuickLink } from './ai-builder';
 
-
 export default () => (
 	<>
 		<YoastQuickLink />
@@ -15,5 +14,5 @@ export default () => (
 		<HelpQuickLink />
 		<ProDesignQuickLink />
 		<ReferFriendQuickLink />
-	</>	
+	</>
 );

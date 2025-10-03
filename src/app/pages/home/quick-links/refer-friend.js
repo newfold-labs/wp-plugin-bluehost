@@ -11,11 +11,11 @@ export default () => (
 			'nfd-no-underline nfd-shadow-none nfd-transition-all hover:nfd-shadow-md'
 		) }
 		data-nfd-click="newfold-quick-links-refer-friend"
-        data-test-id="quick-links-refer-friend-link"
-        href={ window.NewfoldRuntime.linkTracker.addUtmParams(
-            'https://www.bluehost.com/affiliates'
-        ) }
-        target="_blank"
+		data-test-id="quick-links-refer-friend-link"
+		href={ window.NewfoldRuntime.linkTracker.addUtmParams(
+			'https://www.bluehost.com/affiliates'
+		) }
+		target="_blank"
 	>
 		<div
 			className={

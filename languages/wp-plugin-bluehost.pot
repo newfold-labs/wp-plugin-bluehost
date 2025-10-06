@@ -292,18 +292,6 @@ msgid "Enable Coming Soon"
 msgstr ""
 
 #: build/4.7.0/index.js:1
-msgid "Want a fresh start?"
-msgstr ""
-
-#: build/4.7.0/index.js:1
-msgid "Relaunch the AI Builder to replace this site with a new one."
-msgstr ""
-
-#: build/4.7.0/index.js:1
-msgid "Create a new site"
-msgstr ""
-
-#: build/4.7.0/index.js:1
 msgid "Disabled old post comments"
 msgstr ""
 
@@ -378,6 +366,19 @@ msgid "There's nothing here!"
 msgstr ""
 
 #: build/4.7.0/index.js:7
+#: build/4.7.0/index.js:9
+msgid "Manage WordPress"
+msgstr ""
+
+#: build/4.7.0/index.js:7
+msgid "Staging"
+msgstr ""
+
+#: build/4.7.0/index.js:7
+msgid "Performance"
+msgstr ""
+
+#: build/4.7.0/index.js:7
 msgid "Store"
 msgstr ""
 
@@ -398,6 +399,7 @@ msgid "Payments"
 msgstr ""
 
 #: build/4.7.0/index.js:7
+#: build/4.7.0/index.js:10
 msgid "Store Details"
 msgstr ""
 
@@ -408,19 +410,6 @@ msgstr ""
 #: build/4.7.0/index.js:7
 #: build/4.7.0/index.js:9
 msgid "Marketplace"
-msgstr ""
-
-#: build/4.7.0/index.js:7
-#: build/4.7.0/index.js:9
-msgid "Manage WordPress"
-msgstr ""
-
-#: build/4.7.0/index.js:7
-msgid "Staging"
-msgstr ""
-
-#: build/4.7.0/index.js:7
-msgid "Performance"
 msgstr ""
 
 #: build/4.7.0/index.js:7
@@ -528,6 +517,30 @@ msgid "The Help Center provides guided, step-by-step assistance as you build you
 msgstr ""
 
 #: build/4.7.0/index.js:7
+msgid "Refer a Friend"
+msgstr ""
+
+#: build/4.7.0/index.js:7
+msgid "Unlock exclusive benefits with out referral program."
+msgstr ""
+
+#: build/4.7.0/index.js:7
+msgid "Start Now"
+msgstr ""
+
+#: build/4.7.0/index.js:7
+msgid "Pro Design Live"
+msgstr ""
+
+#: build/4.7.0/index.js:7
+msgid "We will help you build and grow your website and improve your skills in WordPress."
+msgstr ""
+
+#: build/4.7.0/index.js:7
+msgid "Get Info"
+msgstr ""
+
+#: build/4.7.0/index.js:7
 msgid "WonderBlocks Enabled"
 msgstr ""
 
@@ -545,6 +558,10 @@ msgstr ""
 
 #: build/4.7.0/index.js:7
 msgid "WonderBlocks provides a library of customizable block patterns and page templates."
+msgstr ""
+
+#: build/4.7.0/index.js:7
+msgid "Optimize your website my managing cache, security and performance settings."
 msgstr ""
 
 #: build/4.7.0/index.js:7
@@ -669,6 +686,14 @@ msgstr ""
 
 #: build/4.7.0/index.js:7
 msgid "Start now"
+msgstr ""
+
+#: build/4.7.0/index.js:7
+msgid "Premium tools available in eCommerce Add-Ons"
+msgstr ""
+
+#: build/4.7.0/index.js:7
+msgid "Discover exclusive features, designed to deliver unmatched value and elevate your online experience."
 msgstr ""
 
 #. translators: %s: number of weeks. `The trash will automatically empty every ${numTrashWeeks} weeks.`
@@ -861,8 +886,11 @@ msgid "The performance feature provides improvements to loads faster for visitor
 msgstr ""
 
 #: build/4.7.0/index.js:10
-#, js-format
-msgid "Congrats, your %s is live!"
+msgid "Congrats, your store is live!"
+msgstr ""
+
+#: build/4.7.0/index.js:10
+msgid "Congrats, your website is live!"
 msgstr ""
 
 #: build/4.7.0/index.js:10

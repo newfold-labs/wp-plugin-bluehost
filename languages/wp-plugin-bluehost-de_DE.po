@@ -357,11 +357,11 @@ msgstr[1] ""
 
 #: build/4.7.0/index.js:7
 msgid "Comments to display per page"
-msgstr ""
+msgstr "Kommentare, die pro Seite angezeigt werden sollen"
 
 #: build/4.7.0/index.js:7
 msgid "Comments"
-msgstr ""
+msgstr "Kommentare"
 
 #: build/4.7.0/index.js:7
 msgid "Comments allow visitors to provide feedback and respond to your posts or pages."
@@ -371,7 +371,7 @@ msgstr ""
 #: build/4.7.0/index.js:9
 #: build/4.7.0/index.js:10
 msgid "Oops! Something went wrong. Please try again."
-msgstr ""
+msgstr "Hoppla! Irgendetwas ist schief gelaufen. Bitte versuchen Sie es erneut."
 
 #: build/4.7.0/index.js:7
 msgid "There's nothing here!"
@@ -398,6 +398,7 @@ msgid "Payments"
 msgstr ""
 
 #: build/4.7.0/index.js:7
+#: build/4.7.0/index.js:10
 msgid "Store Details"
 msgstr ""
 
@@ -421,15 +422,15 @@ msgstr ""
 
 #: build/4.7.0/index.js:7
 msgid "Coming soon page is active. Site requires login."
-msgstr ""
+msgstr "Die Seite \"Demnächst verfügbar\" ist aktiv. Für die Website ist eine Anmeldung erforderlich."
 
 #: build/4.7.0/index.js:7
 msgid "Coming soon page is not active. Site is live to visitors."
-msgstr ""
+msgstr "Die Seite \"Demnächst verfügbar\" ist nicht aktiv. Die Website ist für Besucher live."
 
 #: build/4.7.0/index.js:7
 msgid "Site Status"
-msgstr ""
+msgstr "Status der Website"
 
 #: build/4.7.0/index.js:7
 msgid "Turn off your \"Coming Soon\" page when you are ready to launch your website."
@@ -457,7 +458,7 @@ msgstr ""
 
 #: build/4.7.0/index.js:7
 msgid "Staging will no longer display."
-msgstr ""
+msgstr "Das Staging wird nicht mehr angezeigt."
 
 #: build/4.7.0/index.js:7
 msgid "The staging feature provides a way to copy a site to test new updates, features or content."
@@ -487,7 +488,7 @@ msgstr ""
 
 #: build/4.7.0/index.js:7
 msgid "The Help Center will no longer display."
-msgstr ""
+msgstr "Das Help Center wird nicht mehr angezeigt."
 
 #: build/4.7.0/index.js:7
 msgid "The Help Center provides guided, step-by-step assistance as you build your site."
@@ -495,19 +496,19 @@ msgstr ""
 
 #: build/4.7.0/index.js:7
 msgid "WonderBlocks Enabled"
-msgstr ""
+msgstr "WonderBlocks aktiviert"
 
 #: build/4.7.0/index.js:7
 msgid "WonderBlocks Disabled"
-msgstr ""
+msgstr "WonderBlocks deaktiviert"
 
 #: build/4.7.0/index.js:7
 msgid "Create new content to see WonderBlocks in action."
-msgstr ""
+msgstr "Erstellen Sie neue Inhalte, um WonderBlocks in Aktion zu sehen."
 
 #: build/4.7.0/index.js:7
 msgid "WonderBlocks will no longer display."
-msgstr ""
+msgstr "WonderBlocks werden nicht mehr angezeigt."
 
 #: build/4.7.0/index.js:7
 msgid "WonderBlocks provides a library of customizable block patterns and page templates."
@@ -531,91 +532,91 @@ msgstr ""
 
 #: build/4.7.0/index.js:7
 msgid "Customize the available features as you manage your website."
-msgstr ""
+msgstr "Passen Sie die verfügbaren Funktionen an, während Sie Ihre Website verwalten."
 
 #: build/4.7.0/index.js:7
 msgid "Enabled All auto-updates"
-msgstr ""
+msgstr "Aktiviert: Alle automatischen Updates"
 
 #: build/4.7.0/index.js:7
 msgid "Disabled All auto-updates"
-msgstr ""
+msgstr "Deaktiviert Alle automatischen Updates"
 
 #: build/4.7.0/index.js:7
 msgid "Everything will automatically update."
-msgstr ""
+msgstr "Alles wird automatisch aktualisiert."
 
 #: build/4.7.0/index.js:7
 msgid "Custom auto-update settings."
-msgstr ""
+msgstr "Benutzerdefinierte Einstellungen für automatische Updates."
 
 #: build/4.7.0/index.js:7
 msgid "Automatically keep all up to date"
-msgstr ""
+msgstr "Halten Sie alle automatisch auf dem neuesten Stand"
 
 #: build/4.7.0/index.js:7
 msgid "Enabled Core auto-updates"
-msgstr ""
+msgstr "Automatische Core-Updates aktiviert"
 
 #: build/4.7.0/index.js:7
 msgid "Disabled Core auto-updates"
-msgstr ""
+msgstr "Automatische Core-Updates deaktiviert"
 
 #: build/4.7.0/index.js:7
 msgid "WordPress will automatically update."
-msgstr ""
+msgstr "WordPress wird automatisch aktualisiert."
 
 #: build/4.7.0/index.js:7
 msgid "WordPress must be manually updated."
-msgstr ""
+msgstr "WordPress muss manuell aktualisiert werden."
 
 #: build/4.7.0/index.js:7
 msgid "WordPress Core"
-msgstr ""
+msgstr "WordPress-Kern"
 
 #: build/4.7.0/index.js:7
 msgid "Enabled Plugins auto-update"
-msgstr ""
+msgstr "Aktivierte Plugins werden automatisch aktualisiert"
 
 #: build/4.7.0/index.js:7
 msgid "Disabled Plugins auto-update"
-msgstr ""
+msgstr "Deaktivierte automatische Aktualisierung von Plugins"
 
 #: build/4.7.0/index.js:7
 msgid "All plugins will automatically update."
-msgstr ""
+msgstr "Alle Plugins werden automatisch aktualisiert."
 
 #: build/4.7.0/index.js:7
 msgid "Each plugin must be manually updated."
-msgstr ""
+msgstr "Jedes Plugin muss manuell aktualisiert werden."
 
 #: build/4.7.0/index.js:7
 msgid "Plugins"
-msgstr ""
+msgstr "Plugins"
 
 #: build/4.7.0/index.js:7
 msgid "Enabled Themes auto-update"
-msgstr ""
+msgstr "Aktivierte automatische Aktualisierung von Themes"
 
 #: build/4.7.0/index.js:7
 msgid "Disabled Themes auto-update"
-msgstr ""
+msgstr "Deaktivierte automatische Aktualisierung von Themes"
 
 #: build/4.7.0/index.js:7
 msgid "All themes will automatically update."
-msgstr ""
+msgstr "Alle Designs werden automatisch aktualisiert."
 
 #: build/4.7.0/index.js:7
 msgid "Each theme must be manually updated."
-msgstr ""
+msgstr "Jedes Design muss manuell aktualisiert werden."
 
 #: build/4.7.0/index.js:7
 msgid "Themes"
-msgstr ""
+msgstr "Themen"
 
 #: build/4.7.0/index.js:7
 msgid "Automatic Updates"
-msgstr ""
+msgstr "Automatische Updates"
 
 #: build/4.7.0/index.js:7
 msgid "Keeping automatic updates on ensures timely security fixes and the latest features."
@@ -631,23 +632,23 @@ msgstr[1] ""
 
 #: build/4.7.0/index.js:9
 msgid "Trash setting saved"
-msgstr ""
+msgstr "Papierkorbeinstellung gespeichert"
 
 #: build/4.7.0/index.js:9
 msgid "Number of weeks in between emptying trash"
-msgstr ""
+msgstr "Anzahl der Wochen zwischen dem Leeren des Mülls"
 
 #: build/4.7.0/index.js:9
 msgid "Content Options"
-msgstr ""
+msgstr "Inhaltsoptionen"
 
 #: build/4.7.0/index.js:9
 msgid "Controls for how often to empty the trash."
-msgstr ""
+msgstr "Steuert, wie oft der Papierkorb geleert werden soll."
 
 #: build/4.7.0/index.js:9
 msgid "Explore our featured collection of tools and services."
-msgstr ""
+msgstr "Entdecken Sie unsere vorgestellte Sammlung von Tools und Services."
 
 #: build/4.7.0/index.js:9
 msgid "Oops, there was an error loading the marketplace, please try again later."
@@ -655,7 +656,7 @@ msgstr ""
 
 #: build/4.7.0/index.js:9
 msgid "Sorry, no marketplace items. Please, try again later."
-msgstr ""
+msgstr "Leider keine Marktplatzartikel. Bitte versuchen Sie es später noch einmal."
 
 #: build/4.7.0/index.js:9
 msgid "Load More"
@@ -667,7 +668,7 @@ msgstr ""
 
 #: build/4.7.0/index.js:9
 msgid "An error occurred while loading the content. Please try again later."
-msgstr ""
+msgstr "Beim Laden des Inhalts ist ein Fehler aufgetreten. Bitte versuchen Sie es später erneut."
 
 #: build/4.7.0/index.js:7
 msgid "Start now"
@@ -683,7 +684,7 @@ msgstr ""
 
 #: build/4.7.0/index.js:9
 msgid "Chat"
-msgstr ""
+msgstr "Plaudern"
 
 #: build/4.7.0/index.js:9
 msgid "Chat with one of our friendly Customer Care Specialists, as we are waiting to help. Open 24 hours - 7 days."
@@ -691,11 +692,11 @@ msgstr ""
 
 #: build/4.7.0/index.js:9
 msgid "Live Chat"
-msgstr ""
+msgstr "Live-Chat"
 
 #: build/4.7.0/index.js:9
 msgid "Tweet"
-msgstr ""
+msgstr "Zwitschern"
 
 #: build/4.7.0/index.js:9
 msgid "Find our team at @bluehost for updates on our products and support from our team."
@@ -711,15 +712,15 @@ msgstr ""
 
 #: build/4.7.0/index.js:9
 msgid "Find tutorials, answers, interviews and guides on our YouTube channel."
-msgstr ""
+msgstr "Tutorials, Antworten, Interviews und Leitfäden finden Sie auf unserem YouTube-Kanal."
 
 #: build/4.7.0/index.js:9
 msgid "Watch Now"
-msgstr ""
+msgstr "Jetzt ansehen"
 
 #: build/4.7.0/index.js:9
 msgid "Knowledge Base"
-msgstr ""
+msgstr "Wissensdatenbank"
 
 #: build/4.7.0/index.js:9
 msgid "Articles, guides, how-tos, instructions, and answers to our client's most frequently asked questions."
@@ -735,7 +736,7 @@ msgstr ""
 
 #: build/4.7.0/index.js:9
 msgid "Boost your online knowledge and get ahead of the competition."
-msgstr ""
+msgstr "Erweitern Sie Ihr Online-Wissen und verschaffen Sie sich einen Vorsprung vor der Konkurrenz."
 
 #: build/4.7.0/index.js:9
 msgid "Explore Resources"
@@ -743,7 +744,7 @@ msgstr ""
 
 #: build/4.7.0/index.js:9
 msgid "Events and Webinars"
-msgstr ""
+msgstr "Veranstaltungen und Webinare"
 
 #: build/4.7.0/index.js:9
 msgid "Team Bluehost organizes multiple webinars and events throughout the year. We are also sponsors and speak at most WordCamps across the world. Join us at our next event!"
@@ -755,7 +756,7 @@ msgstr ""
 
 #: build/4.7.0/index.js:9
 msgid "Bluehost Website"
-msgstr ""
+msgstr "Bluehost Webseite"
 
 #: build/4.7.0/index.js:9
 msgid "Not finding what you need? Visit our website for more information about our products and services."
@@ -763,16 +764,18 @@ msgstr ""
 
 #: build/4.7.0/index.js:9
 msgid "Go to Bluehost"
-msgstr ""
+msgstr "Gehe zu Bluehost"
 
 #: build/4.7.0/index.js:7
 #: build/4.7.0/index.js:9
 msgid "Help"
-msgstr ""
+msgstr "Hilfe"
 
 #: build/4.7.0/index.js:9
 msgid "We are available 24/7 to help answer questions and solve your problems."
 msgstr ""
+"\n"
+"develop"
 
 #: build/4.7.0/index.js:9
 msgid "Secret page to manage admin features and settings."
@@ -781,19 +784,19 @@ msgstr ""
 #. translators: %s: Search term
 #: build/4.7.0/index.js:10
 msgid "Performance Enabled"
-msgstr ""
+msgstr "Leistung aktiviert"
 
 #: build/4.7.0/index.js:10
 msgid "Performance Disabled"
-msgstr ""
+msgstr "Leistung deaktiviert"
 
 #: build/4.7.0/index.js:10
 msgid "You need to reload the page to manage Performance."
-msgstr ""
+msgstr "Sie müssen die Seite neu laden, um die Leistung zu verwalten."
 
 #: build/4.7.0/index.js:10
 msgid "Performance will no longer display."
-msgstr ""
+msgstr "Die Leistung wird nicht mehr angezeigt."
 
 #: build/4.7.0/index.js:10
 msgid "The performance feature provides improvements to loads faster for visitors including cache settings."
@@ -805,52 +808,40 @@ msgstr ""
 
 #: build/4.7.0/index.js:10
 msgid "You found an error, please refresh the page and try again!"
-msgstr ""
+msgstr "Sie haben einen Fehler gefunden, bitte aktualisieren Sie die Seite und versuchen Sie es erneut!"
 
 #: build/4.7.0/index.js:10
 msgid "If the error persists, please contact support."
-msgstr ""
+msgstr "Wenn der Fehler weiterhin besteht, wenden Sie sich bitte an den Support."
 
 #: build/4.7.0/index.js:10
 msgid "Error code:"
 msgstr ""
 
-#: build/4.7.0/index.js:1
-msgid "Want a fresh start?"
-msgstr ""
-
-#: build/4.7.0/index.js:1
-msgid "Relaunch the AI Builder to replace this site with a new one."
-msgstr ""
-
-#: build/4.7.0/index.js:1
-msgid "Create a new site"
-msgstr ""
-
 #: build/4.7.0/index.js:7
 msgid "Commerce"
-msgstr ""
+msgstr "Handel"
 
 #: build/4.7.0/index.js:7
 #: build/4.7.0/index.js:9
 msgid "Manage WordPress"
-msgstr ""
+msgstr "WordPress verwalten"
 
 #: build/4.7.0/index.js:7
 msgid "Staging"
-msgstr ""
+msgstr "Inszenierung"
 
 #: build/4.7.0/index.js:7
 msgid "Performance"
-msgstr ""
+msgstr "Leistung"
 
 #: build/4.7.0/index.js:7
 msgid "Launch our AI Editor"
-msgstr ""
+msgstr "Starten Sie unseren KI-Editor"
 
 #: build/4.7.0/index.js:7
 msgid "Say hello to effortless site building with a wide library of 250+ blocks"
-msgstr ""
+msgstr "Begrüßen Sie die mühelose Erstellung von Websites mit einer umfangreichen Bibliothek von 250+ Blöcken"
 
 #: build/4.7.0/index.js:7
 msgid "Launch the Editor"
@@ -858,23 +849,23 @@ msgstr ""
 
 #: build/4.7.0/index.js:7
 msgid "Optimize your website by managing cache and performance settings"
-msgstr ""
+msgstr "Optimieren Sie Ihre Website, indem Sie Cache- und Performance-Einstellungen verwalten"
 
 #: build/4.7.0/index.js:7
 msgid "General Settings"
-msgstr ""
+msgstr "Allgemeine Einstellungen"
 
 #: build/4.7.0/index.js:7
 msgid "A staging site is a duplicate of your live site, offering a secure environment to experiment, test updates, and deploy when ready."
-msgstr ""
+msgstr "Eine Staging-Site ist ein Duplikat Ihrer Live-Site und bietet eine sichere Umgebung zum Experimentieren, Testen von Updates und Bereitstellen, wenn sie bereit ist."
 
 #: build/4.7.0/index.js:7
 msgid "Optimize your content"
-msgstr ""
+msgstr "Optimieren Sie Ihre Inhalte"
 
 #: build/4.7.0/index.js:7
 msgid "Optimize your content for search engines and boost your store visibility."
-msgstr ""
+msgstr "Optimieren Sie Ihre Inhalte für Suchmaschinen und steigern Sie die Sichtbarkeit Ihres Geschäfts."
 
 #: build/4.7.0/index.js:9
 msgid "Security, performance, backups, staging & more."
@@ -893,10 +884,49 @@ msgid "Launch our AI Help"
 msgstr ""
 
 #: build/4.7.0/index.js:10
-#, js-format
-msgid "Congrats, your %s is live!"
+msgid "Add Store Details"
+msgstr ""
+
+#: build/4.7.0/index.js:7
+msgid "Refer a Friend"
+msgstr ""
+
+#: build/4.7.0/index.js:7
+msgid "Unlock exclusive benefits with out referral program."
+msgstr ""
+
+#: build/4.7.0/index.js:7
+msgid "Start Now"
+msgstr ""
+
+#: build/4.7.0/index.js:7
+msgid "Pro Design Live"
+msgstr ""
+
+#: build/4.7.0/index.js:7
+msgid "We will help you build and grow your website and improve your skills in WordPress."
+msgstr ""
+
+#: build/4.7.0/index.js:7
+msgid "Get Info"
+msgstr ""
+
+#: build/4.7.0/index.js:7
+msgid "Optimize your website my managing cache, security and performance settings."
+msgstr ""
+
+#: build/4.7.0/index.js:7
+msgid "Premium tools available in eCommerce Add-Ons"
+msgstr ""
+
+#: build/4.7.0/index.js:7
+msgid "Discover exclusive features, designed to deliver unmatched value and elevate your online experience."
 msgstr ""
 
 #: build/4.7.0/index.js:10
-msgid "Add Store Details"
+msgid "Congrats, your store is live!"
+msgstr ""
+
+#: build/4.7.0/index.js:10
+msgid "Congrats, your website is live!"
 msgstr ""

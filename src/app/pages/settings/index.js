@@ -11,17 +11,21 @@ import CommentSettings from './commentSettings';
 import { useLocation } from 'react-router-dom';
 
 const Settings = () => {
+	const isStagingEnabled = window.NewfoldFeatures.features.staging === true;
+	const isPerformanceEnabled = window.NewfoldFeatures.features.staging === true;
+
 	const location = useLocation();
 
 	useEffect( () => {
 		// run when mounts
+		
 		const stagingPortal = document.getElementById( 'staging-portal' );
 		const performancePortal =
 			document.getElementById( 'performance-portal' );
-		if ( stagingPortal ) {
+		if ( stagingPortal && isStagingEnabled ) {
 			window.NFDPortalRegistry.registerPortal( 'staging', stagingPortal );
 		}
-		if ( performancePortal ) {
+		if ( performancePortal && isPerformanceEnabled ) {
 			window.NFDPortalRegistry.registerPortal(
 				'performance',
 				performancePortal
@@ -82,38 +86,40 @@ const Settings = () => {
 					) }
 				</Title>
 			</div>
-			<Container
-				id="nfd-performance"
-				className={ 'nfd-settings-app-wrapper nfd-performance' }
-			>
-				<details className="nfd-details settings-app-wrapper performance-details">
-					<summary>
-						<div
-							id={ 'performance-header' }
-							className={ 'wppbh-app-performance-header' }
-						>
-							<Title as={ 'h1' } className={ 'nfd-mb-2' }>
-								{ __( 'Performance', 'wp-plugin-bluehost' ) }
-							</Title>
-							<Title
-								as={ 'h2' }
-								className="nfd-font-normal nfd-text-[13px]"
+			{ isPerformanceEnabled && (
+				<Container
+					id="nfd-performance"
+					className={ 'nfd-settings-app-wrapper nfd-performance' }
+				>
+					<details className="nfd-details settings-app-wrapper performance-details">
+						<summary>
+							<div
+								id={ 'performance-header' }
+								className={ 'wppbh-app-performance-header' }
 							>
-								{ __(
-									'Optimize your website by managing cache and performance settings',
-									'wp-plugin-bluehost'
-								) }
-							</Title>
+								<Title as={ 'h1' } className={ 'nfd-mb-2' }>
+									{ __( 'Performance', 'wp-plugin-bluehost' ) }
+								</Title>
+								<Title
+									as={ 'h2' }
+									className="nfd-font-normal nfd-text-[13px]"
+								>
+									{ __(
+										'Optimize your website by managing cache and performance settings',
+										'wp-plugin-bluehost'
+									) }
+								</Title>
+							</div>
+							<span className="nfd-details-icon">
+								<ChevronUpIcon />
+							</span>
+						</summary>
+						<div id="nfd-performance-portal-wrapper">
+							<div id="performance-portal"></div>
 						</div>
-						<span className="nfd-details-icon">
-							<ChevronUpIcon />
-						</span>
-					</summary>
-					<div id="nfd-performance-portal-wrapper">
-						<div id="performance-portal"></div>
-					</div>
-				</details>
-			</Container>
+					</details>
+				</Container>
+			) }
 			<Container
 				className={
 					'nfd-settings-app-wrapper wppbh-app-settings-container'
@@ -200,38 +206,40 @@ const Settings = () => {
 					</Container.Block>
 				</details>
 			</Container>
-			<Container className={ 'nfd-settings-app-wrapper nfd-staging' }>
-				<details className="nfd-details settings-app-wrapper staging-details">
-					<summary>
-						<div
-							id={ 'staging-header' }
-							className={ 'wppbh-app-staging-header' }
-						>
-							<Title as={ 'h1' } className={ 'nfd-mb-2' }>
-								{ __( 'Staging', 'wp-plugin-bluehost' ) }
-							</Title>
-							<Title
-								as={ 'h2' }
-								className="nfd-font-normal nfd-text-[13px]"
+			{ isStagingEnabled && (
+				<Container className={ 'nfd-settings-app-wrapper nfd-staging' }>
+					<details className="nfd-details settings-app-wrapper staging-details">
+						<summary>
+							<div
+								id={ 'staging-header' }
+								className={ 'wppbh-app-staging-header' }
 							>
-								{ __(
-									'A staging site is a duplicate of your live site, offering a secure environment to experiment, test updates, and deploy when ready.',
-									'wp-plugin-bluehost'
-								) }
-							</Title>
+								<Title as={ 'h1' } className={ 'nfd-mb-2' }>
+									{ __( 'Staging', 'wp-plugin-bluehost' ) }
+								</Title>
+								<Title
+									as={ 'h2' }
+									className="nfd-font-normal nfd-text-[13px]"
+								>
+									{ __(
+										'A staging site is a duplicate of your live site, offering a secure environment to experiment, test updates, and deploy when ready.',
+										'wp-plugin-bluehost'
+									) }
+								</Title>
+							</div>
+							<span className="nfd-details-icon">
+								<ChevronUpIcon />
+							</span>
+						</summary>
+						<div
+							id="nfd-staging-portal-wrapper"
+							className="nfd-staging"
+						>
+							<div id="staging-portal"></div>
 						</div>
-						<span className="nfd-details-icon">
-							<ChevronUpIcon />
-						</span>
-					</summary>
-					<div
-						id="nfd-staging-portal-wrapper"
-						className="nfd-staging"
-					>
-						<div id="staging-portal"></div>
-					</div>
-				</details>
-			</Container>
+					</details>
+				</Container>
+			) }
 		</Page>
 	);
 };

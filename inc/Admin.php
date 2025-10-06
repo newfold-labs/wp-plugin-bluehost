@@ -99,12 +99,12 @@ final class Admin {
 		// check subnav items and update 'Solutions' to 'Commerce' and update priority to 80
 		// update 'Marketplace' priority to 90
 		foreach ( $subnav as $key => $item ) {
-			if ( $item['route'] === 'bluehost#/commerce' ) {
-				$subnav[$key]['title'] = 'Commerce';
-				$subnav[$key]['priority'] = 80;
+			if ( 'bluehost#/commerce' === $item[ 'route' ] ) {
+				$subnav[ $key ]['title'] = 'Commerce';
+				$subnav[ $key ]['priority'] = 80;
 			}
-			if ( $item['route'] === 'bluehost#/marketplace' ) {
-				$subnav[$key]['priority'] = 90;
+			if ( 'bluehost#/marketplace' === $item[ 'route' ] ) {
+				$subnav[ $key ]['priority'] = 90;
 			}
 		}
 

@@ -101,7 +101,7 @@ final class Data {
 		}
 
 		$onboarding_data = \get_option( $ONBOARDING_SITE_INFO_OPTION, array() );
-		$site_type = $onboarding_data['site_type'] ?? '';
+		$site_type       = $onboarding_data['site_type'] ?? '';
 		if ( ! empty( $site_type ) && \array_key_exists( $site_type, $SITE_TYPES ) ) {
 			return $SITE_TYPES[ $site_type ];
 		}

@@ -12,20 +12,21 @@ import { useLocation } from 'react-router-dom';
 
 const Settings = () => {
 	const isStagingEnabled = window.NewfoldFeatures.features.staging === true;
-	const isPerformanceEnabled = window.NewfoldFeatures.features.staging === true;
+	const isPerformanceEnabled =
+		window.NewfoldFeatures.features.staging === true;
 
 	const location = useLocation();
 
 	useEffect( () => {
 		// run when mounts
-		
+
 		const stagingPortal = document.getElementById( 'staging-portal' );
 		const performancePortal =
 			document.getElementById( 'performance-portal' );
-		if ( stagingPortal && isStagingEnabled ) {
+		if ( stagingPortal ) {
 			window.NFDPortalRegistry.registerPortal( 'staging', stagingPortal );
 		}
-		if ( performancePortal && isPerformanceEnabled ) {
+		if ( performancePortal ) {
 			window.NFDPortalRegistry.registerPortal(
 				'performance',
 				performancePortal
@@ -98,7 +99,10 @@ const Settings = () => {
 								className={ 'wppbh-app-performance-header' }
 							>
 								<Title as={ 'h1' } className={ 'nfd-mb-2' }>
-									{ __( 'Performance', 'wp-plugin-bluehost' ) }
+									{ __(
+										'Performance',
+										'wp-plugin-bluehost'
+									) }
 								</Title>
 								<Title
 									as={ 'h2' }

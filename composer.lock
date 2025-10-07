@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "57af57bda0815395cc98491cf9dcb2db",
+    "content-hash": "9262a45514d166c2aa874b8ef3d34993",
     "packages": [
         {
             "name": "doctrine/inflector",
@@ -1608,23 +1608,23 @@
         },
         {
             "name": "newfold-labs/wp-module-installer",
-            "version": "1.6.5",
+            "version": "1.6.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/newfold-labs/wp-module-installer.git",
-                "reference": "cac4eba1ef153dde1ffca39da66d58b7fc00b8dd"
+                "reference": "50c656dfc74c2a4f2d319e6089163327d08cc692"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/newfold-labs/wp-module-installer/zipball/cac4eba1ef153dde1ffca39da66d58b7fc00b8dd",
-                "reference": "cac4eba1ef153dde1ffca39da66d58b7fc00b8dd",
+                "url": "https://api.github.com/repos/newfold-labs/wp-module-installer/zipball/50c656dfc74c2a4f2d319e6089163327d08cc692",
+                "reference": "50c656dfc74c2a4f2d319e6089163327d08cc692",
                 "shasum": ""
             },
             "require": {
                 "newfold-labs/wp-module-pls": "^1.1.2"
             },
             "require-dev": {
-                "johnpbloch/wordpress": "6.8.2",
+                "johnpbloch/wordpress": "6.8.3",
                 "lucatume/wp-browser": "*",
                 "newfold-labs/wp-php-standards": "^1.2.5",
                 "phpunit/phpcov": "*",
@@ -1693,10 +1693,10 @@
             ],
             "description": "An installer for WordPress plugins and themes.",
             "support": {
-                "source": "https://github.com/newfold-labs/wp-module-installer/tree/1.6.5",
+                "source": "https://github.com/newfold-labs/wp-module-installer/tree/1.6.6",
                 "issues": "https://github.com/newfold-labs/wp-module-installer/issues"
             },
-            "time": "2025-08-18T16:16:24+00:00"
+            "time": "2025-10-07T16:00:08+00:00"
         },
         {
             "name": "newfold-labs/wp-module-link-tracker",
@@ -2737,16 +2737,16 @@
         },
         {
             "name": "newfold-labs/wp-module-solutions",
-            "version": "2.6.1",
+            "version": "2.6.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/newfold-labs/wp-module-solutions.git",
-                "reference": "4f5c9cb1d5d6e2eded4f1cb5a1545e2ba630f699"
+                "reference": "5e0a4e3b9ae4eb24b4429a2cbff3b952e9ae1b63"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/newfold-labs/wp-module-solutions/zipball/4f5c9cb1d5d6e2eded4f1cb5a1545e2ba630f699",
-                "reference": "4f5c9cb1d5d6e2eded4f1cb5a1545e2ba630f699",
+                "url": "https://api.github.com/repos/newfold-labs/wp-module-solutions/zipball/5e0a4e3b9ae4eb24b4429a2cbff3b952e9ae1b63",
+                "reference": "5e0a4e3b9ae4eb24b4429a2cbff3b952e9ae1b63",
                 "shasum": ""
             },
             "require": {
@@ -2815,10 +2815,10 @@
             ],
             "description": "A Newfold module that handles integration of WordPress Solutions Addon packages (content creator/ service / ecommerce) for BlueHost &amp; HostGator customers",
             "support": {
-                "source": "https://github.com/newfold-labs/wp-module-solutions/tree/2.6.1",
+                "source": "https://github.com/newfold-labs/wp-module-solutions/tree/2.6.3",
                 "issues": "https://github.com/newfold-labs/wp-module-solutions/issues"
             },
-            "time": "2025-10-03T15:58:05+00:00"
+            "time": "2025-10-07T18:57:14+00:00"
         },
         {
             "name": "newfold-labs/wp-module-sso",
@@ -4588,12 +4588,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Roave/SecurityAdvisories.git",
-                "reference": "4c2208a685ebaa31a0b6ce592e2ee2735542b0fc"
+                "reference": "aeb989ee4f985c14504c76a0d1bcdd468046f53a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Roave/SecurityAdvisories/zipball/4c2208a685ebaa31a0b6ce592e2ee2735542b0fc",
-                "reference": "4c2208a685ebaa31a0b6ce592e2ee2735542b0fc",
+                "url": "https://api.github.com/repos/Roave/SecurityAdvisories/zipball/aeb989ee4f985c14504c76a0d1bcdd468046f53a",
+                "reference": "aeb989ee4f985c14504c76a0d1bcdd468046f53a",
                 "shasum": ""
             },
             "conflict": {
@@ -5084,7 +5084,7 @@
                 "notrinos/notrinos-erp": "<=0.7",
                 "noumo/easyii": "<=0.9",
                 "novaksolutions/infusionsoft-php-sdk": "<1",
-                "novosga/novosga": "<=2.2.9",
+                "novosga/novosga": "<=2.2.12",
                 "nukeviet/nukeviet": "<4.5.02",
                 "nyholm/psr7": "<1.6.1",
                 "nystudio107/craft-seomatic": "<3.4.12",
@@ -5362,7 +5362,7 @@
                 "thelia/thelia": ">=2.1,<2.1.3",
                 "theonedemon/phpwhois": "<=4.2.5",
                 "thinkcmf/thinkcmf": "<6.0.8",
-                "thorsten/phpmyfaq": "<=4.0.1",
+                "thorsten/phpmyfaq": "<=4.0.1|>=4.0.7,<4.0.13",
                 "tikiwiki/tiki-manager": "<=17.1",
                 "timber/timber": ">=0.16.6,<1.23.1|>=1.24,<1.24.1|>=2,<2.1",
                 "tinymce/tinymce": "<7.2",
@@ -5554,7 +5554,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2025-10-01T22:05:21+00:00"
+            "time": "2025-10-07T14:05:55+00:00"
         },
         {
             "name": "squizlabs/php_codesniffer",

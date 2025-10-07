@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "8c8122fff8849e807f7242a2c9e56d8b",
+    "content-hash": "0066a18533a1d9a63a4a881d2c9ddce4",
     "packages": [
         {
             "name": "doctrine/inflector",
@@ -1892,20 +1892,20 @@
         },
         {
             "name": "newfold-labs/wp-module-marketplace",
-            "version": "3.1.0",
+            "version": "3.1.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/newfold-labs/wp-module-marketplace.git",
-                "reference": "431df7fc8db52a73f7749d03a403eb099914b5ae"
+                "reference": "123590d5ebb999d06e9b966001ace52734d4258d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/newfold-labs/wp-module-marketplace/zipball/431df7fc8db52a73f7749d03a403eb099914b5ae",
-                "reference": "431df7fc8db52a73f7749d03a403eb099914b5ae",
+                "url": "https://api.github.com/repos/newfold-labs/wp-module-marketplace/zipball/123590d5ebb999d06e9b966001ace52734d4258d",
+                "reference": "123590d5ebb999d06e9b966001ace52734d4258d",
                 "shasum": ""
             },
             "require": {
-                "newfold-labs/wp-module-data": "^2.8.6"
+                "newfold-labs/wp-module-data": "^2.8.7"
             },
             "require-dev": {
                 "johnpbloch/wordpress": "@stable",
@@ -1984,10 +1984,10 @@
             ],
             "description": "A module for rendering product data and interacting with the Hiive marketplace API.",
             "support": {
-                "source": "https://github.com/newfold-labs/wp-module-marketplace/tree/3.1.0",
+                "source": "https://github.com/newfold-labs/wp-module-marketplace/tree/3.1.1",
                 "issues": "https://github.com/newfold-labs/wp-module-marketplace/issues"
             },
-            "time": "2025-09-22T18:22:05+00:00"
+            "time": "2025-10-03T14:52:03+00:00"
         },
         {
             "name": "newfold-labs/wp-module-migration",

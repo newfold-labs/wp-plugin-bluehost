@@ -15,16 +15,26 @@ const Home = () => {
 	useEffect( () => {
 		// run when mounts
 		const nextStepsPortal = document.getElementById( 'next-steps-portal' );
+		const comingSoonPortal = document.getElementById( 'coming-soon-portal' );
+
 		if ( nextStepsPortal ) {
 			window.NFDPortalRegistry.registerPortal(
 				'next-steps',
 				nextStepsPortal
 			);
 		}
+		
+		if ( comingSoonPortal ) {
+			window.NFDPortalRegistry.registerPortal(
+				'coming-soon',
+				comingSoonPortal
+			);
+		}
 
 		// run when unmounts
 		return () => {
 			window.NFDPortalRegistry.unregisterPortal( 'next-steps' );
+			window.NFDPortalRegistry.unregisterPortal( 'coming-soon' );
 		};
 	}, [] );
 
@@ -74,6 +84,7 @@ const Home = () => {
 					</Title>
 				</span>
 				{ siteKind === 'store' && (
+					// Store details button only on store sites
 					<Button
 						as={ 'a' }
 						href={ '#' }
@@ -86,6 +97,13 @@ const Home = () => {
 					</Button>
 				) }
 			</div>
+
+			{ siteKind !== 'store' && (
+				// Coming soon portal for blog and corporate sites only
+				<Container className="nfd-max-w-full nfd-p-8 nfd-shadow-none nfd-rounded-xl nfd-border nfd-border-[#D5D5D5]">
+					<div id="coming-soon-portal" />
+				</Container>
+			)}
 
 			<Container className="nfd-max-w-full nfd-p-8 nfd-shadow-none nfd-rounded-xl nfd-border nfd-border-[#D5D5D5]">
 				<div id="next-steps-portal" />

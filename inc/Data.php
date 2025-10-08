@@ -24,12 +24,16 @@ final class Data {
 		global $nfd_module_container;
 
 		$runtime = array(
-			'plugin' => array(
+			'plugin'    => array(
 				'url'     => BLUEHOST_BUILD_URL,
 				'version' => BLUEHOST_PLUGIN_VERSION,
 				'assets'  => BLUEHOST_PLUGIN_URL . 'assets/',
 				'brand'   => $nfd_module_container->plugin()->brand,
 			),
+			'wordpress' => array(
+				'isBlockTheme' => function_exists( 'wp_is_block_theme' ) ? wp_is_block_theme() : false,
+			),
+			'siteType'  => self::get_site_type(),
 		);
 
 		if ( class_exists( 'NewfoldLabs\WP\Module\Solutions\Solutions' ) ) {
@@ -71,5 +75,37 @@ final class Data {
 		}
 
 		return false;
+	}
+
+	/**
+	 * Get site type from onboarding data
+	 *
+	 * @return string The site type
+	 */
+	public static function get_site_type() {
+		// Option name for onboarding site info
+		$ONBOARDING_SITE_INFO_OPTION = 'nfd_module_onboarding_site_info';
+
+		/**
+		 * Available plan types, this maps the site_type from onboarding module to internal plan types
+		 * Maps the site_type to the site type for the runtime data
+		 */
+		$SITE_TYPES = array(
+			'personal'  => 'blog',
+			'business'  => 'website',
+			'ecommerce' => 'store',
+		);
+
+		if ( is_plugin_active( 'woocommerce/woocommerce.php' ) ) {
+			return 'store';
+		}
+
+		$onboarding_data = \get_option( $ONBOARDING_SITE_INFO_OPTION, array() );
+		$site_type       = $onboarding_data['site_type'] ?? '';
+		if ( ! empty( $site_type ) && \array_key_exists( $site_type, $SITE_TYPES ) ) {
+			return $SITE_TYPES[ $site_type ];
+		}
+
+		return 'website';
 	}
 }

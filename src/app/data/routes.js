@@ -11,17 +11,13 @@ import { Route, Routes } from 'react-router-dom';
 import Home from '../pages/home';
 import Store from '../pages/ecommerce/page';
 import Marketplace from '../pages/marketplace';
+import Commerce from '../pages/commerce';
 import Settings from '../pages/settings';
 import Help from '../pages/help';
 import Admin from '../pages/admin';
 
 const addPartialMatch = ( prefix, path ) =>
 	prefix === path ? `${ prefix }/*` : path;
-
-const HelpCenterAI = ( e ) => {
-	e.preventDefault();
-	window.newfoldEmbeddedHelp.toggleNFDLaunchedEmbeddedHelp();
-};
 
 /**
  * Redirect component for my_plugins_and_tools route.
@@ -33,7 +29,7 @@ const SolutionsRedirect = () => {
 	// Redirect to the solutions page with category=all parameter.
 	window.location.href =
 		window.NewfoldRuntime.adminUrl +
-		'admin.php?page=solutions&category=all';
+		'admin.php?page=bluehost&category=all#/commerce';
 	return null;
 };
 
@@ -119,8 +115,13 @@ export const AppRoutes = () => {
 	);
 };
 
-const topRoutePaths = [ '/home', '/store', '/marketplace', '/settings' ];
-const utilityRoutePaths = [ '/help' ];
+const topRoutePaths = [
+	'/home',
+	'/settings',
+	'/commerce',
+	'/marketplace',
+	'/help',
+];
 
 export const routes = [
 	{
@@ -128,6 +129,34 @@ export const routes = [
 		title: __( 'Home', 'wp-plugin-bluehost' ),
 		Component: Home,
 		Icon: HomeIcon,
+		condition: true,
+	},
+	{
+		name: '/settings',
+		title: __( 'Manage WordPress', 'wp-plugin-bluehost' ),
+		Component: Settings,
+		Icon: AdjustmentsHorizontalIcon,
+		condition: true,
+	},
+	{
+		name: '/settings/settings',
+		title: __( 'Settings', 'wp-plugin-bluehost' ),
+		Component: Settings,
+		Icon: AdjustmentsHorizontalIcon,
+		condition: true,
+	},
+	{
+		name: '/settings/staging',
+		title: __( 'Staging', 'wp-plugin-bluehost' ),
+		Component: Settings,
+		Icon: AdjustmentsHorizontalIcon,
+		condition: true,
+	},
+	{
+		name: '/settings/performance',
+		title: __( 'Performance', 'wp-plugin-bluehost' ),
+		Component: Settings,
+		Icon: AdjustmentsHorizontalIcon,
 		condition: true,
 	},
 	{
@@ -168,6 +197,12 @@ export const routes = [
 		condition: true,
 	},
 	{
+		name: '/commerce',
+		title: __( 'Commerce', 'wp-plugin-bluehost' ),
+		Component: Commerce,
+		condition: true,
+	},
+	{
 		name: '/marketplace',
 		title: __( 'Marketplace', 'wp-plugin-bluehost' ),
 		Component: Marketplace,
@@ -176,23 +211,22 @@ export const routes = [
 		condition: true,
 	},
 	{
-		name: '/settings',
-		title: __( 'Settings', 'wp-plugin-bluehost' ),
-		Component: Settings,
-		Icon: AdjustmentsHorizontalIcon,
-		condition: true,
-	},
-	{
 		name: '/help',
-		title: __( 'Help with WordPress', 'wp-plugin-bluehost' ),
+		title: __( 'Help', 'wp-plugin-bluehost' ),
 		Component: Help,
 		Icon: HelpIcon,
 		condition: true,
-		action:
-			NewfoldRuntime.hasCapability( 'canAccessHelpCenter' ) &&
-			( await window.NewfoldFeatures.isEnabled( 'helpCenter' ) )
-				? HelpCenterAI
-				: false,
+		action( e, preventDefault = false ) {
+			if (
+				NewfoldRuntime.hasCapability( 'canAccessHelpCenter' ) &&
+				window.NewfoldFeatures.isEnabled( 'helpCenter' )
+			) {
+				if ( preventDefault ) {
+					e.preventDefault();
+				}
+				window.newfoldEmbeddedHelp.toggleNFDLaunchedEmbeddedHelp();
+			}
+		},
 	},
 	{
 		name: '/admin',
@@ -204,10 +238,6 @@ export const routes = [
 
 export const topRoutes = _filter( routes, ( route ) =>
 	topRoutePaths.includes( route.name )
-);
-
-export const utilityRoutes = _filter( routes, ( route ) =>
-	utilityRoutePaths.includes( route.name )
 );
 
 export default AppRoutes;

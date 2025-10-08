@@ -1,13 +1,13 @@
 {
     "translation-revision-date": "2025-02-25T20:53:21+00:00",
     "generator": "WP-CLI\/2.12.0",
-    "source": "build\/4.6.3\/index.js",
+    "source": "build\/4.7.0\/index.js",
     "domain": "messages",
     "locale_data": {
         "messages": {
             "": {
                 "domain": "messages",
-                "lang": "en_AU",
+                "lang": "en_GB",
                 "plural-forms": "nplurals=2; plural=(n != 1);"
             },
             "Home": [
@@ -24,6 +24,9 @@
             ],
             "Your website is currently displaying a \"Coming Soon\" page.": [
                 "Your website is currently displaying a \"Coming Soon\" page."
+            ],
+            "Get Help": [
+                "Get Help"
             ],
             "Disabled old post comments": [
                 ""
@@ -59,7 +62,7 @@
                 ""
             ],
             "Comments": [
-                ""
+                "Comments"
             ],
             "Comments allow visitors to provide feedback and respond to your posts or pages.": [
                 ""
@@ -91,9 +94,6 @@
             "Marketplace": [
                 ""
             ],
-            "Help with WordPress": [
-                ""
-            ],
             "Admin": [
                 ""
             ],
@@ -110,7 +110,7 @@
                 ""
             ],
             "Site Status": [
-                ""
+                "Site Status"
             ],
             "Turn off your \"Coming Soon\" page when you are ready to launch your website.": [
                 ""
@@ -131,7 +131,7 @@
                 ""
             ],
             "Staging will no longer display.": [
-                ""
+                "Staging will no longer display."
             ],
             "The staging feature provides a way to copy a site to test new updates, features or content.": [
                 ""
@@ -140,12 +140,6 @@
                 ""
             ],
             "This feature cannot currently be modified.": [
-                ""
-            ],
-            "Hire our experts": [
-                ""
-            ],
-            "Get in touch with us, and we\u2019ll help you build the exact store you\u2019re dreaming of.": [
                 ""
             ],
             "Help Center Enabled": [
@@ -158,15 +152,9 @@
                 ""
             ],
             "The Help Center will no longer display.": [
-                ""
+                "The Help Center will no longer display."
             ],
             "The Help Center provides guided, step-by-step assistance as you build your site.": [
-                ""
-            ],
-            "Explore Premium Tools": [
-                ""
-            ],
-            "Discover all the features to grow your store, boost sales and loyalize your customers.": [
                 ""
             ],
             "WonderBlocks Enabled": [
@@ -179,97 +167,88 @@
                 ""
             ],
             "WonderBlocks will no longer display.": [
-                ""
+                "WonderBlocks will no longer display."
             ],
             "WonderBlocks provides a library of customizable block patterns and page templates.": [
                 ""
             ],
             "Bluehost WordPress Plugin": [
-                ""
+                "Bluehost WordPress Plugin"
             ],
             "Quick links": [
                 ""
             ],
-            "Manage hosting": [
-                ""
-            ],
-            "Write a blog post": [
-                ""
-            ],
-            "Create a sale promotion": [
-                ""
-            ],
             "Manage common settings for your website": [
-                ""
+                "Manage common settings for your website"
             ],
             "Features": [
-                ""
+                "Features"
             ],
             "Customize the available features as you manage your website.": [
-                ""
+                "Customize the available features as you manage your website."
             ],
             "Enabled All auto-updates": [
-                ""
+                "Enabled All auto-updates"
             ],
             "Disabled All auto-updates": [
-                ""
+                "Disabled All auto-updates"
             ],
             "Everything will automatically update.": [
-                ""
+                "Everything will automatically update."
             ],
             "Custom auto-update settings.": [
-                ""
+                "Custom auto-update settings."
             ],
             "Automatically keep all up to date": [
-                ""
+                "Automatically keep all up to date"
             ],
             "Enabled Core auto-updates": [
-                ""
+                "Enabled Core auto-updates"
             ],
             "Disabled Core auto-updates": [
-                ""
+                "Disabled Core auto-updates"
             ],
             "WordPress will automatically update.": [
-                ""
+                "WordPress will automatically update."
             ],
             "WordPress must be manually updated.": [
-                ""
+                "WordPress must be manually updated."
             ],
             "WordPress Core": [
-                ""
+                "WordPress Core"
             ],
             "Enabled Plugins auto-update": [
-                ""
+                "Enabled Plugins auto-update"
             ],
             "Disabled Plugins auto-update": [
-                ""
+                "Disabled Plugins auto-update"
             ],
             "All plugins will automatically update.": [
-                ""
+                "All plugins will automatically update."
             ],
             "Each plugin must be manually updated.": [
-                ""
+                "Each plugin must be manually updated."
             ],
             "Plugins": [
-                ""
+                "Plugins"
             ],
             "Enabled Themes auto-update": [
-                ""
+                "Enabled Themes auto-update"
             ],
             "Disabled Themes auto-update": [
-                ""
+                "Disabled Themes auto-update"
             ],
             "All themes will automatically update.": [
-                ""
+                "All themes will automatically update."
             ],
             "Each theme must be manually updated.": [
-                ""
+                "Each theme must be manually updated."
             ],
             "Themes": [
-                ""
+                "Themes"
             ],
             "Automatic Updates": [
-                ""
+                "Automatic Updates"
             ],
             "Keeping automatic updates on ensures timely security fixes and the latest features.": [
                 ""
@@ -290,7 +269,7 @@
                 ""
             ],
             "Explore our featured collection of tools and services.": [
-                ""
+                "Explore our featured collection of tools and services."
             ],
             "Oops, there was an error loading the marketplace, please try again later.": [
                 ""
@@ -307,18 +286,6 @@
             "An error occurred while loading the content. Please try again later.": [
                 ""
             ],
-            "Get Help & Resources": [
-                ""
-            ],
-            "Get expert help, documentation, and tutorials to make the most of your WordPress site.": [
-                ""
-            ],
-            "Refer a friend and earn money": [
-                ""
-            ],
-            "Unlock exclusive benefits with our referral program!": [
-                ""
-            ],
             "Start now": [
                 ""
             ],
@@ -329,16 +296,16 @@
                 ""
             ],
             "Chat": [
-                ""
+                "Chat"
             ],
             "Chat with one of our friendly Customer Care Specialists, as we are waiting to help. Open 24 hours - 7 days.": [
                 ""
             ],
             "Live Chat": [
-                ""
+                "Live Chat"
             ],
             "Tweet": [
-                ""
+                "Tweet"
             ],
             "Find our team at @bluehost for updates on our products and support from our team.": [
                 ""
@@ -350,13 +317,13 @@
                 ""
             ],
             "Find tutorials, answers, interviews and guides on our YouTube channel.": [
-                ""
+                "Find tutorials, answers, interviews and guides on our YouTube channel."
             ],
             "Watch Now": [
                 ""
             ],
             "Knowledge Base": [
-                ""
+                "Knowledge Base"
             ],
             "Articles, guides, how-tos, instructions, and answers to our client's most frequently asked questions.": [
                 ""
@@ -374,7 +341,7 @@
                 ""
             ],
             "Events and Webinars": [
-                ""
+                "Events and Webinars"
             ],
             "Team Bluehost organizes multiple webinars and events throughout the year. We are also sponsors and speak at most WordCamps across the world. Join us at our next event!": [
                 ""
@@ -383,19 +350,19 @@
                 ""
             ],
             "Bluehost Website": [
-                ""
+                "Bluehost Website"
             ],
             "Not finding what you need? Visit our website for more information about our products and services.": [
                 ""
             ],
             "Go to Bluehost": [
-                ""
+                "Go to Bluehost"
             ],
             "Help": [
-                ""
+                "Help"
             ],
             "We are available 24\/7 to help answer questions and solve your problems.": [
-                ""
+                "\ndevelop"
             ],
             "Secret page to manage admin features and settings.": [
                 ""
@@ -410,24 +377,9 @@
                 ""
             ],
             "Performance will no longer display.": [
-                ""
+                "Performance will no longer display."
             ],
             "The performance feature provides improvements to loads faster for visitors including cache settings.": [
-                ""
-            ],
-            "Pro Design Live": [
-                ""
-            ],
-            "We will help you build and grow your website and improve your skills in WordPress.": [
-                ""
-            ],
-            "Get Info": [
-                ""
-            ],
-            "Welcome to Bluehost": [
-                ""
-            ],
-            "We're very excited to get started with you!": [
                 ""
             ],
             "Oh No, An Error!": [
@@ -440,6 +392,90 @@
                 ""
             ],
             "Error code:": [
+                ""
+            ],
+            "Commerce": [
+                ""
+            ],
+            "Manage WordPress": [
+                ""
+            ],
+            "Staging": [
+                ""
+            ],
+            "Performance": [
+                ""
+            ],
+            "Launch our AI Editor": [
+                "Launch our AI Editor"
+            ],
+            "Say hello to effortless site building with a wide library of 250+ blocks": [
+                "Say hello to effortless site building with a wide library of 250+ blocks"
+            ],
+            "Launch the Editor": [
+                ""
+            ],
+            "Optimize your website by managing cache and performance settings": [
+                ""
+            ],
+            "General Settings": [
+                "General Settings"
+            ],
+            "A staging site is a duplicate of your live site, offering a secure environment to experiment, test updates, and deploy when ready.": [
+                "A staging site is a duplicate of your live site, offering a secure environment to experiment, test updates, and deploy when ready."
+            ],
+            "Optimize your content": [
+                "Optimize your content"
+            ],
+            "Optimize your content for search engines and boost your store visibility.": [
+                "Optimize your content for search engines and boost your store visibility."
+            ],
+            "Security, performance, backups, staging & more.": [
+                ""
+            ],
+            "Manage": [
+                ""
+            ],
+            "Master WordPress with help from our AI assistant.": [
+                ""
+            ],
+            "Launch our AI Help": [
+                ""
+            ],
+            "Add Store Details": [
+                ""
+            ],
+            "Refer a Friend": [
+                ""
+            ],
+            "Unlock exclusive benefits with out referral program.": [
+                ""
+            ],
+            "Start Now": [
+                ""
+            ],
+            "Pro Design Live": [
+                ""
+            ],
+            "We will help you build and grow your website and improve your skills in WordPress.": [
+                ""
+            ],
+            "Get Info": [
+                ""
+            ],
+            "Optimize your website my managing cache, security and performance settings.": [
+                ""
+            ],
+            "Premium tools available in eCommerce Add-Ons": [
+                ""
+            ],
+            "Discover exclusive features, designed to deliver unmatched value and elevate your online experience.": [
+                ""
+            ],
+            "Congrats, your store is live!": [
+                ""
+            ],
+            "Congrats, your website is live!": [
                 ""
             ]
         }

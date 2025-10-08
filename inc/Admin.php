@@ -82,7 +82,7 @@ final class Admin {
 		$help     = array(
 			'route'    => 'bluehost#/help',
 			'title'    => __( 'Help Resources', 'wp-plugin-bluehost' ),
-			'priority' => 70,
+			'priority' => 100,
 		);
 
 		// apply filter to add module subnav items
@@ -93,6 +93,33 @@ final class Admin {
 				$home,
 				$help,
 			)
+		);
+
+		// Check post filtered subnav items and make some tweaks
+		// check subnav items and update 'Solutions' to 'Commerce' and update priority to 80
+		// update 'Marketplace' priority to 90
+		foreach ( $subnav as $key => $item ) {
+			if ( 'bluehost#/commerce' === $item['route'] ) {
+				$subnav[ $key ]['title']    = 'Commerce';
+				$subnav[ $key ]['priority'] = 80;
+			}
+			if ( 'bluehost#/marketplace' === $item['route'] ) {
+				$subnav[ $key ]['priority'] = 90;
+			}
+		}
+
+		// remove perforamnce and staging from subnav via array_filter
+		$subnav = array_filter(
+			$subnav,
+			function ( $item ) {
+				if ( 'bluehost#/settings/performance' === $item['route'] ) {
+					return false;
+				}
+				if ( 'bluehost#/settings/staging' === $item['route'] ) {
+					return false;
+				}
+				return true;
+			}
 		);
 
 		// sort subnav items by priority
@@ -165,12 +192,24 @@ final class Admin {
 			require_once ABSPATH . 'wp-admin/includes/plugin.php';
 		}
 		$plugin_data = get_plugin_data( BLUEHOST_PLUGIN_FILE );
+		$portal_apps = array(
+			'nfd-coming-soon-portal',
+			// 'nfd-marketplace-portal',
+			'nfd-next-steps-portal',
+			'nfd-performance-portal',
+			// 'nfd-solutions-portal',
+			'nfd-staging-portal',
+		);
 
 		echo '<!-- Bluehost -->' . PHP_EOL;
 
 		if ( version_compare( $wp_version, $plugin_data['RequiresWP'], '>=' ) ) {
-			echo '<div id="wppbh-app" class="wppbh wppbh_app"></div>' . PHP_EOL;
-			echo '<div id="nfd-portal-apps"><div id="nfd-next-steps-portal" /><div id="nfd-coming-soon-portal" /></div>' . PHP_EOL;
+			echo '<div id="wppbh-app" class="wppbh wppbh_app"></div>';
+			echo '<div id="nfd-portal-apps" class="nfd-portal-apps">'; // each portal app needs a root id added here
+			foreach ( $portal_apps as $portal_app ) {
+				echo '<div id="' . esc_attr( $portal_app ) . '"></div>';
+			}
+			echo '</div>';
 		} else {
 			// fallback messaging for outdated WordPress
 			$appWhenOutdated = BLUEHOST_PLUGIN_DIR . '/inc/AppWhenOutdated.php';

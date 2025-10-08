@@ -15,7 +15,8 @@ const Home = () => {
 	useEffect( () => {
 		// run when mounts
 		const nextStepsPortal = document.getElementById( 'next-steps-portal' );
-		const comingSoonPortal = document.getElementById( 'coming-soon-portal' );
+		const comingSoonPortal =
+			document.getElementById( 'coming-soon-portal' );
 
 		if ( nextStepsPortal ) {
 			window.NFDPortalRegistry.registerPortal(
@@ -23,7 +24,7 @@ const Home = () => {
 				nextStepsPortal
 			);
 		}
-		
+
 		if ( comingSoonPortal ) {
 			window.NFDPortalRegistry.registerPortal(
 				'coming-soon',
@@ -103,7 +104,7 @@ const Home = () => {
 				<Container className="nfd-max-w-full nfd-p-8 nfd-shadow-none nfd-rounded-xl nfd-border nfd-border-[#D5D5D5]">
 					<div id="coming-soon-portal" />
 				</Container>
-			)}
+			) }
 
 			<Container className="nfd-max-w-full nfd-p-8 nfd-shadow-none nfd-rounded-xl nfd-border nfd-border-[#D5D5D5]">
 				<div id="next-steps-portal" />

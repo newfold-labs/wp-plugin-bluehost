@@ -648,3 +648,8 @@ body.toplevel_page_bluehost {
 .nfd-root aside.nfd-notifications {
     z-index: 9991; // admin menu has z-index 9990
 }
+
+// fix for coming soon portal layout
+.nfd-coming-soon-content {
+    align-items: center;
+}

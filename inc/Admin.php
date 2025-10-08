@@ -108,6 +108,17 @@ final class Admin {
 			}
 		}
 
+		// remove perforamnce and staging from subnav via array_filter
+		$subnav = array_filter( $subnav, function ( $item ) {
+			if ( 'bluehost#/settings/performance' === $item['route'] ) {
+				return false;
+			}
+			if ( 'bluehost#/settings/staging' === $item['route'] ) {
+				return false;
+			}
+			return true;
+		} );
+
 		// sort subnav items by priority
 		usort(
 			$subnav,

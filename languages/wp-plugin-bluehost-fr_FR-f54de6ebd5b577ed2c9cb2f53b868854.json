@@ -1,7 +1,7 @@
 {
     "translation-revision-date": "2025-02-25T20:53:21+00:00",
     "generator": "WP-CLI\/2.12.0",
-    "source": "build\/4.6.3\/index.js",
+    "source": "build\/4.7.0\/index.js",
     "domain": "messages",
     "locale_data": {
         "messages": {
@@ -29,22 +29,22 @@
                 "Obtenir de l'aide"
             ],
             "Disabled old post comments": [
-                "D\u00e9sactivation des commentaires sur les anciens messages"
+                ""
             ],
             "Enabled old post comments": [
-                "Activation des commentaires sur les anciens messages"
+                ""
             ],
             "Comments on old posts are disabled.": [
-                "Les commentaires sur les anciens messages sont d\u00e9sactiv\u00e9s."
+                ""
             ],
             "Comments are allowed on old posts.": [
-                "Les commentaires sont autoris\u00e9s sur les anciens messages."
+                ""
             ],
             "Disable comments for older posts": [
-                "D\u00e9sactiver les commentaires pour les messages plus anciens"
+                ""
             ],
             "Comments setting saved": [
-                "Param\u00e8tre de commentaires enregistr\u00e9"
+                ""
             ],
             "Comments on posts are disabled after %s day.": [
                 ""
@@ -53,7 +53,7 @@
                 ""
             ],
             "Comments setting saved.": [
-                "Param\u00e8tre de commentaires enregistr\u00e9."
+                ""
             ],
             "Posts will display %s comment at a time.": [
                 ""
@@ -64,44 +64,47 @@
             "Comments": [
                 "Commentaires"
             ],
+            "Comments allow visitors to provide feedback and respond to your posts or pages.": [
+                ""
+            ],
             "Oops! Something went wrong. Please try again.": [
-                "Oups! Quelque chose a mal tourn\u00e9. Veuillez r\u00e9essayer."
+                ""
             ],
             "There's nothing here!": [
-                "Il n\u2019y a rien ici!"
+                ""
             ],
             "Store": [
-                "Boutique"
+                ""
             ],
             "Products & Services": [
-                "Produits et services"
+                ""
             ],
             "Sales & Promotions": [
-                "Ventes et promotions"
+                ""
             ],
             "Sales Channel": [
-                "Canal de vente"
+                ""
             ],
             "Payments": [
-                "Paiements"
+                ""
             ],
             "Store Details": [
-                "D\u00e9tails du magasin"
+                ""
             ],
             "Marketplace": [
-                "March\u00e9"
+                ""
             ],
             "Admin": [
-                "Admin"
+                ""
             ],
             "Coming soon activated": [
-                "Bient\u00f4t activ\u00e9"
+                ""
             ],
             "Coming soon deactivated": [
-                "Bient\u00f4t d\u00e9sactiv\u00e9"
+                ""
             ],
             "Coming soon page is active. Site requires login.": [
-                "La page Coming Soon est active. Le site n\u00e9cessite une connexion."
+                ""
             ],
             "Coming soon page is not active. Site is live to visitors.": [
                 "La page Coming Soon n\u2019est pas active. Le site est en direct pour les visiteurs."
@@ -109,32 +112,44 @@
             "Site Status": [
                 "\u00c9tat du site"
             ],
+            "Turn off your \"Coming Soon\" page when you are ready to launch your website.": [
+                ""
+            ],
+            "Turn on your \"Coming Soon\" page when you need to make major changes to your website.": [
+                ""
+            ],
+            "Your Bluehost Coming Soon page lets you hide your site from visitors while you make the magic happen.": [
+                ""
+            ],
             "Staging Enabled": [
-                "Mise en sc\u00e8ne activ\u00e9e"
+                ""
             ],
             "Staging Disabled": [
-                "Stadification d\u00e9sactiv\u00e9e"
+                ""
             ],
             "You need to reload the page to manage Staging.": [
-                "Vous devez recharger la page pour g\u00e9rer la pr\u00e9paration."
+                ""
             ],
             "Staging will no longer display.": [
                 "La mise en sc\u00e8ne ne s\u2019affichera plus."
             ],
+            "The staging feature provides a way to copy a site to test new updates, features or content.": [
+                ""
+            ],
             "Sorry, that is not allowed.": [
-                "D\u00e9sol\u00e9, ce n\u2019est pas autoris\u00e9."
+                ""
             ],
             "This feature cannot currently be modified.": [
                 ""
             ],
             "Help Center Enabled": [
-                "Centre d\u2019aide activ\u00e9"
+                ""
             ],
             "Help Center Disabled": [
-                "Centre d\u2019aide d\u00e9sactiv\u00e9"
+                ""
             ],
             "Reload the page to access the Help Center.": [
-                "Rechargez la page pour acc\u00e9der au Centre d\u2019aide."
+                ""
             ],
             "The Help Center will no longer display.": [
                 "Le centre d\u2019aide ne s\u2019affichera plus."
@@ -154,17 +169,20 @@
             "WonderBlocks will no longer display.": [
                 "WonderBlocks ne s\u2019affichera plus."
             ],
+            "WonderBlocks provides a library of customizable block patterns and page templates.": [
+                ""
+            ],
             "Bluehost WordPress Plugin": [
-                "Bluehost WordPress Plugin"
+                ""
             ],
             "Quick links": [
                 ""
             ],
             "Manage common settings for your website": [
-                "G\u00e9rer les param\u00e8tres communs de votre site web"
+                ""
             ],
             "Features": [
-                "Fonctionnalit\u00e9s"
+                ""
             ],
             "Customize the available features as you manage your website.": [
                 "Personnalisez les fonctionnalit\u00e9s disponibles lorsque vous g\u00e9rez votre site Web."
@@ -232,6 +250,9 @@
             "Automatic Updates": [
                 "Mises \u00e0 jour automatiques"
             ],
+            "Keeping automatic updates on ensures timely security fixes and the latest features.": [
+                ""
+            ],
             "The trash will automatically empty every %s week.": [
                 ""
             ],
@@ -250,29 +271,35 @@
             "Explore our featured collection of tools and services.": [
                 "Explorez notre collection d\u2019outils et de services."
             ],
+            "Oops, there was an error loading the marketplace, please try again later.": [
+                ""
+            ],
             "Sorry, no marketplace items. Please, try again later.": [
                 "D\u00e9sol\u00e9, il n\u2019y a pas d\u2019articles sur le march\u00e9. Veuillez r\u00e9essayer plus tard."
             ],
             "Load More": [
-                "Charger plus"
+                ""
             ],
             "Oops! Something Went Wrong": [
-                "Oups! Quelque chose a mal tourn\u00e9"
+                ""
             ],
             "An error occurred while loading the content. Please try again later.": [
                 "Une erreur s\u2019est produite lors du chargement du contenu. Veuillez r\u00e9essayer plus tard."
             ],
             "Start now": [
-                "Commencer maintenant"
+                ""
             ],
             "Phone": [
-                "T\u00e9l\u00e9phone"
+                ""
             ],
             "Call Us": [
-                "Appelez-nous"
+                ""
             ],
             "Chat": [
                 "Bavarder"
+            ],
+            "Chat with one of our friendly Customer Care Specialists, as we are waiting to help. Open 24 hours - 7 days.": [
+                ""
             ],
             "Live Chat": [
                 "Chat en direct"
@@ -280,47 +307,62 @@
             "Tweet": [
                 "Tweet"
             ],
+            "Find our team at @bluehost for updates on our products and support from our team.": [
+                ""
+            ],
             "Tweet Us": [
-                "Tweetez-nous"
+                ""
             ],
             "YouTube": [
-                "Youtube"
+                ""
             ],
             "Find tutorials, answers, interviews and guides on our YouTube channel.": [
                 "Retrouvez des tutoriels, des r\u00e9ponses, des interviews et des guides sur notre cha\u00eene YouTube."
             ],
             "Watch Now": [
-                "Regarder maintenant"
+                ""
             ],
             "Knowledge Base": [
                 "Base de connaissances"
             ],
+            "Articles, guides, how-tos, instructions, and answers to our client's most frequently asked questions.": [
+                ""
+            ],
             "Visit Knowledge Base": [
-                "Visiter la base de connaissances"
+                ""
             ],
             "Resources": [
-                "Ressources"
+                ""
             ],
             "Boost your online knowledge and get ahead of the competition.": [
-                "Am\u00e9liorez vos connaissances en ligne et devancez la concurrence."
+                ""
             ],
             "Explore Resources": [
-                "Explorer les ressources"
+                ""
             ],
             "Events and Webinars": [
                 "\u00c9v\u00e9nements et webinaires"
             ],
+            "Team Bluehost organizes multiple webinars and events throughout the year. We are also sponsors and speak at most WordCamps across the world. Join us at our next event!": [
+                ""
+            ],
             "More Info": [
-                "Plus d\u2019infos"
+                ""
             ],
             "Bluehost Website": [
                 "Site Web de Bluehost"
+            ],
+            "Not finding what you need? Visit our website for more information about our products and services.": [
+                ""
             ],
             "Go to Bluehost": [
                 "Aller sur Bluehost"
             ],
             "Help": [
                 "Aide"
+            ],
+            "We are available 24\/7 to help answer questions and solve your problems.": [
+                "\ndevelop"
             ],
             "Secret page to manage admin features and settings.": [
                 "Page secr\u00e8te pour g\u00e9rer les fonctionnalit\u00e9s et les param\u00e8tres d\u2019administration."
@@ -337,8 +379,11 @@
             "Performance will no longer display.": [
                 "Les performances ne s\u2019afficheront plus."
             ],
+            "The performance feature provides improvements to loads faster for visitors including cache settings.": [
+                ""
+            ],
             "Oh No, An Error!": [
-                "Oh non, une erreur !"
+                ""
             ],
             "You found an error, please refresh the page and try again!": [
                 "Vous avez trouv\u00e9 une erreur, veuillez actualiser la page et r\u00e9essayer !"
@@ -348,15 +393,6 @@
             ],
             "Error code:": [
                 "Code d\u2019erreur :"
-            ],
-            "Want a fresh start?": [
-                "Envie d\u2019un nouveau d\u00e9part ?"
-            ],
-            "Relaunch the AI Builder to replace this site with a new one.": [
-                "Relancez l\u2019AI Builder pour remplacer ce site par un nouveau."
-            ],
-            "Create a new site": [
-                "Cr\u00e9er un nouveau site"
             ],
             "Commerce": [
                 "Commerce"
@@ -377,7 +413,7 @@
                 "Dites bonjour \u00e0 la cr\u00e9ation de site sans effort avec une large biblioth\u00e8que de 250+ blocs"
             ],
             "Launch the Editor": [
-                "Lancer l\u2019\u00e9diteur"
+                ""
             ],
             "Optimize your website by managing cache and performance settings": [
                 "Optimisez votre site web en g\u00e9rant le cache et les param\u00e8tres de performance"
@@ -395,66 +431,51 @@
                 "Optimisez votre contenu pour les moteurs de recherche et boostez la visibilit\u00e9 de votre boutique."
             ],
             "Security, performance, backups, staging & more.": [
-                "S\u00e9curit\u00e9, performances, sauvegardes, staging et plus encore."
+                ""
             ],
             "Manage": [
-                "G\u00e9rer"
+                ""
             ],
             "Master WordPress with help from our AI assistant.": [
-                "Ma\u00eetrisez WordPress avec l\u2019aide de notre assistant IA."
+                ""
             ],
             "Launch our AI Help": [
-                "Lancez notre aide sur l\u2019IA"
-            ],
-            "Congrats, your %s is live!": [
-                "F\u00e9licitations, votre %s est en ligne !"
-            ],
-            "WonderBlocks provides a library of customizable block patterns and page templates.": [
-                ""
-            ],
-            "Turn off your \"Coming Soon\" page when you are ready to launch your website.": [
-                ""
-            ],
-            "Turn on your \"Coming Soon\" page when you need to make major changes to your website.": [
-                ""
-            ],
-            "Your Bluehost Coming Soon page lets you hide your site from visitors while you make the magic happen.": [
-                ""
-            ],
-            "The staging feature provides a way to copy a site to test new updates, features or content.": [
-                ""
-            ],
-            "Comments allow visitors to provide feedback and respond to your posts or pages.": [
                 ""
             ],
             "Add Store Details": [
                 ""
             ],
-            "Chat with one of our friendly Customer Care Specialists, as we are waiting to help. Open 24 hours - 7 days.": [
+            "Refer a Friend": [
                 ""
             ],
-            "Find our team at @bluehost for updates on our products and support from our team.": [
+            "Unlock exclusive benefits with out referral program.": [
                 ""
             ],
-            "Articles, guides, how-tos, instructions, and answers to our client's most frequently asked questions.": [
+            "Start Now": [
                 ""
             ],
-            "Team Bluehost organizes multiple webinars and events throughout the year. We are also sponsors and speak at most WordCamps across the world. Join us at our next event!": [
+            "Pro Design Live": [
                 ""
             ],
-            "Not finding what you need? Visit our website for more information about our products and services.": [
+            "We will help you build and grow your website and improve your skills in WordPress.": [
                 ""
             ],
-            "Oops, there was an error loading the marketplace, please try again later.": [
+            "Get Info": [
                 ""
             ],
-            "The performance feature provides improvements to loads faster for visitors including cache settings.": [
+            "Optimize your website my managing cache, security and performance settings.": [
                 ""
             ],
-            "Keeping automatic updates on ensures timely security fixes and the latest features.": [
+            "Premium tools available in eCommerce Add-Ons": [
                 ""
             ],
-            "We are available 24\/7 to help answer questions and solve your problems.": [
+            "Discover exclusive features, designed to deliver unmatched value and elevate your online experience.": [
+                ""
+            ],
+            "Congrats, your store is live!": [
+                ""
+            ],
+            "Congrats, your website is live!": [
                 ""
             ]
         }

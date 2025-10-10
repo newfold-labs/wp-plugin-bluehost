@@ -631,3 +631,25 @@ body.toplevel_page_bluehost {
 .nfd-validation-input button[data-id="nfd-marketing-page-category-selector"] .nfd-select__button-label {
     padding-right: 2rem;
 }
+
+// fix for marketplace page styles PRESS0-3272
+.wppbh-app-marketplace-page {
+    width: 100%;
+
+    .nfd-pp-yoast-hero-content > div {
+        min-width: 400px;
+        max-width: 50%;
+        margin-left: auto;
+        align-items: center;
+    }
+}
+
+// fix for performance toast notices PRESS0-3273
+.nfd-root aside.nfd-notifications {
+    z-index: 9991; // admin menu has z-index 9990
+}
+
+// fix for coming soon portal layout
+.nfd-coming-soon-content {
+    align-items: center;
+}

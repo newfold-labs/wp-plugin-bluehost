@@ -82,7 +82,7 @@ final class Admin {
 		$help     = array(
 			'route'    => 'bluehost#/help',
 			'title'    => __( 'Help Resources', 'wp-plugin-bluehost' ),
-			'priority' => 70,
+			'priority' => 100,
 		);
 
 		// apply filter to add module subnav items
@@ -93,6 +93,33 @@ final class Admin {
 				$home,
 				$help,
 			)
+		);
+
+		// Check post filtered subnav items and make some tweaks
+		// check subnav items and update 'Solutions' to 'Commerce' and update priority to 80
+		// update 'Marketplace' priority to 90
+		foreach ( $subnav as $key => $item ) {
+			if ( 'bluehost#/commerce' === $item['route'] ) {
+				$subnav[ $key ]['title']    = 'Commerce';
+				$subnav[ $key ]['priority'] = 80;
+			}
+			if ( 'bluehost#/marketplace' === $item['route'] ) {
+				$subnav[ $key ]['priority'] = 90;
+			}
+		}
+
+		// remove perforamnce and staging from subnav via array_filter
+		$subnav = array_filter(
+			$subnav,
+			function ( $item ) {
+				if ( 'bluehost#/settings/performance' === $item['route'] ) {
+					return false;
+				}
+				if ( 'bluehost#/settings/staging' === $item['route'] ) {
+					return false;
+				}
+				return true;
+			}
 		);
 
 		// sort subnav items by priority

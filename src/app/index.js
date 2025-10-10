@@ -1,24 +1,23 @@
 import './stylesheet.scss';
 import './tailwind.pcss';
 
-import AppStore, { AppStoreProvider } from './data/store';
-import { useLocation, HashRouter as Router } from 'react-router-dom';
-import { NewfoldRuntime } from '@newfold/wp-module-runtime';
-import { SnackbarList, Spinner } from '@wordpress/components';
-import AppRoutes from './data/routes';
-import ErrorCard from './components/errorCard';
-import { useDispatch, useSelect } from '@wordpress/data';
-import { useEffect } from 'react';
-import { ErrorBoundary } from 'react-error-boundary';
 // eslint-disable-next-line import/no-unresolved
 import { store as noticesStore } from '@wordpress/notices';
-import { kebabCase, filter } from 'lodash';
-import { useHandlePageLoad } from './util/hooks';
+import { useLocation, HashRouter as Router } from 'react-router-dom';
+import { NewfoldRuntime } from '@newfold/wp-module-runtime';
 import { Root, NavigationProvider } from '@newfold/ui-component-library';
+import { SnackbarList, Spinner } from '@wordpress/components';
+import { useDispatch, useSelect } from '@wordpress/data';
+import { ErrorBoundary } from 'react-error-boundary';
+import { useEffect } from 'react';
+import { kebabCase, filter } from 'lodash';
+import AppStore, { AppStoreProvider } from './data/store';
+import { AppNav } from './components/app-nav/index';
+import AppRoutes from './data/routes';
+import ErrorCard from './components/errorCard';
+import { useHandlePageLoad } from './util/hooks';
 import { NotificationFeed } from './components/notifications';
 import { handleHelpLinksClick } from './util/helpers';
-import Logo from './components/logo';
-import { AppNav } from './components/app-nav/index';
 
 // component sourced from module
 import { default as NewfoldNotifications } from '@modules/wp-module-notifications/assets/js/components/notifications/';

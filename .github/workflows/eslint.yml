@@ -8,7 +8,7 @@ on:
     paths:
       - 'src/**/*.js'
   pull_request:
-    types: [ opened, edited, reopened, ready_for_review ]
+    types: [ opened, synchronize, edited, reopened, ready_for_review ]
     paths:
       - 'src/**/*.js'
   workflow_dispatch:

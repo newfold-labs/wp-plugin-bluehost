@@ -124,7 +124,10 @@ export const AppNavMenu = () => {
 		if ( location?.pathname ) {
 			let pathnameLocation = location.pathname;
 			// Map specific sub-paths to their parent for menu highlighting
-			switch ( location?.pathname ) {
+			switch ( location.pathname ) {
+				case '/':
+					pathnameLocation = '/home';
+					break;
 				case '/settings/performance':
 				case '/settings/staging':
 				case '/settings/settings':

@@ -122,7 +122,17 @@ export const AppNavMenu = () => {
 
 	useEffect( () => {
 		if ( location?.pathname ) {
-			setActivePath( `#${ location.pathname }` );
+			let pathnameLocation = location.pathname;
+			// Map specific sub-paths to their parent for menu highlighting
+			switch ( location?.pathname ) {
+				case '/settings/performance':
+				case '/settings/staging':
+				case '/settings/settings':
+					pathnameLocation = '/settings';
+					break;
+			}
+			// sync active path with location pathname
+			setActivePath( `#${ pathnameLocation }` );
 		}
 		SubMenusManager();
 		document.onclick = SubMenusManager;

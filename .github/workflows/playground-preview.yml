@@ -86,7 +86,7 @@ jobs:
           echo "zip_size=${SIZE}" >> "$GITHUB_OUTPUT"
 
           # Create or update index.html for preview directory
-          cat > gh-pages/previews/index.html <<'EOF'
+          cat > gh-pages/previews/index.html <<EOF
           <!DOCTYPE html>
           <html>
           <head>

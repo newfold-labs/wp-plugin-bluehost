@@ -38,8 +38,10 @@ jobs:
 
       - name: Extract and cleanup preview files
         id: cleanup
+        env:
+          PR_NUMBER: ${{ steps.pr.outputs.number }}
         run: |
-          PR_NUM="${{ steps.pr.outputs.number }}"
+          PR_NUM="${PR_NUMBER}"
           ZIP_NAME="bluehost-pr-${PR_NUM}.zip"
 
           # Create clean directory structure
@@ -109,10 +111,14 @@ jobs:
         uses: actions/deploy-pages@d6db90164ac5ed86f2b6aed7e0febac5b3c0c03e  # v4.0.5
 
       - name: Log cleanup results
+        env:
+          REMOVED: ${{ steps.cleanup.outputs.removed }}
+          PR_NUMBER: ${{ steps.pr.outputs.number }}
+          REMAINING_COUNT: ${{ steps.cleanup.outputs.remaining_count }}
         run: |
-          if [ "${{ steps.cleanup.outputs.removed }}" == "true" ]; then
-            echo "✓ Successfully removed preview for PR #${{ steps.pr.outputs.number }}"
-            echo "✓ Remaining preview files: ${{ steps.cleanup.outputs.remaining_count }}"
+          if [ "${REMOVED}" == "true" ]; then
+            echo "✓ Successfully removed preview for PR #${PR_NUMBER}"
+            echo "✓ Remaining preview files: ${REMAINING_COUNT}"
           else
-            echo "ℹ No preview file found for PR #${{ steps.pr.outputs.number }} (may not have been created)"
+            echo "ℹ No preview file found for PR #${PR_NUMBER} (may not have been created)"
           fi

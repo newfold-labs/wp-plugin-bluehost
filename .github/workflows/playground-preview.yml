@@ -62,12 +62,14 @@ jobs:
 
       - name: Prepare plugin zip for GitHub Pages
         id: prepare
+        env:
+          PR_NUMBER: ${{ steps.pr.outputs.number }}
         run: |
           # Create previews directory structure
           mkdir -p gh-pages/previews
 
           # Create zip named by PR number only (overwrites on new pushes)
-          PR_NUM="${{ steps.pr.outputs.number }}"
+          PR_NUM="${PR_NUMBER}"
           ZIP_NAME="bluehost-pr-${PR_NUM}.zip"
 
           # Create zip from artifact directory
@@ -116,14 +118,20 @@ jobs:
 
       - name: Create WordPress Playground preview link
         uses: actions/github-script@ed597411d8f924073f98dfc5c65a23a2325f34cd  # v8.0.0
+        env:
+          PR_NUMBER: ${{ steps.pr.outputs.number }}
+          ZIP_NAME: ${{ steps.prepare.outputs.zip_name }}
+          ZIP_SIZE: ${{ steps.prepare.outputs.zip_size }}
+          COMMIT: ${{ steps.pr.outputs.commit }}
+          BRANCH: ${{ steps.pr.outputs.branch }}
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           script: |
-            const prNumber = ${{ steps.pr.outputs.number }};
-            const zipName = '${{ steps.prepare.outputs.zip_name }}';
-            const zipSize = '${{ steps.prepare.outputs.zip_size }}';
-            const commit = '${{ steps.pr.outputs.commit }}';
-            const branch = '${{ steps.pr.outputs.branch }}';
+            const prNumber = parseInt(process.env.PR_NUMBER);
+            const zipName = process.env.ZIP_NAME;
+            const zipSize = process.env.ZIP_SIZE;
+            const commit = process.env.COMMIT;
+            const branch = process.env.BRANCH;
 
             // Construct the public URL for the zip file on GitHub Pages
             const zipUrl = `https://${context.repo.owner}.github.io/${context.repo.repo}/previews/${zipName}`;

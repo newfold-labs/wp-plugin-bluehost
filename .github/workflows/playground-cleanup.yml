@@ -1,7 +1,7 @@
 name: Cleanup Playground Preview
 on:
   pull_request:
-    types: [closed]
+    types: [ closed ]
 
 # Disable permissions for all available scopes by default.
 # Any needed permissions should be configured at the job level.

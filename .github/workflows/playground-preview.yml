@@ -1,8 +1,8 @@
 name: WordPress Playground Preview
 on:
   workflow_run:
-    workflows: ["Build Plugin"]
-    types: [completed]
+    workflows: [ "Build Plugin" ]
+    types: [ completed ]
 
 # Disable permissions for all available scopes by default.
 # Any needed permissions should be configured at the job level.

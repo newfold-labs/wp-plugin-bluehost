@@ -58,6 +58,8 @@ jobs:
             if [ -d "./current-pages/previews" ]; then
               echo "Copying preview files except ${ZIP_NAME}..."
               for file in ./current-pages/previews/*; do
+                # Skip if no files matched (glob pattern remains literal)
+                [ -e "$file" ] || break
                 filename=$(basename "$file")
                 if [ "$filename" != "$ZIP_NAME" ]; then
                   cp "$file" "./gh-pages/previews/"

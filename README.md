@@ -44,6 +44,12 @@ Each PR will have two comment links:
 - **Download Build Artifact** - Download the built plugin zip from GitHub Actions (requires GitHub login, expires in 90 days)
 - **Launch Preview in Playground** - One-click link to test the plugin in WordPress Playground (public, no login required)
 
+### Security Note
+
+For security reasons, Playground preview links are only generated for pull requests from branches within this repository, not from forks. This prevents potential privilege escalation where untrusted code from forks could trigger workflows with write access to GitHub Pages and pull requests.
+
+Fork contributors will still receive the build artifact download link for manual testing. If you need a Playground preview for a trusted fork PR, a maintainer can manually trigger the deployment workflow after reviewing the changes.
+
 # Releasing Updates
 
 ## Release Steps

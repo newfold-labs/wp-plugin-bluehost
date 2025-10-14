@@ -1,15 +1,16 @@
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: wp-plugin-bluehost\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/wp-plugin-bluehost\n"
+"POT-Creation-Date: 2024-10-21 07:10-0000\n"
+"PO-Revision-Date: 2024-10-21 07:10-0000\n"
 "Last-Translator: \n"
 "Language-Team: German\n"
+"Language: de_DE\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2024-10-21 07:10-0000\n"
-"PO-Revision-Date: 2024-10-21 07:10-0000\n"
-"Language: de_DE\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Crowdin-File: wp-plugin-bluehost.pot\n"
 "X-Crowdin-Project: bluehost-plugin\n"
@@ -30,13 +31,15 @@ msgstr "https://bluehost.com"
 
 #. Description of the plugin
 #: bluehost-wordpress-plugin.php
-msgid "WordPress plugin that integrates a WordPress site with the Bluehost control panel, including performance, security, and update features."
-msgstr "WordPress-Plugin, das eine WordPress-Seite in das Bluehost-Bedienfeld integriert, einschließlich Leistung, Sicherheit und Update-Features."
+msgid ""
+"WordPress plugin that integrates a WordPress site with the Bluehost control "
+"panel, including performance, security, and update features."
+msgstr ""
+"WordPress-Plugin, das eine WordPress-Seite in das Bluehost-Bedienfeld "
+"integriert, einschließlich Leistung, Sicherheit und Update-Features."
 
 #. Author of the plugin
-#: bluehost-wordpress-plugin.php
-#: inc/Admin.php:135
-#: inc/Admin.php:136
+#: bluehost-wordpress-plugin.php inc/Admin.php:162 inc/Admin.php:163
 msgid "Bluehost"
 msgstr "Bluehost"
 
@@ -54,25 +57,27 @@ msgstr "%s &mdash; kommt bald"
 msgid "Coming Soon Active"
 msgstr "Bald aktiv"
 
-#. translators: %1$s is replaced with the opening link tag to preview the page, and %2$s is replaced with the closing link tag, %3$s is the opening link tag, %4$s is the closing link tag.
+#. translators: %1$s is replaced with the opening link tag to preview the
+#. page, and %2$s is replaced with the closing link tag, %3$s is the opening
+#. link tag, %4$s is the closing link tag.
 #: bootstrap.php:155
 #, php-format
-msgid "Your site is currently displaying a %1$scoming soon page%2$s. Once you are ready, %3$slaunch your site%4$s."
-msgstr "Auf Ihrer Site wird derzeit eine %1$sSeite „Demnächst verfügbar“%2$s angezeigt. Sobald Sie bereit sind, %3$starten Sie Ihre Site%4$s."
+msgid ""
+"Your site is currently displaying a %1$scoming soon page%2$s. Once you are "
+"ready, %3$slaunch your site%4$s."
+msgstr ""
+"Auf Ihrer Site wird derzeit eine %1$sSeite „Demnächst verfügbar“%2$s "
+"angezeigt. Sobald Sie bereit sind, %3$starten Sie Ihre Site%4$s."
 
 #: bootstrap.php:156
 msgid "Preview the coming soon landing page"
 msgstr "Vorschau der kommenden Landingpage"
 
-#: inc/Admin.php:74
-#: inc/Admin.php:300
-#: build/4.7.0/index.js:7
+#: inc/Admin.php:74 inc/Admin.php:327 build/4.7.0/index.js:7
 msgid "Home"
 msgstr "Startseite"
 
-#: inc/Admin.php:79
-#: inc/Admin.php:301
-#: build/4.7.0/index.js:7
+#: inc/Admin.php:79 inc/Admin.php:328 build/4.7.0/index.js:7
 msgid "Settings"
 msgstr "Einstellungen"
 
@@ -81,8 +86,12 @@ msgid "Please update to a newer WordPress version."
 msgstr "Bitte aktualisieren Sie auf eine neuere WordPress-Version."
 
 #: inc/AppWhenOutdated.php:41
-msgid "There are new WordPress components which this plugin requires in order to render the interface."
-msgstr "Es gibt neue WordPress-Komponenten, die dieses Plugin benötigt, um die Schnittstelle darzustellen."
+msgid ""
+"There are new WordPress components which this plugin requires in order to "
+"render the interface."
+msgstr ""
+"Es gibt neue WordPress-Komponenten, die dieses Plugin benötigt, um die "
+"Schnittstelle darzustellen."
 
 #. translators: 1: plugin name 2: incompatible plugin name
 #: inc/plugin-nfd-compat-check.php:161
@@ -96,11 +105,16 @@ msgstr "\"%1$s\" hat sich selbst deaktiviert. Es ist inkompatibel mit \"%2$s\"."
 msgid "\"%1$s\" has been deactivated. It is incompatible with \"%2$s\"."
 msgstr "\"%1$s\" wurde deaktiviert. Es ist inkompatibel mit \"%2$s\"."
 
-#. translators: 1: plugin name 2: minimum required PHP version, current PHP version
+#. translators: 1: plugin name 2: minimum required PHP version, current PHP
+#. version
 #: inc/plugin-php-compat-check.php:123
 #, php-format
-msgid "%1$s requires PHP version %2$s or later. You are currently running version %3$s."
-msgstr "%1$s benötigt die PHP-Version %2$s oder neuer. Sie verwenden derzeit die Version %3$s."
+msgid ""
+"%1$s requires PHP version %2$s or later. You are currently running version "
+"%3$s."
+msgstr ""
+"%1$s benötigt die PHP-Version %2$s oder neuer. Sie verwenden derzeit die "
+"Version %3$s."
 
 #: inc/plugin-php-compat-check.php:124
 msgid " Please contact your web host about upgrading PHP."
@@ -112,11 +126,16 @@ msgstr " Bitte kontaktieren Sie Ihren Web-Host über ein Upgrade von PHP."
 msgid "%1$s requires the %2$s PHP extension."
 msgstr "%1$s benötigt die %2$s PHP-Erweiterung."
 
-#. translators: 1: plugin name 2: minimum required WordPress version 3: current WordPress version
+#. translators: 1: plugin name 2: minimum required WordPress version 3:
+#. current WordPress version
 #: inc/plugin-php-compat-check.php:155
 #, php-format
-msgid "%1$s requires WordPress version %2$s or later. You are currently running version %3$s."
-msgstr "%1$s benötigt die WordPress-Version %2$s oder neuer. Sie verwenden derzeit die Version %3$s."
+msgid ""
+"%1$s requires WordPress version %2$s or later. You are currently running "
+"version %3$s."
+msgstr ""
+"%1$s benötigt die WordPress-Version %2$s oder neuer. Sie verwenden derzeit "
+"die Version %3$s."
 
 #. translators: plugin name
 #: inc/plugin-php-compat-check.php:193
@@ -129,29 +148,26 @@ msgid "Sorry, you are not allowed to access this endpoint."
 msgstr "Sie sind leider nicht berechtigt, auf diesen Endpunkt zuzugreifen."
 
 #. translators: %s Settings > General page URL.
-#: inc/updates.php:115
-#: inc/updates.php:143
-#: inc/updates.php:170
+#: inc/updates.php:115 inc/updates.php:143 inc/updates.php:170
 #, php-format
 msgid "Auto-updates enabled on the <a href=\"%s\">Bluehost > Settings</a> page."
-msgstr "Automatische Updates auf der <a href=\"%s\">Bluehost > Einstellungen</a> Seite aktiviert."
+msgstr ""
+"Automatische Updates auf der <a href=\"%s\">Bluehost > Einstellungen</a> "
+"Seite aktiviert."
 
 #: inc/updates.php:166
 msgid "Auto-updates enabled"
 msgstr "Automatische Updates aktiviert"
 
-#: inc/widgets/views/site-preview.php:148
-#: build/4.7.0/index.js:7
+#: inc/widgets/views/site-preview.php:148 build/4.7.0/index.js:7
 msgid "Not Live"
 msgstr "Nicht live"
 
-#: inc/widgets/views/site-preview.php:149
-#: build/4.7.0/index.js:7
+#: inc/widgets/views/site-preview.php:149 build/4.7.0/index.js:7
 msgid "Live"
 msgstr "Live"
 
-#: inc/widgets/views/site-preview.php:162
-#: build/4.7.0/index.js:7
+#: inc/widgets/views/site-preview.php:162 build/4.7.0/index.js:7
 msgid "Your website is currently displaying a \"Coming Soon\" page."
 msgstr "Ihre Webseite zeigt derzeit eine \"Kommende bald\"-Seite an."
 
@@ -179,8 +195,7 @@ msgstr "Profil"
 msgid "Need Some Help?"
 msgstr "Brauchen Sie Hilfe?"
 
-#: inc/widgets/SitePreview.php:36
-#: inc/widgets/views/site-preview.php:113
+#: inc/widgets/SitePreview.php:36 inc/widgets/views/site-preview.php:113
 #: inc/widgets/views/site-preview.php:118
 msgid "Site Preview"
 msgstr "Seitenvorschau"
@@ -194,11 +209,13 @@ msgid "Renewals Center"
 msgstr "Zentrum für Erneuerungen"
 
 #: inc/widgets/views/help.php:98
-msgid "Call or chat 24/7 for support or let our experts build your site for you."
-msgstr "Rufen Sie an oder chatten Sie rund um die Uhr, um Unterstützung zu erhalten oder lassen Sie unsere Experten Ihre Website für Sie bauen."
+msgid ""
+"Call or chat 24/7 for support or let our experts build your site for you."
+msgstr ""
+"Rufen Sie an oder chatten Sie rund um die Uhr, um Unterstützung zu erhalten "
+"oder lassen Sie unsere Experten Ihre Website für Sie bauen."
 
-#: inc/widgets/views/help.php:117
-#: build/4.7.0/index.js:9
+#: inc/widgets/views/help.php:117 build/4.7.0/index.js:9
 msgid "Get Help"
 msgstr "Hilfe erhalten"
 
@@ -248,7 +265,9 @@ msgstr "Minimal benötigte WordPress-Version:"
 
 #: inc/AppWhenOutdated.php:61
 msgid "Consider enabling auto-updates to stay up to date."
-msgstr "Überlegen Sie, ob Sie automatische Updates auf dem neuesten Stand halten können."
+msgstr ""
+"Überlegen Sie, ob Sie automatische Updates auf dem neuesten Stand halten "
+"können."
 
 #: inc/AppWhenOutdated.php:66
 msgid "Update Now"
@@ -262,13 +281,25 @@ msgstr "Vom Heimwerker bis zur Full-Service-Hilfe, immer an Ihrer Seite."
 msgid "Hire Our Pros"
 msgstr "STELLEN SIE UNSERE PROFIS EIN"
 
-#. translators: %1$s starts the bold text, %2$s ends the bold text and adds a line break, %3$s is the link to the Domain Registration page, %4$s is the closing link for Domain Registration, %5$s wraps everything inside a span with text-center class
+#. translators: %1$s starts the bold text, %2$s ends the bold text and adds a
+#. line break, %3$s is the link to the Domain Registration page, %4$s is the
+#. closing link for Domain Registration, %5$s wraps everything inside a span
+#. with text-center class
 #: bootstrap.php:97
 #, php-format
-msgid "%1$sNeed a domain?%2$sCheck out our %3$sDomain Registration%4$s options.%5$s"
-msgstr "%1$sBenötigen Sie eine Domain?%2$sSchauen Sie sich unsere Optionen für %3$sDomain-Registrierung%4$s an.%5$s"
+msgid ""
+"%1$sNeed a domain?%2$sCheck out our %3$sDomain Registration%4$s options.%5$s"
+msgstr ""
+"%1$sBenötigen Sie eine Domain?%2$sSchauen Sie sich unsere Optionen für "
+"%3$sDomain-Registrierung%4$s an.%5$s"
 
-#. translators: %1$s starts the bold text, %2$s ends the bold text and adds a line break, %3$s is the link to Shared Hosting, %4$s is the closing link for Shared Hosting, %5$s is the link to WordPress Hosting, %6$s is the closing link for WordPress Hosting, %7$s is the link to VPS Hosting, %8$s is the closing link for VPS Hosting, %9$s is the link to Dedicated Hosting, %10$s is the closing link for Dedicated Hosting, %11$s wraps everything inside a span with text-center class
+#. translators: %1$s starts the bold text, %2$s ends the bold text and adds a
+#. line break, %3$s is the link to Shared Hosting, %4$s is the closing link
+#. for Shared Hosting, %5$s is the link to WordPress Hosting, %6$s is the
+#. closing link for WordPress Hosting, %7$s is the link to VPS Hosting, %8$s
+#. is the closing link for VPS Hosting, %9$s is the link to Dedicated Hosting,
+#. %10$s is the closing link for Dedicated Hosting, %11$s wraps everything
+#. inside a span with text-center class
 #: bootstrap.php:106
 #, php-format
 msgid ""
@@ -286,7 +317,9 @@ msgstr ""
 "\t\t\t\t\t\t      %9$sDediziertes Hosting%10$s. \n"
 "\t\t\t\t\t      %11$s"
 
-#. translators: %1$s is the logo SVG, %2$s wraps the text, %3$s is the link start for Bluehost WordPress Hosting, %4$s is the closing anchor tag, %5$s wraps the text again, %6$s contains backlinks
+#. translators: %1$s is the logo SVG, %2$s wraps the text, %3$s is the link
+#. start for Bluehost WordPress Hosting, %4$s is the closing anchor tag, %5$s
+#. wraps the text again, %6$s contains backlinks
 #: bootstrap.php:134
 #, php-format
 msgid ""
@@ -298,36 +331,37 @@ msgstr ""
 "\t\t\t\t\t%2$sA %3$sZuverlässiges WordPress-Hosting von Bluehost%4$s powered Website.%5$s\n"
 "                    %6$s"
 
-#: inc/Admin.php:328
+#: inc/Admin.php:355
 #, php-format
 msgid "Thank you for creating with %1$s and %2$s"
 msgstr "Vielen Dank, dass Sie mit %1$s und %2$s erstellt haben."
 
 #: build/4.7.0/index.js:1
 msgid "Disabled old post comments"
-msgstr ""
+msgstr "Deaktivierte Kommentare zu alten Beiträgen"
 
 #: build/4.7.0/index.js:1
 msgid "Enabled old post comments"
-msgstr ""
+msgstr "Alte Beitragskommentare aktiviert"
 
 #: build/4.7.0/index.js:1
 msgid "Comments on old posts are disabled."
-msgstr ""
+msgstr "Kommentare zu alten Beiträgen sind deaktiviert."
 
 #: build/4.7.0/index.js:1
 msgid "Comments are allowed on old posts."
-msgstr ""
+msgstr "Kommentare zu alten Beiträgen sind erlaubt."
 
 #: build/4.7.0/index.js:1
 msgid "Disable comments for older posts"
-msgstr ""
+msgstr "Kommentare für ältere Beiträge deaktivieren"
 
 #: build/4.7.0/index.js:1
 msgid "Comments setting saved"
-msgstr ""
+msgstr "Kommentareinstellung gespeichert"
 
-#. translators: %s: number of days. `Comments on posts are disabled after ${closeCommentsDays} days.`
+#. translators: %s: number of days. `Comments on posts are disabled after
+#. ${closeCommentsDays} days.`
 #: build/4.7.0/index.js:3
 #, js-format
 msgid "Comments on posts are disabled after %s day."
@@ -335,7 +369,8 @@ msgid_plural "Comments on posts are disabled after %s days."
 msgstr[0] ""
 msgstr[1] ""
 
-#. translators: %s: number of days. `Close comments after ${closeCommentsDays} days.`
+#. translators: %s: number of days. `Close comments after ${closeCommentsDays}
+#. days.`
 #: build/4.7.0/index.js:5
 #, js-format
 msgid "Close comments after %s day."
@@ -345,9 +380,10 @@ msgstr[1] ""
 
 #: build/4.7.0/index.js:5
 msgid "Comments setting saved."
-msgstr ""
+msgstr "Einstellung \"Kommentare\" gespeichert."
 
-#. translators: %s: number of comments. `Posts will display ${commentsPerPage} comments at a time.`
+#. translators: %s: number of comments. `Posts will display ${commentsPerPage}
+#. comments at a time.`
 #: build/4.7.0/index.js:7
 #, js-format
 msgid "Posts will display %s comment at a time."
@@ -364,135 +400,157 @@ msgid "Comments"
 msgstr "Kommentare"
 
 #: build/4.7.0/index.js:7
-msgid "Comments allow visitors to provide feedback and respond to your posts or pages."
+msgid ""
+"Comments allow visitors to provide feedback and respond to your posts or "
+"pages."
 msgstr ""
+"Kommentare ermöglichen es Besuchern, Feedback zu geben und auf Ihre Beiträge"
+" oder Seiten zu antworten."
 
-#: build/4.7.0/index.js:7
-#: build/4.7.0/index.js:9
-#: build/4.7.0/index.js:10
+#: build/4.7.0/index.js:7 build/4.7.0/index.js:9 build/4.7.0/index.js:10
 msgid "Oops! Something went wrong. Please try again."
-msgstr "Hoppla! Irgendetwas ist schief gelaufen. Bitte versuchen Sie es erneut."
+msgstr ""
+"Hoppla! Irgendetwas ist schief gelaufen. Bitte versuchen Sie es erneut."
 
 #: build/4.7.0/index.js:7
 msgid "There's nothing here!"
-msgstr ""
+msgstr "Hier gibt es nichts!"
 
 #: build/4.7.0/index.js:7
 msgid "Store"
-msgstr ""
+msgstr "Abspeichern"
 
 #: build/4.7.0/index.js:7
 msgid "Products & Services"
-msgstr ""
+msgstr "Produkte & Dienstleistungen"
 
 #: build/4.7.0/index.js:7
 msgid "Sales & Promotions"
-msgstr ""
+msgstr "Verkauf & Verkaufsförderung"
 
 #: build/4.7.0/index.js:7
 msgid "Sales Channel"
-msgstr ""
+msgstr "Vertriebskanal"
 
 #: build/4.7.0/index.js:7
 msgid "Payments"
-msgstr ""
+msgstr "Zahlungen"
 
-#: build/4.7.0/index.js:7
-#: build/4.7.0/index.js:10
+#: build/4.7.0/index.js:7 build/4.7.0/index.js:10
 msgid "Store Details"
-msgstr ""
+msgstr "Details zum Shop"
 
-#: build/4.7.0/index.js:7
-#: build/4.7.0/index.js:9
+#: build/4.7.0/index.js:7 build/4.7.0/index.js:9
 msgid "Marketplace"
-msgstr ""
+msgstr "Marktplatz"
 
-#: build/4.7.0/index.js:7
-#: build/4.7.0/index.js:9
+#: build/4.7.0/index.js:7 build/4.7.0/index.js:9
 msgid "Admin"
-msgstr ""
+msgstr "Administrator"
 
 #: build/4.7.0/index.js:7
 msgid "Coming soon activated"
-msgstr ""
+msgstr "Demnächst aktiviert"
 
 #: build/4.7.0/index.js:7
 msgid "Coming soon deactivated"
-msgstr ""
+msgstr "Demnächst deaktiviert"
 
 #: build/4.7.0/index.js:7
 msgid "Coming soon page is active. Site requires login."
-msgstr "Die Seite \"Demnächst verfügbar\" ist aktiv. Für die Website ist eine Anmeldung erforderlich."
+msgstr ""
+"Die Seite \"Demnächst verfügbar\" ist aktiv. Für die Website ist eine "
+"Anmeldung erforderlich."
 
 #: build/4.7.0/index.js:7
 msgid "Coming soon page is not active. Site is live to visitors."
-msgstr "Die Seite \"Demnächst verfügbar\" ist nicht aktiv. Die Website ist für Besucher live."
+msgstr ""
+"Die Seite \"Demnächst verfügbar\" ist nicht aktiv. Die Website ist für "
+"Besucher live."
 
 #: build/4.7.0/index.js:7
 msgid "Site Status"
 msgstr "Status der Website"
 
 #: build/4.7.0/index.js:7
-msgid "Turn off your \"Coming Soon\" page when you are ready to launch your website."
+msgid ""
+"Turn off your \"Coming Soon\" page when you are ready to launch your "
+"website."
 msgstr ""
+"Deaktivieren Sie Ihre \"Coming Soon\"-Seite, wenn Sie bereit sind, Ihre "
+"Website zu starten."
 
 #: build/4.7.0/index.js:7
-msgid "Turn on your \"Coming Soon\" page when you need to make major changes to your website."
+msgid ""
+"Turn on your \"Coming Soon\" page when you need to make major changes to "
+"your website."
 msgstr ""
+"Aktivieren Sie Ihre \"Demnächst\"-Seite, wenn Sie größere Änderungen an "
+"Ihrer Website vornehmen müssen."
 
 #: build/4.7.0/index.js:7
-msgid "Your Bluehost Coming Soon page lets you hide your site from visitors while you make the magic happen."
+msgid ""
+"Your Bluehost Coming Soon page lets you hide your site from visitors while "
+"you make the magic happen."
 msgstr ""
+"Auf Ihrer Bluehost Coming Soon-Seite können Sie Ihre Website vor Besuchern "
+"verbergen, während Sie die Magie geschehen lassen."
 
 #: build/4.7.0/index.js:7
 msgid "Staging Enabled"
-msgstr ""
+msgstr "Staging aktiviert"
 
 #: build/4.7.0/index.js:7
 msgid "Staging Disabled"
-msgstr ""
+msgstr "Staging deaktiviert"
 
 #: build/4.7.0/index.js:7
 msgid "You need to reload the page to manage Staging."
-msgstr ""
+msgstr "Sie müssen die Seite neu laden, um das Staging zu verwalten."
 
 #: build/4.7.0/index.js:7
 msgid "Staging will no longer display."
 msgstr "Das Staging wird nicht mehr angezeigt."
 
 #: build/4.7.0/index.js:7
-msgid "The staging feature provides a way to copy a site to test new updates, features or content."
+msgid ""
+"The staging feature provides a way to copy a site to test new updates, "
+"features or content."
 msgstr ""
+"Die Stagingfunktion bietet eine Möglichkeit, eine Website zu kopieren, um "
+"neue Updates, Funktionen oder Inhalte zu testen."
 
-#: build/4.7.0/index.js:7
-#: build/4.7.0/index.js:10
+#: build/4.7.0/index.js:7 build/4.7.0/index.js:10
 msgid "Sorry, that is not allowed."
-msgstr ""
+msgstr "Sorry, das ist nicht erlaubt."
 
-#: build/4.7.0/index.js:7
-#: build/4.7.0/index.js:10
+#: build/4.7.0/index.js:7 build/4.7.0/index.js:10
 msgid "This feature cannot currently be modified."
-msgstr ""
+msgstr "Diese Funktion kann derzeit nicht geändert werden."
 
 #: build/4.7.0/index.js:7
 msgid "Help Center Enabled"
-msgstr ""
+msgstr "Help Center aktiviert"
 
 #: build/4.7.0/index.js:7
 msgid "Help Center Disabled"
-msgstr ""
+msgstr "Help Center deaktiviert"
 
 #: build/4.7.0/index.js:7
 msgid "Reload the page to access the Help Center."
-msgstr ""
+msgstr "Laden Sie die Seite neu, um auf das Help Center zuzugreifen."
 
 #: build/4.7.0/index.js:7
 msgid "The Help Center will no longer display."
 msgstr "Das Help Center wird nicht mehr angezeigt."
 
 #: build/4.7.0/index.js:7
-msgid "The Help Center provides guided, step-by-step assistance as you build your site."
+msgid ""
+"The Help Center provides guided, step-by-step assistance as you build your "
+"site."
 msgstr ""
+"Das Help Center bietet eine Anleitung und Schritt-für-Schritt-Unterstützung "
+"beim Erstellen Ihrer Website."
 
 #: build/4.7.0/index.js:7
 msgid "WonderBlocks Enabled"
@@ -511,28 +569,34 @@ msgid "WonderBlocks will no longer display."
 msgstr "WonderBlocks werden nicht mehr angezeigt."
 
 #: build/4.7.0/index.js:7
-msgid "WonderBlocks provides a library of customizable block patterns and page templates."
+msgid ""
+"WonderBlocks provides a library of customizable block patterns and page "
+"templates."
 msgstr ""
+"WonderBlocks bietet eine Bibliothek mit anpassbaren Blockmustern und "
+"Seitenvorlagen."
 
 #: build/4.7.0/index.js:9
 msgid "Bluehost WordPress Plugin"
-msgstr ""
+msgstr "Bluehost WordPress Plugin"
 
 #: build/4.7.0/index.js:10
 msgid "Quick links"
-msgstr ""
+msgstr "Schnelle Links"
 
 #: build/4.7.0/index.js:7
 msgid "Manage common settings for your website"
-msgstr ""
+msgstr "Allgemeine Einstellungen für Ihre Website verwalten"
 
 #: build/4.7.0/index.js:7
 msgid "Features"
-msgstr ""
+msgstr "Funktionen"
 
 #: build/4.7.0/index.js:7
 msgid "Customize the available features as you manage your website."
-msgstr "Passen Sie die verfügbaren Funktionen an, während Sie Ihre Website verwalten."
+msgstr ""
+"Passen Sie die verfügbaren Funktionen an, während Sie Ihre Website "
+"verwalten."
 
 #: build/4.7.0/index.js:7
 msgid "Enabled All auto-updates"
@@ -619,10 +683,15 @@ msgid "Automatic Updates"
 msgstr "Automatische Updates"
 
 #: build/4.7.0/index.js:7
-msgid "Keeping automatic updates on ensures timely security fixes and the latest features."
+msgid ""
+"Keeping automatic updates on ensures timely security fixes and the latest "
+"features."
 msgstr ""
+"Automatische Updates stellen sicher, dass zeitnahe Sicherheitsupdates und "
+"die neuesten Funktionen verfügbar sind."
 
-#. translators: %s: number of weeks. `The trash will automatically empty every ${numTrashWeeks} weeks.`
+#. translators: %s: number of weeks. `The trash will automatically empty every
+#. ${numTrashWeeks} weeks.`
 #: build/4.7.0/index.js:9
 #, js-format
 msgid "The trash will automatically empty every %s week."
@@ -651,44 +720,54 @@ msgid "Explore our featured collection of tools and services."
 msgstr "Entdecken Sie unsere vorgestellte Sammlung von Tools und Services."
 
 #: build/4.7.0/index.js:9
-msgid "Oops, there was an error loading the marketplace, please try again later."
+msgid ""
+"Oops, there was an error loading the marketplace, please try again later."
 msgstr ""
+"Hoppla, beim Laden des Marktplatzes ist ein Fehler aufgetreten, bitte "
+"versuchen Sie es später erneut."
 
 #: build/4.7.0/index.js:9
 msgid "Sorry, no marketplace items. Please, try again later."
-msgstr "Leider keine Marktplatzartikel. Bitte versuchen Sie es später noch einmal."
+msgstr ""
+"Leider keine Marktplatzartikel. Bitte versuchen Sie es später noch einmal."
 
 #: build/4.7.0/index.js:9
 msgid "Load More"
-msgstr ""
+msgstr "Mehr laden"
 
 #: build/4.7.0/index.js:9
 msgid "Oops! Something Went Wrong"
-msgstr ""
+msgstr "Hoppla! Etwas ist schief gelaufen"
 
 #: build/4.7.0/index.js:9
 msgid "An error occurred while loading the content. Please try again later."
-msgstr "Beim Laden des Inhalts ist ein Fehler aufgetreten. Bitte versuchen Sie es später erneut."
+msgstr ""
+"Beim Laden des Inhalts ist ein Fehler aufgetreten. Bitte versuchen Sie es "
+"später erneut."
 
 #: build/4.7.0/index.js:7
 msgid "Start now"
-msgstr ""
+msgstr "Jetzt loslegen"
 
 #: build/4.7.0/index.js:9
 msgid "Phone"
-msgstr ""
+msgstr "Telefon"
 
 #: build/4.7.0/index.js:9
 msgid "Call Us"
-msgstr ""
+msgstr "Rufen Sie uns an"
 
 #: build/4.7.0/index.js:9
 msgid "Chat"
 msgstr "Plaudern"
 
 #: build/4.7.0/index.js:9
-msgid "Chat with one of our friendly Customer Care Specialists, as we are waiting to help. Open 24 hours - 7 days."
+msgid ""
+"Chat with one of our friendly Customer Care Specialists, as we are waiting "
+"to help. Open 24 hours - 7 days."
 msgstr ""
+"Chatten Sie mit einem unserer freundlichen Kundendienstspezialisten, denn "
+"wir warten darauf, Ihnen zu helfen. 24 Stunden - 7 Tage geöffnet."
 
 #: build/4.7.0/index.js:9
 msgid "Live Chat"
@@ -699,20 +778,26 @@ msgid "Tweet"
 msgstr "Zwitschern"
 
 #: build/4.7.0/index.js:9
-msgid "Find our team at @bluehost for updates on our products and support from our team."
+msgid ""
+"Find our team at @bluehost for updates on our products and support from our "
+"team."
 msgstr ""
+"Finden Sie unser Team unter @bluehost, um Updates zu unseren Produkten und "
+"Support von unserem Team zu erhalten."
 
 #: build/4.7.0/index.js:9
 msgid "Tweet Us"
-msgstr ""
+msgstr "Twittern Sie uns"
 
 #: build/4.7.0/index.js:9
 msgid "YouTube"
-msgstr ""
+msgstr "Auf YouTube (Englisch)"
 
 #: build/4.7.0/index.js:9
 msgid "Find tutorials, answers, interviews and guides on our YouTube channel."
-msgstr "Tutorials, Antworten, Interviews und Leitfäden finden Sie auf unserem YouTube-Kanal."
+msgstr ""
+"Tutorials, Antworten, Interviews und Leitfäden finden Sie auf unserem "
+"YouTube-Kanal."
 
 #: build/4.7.0/index.js:9
 msgid "Watch Now"
@@ -723,63 +808,79 @@ msgid "Knowledge Base"
 msgstr "Wissensdatenbank"
 
 #: build/4.7.0/index.js:9
-msgid "Articles, guides, how-tos, instructions, and answers to our client's most frequently asked questions."
+msgid ""
+"Articles, guides, how-tos, instructions, and answers to our client's most "
+"frequently asked questions."
 msgstr ""
+"Artikel, Anleitungen, Anleitungen, Anleitungen und Antworten auf die am "
+"häufigsten gestellten Fragen unserer Kunden."
 
 #: build/4.7.0/index.js:9
 msgid "Visit Knowledge Base"
-msgstr ""
+msgstr "Besuchen Sie die Wissensdatenbank"
 
 #: build/4.7.0/index.js:9
 msgid "Resources"
-msgstr ""
+msgstr "Betriebsmittel"
 
 #: build/4.7.0/index.js:9
 msgid "Boost your online knowledge and get ahead of the competition."
-msgstr "Erweitern Sie Ihr Online-Wissen und verschaffen Sie sich einen Vorsprung vor der Konkurrenz."
+msgstr ""
+"Erweitern Sie Ihr Online-Wissen und verschaffen Sie sich einen Vorsprung vor"
+" der Konkurrenz."
 
 #: build/4.7.0/index.js:9
 msgid "Explore Resources"
-msgstr ""
+msgstr "Ressourcen erkunden"
 
 #: build/4.7.0/index.js:9
 msgid "Events and Webinars"
 msgstr "Veranstaltungen und Webinare"
 
 #: build/4.7.0/index.js:9
-msgid "Team Bluehost organizes multiple webinars and events throughout the year. We are also sponsors and speak at most WordCamps across the world. Join us at our next event!"
+msgid ""
+"Team Bluehost organizes multiple webinars and events throughout the year. We"
+" are also sponsors and speak at most WordCamps across the world. Join us at "
+"our next event!"
 msgstr ""
+"Team Bluehost organisiert das ganze Jahr über mehrere Webinare und "
+"Veranstaltungen. Wir sind auch Sponsoren und sprechen auf den meisten "
+"WordCamps auf der ganzen Welt. Seien Sie bei unserem nächsten Event dabei!"
 
 #: build/4.7.0/index.js:9
 msgid "More Info"
-msgstr ""
+msgstr "Mehr Info"
 
 #: build/4.7.0/index.js:9
 msgid "Bluehost Website"
 msgstr "Bluehost Webseite"
 
 #: build/4.7.0/index.js:9
-msgid "Not finding what you need? Visit our website for more information about our products and services."
+msgid ""
+"Not finding what you need? Visit our website for more information about our "
+"products and services."
 msgstr ""
+"Sie finden nicht, was Sie brauchen? Besuchen Sie unsere Website, um weitere "
+"Informationen über unsere Produkte und Dienstleistungen zu erhalten."
 
 #: build/4.7.0/index.js:9
 msgid "Go to Bluehost"
 msgstr "Gehe zu Bluehost"
 
-#: build/4.7.0/index.js:7
-#: build/4.7.0/index.js:9
+#: build/4.7.0/index.js:7 build/4.7.0/index.js:9
 msgid "Help"
 msgstr "Hilfe"
 
 #: build/4.7.0/index.js:9
-msgid "We are available 24/7 to help answer questions and solve your problems."
+msgid ""
+"We are available 24/7 to help answer questions and solve your problems."
 msgstr ""
 "\n"
 "develop"
 
 #: build/4.7.0/index.js:9
 msgid "Secret page to manage admin features and settings."
-msgstr ""
+msgstr "Geheime Seite zum Verwalten von Admin-Funktionen und -Einstellungen."
 
 #. translators: %s: Search term
 #: build/4.7.0/index.js:10
@@ -799,31 +900,37 @@ msgid "Performance will no longer display."
 msgstr "Die Leistung wird nicht mehr angezeigt."
 
 #: build/4.7.0/index.js:10
-msgid "The performance feature provides improvements to loads faster for visitors including cache settings."
+msgid ""
+"The performance feature provides improvements to loads faster for visitors "
+"including cache settings."
 msgstr ""
+"Die Leistungsfunktion bietet Verbesserungen für schnellere Ladevorgänge für "
+"Besucher, einschließlich Cache-Einstellungen."
 
 #: build/4.7.0/index.js:10
 msgid "Oh No, An Error!"
-msgstr ""
+msgstr "Oh nein, ein Irrtum!"
 
 #: build/4.7.0/index.js:10
 msgid "You found an error, please refresh the page and try again!"
-msgstr "Sie haben einen Fehler gefunden, bitte aktualisieren Sie die Seite und versuchen Sie es erneut!"
+msgstr ""
+"Sie haben einen Fehler gefunden, bitte aktualisieren Sie die Seite und "
+"versuchen Sie es erneut!"
 
 #: build/4.7.0/index.js:10
 msgid "If the error persists, please contact support."
-msgstr "Wenn der Fehler weiterhin besteht, wenden Sie sich bitte an den Support."
+msgstr ""
+"Wenn der Fehler weiterhin besteht, wenden Sie sich bitte an den Support."
 
 #: build/4.7.0/index.js:10
 msgid "Error code:"
-msgstr ""
+msgstr "Fehlercode:"
 
 #: build/4.7.0/index.js:7
 msgid "Commerce"
 msgstr "Handel"
 
-#: build/4.7.0/index.js:7
-#: build/4.7.0/index.js:9
+#: build/4.7.0/index.js:7 build/4.7.0/index.js:9
 msgid "Manage WordPress"
 msgstr "WordPress verwalten"
 
@@ -840,93 +947,117 @@ msgid "Launch our AI Editor"
 msgstr "Starten Sie unseren KI-Editor"
 
 #: build/4.7.0/index.js:7
-msgid "Say hello to effortless site building with a wide library of 250+ blocks"
-msgstr "Begrüßen Sie die mühelose Erstellung von Websites mit einer umfangreichen Bibliothek von 250+ Blöcken"
+msgid ""
+"Say hello to effortless site building with a wide library of 250+ blocks"
+msgstr ""
+"Begrüßen Sie die mühelose Erstellung von Websites mit einer umfangreichen "
+"Bibliothek von 250+ Blöcken"
 
 #: build/4.7.0/index.js:7
 msgid "Launch the Editor"
-msgstr ""
+msgstr "Starten Sie den Editor"
 
 #: build/4.7.0/index.js:7
 msgid "Optimize your website by managing cache and performance settings"
-msgstr "Optimieren Sie Ihre Website, indem Sie Cache- und Performance-Einstellungen verwalten"
+msgstr ""
+"Optimieren Sie Ihre Website, indem Sie Cache- und Performance-Einstellungen "
+"verwalten"
 
 #: build/4.7.0/index.js:7
 msgid "General Settings"
 msgstr "Allgemeine Einstellungen"
 
 #: build/4.7.0/index.js:7
-msgid "A staging site is a duplicate of your live site, offering a secure environment to experiment, test updates, and deploy when ready."
-msgstr "Eine Staging-Site ist ein Duplikat Ihrer Live-Site und bietet eine sichere Umgebung zum Experimentieren, Testen von Updates und Bereitstellen, wenn sie bereit ist."
+msgid ""
+"A staging site is a duplicate of your live site, offering a secure "
+"environment to experiment, test updates, and deploy when ready."
+msgstr ""
+"Eine Staging-Site ist ein Duplikat Ihrer Live-Site und bietet eine sichere "
+"Umgebung zum Experimentieren, Testen von Updates und Bereitstellen, wenn sie"
+" bereit ist."
 
 #: build/4.7.0/index.js:7
 msgid "Optimize your content"
 msgstr "Optimieren Sie Ihre Inhalte"
 
 #: build/4.7.0/index.js:7
-msgid "Optimize your content for search engines and boost your store visibility."
-msgstr "Optimieren Sie Ihre Inhalte für Suchmaschinen und steigern Sie die Sichtbarkeit Ihres Geschäfts."
+msgid ""
+"Optimize your content for search engines and boost your store visibility."
+msgstr ""
+"Optimieren Sie Ihre Inhalte für Suchmaschinen und steigern Sie die "
+"Sichtbarkeit Ihres Geschäfts."
 
 #: build/4.7.0/index.js:9
 msgid "Security, performance, backups, staging & more."
-msgstr ""
+msgstr "Sicherheit, Leistung, Backups, Staging und mehr."
 
 #: build/4.7.0/index.js:9
 msgid "Manage"
-msgstr ""
+msgstr "Verwalten"
 
 #: build/4.7.0/index.js:9
 msgid "Master WordPress with help from our AI assistant."
-msgstr ""
+msgstr "Meistern Sie WordPress mit Hilfe unseres KI-Assistenten."
 
 #: build/4.7.0/index.js:9
 msgid "Launch our AI Help"
-msgstr ""
+msgstr "Starten Sie unsere KI-Hilfe"
 
 #: build/4.7.0/index.js:10
 msgid "Add Store Details"
-msgstr ""
+msgstr "Shop-Details hinzufügen"
 
 #: build/4.7.0/index.js:7
 msgid "Refer a Friend"
-msgstr ""
+msgstr "Einen Freund empfehlen"
 
 #: build/4.7.0/index.js:7
 msgid "Unlock exclusive benefits with out referral program."
-msgstr ""
+msgstr "Schalten Sie exklusive Vorteile mit unserem Empfehlungsprogramm frei."
 
 #: build/4.7.0/index.js:7
 msgid "Start Now"
-msgstr ""
+msgstr "Jetzt loslegen"
 
 #: build/4.7.0/index.js:7
 msgid "Pro Design Live"
-msgstr ""
+msgstr "Pro Design Live"
 
 #: build/4.7.0/index.js:7
-msgid "We will help you build and grow your website and improve your skills in WordPress."
+msgid ""
+"We will help you build and grow your website and improve your skills in "
+"WordPress."
 msgstr ""
+"Wir helfen Ihnen, Ihre Website aufzubauen und zu erweitern und Ihre "
+"Fähigkeiten in WordPress zu verbessern."
 
 #: build/4.7.0/index.js:7
 msgid "Get Info"
-msgstr ""
+msgstr "Informationen erhalten"
 
 #: build/4.7.0/index.js:7
-msgid "Optimize your website my managing cache, security and performance settings."
+msgid ""
+"Optimize your website my managing cache, security and performance settings."
 msgstr ""
+"Optimieren Sie Ihre Website durch die Verwaltung von Cache-, Sicherheits- "
+"und Leistungseinstellungen."
 
 #: build/4.7.0/index.js:7
 msgid "Premium tools available in eCommerce Add-Ons"
-msgstr ""
+msgstr "Premium-Tools, die in E-Commerce-Add-Ons verfügbar sind"
 
 #: build/4.7.0/index.js:7
-msgid "Discover exclusive features, designed to deliver unmatched value and elevate your online experience."
+msgid ""
+"Discover exclusive features, designed to deliver unmatched value and elevate"
+" your online experience."
 msgstr ""
+"Entdecken Sie exklusive Funktionen, die entwickelt wurden, um einen "
+"unübertroffenen Wert zu bieten und Ihr Online-Erlebnis zu verbessern."
 
 #: build/4.7.0/index.js:10
 msgid "Congrats, your store is live!"
-msgstr ""
+msgstr "Herzlichen Glückwunsch, Ihr Shop ist live!"
 
 #: build/4.7.0/index.js:10
 msgid "Congrats, your website is live!"
-msgstr ""
+msgstr "Herzlichen Glückwunsch, Ihre Website ist live!"

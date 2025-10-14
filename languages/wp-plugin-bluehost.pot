@@ -32,8 +32,8 @@ msgstr ""
 
 #. Author of the plugin
 #: bluehost-wordpress-plugin.php
-#: inc/Admin.php:135
-#: inc/Admin.php:136
+#: inc/Admin.php:162
+#: inc/Admin.php:163
 msgid "Bluehost"
 msgstr ""
 
@@ -89,13 +89,13 @@ msgid "Preview the coming soon landing page"
 msgstr ""
 
 #: inc/Admin.php:74
-#: inc/Admin.php:300
+#: inc/Admin.php:327
 #: build/4.7.0/index.js:7
 msgid "Home"
 msgstr ""
 
 #: inc/Admin.php:79
-#: inc/Admin.php:301
+#: inc/Admin.php:328
 #: build/4.7.0/index.js:7
 msgid "Settings"
 msgstr ""
@@ -104,7 +104,7 @@ msgstr ""
 msgid "Help Resources"
 msgstr ""
 
-#: inc/Admin.php:328
+#: inc/Admin.php:355
 #, php-format
 msgid "Thank you for creating with %1$s and %2$s"
 msgstr ""

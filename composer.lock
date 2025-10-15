@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "efe6e631b10bcc34dbc81c527e7fbf5d",
+    "content-hash": "8fa46d6333f6c06e750212190929147f",
     "packages": [
         {
             "name": "doctrine/inflector",
@@ -2026,16 +2026,16 @@
         },
         {
             "name": "newfold-labs/wp-module-next-steps",
-            "version": "1.4.3",
+            "version": "1.4.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/newfold-labs/wp-module-next-steps.git",
-                "reference": "52c499631c1d322f82fc58fe747e0dbe8129b56e"
+                "reference": "ac45ce8011a068886eb7518c1045037b09d1d623"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/newfold-labs/wp-module-next-steps/zipball/52c499631c1d322f82fc58fe747e0dbe8129b56e",
-                "reference": "52c499631c1d322f82fc58fe747e0dbe8129b56e",
+                "url": "https://api.github.com/repos/newfold-labs/wp-module-next-steps/zipball/ac45ce8011a068886eb7518c1045037b09d1d623",
+                "reference": "ac45ce8011a068886eb7518c1045037b09d1d623",
                 "shasum": ""
             },
             "require": {
@@ -2120,10 +2120,10 @@
             ],
             "description": "A Newfold module to manage next steps for a customer in a brand plugin.",
             "support": {
-                "source": "https://github.com/newfold-labs/wp-module-next-steps/tree/1.4.3",
+                "source": "https://github.com/newfold-labs/wp-module-next-steps/tree/1.4.4",
                 "issues": "https://github.com/newfold-labs/wp-module-next-steps/issues"
             },
-            "time": "2025-10-08T20:20:23+00:00"
+            "time": "2025-10-15T14:52:25+00:00"
         },
         {
             "name": "newfold-labs/wp-module-notifications",

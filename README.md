@@ -17,6 +17,39 @@ Find the `bluehost-wordpress-plugin.zip` asset for your preferred version at: ht
 
 Alternatively, check the release API endpoint for the latest version: https://hiive.cloud/workers/release-api/plugins/newfold-labs/wp-plugin-bluehost?slug=bluehost-wordpress-plugin&file=bluehost-wordpress-plugin.php. Access the [zip download directly](https://hiive.cloud/workers/release-api/plugins/newfold-labs/wp-plugin-bluehost/download/?slug=bluehost-wordpress-plugin&file=bluehost-wordpress-plugin.php).
 
+# Testing Pull Requests
+
+## WordPress Playground Preview
+
+Pull requests automatically generate WordPress Playground preview links for one-click browser-based testing. When you open a PR or push new commits, two automated workflows run:
+
+1. **Build Plugin** - Builds the plugin and creates a GitHub Actions artifact
+2. **WordPress Playground Preview** - Deploys the built plugin to GitHub Pages and posts a Playground preview link
+
+The Playground preview link allows reviewers and contributors to test changes instantly in a complete WordPress environment without any local setup.
+
+### Initial Setup (One-time)
+
+GitHub Pages must be enabled for the Playground preview workflow to function:
+
+1. Go to repository **Settings** → **Pages**
+2. Under **Source**, select **GitHub Actions**
+3. Save the configuration
+
+Once enabled, all future PRs will automatically receive Playground preview links.
+
+### What Gets Posted
+
+Each PR will have two comment links:
+- **Download Build Artifact** - Download the built plugin zip from GitHub Actions (requires GitHub login, expires in 90 days)
+- **Launch Preview in Playground** - One-click link to test the plugin in WordPress Playground (public, no login required)
+
+### Security Note
+
+For security reasons, Playground preview links are only generated for pull requests from branches within this repository, not from forks. This prevents potential privilege escalation where untrusted code from forks could trigger workflows with write access to GitHub Pages and pull requests.
+
+Fork contributors will still receive the build artifact download link for manual testing. If you need a Playground preview for a trusted fork PR, a maintainer can manually trigger the deployment workflow after reviewing the changes.
+
 # Releasing Updates
 
 ## Release Steps

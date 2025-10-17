@@ -84,7 +84,7 @@
     "newfold-labs/wp-php-standards": "^1.2.5",
     "roave/security-advisories": "dev-latest",
     "wp-cli/i18n-command": "^2.6.5",
-    "wp-phpunit/wp-phpunit": "^6.8.2"
+    "wp-phpunit/wp-phpunit": "^6.8.3"
   },
   "require": {
     "newfold-labs/wp-module-activation": "^1.0.11",
@@ -106,9 +106,9 @@
     "newfold-labs/wp-module-migration": "^1.6.0",
     "newfold-labs/wp-module-next-steps": "^1.4.4",
     "newfold-labs/wp-module-notifications": "^1.6.12",
-    "newfold-labs/wp-module-onboarding": "^3.2.9",
-    "newfold-labs/wp-module-onboarding-data": "^1.2.18",
-    "newfold-labs/wp-module-patterns": "^2.10.5",
+    "newfold-labs/wp-module-onboarding": "^3.2.10",
+    "newfold-labs/wp-module-onboarding-data": "^1.2.19",
+    "newfold-labs/wp-module-patterns": "^2.11.0",
     "newfold-labs/wp-module-performance": "^3.5.2",
     "newfold-labs/wp-module-htaccess": "^1.0.0",
     "newfold-labs/wp-module-pls": "^1.1.2",

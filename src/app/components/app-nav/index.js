@@ -27,7 +27,26 @@ export const AppNavHeader = () => {
 export const AppNavMenu = () => {
 	const location = useLocation();
 	const { setActivePath } = useNavigationContext();
+	const [ hostingDetailsLink, setHostingDetailsLink ] = useState(
+		getPlatformPathUrl( 'hosting/details', 'app/#/sites' )
+	);
+	//Add UTM parameters to the link if the function is available
+	useEffect( () => {
+		const interval = setTimeout( () => {
+			if (
+				window.NewfoldRuntime?.linkTracker?.addUtmParams instanceof
+				Function
+			) {
+				const addHostingDetailsParamsLink =
+					window.NewfoldRuntime.linkTracker.addUtmParams(
+						hostingDetailsLink
+					);
+				setHostingDetailsLink( addHostingDetailsParamsLink );
+			}
+		}, 200 );
 
+		return () => clearTimeout( interval );
+	}, [] );
 	const menu = () => {
 		return (
 			<AppBarNavigation.AppBar.Nav>
@@ -84,9 +103,7 @@ export const AppNavMenu = () => {
 				<Button
 					as={ 'a' }
 					className={ 'nfd-flex nfd-gap-2 nfd-mr-4' }
-					href={ window.NewfoldRuntime?.linkTracker?.addUtmParams(
-						getPlatformPathUrl( 'hosting/details', 'app/#/sites' )
-					) }
+					href={ hostingDetailsLink }
 					variant={ 'secondary' }
 				>
 					Hosting Panel

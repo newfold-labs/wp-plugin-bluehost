@@ -12,6 +12,26 @@ export const SiteInfoBar = () => {
 	const hasSSL = parsedUrl.protocol.includes( 'https' );
 	const isWooCommerce = NewfoldRuntime.hasCapability( 'isEcommerce' );
 	const isStore = window.location.href.includes( 'store' );
+	const [ hostingDetailsLink, setHostingDetailsLink ] = useState(
+		getPlatformPathUrl( 'hosting/details', 'app/#/sites' )
+	);
+	//Add UTM parameters to the link if the function is available
+	useEffect( () => {
+		const interval = setTimeout( () => {
+			if (
+				window.NewfoldRuntime?.linkTracker?.addUtmParams instanceof
+				Function
+			) {
+				const addHostingDetailsParamsLink =
+					window.NewfoldRuntime.linkTracker.addUtmParams(
+						hostingDetailsLink
+					);
+				setHostingDetailsLink( addHostingDetailsParamsLink );
+			}
+		}, 200 );
+
+		return () => clearTimeout( interval );
+	}, [] );
 
 	const renderPadLock = () => {
 		if ( hasSSL ) {
@@ -45,12 +65,7 @@ export const SiteInfoBar = () => {
 				<div className="nfd-w-max nfd-flex nfd-items-center nfd-flex-wrap nfd-gap-3">
 					<Button
 						as="a"
-						href={ window.NewfoldRuntime?.linkTracker?.addUtmParams(
-							getPlatformPathUrl(
-								'hosting/details',
-								'app/#/sites'
-							)
-						) }
+						href={ hostingDetailsLink }
 						target="_blank"
 						variant="primary"
 						className="nfd-bg-[#383F4A] nfd-text-tiny nfd-w-full min-[400px]:nfd-w-auto"

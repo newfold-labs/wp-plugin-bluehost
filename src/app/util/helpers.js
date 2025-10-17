@@ -206,7 +206,14 @@ export const handleHelpLinksClick = () => {
 		if ( helpLinks ) {
 			helpLinks.forEach( ( el ) =>
 				el.addEventListener( 'click', ( e ) => {
-					e.preventDefault();
+					// Prevent default only if the link is not part of a wp-submenu
+					const parentMenu = el.closest( '.wp-submenu' );
+					if (
+						! parentMenu ||
+						! parentMenu.classList.contains( 'wp-submenu-wrap' )
+					) {
+						e.preventDefault();
+					}
 					window.newfoldEmbeddedHelp.toggleNFDLaunchedEmbeddedHelp();
 				} )
 			);

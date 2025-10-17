@@ -113,7 +113,16 @@ const AppBody = ( props ) => {
 
 	// Sync WordPress admin menu highlighting when route changes
 	useEffect( () => {
-		syncWordPressMenu( location.pathname );
+		let pathnameLocation = location.pathname;
+		// Map specific sub-paths to their parent for menu highlighting
+		switch ( location?.pathname ) {
+			case '/settings/performance':
+			case '/settings/staging':
+			case '/settings/settings':
+				pathnameLocation = '/settings';
+				break;
+		}
+		syncWordPressMenu( pathnameLocation );
 	}, [ location ] );
 
 	return (

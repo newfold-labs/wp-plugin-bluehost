@@ -253,6 +253,7 @@ final class Admin {
 					'nfd-runtime',
 					'nfd-installer',
 					'nfd-portal-registry',
+					'wp-module-link-tracker',
 				)
 			),
 			$asset['version'],

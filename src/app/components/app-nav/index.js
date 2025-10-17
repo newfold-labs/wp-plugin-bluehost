@@ -84,7 +84,7 @@ export const AppNavMenu = () => {
 				<Button
 					as={ 'a' }
 					className={ 'nfd-flex nfd-gap-2 nfd-mr-4' }
-					href={ window.NewfoldRuntime.linkTracker.addUtmParams(
+					href={ window.NewfoldRuntime?.linkTracker?.addUtmParams(
 						getPlatformPathUrl( 'hosting/details', 'app/#/sites' )
 					) }
 					variant={ 'secondary' }

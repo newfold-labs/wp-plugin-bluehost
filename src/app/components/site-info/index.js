@@ -45,7 +45,7 @@ export const SiteInfoBar = () => {
 				<div className="nfd-w-max nfd-flex nfd-items-center nfd-flex-wrap nfd-gap-3">
 					<Button
 						as="a"
-						href={ window.NewfoldRuntime.linkTracker.addUtmParams(
+						href={ window.NewfoldRuntime?.linkTracker?.addUtmParams(
 							getPlatformPathUrl(
 								'hosting/details',
 								'app/#/sites'

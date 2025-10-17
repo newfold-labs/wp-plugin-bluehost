@@ -5,7 +5,7 @@ const ReferralProgramCard = ( {} ) => {
 	return (
 		<a
 			className="nfd-no-underline nfd-card-link"
-			href={ window.NewfoldRuntime.linkTracker.addUtmParams(
+			href={ window.NewfoldRuntime?.linkTracker?.addUtmParams(
 				'https://www.bluehost.com/affiliates'
 			) }
 			target="_blank"

@@ -2,10 +2,10 @@ import { Card, Title } from '@newfold/ui-component-library';
 import { ReactComponent as Arrow } from 'App/images/card-mini-arrow.svg';
 
 const QuickLinksCard = ( {} ) => {
-	const manageHostingUrl = window.NewfoldRuntime.linkTracker.addUtmParams(
+	const manageHostingUrl = window.NewfoldRuntime?.linkTracker?.addUtmParams(
 		'admin.php?page=nfd-hosting'
 	);
-	const writeBlogUrl = window.NewfoldRuntime.linkTracker.addUtmParams(
+	const writeBlogUrl = window.NewfoldRuntime?.linkTracker?.addUtmParams(
 		'post-new.php?wb-library=patterns&wb-category=text'
 	);
 	// Sales and Discounts is handled by the wondercart tool/entitlement data or ctb link to ecom family ctb
@@ -80,7 +80,7 @@ const QuickLinksCard = ( {} ) => {
 						data-nfd-installer-pls-slug={
 							wondercart.isActive ? null : wondercart.plsSlug
 						}
-						href={ window.NewfoldRuntime.linkTracker.addUtmParams(
+						href={ window.NewfoldRuntime?.linkTracker?.addUtmParams(
 							// replace the {siteUrl} with the actual site url
 							wondercart.cta?.url.replace(
 								'{siteUrl}',
@@ -108,7 +108,7 @@ const QuickLinksCard = ( {} ) => {
 						className="nfd-no-underline nfd-card-link nfd-card-link-mini"
 						data-cy="promotion-card"
 						data-ctb-id={ ecomFamily.id }
-						href={ window.NewfoldRuntime.linkTracker.addUtmParams(
+						href={ window.NewfoldRuntime?.linkTracker?.addUtmParams(
 							ecomFamily.url
 						) }
 					>

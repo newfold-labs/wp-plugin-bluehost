@@ -58,6 +58,8 @@
         "semver": "^7.7.3"
     },
     "devDependencies": {
+        "@axe-core/playwright": "^4.10.2",
+        "@playwright/test": "^1.56.1",
         "@tailwindcss/forms": "^0.5.10",
         "@testing-library/cypress": "^10.1.0",
         "@wordpress/env": "^10.32.0",
@@ -105,6 +107,7 @@
         "storybook:build": "build-storybook -c ./storybook -o ./.docs",
         "test:e2e": "npx cypress run",
         "test:unit": "wp-scripts test-unit-js",
+        "test:e2e:playwright": "npx playwright test",
         "test:clean-module": "bash ./.github/scripts/test-clean-module"
     }
 }

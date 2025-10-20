@@ -177,11 +177,19 @@ jobs:
           max_attempts: 3
           command: npx wp-env start --debug
 
+      - name: Wait for WordPress to be ready
+        run: |
+          echo "Waiting for WordPress to be ready..."
+          npx wp-env run cli wp core version
+          echo "WordPress is ready!"
+
       - name: Install Playwright Browsers
-        run: npx playwright install chromium
+        run: npx playwright install --with-deps
 
       - name: Run Playwright Tests
-        run: npx playwright test
+        run: npx playwright test --reporter=line
+        env:
+          CI: true
 
       - name: Store Playwright test results
         if: always()

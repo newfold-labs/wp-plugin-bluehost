@@ -25,7 +25,7 @@ module.exports = defineConfig({
     screenshot: 'only-on-failure',
     video: 'on-first-retry',
   },
-  webServer: {
+  webServer: process.env.CI ? undefined : {
     command: 'wp-env start',
     port: wpEnvConfig.port, // Use port from wp-env.json
     reuseExistingServer: true,
@@ -35,7 +35,7 @@ module.exports = defineConfig({
   expect: {
     timeout: 10 * 1000, // 10 seconds
   },
-  retries: process.env.CI ? 2 : 0,
-  workers: process.env.CI ? 2 : 2,
+  retries: process.env.CI ? 0 : 0,
+  workers: process.env.CI ? 1 : 1,
   outputDir: 'tests/playwright/test-results',
 });

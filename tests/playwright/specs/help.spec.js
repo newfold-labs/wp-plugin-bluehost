@@ -32,9 +32,11 @@ test.describe('Help Page', () => {
   });
 
   test('A11y and Cards Each Exist', async ({ page }) => {
-    // Wait for the help page to load - check for the main app container and help page class
+    // Wait for the main app container to be rendered
     await page.waitForSelector('#wppbh-app-rendered', { timeout: 10000 });
-    await page.waitForSelector('.wppbh-page-help', { timeout: 10000 });
+    
+    // Wait for the app body to be visible
+    await page.waitForSelector('.wppbh-app-body', { timeout: 10000 });
     
     // Run accessibility test with WCAG 2.1 AA standards (includes color contrast)
     await a11y.checkA11y(page, '.wppbh-app-body');

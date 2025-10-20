@@ -8,9 +8,11 @@ test.describe('Settings Page', () => {
   });
 
   test('Is Accessible', async ({ page }) => {
-    // Wait for the settings page to load - check for the main app container and settings page class
+    // Wait for the main app container to be rendered
     await page.waitForSelector('#wppbh-app-rendered', { timeout: 10000 });
-    await page.waitForSelector('.wppbh-page-settings', { timeout: 10000 });
+    
+    // Wait for the app body to be visible
+    await page.waitForSelector('.wppbh-app-body', { timeout: 10000 });
     
     // Run accessibility test with WCAG 2.1 AA standards (includes color contrast)
     await a11y.checkA11y(page, '.wppbh-app-body');

@@ -16,93 +16,58 @@ test.describe('Home Page', () => {
     await a11y.checkA11y(page, '.wppbh-app-body');
   });
 
-  test.skip('Home Page Section and Cards all exist', async ({ page }) => {
+  test('Home Page Quick Links exist', async ({ page }) => {
     // Welcome text
     const welcomeHeading = page.locator('.wppbh-app-body').locator('h1').first();
     await utils.scrollIntoView(welcomeHeading);
     await expect(welcomeHeading).toBeVisible();
 
-    // Solution Card
-    const solutionCard = page.locator('[data-cy="solution-card"]');
-    await utils.scrollIntoView(solutionCard);
-    await expect(solutionCard.locator('h2')).toContainText('Explore');
-    
-    const solutionHref = await solutionCard.getAttribute('href');
-    expect(solutionHref).toContain('solutions');
+    // Yoast CTB Card
+    const yoastCard = page.locator('[data-test-id="quick-links-yoast-link"]');
+    await utils.scrollIntoView(yoastCard);
+    await expect(yoastCard.locator('h2')).toContainText('Optimize');
+    await expect(yoastCard).toHaveAttribute('data-ctb-id', '57d6a568-783c-45e2-a388-847cff155897');
+    const yoastHref = await yoastCard.getAttribute('href');
+    expect(yoastHref).toContain('yoast.com');
 
-    // Expert Card
-    const expertCard = page.locator('[data-cy="expert-card"]');
-    await utils.scrollIntoView(expertCard);
-    await expect(expertCard.locator('h3')).toContainText('experts');
-    
-    const expertHref = await expertCard.getAttribute('href');
-    expect(expertHref).toContain('website-design');
-    expect(expertHref).toContain('utm_source');
-    expect(expertHref).toContain('utm_medium');
+    // Manage WordPress card
+    const manageWordPressCard = page.locator('[data-test-id="quick-links-settings-link"]');
+    await utils.scrollIntoView(manageWordPressCard);
+    await expect(manageWordPressCard.locator('h2')).toContainText('Manage');
+    const manageWordPressHref = await manageWordPressCard.getAttribute('href');
+    expect(manageWordPressHref).toContain('#/settings');
+
+    // Launch AI Editor card
+    const launchAICard = page.locator('[data-test-id="quick-links-ai-editor-link"]');
+    await utils.scrollIntoView(launchAICard);
+    await expect(launchAICard.locator('h2')).toContainText('Launch');
+    const launchAIHref = await launchAICard.getAttribute('href');
+    expect(launchAIHref).toContain('site-editor');
 
     // Help Card
-    const helpCard = page.locator('[data-cy="help-card"]');
+    const helpCard = page.locator('[data-test-id="quick-links-help-link"]');
     await utils.scrollIntoView(helpCard);
-    await expect(helpCard.locator('h3')).toContainText('Help');
-    
+    await expect(helpCard.locator('h2')).toContainText('Help');
     const helpHref = await helpCard.getAttribute('href');
-    expect(helpHref).toContain('help');
+    expect(helpHref).toContain('#/help');
 
     // Pro Design Card
-    const proDesignCard = page.locator('[data-cy="pro-design-card"]');
+    const proDesignCard = page.locator('[data-test-id="quick-links-pro-design-link"]');
     await utils.scrollIntoView(proDesignCard);
-    await expect(proDesignCard.locator('h3')).toContainText('Pro');
-    
+    await expect(proDesignCard.locator('h2')).toContainText('Pro');
     const proDesignHref = await proDesignCard.getAttribute('href');
-    expect(proDesignHref).toContain('market-place');
+    expect(proDesignHref).toContain('bluehost.com/my-account/market-place');
     expect(proDesignHref).toContain('utm_source');
     expect(proDesignHref).toContain('utm_medium');
 
     // Referral Program Card
-    const referralCard = page.locator('[data-cy="referral-program-card"]');
+    const referralCard = page.locator('[data-test-id="quick-links-refer-friend-link"]');
     await utils.scrollIntoView(referralCard);
-    await expect(referralCard.locator('h3')).toContainText('Refer');
-    
+    await expect(referralCard.locator('h2')).toContainText('Refer');
     const referralHref = await referralCard.getAttribute('href');
-    expect(referralHref).toContain('affiliates');
+    expect(referralHref).toContain('bluehost.com/affiliates');
     expect(referralHref).toContain('utm_source');
     expect(referralHref).toContain('utm_medium');
 
-    // Quick Link Cards
-    const quickLinksCard = page.locator('[data-cy="quick-links-card"]');
-    await utils.scrollIntoView(quickLinksCard);
-    await expect(quickLinksCard.locator('h3')).toContainText('Quick');
-
-    // Hosting Card
-    const hostingCard = page.locator('[data-cy="hosting-card"]');
-    await utils.scrollIntoView(hostingCard);
-    await expect(hostingCard).toContainText('Manage hosting');
-    
-    const hostingHref = await hostingCard.getAttribute('href');
-    expect(hostingHref).toContain('hosting');
-
-    // Blog Card
-    const blogCard = page.locator('[data-cy="blog-card"]');
-    await utils.scrollIntoView(blogCard);
-    await expect(blogCard).toContainText('blog');
-    
-    const blogHref = await blogCard.getAttribute('href');
-    expect(blogHref).toContain('post-new');
-    expect(blogHref).toContain('wb-library=patterns');
-
-    // Promotion Card - WonderCart
-    const promotionCard = page.locator('[data-cy="promotion-card"]');
-    await utils.scrollIntoView(promotionCard);
-    await expect(promotionCard).toContainText('sale promotion');
-    
-    const promotionHref = await promotionCard.getAttribute('href');
-    if (promotionHref.includes('wp-admin')) {
-      // wondercart
-      expect(promotionHref).toContain('admin.php');
-    }
-    if (promotionHref.includes('bluehost.com')) {
-      // ecom family ctb
-      expect(promotionHref).toContain('hosting');
-    }
   });
 });

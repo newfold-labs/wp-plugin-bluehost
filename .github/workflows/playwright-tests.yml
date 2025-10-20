@@ -22,6 +22,9 @@ jobs:
     name: Build Plugin
     runs-on: ubuntu-latest
     timeout-minutes: 30
+    outputs:
+      dist: ${{ steps.workflow.outputs.DIST }}
+      package: ${{ steps.workflow.outputs.PACKAGE }}
     permissions:
       contents: read
 
@@ -102,13 +105,12 @@ jobs:
             --arg plugin "$DIST/$PACKAGE" \
             '{plugins: [$plugin]}' > .wp-env.override.json
 
-      - name: Upload build artifacts
+      - name: Upload artifact
         uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
         with:
-          name: plugin-build
-          path: |
-            ${{ steps.workflow.outputs.DIST }}
-            .wp-env.override.json
+          with:
+            name: ${{ steps.workflow.outputs.DIST }}
+            path: ${{ steps.workflow.outputs.PACKAGE }}
           retention-days: 1
 
   test:
@@ -148,20 +150,26 @@ jobs:
           path: ${{ steps.composer-cache.outputs.dir }}
           key: ${{ runner.os }}-composer-${{ hashFiles('**/composer.lock') }}
 
-      - name: Download build artifacts
-        uses: actions/download-artifact@634f93cb2916e3fdff6788551b99b062d0335ce0  # v5.0.0
-        with:
-          name: plugin-build
-          path: .
-
       - name: Install PHP Dependencies
         run: composer install --no-progress --no-dev --optimize-autoloader --prefer-source
 
-      - name: Setup Registry
-        run: printf "\n//npm.pkg.github.com/:_authToken=${{ secrets.NEWFOLD_ACCESS_TOKEN }}" >> .npmrc
-
       - name: NPM Install
         run: npm install --legacy-peer-deps
+      
+      - name: Setup workflow context
+        id: workflow
+        working-directory: ${{ runner.temp }}
+        env:
+          REPO: ${{ github.repository }}
+        run: |
+          mkdir dist
+          echo "DIST=${PWD}/dist" >> "$GITHUB_OUTPUT"
+
+      - name: Download build artifacts
+        uses: actions/download-artifact@634f93cb2916e3fdff6788551b99b062d0335ce0  # v5.0.0
+        with:
+          path: ${{ steps.workflow.outputs.DIST }}
+          name: ${{ needs.build.outputs.package }}
 
       - name: Install WordPress
         uses: nick-fields/retry@ce71cc2ab81d554ebbe88c79ab5975992d79ba08 # v3.0.2
@@ -179,7 +187,7 @@ jobs:
         with:
           name: playwright-report
           path: tests/playwright/test-results/
-          retention-days: 7
+          retention-days: 10
 
       - name: Output debug.log file contents
         if: always()

@@ -77,9 +77,6 @@ jobs:
       - name: Install PHP Dependencies
         run: composer install --no-progress --no-dev --optimize-autoloader --prefer-source
 
-      - name: Setup Registry
-        run: printf "\n//npm.pkg.github.com/:_authToken=${{ secrets.NEWFOLD_ACCESS_TOKEN }}" >> .npmrc
-
       - name: NPM Install
         run: npm install --legacy-peer-deps
 
@@ -152,7 +149,7 @@ jobs:
           key: ${{ runner.os }}-composer-${{ hashFiles('**/composer.lock') }}
 
       - name: Download build artifacts
-        uses: actions/download-artifact@b0b5f3b0b1827c3de43ba331f12db63a0a71c046 # v4.1.8
+        uses: actions/download-artifact@634f93cb2916e3fdff6788551b99b062d0335ce0  # v5.0.0
         with:
           name: plugin-build
           path: .

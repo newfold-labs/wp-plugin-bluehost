@@ -177,8 +177,11 @@ jobs:
           max_attempts: 3
           command: npx wp-env start --debug
 
+      - name: Install Playwright Browsers
+        run: npx playwright install chromium
+
       - name: Run Playwright Tests
-        run: npx playwright test --reporter=github
+        run: npx playwright test
 
       - name: Store Playwright test results
         if: always()

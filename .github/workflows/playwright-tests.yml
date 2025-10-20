@@ -93,7 +93,9 @@ jobs:
         run: rsync -r --include-from=.distinclude --exclude-from=.distignore . "$DIST/$PACKAGE"
 
       - name: List Distribution Files
-        working-directory: ${{ steps.workflow.outputs.DIST }}
+        env:
+          DIST: ${{ steps.workflow.outputs.DIST }}
+        working-directory: ${{ env.DIST }}
         run: find .
 
       - name: Configure WordPress

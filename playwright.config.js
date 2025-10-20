@@ -28,7 +28,7 @@ module.exports = defineConfig({
   webServer: {
     command: 'wp-env start',
     port: wpEnvConfig.port, // Use port from wp-env.json
-    reuseExistingServer: !process.env.CI,
+    reuseExistingServer: true,
     timeout: 120 * 1000, // 2 minutes
   },
   timeout: 30 * 1000, // 30 seconds
@@ -36,6 +36,6 @@ module.exports = defineConfig({
     timeout: 10 * 1000, // 10 seconds
   },
   retries: process.env.CI ? 2 : 0,
-  workers: process.env.CI ? 1 : 1,
+  workers: process.env.CI ? 2 : 2,
   outputDir: 'tests/playwright/test-results',
 });

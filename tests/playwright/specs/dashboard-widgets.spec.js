@@ -147,10 +147,9 @@ test.describe('Dashboard Widgets', () => {
       canAccessHelpCenter: true,
     });
     
+    await page.reload();
     // Log capabilities to verify they were set
     await newfold.logCapabilities();
-    
-    await page.reload();
     
     await utils.scrollIntoView(helpLink);
     await expect(helpLink).toContainText('Get Help');

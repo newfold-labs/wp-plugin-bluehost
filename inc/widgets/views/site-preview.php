@@ -167,7 +167,7 @@ $site_edit_url = buildLink( get_admin_url( null, wp_is_block_theme() ? 'site-edi
 	<div class="site-preview-widget-buttons nfd-flex nfd-gap-2 nfd-justify-between nfd-items-center nfd-text-center nfd-mt-4 nfd-mb-4">
 		<a 
 			class="nfd-button nfd-button--secondary"
-			data-cy="nfd-view-site"
+			data-test-id="nfd-view-site"
 			href="<?php echo esc_url( buildLink( get_bloginfo( 'url' ), array( 'source' => 'widget=bluehost_account_widget' ) ) ); ?>"
 			id="nfd-view-site"
 			target="_blank"
@@ -181,7 +181,7 @@ $site_edit_url = buildLink( get_admin_url( null, wp_is_block_theme() ? 'site-edi
 		</a>
 		<a 
 			class="nfd-button nfd-button--secondary"
-			data-cy="nfd-edit-site"
+			data-test-id="nfd-edit-site"
 			href="<?php echo esc_url( $site_edit_url ); ?>"
 			id="nfd-edit-site"
 		>
@@ -191,7 +191,7 @@ $site_edit_url = buildLink( get_admin_url( null, wp_is_block_theme() ? 'site-edi
 		<?php if ( $isComingSoon ) : ?>
 			<a 
 				class="nfd-button nfd-button--upsell nfd-grow"
-				data-cy="nfd-coming-soon-disable"
+				data-test-id="nfd-coming-soon-disable"
 				href="#"
 				id="nfd-coming-soon-disable"
 			>
@@ -201,7 +201,7 @@ $site_edit_url = buildLink( get_admin_url( null, wp_is_block_theme() ? 'site-edi
 		<?php else : ?>
 			<a 
 				class="nfd-button nfd-button--secondary nfd-grow nfd-text-balance"
-				data-cy="nfd-coming-soon-enable"
+				data-test-id="nfd-coming-soon-enable"
 				href="#"
 				id="nfd-coming-soon-enable"
 			>

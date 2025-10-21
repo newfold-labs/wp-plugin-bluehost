@@ -64,7 +64,7 @@ test.describe('Dashboard Widgets', () => {
     await expect(widgetBody).toHaveAttribute('data-coming-soon', 'false');
 
     // Check View Site link
-    const viewSiteLink = page.locator('[data-cy="nfd-view-site"]');
+    const viewSiteLink = page.locator('[data-test-id="nfd-view-site"]');
     await utils.scrollIntoView(viewSiteLink);
     await expect(viewSiteLink).toContainText('View Site');
     await expect(viewSiteLink).toBeVisible();
@@ -73,7 +73,7 @@ test.describe('Dashboard Widgets', () => {
     expect(viewSiteHref).toContain('localhost');
 
     // Check Edit Site link
-    const editSiteLink = page.locator('[data-cy="nfd-edit-site"]');
+    const editSiteLink = page.locator('[data-test-id="nfd-edit-site"]');
     await utils.scrollIntoView(editSiteLink);
     await expect(editSiteLink).toContainText('Edit Site');
     await expect(editSiteLink).toBeVisible();
@@ -82,14 +82,14 @@ test.describe('Dashboard Widgets', () => {
     expect(editSiteHref).toContain('site-editor');
 
     // Enable Coming Soon
-    const enableComingSoonButton = page.locator('[data-cy="nfd-coming-soon-enable"]');
+    const enableComingSoonButton = page.locator('[data-test-id="nfd-coming-soon-enable"]');
     await utils.scrollIntoView(enableComingSoonButton);
     await expect(enableComingSoonButton).toContainText('Enable Coming Soon');
     await expect(enableComingSoonButton).toHaveAttribute('href', '#');
     await enableComingSoonButton.click();
 
     // Coming Soon Enabled - wait for preview link to appear
-    const previewLink = page.locator('a[title="Preview the coming soon landing page"]');
+    const previewLink = page.locator('a[data-test-id="nfd-view-site"]');
     await previewLink.waitFor({ state: 'visible', timeout: 8000 });
     await utils.scrollIntoView(previewLink);
     await expect(previewLink).toBeVisible();
@@ -106,7 +106,7 @@ test.describe('Dashboard Widgets', () => {
     // Enable button should not exist, disable button should exist
     await expect(enableComingSoonButton).not.toBeVisible();
     
-    const disableComingSoonButton = page.locator('[data-cy="nfd-coming-soon-disable"]');
+    const disableComingSoonButton = page.locator('[data-test-id="nfd-coming-soon-disable"]');
     await utils.scrollIntoView(disableComingSoonButton);
     await expect(disableComingSoonButton).toContainText('Launch Site');
     await expect(disableComingSoonButton).toHaveAttribute('href', '#');
@@ -132,7 +132,7 @@ test.describe('Dashboard Widgets', () => {
     await expect(helpWidget).toBeVisible();
 
     // Help center not available by default without capabilities
-    const helpLink = page.locator('[data-cy="nfd-widget-help-link"]');
+    const helpLink = page.locator('[data-test-id="nfd-widget-help-link"]');
     await utils.scrollIntoView(helpLink);
     await expect(helpLink).toContainText('Get Help');
     await expect(helpLink).toHaveAttribute('data-help-center', 'false');
@@ -170,7 +170,7 @@ test.describe('Dashboard Widgets', () => {
     // Profile Link
     await newfold.verifyWidgetLink(
       page,
-      '[data-cy="nfd-widget-account-link-profile"]',
+      '[data-test-id="nfd-widget-account-link-profile"]',
       'Profile',
       'bluehost',
       { href: /utm_source/ }
@@ -179,7 +179,7 @@ test.describe('Dashboard Widgets', () => {
     // Mail Link
     await newfold.verifyWidgetLink(
       page,
-      '[data-cy="nfd-widget-account-link-email"]',
+      '[data-test-id="nfd-widget-account-link-email"]',
       'Mail',
       'email-office',
       { href: /utm_source/ }
@@ -188,7 +188,7 @@ test.describe('Dashboard Widgets', () => {
     // Hosting Link
     await newfold.verifyWidgetLink(
       page,
-      '[data-cy="nfd-widget-account-link-hosting"]',
+      '[data-test-id="nfd-widget-account-link-hosting"]',
       'Hosting',
       'hosting',
       { href: /utm_source/ }
@@ -197,7 +197,7 @@ test.describe('Dashboard Widgets', () => {
     // Security Link
     await newfold.verifyWidgetLink(
       page,
-      '[data-cy="nfd-widget-account-link-security"]',
+      '[data-test-id="nfd-widget-account-link-security"]',
       'Security',
       'security',
       { href: /utm_source/ }

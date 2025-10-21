@@ -64,7 +64,7 @@ test.describe('Dashboard Widgets', () => {
     await expect(widgetBody).toHaveAttribute('data-coming-soon', 'false');
 
     // Check View Site link
-    const viewSiteLink = page.locator('[data-test-id="nfd-view-site"]');
+    const viewSiteLink = page.locator('a[data-test-id="nfd-view-site"]');
     await utils.scrollIntoView(viewSiteLink);
     await expect(viewSiteLink).toContainText('View Site');
     await expect(viewSiteLink).toBeVisible();
@@ -73,7 +73,7 @@ test.describe('Dashboard Widgets', () => {
     expect(viewSiteHref).toContain('localhost');
 
     // Check Edit Site link
-    const editSiteLink = page.locator('[data-test-id="nfd-edit-site"]');
+    const editSiteLink = page.locator('a[data-test-id="nfd-edit-site"]');
     await utils.scrollIntoView(editSiteLink);
     await expect(editSiteLink).toContainText('Edit Site');
     await expect(editSiteLink).toBeVisible();
@@ -82,7 +82,7 @@ test.describe('Dashboard Widgets', () => {
     expect(editSiteHref).toContain('site-editor');
 
     // Enable Coming Soon
-    const enableComingSoonButton = page.locator('[data-test-id="nfd-coming-soon-enable"]');
+    const enableComingSoonButton = page.locator('a[data-test-id="nfd-coming-soon-enable"]');
     await utils.scrollIntoView(enableComingSoonButton);
     await expect(enableComingSoonButton).toContainText('Enable Coming Soon');
     await expect(enableComingSoonButton).toHaveAttribute('href', '#');
@@ -106,12 +106,13 @@ test.describe('Dashboard Widgets', () => {
     // Enable button should not exist, disable button should exist
     await expect(enableComingSoonButton).not.toBeVisible();
     
-    const disableComingSoonButton = page.locator('[data-test-id="nfd-coming-soon-disable"]');
+    const disableComingSoonButton = page.locator('a[data-test-id="nfd-coming-soon-disable"]');
     await utils.scrollIntoView(disableComingSoonButton);
     await expect(disableComingSoonButton).toContainText('Launch Site');
     await expect(disableComingSoonButton).toHaveAttribute('href', '#');
     await disableComingSoonButton.click();
-
+    // Reload page to ensure changes
+    await page.reload();
     // Coming Soon Disabled
     await expect(previewLink).not.toBeVisible();
     await utils.scrollIntoView(statusElement);

@@ -89,7 +89,7 @@ test.describe('Dashboard Widgets', () => {
     await enableComingSoonButton.click();
 
     // Coming Soon Enabled - wait for preview link to appear
-    const previewLink = page.locator('a[data-test-id="nfd-view-site"]');
+    const previewLink = page.locator('a[data-test-id="nfd-preview-site"]');
     await previewLink.waitFor({ state: 'visible', timeout: 8000 });
     await utils.scrollIntoView(previewLink);
     await expect(previewLink).toBeVisible();

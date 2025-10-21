@@ -167,7 +167,7 @@ $site_edit_url = buildLink( get_admin_url( null, wp_is_block_theme() ? 'site-edi
 	<div class="site-preview-widget-buttons nfd-flex nfd-gap-2 nfd-justify-between nfd-items-center nfd-text-center nfd-mt-4 nfd-mb-4">
 		<a 
 			class="nfd-button nfd-button--secondary"
-			data-test-id="<?php echo esc_attr( $isComingSoon ? "nfd-preview-site" : "nfd-view-site" ); ?>"
+			data-test-id="<?php echo esc_attr( $isComingSoon ? 'nfd-preview-site' : 'nfd-view-site' ); ?>"
 			href="<?php echo esc_url( buildLink( get_bloginfo( 'url' ), array( 'source' => 'widget=bluehost_account_widget' ) ) ); ?>"
 			id="nfd-view-site"
 			target="_blank"

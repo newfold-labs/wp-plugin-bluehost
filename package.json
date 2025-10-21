@@ -107,7 +107,8 @@
         "storybook:build": "build-storybook -c ./storybook -o ./.docs",
         "test:e2e": "npx cypress run",
         "test:unit": "wp-scripts test-unit-js",
-        "test:e2e:playwright": "npx playwright test",
+        "test:e2e:playwright": "node .github/scripts/copy-vendor-tests.js && npx playwright test",
+        "test:e2e:playwright:copy-vendor": "node .github/scripts/copy-vendor-tests.js && npx playwright test",
         "test:clean-module": "bash ./.github/scripts/test-clean-module"
     }
 }

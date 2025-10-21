@@ -189,6 +189,10 @@ jobs:
       - name: Install Playwright Browsers
         run: npx playwright install --with-deps
 
+      - name: Copy Vendor Tests (if any exist)
+        run: node .github/scripts/copy-vendor-tests.js
+        continue-on-error: true
+
       - name: Run Playwright Tests
         run: npx playwright test --reporter=line
         env:

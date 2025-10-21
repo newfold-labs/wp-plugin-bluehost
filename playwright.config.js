@@ -7,7 +7,7 @@ const wpEnvConfig = require('./.wp-env.json');
 module.exports = defineConfig({
   testMatch: [
     'tests/playwright/specs/**/*.spec.js',
-    'vendor/newfold-labs/**/tests/e2e/specs/**/*.spec.js',
+    'vendor/newfold-labs/**/tests/e2e/specs/**/*.spec.js', // this doesn't work for some reason
   ],
   use: {
     baseURL: `http://localhost:${wpEnvConfig.port}`, // Use port from wp-env.json
@@ -35,7 +35,7 @@ module.exports = defineConfig({
   expect: {
     timeout: 10 * 1000, // 10 seconds
   },
-  retries: process.env.CI ? 0 : 0,
-  workers: process.env.CI ? 1 : 1,
+  retries: process.env.CI ? 1 : 0,
+  workers: process.env.CI ? 2 : 1,
   outputDir: 'tests/playwright/test-results',
 });

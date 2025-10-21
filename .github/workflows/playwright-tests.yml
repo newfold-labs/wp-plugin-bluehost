@@ -172,6 +172,15 @@ jobs:
           path: ${{ steps.workflow.outputs.DIST }}
           name: ${{ needs.build.outputs.package }}
 
+      - name: Configure WordPress
+        env:
+          DIST: ${{ steps.workflow.outputs.DIST }}
+          PACKAGE: ${{ needs.build.outputs.package }}
+        run: |
+          jq -n \
+            --arg plugin "$DIST/$PACKAGE" \
+            '{plugins: [$plugin]}' > .wp-env.override.json
+
       - name: Install WordPress
         uses: nick-fields/retry@ce71cc2ab81d554ebbe88c79ab5975992d79ba08  # v3.0.2
         with:

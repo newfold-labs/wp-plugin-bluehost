@@ -87,10 +87,12 @@ test.describe('Dashboard Widgets', () => {
     await expect(enableComingSoonButton).toContainText('Enable Coming Soon');
     await expect(enableComingSoonButton).toHaveAttribute('href', '#');
     await enableComingSoonButton.click();
+    // Reload page to ensure changes
+    await page.waitForTimeout(500);
+    await page.reload();
 
     // Coming Soon Enabled - wait for preview link to appear
     const previewLink = page.locator('a[data-test-id="nfd-preview-site"]');
-    await previewLink.waitFor({ state: 'visible', timeout: 8000 });
     await utils.scrollIntoView(previewLink);
     await expect(previewLink).toBeVisible();
 
@@ -112,7 +114,9 @@ test.describe('Dashboard Widgets', () => {
     await expect(disableComingSoonButton).toHaveAttribute('href', '#');
     await disableComingSoonButton.click();
     // Reload page to ensure changes
+    await page.waitForTimeout(500);
     await page.reload();
+
     // Coming Soon Disabled
     await expect(previewLink).not.toBeVisible();
     await utils.scrollIntoView(statusElement);

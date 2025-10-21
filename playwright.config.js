@@ -7,7 +7,12 @@ const wpEnvConfig = require('./.wp-env.json');
 module.exports = defineConfig({
   testMatch: [
     'tests/playwright/specs/**/*.spec.js',
-    'vendor/newfold-labs/**/tests/e2e/specs/**/*.spec.js', // this doesn't work for some reason
+  ],
+  testIgnore: [
+    // Don't ignore anything - we want to include gitignored files
+    // Since we use the copy-vendor-tests.js script to copy the vendor tests 
+    // to the tests/playwright/specs/vendor directory when running playwright tests,
+    // we gitignore them, but playwright needs to find them so we override the default playwright ignore list here
   ],
   use: {
     baseURL: `http://localhost:${wpEnvConfig.port}`, // Use port from wp-env.json

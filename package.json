@@ -78,7 +78,7 @@
         "check-licenses": "wp-scripts check-licenses --production",
         "create:dev": "rm -rf ./bluehost-wordpress-plugin ./bluehost-wordpress-plugin.zip && npm run create:dist && npm run create:zip",
         "create:dist": "rsync -r --include-from=.distinclude --exclude-from=.distignore . ./bluehost-wordpress-plugin",
-        "create:zip": "cd ./bluehost-wordpress-plugin && zip -r -9 ../bluehost-wordpress-plugin.zip . && ls -lh ../bluehost-wordpress-plugin.zip",
+        "create:zip": "cd ./bluehost-wordpress-plugin && zip -r -9 ../bluehost-wordpress-plugin.zip . -x '*.git*' --include 'vendor/newfold-labs/wp-module-staging/lib/.staging' && ls -lh ../bluehost-wordpress-plugin.zip",
         "cypress": "npm cypress open",
         "develop": "npm run start",
         "develop:analyzer": "npm run start:analyzer",

@@ -9,6 +9,7 @@ node_modules
 .cache
 
 # Files
+/.*
 cypress.config.js
 postcss.config.js
 tailwind.config.js

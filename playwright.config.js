@@ -5,6 +5,7 @@ const { defineConfig } = require('@playwright/test');
 const wpEnvConfig = require('./.wp-env.json');
 
 module.exports = defineConfig({
+  globalSetup: require.resolve('./tests/playwright/global-setup.js'),
   testMatch: [
     'tests/playwright/specs/**/*.spec.js',
   ],
@@ -40,7 +41,7 @@ module.exports = defineConfig({
   expect: {
     timeout: 10 * 1000, // 10 seconds
   },
-  retries: process.env.CI ? 1 : 0,
-  workers: process.env.CI ? 2 : 1,
+  retries: process.env.CI ? 0 : 0,
+  workers: process.env.CI ? 1 : 1,
   outputDir: 'tests/playwright/test-results',
 });

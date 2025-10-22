@@ -13,6 +13,7 @@ const { Admin, PageUtils } = require('@wordpress/e2e-test-utils-playwright');
  * Wait for WordPress admin to be ready
  * 
  * @param {import('@playwright/test').Page} page - Playwright page object
+ * @returns {Promise<void>}
  */
 async function waitForWordPressAdmin(page) {
   // Wait for WordPress admin bar or body class
@@ -26,7 +27,7 @@ async function waitForWordPressAdmin(page) {
  * Check if user is logged into WordPress
  * 
  * @param {import('@playwright/test').Page} page - Playwright page object
- * @returns {boolean} True if logged in
+ * @returns {Promise<boolean>} True if logged in
  */
 async function isLoggedIn(page) {
   try {
@@ -42,7 +43,7 @@ async function isLoggedIn(page) {
  * Get WordPress admin menu items
  * 
  * @param {import('@playwright/test').Page} page - Playwright page object
- * @returns {Array} Array of menu item objects
+ * @returns {Promise<Array>} Array of menu item objects
  */
 async function getAdminMenuItems(page) {
   const menuItems = await page.locator('#adminmenu li').all();
@@ -63,6 +64,7 @@ async function getAdminMenuItems(page) {
  * @param {import('@playwright/test').Page} page - Playwright page object
  * @param {string} pluginSlug - Plugin slug (e.g., 'bluehost')
  * @param {string} subPage - Sub-page hash (e.g., '#/settings')
+ * @returns {void}
  */
 async function navigateToPluginPage(page, pluginSlug, subPage = '') {
   const pageUtils = new PageUtils({ page });
@@ -94,6 +96,7 @@ async function isPluginActive(page, pluginSlug) {
  * Wait for WordPress REST API to be available
  * 
  * @param {import('@playwright/test').Page} page - Playwright page object
+ * @returns {void}
  */
 async function waitForRestAPI(page) {
   // Try to access a simple REST endpoint
@@ -134,6 +137,7 @@ async function wpCli(command) {
  * 
  * @param {string} option - Option name
  * @param {string|boolean} value - Option value
+ * @returns {string|number} - Output string if available, 0 for success, or error info.
  */
 async function setOption(option, value) {
   console.log(`Setting WordPress option: ${option} = ${value}`);
@@ -143,8 +147,10 @@ async function setOption(option, value) {
 
 /**
  * Set WordPress permalink structure and flush rewrite rules
- * 
+ *
+ * @param {import('@playwright/test').Page} page - Playwright page object
  * @param {string} structure - Permalink structure (default: '/%postname%/')
+ * @returns {boolean} True if permalink structure was set successfully
  */
 async function setPermalinkStructure(page, structure = '/%postname%/') {
   console.log(`Setting permalink structure to: ${structure}`);
@@ -152,7 +158,7 @@ async function setPermalinkStructure(page, structure = '/%postname%/') {
   // navigate to permalink settings
   const pageUtils = new PageUtils({ page });
   const admin = new Admin({ page, pageUtils });
-  await admin.visitAdminPage(`options-permalink.php`, { waitUntil: 'domcontentloaded' });
+  await admin.visitAdminPage('options-permalink.php');
 
   // set pemalink structure
   if ( structure === '/%postname%/' ) {
@@ -164,14 +170,14 @@ async function setPermalinkStructure(page, structure = '/%postname%/') {
   // click submit
   await page.locator('#submit').click();
   // wait for success message to be visible
-  return await page.locator('.notice-success').isVisible();
+  return page.locator('.notice-success').isVisible();
 }
 
 /**
  * Create WordPress utilities (Admin and PageUtils instances)
  * 
  * @param {import('@playwright/test').Page} page - Playwright page object
- * @returns {Object} Object containing admin and pageUtils instances
+ * @returns {Promise<Object>} Object containing admin and pageUtils instances
  */
 async function createWordPressUtils(page) {
   const pageUtils = new PageUtils({ page });

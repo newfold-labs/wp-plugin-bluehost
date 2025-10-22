@@ -1,9 +1,13 @@
 const { test, expect } = require('@playwright/test');
-const { auth, a11y, utils, wordpress } = require('../helpers');
+const { auth, a11y, utils, setup } = require('../helpers');
 
 test.describe('Settings Page', () => {
+
+  test.beforeAll(async ({ browser }) => {
+    await setup.runCommonSetup(browser);
+  });
+
   test.beforeEach(async ({ page }) => {
-    await wordpress.setPermalinkStructure();
     // Navigate to settings page
     await auth.navigateToAdminPage(page, 'admin.php?page=bluehost#/settings/settings');
   });

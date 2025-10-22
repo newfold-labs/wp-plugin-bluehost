@@ -1,15 +1,17 @@
 const { test, expect } = require('@playwright/test');
-const { auth, wordpress, newfold, a11y, utils } = require('../helpers');
+const { auth, wordpress, newfold, a11y, utils, setup } = require('../helpers');
 
 test.describe('Dashboard Widgets', () => {
+  
+  test.beforeAll(async ({ browser }) => {
+    await setup.runCommonSetup(browser);
+  });
   
   test.beforeEach(async ({ page }) => {
     // Navigate to WordPress dashboard
     await auth.navigateToAdminPage(page, 'index.php');
     // clear all capabilities
     await newfold.clearCapabilities();
-    // Navigate to WordPress dashboard
-    await auth.navigateToAdminPage(page, 'index.php');
   });
 
   test('Bluehost Widgets are all Accessible', async ({ page }) => {
@@ -42,8 +44,7 @@ test.describe('Dashboard Widgets', () => {
   test('Site Preview Widget', async ({ page }) => {
     // Ensure coming soon is disabled
     await newfold.setComingSoon(false);
-    // Set permalink structure and verify REST API is working
-    await wordpress.setPermalinkStructure(page);
+
     // Navigate to WordPress dashboard
     await auth.navigateToAdminPage(page, 'index.php');
     // Reload page

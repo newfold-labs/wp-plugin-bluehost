@@ -20,10 +20,14 @@ const a11y = require('./a11y');
 // General test utilities
 const utils = require('./utils');
 
+// Setup helpers
+const setup = require('./setup');
+
 module.exports = {
   auth,
   wordpress,
   newfold,
   a11y,
   utils,
+  setup,
 };

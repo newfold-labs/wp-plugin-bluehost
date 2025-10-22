@@ -142,12 +142,24 @@ async function setOption(option, value) {
 }
 
 /**
- * Set WordPress permalink structure
+ * Set WordPress permalink structure and flush rewrite rules
  * 
  * @param {string} structure - Permalink structure (default: '/%postname%/')
  */
 async function setPermalinkStructure(structure = '/%postname%/') {
-  return await setWordPressOption('permalink_structure', structure);
+  return await Promise.all([
+    // Set the permalink structure
+    setOption('permalink_structure', structure),
+    
+    // Set rewrite rules to an empty array
+    setOption('rewrite_rules', '[]'),
+    
+    // Flush rewrite rules to ensure URLs work immediately
+    wpCli('rewrite flush'),
+    
+    // Flush cache to ensure URLs work immediately
+    wpCli('cache flush')
+  ]);
 }
 
 /**

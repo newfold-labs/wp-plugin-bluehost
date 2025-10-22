@@ -7,6 +7,7 @@ test.describe('Dashboard Widgets', () => {
     // Navigate to WordPress dashboard
     await auth.navigateToAdminPage(page, 'index.php');
     await newfold.clearCapabilities();
+    await wordpress.setPermalinkStructure();
   });
 
   test('Bluehost Widgets are all Accessible', async ({ page }) => {

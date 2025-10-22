@@ -146,20 +146,25 @@ async function setOption(option, value) {
  * 
  * @param {string} structure - Permalink structure (default: '/%postname%/')
  */
-async function setPermalinkStructure(structure = '/%postname%/') {
-  return await Promise.all([
-    // Set the permalink structure
-    setOption('permalink_structure', structure),
-    
-    // Set rewrite rules to an empty array
-    setOption('rewrite_rules', '[]'),
-    
-    // Flush rewrite rules to ensure URLs work immediately
-    wpCli('rewrite flush'),
-    
-    // Flush cache to ensure URLs work immediately
-    wpCli('cache flush')
-  ]);
+async function setPermalinkStructure(page, structure = '/%postname%/') {
+  console.log(`Setting permalink structure to: ${structure}`);
+
+  // navigate to permalink settings
+  const pageUtils = new PageUtils({ page });
+  const admin = new Admin({ page, pageUtils });
+  await admin.visitAdminPage(`options-permalink.php`, { waitUntil: 'domcontentloaded' });
+
+  // set pemalink structure
+  if ( structure === '/%postname%/' ) {
+    await page.locator('#permalink-input-post-name').check();
+  } else {
+    await page.locator('#custom_selection').check();
+    await page.locator('#permalink_structure').fill(structure);
+  }
+  // click submit
+  await page.locator('#submit').click();
+  // wait for success message to be visible
+  return await page.locator('.notice-success').isVisible();
 }
 
 /**

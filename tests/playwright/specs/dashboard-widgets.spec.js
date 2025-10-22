@@ -6,8 +6,10 @@ test.describe('Dashboard Widgets', () => {
   test.beforeEach(async ({ page }) => {
     // Navigate to WordPress dashboard
     await auth.navigateToAdminPage(page, 'index.php');
+    // clear all capabilities
     await newfold.clearCapabilities();
-    await wordpress.setPermalinkStructure();
+    // Navigate to WordPress dashboard
+    await auth.navigateToAdminPage(page, 'index.php');
   });
 
   test('Bluehost Widgets are all Accessible', async ({ page }) => {
@@ -40,7 +42,11 @@ test.describe('Dashboard Widgets', () => {
   test('Site Preview Widget', async ({ page }) => {
     // Ensure coming soon is disabled
     await newfold.setComingSoon(false);
+    // Set permalink structure and verify REST API is working
+    await wordpress.setPermalinkStructure(page);
+    // Navigate to WordPress dashboard
     await auth.navigateToAdminPage(page, 'index.php');
+    // Reload page
     await page.reload();
 
     // Verify site preview widget exists and is visible
@@ -92,15 +98,17 @@ test.describe('Dashboard Widgets', () => {
     await expect(enableComingSoonButton).toBeVisible();
     await expect(enableComingSoonButton).toContainText('Enable Coming Soon');
     await expect(enableComingSoonButton).toHaveAttribute('href', '#');
-    await enableComingSoonButton.click();
-    // Extra wait to ensure changes
-    await page.waitForTimeout(1000);
+    // Click the button and wait for the API call to complete
+    enableComingSoonButton.click();
+
+    // Wait for the UI to update
+    // await page.waitForTimeout(1000);
 
     // Coming Soon Enabled - wait for preview link to appear
-    await expect(viewSiteLink).toHaveCount(0);
     const previewLink = page.locator('a[data-test-id="nfd-preview-site"]');
     previewLink.scrollIntoViewIfNeeded();
     await expect(previewLink).toBeVisible();
+    await expect(viewSiteLink).toHaveCount(0);
 
     // Check status changed to "Not Live"
     await expect(statusElement).toContainText('Not Live');
@@ -117,17 +125,20 @@ test.describe('Dashboard Widgets', () => {
     await expect(disableComingSoonButton).toBeVisible();
     await expect(disableComingSoonButton).toContainText('Launch Site');
     await expect(disableComingSoonButton).toHaveAttribute('href', '#');
-    await disableComingSoonButton.click();
-    // Extra wait to ensure changes
-    await page.waitForTimeout(1000);
+    
+    // Click the button and wait for the API call to complete
+    disableComingSoonButton.click();
+    
+    // Wait for the UI to update
+    // await page.waitForTimeout(1000);
 
     // Coming Soon Disabled
-    await expect(previewLink).toHaveCount(0);
     viewSiteLink.scrollIntoViewIfNeeded();
     await expect(viewSiteLink).toBeVisible();
     await expect(statusElement).toContainText('Live');
     await expect(widgetBody).toContainText('website is live');
     await expect(widgetBody).toHaveAttribute('data-coming-soon', 'false');
+    await expect(previewLink).toHaveCount(0);
 
     // Disable button should not exist, enable button should exist
     await expect(disableComingSoonButton).toHaveCount(0);

@@ -90,12 +90,7 @@ jobs:
         run: composer validate
 
       - name: Install PHP Dependencies
-        run: composer install --no-progress --no-dev --optimize-autoloader --prefer-source
-
-      - name: Verify .staging file
-        run: |
-          ls -la vendor/newfold-labs/wp-module-staging/lib/
-          test -f vendor/newfold-labs/wp-module-staging/lib/.staging && echo ".staging exists" || echo ".staging NOT found"  
+        run: composer install --no-progress --no-dev --optimize-autoloader --prefer-dist
 
       - name: NPM Install
         run: npm install --legacy-peer-deps
@@ -103,11 +98,10 @@ jobs:
       - name: Build JavaScript
         run: npm run build
 
-      - name: Create zip package
-        run: |
-          cd ./bluehost-wordpress-plugin
-          zip -r -9 ../bluehost-wordpress-plugin.zip . --include 'vendor/newfold-labs/wp-module-staging/lib/.staging'
-          ls -lh ../bluehost-wordpress-plugin.zip
+      - name: Prepare files
+        env:
+          DIST: ${{ steps.workflow.outputs.DIST }}
+        run: rsync -r --include-from=.distinclude --exclude-from=.distignore . "$DIST"
 
       - name: List Files
         working-directory: ${{ steps.workflow.outputs.DIST }}
@@ -117,8 +111,10 @@ jobs:
         id: artifact
         uses: actions/upload-artifact@v4
         with:
-          name: bluehost-wordpress-plugin
-          path: ../bluehost-wordpress-plugin.zip
+          name: ${{ steps.workflow.outputs.PACKAGE }}
+          path: |
+            ${{ steps.workflow.outputs.DIST }}/** 
+            ${{ steps.workflow.outputs.DIST }}/**/.*
           include-hidden-files: true
 
       - name: Comment on PR with download link

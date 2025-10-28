@@ -15,6 +15,9 @@ if (!fs.existsSync(projectsFile)) {
 // Load projects from generated file
 const projects = JSON.parse(fs.readFileSync(projectsFile, 'utf8'));
 
+// Set environment variable for plugin root
+process.env.PLUGIN_DIR = __dirname;
+
 module.exports = defineConfig({
   globalSetup: require.resolve('./tests/playwright/global-setup.js'),
   projects: projects,
@@ -49,6 +52,6 @@ module.exports = defineConfig({
     timeout: 10 * 1000, // 10 seconds
   },
   retries: process.env.CI ? 0 : 0,
-  workers: process.env.CI ? 1 : 1,
+  workers: process.env.CI ? 1 : undefined, // Use default (number of CPU cores) for local, 1 for CI
   outputDir: 'tests/playwright/test-results',
 });

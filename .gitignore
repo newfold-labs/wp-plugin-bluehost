@@ -20,8 +20,7 @@ cypress.env.json
 # Playwright
 /tests/playwright/test-results
 /tests/playwright/artifacts
-# Module tests
-/tests/playwright/specs/newfold-labs
+/playwright-projects.json
 
 # Built-app files
 /.docs

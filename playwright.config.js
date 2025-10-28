@@ -1,19 +1,26 @@
 // playwright.config.js
 const { defineConfig } = require('@playwright/test');
+const fs = require('fs');
+const { writeProjectsFile } = require('./.github/scripts/generate-playwright-projects');
 
 // Read wp-env.json to get the correct port
 const wpEnvConfig = require('./.wp-env.json');
 
+// Generate projects file if it doesn't exist or is stale
+const projectsFile = 'playwright-projects.json';
+if (!fs.existsSync(projectsFile)) {
+  writeProjectsFile();
+}
+
+// Load projects from generated file
+const projects = JSON.parse(fs.readFileSync(projectsFile, 'utf8'));
+
 module.exports = defineConfig({
   globalSetup: require.resolve('./tests/playwright/global-setup.js'),
-  testMatch: [
-    'tests/playwright/specs/**/*.spec.js',
-  ],
+  projects: projects,
   testIgnore: [
-    // Don't ignore anything - we want to include gitignored files
-    // Since we use the copy-vendor-tests.js script to copy the vendor tests 
-    // to the tests/playwright/specs/vendor directory when running playwright tests,
-    // we gitignore them, but playwright needs to find them so we override the default playwright ignore list here
+    // Don't ignore anything - we want to include gitignored files that playwright needs to find
+    // playwright needs to find vendor files, so we override the default playwright ignore list here
   ],
   use: {
     baseURL: `http://localhost:${wpEnvConfig.port}`, // Use port from wp-env.json

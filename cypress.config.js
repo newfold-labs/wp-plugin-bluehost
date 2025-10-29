@@ -111,6 +111,8 @@ module.exports = defineConfig( {
 			'vendor/newfold-labs/wp-module-ecommerce/**/*.cy.js', // skip ecom tests
 			'vendor/newfold-labs/wp-module-onboarding/tests/cypress/integration/**/*.cy.js', // Temporary: skip onboarding tests
 			'vendor/newfold-labs/wp-module-ecommerce/tests/cypress/integration/Home/migration.cy.js', // skip ecom migration test - soon to be replaced
+			'tests/playwright/**', // exclude entire plugin Playwright directory
+			'vendor/newfold-labs/**/tests/playwright/**', // exclude entire module Playwright directories
 		],
 		experimentalRunAllSpecs: true,
 	},

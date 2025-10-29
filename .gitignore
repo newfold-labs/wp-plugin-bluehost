@@ -20,7 +20,7 @@ cypress.env.json
 # Playwright
 /tests/playwright/test-results
 /tests/playwright/artifacts
-/playwright-projects.json
+/tests/playwright/playwright-projects.json
 
 # Built-app files
 /.docs

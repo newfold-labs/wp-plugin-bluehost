@@ -7,7 +7,7 @@ const { writeProjectsFile } = require('./.github/scripts/generate-playwright-pro
 const wpEnvConfig = require('./.wp-env.json');
 
 // Generate projects file if it doesn't exist or is stale
-const projectsFile = 'playwright-projects.json';
+const projectsFile = './tests/playwright/playwright-projects.json';
 if (!fs.existsSync(projectsFile)) {
   writeProjectsFile();
 }

@@ -57,7 +57,7 @@ function generateProjects() {
   console.log('🔍 Playwright Projects Discovery:');
   const projects = [
     {
-      name: 'plugin-tests',
+      name: 'newfold-labs/wp-plugin-bluehost',
       testDir: './tests/playwright/specs',
       testMatch: '**/*.spec.js',
     }
@@ -71,7 +71,7 @@ function generateProjects() {
   localModules.forEach(module => {
     if (!discoveredModules.has(module.name)) {
       projects.push({
-        name: `local-${module.name}`,
+        name: `newfold-labs/${module.name}-local`,
         testDir: module.path,
         testMatch: 'tests/playwright/**/*.spec.js',
       });
@@ -83,7 +83,7 @@ function generateProjects() {
   vendorModules.forEach(module => {
     if (!discoveredModules.has(module.name)) {
       projects.push({
-        name: `vendor-${module.name}`,
+        name: `newfold-labs/${module.name}`,
         testDir: module.path,
         testMatch: 'tests/playwright/**/*.spec.js',
       });
@@ -102,7 +102,7 @@ function generateProjects() {
 
 function writeProjectsFile() {
   const projects = generateProjects();
-  const projectsFile = 'playwright-projects.json';
+  const projectsFile = 'tests/playwright/playwright-projects.json';
   
   console.log(`\n📝 Writing projects to ${projectsFile}...`);
   fs.writeFileSync(projectsFile, JSON.stringify(projects, null, 2));

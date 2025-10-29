@@ -71,7 +71,7 @@ $box_a_classes  = 'nfd-widget-account-box-a nfd-flex nfd-flex-col nfd-gap-1 nfd-
 		<li class="<?php echo esc_attr( $box_li_classes ); ?>">
 			<a
 				class="<?php echo esc_attr( $box_a_classes ); ?>"
-				data-cy="nfd-widget-account-link-profile"
+				data-test-id="nfd-widget-account-link-profile"
 				href="
 				<?php
 					echo esc_url(
@@ -93,7 +93,7 @@ $box_a_classes  = 'nfd-widget-account-box-a nfd-flex nfd-flex-col nfd-gap-1 nfd-
 		<li class="<?php echo esc_attr( $box_li_classes ); ?>">
 			<a
 				class="<?php echo esc_attr( $box_a_classes ); ?>"
-				data-cy="nfd-widget-account-link-email"
+				data-test-id="nfd-widget-account-link-email"
 				href="
 				<?php
 					echo esc_url(
@@ -118,7 +118,7 @@ $box_a_classes  = 'nfd-widget-account-box-a nfd-flex nfd-flex-col nfd-gap-1 nfd-
 		<li class="<?php echo esc_attr( $box_li_classes ); ?>">
 			<a 
 				class="<?php echo esc_attr( $box_a_classes ); ?>"
-				data-cy="nfd-widget-account-link-hosting"
+				data-test-id="nfd-widget-account-link-hosting"
 				href="
 				<?php
 				echo esc_url(
@@ -143,7 +143,7 @@ $box_a_classes  = 'nfd-widget-account-box-a nfd-flex nfd-flex-col nfd-gap-1 nfd-
 		<li class="<?php echo esc_attr( $box_li_classes ); ?>">
 			<a 
 				class="<?php echo esc_attr( $box_a_classes ); ?>"
-				data-cy="nfd-widget-account-link-security"
+				data-test-id="nfd-widget-account-link-security"
 				href="
 				<?php
 					echo esc_url(
@@ -170,7 +170,7 @@ $box_a_classes  = 'nfd-widget-account-box-a nfd-flex nfd-flex-col nfd-gap-1 nfd-
 		<?php // Billing Link ?>
 		<li>
 			<a
-				data-cy="nfd-widget-account-link-billing"
+				data-test-id="nfd-widget-account-link-billing"
 				href="
 				<?php
 					echo esc_url(
@@ -192,7 +192,7 @@ $box_a_classes  = 'nfd-widget-account-box-a nfd-flex nfd-flex-col nfd-gap-1 nfd-
 		<?php // Renewal Link ?>
 		<li>
 			<a
-				data-cy="nfd-widget-account-link-renewals"
+				data-test-id="nfd-widget-account-link-renewals"
 				href="
 				<?php
 					echo esc_url(

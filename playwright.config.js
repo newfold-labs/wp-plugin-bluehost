@@ -1,5 +1,5 @@
 // playwright.config.js
-const { defineConfig } = require('@playwright/test');
+const { defineConfig, devices } = require('@playwright/test');
 const fs = require('fs');
 const { writeProjectsFile } = require('./.github/scripts/generate-playwright-projects');
 
@@ -17,6 +17,7 @@ const projects = JSON.parse(fs.readFileSync(projectsFile, 'utf8'));
 
 // Set environment variable for plugin root
 process.env.PLUGIN_DIR = __dirname;
+process.env.PLUGIN_ID = 'bluehost'
 
 module.exports = defineConfig({
   globalSetup: require.resolve('./tests/playwright/global-setup.js'),
@@ -26,9 +27,10 @@ module.exports = defineConfig({
     // playwright needs to find vendor files, so we override the default playwright ignore list here
   ],
   use: {
-    baseURL: `http://localhost:${wpEnvConfig.port}`, // Use port from wp-env.json
+    ...devices['Desktop Chrome'],
     headless: true,
-    viewport: { width: 1024, height: 768 },
+    viewport: { width: 1200, height: 800 },
+    baseURL: `http://localhost:${wpEnvConfig.port}`, // Use port from wp-env.json
     ignoreHTTPSErrors: true,
     // WordPress-optimized settings
     locale: 'en-US',
@@ -54,4 +56,11 @@ module.exports = defineConfig({
   retries: process.env.CI ? 0 : 0,
   workers: process.env.CI ? 1 : undefined, // Use default (number of CPU cores) for local, 1 for CI
   outputDir: 'tests/playwright/test-results',
+  expect: {
+    toHaveScreenshot: {
+      maxDiffPixels: 100,
+      pathTemplate: '{testDir}/screenshots{/projectName}/{testFilePath}/{arg}{ext}',
+      fullPage: true,
+    },
+  }
 });

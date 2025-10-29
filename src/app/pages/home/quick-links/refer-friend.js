@@ -35,7 +35,7 @@ export default () => (
 		</div>
 		<p className="nfd-mt-0 nfd-text-body">
 			{ __(
-				'Unlock exclusive benefits with out referral program.',
+				'Unlock exclusive benefits with our referral program.',
 				'wp-plugin-bluehost'
 			) }
 		</p>

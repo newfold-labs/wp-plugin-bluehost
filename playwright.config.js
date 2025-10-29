@@ -54,7 +54,7 @@ module.exports = defineConfig({
     timeout: 10 * 1000, // 10 seconds
   },
   retries: process.env.CI ? 0 : 0,
-  workers: process.env.CI ? 1 : undefined, // Use default (number of CPU cores) for local, 1 for CI
+  workers: process.env.CI ? 1 : 1, // Use default (number of CPU cores) for local, 1 for CI
   outputDir: 'tests/playwright/test-results',
   expect: {
     toHaveScreenshot: {
@@ -62,5 +62,11 @@ module.exports = defineConfig({
       pathTemplate: '{testDir}/screenshots{/projectName}/{testFilePath}/{arg}{ext}',
       fullPage: true,
     },
-  }
+  },
+  reporter: [
+    ['list', { printSteps: true,  }],
+    // ['json', {  outputFile: 'tests/playwright/reports/test-results.json' }],
+    // ['html', { outputFolder: 'tests/playwright/reports/html' }],
+    // ['@estruyf/github-actions-reporter'] // https://github.com/estruyf/playwright-github-actions-reporter
+  ]
 });

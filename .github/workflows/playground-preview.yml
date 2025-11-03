@@ -26,7 +26,7 @@ jobs:
     steps:
       - name: Resolve PR context (number/branch/commit)
         id: ctx
-        uses: actions/github-script@v8
+        uses: actions/github-script@ed597411d8f924073f98dfc5c65a23a2325f34cd # v8
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           script: |
@@ -55,7 +55,7 @@ jobs:
             core.setOutput('commit', commit);
 
       - name: Checkout
-        uses: actions/checkout@v5
+        uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8 # v5
         with:
           fetch-depth: 1
           persist-credentials: false
@@ -67,11 +67,12 @@ jobs:
           coverage: none
           tools: composer, cs2pr
 
-      - name: Use Node.js 20.x
-        uses: actions/setup-node@a0853c24544627f65ddf259abe73b1d18a591444  # v5.0.0
+      - name: Use Node from .nvmrc
+        uses: actions/setup-node@a0853c24544627f65ddf259abe73b1d18a591444 # v5.0.0
         with:
-          node-version: 20.x
+          node-version-file: '.nvmrc'
           cache: 'npm'
+          cache-dependency-path: 'package-lock.json'
 
       - name: Setup workflow context
         id: workflow
@@ -87,7 +88,7 @@ jobs:
         run: composer install --no-progress --no-dev --optimize-autoloader --prefer-dist
 
       - name: NPM Install
-        run: npm install --legacy-peer-deps
+        run: npm install
 
       - name: Build JavaScript
         run: npm run build
@@ -119,7 +120,7 @@ jobs:
           PR_NUM="$PR_NUMBER"
           ZIP_NAME="bluehost-pr-${PR_NUM}.zip"
 
-          # Crea excludes.txt DENTRO la cartella DIST
+          # Crea excludes.txt inside the DIST folder
           cat > "$DIST/excludes.txt" <<'EOF'
           .env
           .env.*
@@ -136,12 +137,12 @@ jobs:
           **/.idea/**
           EOF
 
-          # Ora zippa da dentro DIST usando il file excludes.txt locale
+          # Zip inside DIST using the local excludes.txt file
           cd "$DIST"
           zip -r -9 "../${ZIP_NAME}" . -x@excludes.txt
           cd -
 
-          # Sposta lo zip appena creato in gh-pages/previews
+          # Move the ZIP inside gh-pages/previews
           mv "${DIST}/../${ZIP_NAME}" "gh-pages/previews/${ZIP_NAME}"
 
           SIZE=$(du -h "gh-pages/previews/${ZIP_NAME}" | cut -f1)
@@ -176,7 +177,7 @@ jobs:
           EOF
 
       - name: Configure Pages
-        uses: actions/configure-pages@v5
+        uses: actions/configure-pages@983d7736d9b0ae728b81ab479565c72886d7745b # v5
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           enablement: true

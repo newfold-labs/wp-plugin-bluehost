@@ -2,7 +2,7 @@ name: WordPress Playground Preview (PR & Comments)
 
 on:
   pull_request:
-    types: [opened, synchronize, reopened, ready_for_review]
+    types: [ opened, synchronize, reopened, ready_for_review ]
 
 jobs:
   playground-preview:
@@ -38,7 +38,7 @@ jobs:
               commit   = context.payload.pull_request.head.sha.slice(0,7);
             } else {
               prNumber = context.payload.issue.number;
-            
+
               const { data: pr } = await github.rest.pulls.get({
                 owner: context.repo.owner,
                 repo: context.repo.repo,
@@ -190,13 +190,13 @@ jobs:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           script: |
             const runId = process.env.RUN_ID;
-            
+
             const { data } = await github.rest.actions.listWorkflowRunArtifacts({
               owner: context.repo.owner,
               repo: context.repo.repo,
               run_id: runId,
             });
-            
+
             for (const artifact of data.artifacts) {
               if (artifact.name === 'github-pages') {
                 await github.rest.actions.deleteArtifact({

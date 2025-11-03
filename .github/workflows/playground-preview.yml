@@ -120,7 +120,7 @@ jobs:
           PR_NUM="$PR_NUMBER"
           ZIP_NAME="bluehost-pr-${PR_NUM}.zip"
 
-          # Crea excludes.txt inside the DIST folder
+          # Create excludes.txt inside the DIST folder
           cat > "$DIST/excludes.txt" <<'EOF'
           .env
           .env.*

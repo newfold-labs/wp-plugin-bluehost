@@ -35,7 +35,7 @@ add_action(
 );
 
 // Simple UI feature
-$bust_mode_path = BLUEHOST_PLUGIN_DIR . 'vendor/newfold-labs/wp-module-performance/includes/BurstSafetyMode/init.php';
-if ( file_exists( $bust_mode_path ) ) {
-	require_once $bust_mode_path;
+$burst_mode_path = BLUEHOST_PLUGIN_DIR . 'vendor/newfold-labs/wp-module-performance/includes/BurstSafetyMode/init.php';
+if ( file_exists( $burst_mode_path ) ) {
+	require_once $burst_mode_path;
 }

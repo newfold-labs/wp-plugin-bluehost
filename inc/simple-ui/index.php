@@ -1,3 +1,9 @@
+<?php
+/**
+ * Bluehost Simple UI main template.
+ */
+
+?>
 <div id="wppbh-app" class="wppbh wppbh_app">
 	<div class="nfd-root">
 		<div
@@ -9,7 +15,7 @@
 						<div class="nfd-page wppbh-home xl:nfd-max-w-screen-lg">
 							<div
 								class="nfd-grid nfd-gap-4 nfd-grid-cols-1 min-[783px]:nfd-gap-6 min-[540px]:nfd-grid-cols-2 min-[960px]:nfd-grid-cols-3">
-								<a href="site-editor.php" class="nfd-no-underline nfd-card-link"
+								<a href="<?php echo esc_attr( admin_url( 'site-editor.php' ) ); ?>" class="nfd-no-underline nfd-card-link"
 									data-cy="solution-card">
 									<div class="nfd-card wppbh-solution-card nfd-card">
 										<div class="nfd-card__content">
@@ -74,7 +80,7 @@
 										</p>
 									</div>
 								</div>
-							</a><a href="site-health.php" class="nfd-no-underline nfd-card-link" data-cy="help-card">
+							</a><a href="<?php echo esc_attr( admin_url( 'site-health.php' ) ); ?>" class="nfd-no-underline nfd-card-link" data-cy="help-card">
 								<div class="nfd-card wppbh-help-card nfd-card">
 									<div class="nfd-card__content">
 										<div
@@ -498,7 +504,7 @@
 								<div class="" data-cy="quick-links-card">
 									<h3 class="nfd-title nfd-title--2 nfd-mb-4">Quick links</h3>
 									<div class="nfd-grid nfd-gap-4 nfd-grid-cols-1"><a
-										class="nfd-no-underline nfd-card-link nfd-card-link-mini" href="plugins.php"
+										class="nfd-no-underline nfd-card-link nfd-card-link-mini" href="<?php echo esc_url( admin_url( 'plugins.php' ) ); ?>"
 										data-cy="hosting-card">
 										<div class="nfd-card wppbh-hosting-card nfd-card-mini nfd-py-4">
 											<div class="nfd-card__content">
@@ -516,7 +522,7 @@
 											</div>
 										</div>
 									</a><a class="nfd-no-underline nfd-card-link nfd-card-link-mini"
-										href="themes.php"
+										href="<?php echo esc_url( admin_url( 'themes.php' ) ); ?>"
 										data-cy="blog-card">
 										<div class="nfd-card wppbh-blog-card nfd-card-mini nfd-py-4">
 											<div class="nfd-card__content">
@@ -534,7 +540,7 @@
 											</div>
 										</div>
 									</a><a class="nfd-no-underline nfd-card-link nfd-card-link-mini"
-										href="upload.php"
+										href="<?php echo esc_url( admin_url( 'upload.php' ) ); ?>"
 										data-cy="promotion-card">
 										<div class="nfd-card wppbh-promotion-card nfd-card-mini nfd-py-4">
 											<div class="nfd-card__content">

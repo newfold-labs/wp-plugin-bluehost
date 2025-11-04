@@ -101,7 +101,7 @@ $help_svg = '<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 20 1
 		<div class="nfd-mt-8">
 		<a
 			class="nfd-button nfd-button--primary wppbh-help-link nfd-mr-2"
-			data-cy="nfd-widget-help-link"
+			data-test-id="nfd-widget-help-link"
 			data-help-center="<?php echo BluehostHelpWidget::can_access_help_center() ? 'true' : 'false'; ?>"
 			href="
 			<?php
@@ -117,7 +117,7 @@ $help_svg = '<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 20 1
 		><?php esc_html_e( 'Get Help', 'wp-plugin-bluehost' ); ?></a>
 		<a
 			class="nfd-button nfd-button--secondary nfd-text-primary wppbh-help-link"
-			data-cy="nfd-widget-ctb-link"
+			data-test-id="nfd-widget-ctb-link"
 			data-action="load-nfd-ctb"
 			data-ctb-id="838cc912-adb3-4d75-9450-262bf3ee3576"
 			rel="noreferrer"

@@ -73,30 +73,6 @@ return await wordpress.setOption('nfd_coming_soon', enabled);
 }
 
 /**
- * Check if a dashboard widget exists and is visible
- * 
- * @param {import('@playwright/test').Page} page - Playwright page object
- * @param {string} widgetId - Widget ID to check
- * @returns {Promise<boolean>} True if widget exists and is visible
- */
-async function isWidgetVisible(page, widgetId) {
-  const widget = page.locator(`#${widgetId}`);
-  return await widget.isVisible();
-}
-
-/**
- * Get widget content text
- * 
- * @param {import('@playwright/test').Page} page - Playwright page object
- * @param {string} widgetId - Widget ID
- * @returns {Promise<string>} Widget content text
- */
-async function getWidgetContent(page, widgetId) {
-  const widget = page.locator(`#${widgetId}`);
-  return await widget.textContent();
-}
-
-/**
  * Click coming soon toggle button
  * 
  * @param {import('@playwright/test').Page} page - Playwright page object
@@ -235,8 +211,6 @@ module.exports = {
   verifyComingSoonStatus,
   
   // Dashboard Widgets
-  isWidgetVisible,
-  getWidgetContent,
   verifyWidgetLink,
   waitForDashboardWidgets,
   

@@ -24,41 +24,6 @@ async function waitForWordPressAdmin(page) {
 }
 
 /**
- * Check if user is logged into WordPress
- * 
- * @param {import('@playwright/test').Page} page - Playwright page object
- * @returns {Promise<boolean>} True if logged in
- */
-async function isLoggedIn(page) {
-  try {
-    await page.goto('/wp-admin/');
-    await page.waitForSelector('body.wp-admin', { timeout: 3000 });
-    return true;
-  } catch {
-    return false;
-  }
-}
-
-/**
- * Get WordPress admin menu items
- * 
- * @param {import('@playwright/test').Page} page - Playwright page object
- * @returns {Promise<Array>} Array of menu item objects
- */
-async function getAdminMenuItems(page) {
-  const menuItems = await page.locator('#adminmenu li').all();
-  const items = [];
-  
-  for (const item of menuItems) {
-    const text = await item.textContent();
-    const href = await item.locator('a').getAttribute('href');
-    items.push({ text: text?.trim(), href });
-  }
-  
-  return items;
-}
-
-/**
  * Navigate to plugin page
  * 
  * @param {import('@playwright/test').Page} page - Playwright page object
@@ -90,20 +55,6 @@ async function isPluginActive(page, pluginSlug) {
   const deactivateLink = pluginRow.locator('a[href*="deactivate"]');
   
   return await deactivateLink.isVisible();
-}
-
-/**
- * Wait for WordPress REST API to be available
- * 
- * @param {import('@playwright/test').Page} page - Playwright page object
- * @returns {void}
- */
-async function waitForRestAPI(page) {
-  // Try to access a simple REST endpoint
-  const response = await page.request.get('/wp-json/wp/v2/users/me');
-  if (!response.ok()) {
-    throw new Error('WordPress REST API not available');
-  }
 }
 
 /**
@@ -173,24 +124,9 @@ async function setPermalinkStructure(page, structure = '/%postname%/') {
   return page.locator('.notice-success').isVisible();
 }
 
-/**
- * Create WordPress utilities (Admin and PageUtils instances)
- * 
- * @param {import('@playwright/test').Page} page - Playwright page object
- * @returns {Promise<Object>} Object containing admin and pageUtils instances
- */
-async function createWordPressUtils(page) {
-  const pageUtils = new PageUtils({ page });
-  const admin = new Admin({ page, pageUtils });
-  return { admin, pageUtils };
-}
-
 module.exports = {
   // Core WordPress functionality
   waitForWordPressAdmin,
-  isLoggedIn,
-  getAdminMenuItems,
-  waitForRestAPI,
   
   // Plugin management
   navigateToPluginPage,
@@ -200,7 +136,4 @@ module.exports = {
   wpCli,
   setOption,
   setPermalinkStructure,
-  
-  // WordPress utilities
-  createWordPressUtils,
 };

@@ -19,7 +19,9 @@
     },
     "platform-check": false,
     "allow-plugins": {
-      "dealerdirect/phpcodesniffer-composer-installer": true
+      "composer/installers": true,
+      "dealerdirect/phpcodesniffer-composer-installer": true,
+      "johnpbloch/wordpress-core-installer": true
     },
     "preferred-install": {
       "newfold-labs/*": "source",
@@ -42,6 +44,14 @@
       "url": "git@github.com:InstaWP/connect-helpers.git",
       "only": [
         "instawp/*"
+      ]
+    },
+    "outlandishideas/wpackagist": {
+      "type": "composer",
+      "url": "https://wpackagist.org",
+      "only": [
+        "wpacakist-plugin/*",
+        "wpacakist-theme/*"
       ]
     }
   },
@@ -67,6 +77,14 @@
       "@i18n-po",
       "@i18n-json",
       "@i18n-php"
+    ],
+    "test": [
+      "codecept run wpunit"
+    ],
+    "test-coverage": [
+      "codecept run wpunit --coverage wpunit.cov",
+      "phpcov merge --php tests/_output/merged.cov --html tests/_output/html tests/_output;",
+      "echo \"open tests/_output/html/index.html\" to view the report"
     ]
   },
   "scripts-descriptions": {
@@ -78,10 +96,15 @@
     "i18n-mo": "Generate new language .mo files.",
     "i18n-json": "Generate new language .json files.",
     "i18n-ci-pre": "Command for CI to run before generating language files.",
-    "i18n-ci-post": "Command for CI to run after generating language files."
+    "i18n-ci-post": "Command for CI to run after generating language files.",
+    "test": "Run tests.",
+    "test-coverage": "Run tests with coverage, merge coverage and create HTML report."
   },
   "require-dev": {
+    "johnpbloch/wordpress": "6.6.0",
+    "lucatume/wp-browser": "*",
     "newfold-labs/wp-php-standards": "^1.2.5",
+    "phpunit/phpcov": "*",
     "roave/security-advisories": "dev-latest",
     "wp-cli/i18n-command": "^2.6.5",
     "wp-phpunit/wp-phpunit": "^6.8.3"

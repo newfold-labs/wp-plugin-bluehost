@@ -1,4 +1,8 @@
 <?php
+/**
+ * Simple UI feature for Bluehost plugin.
+ */
+
 add_action(
 	'admin_menu',
 	function () {
@@ -30,7 +34,7 @@ add_action(
 	}
 );
 
-// Burst Safety Mode feature
+// Simple UI feature
 $bust_mode_path = BLUEHOST_PLUGIN_DIR . 'vendor/newfold-labs/wp-module-performance/includes/BurstSafetyMode/init.php';
 if ( file_exists( $bust_mode_path ) ) {
 	require_once $bust_mode_path;

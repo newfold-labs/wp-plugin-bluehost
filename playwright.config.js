@@ -18,6 +18,8 @@ const projects = JSON.parse(fs.readFileSync(projectsFile, 'utf8'));
 // Set environment variable for plugin root
 process.env.PLUGIN_DIR = __dirname;
 process.env.PLUGIN_ID = 'bluehost'
+process.env.WP_ADMIN_USERNAME = process.env.WP_ADMIN_USERNAME || 'admin';
+process.env.WP_ADMIN_PASSWORD = process.env.WP_ADMIN_PASSWORD || 'password';
 
 module.exports = defineConfig({
   globalSetup: require.resolve('./tests/playwright/global-setup.js'),

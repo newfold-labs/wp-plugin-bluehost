@@ -9,14 +9,6 @@
 const { Admin, PageUtils } = require('@wordpress/e2e-test-utils-playwright');
 
 /**
- * WordPress login credentials for wp-env
- */
-const WP_ENV_CREDENTIALS = {
-  username: 'admin',
-  password: 'password',
-};
-
-/**
  * Check if user is already logged in to WordPress
  * 
  * @param {import('@playwright/test').Page} page - Playwright page object
@@ -68,8 +60,8 @@ async function isLoggedIn(page) {
  */
 async function loginToWordPress(page, options = {}) {
   const { 
-    username = WP_ENV_CREDENTIALS.username, 
-    password = WP_ENV_CREDENTIALS.password,
+    username = process.env.WP_ADMIN_USERNAME, 
+    password = process.env.WP_ADMIN_PASSWORD,
     force = false 
   } = options;
 
@@ -96,8 +88,8 @@ async function loginToWordPress(page, options = {}) {
  */
 async function createWordPressUtils(page, options = {}) {
   const { 
-    username = WP_ENV_CREDENTIALS.username, 
-    password = WP_ENV_CREDENTIALS.password,
+    username = process.env.WP_ADMIN_USERNAME, 
+    password = process.env.WP_ADMIN_PASSWORD,
     autoLogin = true 
   } = options;
 
@@ -201,5 +193,4 @@ module.exports = {
   setupAuthenticatedContext,
   saveAuthState,
   restoreAuthState,
-  WP_ENV_CREDENTIALS,
 };

@@ -198,21 +198,6 @@ async function waitForWordPressAdmin(page) {
 }
 
 /**
- * Check if a plugin is active.
- *
- * @param {import('@playwright/test').Page} page - Playwright page object.
- * @param {string} pluginSlug - The slug of the plugin (e.g., 'bluehost-wordpress-plugin').
- * @returns {Promise<boolean>} True if the plugin is active, false otherwise.
- */
-async function isPluginActive(page, pluginSlug) {
-  await page.goto('/wp-admin/plugins.php');
-  const pluginRow = page.locator(`tr#${pluginSlug}`);
-  const deactivateLink = pluginRow.locator('a[href*="deactivate"]');
-  
-  return await deactivateLink.isVisible();
-}
-
-/**
  * Get admin menu items
  * 
  * @param {import('@playwright/test').Page} page - Playwright page object
@@ -257,7 +242,6 @@ module.exports = {
   
   // Plugin Navigation
   navigateToPluginPage,
-  isPluginActive,
   
   // WordPress Admin
   waitForWordPressAdmin,

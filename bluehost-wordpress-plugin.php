@@ -43,11 +43,7 @@ if ( ! defined( 'NFD_HIIVE_URL' ) ) {
 }
 
 if ( defined( 'BURST_SAFETY_MODE' ) && BURST_SAFETY_MODE ) {
-
-	// Load alternate experience
-	require __DIR__ . '/inc/alt-experience/init.php';
-
-	// Short-circuit all plugin functionality
+	require __DIR__ . '/inc/simple-ui/init.php';
 	return;
 }
 

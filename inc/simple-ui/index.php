@@ -1,6 +1,8 @@
 <?php
 /**
  * Bluehost Simple UI main template.
+ *
+ * @package WPPluginBluehost
  */
 
 ?>

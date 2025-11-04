@@ -1,6 +1,8 @@
 <?php
 /**
  * Simple UI feature for Bluehost plugin.
+ *
+ * @package WPPluginBluehost
  */
 
 add_action(

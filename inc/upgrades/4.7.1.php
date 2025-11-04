@@ -8,7 +8,7 @@
  *
  * Safe to run multiple times — it will only alter the table if needed.
  */
-function hiive_fix_wp_options_auto_increment() {
+function fix_wp_options_auto_increment() {
     global $wpdb;
 
     $table_name = $wpdb->prefix . 'options';
@@ -49,4 +49,4 @@ function hiive_fix_wp_options_auto_increment() {
     $wpdb->query( "ALTER TABLE {$table_name} MODIFY COLUMN option_id bigint(20) unsigned NOT NULL auto_increment;" );
 }
 
-hiive_fix_wp_options_auto_increment();
+fix_wp_options_auto_increment();

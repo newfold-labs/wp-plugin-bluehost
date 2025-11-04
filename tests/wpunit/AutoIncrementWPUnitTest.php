@@ -1,12 +1,11 @@
 <?php
 
-namespace NewfoldLabs\WP\Module\WpPluginBluehost;
+namespace Bluehost;
 
-use Bluehost\AutoIncrement;
 use wpdb;
 
 /**
- * @coversDefaultClass \NewfoldLabs\WP\Module\WpPluginBluehost\Example
+ * @coversDefaultClass \Bluehost\AutoIncrement
  */
 class AutoIncrementWPUnitTest extends \lucatume\WPBrowser\TestCase\WPTestCase {
 

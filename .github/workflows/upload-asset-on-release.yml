@@ -146,7 +146,7 @@ jobs:
           PACKAGE: ${{ steps.workflow.outputs.PACKAGE }}
           TAG_NAME: ${{ github.event.release.tag_name }}
         run: |
-          sudo apt-get update && sudo apt-get install -y awscli
+          aws --version
           ENDPOINT="https://${R2_ACCOUNT_ID}.r2.cloudflarestorage.com"
 
           echo "Uploading $PACKAGE.zip to R2 bucket: $R2_BUCKET_NAME"

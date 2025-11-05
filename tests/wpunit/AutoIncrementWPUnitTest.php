@@ -176,6 +176,46 @@ SQL;
 
 		$ids = wp_list_pluck( $result, 'option_id' );
 		$this->assertCount( 10, array_unique( $ids ) );
+
+		// Check the auto_increment value. I.e. on the next insert, what is the id?
+
+		$wpdb->query(
+			$wpdb->prepare(
+				'INSERT INTO %i (`option_name`, `option_value`) VALUES (%s, %s) ',
+				array(
+					$this->prefix . $unprefixed_test_table_name,
+					'new_key',
+					'new_value',
+				)
+			)
+		);
+
+		$new_row = $wpdb->get_results(
+			$wpdb->prepare(
+				'SELECT * FROM %i WHERE `option_name` = %s',
+				array(
+					$this->prefix . $unprefixed_test_table_name,
+					'new_key',
+				)
+			),
+			ARRAY_A
+		);
+
+		$this->assertNotEmpty( $new_row );
+		// Assert the auto incremented value is higher than the previous highest id.
+		$this->assertEquals( '11', $new_row[0]['option_id'] );
+
+		$create_table = $wpdb->get_row(
+			$wpdb->prepare(
+				'SHOW CREATE TABLE %i',
+				array(
+					$this->prefix . $unprefixed_test_table_name,
+				)
+			),
+			ARRAY_A
+		);
+
+		$this->assertStringContainsString( 'AUTO_INCREMENT=12', $create_table['Create Table'] );
 	}
 
 	/**

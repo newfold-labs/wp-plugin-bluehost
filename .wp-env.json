@@ -17,11 +17,13 @@
   "themes": [
     "https://downloads.wordpress.org/theme/yith-wonder.latest-stable.zip"
   ],
+  "port": 8882,
+  "testsPort": 8883,
   "env": {
     "tests": {
       "config": {
-        "WP_SITEURL": "localhost:8889",
-        "WP_TESTS_DOMAIN": "localhost:8889",
+        "WP_SITEURL": "localhost:8883",
+        "WP_TESTS_DOMAIN": "localhost:8883",
         "WP_TESTS_TITLE": "Bluehost WordPress Plugin",
         "WP_TESTS_BINARY": "php"
       },

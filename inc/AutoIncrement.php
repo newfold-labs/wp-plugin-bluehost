@@ -79,7 +79,14 @@ class AutoIncrement {
 			return;
 		}
 
-		$wpdb->query( "LOCK TABLES {$prefixed_table_name} WRITE;" );
+		$wpdb->query(
+			$wpdb->prepare(
+				'LOCK TABLES %i WRITE;',
+				array(
+					$prefixed_table_name,
+				)
+			)
+		);
 
 		try {
 			// Step 1: Check if there are rows with id = 0.

@@ -132,49 +132,7 @@ class AutoIncrement {
 			}
 
 			// Step 2: Ensure the correct primary key exists on this column.
-			$existing_primary_key = $wpdb->get_results(
-				$wpdb->prepare(
-					"SHOW KEYS FROM %i WHERE Key_name = 'PRIMARY'",
-					array( $prefixed_table_name )
-				),
-				ARRAY_A
-			);
-
-			$has_primary_key = ! empty( $existing_primary_key );
-
-			// If there’s a primary key but it’s not on our target column, remove it.
-			if ( $has_primary_key ) {
-				$primary_key_columns = wp_list_pluck( $existing_primary_key, 'Column_name' );
-				if ( ! in_array( $column_name, $primary_key_columns, true ) ) {
-					$wpdb->query(
-						$wpdb->prepare(
-							'ALTER TABLE %i DROP PRIMARY KEY;',
-							array( $prefixed_table_name )
-						)
-					);
-					$has_primary_key = false;
-				}
-			}
-
-			// If no primary key exists now, check if the column has an index.
-			if ( ! $has_primary_key ) {
-				$has_index = $wpdb->get_var(
-					$wpdb->prepare(
-						'SHOW INDEX FROM %i WHERE Column_name = %s',
-						array( $prefixed_table_name, $column_name )
-					)
-				);
-
-				if ( ! $has_index ) {
-					// Add a primary key on this column.
-					$wpdb->query(
-						$wpdb->prepare(
-							'ALTER TABLE %i ADD PRIMARY KEY(%i)',
-							array( $prefixed_table_name, $column_name )
-						)
-					);
-				}
-			}
+			$this->set_correct_primary_key_column( $prefixed_table_name, $column_name );
 
 			// Step 3: Fix the column definition — Apply AUTO_INCREMENT safely.
 			$wpdb->query(
@@ -190,26 +148,6 @@ class AutoIncrement {
 		} finally {
 			$wpdb->query( 'UNLOCK TABLES;' );
 		}
-	}
-
-	/**
-	 * Check if a column has AUTO_INCREMENT by table name and column name.
-	 *
-	 * @param string $table_name The table name, with or without ~`wp_` prefix.
-	 * @param string $column_name The column name to query.
-	 *
-	 * @throws Exception When column info cannot be retrieved, e.g. table does not exist.
-	 */
-	public function has_autoincrement( string $table_name, string $column_name ): bool {
-		$prefixed_table_name = $this->get_prefixed_table_name( $table_name );
-		$column_info         = $this->get_column_info( $prefixed_table_name, $column_name );
-
-		if ( ! $column_info ) {
-			$error = $this->wpdb->last_error;
-			throw new Exception( esc_html( $error ) );
-		}
-
-		return $this->column_info_has_autoincrement( $column_info );
 	}
 
 	/**
@@ -243,5 +181,101 @@ class AutoIncrement {
 	 */
 	protected function column_info_has_autoincrement( array $column_info ): bool {
 		return stripos( $column_info['Extra'], 'auto_increment' ) !== false;
+	}
+
+	/**
+	 * Check is there an existing primary key for the correct column, if there is another remove it, set the column
+	 * to be the table's PRIMARY key.
+	 *
+	 * @param string $prefixed_table_name The table to check/modify.
+	 * @param string $column_name The column that should be the primary key.
+	 *
+	 * @throws Exception When there is a database error.
+	 */
+	protected function set_correct_primary_key_column( string $prefixed_table_name, string $column_name ): void {
+
+		$existing_primary_key = $this->get_primary_key_column_name( $prefixed_table_name );
+
+		if ( $existing_primary_key === $column_name ) {
+			return;
+		}
+
+		if ( ! is_null( $existing_primary_key ) ) {
+			$this->drop_primary_key( $prefixed_table_name );
+		}
+
+		$wpdb = $this->wpdb;
+
+		// Add a primary key on this column.
+		$wpdb->query(
+			$wpdb->prepare(
+				'ALTER TABLE %i ADD PRIMARY KEY (%i)',
+				array( $prefixed_table_name, $column_name )
+			)
+		);
+
+		$error = $this->wpdb->last_error;
+		if ( $error ) {
+			throw new Exception( esc_html( $error ) );
+		}
+	}
+
+	/**
+	 * Remove the primary key.
+	 *
+	 * @param string $prefixed_table_name The table to modify.
+	 */
+	protected function drop_primary_key( string $prefixed_table_name ): void {
+
+		$wpdb = $this->wpdb;
+
+		$wpdb->query(
+			$wpdb->prepare(
+				'ALTER TABLE %i DROP PRIMARY KEY;',
+				array( $prefixed_table_name )
+			)
+		);
+	}
+
+	/**
+	 * Run `SHOW KEYS...` query to determine if/name of the table's primary key.
+	 *
+	 * @see https://dev.mysql.com/doc/refman/8.4/en/show-index.html
+	 *
+	 * @param string $prefixed_table_name The table to check.
+	 *
+	 * @return ?string Null if there is no primary key.
+	 *
+	 * @throws Exception When there is a database error (e.g. invalid table name).
+	 */
+	protected function get_primary_key_column_name( string $prefixed_table_name ): ?string {
+		$wpdb = $this->wpdb;
+
+		/**
+		 * Query for an index named "PRIMARY".
+		 *
+		 * @var array<array{"Table":string,"Non_unique":"0"|"1","Key_name":string,"Seq_in_index":numeric-string,"Column_name":string,"Collation":"A"|"D"|null,"Cardinality":numeric-string,"Sub_part":numeric|null,"Packed":null,"Null":"YES"|string,"Index_type":string,"Comment":string,"Index_comment":string,"Ignored":string}> $existing_primary_key
+		 */
+		$existing_primary_key = $wpdb->get_results(
+			$wpdb->prepare(
+				"SHOW KEYS FROM %i WHERE Key_name = 'PRIMARY'",
+				array( $prefixed_table_name )
+			),
+			ARRAY_A
+		);
+
+		$error = $this->wpdb->last_error;
+		if ( $error ) {
+			throw new Exception( esc_html( $error ) );
+		}
+
+		/**
+		 * There can only be one primary key on a table so this array should have zero or one values.
+		 *
+		 * @var array{0?:string} $primary_key_columns
+		 */
+		$primary_key_columns = wp_list_pluck( $existing_primary_key, 'Column_name' );
+
+		return isset( $primary_key_columns[0] ) ? $primary_key_columns[0] : null;
 	}
 }

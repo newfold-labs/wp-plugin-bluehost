@@ -79,102 +79,108 @@ class AutoIncrement {
 			return;
 		}
 
-		// Step 1: Check if there are rows with id = 0.
-		$zero_id_rows = $wpdb->get_results(
-			$wpdb->prepare(
-				'SELECT %i FROM %i WHERE %i = 0',
-				array(
-					$column_name,
-					$prefixed_table_name,
-					$column_name,
-				)
-			),
-		);
+		$wpdb->query( "LOCK TABLES {$prefixed_table_name} WRITE;" );
 
-		if ( ! empty( $zero_id_rows ) ) {
-			// Find current max ID.
-			$max_id = (int) $this->wpdb->get_var(
+		try {
+			// Step 1: Check if there are rows with id = 0.
+			$zero_id_rows = $wpdb->get_results(
 				$wpdb->prepare(
-					'SELECT MAX(option_id) FROM %i',
+					'SELECT %i FROM %i WHERE %i = 0',
 					array(
+						$column_name,
 						$prefixed_table_name,
+						$column_name,
 					)
-				)
+				),
 			);
 
-			// Increment and fix zero-id rows.
-			foreach ( $zero_id_rows as $_row ) {
-				++$max_id;
-				$this->wpdb->query(
+			if ( ! empty( $zero_id_rows ) ) {
+				// Find current max ID.
+				$max_id = (int) $this->wpdb->get_var(
 					$wpdb->prepare(
-						'UPDATE %i SET %i = %d WHERE %i = 0 LIMIT 1',
+						'SELECT MAX(option_id) FROM %i',
 						array(
 							$prefixed_table_name,
-							$column_name,
-							$max_id,
-							$column_name,
 						)
 					)
 				);
+
+				// Increment and fix zero-id rows.
+				foreach ( $zero_id_rows as $_row ) {
+					++$max_id;
+					$this->wpdb->query(
+						$wpdb->prepare(
+							'UPDATE %i SET %i = %d WHERE %i = 0 LIMIT 1',
+							array(
+								$prefixed_table_name,
+								$column_name,
+								$max_id,
+								$column_name,
+							)
+						)
+					);
+				}
 			}
-		}
 
-		// Step 2: Ensure the correct primary key exists on this column.
-		$existing_primary_key = $wpdb->get_results(
-			$wpdb->prepare(
-				"SHOW KEYS FROM %i WHERE Key_name = 'PRIMARY'",
-				array( $prefixed_table_name )
-			),
-			ARRAY_A
-		);
-
-		$has_primary_key = ! empty( $existing_primary_key );
-
-		// If there’s a primary key but it’s not on our target column, remove it.
-		if ( $has_primary_key ) {
-			$primary_key_columns = wp_list_pluck( $existing_primary_key, 'Column_name' );
-			if ( ! in_array( $column_name, $primary_key_columns, true ) ) {
-				$wpdb->query(
-					$wpdb->prepare(
-						"ALTER TABLE %i DROP PRIMARY KEY;",
-						array( $prefixed_table_name )
-					)
-				);
-				$has_primary_key = false;
-			}
-		}
-
-		// If no primary key exists now, check if the column has an index.
-		if ( ! $has_primary_key ) {
-			$has_index = $wpdb->get_var(
+			// Step 2: Ensure the correct primary key exists on this column.
+			$existing_primary_key = $wpdb->get_results(
 				$wpdb->prepare(
-					"SHOW INDEX FROM %i WHERE Column_name = %s",
-					array( $prefixed_table_name, $column_name )
-				)
+					"SHOW KEYS FROM %i WHERE Key_name = 'PRIMARY'",
+					array( $prefixed_table_name )
+				),
+				ARRAY_A
 			);
 
-			if ( ! $has_index ) {
-				// Add a primary key on this column.
-				$wpdb->query(
+			$has_primary_key = ! empty( $existing_primary_key );
+
+			// If there’s a primary key but it’s not on our target column, remove it.
+			if ( $has_primary_key ) {
+				$primary_key_columns = wp_list_pluck( $existing_primary_key, 'Column_name' );
+				if ( ! in_array( $column_name, $primary_key_columns, true ) ) {
+					$wpdb->query(
+						$wpdb->prepare(
+							'ALTER TABLE %i DROP PRIMARY KEY;',
+							array( $prefixed_table_name )
+						)
+					);
+					$has_primary_key = false;
+				}
+			}
+
+			// If no primary key exists now, check if the column has an index.
+			if ( ! $has_primary_key ) {
+				$has_index = $wpdb->get_var(
 					$wpdb->prepare(
-						'ALTER TABLE %i ADD PRIMARY KEY(%i)',
+						'SHOW INDEX FROM %i WHERE Column_name = %s',
 						array( $prefixed_table_name, $column_name )
 					)
 				);
-			}
-		}
 
-		// Step 3: Fix the column definition — Apply AUTO_INCREMENT safely.
-		$wpdb->query(
-			$wpdb->prepare(
-                // phpcs:ignore WordPress.DB.PreparedSQL.InterpolatedNotPrepared
-				"ALTER TABLE %i MODIFY COLUMN %i {$column_info['Type']} NOT NULL auto_increment;",
-				array(
-					$prefixed_table_name,
-					$column_name,
+				if ( ! $has_index ) {
+					// Add a primary key on this column.
+					$wpdb->query(
+						$wpdb->prepare(
+							'ALTER TABLE %i ADD PRIMARY KEY(%i)',
+							array( $prefixed_table_name, $column_name )
+						)
+					);
+				}
+			}
+
+			// Step 3: Fix the column definition — Apply AUTO_INCREMENT safely.
+			$wpdb->query(
+				$wpdb->prepare(
+					// phpcs:ignore WordPress.DB.PreparedSQL.InterpolatedNotPrepared
+					"ALTER TABLE %i MODIFY COLUMN %i {$column_info['Type']} NOT NULL auto_increment;",
+					array(
+						$prefixed_table_name,
+						$column_name,
+					)
 				)
-			)
-		);
+			);
+		} finally {
+			$wpdb->query( 'UNLOCK TABLES;' );
+		}
 	}
 
 	/**

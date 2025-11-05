@@ -95,8 +95,9 @@ class AutoIncrement {
 			// Find current max ID.
 			$max_id = (int) $this->wpdb->get_var(
 				$wpdb->prepare(
-					'SELECT MAX(option_id) FROM %i',
+					'SELECT MAX(%i) FROM %i',
 					array(
+						$column_name,
 						$prefixed_table_name,
 					)
 				)

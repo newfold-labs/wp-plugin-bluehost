@@ -1,4 +1,10 @@
 <?php
+/**
+ * Simple UI feature for Bluehost plugin.
+ *
+ * @package WPPluginBluehost
+ */
+
 add_action(
 	'admin_menu',
 	function () {
@@ -22,7 +28,7 @@ add_action(
 					$version
 				);
 
-				echo file_get_contents( __DIR__ . '/index.html' ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped, WordPress.WP.AlternativeFunctions.file_get_contents_file_get_contents
+				echo file_get_contents( __DIR__ . '/index.html' );  // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped, WordPress.WP.AlternativeFunctions.file_get_contents_file_get_contents
 			},
 			'data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGZpbGw9Im5vbmUiIHZpZXdCb3g9IjAgMCA0MCA0MCI+CiAgICA8cGF0aCBmaWxsPSIjYTdhYWFkIiBkPSJNNCA0aDguOTMzdjguOTIzSDRWNFptMTEuNTMgMGg4Ljk0djguOTIzaC04Ljk0VjRabTExLjUzMSAwSDM2djguOTIzaC04LjkzOVY0Wk00IDE1LjUzOGg4LjkzM3Y4LjkyNEg0di04LjkyNFptMTEuNTMgMGg4Ljk0djguOTI0aC04Ljk0di04LjkyNFptMTEuNTMxIDBIMzZ2OC45MjRoLTguOTM5di04LjkyNFpNNCAyNy4wNzdoOC45MzNWMzZINHYtOC45MjNabTExLjUzIDBoOC45NFYzNmgtOC45NHYtOC45MjNabTExLjUzMSAwSDM2VjM2aC04LjkzOXYtOC45MjNaIi8+Cjwvc3ZnPg==',
 			1
@@ -30,8 +36,8 @@ add_action(
 	}
 );
 
-// Burst Safety Mode feature
-$bust_mode_path = BLUEHOST_PLUGIN_DIR . 'vendor/newfold-labs/wp-module-performance/includes/BurstSafetyMode/init.php';
-if ( file_exists( $bust_mode_path ) ) {
-	require_once $bust_mode_path;
+// Simple UI feature
+$burst_mode_path = BLUEHOST_PLUGIN_DIR . 'vendor/newfold-labs/wp-module-performance/includes/BurstSafetyMode/init.php';
+if ( file_exists( $burst_mode_path ) ) {
+	require_once $burst_mode_path;
 }

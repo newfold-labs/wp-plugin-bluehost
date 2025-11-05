@@ -12,10 +12,23 @@
 .cache/*
 !.cache/.gitkeep
 
+# WordPress core files
+/wordpress
+/wp-content
+
+# Tests
+/tests/_output
+/tests/_support/_generated
+
 # Cypress
 cypress.env.json
 /tests/cypress/screenshots
 /tests/cypress/videos
+
+# Playwright
+/tests/playwright/test-results
+/tests/playwright/artifacts
+/tests/playwright/playwright-projects.json
 
 # Built-app files
 /.docs

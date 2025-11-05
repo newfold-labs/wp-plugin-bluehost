@@ -2,6 +2,8 @@
 const { defineConfig, devices } = require('@playwright/test');
 const fs = require('fs');
 const { writeProjectsFile } = require('./.github/scripts/generate-playwright-projects');
+const { phpVersion, core } = require( './.wp-env.json' );
+const wpVersion = /[^/]*$/.exec( core )[ 0 ];
 
 // Read wp-env.json to get the correct port
 const wpEnvConfig = require('./.wp-env.json');
@@ -20,6 +22,8 @@ process.env.PLUGIN_DIR = __dirname;
 process.env.PLUGIN_ID = 'bluehost'
 process.env.WP_ADMIN_USERNAME = process.env.WP_ADMIN_USERNAME || 'admin';
 process.env.WP_ADMIN_PASSWORD = process.env.WP_ADMIN_PASSWORD || 'password';
+process.env.WP_VERSION = process.env.WP_VERSION || wpVersion;
+process.env.PHP_VERSION = process.env.PHP_VERSION || phpVersion;
 
 module.exports = defineConfig({
   globalSetup: require.resolve('./tests/playwright/global-setup.js'),

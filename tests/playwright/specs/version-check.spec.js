@@ -22,7 +22,7 @@ test.describe('Version Check', () => {
       .last();
     
     // Get the expected WordPress version from environment or use default
-    const expectedVersion = process.env.WP_VERSION || '6.8.3';
+    const expectedVersion = process.env.WP_VERSION;
     const versionText = await versionCell.textContent();
     
     expect(versionText).toMatch(new RegExp(`^${expectedVersion}`));
@@ -43,7 +43,7 @@ test.describe('Version Check', () => {
       .last();
     
     // Get the expected PHP version from environment or use default
-    const expectedPhpVersion = process.env.PHP_VERSION || '8.1';
+    const expectedPhpVersion = process.env.PHP_VERSION;
     const phpVersionText = await phpVersionCell.textContent();
     
     expect(phpVersionText).toContain(expectedPhpVersion);

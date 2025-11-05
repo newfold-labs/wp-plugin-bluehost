@@ -194,8 +194,6 @@ class AutoIncrement {
 	/**
 	 * Check if a column has AUTO_INCREMENT by table name and column name.
 	 *
-	 * @see https://dev.mysql.com/doc/refman/8.4/en/show-columns.html
-	 *
 	 * @param string $table_name The table name, with or without ~`wp_` prefix.
 	 * @param string $column_name The column name to query.
 	 *
@@ -215,6 +213,8 @@ class AutoIncrement {
 
 	/**
 	 * Get the column definition use `SHOW COLUMNS FROM ... LIKE ...`.
+	 *
+	 * @see https://dev.mysql.com/doc/refman/8.4/en/show-columns.html
 	 *
 	 * @param string $prefixed_table_name The table name, with ~`wp_` prefix.
 	 * @param string $column_name The column name to query.

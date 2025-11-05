@@ -29,22 +29,22 @@ class AutoIncrement {
 	 *
 	 * @param wpdb $wpdb WordPress DB ORM.
 	 */
-	public function __construct(
-		wpdb $wpdb
-	) {
-		$this->wpdb = $wpdb;
-	}
+public function __construct(
+	wpdb $wpdb
+) {
+	$this->wpdb = $wpdb;
+}
 
 	/**
 	 * Add the WordPress table prefix to the table name if missing.
 	 *
 	 * @param string $table_name The table name, with or without `wp_` prefix.
 	 */
-	protected function get_prefixed_table_name( string $table_name ): string {
-		return 0 === strpos( $table_name, $this->wpdb->prefix )
-			? $table_name
-			: $this->wpdb->prefix . $table_name;
-	}
+protected function get_prefixed_table_name( string $table_name ): string {
+	return 0 === strpos( $table_name, $this->wpdb->prefix )
+		? $table_name
+		: $this->wpdb->prefix . $table_name;
+}
 
 	/**
 	 * Fix missing AUTO_INCREMENT on wp_options.option_id if removed accidentally.
@@ -59,10 +59,10 @@ class AutoIncrement {
 	 *
 	 * @throws Exception When column info cannot be retrieved, e.g. table does not exist.
 	 */
-	public function fix_auto_increment(
-		string $table_name,
-		string $column_name
-	): void {
+public function fix_auto_increment(
+	string $table_name,
+	string $column_name
+): void {
 
 		$wpdb = $this->wpdb;
 
@@ -70,14 +70,14 @@ class AutoIncrement {
 
 		$column_info = $this->get_column_info( $prefixed_table_name, $column_name );
 
-		if ( ! $column_info ) {
-			$error = $wpdb->last_error;
-			throw new Exception( esc_html( $error ) );
-		}
+if ( ! $column_info ) {
+	$error = $wpdb->last_error;
+	throw new Exception( esc_html( $error ) );
+}
 
-		if ( $this->column_info_has_autoincrement( $column_info ) ) {
-			return;
-		}
+if ( $this->column_info_has_autoincrement( $column_info ) ) {
+	return;
+}
 
 		$wpdb->query( "LOCK TABLES {$prefixed_table_name} WRITE;" );
 
@@ -85,7 +85,11 @@ class AutoIncrement {
 			// Step 1: Check if there are rows with id = 0.
 			$zero_id_rows = $wpdb->get_results(
 				$wpdb->prepare(
+<< << <<< HEAD
 					'SELECT %i FROM %i WHERE %i = 0',
+=======
+					'SELECT MAX(%i) FROM %i',
+>>>>>>> @{-1}
 					array(
 						$column_name,
 						$prefixed_table_name,

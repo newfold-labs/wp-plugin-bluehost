@@ -119,18 +119,51 @@ class AutoIncrement {
 			}
 		}
 
-		// TODO: Maybe create an index/key the column if it doesn't exist.
-		// TODO: Check if primary key exists on the table.
-        // WordPress database error Incorrect table definition; there can be only one auto column and it must be defined as a key for query ALTER TABLE wp_test_options MODIFY COLUMN option_id bigint(20) unsigned NOT NULL auto_increment
-		$wpdb->query(
+		// Step 2: Ensure the correct primary key exists on this column.
+		$existing_primary_key = $wpdb->get_results(
 			$wpdb->prepare(
-				'ALTER TABLE %i ADD PRIMARY KEY(%i);',
-				array(
-					$prefixed_table_name,
-					$column_name,
-				)
-			)
+				"SHOW KEYS FROM %i WHERE Key_name = 'PRIMARY'",
+				array( $prefixed_table_name )
+			),
+			ARRAY_A
 		);
+
+		$has_primary_key = ! empty( $existing_primary_key );
+
+		// If there’s a primary key but it’s not on our target column, remove it.
+		if ( $has_primary_key ) {
+			$primary_key_columns = wp_list_pluck( $existing_primary_key, 'Column_name' );
+			if ( ! in_array( $column_name, $primary_key_columns, true ) ) {
+				$wpdb->query(
+					$wpdb->prepare(
+						"ALTER TABLE %i DROP PRIMARY KEY;",
+						array( $prefixed_table_name )
+					)
+				);
+				$has_primary_key = false;
+			}
+		}
+
+		// If no primary key exists now, check if the column has an index.
+		if ( ! $has_primary_key ) {
+			$has_index = $wpdb->get_var(
+				$wpdb->prepare(
+					"SHOW INDEX FROM %i WHERE Column_name = %s",
+					array( $prefixed_table_name, $column_name )
+				)
+			);
+
+			if ( ! $has_index ) {
+				// Add a primary key on this column.
+				$wpdb->query(
+					$wpdb->prepare(
+						'ALTER TABLE %i ADD PRIMARY KEY(%i)',
+						array( $prefixed_table_name, $column_name )
+					)
+				);
+			}
+		}
+
 		// Step 3: Fix the column definition — Apply AUTO_INCREMENT safely.
 		$wpdb->query(
 			$wpdb->prepare(

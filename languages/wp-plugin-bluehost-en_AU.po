@@ -1,15 +1,16 @@
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: Bluehost Plugi2024-10-21 07:10-00002024-10-21 07:10-0000none1.0text/plain; charset=UTF-88bitnplurals=2; plural=(n != 1);Crowdin\n"
 "Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-02-25T20:53:21+00:00\n"
+"PO-Revision-Date: 2025-02-25T20:53:21+00:00\n"
 "Last-Translator: \n"
 "Language-Team: \n"
+"Language: en_AU\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2025-02-25T20:53:21+00:00\n"
-"PO-Revision-Date: 2025-02-25T20:53:21+00:00\n"
-"Language: en_AU\n"
 
 #. Plugin Name of the plugin
 #: bluehost-wordpress-plugin.php
@@ -24,13 +25,15 @@ msgstr "https://bluehost.com"
 
 #. Description of the plugin
 #: bluehost-wordpress-plugin.php
-msgid "WordPress plugin that integrates a WordPress site with the Bluehost control panel, including performance, security, and update features."
-msgstr "WordPress plugin that integrates a WordPress site with the Bluehost control panel, including performance, security, and update features."
+msgid ""
+"WordPress plugin that integrates a WordPress site with the Bluehost control "
+"panel, including performance, security, and update features."
+msgstr ""
+"WordPress plugin that integrates a WordPress site with the Bluehost control "
+"panel, including performance, security, and update features."
 
 #. Author of the plugin
-#: bluehost-wordpress-plugin.php
-#: inc/Admin.php:162
-#: inc/Admin.php:163
+#: bluehost-wordpress-plugin.php inc/Admin.php:162 inc/Admin.php:163
 msgid "Bluehost"
 msgstr "Bluehost"
 
@@ -48,25 +51,27 @@ msgstr "%s &mdash; Coming Soon"
 msgid "Coming Soon Active"
 msgstr "Coming Soon Active"
 
-#. translators: %1$s is replaced with the opening link tag to preview the page, and %2$s is replaced with the closing link tag, %3$s is the opening link tag, %4$s is the closing link tag.
+#. translators: %1$s is replaced with the opening link tag to preview the
+#. page, and %2$s is replaced with the closing link tag, %3$s is the opening
+#. link tag, %4$s is the closing link tag.
 #: bootstrap.php:155
 #, php-format
-msgid "Your site is currently displaying a %1$scoming soon page%2$s. Once you are ready, %3$slaunch your site%4$s."
-msgstr "Your site is currently displaying a %1$scoming soon page%2$s. Once you are ready, %3$slaunch your site%4$s."
+msgid ""
+"Your site is currently displaying a %1$scoming soon page%2$s. Once you are "
+"ready, %3$slaunch your site%4$s."
+msgstr ""
+"Your site is currently displaying a %1$scoming soon page%2$s. Once you are "
+"ready, %3$slaunch your site%4$s."
 
 #: bootstrap.php:156
 msgid "Preview the coming soon landing page"
 msgstr "Preview the coming soon landing page"
 
-#: inc/Admin.php:74
-#: inc/Admin.php:328
-#: build/4.7.2/index.js:7
+#: inc/Admin.php:74 inc/Admin.php:328 build/4.7.2/index.js:7
 msgid "Home"
 msgstr "Home"
 
-#: inc/Admin.php:79
-#: inc/Admin.php:329
-#: build/4.7.2/index.js:7
+#: inc/Admin.php:79 inc/Admin.php:329 build/4.7.2/index.js:7
 msgid "Settings"
 msgstr "Settings"
 
@@ -75,8 +80,12 @@ msgid "Please update to a newer WordPress version."
 msgstr "Please update to a newer WordPress version."
 
 #: inc/AppWhenOutdated.php:41
-msgid "There are new WordPress components which this plugin requires in order to render the interface."
-msgstr "There are new WordPress components which this plugin requires in order to render the interface."
+msgid ""
+"There are new WordPress components which this plugin requires in order to "
+"render the interface."
+msgstr ""
+"There are new WordPress components which this plugin requires in order to "
+"render the interface."
 
 #. translators: 1: plugin name 2: incompatible plugin name
 #: inc/plugin-nfd-compat-check.php:161
@@ -90,11 +99,16 @@ msgstr "\"%1$s\" has self-deactivated. It is incompatible with \"%2$s\"."
 msgid "\"%1$s\" has been deactivated. It is incompatible with \"%2$s\"."
 msgstr "\"%1$s\" has been deactivated. It is incompatible with \"%2$s\"."
 
-#. translators: 1: plugin name 2: minimum required PHP version, current PHP version
+#. translators: 1: plugin name 2: minimum required PHP version, current PHP
+#. version
 #: inc/plugin-php-compat-check.php:123
 #, php-format
-msgid "%1$s requires PHP version %2$s or later. You are currently running version %3$s."
-msgstr "%1$s requires PHP version %2$s or later. You are currently running version %3$s."
+msgid ""
+"%1$s requires PHP version %2$s or later. You are currently running version "
+"%3$s."
+msgstr ""
+"%1$s requires PHP version %2$s or later. You are currently running version "
+"%3$s."
 
 #: inc/plugin-php-compat-check.php:124
 msgid " Please contact your web host about upgrading PHP."
@@ -106,11 +120,16 @@ msgstr " Please contact your web host about upgrading PHP."
 msgid "%1$s requires the %2$s PHP extension."
 msgstr "%1$s requires the %2$s PHP extension."
 
-#. translators: 1: plugin name 2: minimum required WordPress version 3: current WordPress version
+#. translators: 1: plugin name 2: minimum required WordPress version 3:
+#. current WordPress version
 #: inc/plugin-php-compat-check.php:155
 #, php-format
-msgid "%1$s requires WordPress version %2$s or later. You are currently running version %3$s."
-msgstr "%1$s requires WordPress version %2$s or later. You are currently running version %3$s."
+msgid ""
+"%1$s requires WordPress version %2$s or later. You are currently running "
+"version %3$s."
+msgstr ""
+"%1$s requires WordPress version %2$s or later. You are currently running "
+"version %3$s."
 
 #. translators: plugin name
 #: inc/plugin-php-compat-check.php:193
@@ -123,9 +142,7 @@ msgid "Sorry, you are not allowed to access this endpoint."
 msgstr "Sorry, you are not allowed to access this endpoint."
 
 #. translators: %s Settings > General page URL.
-#: inc/updates.php:115
-#: inc/updates.php:143
-#: inc/updates.php:170
+#: inc/updates.php:115 inc/updates.php:143 inc/updates.php:170
 #, php-format
 msgid "Auto-updates enabled on the <a href=\"%s\">Bluehost > Settings</a> page."
 msgstr "Auto-updates enabled on the <a href=\"%s\">Bluehost > Settings</a> page."
@@ -134,18 +151,15 @@ msgstr "Auto-updates enabled on the <a href=\"%s\">Bluehost > Settings</a> page.
 msgid "Auto-updates enabled"
 msgstr "Auto-updates enabled"
 
-#: inc/widgets/views/site-preview.php:148
-#: build/4.7.2/index.js:7
+#: inc/widgets/views/site-preview.php:148 build/4.7.2/index.js:7
 msgid "Not Live"
 msgstr "Not Live"
 
-#: inc/widgets/views/site-preview.php:149
-#: build/4.7.2/index.js:7
+#: inc/widgets/views/site-preview.php:149 build/4.7.2/index.js:7
 msgid "Live"
 msgstr "Live"
 
-#: inc/widgets/views/site-preview.php:162
-#: build/4.7.2/index.js:7
+#: inc/widgets/views/site-preview.php:162 build/4.7.2/index.js:7
 msgid "Your website is currently displaying a \"Coming Soon\" page."
 msgstr "Your website is currently displaying a \"Coming Soon\" page."
 
@@ -173,8 +187,7 @@ msgstr "Profile"
 msgid "Need Some Help?"
 msgstr "Need Some Help?"
 
-#: inc/widgets/SitePreview.php:36
-#: inc/widgets/views/site-preview.php:113
+#: inc/widgets/SitePreview.php:36 inc/widgets/views/site-preview.php:113
 #: inc/widgets/views/site-preview.php:118
 msgid "Site Preview"
 msgstr "Site Preview"
@@ -188,11 +201,12 @@ msgid "Renewals Center"
 msgstr "Renewals Center"
 
 #: inc/widgets/views/help.php:98
-msgid "Call or chat 24/7 for support or let our experts build your site for you."
-msgstr "Call or chat 24/7 for support or let our experts build your site for you."
+msgid ""
+"Call or chat 24/7 for support or let our experts build your site for you."
+msgstr ""
+"Call or chat 24/7 for support or let our experts build your site for you."
 
-#: inc/widgets/views/help.php:117
-#: build/4.7.2/index.js:9
+#: inc/widgets/views/help.php:117 build/4.7.2/index.js:9
 msgid "Get Help"
 msgstr "Get Help"
 
@@ -256,13 +270,24 @@ msgstr "From DIY to full-service help, always by your side."
 msgid "Hire Our Pros"
 msgstr "Hire Our Pros"
 
-#. translators: %1$s starts the bold text, %2$s ends the bold text and adds a line break, %3$s is the link to the Domain Registration page, %4$s is the closing link for Domain Registration, %5$s wraps everything inside a span with text-center class
+#. translators: %1$s starts the bold text, %2$s ends the bold text and adds a
+#. line break, %3$s is the link to the Domain Registration page, %4$s is the
+#. closing link for Domain Registration, %5$s wraps everything inside a span
+#. with text-center class
 #: bootstrap.php:97
 #, php-format
-msgid "%1$sNeed a domain?%2$sCheck out our %3$sDomain Registration%4$s options.%5$s"
-msgstr "%1$sNeed a domain?%2$sCheck out our %3$sDomain Registration%4$s options.%5$s"
+msgid ""
+"%1$sNeed a domain?%2$sCheck out our %3$sDomain Registration%4$s options.%5$s"
+msgstr ""
+"%1$sNeed a domain?%2$sCheck out our %3$sDomain Registration%4$s options.%5$s"
 
-#. translators: %1$s starts the bold text, %2$s ends the bold text and adds a line break, %3$s is the link to Shared Hosting, %4$s is the closing link for Shared Hosting, %5$s is the link to WordPress Hosting, %6$s is the closing link for WordPress Hosting, %7$s is the link to VPS Hosting, %8$s is the closing link for VPS Hosting, %9$s is the link to Dedicated Hosting, %10$s is the closing link for Dedicated Hosting, %11$s wraps everything inside a span with text-center class
+#. translators: %1$s starts the bold text, %2$s ends the bold text and adds a
+#. line break, %3$s is the link to Shared Hosting, %4$s is the closing link
+#. for Shared Hosting, %5$s is the link to WordPress Hosting, %6$s is the
+#. closing link for WordPress Hosting, %7$s is the link to VPS Hosting, %8$s
+#. is the closing link for VPS Hosting, %9$s is the link to Dedicated Hosting,
+#. %10$s is the closing link for Dedicated Hosting, %11$s wraps everything
+#. inside a span with text-center class
 #: bootstrap.php:106
 #, php-format
 msgid ""
@@ -280,7 +305,9 @@ msgstr ""
 "\t\t\t\t\t\t      %9$sDedicated Hosting%10$s. \n"
 "\t\t\t\t\t      %11$s"
 
-#. translators: %1$s is the logo SVG, %2$s wraps the text, %3$s is the link start for Bluehost WordPress Hosting, %4$s is the closing anchor tag, %5$s wraps the text again, %6$s contains backlinks
+#. translators: %1$s is the logo SVG, %2$s wraps the text, %3$s is the link
+#. start for Bluehost WordPress Hosting, %4$s is the closing anchor tag, %5$s
+#. wraps the text again, %6$s contains backlinks
 #: bootstrap.php:134
 #, php-format
 msgid ""
@@ -321,7 +348,8 @@ msgstr "Disable comments for older posts"
 msgid "Comments setting saved"
 msgstr "Comments setting saved"
 
-#. translators: %s: number of days. `Comments on posts are disabled after ${closeCommentsDays} days.`
+#. translators: %s: number of days. `Comments on posts are disabled after
+#. ${closeCommentsDays} days.`
 #: build/4.7.2/index.js:3
 #, js-format
 msgid "Comments on posts are disabled after %s day."
@@ -329,7 +357,8 @@ msgid_plural "Comments on posts are disabled after %s days."
 msgstr[0] ""
 msgstr[1] ""
 
-#. translators: %s: number of days. `Close comments after ${closeCommentsDays} days.`
+#. translators: %s: number of days. `Close comments after ${closeCommentsDays}
+#. days.`
 #: build/4.7.2/index.js:5
 #, js-format
 msgid "Close comments after %s day."
@@ -341,7 +370,8 @@ msgstr[1] ""
 msgid "Comments setting saved."
 msgstr "Comments setting saved."
 
-#. translators: %s: number of comments. `Posts will display ${commentsPerPage} comments at a time.`
+#. translators: %s: number of comments. `Posts will display ${commentsPerPage}
+#. comments at a time.`
 #: build/4.7.2/index.js:7
 #, js-format
 msgid "Posts will display %s comment at a time."
@@ -358,12 +388,14 @@ msgid "Comments"
 msgstr "Comments"
 
 #: build/4.7.2/index.js:7
-msgid "Comments allow visitors to provide feedback and respond to your posts or pages."
-msgstr "Comments allow visitors to provide feedback and respond to your posts or pages."
+msgid ""
+"Comments allow visitors to provide feedback and respond to your posts or "
+"pages."
+msgstr ""
+"Comments allow visitors to provide feedback and respond to your posts or "
+"pages."
 
-#: build/4.7.2/index.js:7
-#: build/4.7.2/index.js:9
-#: build/4.7.2/index.js:10
+#: build/4.7.2/index.js:7 build/4.7.2/index.js:9 build/4.7.2/index.js:10
 msgid "Oops! Something went wrong. Please try again."
 msgstr "Oops! Something went wrong. Please try again."
 
@@ -391,18 +423,15 @@ msgstr "Sales Channel"
 msgid "Payments"
 msgstr "Payments"
 
-#: build/4.7.2/index.js:7
-#: build/4.7.2/index.js:10
+#: build/4.7.2/index.js:7 build/4.7.2/index.js:10
 msgid "Store Details"
 msgstr "Store Details"
 
-#: build/4.7.2/index.js:7
-#: build/4.7.2/index.js:9
+#: build/4.7.2/index.js:7 build/4.7.2/index.js:9
 msgid "Marketplace"
 msgstr "Marketplace"
 
-#: build/4.7.2/index.js:7
-#: build/4.7.2/index.js:9
+#: build/4.7.2/index.js:7 build/4.7.2/index.js:9
 msgid "Admin"
 msgstr "Admin"
 
@@ -427,16 +456,28 @@ msgid "Site Status"
 msgstr "Site Status"
 
 #: build/4.7.2/index.js:7
-msgid "Turn off your \"Coming Soon\" page when you are ready to launch your website."
-msgstr "Turn off your \"Coming Soon\" page when you are ready to launch your website."
+msgid ""
+"Turn off your \"Coming Soon\" page when you are ready to launch your "
+"website."
+msgstr ""
+"Turn off your \"Coming Soon\" page when you are ready to launch your "
+"website."
 
 #: build/4.7.2/index.js:7
-msgid "Turn on your \"Coming Soon\" page when you need to make major changes to your website."
-msgstr "Turn on your \"Coming Soon\" page when you need to make major changes to your website."
+msgid ""
+"Turn on your \"Coming Soon\" page when you need to make major changes to "
+"your website."
+msgstr ""
+"Turn on your \"Coming Soon\" page when you need to make major changes to "
+"your website."
 
 #: build/4.7.2/index.js:7
-msgid "Your Bluehost Coming Soon page lets you hide your site from visitors while you make the magic happen."
-msgstr "Your Bluehost Coming Soon page lets you hide your site from visitors while you make the magic happen."
+msgid ""
+"Your Bluehost Coming Soon page lets you hide your site from visitors while "
+"you make the magic happen."
+msgstr ""
+"Your Bluehost Coming Soon page lets you hide your site from visitors while "
+"you make the magic happen."
 
 #: build/4.7.2/index.js:7
 msgid "Staging Enabled"
@@ -455,16 +496,18 @@ msgid "Staging will no longer display."
 msgstr "Staging will no longer display."
 
 #: build/4.7.2/index.js:7
-msgid "The staging feature provides a way to copy a site to test new updates, features or content."
-msgstr "The staging feature provides a way to copy a site to test new updates, features or content."
+msgid ""
+"The staging feature provides a way to copy a site to test new updates, "
+"features or content."
+msgstr ""
+"The staging feature provides a way to copy a site to test new updates, "
+"features or content."
 
-#: build/4.7.2/index.js:7
-#: build/4.7.2/index.js:10
+#: build/4.7.2/index.js:7 build/4.7.2/index.js:10
 msgid "Sorry, that is not allowed."
 msgstr "Sorry, that is not allowed."
 
-#: build/4.7.2/index.js:7
-#: build/4.7.2/index.js:10
+#: build/4.7.2/index.js:7 build/4.7.2/index.js:10
 msgid "This feature cannot currently be modified."
 msgstr "This feature cannot currently be modified."
 
@@ -485,8 +528,12 @@ msgid "The Help Center will no longer display."
 msgstr "The Help Center will no longer display."
 
 #: build/4.7.2/index.js:7
-msgid "The Help Center provides guided, step-by-step assistance as you build your site."
-msgstr "The Help Center provides guided, step-by-step assistance as you build your site."
+msgid ""
+"The Help Center provides guided, step-by-step assistance as you build your "
+"site."
+msgstr ""
+"The Help Center provides guided, step-by-step assistance as you build your "
+"site."
 
 #: build/4.7.2/index.js:7
 msgid "WonderBlocks Enabled"
@@ -505,8 +552,12 @@ msgid "WonderBlocks will no longer display."
 msgstr "WonderBlocks will no longer display."
 
 #: build/4.7.2/index.js:7
-msgid "WonderBlocks provides a library of customizable block patterns and page templates."
-msgstr "WonderBlocks provides a library of customizable block patterns and page templates."
+msgid ""
+"WonderBlocks provides a library of customizable block patterns and page "
+"templates."
+msgstr ""
+"WonderBlocks provides a library of customizable block patterns and page "
+"templates."
 
 #: build/4.7.2/index.js:9
 msgid "Bluehost WordPress Plugin"
@@ -613,10 +664,15 @@ msgid "Automatic Updates"
 msgstr "Automatic Updates"
 
 #: build/4.7.2/index.js:7
-msgid "Keeping automatic updates on ensures timely security fixes and the latest features."
-msgstr "Keeping automatic updates on ensures timely security fixes and the latest features."
+msgid ""
+"Keeping automatic updates on ensures timely security fixes and the latest "
+"features."
+msgstr ""
+"Keeping automatic updates on ensures timely security fixes and the latest "
+"features."
 
-#. translators: %s: number of weeks. `The trash will automatically empty every ${numTrashWeeks} weeks.`
+#. translators: %s: number of weeks. `The trash will automatically empty every
+#. ${numTrashWeeks} weeks.`
 #: build/4.7.2/index.js:9
 #, js-format
 msgid "The trash will automatically empty every %s week."
@@ -645,8 +701,10 @@ msgid "Explore our featured collection of tools and services."
 msgstr "Explore our featured collection of tools and services."
 
 #: build/4.7.2/index.js:9
-msgid "Oops, there was an error loading the marketplace, please try again later."
-msgstr "Oops, there was an error loading the marketplace, please try again later."
+msgid ""
+"Oops, there was an error loading the marketplace, please try again later."
+msgstr ""
+"Oops, there was an error loading the marketplace, please try again later."
 
 #: build/4.7.2/index.js:9
 msgid "Sorry, no marketplace items. Please, try again later."
@@ -681,8 +739,12 @@ msgid "Chat"
 msgstr "Chat"
 
 #: build/4.7.2/index.js:9
-msgid "Chat with one of our friendly Customer Care Specialists, as we are waiting to help. Open 24 hours - 7 days."
-msgstr "Chat with one of our friendly Customer Care Specialists, as we are waiting to help. Open 24 hours - 7 days."
+msgid ""
+"Chat with one of our friendly Customer Care Specialists, as we are waiting "
+"to help. Open 24 hours - 7 days."
+msgstr ""
+"Chat with one of our friendly Customer Care Specialists, as we are waiting "
+"to help. Open 24 hours - 7 days."
 
 #: build/4.7.2/index.js:9
 msgid "Live Chat"
@@ -693,8 +755,12 @@ msgid "Tweet"
 msgstr "Tweet"
 
 #: build/4.7.2/index.js:9
-msgid "Find our team at @bluehost for updates on our products and support from our team."
-msgstr "Find our team at @bluehost for updates on our products and support from our team."
+msgid ""
+"Find our team at @bluehost for updates on our products and support from our "
+"team."
+msgstr ""
+"Find our team at @bluehost for updates on our products and support from our "
+"team."
 
 #: build/4.7.2/index.js:9
 msgid "Tweet Us"
@@ -706,7 +772,8 @@ msgstr "YouTube"
 
 #: build/4.7.2/index.js:9
 msgid "Find tutorials, answers, interviews and guides on our YouTube channel."
-msgstr "Find tutorials, answers, interviews and guides on our YouTube channel."
+msgstr ""
+"Find tutorials, answers, interviews and guides on our YouTube channel."
 
 #: build/4.7.2/index.js:9
 msgid "Watch Now"
@@ -717,8 +784,12 @@ msgid "Knowledge Base"
 msgstr "Knowledge Base"
 
 #: build/4.7.2/index.js:9
-msgid "Articles, guides, how-tos, instructions, and answers to our client's most frequently asked questions."
-msgstr "Articles, guides, how-tos, instructions, and answers to our client's most frequently asked questions."
+msgid ""
+"Articles, guides, how-tos, instructions, and answers to our client's most "
+"frequently asked questions."
+msgstr ""
+"Articles, guides, how-tos, instructions, and answers to our client's most "
+"frequently asked questions."
 
 #: build/4.7.2/index.js:9
 msgid "Visit Knowledge Base"
@@ -741,8 +812,14 @@ msgid "Events and Webinars"
 msgstr "Events and Webinars"
 
 #: build/4.7.2/index.js:9
-msgid "Team Bluehost organizes multiple webinars and events throughout the year. We are also sponsors and speak at most WordCamps across the world. Join us at our next event!"
-msgstr "Team Bluehost organizes multiple webinars and events throughout the year. We are also sponsors and speak at most WordCamps across the world. Join us at our next event!"
+msgid ""
+"Team Bluehost organizes multiple webinars and events throughout the year. We"
+" are also sponsors and speak at most WordCamps across the world. Join us at "
+"our next event!"
+msgstr ""
+"Team Bluehost organizes multiple webinars and events throughout the year. We"
+" are also sponsors and speak at most WordCamps across the world. Join us at "
+"our next event!"
 
 #: build/4.7.2/index.js:9
 msgid "More Info"
@@ -753,20 +830,24 @@ msgid "Bluehost Website"
 msgstr "Bluehost Website"
 
 #: build/4.7.2/index.js:9
-msgid "Not finding what you need? Visit our website for more information about our products and services."
-msgstr "Not finding what you need? Visit our website for more information about our products and services."
+msgid ""
+"Not finding what you need? Visit our website for more information about our "
+"products and services."
+msgstr ""
+"Not finding what you need? Visit our website for more information about our "
+"products and services."
 
 #: build/4.7.2/index.js:9
 msgid "Go to Bluehost"
 msgstr "Go to Bluehost"
 
-#: build/4.7.2/index.js:7
-#: build/4.7.2/index.js:9
+#: build/4.7.2/index.js:7 build/4.7.2/index.js:9
 msgid "Help"
 msgstr "Help"
 
 #: build/4.7.2/index.js:9
-msgid "We are available 24/7 to help answer questions and solve your problems."
+msgid ""
+"We are available 24/7 to help answer questions and solve your problems."
 msgstr ""
 "\n"
 "develop"
@@ -793,8 +874,12 @@ msgid "Performance will no longer display."
 msgstr "Performance will no longer display."
 
 #: build/4.7.2/index.js:10
-msgid "The performance feature provides improvements to loads faster for visitors including cache settings."
-msgstr "The performance feature provides improvements to loads faster for visitors including cache settings."
+msgid ""
+"The performance feature provides improvements to loads faster for visitors "
+"including cache settings."
+msgstr ""
+"The performance feature provides improvements to loads faster for visitors "
+"including cache settings."
 
 #: build/4.7.2/index.js:10
 msgid "Oh No, An Error!"
@@ -816,8 +901,7 @@ msgstr "Error code:"
 msgid "Commerce"
 msgstr "Commerce"
 
-#: build/4.7.2/index.js:7
-#: build/4.7.2/index.js:9
+#: build/4.7.2/index.js:7 build/4.7.2/index.js:9
 msgid "Manage WordPress"
 msgstr "Manage WordPress"
 
@@ -834,8 +918,10 @@ msgid "Launch our AI Editor"
 msgstr "Launch our AI Editor"
 
 #: build/4.7.2/index.js:7
-msgid "Say hello to effortless site building with a wide library of 250+ blocks"
-msgstr "Say hello to effortless site building with a wide library of 250+ blocks"
+msgid ""
+"Say hello to effortless site building with a wide library of 250+ blocks"
+msgstr ""
+"Say hello to effortless site building with a wide library of 250+ blocks"
 
 #: build/4.7.2/index.js:7
 msgid "Launch the Editor"
@@ -850,16 +936,22 @@ msgid "General Settings"
 msgstr "General Settings"
 
 #: build/4.7.2/index.js:7
-msgid "A staging site is a duplicate of your live site, offering a secure environment to experiment, test updates, and deploy when ready."
-msgstr "A staging site is a duplicate of your live site, offering a secure environment to experiment, test updates, and deploy when ready."
+msgid ""
+"A staging site is a duplicate of your live site, offering a secure "
+"environment to experiment, test updates, and deploy when ready."
+msgstr ""
+"A staging site is a duplicate of your live site, offering a secure "
+"environment to experiment, test updates, and deploy when ready."
 
 #: build/4.7.2/index.js:7
 msgid "Optimize your content"
 msgstr "Optimize your content"
 
 #: build/4.7.2/index.js:7
-msgid "Optimize your content for search engines and boost your store visibility."
-msgstr "Optimize your content for search engines and boost your store visibility."
+msgid ""
+"Optimize your content for search engines and boost your store visibility."
+msgstr ""
+"Optimize your content for search engines and boost your store visibility."
 
 #: build/4.7.2/index.js:9
 msgid "Security, performance, backups, staging & more."
@@ -894,24 +986,34 @@ msgid "Pro Design Live"
 msgstr "Pro Design Live"
 
 #: build/4.7.2/index.js:7
-msgid "We will help you build and grow your website and improve your skills in WordPress."
-msgstr "We will help you build and grow your website and improve your skills in WordPress."
+msgid ""
+"We will help you build and grow your website and improve your skills in "
+"WordPress."
+msgstr ""
+"We will help you build and grow your website and improve your skills in "
+"WordPress."
 
 #: build/4.7.2/index.js:7
 msgid "Get Info"
 msgstr "Get Info"
 
 #: build/4.7.2/index.js:7
-msgid "Optimize your website my managing cache, security and performance settings."
-msgstr "Optimize your website my managing cache, security and performance settings."
+msgid ""
+"Optimize your website my managing cache, security and performance settings."
+msgstr ""
+"Optimize your website my managing cache, security and performance settings."
 
 #: build/4.7.2/index.js:7
 msgid "Premium tools available in eCommerce Add-Ons"
 msgstr "Premium tools available in eCommerce Add-Ons"
 
 #: build/4.7.2/index.js:7
-msgid "Discover exclusive features, designed to deliver unmatched value and elevate your online experience."
-msgstr "Discover exclusive features, designed to deliver unmatched value and elevate your online experience."
+msgid ""
+"Discover exclusive features, designed to deliver unmatched value and elevate"
+" your online experience."
+msgstr ""
+"Discover exclusive features, designed to deliver unmatched value and elevate"
+" your online experience."
 
 #: build/4.7.2/index.js:10
 msgid "Congrats, your store is live!"
@@ -924,3 +1026,662 @@ msgstr "Congrats, your website is live!"
 #: build/4.7.2/index.js:7
 msgid "Unlock exclusive benefits with our referral program."
 msgstr "Unlock exclusive benefits with our referral program."
+
+#: wordpress/wp-includes/blocks/widget-group/block.json
+msgctxt "block title"
+msgid "Widget Group"
+msgstr "Widget Group"
+
+#: wordpress/wp-content/themes/twentytwentyfour/theme.json
+msgctxt "Duotone name"
+msgid "Black and white"
+msgstr "Black and white"
+
+#: wordpress/wp-content/themes/twentytwentyfour/theme.json
+msgctxt "Duotone name"
+msgid "Black and sandstone"
+msgstr "Black and sandstone"
+
+#: wordpress/wp-content/themes/twentytwentyfour/theme.json
+msgctxt "Duotone name"
+msgid "Black and rust"
+msgstr "Black and rust"
+
+#: wordpress/wp-content/themes/twentytwentyfour/theme.json
+msgctxt "Duotone name"
+msgid "Black and sage"
+msgstr "Black and sage"
+
+#: wordpress/wp-content/themes/twentytwentyfour/theme.json
+msgctxt "Duotone name"
+msgid "Black and pastel blue"
+msgstr "Black and pastel blue"
+
+#: wordpress/wp-content/themes/twentytwentyfour/theme.json
+msgctxt "Gradient name"
+msgid "Vertical soft beige to white"
+msgstr "Vertical soft beige to white"
+
+#: wordpress/wp-content/themes/twentytwentyfour/theme.json
+msgctxt "Gradient name"
+msgid "Vertical soft sandstone to white"
+msgstr "Vertical soft sandstone to white"
+
+#: wordpress/wp-content/themes/twentytwentyfour/theme.json
+msgctxt "Gradient name"
+msgid "Vertical soft rust to white"
+msgstr "Vertical soft rust to white"
+
+#: wordpress/wp-content/themes/twentytwentyfour/theme.json
+msgctxt "Gradient name"
+msgid "Vertical soft sage to white"
+msgstr "Vertical soft sage to white"
+
+#: wordpress/wp-content/themes/twentytwentyfour/theme.json
+msgctxt "Gradient name"
+msgid "Vertical soft mint to white"
+msgstr "Vertical soft mint to white"
+
+#: wordpress/wp-content/themes/twentytwentyfour/theme.json
+msgctxt "Gradient name"
+msgid "Vertical soft pewter to white"
+msgstr "Vertical soft pewter to white"
+
+#: wordpress/wp-content/themes/twentytwentyfour/theme.json
+msgctxt "Gradient name"
+msgid "Vertical hard beige to white"
+msgstr "Vertical hard beige to white"
+
+#: wordpress/wp-content/themes/twentytwentyfour/theme.json
+msgctxt "Gradient name"
+msgid "Vertical hard sandstone to white"
+msgstr "Vertical hard sandstone to white"
+
+#: wordpress/wp-content/themes/twentytwentyfour/theme.json
+msgctxt "Gradient name"
+msgid "Vertical hard rust to white"
+msgstr "Vertical hard rust to white"
+
+#: wordpress/wp-content/themes/twentytwentyfour/theme.json
+msgctxt "Gradient name"
+msgid "Vertical hard sage to white"
+msgstr "Vertical hard sage to white"
+
+#: wordpress/wp-content/themes/twentytwentyfour/theme.json
+msgctxt "Gradient name"
+msgid "Vertical hard mint to white"
+msgstr "Vertical hard mint to white"
+
+#: wordpress/wp-content/themes/twentytwentyfour/theme.json
+msgctxt "Gradient name"
+msgid "Vertical hard pewter to white"
+msgstr "Vertical hard pewter to white"
+
+#: wordpress/wp-content/themes/twentytwentyfour/theme.json
+#: wordpress/wp-content/themes/twentytwentythree/theme.json
+msgctxt "Color name"
+msgid "Base"
+msgstr "Base"
+
+#: wordpress/wp-content/themes/twentytwentyfour/theme.json
+msgctxt "Color name"
+msgid "Base / Two"
+msgstr "Base / Two"
+
+#: wordpress/wp-content/themes/twentytwentyfour/theme.json
+#: wordpress/wp-content/themes/twentytwentythree/theme.json
+msgctxt "Color name"
+msgid "Contrast"
+msgstr "Contrast"
+
+#: wordpress/wp-content/themes/twentytwentyfour/theme.json
+msgctxt "Color name"
+msgid "Contrast / Two"
+msgstr "Contrast / Two"
+
+#: wordpress/wp-content/themes/twentytwentyfour/theme.json
+msgctxt "Color name"
+msgid "Contrast / Three"
+msgstr "Contrast / Three"
+
+#: wordpress/wp-content/themes/twentytwentyfour/theme.json
+msgctxt "Color name"
+msgid "Accent"
+msgstr "Accent"
+
+#: wordpress/wp-content/themes/twentytwentyfour/theme.json
+msgctxt "Color name"
+msgid "Accent / Two"
+msgstr "Accent / Two"
+
+#: wordpress/wp-content/themes/twentytwentyfour/theme.json
+msgctxt "Color name"
+msgid "Accent / Three"
+msgstr "Accent / Three"
+
+#: wordpress/wp-content/themes/twentytwentyfour/theme.json
+msgctxt "Color name"
+msgid "Accent / Four"
+msgstr "Accent / Four"
+
+#: wordpress/wp-content/themes/twentytwentyfour/theme.json
+msgctxt "Color name"
+msgid "Accent / Five"
+msgstr "Accent / Five"
+
+#: wordpress/wp-content/themes/twentytwentyfour/theme.json
+#: wordpress/wp-content/themes/twentytwentythree/theme.json
+msgctxt "Space size name"
+msgid "1"
+msgstr "1"
+
+#: wordpress/wp-content/themes/twentytwentyfour/theme.json
+#: wordpress/wp-content/themes/twentytwentythree/theme.json
+msgctxt "Space size name"
+msgid "2"
+msgstr "2"
+
+#: wordpress/wp-content/themes/twentytwentyfour/theme.json
+#: wordpress/wp-content/themes/twentytwentythree/theme.json
+msgctxt "Space size name"
+msgid "3"
+msgstr "3"
+
+#: wordpress/wp-content/themes/twentytwentyfour/theme.json
+#: wordpress/wp-content/themes/twentytwentythree/theme.json
+msgctxt "Space size name"
+msgid "4"
+msgstr "4"
+
+#: wordpress/wp-content/themes/twentytwentyfour/theme.json
+#: wordpress/wp-content/themes/twentytwentythree/theme.json
+msgctxt "Space size name"
+msgid "5"
+msgstr "5"
+
+#: wordpress/wp-content/themes/twentytwentyfour/theme.json
+#: wordpress/wp-content/themes/twentytwentythree/theme.json
+msgctxt "Space size name"
+msgid "6"
+msgstr "6"
+
+#: wordpress/wp-content/themes/twentytwentyfour/theme.json
+#: wordpress/wp-content/themes/twentytwentythree/theme.json
+msgctxt "Font family name"
+msgid "Inter"
+msgstr "Inter"
+
+#: wordpress/wp-content/themes/twentytwentyfour/theme.json
+msgctxt "Font family name"
+msgid "Cardo"
+msgstr "Cardo"
+
+#: wordpress/wp-content/themes/twentytwentyfour/theme.json
+msgctxt "Font family name"
+msgid "System Sans-serif"
+msgstr "System Sans-serif"
+
+#: wordpress/wp-content/themes/twentytwentyfour/theme.json
+msgctxt "Font family name"
+msgid "System Serif"
+msgstr "System Serif"
+
+#: wordpress/wp-content/themes/twentytwentyfour/theme.json
+#: wordpress/wp-includes/theme.json
+msgctxt "Font size name"
+msgid "Small"
+msgstr "Small"
+
+#: wordpress/wp-content/themes/twentytwentyfour/theme.json
+#: wordpress/wp-includes/theme.json
+msgctxt "Font size name"
+msgid "Medium"
+msgstr "Medium"
+
+#: wordpress/wp-content/themes/twentytwentyfour/theme.json
+#: wordpress/wp-includes/theme.json
+msgctxt "Font size name"
+msgid "Large"
+msgstr "Large"
+
+#: wordpress/wp-content/themes/twentytwentyfour/theme.json
+#: wordpress/wp-includes/theme.json
+msgctxt "Font size name"
+msgid "Extra Large"
+msgstr "Extra Large"
+
+#: wordpress/wp-content/themes/twentytwentyfour/theme.json
+msgctxt "Font size name"
+msgid "Extra Extra Large"
+msgstr "Extra Extra Large"
+
+#: wordpress/wp-content/themes/twentytwentyfour/theme.json
+#: wordpress/wp-content/themes/twentytwentythree/theme.json
+#: wordpress/wp-content/themes/twentytwentytwo/theme.json
+msgctxt "Template part name"
+msgid "Header"
+msgstr "Header"
+
+#: wordpress/wp-content/themes/twentytwentyfour/theme.json
+#: wordpress/wp-content/themes/twentytwentythree/theme.json
+#: wordpress/wp-content/themes/twentytwentytwo/theme.json
+msgctxt "Template part name"
+msgid "Footer"
+msgstr "Footer"
+
+#: wordpress/wp-content/themes/twentytwentyfour/theme.json
+msgctxt "Template part name"
+msgid "Sidebar"
+msgstr "Sidebar"
+
+#: wordpress/wp-content/themes/twentytwentyfour/theme.json
+#: wordpress/wp-content/themes/twentytwentythree/theme.json
+msgctxt "Template part name"
+msgid "Post Meta"
+msgstr "Post Meta"
+
+#: wordpress/wp-content/themes/twentytwentyfour/theme.json
+msgctxt "Custom template name"
+msgid "Page No Title"
+msgstr "Page No Title"
+
+#: wordpress/wp-content/themes/twentytwentyfour/theme.json
+msgctxt "Custom template name"
+msgid "Page with Sidebar"
+msgstr "Page with Sidebar"
+
+#: wordpress/wp-content/themes/twentytwentyfour/theme.json
+msgctxt "Custom template name"
+msgid "Page with Wide Image"
+msgstr "Page with Wide Image"
+
+#: wordpress/wp-content/themes/twentytwentyfour/theme.json
+msgctxt "Custom template name"
+msgid "Single with Sidebar"
+msgstr "Single with Sidebar"
+
+#: wordpress/wp-content/themes/twentytwentythree/theme.json
+#: wordpress/wp-content/themes/twentytwentytwo/theme.json
+msgctxt "Custom template name"
+msgid "Blank"
+msgstr "Blank"
+
+#: wordpress/wp-content/themes/twentytwentythree/theme.json
+msgctxt "Custom template name"
+msgid "Blog (Alternative)"
+msgstr "Blog (Alternative)"
+
+#: wordpress/wp-content/themes/twentytwentythree/theme.json
+msgctxt "Custom template name"
+msgid "404"
+msgstr "404"
+
+#: wordpress/wp-content/themes/twentytwentythree/theme.json
+#: wordpress/wp-content/themes/twentytwentytwo/theme.json
+msgctxt "Color name"
+msgid "Primary"
+msgstr "Primary"
+
+#: wordpress/wp-content/themes/twentytwentythree/theme.json
+#: wordpress/wp-content/themes/twentytwentytwo/theme.json
+msgctxt "Color name"
+msgid "Secondary"
+msgstr "Secondary"
+
+#: wordpress/wp-content/themes/twentytwentythree/theme.json
+#: wordpress/wp-content/themes/twentytwentytwo/theme.json
+msgctxt "Color name"
+msgid "Tertiary"
+msgstr "Tertiary"
+
+#: wordpress/wp-content/themes/twentytwentythree/theme.json
+msgctxt "Font family name"
+msgid "DM Sans"
+msgstr "DM Sans"
+
+#: wordpress/wp-content/themes/twentytwentythree/theme.json
+msgctxt "Font family name"
+msgid "IBM Plex Mono"
+msgstr "IBM Plex Mono"
+
+#: wordpress/wp-content/themes/twentytwentythree/theme.json
+#: wordpress/wp-content/themes/twentytwentytwo/theme.json
+msgctxt "Font family name"
+msgid "System Font"
+msgstr "System Font"
+
+#: wordpress/wp-content/themes/twentytwentythree/theme.json
+#: wordpress/wp-content/themes/twentytwentytwo/theme.json
+msgctxt "Font family name"
+msgid "Source Serif Pro"
+msgstr "Source Serif Pro"
+
+#: wordpress/wp-content/themes/twentytwentythree/theme.json
+msgctxt "Template part name"
+msgid "Comments Template Part"
+msgstr "Comments Template Part"
+
+#: wordpress/wp-content/themes/twentytwentytwo/theme.json
+msgctxt "Custom template name"
+msgid "Page (Large Header)"
+msgstr "Page (Large Header)"
+
+#: wordpress/wp-content/themes/twentytwentytwo/theme.json
+msgctxt "Custom template name"
+msgid "Single Post (No Separators)"
+msgstr "Single Post (No Separators)"
+
+#: wordpress/wp-content/themes/twentytwentytwo/theme.json
+msgctxt "Custom template name"
+msgid "Page (No Separators)"
+msgstr "Page (No Separators)"
+
+#: wordpress/wp-content/themes/twentytwentytwo/theme.json
+msgctxt "Duotone name"
+msgid "Foreground and background"
+msgstr "Foreground and background"
+
+#: wordpress/wp-content/themes/twentytwentytwo/theme.json
+msgctxt "Duotone name"
+msgid "Foreground and secondary"
+msgstr "Foreground and secondary"
+
+#: wordpress/wp-content/themes/twentytwentytwo/theme.json
+msgctxt "Duotone name"
+msgid "Foreground and tertiary"
+msgstr "Foreground and tertiary"
+
+#: wordpress/wp-content/themes/twentytwentytwo/theme.json
+msgctxt "Duotone name"
+msgid "Primary and background"
+msgstr "Primary and background"
+
+#: wordpress/wp-content/themes/twentytwentytwo/theme.json
+msgctxt "Duotone name"
+msgid "Primary and secondary"
+msgstr "Primary and secondary"
+
+#: wordpress/wp-content/themes/twentytwentytwo/theme.json
+msgctxt "Duotone name"
+msgid "Primary and tertiary"
+msgstr "Primary and tertiary"
+
+#: wordpress/wp-content/themes/twentytwentytwo/theme.json
+msgctxt "Gradient name"
+msgid "Vertical secondary to tertiary"
+msgstr "Vertical secondary to tertiary"
+
+#: wordpress/wp-content/themes/twentytwentytwo/theme.json
+msgctxt "Gradient name"
+msgid "Vertical secondary to background"
+msgstr "Vertical secondary to background"
+
+#: wordpress/wp-content/themes/twentytwentytwo/theme.json
+msgctxt "Gradient name"
+msgid "Vertical tertiary to background"
+msgstr "Vertical tertiary to background"
+
+#: wordpress/wp-content/themes/twentytwentytwo/theme.json
+msgctxt "Gradient name"
+msgid "Diagonal primary to foreground"
+msgstr "Diagonal primary to foreground"
+
+#: wordpress/wp-content/themes/twentytwentytwo/theme.json
+msgctxt "Gradient name"
+msgid "Diagonal secondary to background"
+msgstr "Diagonal secondary to background"
+
+#: wordpress/wp-content/themes/twentytwentytwo/theme.json
+msgctxt "Gradient name"
+msgid "Diagonal background to secondary"
+msgstr "Diagonal background to secondary"
+
+#: wordpress/wp-content/themes/twentytwentytwo/theme.json
+msgctxt "Gradient name"
+msgid "Diagonal tertiary to background"
+msgstr "Diagonal tertiary to background"
+
+#: wordpress/wp-content/themes/twentytwentytwo/theme.json
+msgctxt "Gradient name"
+msgid "Diagonal background to tertiary"
+msgstr "Diagonal background to tertiary"
+
+#: wordpress/wp-content/themes/twentytwentytwo/theme.json
+msgctxt "Color name"
+msgid "Foreground"
+msgstr "Foreground"
+
+#: wordpress/wp-content/themes/twentytwentytwo/theme.json
+msgctxt "Color name"
+msgid "Background"
+msgstr "Background"
+
+#: wordpress/wp-content/themes/twentytwentytwo/theme.json
+msgctxt "Template part name"
+msgid "Header (Dark, large)"
+msgstr "Header (Dark, large)"
+
+#: wordpress/wp-content/themes/twentytwentytwo/theme.json
+msgctxt "Template part name"
+msgid "Header (Dark, small)"
+msgstr "Header (Dark, small)"
+
+#: wordpress/wp-includes/theme.json
+msgctxt "Duotone name"
+msgid "Dark grayscale"
+msgstr "Dark grayscale"
+
+#: wordpress/wp-includes/theme.json
+msgctxt "Duotone name"
+msgid "Grayscale"
+msgstr "Grayscale"
+
+#: wordpress/wp-includes/theme.json
+msgctxt "Duotone name"
+msgid "Purple and yellow"
+msgstr "Purple and yellow"
+
+#: wordpress/wp-includes/theme.json
+msgctxt "Duotone name"
+msgid "Blue and red"
+msgstr "Blue and red"
+
+#: wordpress/wp-includes/theme.json
+msgctxt "Duotone name"
+msgid "Midnight"
+msgstr "Midnight"
+
+#: wordpress/wp-includes/theme.json
+msgctxt "Duotone name"
+msgid "Magenta and yellow"
+msgstr "Magenta and yellow"
+
+#: wordpress/wp-includes/theme.json
+msgctxt "Duotone name"
+msgid "Purple and green"
+msgstr "Purple and green"
+
+#: wordpress/wp-includes/theme.json
+msgctxt "Duotone name"
+msgid "Blue and orange"
+msgstr "Blue and orange"
+
+#: wordpress/wp-includes/theme.json
+msgctxt "Gradient name"
+msgid "Vivid cyan blue to vivid purple"
+msgstr "Vivid cyan blue to vivid purple"
+
+#: wordpress/wp-includes/theme.json
+msgctxt "Gradient name"
+msgid "Light green cyan to vivid green cyan"
+msgstr "Light green cyan to vivid green cyan"
+
+#: wordpress/wp-includes/theme.json
+msgctxt "Gradient name"
+msgid "Luminous vivid amber to luminous vivid orange"
+msgstr "Luminous vivid amber to luminous vivid orange"
+
+#: wordpress/wp-includes/theme.json
+msgctxt "Gradient name"
+msgid "Luminous vivid orange to vivid red"
+msgstr "Luminous vivid orange to vivid red"
+
+#: wordpress/wp-includes/theme.json
+msgctxt "Gradient name"
+msgid "Very light gray to cyan bluish gray"
+msgstr "Very light gray to cyan bluish gray"
+
+#: wordpress/wp-includes/theme.json
+msgctxt "Gradient name"
+msgid "Cool to warm spectrum"
+msgstr "Cool to warm spectrum"
+
+#: wordpress/wp-includes/theme.json
+msgctxt "Gradient name"
+msgid "Blush light purple"
+msgstr "Blush light purple"
+
+#: wordpress/wp-includes/theme.json
+msgctxt "Gradient name"
+msgid "Blush bordeaux"
+msgstr "Blush bordeaux"
+
+#: wordpress/wp-includes/theme.json
+msgctxt "Gradient name"
+msgid "Luminous dusk"
+msgstr "Luminous dusk"
+
+#: wordpress/wp-includes/theme.json
+msgctxt "Gradient name"
+msgid "Pale ocean"
+msgstr "Pale ocean"
+
+#: wordpress/wp-includes/theme.json
+msgctxt "Gradient name"
+msgid "Electric grass"
+msgstr "Electric grass"
+
+#: wordpress/wp-includes/theme.json
+msgctxt "Gradient name"
+msgid "Midnight"
+msgstr "Midnight"
+
+#: wordpress/wp-includes/theme.json
+msgctxt "Color name"
+msgid "Black"
+msgstr "Black"
+
+#: wordpress/wp-includes/theme.json
+msgctxt "Color name"
+msgid "Cyan bluish gray"
+msgstr "Cyan bluish gray"
+
+#: wordpress/wp-includes/theme.json
+msgctxt "Color name"
+msgid "White"
+msgstr "White"
+
+#: wordpress/wp-includes/theme.json
+msgctxt "Color name"
+msgid "Pale pink"
+msgstr "Pale pink"
+
+#: wordpress/wp-includes/theme.json
+msgctxt "Color name"
+msgid "Vivid red"
+msgstr "Vivid red"
+
+#: wordpress/wp-includes/theme.json
+msgctxt "Color name"
+msgid "Luminous vivid orange"
+msgstr "Luminous vivid orange"
+
+#: wordpress/wp-includes/theme.json
+msgctxt "Color name"
+msgid "Luminous vivid amber"
+msgstr "Luminous vivid amber"
+
+#: wordpress/wp-includes/theme.json
+msgctxt "Color name"
+msgid "Light green cyan"
+msgstr "Light green cyan"
+
+#: wordpress/wp-includes/theme.json
+msgctxt "Color name"
+msgid "Vivid green cyan"
+msgstr "Vivid green cyan"
+
+#: wordpress/wp-includes/theme.json
+msgctxt "Color name"
+msgid "Pale cyan blue"
+msgstr "Pale cyan blue"
+
+#: wordpress/wp-includes/theme.json
+msgctxt "Color name"
+msgid "Vivid cyan blue"
+msgstr "Vivid cyan blue"
+
+#: wordpress/wp-includes/theme.json
+msgctxt "Color name"
+msgid "Vivid purple"
+msgstr "Vivid purple"
+
+#: wordpress/wp-includes/theme.json
+msgctxt "Aspect ratio name"
+msgid "Square - 1:1"
+msgstr "Square - 1:1"
+
+#: wordpress/wp-includes/theme.json
+msgctxt "Aspect ratio name"
+msgid "Standard - 4:3"
+msgstr "Standard - 4:3"
+
+#: wordpress/wp-includes/theme.json
+msgctxt "Aspect ratio name"
+msgid "Portrait - 3:4"
+msgstr "Portrait - 3:4"
+
+#: wordpress/wp-includes/theme.json
+msgctxt "Aspect ratio name"
+msgid "Classic - 3:2"
+msgstr "Classic - 3:2"
+
+#: wordpress/wp-includes/theme.json
+msgctxt "Aspect ratio name"
+msgid "Classic Portrait - 2:3"
+msgstr "Classic Portrait - 2:3"
+
+#: wordpress/wp-includes/theme.json
+msgctxt "Aspect ratio name"
+msgid "Wide - 16:9"
+msgstr "Wide - 16:9"
+
+#: wordpress/wp-includes/theme.json
+msgctxt "Aspect ratio name"
+msgid "Tall - 9:16"
+msgstr "Tall - 9:16"
+
+#: wordpress/wp-includes/theme.json
+msgctxt "Shadow name"
+msgid "Natural"
+msgstr "Natural"
+
+#: wordpress/wp-includes/theme.json
+msgctxt "Shadow name"
+msgid "Deep"
+msgstr "Deep"
+
+#: wordpress/wp-includes/theme.json
+msgctxt "Shadow name"
+msgid "Sharp"
+msgstr "Sharp"
+
+#: wordpress/wp-includes/theme.json
+msgctxt "Shadow name"
+msgid "Outlined"
+msgstr "Outlined"
+
+#: wordpress/wp-includes/theme.json
+msgctxt "Shadow name"
+msgid "Crisp"
+msgstr "Crisp"

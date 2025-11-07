@@ -68,6 +68,20 @@
       "@i18n-po",
       "@i18n-json",
       "@i18n-php"
+    ],
+    "prefix-namespaces": [
+        "sh -c 'test -f ./bin/strauss.phar || curl -o bin/strauss.phar -L -C - https://github.com/BrianHenryIE/strauss/releases/latest/download/strauss.phar'",
+        "@php bin/strauss.phar",
+        "@composer dump-autoload"
+    ],
+    "post-install-cmd": [
+        "@prefix-namespaces"
+    ],
+    "post-update-cmd": [
+        "@prefix-namespaces"
+    ],
+    "post-autoload-dump": [
+        "@php bin/strauss.phar include-autoloader"
     ]
   },
   "scripts-descriptions": {
@@ -79,7 +93,11 @@
     "i18n-mo": "Generate new language .mo files.",
     "i18n-json": "Generate new language .json files.",
     "i18n-ci-pre": "Command for CI to run before generating language files.",
-    "i18n-ci-post": "Command for CI to run after generating language files."
+    "i18n-ci-post": "Command for CI to run after generating language files.",
+    "prefix-namespaces": "Prefix namespaces for the plugin.",
+    "post-install-cmd": "Command to run after installing the plugin.",
+    "post-update-cmd": "Command to run after updating the plugin.",
+    "post-autoload-dump": "Command to run after dumping the autoloader."
   },
   "require-dev": {
     "newfold-labs/wp-php-standards": "^1.2.5",
@@ -105,7 +123,7 @@
     "newfold-labs/wp-module-link-tracker": "^1.1.4",
     "newfold-labs/wp-module-loader": "^1.0.13",
     "newfold-labs/wp-module-marketplace": "^3.1.1",
-    "newfold-labs/wp-module-mcp": "^1.0.1",
+    "newfold-labs/wp-module-mcp": "^1.1.1",
     "newfold-labs/wp-module-migration": "^1.6.2",
     "newfold-labs/wp-module-next-steps": "^1.4.5",
     "newfold-labs/wp-module-notifications": "^1.6.12",

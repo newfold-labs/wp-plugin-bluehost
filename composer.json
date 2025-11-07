@@ -101,7 +101,7 @@
     "test-coverage": "Run tests with coverage, merge coverage and create HTML report."
   },
   "require-dev": {
-    "johnpbloch/wordpress": "6.6.0",
+    "johnpbloch/wordpress": "6.8.3",
     "lucatume/wp-browser": "*",
     "newfold-labs/wp-php-standards": "^1.2.5",
     "phpunit/phpcov": "*",

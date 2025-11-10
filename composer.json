@@ -80,8 +80,6 @@
       "@i18n-php"
     ],
     "prefix-namespaces": [
-        "sh -c 'test -f ./bin/strauss.phar || curl -o bin/strauss.phar -L -C - https://github.com/BrianHenryIE/strauss/releases/latest/download/strauss.phar'",
-        "@php bin/strauss.phar",
         "@composer dump-autoload"
     ],
     "post-install-cmd": [
@@ -89,9 +87,6 @@
     ],
     "post-update-cmd": [
         "@prefix-namespaces"
-    ],
-    "post-autoload-dump": [
-        "@php bin/strauss.phar include-autoloader"
     ],
     "test": [
       "codecept run wpunit"

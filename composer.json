@@ -27,6 +27,20 @@
     "preferred-install": {
       "newfold-labs/*": "source",
       "*": "dist"
+    },
+    "strauss": {
+      "target_directory": "vendor-prefixed",
+      "namespace_prefix": "NewfoldLabs\\Bluehost\\",
+      "classmap_prefix": "NewfoldLabs_Bluehost_",
+      "constant_prefix": "NLB_",
+      "packages": [],
+      "update_call_sites": true,
+      "override_autoload": {},
+      "exclude_from_copy": {},
+      "exclude_from_prefix": {},
+      "namespace_replacement_patterns": {},
+      "delete_vendor_packages": false,
+      "delete_vendor_files": false
     }
   },
   "extra": {
@@ -79,20 +93,6 @@
       "@i18n-json",
       "@i18n-php"
     ],
-    "prefix-namespaces": [
-        "sh -c 'test -f ./bin/strauss.phar || curl -o bin/strauss.phar -L -C - https://github.com/BrianHenryIE/strauss/releases/latest/download/strauss.phar'",
-        "@php bin/strauss.phar",
-        "@composer dump-autoload"
-    ],
-    "post-install-cmd": [
-        "@prefix-namespaces"
-    ],
-    "post-update-cmd": [
-        "@prefix-namespaces"
-    ],
-    "post-autoload-dump": [
-        "@php bin/strauss.phar include-autoloader"
-    ],
     "test": [
       "codecept run wpunit"
     ],
@@ -121,9 +121,9 @@
   },
   "require-dev": {
     "johnpbloch/wordpress": "6.8.3",
-    "lucatume/wp-browser": "*",
+    "lucatume/wp-browser": ">=3.7.15",
     "newfold-labs/wp-php-standards": "^1.2.5",
-    "phpunit/phpcov": "*",
+    "phpunit/phpcov": ">=8.2.1",
     "roave/security-advisories": "dev-latest",
     "wp-cli/i18n-command": "^2.6.5",
     "wp-phpunit/wp-phpunit": "^6.8.3"
@@ -146,13 +146,13 @@
     "newfold-labs/wp-module-link-tracker": "^1.1.4",
     "newfold-labs/wp-module-loader": "^1.0.13",
     "newfold-labs/wp-module-marketplace": "^3.1.1",
-    "newfold-labs/wp-module-mcp": "^1.1.1",
+    "newfold-labs/wp-module-mcp": "^1.1.2",
     "newfold-labs/wp-module-migration": "^1.6.3",
     "newfold-labs/wp-module-next-steps": "^1.4.5",
     "newfold-labs/wp-module-notifications": "^1.6.12",
     "newfold-labs/wp-module-onboarding": "^3.2.12",
     "newfold-labs/wp-module-onboarding-data": "^1.2.19",
-    "newfold-labs/wp-module-patterns": "^2.11.0",
+    "newfold-labs/wp-module-patterns": "^2.11.1",
     "newfold-labs/wp-module-performance": "^3.5.4",
     "newfold-labs/wp-module-pls": "^1.1.2",
     "newfold-labs/wp-module-runtime": "^1.1.3",

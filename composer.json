@@ -32,15 +32,20 @@
       "target_directory": "vendor-prefixed",
       "namespace_prefix": "NewfoldLabs\\Bluehost\\",
       "classmap_prefix": "NewfoldLabs_Bluehost_",
-      "constant_prefix": "NLB_",
-      "packages": [],
-      "update_call_sites": true,
-      "override_autoload": {},
-      "exclude_from_copy": {},
-      "exclude_from_prefix": {},
-      "namespace_replacement_patterns": {},
-      "delete_vendor_packages": false,
-      "delete_vendor_files": false
+      "constant_prefix": "NFD_",
+      "packages": [
+        "wordpress/abilities-api"
+      ],
+      "override_autoload": {
+        "wordPress/abilities-api": {
+          "files": [
+            "includes/bootstrap.php"
+          ],
+          "classmap": [
+            "includes"
+          ]
+        }
+      }
     }
   },
   "extra": {
@@ -92,6 +97,20 @@
       "@i18n-po",
       "@i18n-json",
       "@i18n-php"
+    ],
+    "prefix-namespaces": [
+      "sh -c 'test -f ./bin/strauss.phar || curl -o bin/strauss.phar -L -C - https://github.com/BrianHenryIE/strauss/releases/latest/download/strauss.phar'",
+      "@php bin/strauss.phar  --info",
+      "@composer dump-autoload"
+    ],
+    "post-install-cmd": [
+      "@prefix-namespaces"
+    ],
+    "post-update-cmd": [
+      "@prefix-namespaces"
+    ],
+    "post-autoload-dump": [
+      "@php bin/strauss.phar include-autoloader"
     ],
     "test": [
       "codecept run wpunit"

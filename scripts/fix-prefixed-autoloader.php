@@ -43,6 +43,28 @@ if (file_exists($autoloadStaticFile)) {
     $staticContent = file_get_contents($autoloadStaticFile);
     $needsFix = false;
     
+    // Extract the actual ComposerStaticInit class name from the file
+    $classNameMatch = [];
+    if (!preg_match('/class (ComposerStaticInit[a-f0-9]+)/', $staticContent, $classNameMatch)) {
+        echo "Error: Could not find ComposerStaticInit class name in autoload_static.php\n";
+        exit(1);
+    }
+    $actualClassName = $classNameMatch[1];
+    
+    // Fix any hardcoded wrong class name references in the getInitializer closure
+    // Replace any incorrect ComposerStaticInit references with the actual class name
+    // This handles cases where the class name hash changes between Composer runs
+    $staticContent = preg_replace(
+        '/ComposerStaticInit[a-f0-9]+::\$prefixLengthsPsr4/',
+        $actualClassName . '::$prefixLengthsPsr4',
+        $staticContent
+    );
+    $staticContent = preg_replace(
+        '/ComposerStaticInit[a-f0-9]+::\$classMap/',
+        $actualClassName . '::$classMap',
+        $staticContent
+    );
+    
     // Check if prefixDirsPsr4 is being set in the closure
     if (!preg_match('/\$loader->prefixDirsPsr4\s*=/', $staticContent)) {
         $needsFix = true;
@@ -71,7 +93,7 @@ if (file_exists($autoloadStaticFile)) {
             // If prefixLengthsPsr4 isn't being set, add both
             $staticContent = preg_replace(
                 '/(return \\\\Closure::bind\(function \(\) use \(\$loader\) \{)/s',
-                "$1\n            \$loader->prefixLengthsPsr4 = ComposerStaticInitfc263b861a3a821216a94f842c3a3e31::\$prefixLengthsPsr4;\n            // Resolve relative paths to absolute paths\n            \$mcpPath = __DIR__ . '/../wordpress/mcp-adapter/includes';\n            \$resolvedMcpPath = realpath(\$mcpPath);\n            \$loader->prefixDirsPsr4 = array(\n                'Bluehost\\\\\\\\Plugin\\\\\\\\WP\\\\\\\\MCP\\\\\\\\' => array(\n                    \$resolvedMcpPath !== false ? \$resolvedMcpPath : \$mcpPath,\n                ),\n                'Bluehost\\\\\\\\Plugin\\\\\\\\Composer\\\\\\\\' => array(\n                    __DIR__ . '/..' . '/composer',\n                ),\n            );",
+                "$1\n            \$loader->prefixLengthsPsr4 = {$actualClassName}::\$prefixLengthsPsr4;\n            // Resolve relative paths to absolute paths\n            \$mcpPath = __DIR__ . '/../wordpress/mcp-adapter/includes';\n            \$resolvedMcpPath = realpath(\$mcpPath);\n            \$loader->prefixDirsPsr4 = array(\n                'Bluehost\\\\\\\\Plugin\\\\\\\\WP\\\\\\\\MCP\\\\\\\\' => array(\n                    \$resolvedMcpPath !== false ? \$resolvedMcpPath : \$mcpPath,\n                ),\n                'Bluehost\\\\\\\\Plugin\\\\\\\\Composer\\\\\\\\' => array(\n                    __DIR__ . '/..' . '/composer',\n                ),\n            );",
                 $staticContent
             );
         }

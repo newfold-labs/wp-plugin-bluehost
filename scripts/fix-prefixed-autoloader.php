@@ -11,8 +11,22 @@ $autoloadRealFile = __DIR__ . '/../vendor-prefixed/composer/autoload_real.php';
 $autoloadStaticFile = __DIR__ . '/../vendor-prefixed/composer/autoload_static.php';
 
 if (!file_exists($autoloadRealFile)) {
-    echo "Autoloader file not found: $autoloadRealFile\n";
-    exit(1);
+    // If the file doesn't exist, Strauss hasn't run yet or there are no packages to prefix
+    // Check if there are actually packages configured to be prefixed
+    $composerJson = __DIR__ . '/../composer.json';
+    if (file_exists($composerJson)) {
+        $composer = json_decode(file_get_contents($composerJson), true);
+        $packages = $composer['extra']['strauss']['packages'] ?? [];
+        if (!empty($packages)) {
+            // Packages are configured but Strauss hasn't run - this is an error
+            echo "Error: Prefixed autoloader not found but packages are configured for prefixing.\n";
+            echo "Please run 'composer run-script prefix-namespaces' first.\n";
+            exit(1);
+        }
+    }
+    // No packages to prefix, so it's fine to skip
+    echo "No packages configured for prefixing. Skipping fix.\n";
+    exit(0);
 }
 
 // Fix autoload_real.php: Remove setClassMapAuthoritative(true)

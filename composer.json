@@ -89,7 +89,7 @@
     "ensure-strauss": "sh -c 'test -f ./bin/strauss.phar || (mkdir -p bin && curl -o bin/strauss.phar -L https://github.com/BrianHenryIE/strauss/releases/latest/download/strauss.phar && chmod +x bin/strauss.phar)'",
     "prefix-namespaces": [
       "@ensure-strauss",
-      "@php bin/strauss.phar --info",
+      "@php bin/strauss.phar",
       "@composer dump-autoload",
       "@fix-prefixed-autoloader"
     ],
@@ -103,6 +103,7 @@
     "post-autoload-dump": [
       "@ensure-strauss",
       "@php bin/strauss.phar include-autoloader",
+      "@php bin/strauss.phar",
       "@fix-prefixed-autoloader"
     ],
     "test": [

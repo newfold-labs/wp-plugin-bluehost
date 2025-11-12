@@ -27,17 +27,20 @@
     "preferred-install": {
       "newfold-labs/*": "source",
       "*": "dist"
-    },
+    }
+  },
+  "extra": {
+    "installer-name": "bluehost-wordpress-plugin",
     "strauss": {
       "target_directory": "vendor-prefixed",
-      "namespace_prefix": "NewfoldLabs\\Bluehost\\",
-      "classmap_prefix": "NewfoldLabs_Bluehost_",
-      "constant_prefix": "NFD_",
+      "namespace_prefix": "Bluehost\\Plugin\\",
       "packages": [
-        "wordpress/abilities-api"
+        "newfold-labs/wp-module-mcp",
+        "wordpress/abilities-api",
+        "wordpress/mcp-adapter"
       ],
       "override_autoload": {
-        "wordPress/abilities-api": {
+        "wordpress/abilities-api": {
           "files": [
             "includes/bootstrap.php"
           ],
@@ -47,9 +50,6 @@
         }
       }
     }
-  },
-  "extra": {
-    "installer-name": "bluehost-wordpress-plugin"
   },
   "repositories": {
     "newfold": {
@@ -100,7 +100,7 @@
     ],
     "prefix-namespaces": [
       "sh -c 'test -f ./bin/strauss.phar || curl -o bin/strauss.phar -L -C - https://github.com/BrianHenryIE/strauss/releases/latest/download/strauss.phar'",
-      "@php bin/strauss.phar  --info",
+      "@php bin/strauss.phar --info",
       "@composer dump-autoload"
     ],
     "post-install-cmd": [

@@ -86,8 +86,9 @@
       "@i18n-json",
       "@i18n-php"
     ],
+    "ensure-strauss": "sh -c 'test -f ./bin/strauss.phar || (mkdir -p bin && curl -o bin/strauss.phar -L https://github.com/BrianHenryIE/strauss/releases/latest/download/strauss.phar && chmod +x bin/strauss.phar)'",
     "prefix-namespaces": [
-      "sh -c 'test -f ./bin/strauss.phar || curl -o bin/strauss.phar -L -C - https://github.com/BrianHenryIE/strauss/releases/latest/download/strauss.phar'",
+      "@ensure-strauss",
       "@php bin/strauss.phar --info",
       "@composer dump-autoload",
       "@fix-prefixed-autoloader"
@@ -100,6 +101,7 @@
       "@prefix-namespaces"
     ],
     "post-autoload-dump": [
+      "@ensure-strauss",
       "@php bin/strauss.phar include-autoloader",
       "@fix-prefixed-autoloader"
     ],
@@ -122,7 +124,9 @@
     "i18n-json": "Generate new language .json files.",
     "i18n-ci-pre": "Command for CI to run before generating language files.",
     "i18n-ci-post": "Command for CI to run after generating language files.",
+    "ensure-strauss": "Ensure Strauss PHAR exists and is executable (downloads if missing).",
     "prefix-namespaces": "Prefix namespaces for the plugin.",
+    "fix-prefixed-autoloader": "Fix prefixed autoloader to enable PSR-4 lookups.",
     "post-install-cmd": "Command to run after installing the plugin.",
     "post-update-cmd": "Command to run after updating the plugin.",
     "post-autoload-dump": "Command to run after dumping the autoloader.",

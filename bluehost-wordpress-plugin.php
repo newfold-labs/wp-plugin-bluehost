@@ -13,7 +13,7 @@
  * Update URI:        https://github.com/bluehost/bluehost-wordpress-plugin
  * Description:       WordPress plugin that integrates a WordPress site with the Bluehost control panel, including performance, security, and update features.
  * Version:           4.8.0
- * Requires PHP:      7.3
+ * Requires PHP:      7.4
  * Requires at least: 6.6
  * Tested up to:      6.8.3
  * Author:            Bluehost
@@ -77,6 +77,6 @@ $nfd_plugins_check->legacy_plugins = array(
 $pass_nfd_check = $nfd_plugins_check->check_plugin_requirements();
 
 // Check PHP version before initializing to prevent errors if plugin is incompatible.
-if ( $pass_nfd_check && version_compare( PHP_VERSION, '7.3', '>=' ) ) {
+if ( $pass_nfd_check && version_compare( PHP_VERSION, '7.4', '>=' ) ) {
 	require __DIR__ . '/bootstrap.php';
 }

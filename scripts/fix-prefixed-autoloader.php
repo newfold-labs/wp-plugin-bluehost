@@ -1,12 +1,14 @@
 <?php
 /**
  * Fix the prefixed autoloader to enable PSR-4 lookups.
- * 
+ *
  * Strauss generates an autoloader with setClassMapAuthoritative(true),
  * which prevents PSR-4 lookups. This script removes that call and ensures
  * PSR-4 mappings are properly configured in the getInitializer closure.
  *
  * @package  WPPluginBluehost
+ *
+ * @phpcs:disable WordPress.NamingConventions.ValidVariableName.VariableNotSnakeCase
  */
 
 $autoloadRealFile = __DIR__ . '/../vendor-prefixed/composer/autoload_real.php';
@@ -18,7 +20,7 @@ if ( ! file_exists( $autoloadRealFile ) ) {
 	$composerJson = __DIR__ . '/../composer.json';
 	if ( ile_exists( $composerJson ) ) {
 		$composer = json_decode( file_get_contents( $composerJson ), true );
-		$packages = $composer['extra']['strauss']['packages'] ?? [];
+		$packages = $composer['extra']['strauss']['packages'] ?? array();
 		if ( ! empty( $packages ) ) {
 			// Packages are configured but Strauss hasn't run - this is an error
 			echo "Error: Prefixed autoloader not found but packages are configured for prefixing.\n";
@@ -44,7 +46,7 @@ file_put_contents( $autoloadRealFile, $content );
 if ( file_exists( $autoloadStaticFile ) ) {
 	$staticContent = file_get_contents( $autoloadStaticFile );
 	$needsFix = false;
-	
+
 	// Extract the actual ComposerStaticInit class name from the file
 	$classNameMatch = array();
 	if ( ! preg_match( '/class (ComposerStaticInit[a-f0-9]+)/', $staticContent, $classNameMatch ) ) {
@@ -52,7 +54,7 @@ if ( file_exists( $autoloadStaticFile ) ) {
 		exit( 1 );
 	}
 	$actualClassName = $classNameMatch[1];
-	
+
 	// Fix any hardcoded wrong class name references in the getInitializer closure
 	// Replace any incorrect ComposerStaticInit references with the actual class name
 	// This handles cases where the class name hash changes between Composer runs
@@ -66,11 +68,11 @@ if ( file_exists( $autoloadStaticFile ) ) {
 		$actualClassName . '::$classMap',
 		$staticContent
 	);
-	
+
 	// Check if prefixDirsPsr4 is being set in the closure
 	if ( ! preg_match( '/\$loader->prefixDirsPsr4\s*=/', $staticContent ) ) {
 		$needsFix = true;
-		
+
 		// Check if prefixLengthsPsr4 exists in static properties
 		if ( preg_match( '/public static \$prefixLengthsPsr4/', $staticContent ) ) {
 			// Add prefixDirsPsr4 to static properties first if missing
@@ -82,7 +84,7 @@ if ( file_exists( $autoloadStaticFile ) ) {
 				);
 			}
 		}
-		
+
 		// Now add prefixDirsPsr4 assignment in the getInitializer closure
 		// Try to find where to insert it - after prefixLengthsPsr4 assignment
 		if ( preg_match( '/\$loader->prefixLengthsPsr4 = /', $staticContent ) ) {
@@ -100,7 +102,7 @@ if ( file_exists( $autoloadStaticFile ) ) {
 			);
 		}
 	}
-	
+
 	// Also check if prefixLengthsPsr4 static property exists
 	if ( ! preg_match( '/public static \$prefixLengthsPsr4/', $staticContent ) ) {
 		$needsFix = true;
@@ -111,11 +113,10 @@ if ( file_exists( $autoloadStaticFile ) ) {
 			$staticContent
 		);
 	}
-	
-	if ( $needsFix || !preg_match( '/\$loader->prefixDirsPsr4\s*=/', $staticContent ) ) {
+
+	if ( $needsFix || ! preg_match( '/\$loader->prefixDirsPsr4\s*=/', $staticContent ) ) {
 		file_put_contents( $autoloadStaticFile, $staticContent );
 	}
 }
 
 echo "Fixed prefixed autoloader: removed setClassMapAuthoritative(true) and ensured PSR-4 mappings\n";
-

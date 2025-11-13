@@ -7,18 +7,18 @@
  * PSR-4 mappings are properly configured in the getInitializer closure.
  *
  * @package  WPPluginBluehost
- *
- * @phpcs:disable WordPress.NamingConventions.ValidVariableName.VariableNotSnakeCase
  */
 
-$autoloadRealFile = __DIR__ . '/../vendor-prefixed/composer/autoload_real.php';
-$autoloadStaticFile = __DIR__ . '/../vendor-prefixed/composer/autoload_static.php';
+// phpcs:disable WordPress.NamingConventions.ValidVariableName.VariableNotSnakeCase
+
+$autoloadRealFile   = __DIR__ . '/../../vendor-prefixed/composer/autoload_real.php';
+$autoloadStaticFile = __DIR__ . '/../../vendor-prefixed/composer/autoload_static.php';
 
 if ( ! file_exists( $autoloadRealFile ) ) {
 	// If the file doesn't exist, Strauss hasn't run yet or there are no packages to prefix
 	// Check if there are actually packages configured to be prefixed
-	$composerJson = __DIR__ . '/../composer.json';
-	if ( ile_exists( $composerJson ) ) {
+	$composerJson = __DIR__ . '/../../composer.json';
+	if ( file_exists( $composerJson ) ) {
 		$composer = json_decode( file_get_contents( $composerJson ), true );
 		$packages = $composer['extra']['strauss']['packages'] ?? array();
 		if ( ! empty( $packages ) ) {
@@ -45,7 +45,7 @@ file_put_contents( $autoloadRealFile, $content );
 // Fix autoload_static.php: Ensure PSR-4 mappings are set in getInitializer
 if ( file_exists( $autoloadStaticFile ) ) {
 	$staticContent = file_get_contents( $autoloadStaticFile );
-	$needsFix = false;
+	$needsFix      = false;
 
 	// Extract the actual ComposerStaticInit class name from the file
 	$classNameMatch = array();

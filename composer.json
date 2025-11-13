@@ -93,7 +93,7 @@
       "@composer dump-autoload",
       "@fix-prefixed-autoloader"
     ],
-    "fix-prefixed-autoloader": "php scripts/fix-prefixed-autoloader.php",
+    "fix-prefixed-autoloader": "php .github/scripts/fix-prefixed-autoloader.php",
     "post-install-cmd": [
       "@prefix-namespaces"
     ],

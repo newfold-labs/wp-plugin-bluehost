@@ -145,7 +145,7 @@ jobs:
         if: ${{ failure() }}
         uses: actions/upload-artifact@330a01c490aca151604b8cf639adc76d48f6c5d4 # v5.0.0
         with:
-          name: screenshots
+          name: screenshots-wp_${{ matrix.wpVersion }}-php_${{ matrix.phpVersion }}
           path: ./tests/cypress/screenshots
 
       - name: Output debug.log file contents

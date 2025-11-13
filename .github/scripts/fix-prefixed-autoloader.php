@@ -9,7 +9,7 @@
  * @package  WPPluginBluehost
  */
 
-// phpcs:disable WordPress.NamingConventions.ValidVariableName.VariableNotSnakeCase
+// phpcs:ignoreFile WordPress.NamingConventions.ValidVariableName.VariableNotSnakeCase
 
 $autoloadRealFile   = __DIR__ . '/../../vendor-prefixed/composer/autoload_real.php';
 $autoloadStaticFile = __DIR__ . '/../../vendor-prefixed/composer/autoload_static.php';
@@ -53,6 +53,7 @@ if ( file_exists( $autoloadStaticFile ) ) {
 		echo "Error: Could not find ComposerStaticInit class name in autoload_static.php\n";
 		exit( 1 );
 	}
+	// phpcs:ignore WordPress.NamingConventions.ValidVariableName.VariableNotSnakeCase
 	$actualClassName = $classNameMatch[1];
 
 	// Fix any hardcoded wrong class name references in the getInitializer closure

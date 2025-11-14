@@ -4,30 +4,31 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "acc3faff7c0e0e5716c74d2b8634731f",
+    "content-hash": "276e2f6bfe87b82d832afa8f1c7b3ca4",
     "packages": [
         {
             "name": "automattic/jetpack-autoloader",
-            "version": "v3.1.3",
+            "version": "v5.0.13",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Automattic/jetpack-autoloader.git",
-                "reference": "e7e49a4e2f16cb2dfd3e58c478499a60d7d51839"
+                "reference": "94888d86820a99a0f3aba3498ba10f6b6245c929"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Automattic/jetpack-autoloader/zipball/e7e49a4e2f16cb2dfd3e58c478499a60d7d51839",
-                "reference": "e7e49a4e2f16cb2dfd3e58c478499a60d7d51839",
+                "url": "https://api.github.com/repos/Automattic/jetpack-autoloader/zipball/94888d86820a99a0f3aba3498ba10f6b6245c929",
+                "reference": "94888d86820a99a0f3aba3498ba10f6b6245c929",
                 "shasum": ""
             },
             "require": {
-                "composer-plugin-api": "^1.1 || ^2.0",
-                "php": ">=7.0"
+                "composer-plugin-api": "^2.2",
+                "php": ">=7.2"
             },
             "require-dev": {
-                "automattic/jetpack-changelogger": "^4.2.8",
-                "composer/composer": "^1.1 || ^2.0",
-                "yoast/phpunit-polyfills": "^1.1.1"
+                "automattic/jetpack-changelogger": "^6.0.9",
+                "automattic/phpunit-select-config": "^1.0.3",
+                "composer/composer": "^2.2",
+                "yoast/phpunit-polyfills": "^4.0.0"
             },
             "type": "composer-plugin",
             "extra": {
@@ -35,7 +36,7 @@
                 "autotagger": true,
                 "mirror-repo": "Automattic/jetpack-autoloader",
                 "branch-alias": {
-                    "dev-trunk": "3.1.x-dev"
+                    "dev-trunk": "5.0.x-dev"
                 },
                 "changelogger": {
                     "link-template": "https://github.com/Automattic/jetpack-autoloader/compare/v${old}...v${new}"
@@ -66,9 +67,9 @@
                 "wordpress"
             ],
             "support": {
-                "source": "https://github.com/Automattic/jetpack-autoloader/tree/v3.1.3"
+                "source": "https://github.com/Automattic/jetpack-autoloader/tree/v5.0.13"
             },
-            "time": "2024-11-04T09:23:56+00:00"
+            "time": "2025-11-12T16:41:11+00:00"
         },
         {
             "name": "doctrine/inflector",

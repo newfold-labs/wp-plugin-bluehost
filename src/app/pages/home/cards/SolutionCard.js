@@ -1,10 +1,11 @@
 import { Card, Title } from '@newfold/ui-component-library';
 import { ReactComponent as Icon } from 'App/images/card-icon-explore-solutions.svg';
+import { addUtmParams } from 'App/util/helpers';
 
 const SolutionCard = ( {} ) => {
 	return (
 		<a
-			href={ window.NewfoldRuntime.linkTracker.addUtmParams(
+			href={ addUtmParams(
 				'admin.php?page=solutions'
 			) }
 			className="nfd-no-underline nfd-card-link"

@@ -1,6 +1,7 @@
 import { useEffect, useState } from '@wordpress/element';
 import apiFetch from '@wordpress/api-fetch';
 import { addQueryArgs } from '@wordpress/url';
+import { addUtmParams } from 'App/util/helpers';
 import { filter } from 'lodash';
 import {
 	Button,
@@ -84,7 +85,7 @@ export const AppNavMenu = () => {
 				<Button
 					as={ 'a' }
 					className={ 'nfd-flex nfd-gap-2 nfd-mr-4' }
-					href={ window.NewfoldRuntime.linkTracker.addUtmParams(
+					href={ addUtmParams(
 						getPlatformPathUrl( 'hosting/details', 'app/#/sites' )
 					) }
 					variant={ 'secondary' }

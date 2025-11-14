@@ -1,5 +1,6 @@
 import { Card, Title } from '@newfold/ui-component-library';
 import { __ } from '@wordpress/i18n';
+import { addUtmParams } from 'App/util/helpers';
 import { PaintBrushIcon } from '@heroicons/react/24/outline';
 
 export default () => (
@@ -14,7 +15,7 @@ export default () => (
 		data-ctb-id="838cc912-adb3-4d75-9450-262bf3ee3576"
 		data-nfd-click="newfold-quick-links-pro-design"
 		data-test-id="quick-links-pro-design-link"
-		href={ window.NewfoldRuntime.linkTracker.addUtmParams(
+		href={ addUtmParams(
 			'https://www.bluehost.com/my-account/market-place'
 		) }
 		target="_blank"

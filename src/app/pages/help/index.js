@@ -5,6 +5,7 @@ import {
 	Page,
 	Title,
 } from '@newfold/ui-component-library';
+import { addUtmParams } from 'App/util/helpers';
 import help from 'App/data/help';
 
 const HelpCard = ( { item } ) => {
@@ -22,7 +23,7 @@ const HelpCard = ( { item } ) => {
 					variant="secondary"
 					as="a"
 					className="nfd-w-full nfd-transition-bg nfd-duration-100"
-					href={ window.NewfoldRuntime.linkTracker.addUtmParams(
+					href={ addUtmParams(
 						item.url
 					) }
 					target="_blank"

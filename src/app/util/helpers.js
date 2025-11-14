@@ -143,6 +143,9 @@ export const comingSoonAdminbarToggle = ( comingSoon ) => {
  * @return {string} The new URL.
  */
 export const addUtmParams = ( url, params = {} ) => {
+	if ( 'function' === typeof window.NewfoldRuntime.linkTracker.addUtmParams ) {
+		return window.NewfoldRuntime.linkTracker.addUtmParams( url, params );
+	}
 	params.utm_source = `wp-admin/admin.php?page=bluehost${ window.location.hash }`;
 	params.utm_medium = 'bluehost_plugin';
 	return addQueryArgs( url, params );

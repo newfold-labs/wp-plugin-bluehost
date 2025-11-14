@@ -1,10 +1,12 @@
 import { Card, Title } from '@newfold/ui-component-library';
+import { addUtmParams } from 'App/util/helpers';
+
 import { ReactComponent as Icon } from 'App/images/card-icon-hire-experts.svg';
 
 const ExpertCard = ( {} ) => {
 	return (
 		<a
-			href={ window.NewfoldRuntime.linkTracker.addUtmParams(
+			href={ addUtmParams(
 				'https://www.bluehost.com/solutions/website-design'
 			) }
 			className="nfd-no-underline nfd-card-link"

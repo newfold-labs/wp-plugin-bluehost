@@ -34,6 +34,7 @@
     "strauss": {
       "target_directory": "vendor-prefixed",
       "namespace_prefix": "Bluehost\\Plugin\\",
+      "delete_vendor_packages": true,
       "packages": [
         "wordpress/mcp-adapter"
       ]
@@ -177,6 +178,7 @@
     "newfold-labs/wp-module-solutions": "^2.6.3",
     "newfold-labs/wp-module-sso": "^1.1.2",
     "newfold-labs/wp-module-staging": "^2.6.2",
+    "wordpress/mcp-adapter": "^0.3.0",
     "wp-forge/wp-update-handler": "^1.0.2",
     "wp-forge/wp-upgrade-handler": "^1.0"
   }

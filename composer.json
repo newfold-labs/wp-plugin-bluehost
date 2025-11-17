@@ -37,7 +37,12 @@
       "delete_vendor_packages": false,
       "packages": [
         "wordpress/mcp-adapter"
-      ]
+      ],
+      "exclude_from_copy": {
+        "file_patterns": [
+          "wordpress/mcp-adapter/tests"
+        ]
+      }
     }
   },
   "repositories": {

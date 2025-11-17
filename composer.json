@@ -91,10 +91,8 @@
     "prefix-namespaces": [
       "@ensure-strauss",
       "@php bin/strauss.phar",
-      "@composer dump-autoload",
-      "@fix-prefixed-autoloader"
+      "@composer dump-autoload"
     ],
-    "fix-prefixed-autoloader": "php .github/scripts/fix-prefixed-autoloader.php",
     "post-install-cmd": [
       "@prefix-namespaces"
     ],
@@ -104,8 +102,7 @@
     "post-autoload-dump": [
       "@ensure-strauss",
       "@php bin/strauss.phar include-autoloader",
-      "@php bin/strauss.phar",
-      "@fix-prefixed-autoloader"
+      "@php bin/strauss.phar"
     ],
     "test": [
       "codecept run wpunit"
@@ -128,7 +125,6 @@
     "i18n-ci-post": "Command for CI to run after generating language files.",
     "ensure-strauss": "Ensure Strauss PHAR exists and is executable (downloads if missing).",
     "prefix-namespaces": "Prefix namespaces for the plugin.",
-    "fix-prefixed-autoloader": "Fix prefixed autoloader to enable PSR-4 lookups.",
     "post-install-cmd": "Command to run after installing the plugin.",
     "post-update-cmd": "Command to run after updating the plugin.",
     "post-autoload-dump": "Command to run after dumping the autoloader.",
@@ -178,7 +174,6 @@
     "newfold-labs/wp-module-solutions": "^2.6.3",
     "newfold-labs/wp-module-sso": "^1.2.0",
     "newfold-labs/wp-module-staging": "^2.6.2",
-    "wordpress/mcp-adapter": "^0.3.0",
     "wp-forge/wp-update-handler": "^1.0.2",
     "wp-forge/wp-upgrade-handler": "^1.0"
   }

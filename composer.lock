@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "acc3faff7c0e0e5716c74d2b8634731f",
+    "content-hash": "24f802f4d31bf2f1cbb3d85f4629afa8",
     "packages": [
         {
             "name": "automattic/jetpack-autoloader",
@@ -2145,16 +2145,16 @@
         },
         {
             "name": "newfold-labs/wp-module-migration",
-            "version": "1.6.3",
+            "version": "1.6.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/newfold-labs/wp-module-migration.git",
-                "reference": "fb512091b26217e21e6ab6c32add54298d4b38da"
+                "reference": "f9f3cc66932f6cef32bdcb97363445fcb0b488ba"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/newfold-labs/wp-module-migration/zipball/fb512091b26217e21e6ab6c32add54298d4b38da",
-                "reference": "fb512091b26217e21e6ab6c32add54298d4b38da",
+                "url": "https://api.github.com/repos/newfold-labs/wp-module-migration/zipball/f9f3cc66932f6cef32bdcb97363445fcb0b488ba",
+                "reference": "f9f3cc66932f6cef32bdcb97363445fcb0b488ba",
                 "shasum": ""
             },
             "require": {
@@ -2230,10 +2230,10 @@
             ],
             "description": "Initiates the migration process",
             "support": {
-                "source": "https://github.com/newfold-labs/wp-module-migration/tree/1.6.3",
+                "source": "https://github.com/newfold-labs/wp-module-migration/tree/1.6.4",
                 "issues": "https://github.com/newfold-labs/wp-module-migration/issues"
             },
-            "time": "2025-11-04T07:33:59+00:00"
+            "time": "2025-11-14T21:15:03+00:00"
         },
         {
             "name": "newfold-labs/wp-module-next-steps",

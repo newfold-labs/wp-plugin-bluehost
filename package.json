@@ -93,7 +93,7 @@
         "lint:pkg-json": "wp-scripts lint-pkg-json",
         "lint:yml": "yamllint --ignore=node_modules/** --ignore=vendor/** **/*.yml",
         "log:watch": "wp-env run wordpress 'tail -f /var/www/html/wp-content/debug.log'",
-        "php-deps": "composer install --no-dev --optimize-autoloader",
+        "php-deps": "composer install --no-progress --no-dev --optimize-autoloader --prefer-dist",
         "postprepare": "npm run set-wp-version",
         "prebuild:cleanup": "rm -rf ./build ./bluehost-wordpress-plugin ./bluehost-wordpress-plugin.zip ./vendor",
         "set-version-bump": "node ./.github/scripts/set-version-bump.js && npm i && rm -rf ./build && npm run build && composer run i18n",

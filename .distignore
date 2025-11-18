@@ -15,6 +15,7 @@ cypress.config.js
 postcss.config.js
 tailwind.config.js
 webpack.config.js
+playwright.config.js
 
 # File Types
 /*.json

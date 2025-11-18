@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "acc3faff7c0e0e5716c74d2b8634731f",
+    "content-hash": "3c382e49043decb01a90138a7a820820",
     "packages": [
         {
             "name": "automattic/jetpack-autoloader",
@@ -3061,20 +3061,20 @@
         },
         {
             "name": "newfold-labs/wp-module-sso",
-            "version": "1.1.2",
+            "version": "1.2.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/newfold-labs/wp-module-sso.git",
-                "reference": "be8d2e55c11a3119be6a34a5d4384b43f8b75ba1"
+                "reference": "609b941544a3b4ce7cd5e2b4ee18d47fe7d1504e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/newfold-labs/wp-module-sso/zipball/be8d2e55c11a3119be6a34a5d4384b43f8b75ba1",
-                "reference": "be8d2e55c11a3119be6a34a5d4384b43f8b75ba1",
+                "url": "https://api.github.com/repos/newfold-labs/wp-module-sso/zipball/609b941544a3b4ce7cd5e2b4ee18d47fe7d1504e",
+                "reference": "609b941544a3b4ce7cd5e2b4ee18d47fe7d1504e",
                 "shasum": ""
             },
             "require": {
-                "newfold-labs/wp-module-data": ">=2.8.7"
+                "newfold-labs/wp-module-data": ">=2.8.8"
             },
             "require-dev": {
                 "newfold-labs/wp-php-standards": "^1.2",
@@ -3083,7 +3083,7 @@
             "type": "library",
             "autoload": {
                 "psr-4": {
-                    "NewFoldLabs\\WP\\Module\\SSO\\": "includes"
+                    "NewfoldLabs\\WP\\Module\\SSO\\": "includes"
                 },
                 "files": [
                     "bootstrap.php"
@@ -3138,10 +3138,10 @@
             ],
             "description": "Single sign-on functionality for Newfold WordPress sites.",
             "support": {
-                "source": "https://github.com/newfold-labs/wp-module-sso/tree/1.1.2",
+                "source": "https://github.com/newfold-labs/wp-module-sso/tree/1.2.0",
                 "issues": "https://github.com/newfold-labs/wp-module-sso/issues"
             },
-            "time": "2025-10-07T12:48:15+00:00"
+            "time": "2025-11-14T21:10:22+00:00"
         },
         {
             "name": "newfold-labs/wp-module-staging",

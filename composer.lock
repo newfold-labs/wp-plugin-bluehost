@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "4994a36985785e56b260be983989d8ab",
+    "content-hash": "c79dac68536cbb835fa6493aef7c8832",
     "packages": [
         {
             "name": "doctrine/inflector",
@@ -1178,16 +1178,16 @@
         },
         {
             "name": "newfold-labs/wp-module-editor-chat",
-            "version": "1.0.3",
+            "version": "1.0.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/newfold-labs/wp-module-editor-chat.git",
-                "reference": "d516d466239db1f5d8f23c1299f068454b9108cc"
+                "reference": "7b36f40e3627381cb6a45ae6ef98b049e8f0b179"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/newfold-labs/wp-module-editor-chat/zipball/d516d466239db1f5d8f23c1299f068454b9108cc",
-                "reference": "d516d466239db1f5d8f23c1299f068454b9108cc",
+                "url": "https://api.github.com/repos/newfold-labs/wp-module-editor-chat/zipball/7b36f40e3627381cb6a45ae6ef98b049e8f0b179",
+                "reference": "7b36f40e3627381cb6a45ae6ef98b049e8f0b179",
                 "shasum": ""
             },
             "require-dev": {
@@ -1259,10 +1259,10 @@
             ],
             "description": "Site Editor AI Chat",
             "support": {
-                "source": "https://github.com/newfold-labs/wp-module-editor-chat/tree/1.0.3",
+                "source": "https://github.com/newfold-labs/wp-module-editor-chat/tree/1.0.4",
                 "issues": "https://github.com/newfold-labs/wp-module-editor-chat/issues"
             },
-            "time": "2025-11-18T22:27:20+00:00"
+            "time": "2025-11-19T16:34:40+00:00"
         },
         {
             "name": "newfold-labs/wp-module-facebook",

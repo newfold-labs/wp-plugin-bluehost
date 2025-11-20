@@ -15,7 +15,7 @@
     "optimize-autoloader": true,
     "sort-packages": true,
     "platform": {
-      "php": "7.3.0"
+      "php": "7.4"
     },
     "platform-check": false,
     "allow-plugins": {
@@ -29,7 +29,20 @@
     }
   },
   "extra": {
-    "installer-name": "bluehost-wordpress-plugin"
+    "installer-name": "bluehost-wordpress-plugin",
+    "strauss": {
+      "target_directory": "vendor-prefixed",
+      "namespace_prefix": "Bluehost\\Plugin\\",
+      "delete_vendor_packages": false,
+      "packages": [
+        "wordpress/mcp-adapter"
+      ],
+      "exclude_from_copy": {
+        "file_patterns": [
+          "wordpress/mcp-adapter/tests"
+        ]
+      }
+    }
   },
   "repositories": {
     "newfold": {
@@ -58,7 +71,7 @@
   "scripts": {
     "fix": "vendor/bin/phpcbf --standard=phpcs.xml .",
     "lint": "vendor/bin/phpcs --standard=phpcs.xml -s .",
-    "i18n-pot": "vendor/bin/wp i18n make-pot . ./languages/wp-plugin-bluehost.pot --headers='{\"Report-Msgid-Bugs-To\":\"https://github.com/newfold-labs/wp-plugin-bluehost/issues\",\"POT-Creation-Date\":\"2023-03-08T20:13:41+00:00\"}' --exclude=assets,tests,src",
+    "i18n-pot": "vendor/bin/wp i18n make-pot . ./languages/wp-plugin-bluehost.pot --headers='{\"Report-Msgid-Bugs-To\":\"https://github.com/newfold-labs/wp-plugin-bluehost/issues\",\"POT-Creation-Date\":\"2023-03-08T20:13:41+00:00\"}' --exclude=assets,tests,src,wordpress",
     "i18n-po": "vendor/bin/wp i18n update-po ./languages/wp-plugin-bluehost.pot ./languages",
     "i18n-mo": "vendor/bin/wp i18n make-mo ./languages",
     "i18n-php": "vendor/bin/wp i18n make-php ./languages",
@@ -77,6 +90,23 @@
       "@i18n-po",
       "@i18n-json",
       "@i18n-php"
+    ],
+    "ensure-strauss": "sh -c 'test -f ./bin/strauss.phar || (mkdir -p bin && curl -o bin/strauss.phar -L https://github.com/BrianHenryIE/strauss/releases/latest/download/strauss.phar && chmod +x bin/strauss.phar)'",
+    "prefix-namespaces": [
+      "@ensure-strauss",
+      "@php bin/strauss.phar",
+      "@composer dump-autoload"
+    ],
+    "post-install-cmd": [
+      "@prefix-namespaces"
+    ],
+    "post-update-cmd": [
+      "@prefix-namespaces"
+    ],
+    "post-autoload-dump": [
+      "@ensure-strauss",
+      "@php bin/strauss.phar include-autoloader",
+      "@php bin/strauss.phar"
     ],
     "test": [
       "codecept run wpunit"
@@ -97,14 +127,19 @@
     "i18n-json": "Generate new language .json files.",
     "i18n-ci-pre": "Command for CI to run before generating language files.",
     "i18n-ci-post": "Command for CI to run after generating language files.",
+    "ensure-strauss": "Ensure Strauss PHAR exists and is executable (downloads if missing).",
+    "prefix-namespaces": "Prefix namespaces for the plugin.",
+    "post-install-cmd": "Command to run after installing the plugin.",
+    "post-update-cmd": "Command to run after updating the plugin.",
+    "post-autoload-dump": "Command to run after dumping the autoloader.",
     "test": "Run tests.",
     "test-coverage": "Run tests with coverage, merge coverage and create HTML report."
   },
   "require-dev": {
-    "johnpbloch/wordpress": "6.6.0",
-    "lucatume/wp-browser": "*",
+    "johnpbloch/wordpress": "6.8.3",
+    "lucatume/wp-browser": ">=3.7.15",
     "newfold-labs/wp-php-standards": "^1.2.5",
-    "phpunit/phpcov": "*",
+    "phpunit/phpcov": ">=8.2.1",
     "roave/security-advisories": "dev-latest",
     "wp-cli/i18n-command": "^2.6.5",
     "wp-phpunit/wp-phpunit": "^6.8.3"
@@ -115,31 +150,33 @@
     "newfold-labs/wp-module-atomic": "^1.3.1",
     "newfold-labs/wp-module-coming-soon": "^2.1.2",
     "newfold-labs/wp-module-context": "^1.0.2",
-    "newfold-labs/wp-module-data": "^2.8.7",
+    "newfold-labs/wp-module-data": "^2.8.8",
     "newfold-labs/wp-module-deactivation": "^1.5.2",
     "newfold-labs/wp-module-ecommerce": "^1.10.4",
+    "newfold-labs/wp-module-editor-chat": "^1.0.6",
     "newfold-labs/wp-module-facebook": "^1.2.1",
     "newfold-labs/wp-module-features": "^1.5.1",
-    "newfold-labs/wp-module-global-ctb": "^1.3.1",
+    "newfold-labs/wp-module-global-ctb": "^1.3.2",
     "newfold-labs/wp-module-help-center": "^2.5.4",
+    "newfold-labs/wp-module-htaccess": "^1.0.0",
     "newfold-labs/wp-module-installer": "^1.6.6",
     "newfold-labs/wp-module-link-tracker": "^1.1.4",
     "newfold-labs/wp-module-loader": "^1.0.13",
-    "newfold-labs/wp-module-marketplace": "^3.1.1",
-    "newfold-labs/wp-module-migration": "^1.6.2",
+    "newfold-labs/wp-module-marketplace": "^3.1.2",
+    "newfold-labs/wp-module-mcp": "^1.3.1",
+    "newfold-labs/wp-module-migration": "^1.6.4",
     "newfold-labs/wp-module-next-steps": "^1.4.5",
-    "newfold-labs/wp-module-notifications": "^1.6.12",
-    "newfold-labs/wp-module-onboarding": "^3.2.11",
+    "newfold-labs/wp-module-notifications": "^1.7.0",
+    "newfold-labs/wp-module-onboarding": "^3.2.14",
     "newfold-labs/wp-module-onboarding-data": "^1.2.19",
-    "newfold-labs/wp-module-patterns": "^2.11.0",
-    "newfold-labs/wp-module-performance": "^3.5.3",
-    "newfold-labs/wp-module-htaccess": "^1.0.0",
+    "newfold-labs/wp-module-patterns": "^2.11.1",
+    "newfold-labs/wp-module-performance": "^3.5.4",
     "newfold-labs/wp-module-pls": "^1.1.2",
     "newfold-labs/wp-module-runtime": "^1.1.3",
     "newfold-labs/wp-module-secure-passwords": "^1.1.2",
     "newfold-labs/wp-module-solutions": "^2.6.3",
-    "newfold-labs/wp-module-sso": "^1.1.2",
-    "newfold-labs/wp-module-staging": "^2.6.1",
+    "newfold-labs/wp-module-sso": "^1.2.0",
+    "newfold-labs/wp-module-staging": "^2.6.2",
     "wp-forge/wp-update-handler": "^1.0.2",
     "wp-forge/wp-upgrade-handler": "^1.0"
   }

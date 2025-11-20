@@ -1,5 +1,7 @@
 # Composer
 /vendor
+/vendor-prefixed
+bin/strauss.phar
 
 #node_modules
 /node_modules

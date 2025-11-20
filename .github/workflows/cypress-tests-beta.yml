@@ -24,7 +24,7 @@ jobs:
 
     steps:
       - name: Checkout
-        uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8 # v5.0.0
+        uses: actions/checkout@1af3b93b6815bc44a9784bd300feb67ff0d1eeb3 # v6.0.0
         with:
           persist-credentials: false
 
@@ -44,11 +44,11 @@ jobs:
           mkdir dist
           echo "DIST=${PWD}/dist" >> "$GITHUB_OUTPUT"
           echo "PACKAGE=${REPO##*/}" >> "$GITHUB_OUTPUT"
-      - name: Use Node.js 20.x
+
+      - name: Use Node from .nvmrc file
         uses: actions/setup-node@2028fbc5c25fe9cf00d9f06a71cc4710d4507903 # v6.0.0
         with:
-          node-version: 20.x
-          cache: 'npm'
+          node-version-file: .nvmrc
 
       - name: Get Composer cache directory
         id: composer-cache
@@ -91,23 +91,20 @@ jobs:
         working-directory: ${{ steps.workflow.outputs.DIST }}
         run: find .
 
-      - name: Fetch WordPress beta version
+      - name: Fetch WordPress beta version and set as output
+        id: fetch_beta
         run: |
-          wp_beta_zip=$(node -e "
-            const fetch = require('node-fetch');
-            fetch('https://api.wordpress.org/core/version-check/1.7/?channel=beta')
-              .then(response => response.json())
-              .then(data => data.offers[0].download);
-          ")
-          echo "$wp_beta_zip"
+          WP_BETA_URL=$(curl -s 'https://api.wordpress.org/core/version-check/1.7/?channel=beta' | jq -r '.offers[0].download')
+          echo "download_url=$WP_BETA_URL" >> "$GITHUB_OUTPUT"
 
       - name: Configure WordPress
         env:
           DIST: ${{ steps.workflow.outputs.DIST }}
           PACKAGE: ${{ steps.workflow.outputs.PACKAGE }}
+          BETA_ZIP: ${{ steps.fetch_beta.outputs.download_url }}
         run: |
           jq -n \
-            --arg core "${wp_beta_zip}" \
+            --arg core "$BETA_ZIP" \
             --arg plugin "$DIST/$PACKAGE" \
             '{ core: $core, plugins: [$plugin] }' > .wp-env.override.json
 

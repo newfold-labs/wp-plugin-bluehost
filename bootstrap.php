@@ -17,7 +17,12 @@ use function NewfoldLabs\WP\Context\setContext;
 use function NewfoldLabs\WP\Context\getContext;
 use function NewfoldLabs\WP\Module\LinkTracker\Functions\build_link as buildLink;
 
-// Composer autoloader
+// Load Jetpack Autoloader first (if available) for shared package version management
+if ( file_exists( __DIR__ . '/vendor/autoload_packages.php' ) ) {
+	require_once __DIR__ . '/vendor/autoload_packages.php';
+}
+
+// Composer autoloader (includes prefixed packages via Strauss modification)
 if ( is_readable( __DIR__ . '/vendor/autoload.php' ) ) {
 	require __DIR__ . '/vendor/autoload.php';
 } else {

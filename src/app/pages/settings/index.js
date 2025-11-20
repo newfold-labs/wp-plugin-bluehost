@@ -13,7 +13,7 @@ import { useLocation } from 'react-router-dom';
 const Settings = () => {
 	const isStagingEnabled = window.NewfoldFeatures.features.staging === true;
 	const isPerformanceEnabled =
-		window.NewfoldFeatures.features.staging === true;
+		window.NewfoldFeatures.features.performance === true;
 
 	const location = useLocation();
 

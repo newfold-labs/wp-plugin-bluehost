@@ -95,7 +95,7 @@ jobs:
         id: fetch_beta
         run: |
           WP_BETA_URL=$(curl -s 'https://api.wordpress.org/core/version-check/1.7/?channel=beta' | jq -r '.offers[0].download')
-          echo "download_url=$WP_BETA_URL" >> $GITHUB_OUTPUT
+          echo "download_url=$WP_BETA_URL" >> "$GITHUB_OUTPUT"
 
       - name: Configure WordPress
         env:

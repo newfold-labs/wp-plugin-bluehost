@@ -1,6 +1,7 @@
 import { Card, Title } from '@newfold/ui-component-library';
 import { __ } from '@wordpress/i18n';
 import { StarIcon } from '@heroicons/react/24/outline';
+import { addUtmParams } from 'App/util/helpers';
 
 export default () => (
 	<Card
@@ -12,9 +13,7 @@ export default () => (
 		) }
 		data-nfd-click="newfold-quick-links-refer-friend"
 		data-test-id="quick-links-refer-friend-link"
-		href={ window.NewfoldRuntime.linkTracker.addUtmParams(
-			'https://www.bluehost.com/affiliates'
-		) }
+		href={ addUtmParams( 'https://www.bluehost.com/affiliates' ) }
 		target="_blank"
 	>
 		<div

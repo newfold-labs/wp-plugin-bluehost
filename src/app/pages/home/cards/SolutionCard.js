@@ -5,9 +5,7 @@ import { addUtmParams } from 'App/util/helpers';
 const SolutionCard = ( {} ) => {
 	return (
 		<a
-			href={ addUtmParams(
-				'admin.php?page=solutions'
-			) }
+			href={ addUtmParams( 'admin.php?page=solutions' ) }
 			className="nfd-no-underline nfd-card-link"
 			data-cy="solution-card"
 		>

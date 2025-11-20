@@ -1,7 +1,6 @@
 import { useEffect, useState } from '@wordpress/element';
 import apiFetch from '@wordpress/api-fetch';
 import { addQueryArgs } from '@wordpress/url';
-import { addUtmParams } from 'App/util/helpers';
 import { filter } from 'lodash';
 import {
 	Button,
@@ -11,7 +10,7 @@ import {
 import { default as NewfoldNotifications } from '@modules/wp-module-notifications/assets/js/components/notifications/';
 import { useLocation } from 'react-router-dom';
 import classnames from 'classnames';
-import { getPlatformPathUrl } from 'App/util/helpers';
+import { getPlatformPathUrl, addUtmParams } from 'App/util/helpers';
 import { getEditorUrl } from 'App/util/themeUtils';
 import { topRoutes } from 'App/data/routes';
 import {

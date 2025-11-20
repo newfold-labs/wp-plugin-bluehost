@@ -3,9 +3,7 @@ import { ReactComponent as Arrow } from 'App/images/card-mini-arrow.svg';
 import { addUtmParams } from 'App/util/helpers';
 
 const QuickLinksCard = ( {} ) => {
-	const manageHostingUrl = addUtmParams(
-		'admin.php?page=nfd-hosting'
-	);
+	const manageHostingUrl = addUtmParams( 'admin.php?page=nfd-hosting' );
 	const writeBlogUrl = addUtmParams(
 		'post-new.php?wb-library=patterns&wb-category=text'
 	);
@@ -109,9 +107,7 @@ const QuickLinksCard = ( {} ) => {
 						className="nfd-no-underline nfd-card-link nfd-card-link-mini"
 						data-cy="promotion-card"
 						data-ctb-id={ ecomFamily.id }
-						href={ addUtmParams(
-							ecomFamily.url
-						) }
+						href={ addUtmParams( ecomFamily.url ) }
 					>
 						<Card className="wppbh-promotion-card nfd-card-mini nfd-py-4">
 							<Card.Content>

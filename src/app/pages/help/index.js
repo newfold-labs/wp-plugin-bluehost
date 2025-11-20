@@ -23,9 +23,7 @@ const HelpCard = ( { item } ) => {
 					variant="secondary"
 					as="a"
 					className="nfd-w-full nfd-transition-bg nfd-duration-100"
-					href={ addUtmParams(
-						item.url
-					) }
+					href={ addUtmParams( item.url ) }
 					target="_blank"
 				>
 					{ item.cta }

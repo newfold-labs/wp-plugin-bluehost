@@ -13,9 +13,7 @@ export default () => (
 		) }
 		data-nfd-click="newfold-quick-links-refer-friend"
 		data-test-id="quick-links-refer-friend-link"
-		href={ addUtmParams(
-			'https://www.bluehost.com/affiliates'
-		) }
+		href={ addUtmParams( 'https://www.bluehost.com/affiliates' ) }
 		target="_blank"
 	>
 		<div

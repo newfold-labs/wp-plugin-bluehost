@@ -6,9 +6,7 @@ const ReferralProgramCard = ( {} ) => {
 	return (
 		<a
 			className="nfd-no-underline nfd-card-link"
-			href={ addUtmParams(
-				'https://www.bluehost.com/affiliates'
-			) }
+			href={ addUtmParams( 'https://www.bluehost.com/affiliates' ) }
 			target="_blank"
 			rel="noreferrer"
 			data-cy="referral-program-card"

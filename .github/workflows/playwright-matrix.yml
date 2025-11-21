@@ -16,98 +16,9 @@ concurrency:
 permissions: {}
 
 jobs:
-  build:
-    name: Build Plugin
-    runs-on: ubuntu-latest
-    timeout-minutes: 15
-    outputs:
-      dist: ${{ steps.workflow.outputs.DIST }}
-      package: ${{ steps.workflow.outputs.PACKAGE }}
-    permissions:
-      contents: read
-
-    steps:
-      - name: Checkout
-        uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8  # v5.0.0
-        with:
-          persist-credentials: false
-
-      - name: Setup PHP
-        uses: shivammathur/setup-php@bf6b4fbd49ca58e4608c9c89fba0b8d90bd2a39f  # v2.35.5
-        with:
-          php-version: '8.3'
-          coverage: none
-          tools: composer, cs2pr
-
-      - name: Setup workflow context
-        id: workflow
-        working-directory: ${{ runner.temp }}
-        env:
-          REPO: ${{ github.repository }}
-        run: |
-          mkdir dist
-          echo "DIST=${PWD}/dist" >> "$GITHUB_OUTPUT"
-          echo "PACKAGE=${REPO##*/}" >> "$GITHUB_OUTPUT"
-
-      - name: Use Node.js 24.x
-        uses: actions/setup-node@2028fbc5c25fe9cf00d9f06a71cc4710d4507903  # v6.0.0
-        with:
-          node-version: 24.x
-          cache: 'npm'
-
-      - name: Get Composer cache directory
-        id: composer-cache
-        run: echo "dir=$(composer config cache-files-dir)" >> "$GITHUB_OUTPUT"
-
-      - name: Cache Composer vendor directory
-        uses: actions/cache@0057852bfaa89a56745cba8c7296529d2fc39830  # v4.3.0
-        with:
-          path: ${{ steps.composer-cache.outputs.dir }}
-          key: ${{ runner.os }}-composer-${{ hashFiles('**/composer.lock') }}
-
-      - name: Show versions
-        run: |
-          php --version
-          composer --version
-          node --version
-          npm --version
-
-      - name: Validate composer.json and composer.lock
-        run: composer validate
-
-      - name: Install PHP Dependencies
-        run: composer install --no-progress --no-dev --optimize-autoloader --prefer-source
-
-      - name: NPM Install
-        run: npm install --legacy-peer-deps
-
-      - name: Build JavaScript
-        run: npm run build
-
-      - name: Create Distribution Copy
-        env:
-          DIST: ${{ steps.workflow.outputs.DIST }}
-          PACKAGE: ${{ steps.workflow.outputs.PACKAGE }}
-        run: rsync -r --include-from=.distinclude --exclude-from=.distignore . "$DIST/$PACKAGE"
-
-      - name: List Distribution Files
-        env:
-          DIST: ${{ steps.workflow.outputs.DIST }}
-        run: |
-          cd "$DIST"
-          find .
-
-      - name: Upload artifact
-        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02  # v4.6.2
-        with:
-          path: ${{ steps.workflow.outputs.DIST }}
-          name: ${{ steps.workflow.outputs.PACKAGE }}
-          retention-days: 7
-
   test:
-    name: Playwright Tests
+    name: Playwright Test Matrix
     runs-on: ubuntu-latest
-    needs: build
     timeout-minutes: 60
     permissions:
       contents: read
@@ -115,7 +26,6 @@ jobs:
       fail-fast: false
       matrix:
         phpVersion:
-          - '7.3'
           - '7.4'
           - '8.0'
           - '8.1'
@@ -146,6 +56,13 @@ jobs:
           node-version: 24.x
           cache: 'npm'
 
+      - name: Show versions
+        run: |
+          php --version
+          composer --version
+          node --version
+          npm --version
+
       - name: Get Composer cache directory
         id: composer-cache
         run: echo "dir=$(composer config cache-files-dir)" >> "$GITHUB_OUTPUT"
@@ -156,12 +73,6 @@ jobs:
           path: ${{ steps.composer-cache.outputs.dir }}
           key: ${{ runner.os }}-composer-${{ hashFiles('**/composer.lock') }}
 
-      - name: Install PHP Dependencies
-        run: composer install --no-progress --no-dev --optimize-autoloader --prefer-source
-
-      - name: NPM Install
-        run: npm install --legacy-peer-deps
-
       - name: Setup workflow context
         id: workflow
         working-directory: ${{ runner.temp }}
@@ -170,12 +81,29 @@ jobs:
         run: |
           mkdir dist
           echo "DIST=${PWD}/dist" >> "$GITHUB_OUTPUT"
+          echo "PACKAGE=${REPO##*/}" >> "$GITHUB_OUTPUT"
 
-      - name: Download build artifacts
-        uses: actions/download-artifact@634f93cb2916e3fdff6788551b99b062d0335ce0  # v5.0.0
-        with:
-          path: ${{ steps.workflow.outputs.DIST }}
-          name: ${{ needs.build.outputs.package }}
+      - name: Validate composer.json and composer.lock
+        run: composer validate
+
+      - name: Install PHP Dependencies
+        run: composer install --no-progress --no-dev --optimize-autoloader --prefer-source
+
+      - name: NPM Install
+        run: npm install --legacy-peer-deps
+
+      - name: Build JavaScript
+        run: npm run build
+
+      - name: Create Distribution Copy
+        env:
+          DIST: ${{ steps.workflow.outputs.DIST }}
+          PACKAGE: ${{ steps.workflow.outputs.PACKAGE }}
+        run: rsync -r --include-from=.distinclude --exclude-from=.distignore . "$DIST/$PACKAGE"
+
+      - name: List Distribution Files
+        working-directory: ${{ steps.workflow.outputs.DIST }}
+        run: find .
 
       - name: Configure WordPress
         env:
@@ -229,3 +157,10 @@ jobs:
         continue-on-error: true
         run: |
           npx wp-env logs --watch=false --debug=true
+
+      - name: Upload artifact
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02  # v4.6.2
+        with:
+          path: ${{ steps.workflow.outputs.DIST }}
+          name: ${{ steps.workflow.outputs.PACKAGE }}
+          retention-days: 7

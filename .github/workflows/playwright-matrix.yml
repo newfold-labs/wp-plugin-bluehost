@@ -157,10 +157,3 @@ jobs:
         continue-on-error: true
         run: |
           npx wp-env logs --watch=false --debug=true
-
-      - name: Upload artifact
-        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02  # v4.6.2
-        with:
-          path: ${{ steps.workflow.outputs.DIST }}
-          name: ${{ steps.workflow.outputs.PACKAGE }}
-          retention-days: 7

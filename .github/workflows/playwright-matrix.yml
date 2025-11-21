@@ -1,12 +1,10 @@
-name: E2E/Playwright Tests
+name: Playwright Test Matrix
 
 on:
-  push:
-    branches:
-      - 'main'
-      - 'develop'
   pull_request:
     types: [ opened, synchronize, reopened, ready_for_review ]
+    # branches:
+    #   - 'main'
   workflow_dispatch:
 
 concurrency:
@@ -18,19 +16,30 @@ concurrency:
 permissions: {}
 
 jobs:
-  build:
-    name: Build Plugin
+  test:
+    name: Playwright Test Matrix
     runs-on: ubuntu-latest
-    timeout-minutes: 30
-    outputs:
-      dist: ${{ steps.workflow.outputs.DIST }}
-      package: ${{ steps.workflow.outputs.PACKAGE }}
+    timeout-minutes: 60
     permissions:
       contents: read
+    strategy:
+      fail-fast: false
+      matrix:
+        phpVersion:
+          - '7.4'
+          - '8.0'
+          - '8.1'
+          - '8.2'
+          - '8.3'
+          - '8.4'
+        wpVersion:
+          - '6.6'
+          - '6.7'
+          - '6.8'
 
     steps:
       - name: Checkout
-        uses: actions/checkout@1af3b93b6815bc44a9784bd300feb67ff0d1eeb3  # v6.0.0
+        uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8  # v5.0.0
         with:
           persist-credentials: false
 
@@ -41,21 +50,18 @@ jobs:
           coverage: none
           tools: composer, cs2pr
 
-      - name: Setup workflow context
-        id: workflow
-        working-directory: ${{ runner.temp }}
-        env:
-          REPO: ${{ github.repository }}
-        run: |
-          mkdir dist
-          echo "DIST=${PWD}/dist" >> "$GITHUB_OUTPUT"
-          echo "PACKAGE=${REPO##*/}" >> "$GITHUB_OUTPUT"
-
       - name: Use Node.js 24.x
         uses: actions/setup-node@2028fbc5c25fe9cf00d9f06a71cc4710d4507903  # v6.0.0
         with:
           node-version: 24.x
           cache: 'npm'
+
+      - name: Show versions
+        run: |
+          php --version
+          composer --version
+          node --version
+          npm --version
 
       - name: Get Composer cache directory
         id: composer-cache
@@ -67,12 +73,15 @@ jobs:
           path: ${{ steps.composer-cache.outputs.dir }}
           key: ${{ runner.os }}-composer-${{ hashFiles('**/composer.lock') }}
 
-      - name: Show versions
+      - name: Setup workflow context
+        id: workflow
+        working-directory: ${{ runner.temp }}
+        env:
+          REPO: ${{ github.repository }}
         run: |
-          php --version
-          composer --version
-          node --version
-          npm --version
+          mkdir dist
+          echo "DIST=${PWD}/dist" >> "$GITHUB_OUTPUT"
+          echo "PACKAGE=${REPO##*/}" >> "$GITHUB_OUTPUT"
 
       - name: Validate composer.json and composer.lock
         run: composer validate
@@ -93,85 +102,20 @@ jobs:
         run: rsync -r --include-from=.distinclude --exclude-from=.distignore . "$DIST/$PACKAGE"
 
       - name: List Distribution Files
-        env:
-          DIST: ${{ steps.workflow.outputs.DIST }}
-        run: |
-          cd "$DIST"
-          find .
-
-      - name: Upload artifact
-        uses: actions/upload-artifact@330a01c490aca151604b8cf639adc76d48f6c5d4  # v5.0.0
-        with:
-          path: ${{ steps.workflow.outputs.DIST }}
-          name: ${{ steps.workflow.outputs.PACKAGE }}
-          retention-days: 7
-
-  test:
-    name: Run Playwright Tests
-    runs-on: ubuntu-latest
-    timeout-minutes: 60
-    needs: build
-    permissions:
-      contents: read
-
-    steps:
-      - name: Checkout
-        uses: actions/checkout@1af3b93b6815bc44a9784bd300feb67ff0d1eeb3  # v6.0.0
-        with:
-          persist-credentials: false
-
-      - name: Setup PHP
-        uses: shivammathur/setup-php@bf6b4fbd49ca58e4608c9c89fba0b8d90bd2a39f  # v2.35.5
-        with:
-          php-version: '8.3'
-          coverage: none
-          tools: composer, cs2pr
-
-      - name: Use Node.js 24.x
-        uses: actions/setup-node@2028fbc5c25fe9cf00d9f06a71cc4710d4507903  # v6.0.0
-        with:
-          node-version: 24.x
-          cache: 'npm'
-
-      - name: Get Composer cache directory
-        id: composer-cache
-        run: echo "dir=$(composer config cache-files-dir)" >> "$GITHUB_OUTPUT"
-
-      - name: Cache Composer vendor directory
-        uses: actions/cache@0057852bfaa89a56745cba8c7296529d2fc39830  # v4.3.0
-        with:
-          path: ${{ steps.composer-cache.outputs.dir }}
-          key: ${{ runner.os }}-composer-${{ hashFiles('**/composer.lock') }}
-
-      - name: Install PHP Dependencies
-        run: composer install --no-progress --no-dev --optimize-autoloader --prefer-source
-
-      - name: NPM Install
-        run: npm install --legacy-peer-deps
-
-      - name: Setup workflow context
-        id: workflow
-        working-directory: ${{ runner.temp }}
-        env:
-          REPO: ${{ github.repository }}
-        run: |
-          mkdir dist
-          echo "DIST=${PWD}/dist" >> "$GITHUB_OUTPUT"
-
-      - name: Download build artifacts
-        uses: actions/download-artifact@018cc2cf5baa6db3ef3c5f8a56943fffe632ef53  # v6.0.0
-        with:
-          path: ${{ steps.workflow.outputs.DIST }}
-          name: ${{ needs.build.outputs.package }}
+        working-directory: ${{ steps.workflow.outputs.DIST }}
+        run: find .
 
       - name: Configure WordPress
         env:
           DIST: ${{ steps.workflow.outputs.DIST }}
-          PACKAGE: ${{ needs.build.outputs.package }}
+          PACKAGE: ${{ steps.workflow.outputs.PACKAGE }}
         run: |
           jq -n \
+            --arg core "WordPress/WordPress#tags/${{ matrix.wpVersion }}" \
+            --arg phpVersion "${{ matrix.phpVersion }}" \
             --arg plugin "$DIST/$PACKAGE" \
-            '{plugins: [$plugin]}' > .wp-env.override.json
+            '{core: $core, phpVersion: $phpVersion, plugins: [$plugin]}' \
+            > .wp-env.override.json
 
       - name: Install WordPress
         uses: nick-fields/retry@ce71cc2ab81d554ebbe88c79ab5975992d79ba08  # v3.0.2
@@ -196,7 +140,7 @@ jobs:
 
       - name: Store Playwright test results
         if: always()
-        uses: actions/upload-artifact@330a01c490aca151604b8cf639adc76d48f6c5d4  # v5.0.0
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02  # v4.6.2
         with:
           name: playwright-report
           path: tests/playwright/test-results/

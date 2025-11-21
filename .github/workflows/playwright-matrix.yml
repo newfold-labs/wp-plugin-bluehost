@@ -108,7 +108,7 @@ jobs:
       - name: Configure WordPress
         env:
           DIST: ${{ steps.workflow.outputs.DIST }}
-          PACKAGE: ${{ needs.build.outputs.package }}
+          PACKAGE: ${{ needs.workflow.outputs.package }}
         run: |
           jq -n \
             --arg core "WordPress/WordPress#tags/${{ matrix.wpVersion }}" \

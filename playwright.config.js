@@ -2,11 +2,27 @@
 const { defineConfig, devices } = require('@playwright/test');
 const fs = require('fs');
 const { writeProjectsFile } = require('./.github/scripts/generate-playwright-projects');
-const { phpVersion, core } = require( './.wp-env.json' );
-const wpVersion = /[^/]*$/.exec( core )[ 0 ];
 
-// Read wp-env.json to get the correct port
+// Read wp-env.json to get the correct port and default values
 const wpEnvConfig = require('./.wp-env.json');
+
+// Check if .wp-env.override.json exists (created by CI workflows with matrix values)
+const overrideFile = './.wp-env.override.json';
+let phpVersion, core, wpVersion;
+
+if (fs.existsSync(overrideFile)) {
+  // Use override values from matrix workflow
+  const overrideConfig = require(overrideFile);
+  phpVersion = overrideConfig.phpVersion || wpEnvConfig.phpVersion;
+  core = overrideConfig.core || wpEnvConfig.core;
+  // Extract version from core string (e.g., "WordPress/WordPress#tags/6.8" -> "6.8")
+  wpVersion = /[^/]*$/.exec(core)[0];
+} else {
+  // Use default values from .wp-env.json
+  phpVersion = wpEnvConfig.phpVersion;
+  core = wpEnvConfig.core;
+  wpVersion = /[^/]*$/.exec(core)[0];
+}
 
 // Generate projects file if it doesn't exist or is stale
 const projectsFile = './tests/playwright/playwright-projects.json';

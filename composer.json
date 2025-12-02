@@ -137,7 +137,7 @@
   },
   "require-dev": {
     "johnpbloch/wordpress": "6.8.3",
-    "lucatume/wp-browser": ">=3.7.15",
+    "lucatume/wp-browser": ">=3.7.16",
     "newfold-labs/wp-php-standards": "^1.2.5",
     "phpunit/phpcov": ">=8.2.1",
     "roave/security-advisories": "dev-latest",
@@ -176,7 +176,7 @@
     "newfold-labs/wp-module-secure-passwords": "^1.1.2",
     "newfold-labs/wp-module-solutions": "^2.7.0",
     "newfold-labs/wp-module-sso": "^1.2.0",
-    "newfold-labs/wp-module-staging": "^2.6.2",
+    "newfold-labs/wp-module-staging": "^2.6.3",
     "wp-forge/wp-update-handler": "^1.0.2",
     "wp-forge/wp-upgrade-handler": "^1.0"
   }

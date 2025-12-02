@@ -56,44 +56,75 @@ const Notices = () => {
  * @param {string} path - The current route path (e.g., '/home', '/settings')
  */
 const syncWordPressMenu = ( path ) => {
-	// Get all menu items from the WordPress admin menu
 	const menuItems = document.querySelectorAll( '#adminmenu a' );
 
-	// First, remove all active/current classes
 	menuItems.forEach( ( item ) => {
-		// Remove current class from the link
 		item.classList.remove( 'current' );
 
-		// Get the parent list item
 		const parentListItem = item.closest( 'li' );
 		if ( parentListItem ) {
-			// Remove all WordPress admin menu state classes
 			parentListItem.classList.remove( 'current' );
 			parentListItem.classList.remove( 'wp-has-current-submenu' );
 			parentListItem.classList.remove( 'wp-menu-open' );
 		}
 	} );
 
-	// Construct the full path that matches WordPress admin menu href
-	const currentPath = `admin.php?page=bluehost#${ path }`;
+	const normalizePath = ( rawPath ) => {
+		if ( ! rawPath ) {
+			return '';
+		}
 
-	// Find the menu item that matches our current path
-	const currentMenuItem = document.querySelector(
-		`#adminmenu a[href*="${ currentPath }"]`
-	);
+		return rawPath.replace( /^#/, '' ).replace( /\/+$/, '' );
+	};
 
-	// If we found a matching menu item, highlight it
+	const buildCandidatePaths = ( rawPath ) => {
+		const normalized = normalizePath( rawPath );
+		if ( ! normalized ) {
+			return [];
+		}
+
+		const segments = normalized.split( '/' ).filter( Boolean );
+		const candidates = [];
+
+		for ( let i = segments.length; i > 0; i-- ) {
+			const partial = '/' + segments.slice( 0, i ).join( '/' );
+			candidates.push( partial );
+		}
+
+		return candidates;
+	};
+
+	const baseHref = 'admin.php?page=bluehost#';
+	const candidates = buildCandidatePaths( path );
+
+	let currentMenuItem = null;
+
+	for ( const candidate of candidates ) {
+		const fullPath = `${ baseHref }${ candidate }`;
+
+		const item =
+			document.querySelector( `#adminmenu a[href="${ fullPath }"]` ) ||
+			document.querySelector( `#adminmenu a[href^="${ fullPath }"]` );
+
+		if ( item ) {
+			currentMenuItem = item;
+			break;
+		}
+	}
+
+	if ( ! currentMenuItem ) {
+		currentMenuItem = document.querySelector(
+			'#adminmenu a[href="admin.php?page=bluehost"]'
+		);
+	}
+
 	if ( currentMenuItem ) {
-		// Add current class to the link
 		currentMenuItem.classList.add( 'current' );
 
-		// Get the parent list item
 		const parentListItem = currentMenuItem.closest( 'li' );
 		if ( parentListItem ) {
-			// Add current class to the list item
 			parentListItem.classList.add( 'current' );
 
-			// If this is a submenu item, highlight the parent menu too
 			const topLevelParent = parentListItem.closest( '.wp-has-submenu' );
 			if ( topLevelParent ) {
 				topLevelParent.classList.add( 'wp-has-current-submenu' );

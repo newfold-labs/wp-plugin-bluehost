@@ -135,7 +135,7 @@ export const AppNavMenu = () => {
 					break;
 			}
 
-			if ( pathnameLocation.startsWith('/marketplace') ){
+			if ( pathnameLocation.startsWith( '/marketplace' ) ) {
 				pathnameLocation = '/marketplace';
 			}
 

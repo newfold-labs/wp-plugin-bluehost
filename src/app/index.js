@@ -55,75 +55,80 @@ const Notices = () => {
  *
  * @param {string} path - The current route path (e.g., '/home', '/settings')
  */
-const syncWordPressMenu = (path) => {
-	const menuItems = document.querySelectorAll('#adminmenu a');
+const syncWordPressMenu = ( path ) => {
+	const menuItems = document.querySelectorAll( '#adminmenu a' );
 
-	menuItems.forEach((item) => {
-		item.classList.remove('current');
+	menuItems.forEach( ( item ) => {
+		item.classList.remove( 'current' );
 
-		const parentListItem = item.closest('li');
-		if (parentListItem) {
-			parentListItem.classList.remove('current');
-			parentListItem.classList.remove('wp-has-current-submenu');
-			parentListItem.classList.remove('wp-menu-open');
+		const parentListItem = item.closest( 'li' );
+		if ( parentListItem ) {
+			parentListItem.classList.remove( 'current' );
+			parentListItem.classList.remove( 'wp-has-current-submenu' );
+			parentListItem.classList.remove( 'wp-menu-open' );
 		}
-	});
+	} );
 
-	const normalizePath = (rawPath) => {
-		if (!rawPath) return '';
-		return rawPath.replace(/^#/, '').replace(/\/+$/, '');
+	const normalizePath = ( rawPath ) => {
+		if ( ! rawPath ) {
+			return '';
+		}
+
+		return rawPath.replace( /^#/, '' ).replace( /\/+$/, '' );
 	};
 
-	const buildCandidatePaths = (rawPath) => {
-		const normalized = normalizePath(rawPath);
-		if (!normalized) return [];
+	const buildCandidatePaths = ( rawPath ) => {
+		const normalized = normalizePath( rawPath );
+		if ( ! normalized ) {
+			return [];
+		}
 
-		const segments = normalized.split('/').filter(Boolean);
+		const segments = normalized.split( '/' ).filter( Boolean );
 		const candidates = [];
 
-		for (let i = segments.length; i > 0; i--) {
-			const partial = '/' + segments.slice(0, i).join('/');
-			candidates.push(partial);
+		for ( let i = segments.length; i > 0; i-- ) {
+			const partial = '/' + segments.slice( 0, i ).join( '/' );
+			candidates.push( partial );
 		}
 
 		return candidates;
 	};
 
 	const baseHref = 'admin.php?page=bluehost#';
-	const candidates = buildCandidatePaths(path);
+	const candidates = buildCandidatePaths( path );
 
 	let currentMenuItem = null;
 
-	for (const candidate of candidates) {
-		const fullPath = `${baseHref}${candidate}`;
+	for ( const candidate of candidates ) {
+		const fullPath = `${ baseHref }${ candidate }`;
 
-		let item =
-			document.querySelector(`#adminmenu a[href="${fullPath}"]`) ||
-			document.querySelector(`#adminmenu a[href^="${fullPath}"]`);
+		const item =
+			document.querySelector( `#adminmenu a[href="${ fullPath }"]` ) ||
+			document.querySelector( `#adminmenu a[href^="${ fullPath }"]` );
 
-		if (item) {
+		if ( item ) {
 			currentMenuItem = item;
 			break;
 		}
 	}
 
-	if (!currentMenuItem) {
+	if ( ! currentMenuItem ) {
 		currentMenuItem = document.querySelector(
 			'#adminmenu a[href="admin.php?page=bluehost"]'
 		);
 	}
 
-	if (currentMenuItem) {
-		currentMenuItem.classList.add('current');
+	if ( currentMenuItem ) {
+		currentMenuItem.classList.add( 'current' );
 
-		const parentListItem = currentMenuItem.closest('li');
-		if (parentListItem) {
-			parentListItem.classList.add('current');
+		const parentListItem = currentMenuItem.closest( 'li' );
+		if ( parentListItem ) {
+			parentListItem.classList.add( 'current' );
 
-			const topLevelParent = parentListItem.closest('.wp-has-submenu');
-			if (topLevelParent) {
-				topLevelParent.classList.add('wp-has-current-submenu');
-				topLevelParent.classList.add('wp-menu-open');
+			const topLevelParent = parentListItem.closest( '.wp-has-submenu' );
+			if ( topLevelParent ) {
+				topLevelParent.classList.add( 'wp-has-current-submenu' );
+				topLevelParent.classList.add( 'wp-menu-open' );
 			}
 		}
 	}

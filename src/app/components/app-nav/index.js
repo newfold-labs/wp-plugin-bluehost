@@ -134,6 +134,11 @@ export const AppNavMenu = () => {
 					pathnameLocation = '/settings';
 					break;
 			}
+
+			if ( pathnameLocation.startsWith('/marketplace') ){
+				pathnameLocation = '/marketplace';
+			}
+
 			// sync active path with location pathname
 			setActivePath( `#${ pathnameLocation }` );
 		}

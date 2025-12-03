@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "2d3c7aac674db0d04566e1cd7f65a1e9",
+    "content-hash": "025f61bc85525880cb22109b10d842c5",
     "packages": [
         {
             "name": "doctrine/inflector",
@@ -1712,23 +1712,23 @@
         },
         {
             "name": "newfold-labs/wp-module-installer",
-            "version": "1.7.0",
+            "version": "1.7.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/newfold-labs/wp-module-installer.git",
-                "reference": "0e4bb6361a2e93627f3baf00e654b2ea656bf001"
+                "reference": "f72cd9f1b72e14d21161fe69ea2dbe495220fe3c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/newfold-labs/wp-module-installer/zipball/0e4bb6361a2e93627f3baf00e654b2ea656bf001",
-                "reference": "0e4bb6361a2e93627f3baf00e654b2ea656bf001",
+                "url": "https://api.github.com/repos/newfold-labs/wp-module-installer/zipball/f72cd9f1b72e14d21161fe69ea2dbe495220fe3c",
+                "reference": "f72cd9f1b72e14d21161fe69ea2dbe495220fe3c",
                 "shasum": ""
             },
             "require": {
                 "newfold-labs/wp-module-pls": "^1.1.2"
             },
             "require-dev": {
-                "johnpbloch/wordpress": "6.8.3",
+                "johnpbloch/wordpress": "6.9.0",
                 "lucatume/wp-browser": "*",
                 "newfold-labs/wp-php-standards": "^1.2.5",
                 "phpunit/phpcov": "*",
@@ -1797,10 +1797,10 @@
             ],
             "description": "An installer for WordPress plugins and themes.",
             "support": {
-                "source": "https://github.com/newfold-labs/wp-module-installer/tree/1.7.0",
+                "source": "https://github.com/newfold-labs/wp-module-installer/tree/1.7.1",
                 "issues": "https://github.com/newfold-labs/wp-module-installer/issues"
             },
-            "time": "2025-12-02T15:14:35+00:00"
+            "time": "2025-12-03T15:38:31+00:00"
         },
         {
             "name": "newfold-labs/wp-module-link-tracker",
@@ -6969,12 +6969,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Roave/SecurityAdvisories.git",
-                "reference": "6e9ea9dcd100b6dcc0b1cdfc139df3695ad73e38"
+                "reference": "fe1c8ca582c84d6e7cef4588af1753d697bcca03"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Roave/SecurityAdvisories/zipball/6e9ea9dcd100b6dcc0b1cdfc139df3695ad73e38",
-                "reference": "6e9ea9dcd100b6dcc0b1cdfc139df3695ad73e38",
+                "url": "https://api.github.com/repos/Roave/SecurityAdvisories/zipball/fe1c8ca582c84d6e7cef4588af1753d697bcca03",
+                "reference": "fe1c8ca582c84d6e7cef4588af1753d697bcca03",
                 "shasum": ""
             },
             "conflict": {
@@ -6986,6 +6986,7 @@
                 "aimeos/ai-admin-graphql": ">=2022.04.1,<2022.10.10|>=2023.04.1,<2023.10.6|>=2024.04.1,<2024.07.2",
                 "aimeos/ai-admin-jsonadm": "<2020.10.13|>=2021.04.1,<2021.10.6|>=2022.04.1,<2022.10.3|>=2023.04.1,<2023.10.4|==2024.04.1",
                 "aimeos/ai-client-html": ">=2020.04.1,<2020.10.27|>=2021.04.1,<2021.10.22|>=2022.04.1,<2022.10.13|>=2023.04.1,<2023.10.15|>=2024.04.1,<2024.04.7",
+                "aimeos/ai-cms-grapesjs": ">=2021.04.1,<2021.10.8|>=2022.04.1,<2022.10.9|>=2023.04.1,<2023.10.15|>=2024.04.1,<2024.10.8|>=2025.04.1,<2025.10.2",
                 "aimeos/ai-controller-frontend": "<2020.10.15|>=2021.04.1,<2021.10.8|>=2022.04.1,<2022.10.8|>=2023.04.1,<2023.10.9|==2024.04.1",
                 "aimeos/aimeos-core": ">=2022.04.1,<2022.10.17|>=2023.04.1,<2023.10.17|>=2024.04.1,<2024.04.7",
                 "aimeos/aimeos-typo3": "<19.10.12|>=20,<20.10.5",
@@ -7418,8 +7419,9 @@
                 "marshmallow/nova-tiptap": "<5.7",
                 "matomo/matomo": "<1.11",
                 "matyhtf/framework": "<3.0.6",
-                "mautic/core": "<5.2.8|>=6.0.0.0-alpha,<6.0.5",
+                "mautic/core": "<5.2.9|>=6,<6.0.7",
                 "mautic/core-lib": ">=1.0.0.0-beta,<4.4.13|>=5.0.0.0-alpha,<5.1.1",
+                "mautic/grapes-js-builder-bundle": ">=4,<4.4.18|>=5,<5.2.9|>=6,<6.0.7",
                 "maximebf/debugbar": "<1.19",
                 "mdanter/ecc": "<2",
                 "mediawiki/abuse-filter": "<1.39.9|>=1.40,<1.41.3|>=1.42,<1.42.2",
@@ -7957,7 +7959,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2025-12-02T01:33:57+00:00"
+            "time": "2025-12-03T14:06:51+00:00"
         },
         {
             "name": "sebastian/cli-parser",
@@ -10912,16 +10914,16 @@
         },
         {
             "name": "wp-phpunit/wp-phpunit",
-            "version": "6.8.3",
+            "version": "6.9.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/wp-phpunit/wp-phpunit.git",
-                "reference": "a33d328dab5a4a9ddf0c560bcadbabb58b5ee67f"
+                "reference": "448dc57a97c7225d2ac6271876682fca4c2ed340"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/wp-phpunit/wp-phpunit/zipball/a33d328dab5a4a9ddf0c560bcadbabb58b5ee67f",
-                "reference": "a33d328dab5a4a9ddf0c560bcadbabb58b5ee67f",
+                "url": "https://api.github.com/repos/wp-phpunit/wp-phpunit/zipball/448dc57a97c7225d2ac6271876682fca4c2ed340",
+                "reference": "448dc57a97c7225d2ac6271876682fca4c2ed340",
                 "shasum": ""
             },
             "type": "library",
@@ -10956,7 +10958,7 @@
                 "issues": "https://github.com/wp-phpunit/issues",
                 "source": "https://github.com/wp-phpunit/wp-phpunit"
             },
-            "time": "2025-04-16T01:40:54+00:00"
+            "time": "2025-12-03T01:19:46+00:00"
         }
     ],
     "aliases": [],

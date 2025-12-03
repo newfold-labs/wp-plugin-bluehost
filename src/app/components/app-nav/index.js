@@ -10,7 +10,7 @@ import {
 import { default as NewfoldNotifications } from '@modules/wp-module-notifications/assets/js/components/notifications/';
 import { useLocation } from 'react-router-dom';
 import classnames from 'classnames';
-import { getPlatformPathUrl } from 'App/util/helpers';
+import { getPlatformPathUrl, addUtmParams } from 'App/util/helpers';
 import { getEditorUrl } from 'App/util/themeUtils';
 import { topRoutes } from 'App/data/routes';
 import {
@@ -84,7 +84,7 @@ export const AppNavMenu = () => {
 				<Button
 					as={ 'a' }
 					className={ 'nfd-flex nfd-gap-2 nfd-mr-4' }
-					href={ window.NewfoldRuntime.linkTracker.addUtmParams(
+					href={ addUtmParams(
 						getPlatformPathUrl( 'hosting/details', 'app/#/sites' )
 					) }
 					variant={ 'secondary' }
@@ -134,6 +134,11 @@ export const AppNavMenu = () => {
 					pathnameLocation = '/settings';
 					break;
 			}
+
+			if ( pathnameLocation.startsWith( '/marketplace' ) ) {
+				pathnameLocation = '/marketplace';
+			}
+
 			// sync active path with location pathname
 			setActivePath( `#${ pathnameLocation }` );
 		}

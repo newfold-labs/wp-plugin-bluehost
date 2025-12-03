@@ -142,7 +142,7 @@
     "phpunit/phpcov": ">=8.2.1",
     "roave/security-advisories": "dev-latest",
     "wp-cli/i18n-command": "^2.6.5",
-    "wp-phpunit/wp-phpunit": "^6.8.3"
+    "wp-phpunit/wp-phpunit": "^6.9.0"
   },
   "require": {
     "newfold-labs/wp-module-activation": "^1.0.12",

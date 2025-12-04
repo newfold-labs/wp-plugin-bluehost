@@ -29,10 +29,52 @@ async function waitForNotification(page, text, timeout = 5000) {
   return notification;
 }
 
-module.exports = {
+/**
+ * ANSI color codes for terminal output
+ */
+const colors = {
+  reset: '\x1b[0m',
+  gray: '\x1b[90m',
+  white: '\x1b[37m',
+  red: '\x1b[31m',
+  green: '\x1b[32m',
+  yellow: '\x1b[33m',
+  blue: '\x1b[34m',
+  magenta: '\x1b[35m',
+  cyan: '\x1b[36m',
+};
+
+/**
+ * Fancy log wrapper that formats and truncates output with color support
+ * 
+ * @param {string} message - Message to log
+ * @param {number} maxLength - Maximum length before truncation (default: 55)
+ * @param {string} color - Color name (default: 'gray'). Options: gray, white, red, green, yellow, blue, magenta, cyan
+ */
+function fancyLog(message, maxLength = 55, color = 'gray', indent = '        ') {
+  const stringMessage = String(message);
+  const formattedMessage = stringMessage.length > maxLength
+    ? stringMessage.substring(0, maxLength) + '...'
+    : stringMessage;
+  
+  const colorCode = colors[color] || colors.gray;
+  console.log(`${indent}${colorCode}${formattedMessage}${colors.reset}`);
+}
+
+export {
   // Scroll into view
   scrollIntoView,
   
   // Notifications
   waitForNotification,
+  
+  // Logging
+  fancyLog,
+};
+
+// Default export for use in index.js
+export default {
+  scrollIntoView,
+  waitForNotification,
+  fancyLog,
 };

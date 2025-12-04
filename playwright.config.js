@@ -1,37 +1,37 @@
 // playwright.config.js
-const { defineConfig, devices } = require('@playwright/test');
-const fs = require('fs');
-const { writeProjectsFile } = require('./.github/scripts/generate-playwright-projects');
+import { defineConfig, devices } from '@playwright/test';
+import { existsSync, readFileSync } from 'fs';
+import { writeProjectsFile } from './.github/scripts/generate-playwright-projects';
 
 // Read wp-env.json to get the correct port and default values
-const wpEnvConfig = require('./.wp-env.json');
+import { phpVersion as _phpVersion, core as _core, port as _port } from './.wp-env.json';
 
 // Check if .wp-env.override.json exists (created by CI workflows with matrix values)
 const overrideFile = './.wp-env.override.json';
 let phpVersion, core, wpVersion;
 
-if (fs.existsSync(overrideFile)) {
+if (existsSync(overrideFile)) {
   // Use override values from matrix workflow
   const overrideConfig = require(overrideFile);
-  phpVersion = overrideConfig.phpVersion || wpEnvConfig.phpVersion;
-  core = overrideConfig.core || wpEnvConfig.core;
+  phpVersion = overrideConfig.phpVersion || _phpVersion;
+  core = overrideConfig.core || _core;
   // Extract version from core string (e.g., "WordPress/WordPress#tags/6.8" -> "6.8")
   wpVersion = /[^/]*$/.exec(core)[0];
 } else {
   // Use default values from .wp-env.json
-  phpVersion = wpEnvConfig.phpVersion;
-  core = wpEnvConfig.core;
+  phpVersion = _phpVersion;
+  core = _core;
   wpVersion = /[^/]*$/.exec(core)[0];
 }
 
 // Generate projects file if it doesn't exist or is stale
 const projectsFile = './tests/playwright/playwright-projects.json';
-if (!fs.existsSync(projectsFile)) {
+if (!existsSync(projectsFile)) {
   writeProjectsFile();
 }
 
 // Load projects from generated file
-const projects = JSON.parse(fs.readFileSync(projectsFile, 'utf8'));
+const projects = JSON.parse(readFileSync(projectsFile, 'utf8'));
 
 // Set environment variable for plugin root
 process.env.PLUGIN_DIR = __dirname;
@@ -41,7 +41,7 @@ process.env.WP_ADMIN_PASSWORD = process.env.WP_ADMIN_PASSWORD || 'password';
 process.env.WP_VERSION = process.env.WP_VERSION || wpVersion;
 process.env.PHP_VERSION = process.env.PHP_VERSION || phpVersion;
 
-module.exports = defineConfig({
+export default defineConfig({
   globalSetup: require.resolve('./tests/playwright/global-setup.js'),
   projects: projects,
   testIgnore: [
@@ -52,7 +52,7 @@ module.exports = defineConfig({
     ...devices['Desktop Chrome'],
     headless: true,
     viewport: { width: 1200, height: 800 },
-    baseURL: `http://localhost:${wpEnvConfig.port}`, // Use port from wp-env.json
+    baseURL: `http://localhost:${_port}`, // Use port from wp-env.json
     ignoreHTTPSErrors: true,
     // WordPress-optimized settings
     locale: 'en-US',
@@ -67,7 +67,7 @@ module.exports = defineConfig({
   },
   webServer: process.env.CI ? undefined : {
     command: 'wp-env start',
-    port: wpEnvConfig.port, // Use port from wp-env.json
+    port: _port, // Use port from wp-env.json
     reuseExistingServer: true,
     timeout: 120 * 1000, // 2 minutes
   },

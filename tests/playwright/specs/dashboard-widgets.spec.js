@@ -1,11 +1,7 @@
-const { test, expect } = require('@playwright/test');
-const { auth, wordpress, newfold, a11y, utils, setup } = require('../helpers');
+import { test, expect } from '@playwright/test';
+import { auth, wordpress, newfold, a11y, utils } from '../helpers';
 
 test.describe('Dashboard Widgets', () => {
-  
-  test.beforeAll(async ({ browser }) => {
-    await setup.runCommonSetup(browser);
-  });
   
   test.beforeEach(async ({ page }) => {
     // Navigate to WordPress dashboard
@@ -161,7 +157,6 @@ test.describe('Dashboard Widgets', () => {
     expect(helpHref).toContain('help');
 
     // Set capabilities and check help center
-    console.log('Setting capabilities for help widget test');
     await newfold.setCapability({
       canAccessAI: true,
       canAccessHelpCenter: true,

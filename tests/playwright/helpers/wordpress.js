@@ -1,4 +1,4 @@
-const { execSync } = require('child_process');
+import { execSync } from 'child_process';
 
 /**
  * Core WordPress Test Helpers
@@ -7,7 +7,8 @@ const { execSync } = require('child_process');
  * permalinks, and basic WordPress operations.
  */
 
-const { Admin, PageUtils } = require('@wordpress/e2e-test-utils-playwright');
+import { Admin, PageUtils } from '@wordpress/e2e-test-utils-playwright';
+import { fancyLog } from './utils';
 
 /**
  * Wait for WordPress admin to be ready
@@ -64,7 +65,7 @@ async function isPluginActive(page, pluginSlug) {
  * @returns {string|number} - Output string if available, 0 for success, or error info.
  */
 async function wpCli(command) {
-  console.log(`WP-CLI command: ${command}`);
+  fancyLog(`🔧 WP-CLI command: ${command}`);
   try {
     const output = execSync(`npx wp-env run cli wp ${command}`, {
       encoding: 'utf-8', // auto convert Buffer to string
@@ -91,20 +92,31 @@ async function wpCli(command) {
  * @returns {string|number} - Output string if available, 0 for success, or error info.
  */
 async function setOption(option, value) {
-  console.log(`Setting WordPress option: ${option} = ${value}`);
+  fancyLog(`⚙️  Setting WordPress option: ${option} = ${value}`);
   const command = `option update ${option} ${value}`;
   return await wpCli(command);
 }
 
+// Track if permalink structure has been set to prevent duplicate calls
+let permalinkStructureSet = false;
+
 /**
  * Set WordPress permalink structure and flush rewrite rules
+ * Note: Permalinks are typically set in global-setup.js via WP-CLI before tests run.
+ * This function is available for changing permalinks during tests if needed.
+ * This will only run once, even if called from multiple test files.
  *
  * @param {import('@playwright/test').Page} page - Playwright page object
  * @param {string} structure - Permalink structure (default: '/%postname%/')
  * @returns {boolean} True if permalink structure was set successfully
  */
 async function setPermalinkStructure(page, structure = '/%postname%/') {
-  console.log(`Setting permalink structure to: ${structure}`);
+  // If permalink structure has already been set, skip
+  if (permalinkStructureSet) {
+    return true;
+  }
+
+  fancyLog(`🔗 Setting permalink structure to: ${structure}`);
 
   // navigate to permalink settings
   const pageUtils = new PageUtils({ page });
@@ -121,10 +133,16 @@ async function setPermalinkStructure(page, structure = '/%postname%/') {
   // click submit
   await page.locator('#submit').click();
   // wait for success message to be visible
-  return page.locator('.notice-success').isVisible();
+  const success = await page.locator('.notice-success').isVisible();
+  
+  if (success) {
+    permalinkStructureSet = true;
+  }
+  
+  return success;
 }
 
-module.exports = {
+export default {
   // Core WordPress functionality
   waitForWordPressAdmin,
   

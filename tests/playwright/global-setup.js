@@ -1,18 +1,31 @@
-const { execSync } = require('child_process');
+import { execSync } from 'child_process';
+import { fancyLog } from './helpers/utils.js';
 
 async function globalSetup(config) {
-  console.log('Running global setup...');
+  fancyLog('Running global setup...', 55, 'gray', '');
   
   try {
-    // Add your command here
-    // Example: execSync('npm run build', { stdio: 'inherit' });
-    // Example: execSync('wp-env run cli wp plugin activate your-plugin', { stdio: 'inherit' });
+    // Set permalink structure via WP-CLI (runs before browser is created)
+    const permalinkStructure = '/%postname%/';
+    fancyLog(`🔗 Setting permalink structure to: ${permalinkStructure}`, 55, 'gray', '');
     
-    console.log('Global setup completed successfully');
+    execSync(`npx wp-env run cli wp option update permalink_structure '${permalinkStructure}'`, {
+      stdio: 'inherit',
+      encoding: 'utf-8',
+    });
+    
+    // Flush rewrite rules to apply the new permalink structure
+    fancyLog('🔄 Flushing rewrite rules...', 55, 'gray', '');
+    execSync('npx wp-env run cli wp rewrite flush', {
+      stdio: 'inherit',
+      encoding: 'utf-8',
+    });
+    
+    fancyLog('✔ Global setup completed successfully', 55, 'green', '');
   } catch (error) {
-    console.error('Global setup failed:', error.message);
+    fancyLog(`✘ Global setup failed: ${error.message}`, 55, 'red', '');
     process.exit(1);
   }
 }
 
-module.exports = globalSetup;
+export default globalSetup;

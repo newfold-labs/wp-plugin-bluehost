@@ -5,8 +5,9 @@
  * Includes capabilities, coming soon, dashboard widgets, and plugin-specific features.
  */
 
-const { expect } = require('@playwright/test');
-const wordpress = require('./wordpress');
+import { expect } from '@playwright/test';
+import wordpress from './wordpress';
+import { fancyLog } from './utils';
 
 /**
  * Set plugin capabilities (Bluehost-specific functionality)
@@ -16,7 +17,7 @@ const wordpress = require('./wordpress');
  * @returns {Promise<void>}
  */
 async function setCapability(capabilitiesJSON, expiration = 3600) {
-  console.log('Setting capabilities', capabilitiesJSON);
+  fancyLog(`🔐 Setting capabilities: ${JSON.stringify(capabilitiesJSON)}`);
   const expiry = Math.floor( new Date().getTime() / 1000.0 ) + expiration;
   
   // Use Promise.all to ensure both operations complete before returning
@@ -39,13 +40,32 @@ async function clearCapabilities() {
 /**
  * Log the current capabilities option from the database
  * 
- * @returns {Promise<string>} The current capabilities value
+ * @returns {Promise<Object>} The current capabilities object
  */
 async function logCapabilities() {
-  console.log('Fetching current capabilities from database...');
-  const result = await wordpress.wpCli('option get _transient_nfd_site_capabilities');
-  console.log('Current capabilities:', result);
-  return result;
+  const result = await wordpress.wpCli('option get _transient_nfd_site_capabilities --format=json');
+  
+  fancyLog('📋 Current capabilities:');
+  
+  try {
+    // Parse JSON and iterate over key-value pairs
+    const capabilities = JSON.parse(result);
+    
+    if (typeof capabilities === 'object' && capabilities !== null) {
+      Object.entries(capabilities).forEach(([key, value]) => {
+        const valueStr = typeof value === 'object' ? JSON.stringify(value) : String(value);
+        fancyLog(`- ${key}: ${valueStr}`, 55, 'gray', '            ');
+      });
+    } else {
+      fancyLog(`- ${String(capabilities)}`, 55, 'gray', '            ');
+    }
+    
+    return capabilities;
+  } catch (error) {
+    // Fallback if JSON parsing fails
+    fancyLog(`${result}`, 55, 'gray', '            ');
+    return result;
+  }
 }
 
 /**
@@ -198,7 +218,7 @@ async function waitForRestAPI(page) {
   }
 }
 
-module.exports = {
+export default {
   // Capabilities
   setCapability,
   clearCapabilities,

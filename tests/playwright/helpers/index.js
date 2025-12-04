@@ -6,28 +6,24 @@
  */
 
 // Authentication helpers
-const auth = require('./auth');
+import auth from './auth';
 
 // Core WordPress functionality
-const wordpress = require('./wordpress');
+import wordpress from './wordpress';
 
 // Newfold/Bluehost plugin-specific helpers
-const newfold = require('./newfold');
+import newfold from './newfold';
 
 // Accessibility testing helpers
-const a11y = require('./a11y');
+import a11y from './a11y';
 
 // General test utilities
-const utils = require('./utils');
+import utils from './utils';
 
-// Setup helpers
-const setup = require('./setup');
-
-module.exports = {
+export {
   auth,
   wordpress,
   newfold,
   a11y,
-  utils,
-  setup,
+  utils
 };

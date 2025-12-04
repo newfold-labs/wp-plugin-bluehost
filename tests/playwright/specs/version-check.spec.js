@@ -1,5 +1,5 @@
-const { test, expect } = require('@playwright/test');
-const { auth } = require('../helpers');
+import { test, expect } from '@playwright/test';
+import { auth } from '../helpers';
 
 test.describe('Version Check', () => {
   test.beforeEach(async ({ page }) => {

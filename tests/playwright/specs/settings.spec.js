@@ -1,11 +1,7 @@
-const { test, expect } = require('@playwright/test');
-const { auth, a11y, utils, setup } = require('../helpers');
+import { test, expect } from '@playwright/test';
+import { auth, a11y, utils } from '../helpers';
 
 test.describe('Settings Page', () => {
-
-  test.beforeAll(async ({ browser }) => {
-    await setup.runCommonSetup(browser);
-  });
 
   test.beforeEach(async ({ page }) => {
     // Navigate to settings page
@@ -23,7 +19,7 @@ test.describe('Settings Page', () => {
     await a11y.checkA11y(page, '.wppbh-app-body');
   });
 
-  test('Has All Settings Sections', async ({ page }) => {
+  test('Has Coming Soon Section', async ({ page }) => {
     const comingSoonSection = page.locator('.wppbh-app-settings-coming-soon');
     await utils.scrollIntoView(comingSoonSection);
     await expect(comingSoonSection).toBeVisible();
@@ -31,9 +27,9 @@ test.describe('Settings Page', () => {
   });
 
   test('Autoupdate Toggles function properly', async ({ page }) => {
-    const updateSection = page.locator('.wppbh-app-settings-update');
-    await utils.scrollIntoView(updateSection);
-    await expect(updateSection).toBeVisible();
+    const updatesSection = page.locator('.wppbh-app-settings-update');
+    await utils.scrollIntoView(updatesSection);
+    await expect(updatesSection).toBeVisible();
 
     // On load update all is checked, which forces other updates to check and disabled state
     const allToggle = page.locator('[data-id="autoupdate-all-toggle"]');

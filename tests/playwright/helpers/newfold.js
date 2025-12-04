@@ -7,7 +7,7 @@
 
 import { expect } from '@playwright/test';
 import wordpress from './wordpress';
-import { fancyLog } from './utils';
+import utils from './utils';
 
 /**
  * Set plugin capabilities (Bluehost-specific functionality)
@@ -17,7 +17,7 @@ import { fancyLog } from './utils';
  * @returns {Promise<void>}
  */
 async function setCapability(capabilitiesJSON, expiration = 3600) {
-  fancyLog(`🔐 Setting capabilities: ${JSON.stringify(capabilitiesJSON)}`);
+  utils.fancyLog(`🔐 Setting capabilities: ${JSON.stringify(capabilitiesJSON)}`);
   const expiry = Math.floor( new Date().getTime() / 1000.0 ) + expiration;
   
   // Use Promise.all to ensure both operations complete before returning
@@ -45,7 +45,7 @@ async function clearCapabilities() {
 async function logCapabilities() {
   const result = await wordpress.wpCli('option get _transient_nfd_site_capabilities --format=json');
   
-  fancyLog('📋 Current capabilities:');
+  utils.fancyLog('📋 Current capabilities:');
   
   try {
     // Parse JSON and iterate over key-value pairs
@@ -54,16 +54,16 @@ async function logCapabilities() {
     if (typeof capabilities === 'object' && capabilities !== null) {
       Object.entries(capabilities).forEach(([key, value]) => {
         const valueStr = typeof value === 'object' ? JSON.stringify(value) : String(value);
-        fancyLog(`- ${key}: ${valueStr}`, 55, 'gray', '            ');
+        utils.fancyLog(`- ${key}: ${valueStr}`, 55, 'gray', '            ');
       });
     } else {
-      fancyLog(`- ${String(capabilities)}`, 55, 'gray', '            ');
+      utils.fancyLog(`- ${String(capabilities)}`, 55, 'gray', '            ');
     }
     
     return capabilities;
   } catch (error) {
     // Fallback if JSON parsing fails
-    fancyLog(`${result}`, 55, 'gray', '            ');
+    utils.fancyLog(`${result}`, 55, 'gray', '            ');
     return result;
   }
 }

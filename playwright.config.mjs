@@ -1,16 +1,20 @@
-// playwright.config.js
+/*
+* playwright config file
+* @see https://playwright.dev/docs/test-configuration
+*/
 import { defineConfig, devices } from '@playwright/test';
 import { existsSync, readFileSync } from 'fs';
 import { fileURLToPath } from 'url';
 import { dirname, resolve } from 'path';
-import { writeProjectsFile } from './.github/scripts/generate-playwright-projects';
+import { writeProjectsFile } from './.github/scripts/generate-playwright-projects.mjs';
 
 // ES module equivalent of __dirname
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 
 // Read wp-env.json to get the correct port and default values
-import { phpVersion as _phpVersion, core as _core, port as _port } from './.wp-env.json';
+const wpEnvConfig = JSON.parse(readFileSync('./.wp-env.json', 'utf8'));
+const { phpVersion: _phpVersion, core: _core, port: _port } = wpEnvConfig;
 
 // Check if .wp-env.override.json exists (created by CI workflows with matrix values)
 const overrideFile = './.wp-env.override.json';

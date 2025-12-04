@@ -61,18 +61,6 @@ function fancyLog(message, maxLength = 55, color = 'gray', indent = '        ') 
   console.log(`${indent}${colorCode}${formattedMessage}${colors.reset}`);
 }
 
-export {
-  // Scroll into view
-  scrollIntoView,
-  
-  // Notifications
-  waitForNotification,
-  
-  // Logging
-  fancyLog,
-};
-
-// Default export for use in index.js
 export default {
   scrollIntoView,
   waitForNotification,

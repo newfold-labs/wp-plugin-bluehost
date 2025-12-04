@@ -8,7 +8,7 @@ import { execSync } from 'child_process';
  */
 
 import { Admin, PageUtils } from '@wordpress/e2e-test-utils-playwright';
-import { fancyLog } from './utils';
+import utils from './utils';
 
 /**
  * Wait for WordPress admin to be ready
@@ -65,7 +65,7 @@ async function isPluginActive(page, pluginSlug) {
  * @returns {string|number} - Output string if available, 0 for success, or error info.
  */
 async function wpCli(command) {
-  fancyLog(`🔧 WP-CLI command: ${command}`);
+  utils.fancyLog(`🔧 WP-CLI command: ${command}`);
   try {
     const output = execSync(`npx wp-env run cli wp ${command}`, {
       encoding: 'utf-8', // auto convert Buffer to string
@@ -92,7 +92,7 @@ async function wpCli(command) {
  * @returns {string|number} - Output string if available, 0 for success, or error info.
  */
 async function setOption(option, value) {
-  fancyLog(`⚙️  Setting WordPress option: ${option} = ${value}`);
+  utils.fancyLog(`⚙️  Setting WordPress option: ${option} = ${value}`);
   const command = `option update ${option} ${value}`;
   return await wpCli(command);
 }
@@ -116,7 +116,7 @@ async function setPermalinkStructure(page, structure = '/%postname%/') {
     return true;
   }
 
-  fancyLog(`🔗 Setting permalink structure to: ${structure}`);
+  utils.fancyLog(`🔗 Setting permalink structure to: ${structure}`);
 
   // navigate to permalink settings
   const pageUtils = new PageUtils({ page });

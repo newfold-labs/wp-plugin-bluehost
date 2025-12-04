@@ -5,7 +5,7 @@
  * Focuses on WCAG AA compliance with flexible configuration.
  */
 
-const AxeBuilder = require('@axe-core/playwright');
+import AxeBuilder from '@axe-core/playwright';
 
 /**
  * Check accessibility for a specific element and its children
@@ -143,7 +143,7 @@ ${nodes}`;
   return results;
 }
 
-module.exports = {
+export default {
   checkA11y,
   checkColorContrast,
 };

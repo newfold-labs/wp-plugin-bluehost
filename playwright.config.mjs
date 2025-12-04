@@ -45,7 +45,7 @@ const projects = JSON.parse(readFileSync(projectsFile, 'utf8'));
 
 // Set environment variable for plugin root
 process.env.PLUGIN_DIR = __dirname;
-process.env.PLUGIN_ID = 'bluehost'
+process.env.PLUGIN_ID = 'bluehost';
 process.env.WP_ADMIN_USERNAME = process.env.WP_ADMIN_USERNAME || 'admin';
 process.env.WP_ADMIN_PASSWORD = process.env.WP_ADMIN_PASSWORD || 'password';
 process.env.WP_VERSION = process.env.WP_VERSION || wpVersion;

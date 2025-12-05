@@ -8,7 +8,7 @@ import { execSync } from 'child_process';
  */
 
 import { Admin, PageUtils } from '@wordpress/e2e-test-utils-playwright';
-import utils from './utils';
+import utils from './utils.mjs';
 
 /**
  * Wait for WordPress admin to be ready

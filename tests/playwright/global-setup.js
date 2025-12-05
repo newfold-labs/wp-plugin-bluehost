@@ -1,5 +1,5 @@
 import { execSync } from 'child_process';
-import utils from './helpers/utils.js';
+import utils from './helpers/utils.mjs';
 
 async function globalSetup(config) {
   utils.fancyLog('Running global setup...', 55, 'gray', '');

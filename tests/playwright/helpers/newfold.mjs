@@ -6,8 +6,8 @@
  */
 
 import { expect } from '@playwright/test';
-import wordpress from './wordpress';
-import utils from './utils';
+import wordpress from './wordpress.mjs';
+import utils from './utils.mjs';
 
 /**
  * Set plugin capabilities (Bluehost-specific functionality)

@@ -86,7 +86,7 @@ function generateProjects() {
       projects.push({
         name: `newfold-labs/${module.name}`,
         testDir: `./${module.path}/tests/playwright/specs`,
-        testMatch: 'tests/playwright/**/*.spec.{js,mjs}',
+        testMatch: '*.spec.{js,mjs}',
       });
       discoveredModules.add(module.name);
     }

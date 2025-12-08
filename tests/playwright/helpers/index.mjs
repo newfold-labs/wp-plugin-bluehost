@@ -6,19 +6,19 @@
  */
 
 // Authentication helpers
-import auth from './auth';
+import auth from './auth.mjs';
 
 // Core WordPress functionality
-import wordpress from './wordpress';
+import wordpress from './wordpress.mjs';
 
 // Newfold/Bluehost plugin-specific helpers
-import newfold from './newfold';
+import newfold from './newfold.mjs';
 
 // Accessibility testing helpers
-import a11y from './a11y';
+import a11y from './a11y.mjs';
 
 // General test utilities
-import utils from './utils';
+import utils from './utils.mjs';
 
 export {
   auth,

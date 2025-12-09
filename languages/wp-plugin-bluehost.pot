@@ -32,8 +32,8 @@ msgstr ""
 
 #. Author of the plugin
 #: bluehost-wordpress-plugin.php
-#: inc/Admin.php:162
-#: inc/Admin.php:163
+#: inc/Admin.php:183
+#: inc/Admin.php:184
 msgid "Bluehost"
 msgstr ""
 
@@ -88,23 +88,31 @@ msgstr ""
 msgid "Preview the coming soon landing page"
 msgstr ""
 
-#: inc/Admin.php:74
-#: inc/Admin.php:328
+#: inc/Admin.php:75
+msgid "Sales & Promotions Page"
+msgstr ""
+
+#: inc/Admin.php:76
+msgid "Sales & Promotions"
+msgstr ""
+
+#: inc/Admin.php:95
+#: inc/Admin.php:349
 #: build/4.9.0/index.js:7
 msgid "Home"
 msgstr ""
 
-#: inc/Admin.php:79
-#: inc/Admin.php:329
+#: inc/Admin.php:100
+#: inc/Admin.php:350
 #: build/4.9.0/index.js:7
 msgid "Settings"
 msgstr ""
 
-#: inc/Admin.php:84
+#: inc/Admin.php:105
 msgid "Help Resources"
 msgstr ""
 
-#: inc/Admin.php:356
+#: inc/Admin.php:377
 #, php-format
 msgid "Thank you for creating with %1$s and %2$s"
 msgstr ""
@@ -383,27 +391,6 @@ msgid "Store"
 msgstr ""
 
 #: build/4.9.0/index.js:7
-msgid "Products & Services"
-msgstr ""
-
-#: build/4.9.0/index.js:7
-msgid "Sales & Promotions"
-msgstr ""
-
-#: build/4.9.0/index.js:7
-msgid "Sales Channel"
-msgstr ""
-
-#: build/4.9.0/index.js:7
-msgid "Payments"
-msgstr ""
-
-#: build/4.9.0/index.js:7
-#: build/4.9.0/index.js:10
-msgid "Store Details"
-msgstr ""
-
-#: build/4.9.0/index.js:7
 msgid "Commerce"
 msgstr ""
 
@@ -677,6 +664,26 @@ msgid "Keeping automatic updates on ensures timely security fixes and the latest
 msgstr ""
 
 #: build/4.9.0/index.js:7
+msgid "Create a campaign and boost your sales!"
+msgstr ""
+
+#: build/4.9.0/index.js:7
+msgid "Create custom upsell, cross-sell and other promotional campaigns to generate more sales."
+msgstr ""
+
+#: build/4.9.0/index.js:7
+msgid "Get Started Now"
+msgstr ""
+
+#: build/4.9.0/index.js:7
+msgid "Not sure where to start? Try one of these popular promotions:"
+msgstr ""
+
+#: build/4.9.0/index.js:7
+msgid "Create a Campaign"
+msgstr ""
+
+#: build/4.9.0/index.js:7
 msgid "Optimize your content"
 msgstr ""
 
@@ -694,6 +701,54 @@ msgstr ""
 
 #: build/4.9.0/index.js:7
 msgid "Discover exclusive features, designed to deliver unmatched value and elevate your online experience."
+msgstr ""
+
+#: build/4.9.0/index.js:7
+msgid "Free Shipping"
+msgstr ""
+
+#: build/4.9.0/index.js:7
+msgid "Attract and retain customers by offering free shipping based on cart amount, location or store category."
+msgstr ""
+
+#: build/4.9.0/index.js:7
+msgid "Buy 1 Get 1"
+msgstr ""
+
+#: build/4.9.0/index.js:7
+msgid "Attract customers with a compelling deal where they can buy one product and get another product for free."
+msgstr ""
+
+#: build/4.9.0/index.js:7
+msgid "Gift Product in Cart"
+msgstr ""
+
+#: build/4.9.0/index.js:7
+msgid "Reward customers with a free gift in their cart based on total cart value, or specific products or categories."
+msgstr ""
+
+#: build/4.9.0/index.js:7
+msgid "Category Discount"
+msgstr ""
+
+#: build/4.9.0/index.js:7
+msgid "Give your customers a discount on specific categories of products and boost sales for those categories."
+msgstr ""
+
+#: build/4.9.0/index.js:7
+msgid "Upsell in Thank You Page"
+msgstr ""
+
+#: build/4.9.0/index.js:7
+msgid "Maximize sales by presenting relevant upsell options after customers have completed their purchase."
+msgstr ""
+
+#: build/4.9.0/index.js:7
+msgid "Last Minute Deal"
+msgstr ""
+
+#: build/4.9.0/index.js:7
+msgid "Create urgency with a special time-limited deal for customers on the cart and checkout pages."
 msgstr ""
 
 #. translators: %s: number of weeks. `The trash will automatically empty every ${numTrashWeeks} weeks.`
@@ -891,6 +946,10 @@ msgstr ""
 
 #: build/4.9.0/index.js:10
 msgid "Congrats, your website is live!"
+msgstr ""
+
+#: build/4.9.0/index.js:10
+msgid "Store Details"
 msgstr ""
 
 #: build/4.9.0/index.js:10

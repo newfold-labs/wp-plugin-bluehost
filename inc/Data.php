@@ -24,24 +24,26 @@ final class Data {
 		global $nfd_module_container;
 
 		$runtime = array(
-			'plugin'    => array(
+			'plugin'             => array(
 				'url'     => BLUEHOST_BUILD_URL,
 				'version' => BLUEHOST_PLUGIN_VERSION,
 				'assets'  => BLUEHOST_PLUGIN_URL . 'assets/',
 				'brand'   => $nfd_module_container->plugin()->brand,
 			),
-			'wordpress' => array(
+			'wordpress'          => array(
 				'isBlockTheme' => function_exists( 'wp_is_block_theme' ) ? wp_is_block_theme() : false,
 			),
-			'siteType'  => self::get_site_type(),
+			'siteType'           => self::get_site_type(),
+			'isSalesPromoActive' => self::is_sales_promotions_plugin_active(),
 		);
 
 		if ( class_exists( 'NewfoldLabs\WP\Module\Solutions\Solutions' ) ) {
 			$solution_data        = Solutions::get_enhanced_entitlment_data();
 			$solution             = is_array( $solution_data ) && array_key_exists( 'solution', $solution_data ) ? $solution_data['solution'] : false;
 			$runtime['solutions'] = array(
-				'solution'   => $solution,
-				'wondercart' => self::get_entitlement_by_id( $solution_data, 'WonderCart' ),
+				'solution'         => $solution,
+				'wondercart'       => self::get_entitlement_by_id( $solution_data, 'WonderCart' ),
+				'sales_promotions' => self::get_entitlement_by_id( $solution_data, 'Sales & Promotions' ),
 			);
 		}
 
@@ -107,5 +109,14 @@ final class Data {
 		}
 
 		return 'website';
+	}
+
+	/**
+	 * Check if the site has the Sales & Promotions plugin active
+	 *
+	 * @return bool True if the site has sales promotions plugin active, false otherwise
+	 */
+	public static function is_sales_promotions_plugin_active() {
+		return is_plugin_active( 'wp-plugin-sales-promotions/wp-plugin-sales-promotions.php' );
 	}
 }

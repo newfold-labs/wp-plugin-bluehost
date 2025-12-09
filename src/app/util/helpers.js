@@ -144,6 +144,8 @@ export const comingSoonAdminbarToggle = ( comingSoon ) => {
  */
 export const addUtmParams = ( url, params = {} ) => {
 	if (
+		'object' === typeof window.NewfoldRuntime &&
+		'object' === typeof window.NewfoldRuntime.linkTracker &&
 		'function' === typeof window.NewfoldRuntime.linkTracker.addUtmParams
 	) {
 		return window.NewfoldRuntime.linkTracker.addUtmParams( url, params );

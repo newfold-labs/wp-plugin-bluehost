@@ -23,6 +23,8 @@ final class Admin {
 	public function __construct() {
 		/* Add Page to WordPress Admin Menu. */
 		\add_action( 'admin_menu', array( __CLASS__, 'page' ) );
+		// Add Woo Sales & Promotions menu item if the plugin is not active
+		add_filter( 'admin_menu', array( $this, 'add_promotion_menu_item' ) );
 		/* Load Page Scripts & Styles. */
 		\add_action( 'admin_enqueue_scripts', array( __CLASS__, 'assets' ) );
 		/* Load i18 files */
@@ -58,6 +60,25 @@ final class Admin {
 		include_once BLUEHOST_PLUGIN_DIR . '/inc/Data.php';
 
 		return array_merge( $sdk, Data::runtime() );
+	}
+
+	/**
+	 * Add Woo Sales & Promotions menu item if the plugin is not active
+	 *
+	 * @return void
+	 */
+	public static function add_promotion_menu_item() {
+		include_once BLUEHOST_PLUGIN_DIR . '/inc/Data.php';
+		if ( ! Data::is_sales_promotions_plugin_active() ) {
+			\add_submenu_page(
+				'woocommerce-marketing',
+				__( 'Sales & Promotions Page', 'wp-plugin-bluehost' ),
+				__( 'Sales & Promotions', 'wp-plugin-bluehost' ),
+				'manage_options',
+				'bluehost#/store/sales_discounts',
+				'__return_empty_string' // already renderd via plugin app
+			);
+		}
 	}
 
 	/**

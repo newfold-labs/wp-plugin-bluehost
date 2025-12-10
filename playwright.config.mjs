@@ -1,10 +1,20 @@
-// playwright.config.js
+/*
+* playwright config file
+* @see https://playwright.dev/docs/test-configuration
+*/
 import { defineConfig, devices } from '@playwright/test';
 import { existsSync, readFileSync } from 'fs';
-import { writeProjectsFile } from './.github/scripts/generate-playwright-projects';
+import { fileURLToPath } from 'url';
+import { dirname, resolve } from 'path';
+import { writeProjectsFile } from './.github/scripts/generate-playwright-projects.mjs';
+
+// ES module equivalent of __dirname
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
 
 // Read wp-env.json to get the correct port and default values
-import { phpVersion as _phpVersion, core as _core, port as _port } from './.wp-env.json';
+const wpEnvConfig = JSON.parse(readFileSync('./.wp-env.json', 'utf8'));
+const { phpVersion: _phpVersion, core: _core, port: _port } = wpEnvConfig;
 
 // Check if .wp-env.override.json exists (created by CI workflows with matrix values)
 const overrideFile = './.wp-env.override.json';
@@ -12,7 +22,7 @@ let phpVersion, core, wpVersion;
 
 if (existsSync(overrideFile)) {
   // Use override values from matrix workflow
-  const overrideConfig = require(overrideFile);
+  const overrideConfig = JSON.parse(readFileSync(overrideFile, 'utf8'));
   phpVersion = overrideConfig.phpVersion || _phpVersion;
   core = overrideConfig.core || _core;
   // Extract version from core string (e.g., "WordPress/WordPress#tags/6.8" -> "6.8")
@@ -35,14 +45,14 @@ const projects = JSON.parse(readFileSync(projectsFile, 'utf8'));
 
 // Set environment variable for plugin root
 process.env.PLUGIN_DIR = __dirname;
-process.env.PLUGIN_ID = 'bluehost'
+process.env.PLUGIN_ID = 'bluehost';
 process.env.WP_ADMIN_USERNAME = process.env.WP_ADMIN_USERNAME || 'admin';
 process.env.WP_ADMIN_PASSWORD = process.env.WP_ADMIN_PASSWORD || 'password';
 process.env.WP_VERSION = process.env.WP_VERSION || wpVersion;
 process.env.PHP_VERSION = process.env.PHP_VERSION || phpVersion;
 
 export default defineConfig({
-  globalSetup: require.resolve('./tests/playwright/global-setup.js'),
+  globalSetup: resolve(__dirname, './tests/playwright/global-setup.js'),
   projects: projects,
   testIgnore: [
     // Don't ignore anything - we want to include gitignored files that playwright needs to find

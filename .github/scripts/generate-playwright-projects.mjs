@@ -1,23 +1,24 @@
-const fs = require('fs');
-const path = require('path');
-const { execSync } = require('child_process');
+import { existsSync, readFileSync, writeFileSync } from 'fs';
+import { join, basename, resolve } from 'path';
+import { fileURLToPath } from 'url';
+import { execSync } from 'child_process';
 
 const VENDOR_DIR = 'vendor/newfold-labs';
 
 function getLocalModules() {
   const localModules = [];
   try {
-    if (fs.existsSync('composer.local.json')) {
-      const composerLocal = JSON.parse(fs.readFileSync('composer.local.json', 'utf8'));
+    if (existsSync('composer.local.json')) {
+      const composerLocal = JSON.parse(readFileSync('composer.local.json', 'utf8'));
       if (composerLocal.repositories) {
         for (const repo of composerLocal.repositories) {
           if (repo.type === 'path' && repo.url && repo.url.includes('modules/')) {
             const moduleName = repo.url.split('/').pop();
-            const resolvedPath = path.resolve(repo.url);
+            const resolvedPath = resolve(repo.url);
             // Correct path resolution if needed, based on the project's root
             const correctedPath = resolvedPath.replace('/wordpress/modules/', '/modules/');
-            const playwrightDir = path.join(correctedPath, 'tests', 'playwright');
-            if (fs.existsSync(playwrightDir)) {
+            const playwrightDir = join(correctedPath, 'tests', 'playwright');
+            if (existsSync(playwrightDir)) {
               localModules.push({ name: moduleName, path: correctedPath });
             }
           }
@@ -40,9 +41,9 @@ function getVendorModules() {
     if (result.trim()) {
       const modulePaths = result.trim().split('\n');
       modulePaths.forEach(modulePath => {
-        const moduleName = path.basename(modulePath);
-        const playwrightDir = path.join(modulePath, 'tests', 'playwright');
-        if (fs.existsSync(playwrightDir)) {
+        const moduleName = basename(modulePath);
+        const playwrightDir = join(modulePath, 'tests', 'playwright');
+        if (existsSync(playwrightDir)) {
           vendorModules.push({ name: moduleName, path: modulePath });
         }
       });
@@ -73,7 +74,7 @@ function generateProjects() {
       projects.push({
         name: `newfold-labs/${module.name}-local`,
         testDir: module.path,
-        testMatch: 'tests/playwright/**/*.spec.js',
+        testMatch: 'tests/playwright/**/*.spec.{js,mjs}',
       });
       discoveredModules.add(module.name);
     }
@@ -84,8 +85,8 @@ function generateProjects() {
     if (!discoveredModules.has(module.name)) {
       projects.push({
         name: `newfold-labs/${module.name}`,
-        testDir: module.path,
-        testMatch: 'tests/playwright/**/*.spec.js',
+        testDir: `./${module.path}/tests/playwright/specs`,
+        testMatch: '*.spec.{js,mjs}',
       });
       discoveredModules.add(module.name);
     }
@@ -105,18 +106,19 @@ function writeProjectsFile() {
   const projectsFile = 'tests/playwright/playwright-projects.json';
   
   console.log(`\n📝 Writing projects to ${projectsFile}...`);
-  fs.writeFileSync(projectsFile, JSON.stringify(projects, null, 2));
+  writeFileSync(projectsFile, JSON.stringify(projects, null, 2));
   console.log(`✅ Projects written to ${projectsFile}`);
   
   return projects;
 }
 
 // If this script is run directly, generate and write the projects file
-if (require.main === module) {
+// ES module equivalent of require.main === module
+if (process.argv[1] && fileURLToPath(import.meta.url) === resolve(process.argv[1])) {
   writeProjectsFile();
 }
 
-module.exports = { 
+export { 
   generateProjects, 
   writeProjectsFile,
   getLocalModules,

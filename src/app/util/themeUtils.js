@@ -44,7 +44,11 @@ const waitForRuntime = ( timeout = 5000 ) => {
 				clearInterval( interval );
 				// Clear cached promise on failure so retry is possible
 				runtimePromise = null;
-				reject( new Error( 'NewfoldRuntime not available, please refresh the page and try again.' ) );
+				reject(
+					new Error(
+						'NewfoldRuntime not available, please refresh the page and try again.'
+					)
+				);
 			}
 		}, 50 );
 	} );
@@ -61,10 +65,10 @@ export const getEditorUrl = async ( canvas = 'edit' ) => {
 	// wait for runtime to be ready
 	const runtime = await waitForRuntime();
 	const classicThemeEditorUrl = `${ runtime.adminUrl }customize.php`;
-	const blockThemeEditorUrl   = `${ runtime.adminUrl }site-editor.php?canvas=${ canvas }`;
-	const aiEditorChatUrl       = `&referrer=nfd-editor-chat`;
-	const hasBluMVPCapability   = runtime.capabilities?.hasBluMVP || false;
-	const blockTheme            = runtime?.wordpress?.isBlockTheme || false;
+	const blockThemeEditorUrl = `${ runtime.adminUrl }site-editor.php?canvas=${ canvas }`;
+	const aiEditorChatUrl = `&referrer=nfd-editor-chat`;
+	const hasBluMVPCapability = runtime.capabilities?.hasBluMVP || false;
+	const blockTheme = runtime?.wordpress?.isBlockTheme || false;
 
 	// If the theme is a block theme and the user has the Blu MVP capability
 	if ( blockTheme && hasBluMVPCapability ) {
@@ -72,7 +76,7 @@ export const getEditorUrl = async ( canvas = 'edit' ) => {
 		return blockThemeEditorUrl + aiEditorChatUrl;
 	}
 	// If the theme is a block theme and the user does not have the Blu MVP capability
-	if ( blockTheme && !hasBluMVPCapability ) {
+	if ( blockTheme && ! hasBluMVPCapability ) {
 		// return the block theme editor URL
 		return blockThemeEditorUrl;
 	}
@@ -86,15 +90,15 @@ export const getEditorUrl = async ( canvas = 'edit' ) => {
  * @return {Promise<string>} The appropriate editor label
  */
 export const getEditorLabel = async () => {
-	const runtime             = await waitForRuntime();
-	const blockTheme          = await runtime?.wordpress?.isBlockTheme || false;
+	const runtime = await waitForRuntime();
+	const blockTheme = ( await runtime?.wordpress?.isBlockTheme ) || false;
 	const hasBluMVPCapability = runtime.capabilities?.hasBluMVP || false;
 	// If the theme is a block theme and the user has the Blu MVP capability, return 'AI Editor'
 	if ( blockTheme && hasBluMVPCapability ) {
 		return 'AI Editor';
 	}
 	// If the theme is a block theme and the user does not have the Blu MVP capability, return 'Site Editor'
-	if ( blockTheme && !hasBluMVPCapability ) {
+	if ( blockTheme && ! hasBluMVPCapability ) {
 		return 'Site Editor';
 	}
 

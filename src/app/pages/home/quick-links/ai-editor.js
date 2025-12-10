@@ -1,20 +1,28 @@
 import { Card, Title } from '@newfold/ui-component-library';
+import { useEffect, useState } from '@wordpress/element';
 import { __ } from '@wordpress/i18n';
 import { AiEditorIcon } from 'App/components/icons';
 import { getEditorUrl } from 'App/util/themeUtils';
 
-export default () => (
-	<Card
-		as="a"
-		className={ classNames(
-			'nfd-quick-links-card nfd-quick-links-ai-editor-card',
-			'nfd-flex nfd-flex-col nfd-gap-4 nfd-border nfd-border-[#D5D5D5]',
-			'nfd-no-underline nfd-shadow-none nfd-transition-all hover:nfd-shadow-md'
-		) }
-		data-nfd-click="newfold-quick-links-ai-editor"
-		data-test-id="quick-links-ai-editor-link"
-		href={ getEditorUrl( 'edit' ) }
-	>
+export default () => {
+	const [ editorUrl, setEditorUrl ] = useState( '#' );
+
+	useEffect( () => {
+		getEditorUrl( 'edit' ).then( setEditorUrl );
+	}, [] );
+
+	return (
+		<Card
+			as="a"
+			className={ classNames(
+				'nfd-quick-links-card nfd-quick-links-ai-editor-card',
+				'nfd-flex nfd-flex-col nfd-gap-4 nfd-border nfd-border-[#D5D5D5]',
+				'nfd-no-underline nfd-shadow-none nfd-transition-all hover:nfd-shadow-md'
+			) }
+			data-nfd-click="newfold-quick-links-ai-editor"
+			data-test-id="quick-links-ai-editor-link"
+			href={ editorUrl }
+		>
 		<div
 			className={
 				'nfd-quick-links-card__head nfd-flex nfd-items-center nfd-gap-2'
@@ -45,4 +53,5 @@ export default () => (
 			{ __( 'Launch the Editor', 'wp-plugin-bluehost' ) }
 		</p>
 	</Card>
-);
+	);
+};

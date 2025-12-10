@@ -8,8 +8,8 @@
  * npx playwright test tests/playwright/specs/vrt.spec.js --update-snapshots
  */
 
-const { test, expect } = require('@playwright/test');
-const { auth } = require('../helpers');
+import { test, expect } from '@playwright/test';
+import { auth } from '../helpers';
 
 const pluginId = process.env.PLUGIN_ID || 'bluehost';
 const paths = [
@@ -32,6 +32,7 @@ test.beforeEach(async ({ page }) => {
     await auth.navigateToAdminPage(page, 'index.php');
   });
 
+/* Skipping for now until we get tests fully migrated to Playwright */
 test.skip('VRT', () => {
     for (const path of paths) {
         test(`${path}`, async ({ page }) => {

@@ -1,6 +1,6 @@
 {
     "name": "bluehost-wordpress-plugin",
-    "version": "4.9.0",
+    "version": "4.10.0",
     "description": "WordPress plugin that integrates your WordPress site with the Bluehost control panel, including performance, security, and update features.",
     "author": {
         "name": "Bluehost",
@@ -37,11 +37,11 @@
         "@newfold/wp-module-ecommerce": "^1.10.4",
         "@newfold/wp-module-facebook": "^1.2.1",
         "@newfold/wp-module-runtime": "^1.1.3",
-        "@reduxjs/toolkit": "^2.11.0",
-        "@wordpress/components": "^30.8.0",
+        "@reduxjs/toolkit": "^2.11.1",
+        "@wordpress/components": "^30.9.0",
         "@wordpress/compose": "^7.34.0",
         "@wordpress/dom-ready": "^4.34.0",
-        "@wordpress/element": "^6.32.0",
+        "@wordpress/element": "^6.36.0",
         "@wordpress/html-entities": "^4.35.0",
         "@wordpress/i18n": "^6.9.0",
         "@wordpress/icons": "^11.1.0",
@@ -52,7 +52,7 @@
         "lodash": "^4.17.21",
         "react": "^18.2.0",
         "react-error-boundary": "^6.0.0",
-        "react-router-dom": "^7.9.6",
+        "react-router-dom": "^7.10.1",
         "react-string-replace": "^1.1.1",
         "react-use": "^17.6.0",
         "semver": "^7.7.3"
@@ -62,7 +62,7 @@
         "@playwright/test": "^1.57.0",
         "@tailwindcss/forms": "^0.5.10",
         "@testing-library/cypress": "^10.1.0",
-        "@wordpress/env": "^10.35.0",
+        "@wordpress/env": "^10.36.0",
         "@wordpress/eslint-plugin": "^22.19.0",
         "@wordpress/scripts": "^31.1.0",
         "ajv": "^8.17.1",
@@ -109,7 +109,7 @@
         "test:cypress": "npx cypress run",
         "test:e2e:all": "npm run test:cypress && npm run test:playwright",
         "test:playwright": "npx playwright test",
-        "test:playwright:update-projects": "node .github/scripts/generate-playwright-projects.js",
+        "test:playwright:update-projects": "node .github/scripts/generate-playwright-projects.mjs",
         "test:unit": "wp-scripts test-unit-js",
         "test:clean-module": "bash ./.github/scripts/test-clean-module"
     }

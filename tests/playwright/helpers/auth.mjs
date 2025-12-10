@@ -6,7 +6,8 @@
  * Follows Playwright best practices for authentication and session management.
  */
 
-const { Admin, PageUtils } = require('@wordpress/e2e-test-utils-playwright');
+import { Admin, PageUtils } from '@wordpress/e2e-test-utils-playwright';
+import { readFileSync } from 'fs';
 
 /**
  * Check if user is already logged in to WordPress
@@ -166,7 +167,8 @@ async function saveAuthState(page, filePath = 'tests/playwright/auth-state.json'
  */
 async function restoreAuthState(context, filePath = 'tests/playwright/auth-state.json') {
   try {
-    await context.addCookies(require(filePath).cookies);
+    const authState = JSON.parse(readFileSync(filePath, 'utf-8'));
+    await context.addCookies(authState.cookies);
   } catch (error) {
     // If state file doesn't exist or is invalid, continue without it
     console.warn('Could not restore auth state:', error.message);
@@ -185,7 +187,7 @@ async function setupAuthenticatedContext(page, options = {}) {
   return await createWordPressUtils(page, options);
 }
 
-module.exports = {
+export default {
   isLoggedIn,
   loginToWordPress,
   createWordPressUtils,

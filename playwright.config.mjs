@@ -1,48 +1,58 @@
-// playwright.config.js
-const { defineConfig, devices } = require('@playwright/test');
-const fs = require('fs');
-const { writeProjectsFile } = require('./.github/scripts/generate-playwright-projects');
+/*
+* playwright config file
+* @see https://playwright.dev/docs/test-configuration
+*/
+import { defineConfig, devices } from '@playwright/test';
+import { existsSync, readFileSync } from 'fs';
+import { fileURLToPath } from 'url';
+import { dirname, resolve } from 'path';
+import { writeProjectsFile } from './.github/scripts/generate-playwright-projects.mjs';
+
+// ES module equivalent of __dirname
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
 
 // Read wp-env.json to get the correct port and default values
-const wpEnvConfig = require('./.wp-env.json');
+const wpEnvConfig = JSON.parse(readFileSync('./.wp-env.json', 'utf8'));
+const { phpVersion: _phpVersion, core: _core, port: _port } = wpEnvConfig;
 
 // Check if .wp-env.override.json exists (created by CI workflows with matrix values)
 const overrideFile = './.wp-env.override.json';
 let phpVersion, core, wpVersion;
 
-if (fs.existsSync(overrideFile)) {
+if (existsSync(overrideFile)) {
   // Use override values from matrix workflow
-  const overrideConfig = require(overrideFile);
-  phpVersion = overrideConfig.phpVersion || wpEnvConfig.phpVersion;
-  core = overrideConfig.core || wpEnvConfig.core;
+  const overrideConfig = JSON.parse(readFileSync(overrideFile, 'utf8'));
+  phpVersion = overrideConfig.phpVersion || _phpVersion;
+  core = overrideConfig.core || _core;
   // Extract version from core string (e.g., "WordPress/WordPress#tags/6.8" -> "6.8")
   wpVersion = /[^/]*$/.exec(core)[0];
 } else {
   // Use default values from .wp-env.json
-  phpVersion = wpEnvConfig.phpVersion;
-  core = wpEnvConfig.core;
+  phpVersion = _phpVersion;
+  core = _core;
   wpVersion = /[^/]*$/.exec(core)[0];
 }
 
 // Generate projects file if it doesn't exist or is stale
 const projectsFile = './tests/playwright/playwright-projects.json';
-if (!fs.existsSync(projectsFile)) {
+if (!existsSync(projectsFile)) {
   writeProjectsFile();
 }
 
 // Load projects from generated file
-const projects = JSON.parse(fs.readFileSync(projectsFile, 'utf8'));
+const projects = JSON.parse(readFileSync(projectsFile, 'utf8'));
 
 // Set environment variable for plugin root
 process.env.PLUGIN_DIR = __dirname;
-process.env.PLUGIN_ID = 'bluehost'
+process.env.PLUGIN_ID = 'bluehost';
 process.env.WP_ADMIN_USERNAME = process.env.WP_ADMIN_USERNAME || 'admin';
 process.env.WP_ADMIN_PASSWORD = process.env.WP_ADMIN_PASSWORD || 'password';
 process.env.WP_VERSION = process.env.WP_VERSION || wpVersion;
 process.env.PHP_VERSION = process.env.PHP_VERSION || phpVersion;
 
-module.exports = defineConfig({
-  globalSetup: require.resolve('./tests/playwright/global-setup.js'),
+export default defineConfig({
+  globalSetup: resolve(__dirname, './tests/playwright/global-setup.js'),
   projects: projects,
   testIgnore: [
     // Don't ignore anything - we want to include gitignored files that playwright needs to find
@@ -52,7 +62,7 @@ module.exports = defineConfig({
     ...devices['Desktop Chrome'],
     headless: true,
     viewport: { width: 1200, height: 800 },
-    baseURL: `http://localhost:${wpEnvConfig.port}`, // Use port from wp-env.json
+    baseURL: `http://localhost:${_port}`, // Use port from wp-env.json
     ignoreHTTPSErrors: true,
     // WordPress-optimized settings
     locale: 'en-US',
@@ -67,7 +77,7 @@ module.exports = defineConfig({
   },
   webServer: process.env.CI ? undefined : {
     command: 'wp-env start',
-    port: wpEnvConfig.port, // Use port from wp-env.json
+    port: _port, // Use port from wp-env.json
     reuseExistingServer: true,
     timeout: 120 * 1000, // 2 minutes
   },

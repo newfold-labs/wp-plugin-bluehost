@@ -11,7 +11,7 @@ import { default as NewfoldNotifications } from '@modules/wp-module-notification
 import { useLocation } from 'react-router-dom';
 import classnames from 'classnames';
 import { getPlatformPathUrl, addUtmParams } from 'App/util/helpers';
-import { getEditorUrl } from 'App/util/themeUtils';
+import { getEditorUrl, getEditorLabel } from 'App/util/themeUtils';
 import { topRoutes } from 'App/data/routes';
 import {
 	RectangleGroupIcon,
@@ -27,6 +27,14 @@ export const AppNavHeader = () => {
 export const AppNavMenu = () => {
 	const location = useLocation();
 	const { setActivePath } = useNavigationContext();
+	// the editor values are set asynchronously as the runtime is fetched
+	const [ editorUrl, setEditorUrl ] = useState( '#' );
+	const [ editorLabel, setEditorLabel ] = useState( 'Editor' );
+	// Fetch the editor URL and label asynchronously when the component mounts
+	useEffect( () => {
+		getEditorUrl( 'edit' ).then( setEditorUrl );
+		getEditorLabel().then( setEditorLabel );
+	}, [] );
 
 	const menu = () => {
 		return (
@@ -76,9 +84,9 @@ export const AppNavMenu = () => {
 				<Button
 					as={ 'a' }
 					className={ 'nfd-flex nfd-gap-2 nfd-mr-4' }
-					href={ getEditorUrl( 'edit' ) }
+					href={ editorUrl }
 				>
-					AI Editor
+					{ editorLabel }
 					<RectangleGroupIcon />
 				</Button>
 				<Button

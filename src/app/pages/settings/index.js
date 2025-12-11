@@ -1,4 +1,4 @@
-import { useEffect } from '@wordpress/element';
+import { useEffect, useState } from '@wordpress/element';
 import { Container, Page, Title } from '@newfold/ui-component-library';
 import { ChevronUpIcon } from '@heroicons/react/24/outline';
 import useContainerBlockIsTarget from 'App/util/hooks/useContainerBlockTarget';
@@ -9,17 +9,37 @@ import WonderBlocksSettings from './wonderBlocksSettings';
 import ContentSettings from './contentSettings';
 import CommentSettings from './commentSettings';
 import { useLocation } from 'react-router-dom';
+import { waitForFeatures } from 'App/util/helpers';
 
 const Settings = () => {
-	const isStagingEnabled = window.NewfoldFeatures.features.staging === true;
-	const isPerformanceEnabled =
-		window.NewfoldFeatures.features.performance === true;
-
+	const [ isStagingEnabled, setIsStagingEnabled ] = useState( true );
+	const [ isPerformanceEnabled, setIsPerformanceEnabled ] = useState( true );
 	const location = useLocation();
+
+	// Get the feature status from NewfoldFeatures once it is available
+	const getFeature = async ( featureName ) => {
+		const nfdFeatures = await waitForFeatures();
+		return nfdFeatures.features[ featureName ] || false;
+	};
+
+	useEffect( () => {
+		// if neither staging or performance are enabled, set settings details to open
+		if ( ! isStagingEnabled && ! isPerformanceEnabled ) {
+			const settingsDetails = document.querySelector( '.settings-details' );
+			if ( settingsDetails ) {
+				settingsDetails.setAttribute( 'open', 'true' );
+			}
+		}
+	}, [isStagingEnabled, isPerformanceEnabled]);
 
 	useEffect( () => {
 		// run when mounts
 
+		// get features from runtime and set state
+		getFeature( 'staging' ).then( setIsStagingEnabled );
+		getFeature( 'performance' ).then( setIsPerformanceEnabled );
+
+		// register the portals
 		const stagingPortal = document.getElementById( 'staging-portal' );
 		const performancePortal =
 			document.getElementById( 'performance-portal' );
@@ -35,6 +55,7 @@ const Settings = () => {
 
 		// run when unmounts
 		return () => {
+			// unregister the portals
 			window.NFDPortalRegistry.unregisterPortal( 'staging' );
 			window.NFDPortalRegistry.unregisterPortal( 'performance' );
 		};

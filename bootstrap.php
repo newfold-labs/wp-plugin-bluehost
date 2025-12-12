@@ -58,7 +58,7 @@ $nfd_module_container->set(
 				array(
 					'id'           => 'bluehost',
 					'file'         => BLUEHOST_PLUGIN_FILE,
-					'brand'        => get_option( 'mm_brand', apply_filters( 'bluehost/container/plugin/brand', 'bluehost' ) ),
+					'brand'        => get_option( 'mm_brand', apply_filters( 'newfold/container/plugin/brand', 'bluehost' ) ),
 					'install_date' => get_option( 'bluehost_plugin_install_date' ),
 				)
 			);
@@ -74,9 +74,9 @@ add_action(
 
 		// Filterable for platform overrides (e.g. atomic)
 		// Performance default settings
-		$cache_types = apply_filters( 'bluehost/container/cache_types', array( 'browser', 'skip404' ) );
+		$cache_types = apply_filters( 'newfold/container/cache_types', array( 'browser', 'skip404' ) );
 		// Marketplace default settings
-		$marketplace_brand = apply_filters( 'bluehost/container/marketplace_brand', 'bluehost' );
+		$marketplace_brand = apply_filters( 'newfold/container/marketplace_brand', 'bluehost' );
 
 		if ( $nfd_module_container ) {
 			$nfd_module_container->set( 'cache_types', $cache_types );

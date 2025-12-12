@@ -2,7 +2,7 @@ import { Card, Title } from '@newfold/ui-component-library';
 import { useEffect, useState } from '@wordpress/element';
 import { __ } from '@wordpress/i18n';
 import { AiEditorIcon } from 'App/components/icons';
-import { getEditorUrl } from 'App/util/themeUtils';
+import { getEditorUrl } from 'App/util/helpers';
 
 export default () => {
 	const [ editorUrl, setEditorUrl ] = useState( '#' );

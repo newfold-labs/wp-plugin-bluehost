@@ -1,50 +1,50 @@
 {
     "translation-revision-date": "2025-02-25T20:53:21+00:00",
     "generator": "WP-CLI\/2.12.0",
-    "source": "build\/4.10.0\/index.js",
+    "source": "build\/4.11.0\/index.js",
     "domain": "messages",
     "locale_data": {
         "messages": {
             "": {
                 "domain": "messages",
-                "lang": "nl_NL",
+                "lang": "pt_PT",
                 "plural-forms": "nplurals=2; plural=(n != 1);"
             },
             "Home": [
-                "Startpagina"
+                "In\u00edcio"
             ],
             "Settings": [
-                "Instellingen"
+                "Confirgura\u00e7\u00f5es"
             ],
             "Not Live": [
-                "Niet live"
+                "N\u00e3o Ao Vivo"
             ],
             "Live": [
-                "Zichtbaar"
+                "Ativo"
             ],
             "Your website is currently displaying a \"Coming Soon\" page.": [
-                "Je website wordt momenteel een \"Binnenkort beschikbaar\" pagina weergegeven."
+                "Seu site exibir\u00e1 uma p\u00e1gina \"Em breve\"."
             ],
             "Get Help": [
-                "Hulp vragen"
+                "Obter ajuda"
             ],
             "Disabled old post comments": [
-                "Uitgeschakelde reacties op oude berichten"
+                "Coment\u00e1rios de posts antigos desativados"
             ],
             "Enabled old post comments": [
-                "Reacties op oude berichten ingeschakeld"
+                "Coment\u00e1rios de publica\u00e7\u00f5es antigas ativados"
             ],
             "Comments on old posts are disabled.": [
-                "Reacties op oude berichten zijn uitgeschakeld."
+                "Os coment\u00e1rios em publica\u00e7\u00f5es antigas est\u00e3o desativados."
             ],
             "Comments are allowed on old posts.": [
-                "Reacties op oude berichten zijn toegestaan."
+                "Coment\u00e1rios s\u00e3o permitidos em postagens antigas."
             ],
             "Disable comments for older posts": [
-                "Reacties voor oudere berichten uitschakelen"
+                "Desativar coment\u00e1rios para publica\u00e7\u00f5es mais antigas"
             ],
             "Comments setting saved": [
-                "Instelling voor reacties opgeslagen"
+                "Configura\u00e7\u00e3o de coment\u00e1rios salva"
             ],
             "Comments on posts are disabled after %s day.": [
                 ""
@@ -53,469 +53,469 @@
                 ""
             ],
             "Comments setting saved.": [
-                "Instelling voor opmerkingen opgeslagen."
+                "Configura\u00e7\u00e3o de coment\u00e1rios salva."
             ],
             "Posts will display %s comment at a time.": [
                 ""
             ],
             "Comments to display per page": [
-                "Opmerkingen die per pagina moeten worden weergegeven"
+                "Coment\u00e1rios a serem exibidos por p\u00e1gina"
             ],
             "Comments": [
-                "Opmerkingen"
+                "Observa\u00e7\u00f5es"
             ],
             "Comments allow visitors to provide feedback and respond to your posts or pages.": [
-                "Met reacties kunnen bezoekers feedback geven en reageren op je berichten of pagina's."
+                "Os coment\u00e1rios permitem que os visitantes forne\u00e7am feedback e respondam \u00e0s suas publica\u00e7\u00f5es ou p\u00e1ginas."
             ],
             "Oops! Something went wrong. Please try again.": [
-                "Oeps! Er ging iets mis. Probeer het opnieuw."
+                "Ops! Algo correu mal. Por favor, tente novamente."
             ],
             "There's nothing here!": [
-                "Er is hier niets!"
+                "N\u00e3o h\u00e1 nada aqui!"
             ],
             "Store": [
-                "Winkel"
+                "Loja"
             ],
             "Store Details": [
-                "Details van de winkel"
+                "Detalhes da Loja"
             ],
             "Marketplace": [
-                "Marktplaats"
+                "Mercado"
             ],
             "Admin": [
-                "Admin"
+                "Administrador"
             ],
             "Coming soon activated": [
-                "Binnenkort geactiveerd"
+                "Em breve ativado"
             ],
             "Coming soon deactivated": [
-                "Binnenkort gedeactiveerd"
+                "Em breve desativado"
             ],
             "Coming soon page is active. Site requires login.": [
-                "Binnenkort pagina is actief. Site vereist inloggen."
+                "Em breve a p\u00e1gina est\u00e1 ativa. Site requer login."
             ],
             "Coming soon page is not active. Site is live to visitors.": [
-                "De Coming Soon-pagina is niet actief. Site is live voor bezoekers."
+                "Em breve a p\u00e1gina n\u00e3o est\u00e1 ativa. Site est\u00e1 ao vivo para os visitantes."
             ],
             "Site Status": [
-                "Site Status"
+                "Estado do Site"
             ],
             "Turn off your \"Coming Soon\" page when you are ready to launch your website.": [
-                "Schakel uw \"Coming Soon\"-pagina uit wanneer u klaar bent om uw website te lanceren."
+                "Desligue a p\u00e1gina \"Em breve\" quando estiver pronto para iniciar o seu website."
             ],
             "Turn on your \"Coming Soon\" page when you need to make major changes to your website.": [
-                "Schakel uw \"Coming Soon\"-pagina in wanneer u grote wijzigingen aan uw website moet aanbrengen."
+                "Ative a p\u00e1gina \"Em breve\" quando precisar fazer grandes altera\u00e7\u00f5es no seu site."
             ],
             "Your Bluehost Coming Soon page lets you hide your site from visitors while you make the magic happen.": [
-                "Met uw Bluehost Coming Soon-pagina kunt u uw site verbergen voor bezoekers terwijl u de magie laat gebeuren."
+                "Sua p\u00e1gina Bluehost Coming Soon permite que voc\u00ea esconda seu site dos visitantes enquanto voc\u00ea faz a m\u00e1gica acontecer."
             ],
             "Staging Enabled": [
-                "Staging ingeschakeld"
+                "Preparo ativado"
             ],
             "Staging Disabled": [
-                "Staging uitgeschakeld"
+                "Prepara\u00e7\u00e3o desativada"
             ],
             "You need to reload the page to manage Staging.": [
-                "U moet de pagina opnieuw laden om Fasering te beheren."
+                "Voc\u00ea precisa recarregar a p\u00e1gina para gerenciar o preparo."
             ],
             "Staging will no longer display.": [
-                "De testopstelling wordt niet meer weergegeven."
+                "O preparo n\u00e3o ser\u00e1 mais exibido."
             ],
             "The staging feature provides a way to copy a site to test new updates, features or content.": [
-                "De staging-functie biedt een manier om een site te kopi\u00ebren om nieuwe updates, functies of inhoud te testen."
+                "O recurso de preparo fornece uma maneira de copiar um site para testar novas atualiza\u00e7\u00f5es, recursos ou conte\u00fado."
             ],
             "Sorry, that is not allowed.": [
-                "Sorry, dat mag niet."
+                "Desculpe, isso n\u00e3o \u00e9 permitido."
             ],
             "This feature cannot currently be modified.": [
-                "Deze functie kan momenteel niet worden gewijzigd."
+                "Este recurso n\u00e3o pode ser modificado no momento."
             ],
             "Help Center Enabled": [
-                "Helpcentrum ingeschakeld"
+                "Central de Ajuda Ativada"
             ],
             "Help Center Disabled": [
-                "Helpcentrum uitgeschakeld"
+                "Centro de Ajuda desativado"
             ],
             "Reload the page to access the Help Center.": [
-                "Laad de pagina opnieuw om toegang te krijgen tot het Helpcentrum."
+                "Recarregue a p\u00e1gina para aceder ao Centro de Ajuda."
             ],
             "The Help Center will no longer display.": [
-                "Het Helpcentrum wordt niet meer weergegeven."
+                "A Central de Ajuda n\u00e3o ser\u00e1 mais exibida."
             ],
             "The Help Center provides guided, step-by-step assistance as you build your site.": [
-                "Het Helpcentrum biedt begeleide, stapsgewijze ondersteuning bij het bouwen van uw site."
+                "A Central de Ajuda fornece assist\u00eancia guiada e passo a passo enquanto voc\u00ea cria seu site."
             ],
             "WonderBlocks Enabled": [
-                "WonderBlocks ingeschakeld"
+                "WonderBlocks ativado"
             ],
             "WonderBlocks Disabled": [
-                "WonderBlocks uitgeschakeld"
+                "WonderBlocks desativado"
             ],
             "Create new content to see WonderBlocks in action.": [
-                "Cre\u00eber nieuwe content om WonderBlocks in actie te zien."
+                "Crie novos conte\u00fados para ver os WonderBlocks em a\u00e7\u00e3o."
             ],
             "WonderBlocks will no longer display.": [
-                "WonderBlocks wordt niet meer weergegeven."
+                "O WonderBlocks n\u00e3o ser\u00e1 mais exibido."
             ],
             "WonderBlocks provides a library of customizable block patterns and page templates.": [
-                "WonderBlocks biedt een bibliotheek met aanpasbare blokpatronen en paginasjablonen."
+                "WonderBlocks fornece uma biblioteca de padr\u00f5es de bloco personaliz\u00e1veis e modelos de p\u00e1gina."
             ],
             "Bluehost WordPress Plugin": [
-                "Bluehost WordPress-plug-in"
+                "Bluehost WordPress Plugin"
             ],
             "Quick links": [
-                "Snelle links"
+                "Liga\u00e7\u00f5es r\u00e1pidas"
             ],
             "Manage common settings for your website": [
-                "Beheer algemene instellingen voor uw website"
+                "Gerenciar configura\u00e7\u00f5es comuns para seu site"
             ],
             "Features": [
-                "Functies"
+                "Carater\u00edsticas"
             ],
             "Customize the available features as you manage your website.": [
-                "Pas de beschikbare functies aan terwijl u uw website beheert."
+                "Personalize os recursos dispon\u00edveis \u00e0 medida que gerencia seu site."
             ],
             "Enabled All auto-updates": [
-                "Ingeschakeld Alle automatische updates"
+                "Ativado Todas as atualiza\u00e7\u00f5es autom\u00e1ticas"
             ],
             "Disabled All auto-updates": [
-                "Uitgeschakeld Alle automatische updates"
+                "Desativado Todas as atualiza\u00e7\u00f5es autom\u00e1ticas"
             ],
             "Everything will automatically update.": [
-                "Alles wordt automatisch bijgewerkt."
+                "Tudo ser\u00e1 atualizado automaticamente."
             ],
             "Custom auto-update settings.": [
-                "Aangepaste instellingen voor automatisch bijwerken."
+                "Configura\u00e7\u00f5es personalizadas de atualiza\u00e7\u00e3o autom\u00e1tica."
             ],
             "Automatically keep all up to date": [
-                "Alles automatisch up-to-date houden"
+                "Mantenha tudo atualizado automaticamente"
             ],
             "Enabled Core auto-updates": [
-                "Ingeschakelde automatische updates van Core"
+                "Atualiza\u00e7\u00f5es autom\u00e1ticas do n\u00facleo ativadas"
             ],
             "Disabled Core auto-updates": [
-                "Uitgeschakelde automatische updates van Core"
+                "Atualiza\u00e7\u00f5es autom\u00e1ticas do n\u00facleo desativado"
             ],
             "WordPress will automatically update.": [
-                "WordPress wordt automatisch bijgewerkt."
+                "O WordPress ser\u00e1 atualizado automaticamente."
             ],
             "WordPress must be manually updated.": [
-                "WordPress moet handmatig worden bijgewerkt."
+                "WordPress deve ser atualizado manualmente."
             ],
             "WordPress Core": [
-                "WordPress Kern"
+                "N\u00facleo WordPress"
             ],
             "Enabled Plugins auto-update": [
-                "Ingeschakelde plug-ins worden automatisch bijgewerkt"
+                "Atualiza\u00e7\u00e3o autom\u00e1tica de plug-ins ativados"
             ],
             "Disabled Plugins auto-update": [
-                "Uitgeschakelde plug-ins worden automatisch bijgewerkt"
+                "Atualiza\u00e7\u00e3o autom\u00e1tica de plug-ins desativados"
             ],
             "All plugins will automatically update.": [
-                "Alle plug-ins worden automatisch bijgewerkt."
+                "Todos os plugins ser\u00e3o atualizados automaticamente."
             ],
             "Each plugin must be manually updated.": [
-                "Elke plug-in moet handmatig worden bijgewerkt."
+                "Cada plugin deve ser atualizado manualmente."
             ],
             "Plugins": [
-                "Insteekfilters"
+                "Plug-ins"
             ],
             "Enabled Themes auto-update": [
-                "Ingeschakelde thema's worden automatisch bijgewerkt"
+                "Atualiza\u00e7\u00e3o autom\u00e1tica de Temas Ativados"
             ],
             "Disabled Themes auto-update": [
-                "Uitgeschakelde thema's worden automatisch bijgewerkt"
+                "Atualiza\u00e7\u00e3o autom\u00e1tica de temas desativados"
             ],
             "All themes will automatically update.": [
-                "Alle thema's worden automatisch bijgewerkt."
+                "Todos os temas ser\u00e3o atualizados automaticamente."
             ],
             "Each theme must be manually updated.": [
-                "Elk thema moet handmatig worden bijgewerkt."
+                "Cada tema deve ser atualizado manualmente."
             ],
             "Themes": [
-                "Thema 's"
+                "Temas"
             ],
             "Automatic Updates": [
-                "Automatische updates"
+                "Atualiza\u00e7\u00f5es autom\u00e1ticas"
             ],
             "Keeping automatic updates on ensures timely security fixes and the latest features.": [
-                "Door automatische updates aan te houden, zorgt u voor tijdige beveiligingsoplossingen en de nieuwste functies."
+                "Manter atualiza\u00e7\u00f5es autom\u00e1ticas garante corre\u00e7\u00f5es de seguran\u00e7a oportunas e os recursos mais recentes."
             ],
             "The trash will automatically empty every %s week.": [
                 ""
             ],
             "Trash setting saved": [
-                "Prullenbakinstelling opgeslagen"
+                "Configura\u00e7\u00e3o de lixo salva"
             ],
             "Number of weeks in between emptying trash": [
-                "Aantal weken tussen het legen van het afval"
+                "N\u00famero de semanas entre o esvaziamento do lixo"
             ],
             "Content Options": [
-                "Inhoud opties"
+                "Op\u00e7\u00f5es de conte\u00fado"
             ],
             "Controls for how often to empty the trash.": [
-                "Bepaalt hoe vaak de prullenbak moet worden geleegd."
+                "Controla a frequ\u00eancia com que esvaziar o lixo."
             ],
             "Explore our featured collection of tools and services.": [
-                "Ontdek onze uitgelichte verzameling tools en services."
+                "Explore a nossa cole\u00e7\u00e3o de ferramentas e servi\u00e7os em destaque."
             ],
             "Oops, there was an error loading the marketplace, please try again later.": [
-                "Oeps, er is een fout opgetreden bij het laden van de marktplaats, probeer het later opnieuw."
+                "\nmain"
             ],
             "Sorry, no marketplace items. Please, try again later.": [
-                "Sorry, geen marktplaats-artikelen. Probeer het later opnieuw."
+                "Desculpe, sem itens de mercado. Por favor, tente novamente mais tarde."
             ],
             "Load More": [
-                "Laad meer"
+                "Carregue mais"
             ],
             "Oops! Something Went Wrong": [
-                "Oeps! Er is iets misgegaan"
+                "Ops! Algo correu mal"
             ],
             "An error occurred while loading the content. Please try again later.": [
-                "Er is een fout opgetreden tijdens het laden van de inhoud. Probeer het later opnieuw."
+                "Ocorreu um erro ao carregar o conte\u00fado. Tente novamente mais tarde."
             ],
             "Start now": [
-                "Begin nu"
+                "Comece agora"
             ],
             "Phone": [
-                "Telefoon"
+                "Telefone"
             ],
             "Call Us": [
-                "Bel ons"
+                "Ligue-nos"
             ],
             "Chat": [
-                "Babbelen"
+                "Bate-papo"
             ],
             "Chat with one of our friendly Customer Care Specialists, as we are waiting to help. Open 24 hours - 7 days.": [
-                "Chat met een van onze vriendelijke klantenservicespecialisten, want we staan klaar om te helpen. 24 uur per dag - 7 dagen geopend."
+                "Converse com um de nossos simp\u00e1ticos especialistas em atendimento ao cliente, pois estamos esperando para ajudar. Aberto 24 horas - 7 dias."
             ],
             "Live Chat": [
-                "Live chatten"
+                "Bate-papo ao vivo"
             ],
             "Tweet": [
-                "Tweeten"
+                "Twittar"
             ],
             "Find our team at @bluehost for updates on our products and support from our team.": [
-                "Vind ons team op @bluehost voor updates over onze producten en ondersteuning van ons team."
+                "Encontre nossa equipe em @bluehost para atualiza\u00e7\u00f5es sobre nossos produtos e suporte de nossa equipe."
             ],
             "Tweet Us": [
-                "Tweet ons"
+                "Envie-nos um tweet"
             ],
             "YouTube": [
-                "Inloggen"
+                "V\u00eddeos"
             ],
             "Find tutorials, answers, interviews and guides on our YouTube channel.": [
-                "Vind tutorials, antwoorden, interviews en handleidingen op ons YouTube-kanaal."
+                "Encontre tutoriais, respostas, entrevistas e guias no nosso canal do YouTube."
             ],
             "Watch Now": [
-                "Nu bekijken"
+                "Assista agora"
             ],
             "Knowledge Base": [
-                "Knowledge base"
+                "Base de Dados de Conhecimento"
             ],
             "Articles, guides, how-tos, instructions, and answers to our client's most frequently asked questions.": [
-                "Artikelen, gidsen, how-to's, instructies en antwoorden op de meest gestelde vragen van onze klant."
+                "Artigos, guias, instru\u00e7\u00f5es, instru\u00e7\u00f5es e respostas \u00e0s perguntas mais frequentes dos nossos clientes."
             ],
             "Visit Knowledge Base": [
-                "Bezoek de kennisbank"
+                "Visite a Base de Conhecimento"
             ],
             "Resources": [
-                "Weg"
+                "Recursos"
             ],
             "Boost your online knowledge and get ahead of the competition.": [
-                "Vergroot uw online kennis en neem een voorsprong op de concurrentie."
+                "Aumente o seu conhecimento online e saia na frente da concorr\u00eancia."
             ],
             "Explore Resources": [
-                "Resources verkennen"
+                "Explore os recursos"
             ],
             "Events and Webinars": [
-                "Evenementen en webinars"
+                "Eventos e Webinars"
             ],
             "Team Bluehost organizes multiple webinars and events throughout the year. We are also sponsors and speak at most WordCamps across the world. Join us at our next event!": [
-                "Team Bluehost organiseert het hele jaar door meerdere webinars en evenementen. We zijn ook sponsors en spreken op de meeste WordCamps over de hele wereld. Doe mee met ons volgende evenement!"
+                "A Team Bluehost organiza v\u00e1rios webinars e eventos ao longo do ano. Tamb\u00e9m somos patrocinadores e falamos na maioria dos WordCamps em todo o mundo. Junte-se a n\u00f3s no nosso pr\u00f3ximo evento!"
             ],
             "More Info": [
-                "Meer info"
+                "Mais informa\u00e7\u00f5es"
             ],
             "Bluehost Website": [
-                "Bluehost Website"
+                "Site Bluehost"
             ],
             "Not finding what you need? Visit our website for more information about our products and services.": [
-                "Kunt u niet vinden wat u zoekt? Bezoek onze website voor meer informatie over onze producten en diensten."
+                "N\u00e3o encontrou o que precisa? Visite o nosso site para mais informa\u00e7\u00f5es sobre os nossos produtos e servi\u00e7os."
             ],
             "Go to Bluehost": [
-                "Ga naar Bluehost"
+                "Ir para Bluehost"
             ],
             "Help": [
-                "Help"
+                "Ajuda"
             ],
             "We are available 24\/7 to help answer questions and solve your problems.": [
                 "\ndevelop"
             ],
             "Secret page to manage admin features and settings.": [
-                "Geheime pagina om beheerdersfuncties en -instellingen te beheren."
+                "P\u00e1gina secreta para gerenciar recursos e configura\u00e7\u00f5es de administrador."
             ],
             "Performance Enabled": [
-                "Prestaties ingeschakeld"
+                "Desempenho ativado"
             ],
             "Performance Disabled": [
-                "Prestaties uitgeschakeld"
+                "Desempenho desativado"
             ],
             "You need to reload the page to manage Performance.": [
-                "U moet de pagina opnieuw laden om de prestaties te beheren."
+                "Voc\u00ea precisa recarregar a p\u00e1gina para gerenciar o Desempenho."
             ],
             "Performance will no longer display.": [
-                "Prestaties worden niet meer weergegeven."
+                "O desempenho n\u00e3o ser\u00e1 mais exibido."
             ],
             "The performance feature provides improvements to loads faster for visitors including cache settings.": [
-                "De prestatiefunctie biedt verbeteringen om sneller te laden voor bezoekers, inclusief cache-instellingen."
+                "O recurso de desempenho fornece melhorias para cargas mais r\u00e1pidas para os visitantes, incluindo configura\u00e7\u00f5es de cache."
             ],
             "Oh No, An Error!": [
-                "Oh nee, een fout!"
+                "Oh n\u00e3o, um erro!"
             ],
             "You found an error, please refresh the page and try again!": [
-                "Je hebt een fout gevonden, vernieuw de pagina en probeer het opnieuw!"
+                "Voc\u00ea encontrou um erro, atualize a p\u00e1gina e tente novamente!"
             ],
             "If the error persists, please contact support.": [
-                "Als de fout zich blijft voordoen, neem dan contact op met de ondersteuning."
+                "Se o erro persistir, entre em contato com o suporte."
             ],
             "Error code:": [
-                "Foutcode:"
+                "C\u00f3digo de erro:"
             ],
             "Commerce": [
-                "Handel"
+                "Com\u00e9rcio"
             ],
             "Manage WordPress": [
-                "WordPress beheren"
+                "Gerenciar WordPress"
             ],
             "Staging": [
-                "Enscenering"
+                "Encena\u00e7\u00e3o"
             ],
             "Performance": [
-                "Voorstelling"
+                "Desempenho"
             ],
             "Launch our AI Editor": [
-                "Start onze AI-editor"
+                "Inicie nosso editor de IA"
             ],
             "Say hello to effortless site building with a wide library of 250+ blocks": [
-                "Zeg hallo tegen het moeiteloos bouwen van sites met een brede bibliotheek van 250+ blokken"
+                "Diga ol\u00e1 \u00e0 constru\u00e7\u00e3o de sites sem esfor\u00e7o com uma ampla biblioteca de 250+ blocos"
             ],
             "Launch the Editor": [
-                "Start de editor"
+                "Iniciar o Editor"
             ],
             "Optimize your website by managing cache and performance settings": [
-                "Optimaliseer uw website door cache- en prestatie-instellingen te beheren"
+                "Otimize seu site gerenciando configura\u00e7\u00f5es de cache e desempenho"
             ],
             "General Settings": [
-                "Algemene instellingen"
+                "Configura\u00e7\u00f5es Gerais"
             ],
             "A staging site is a duplicate of your live site, offering a secure environment to experiment, test updates, and deploy when ready.": [
-                "Een testsite is een duplicaat van uw livesite en biedt een veilige omgeving om te experimenteren, updates te testen en te implementeren wanneer u klaar bent."
+                "Um site de preparo \u00e9 uma duplicata do seu site ativo, oferecendo um ambiente seguro para experimentar, testar atualiza\u00e7\u00f5es e implantar quando estiver pronto."
             ],
             "Optimize your content": [
-                "Optimaliseer uw inhoud"
+                "Otimize o seu conte\u00fado"
             ],
             "Optimize your content for search engines and boost your store visibility.": [
-                "Optimaliseer uw inhoud voor zoekmachines en vergroot de zichtbaarheid van uw winkel."
+                "Otimize o seu conte\u00fado para os motores de busca e aumente a visibilidade da sua loja."
             ],
             "Security, performance, backups, staging & more.": [
-                "Beveiliging, prestaties, back-ups, staging en meer."
+                "Seguran\u00e7a, desempenho, backups, preparo e muito mais."
             ],
             "Manage": [
-                "Beheren"
+                "Gerir"
             ],
             "Master WordPress with help from our AI assistant.": [
-                "Beheers WordPress met behulp van onze AI-assistent."
+                "Domine o WordPress com a ajuda do nosso assistente de IA."
             ],
             "Launch our AI Help": [
-                "Start onze AI-hulp"
+                "Inicie nossa Ajuda de IA"
             ],
             "Add Store Details": [
-                "Winkelgegevens toevoegen"
+                "Adicionar detalhes da loja"
             ],
             "Refer a Friend": [
-                "Verwijs een vriend door"
+                "Indique um Amigo"
             ],
             "Start Now": [
-                "Begin nu"
+                "Comece agora"
             ],
             "Pro Design Live": [
-                "Pro Design Live"
+                "Pro Design ao Vivo"
             ],
             "We will help you build and grow your website and improve your skills in WordPress.": [
-                "Wij helpen u bij het bouwen en laten groeien van uw website en het verbeteren van uw vaardigheden in WordPress."
+                "Vamos ajud\u00e1-lo a construir e crescer seu site e melhorar suas habilidades em WordPress."
             ],
             "Get Info": [
-                "Info ophalen"
+                "Obter informa\u00e7\u00f5es"
             ],
             "Optimize your website my managing cache, security and performance settings.": [
-                "Optimaliseer uw website door cache-, beveiligings- en prestatie-instellingen te beheren."
+                "Otimize seu site meu gerenciamento de cache, seguran\u00e7a e configura\u00e7\u00f5es de desempenho."
             ],
             "Premium tools available in eCommerce Add-Ons": [
-                "Premium-tools beschikbaar in eCommerce-add-ons"
+                "Ferramentas premium dispon\u00edveis em complementos de com\u00e9rcio eletr\u00f4nico"
             ],
             "Discover exclusive features, designed to deliver unmatched value and elevate your online experience.": [
-                "Ontdek exclusieve functies, ontworpen om onge\u00ebvenaarde waarde te leveren en uw online ervaring naar een hoger niveau te tillen."
+                "Descubra funcionalidades exclusivas, concebidas para proporcionar um valor incompar\u00e1vel e elevar a sua experi\u00eancia online."
             ],
             "Congrats, your store is live!": [
-                "Gefeliciteerd, je winkel is live!"
+                "Parab\u00e9ns, sua loja est\u00e1 no ar!"
             ],
             "Congrats, your website is live!": [
-                "Gefeliciteerd, uw website is live!"
+                "Parab\u00e9ns, seu site est\u00e1 no ar!"
             ],
             "Unlock exclusive benefits with our referral program.": [
-                "Ontgrendel exclusieve voordelen met ons verwijzingsprogramma."
+                "Desbloqueie benef\u00edcios exclusivos com o nosso programa de refer\u00eancias."
             ],
             "Create a campaign and boost your sales!": [
-                "Maak een campagne en verhoog je verkoop!"
+                "Crie uma campanha e aumente as suas vendas!"
             ],
             "Create custom upsell, cross-sell and other promotional campaigns to generate more sales.": [
-                "Maak aangepaste upsell-, cross-sell- en andere promotiecampagnes om meer verkopen te genereren."
+                "Crie campanhas personalizadas de upsell, cross-sell e outras promo\u00e7\u00f5es para gerar mais vendas."
             ],
             "Get Started Now": [
-                "Begin nu"
+                "Comece j\u00e1"
             ],
             "Not sure where to start? Try one of these popular promotions:": [
-                "Weet je niet waar je moet beginnen? Probeer een van deze populaire promoties:"
+                "N\u00e3o sabe por onde come\u00e7ar? Experimente uma destas promo\u00e7\u00f5es populares:"
             ],
             "Create a Campaign": [
-                "Maak een campagne aan"
+                "Criar uma Campanha"
             ],
             "Free Shipping": [
-                "Gratis verzending"
+                "Envio gratuito"
             ],
             "Attract and retain customers by offering free shipping based on cart amount, location or store category.": [
-                "Trek klanten aan en behoud door gratis verzending aan te bieden op basis van het aantal winkelwagens, locatie of winkelcategorie."
+                "Atraia e retenha clientes oferecendo envio gratuito com base no n\u00famero do carrinho, localiza\u00e7\u00e3o ou categoria da loja."
             ],
             "Buy 1 Get 1": [
-                "Koop 1 Krijg 1"
+                "Compra 1 Compra 1"
             ],
             "Attract customers with a compelling deal where they can buy one product and get another product for free.": [
-                "Trek klanten aan met een aantrekkelijke deal waarbij ze \u00e9\u00e9n product kunnen kopen en een ander gratis kunnen krijgen."
+                "Atraia clientes com uma oferta apelativa onde possam comprar um produto e obter outro gratuitamente."
             ],
             "Gift Product in Cart": [
-                "Cadeauproduct in de winkelwagen"
+                "Produto de Oferta no Carrinho"
             ],
             "Reward customers with a free gift in their cart based on total cart value, or specific products or categories.": [
-                "Beloon klanten met een gratis cadeau in hun winkelmandje op basis van de totale winkelwagenwaarde, of specifieke producten of categorie\u00ebn."
+                "Recompense os clientes com um presente gratuito no carrinho com base no valor total do carrinho, ou em produtos ou categorias espec\u00edficas."
             ],
             "Category Discount": [
-                "Categorie korting"
+                "Desconto por Categoria"
             ],
             "Give your customers a discount on specific categories of products and boost sales for those categories.": [
-                "Geef je klanten korting op specifieke productcategorie\u00ebn en verhoog de verkoop van die categorie\u00ebn."
+                "D\u00ea aos seus clientes um desconto em categorias espec\u00edficas de produtos e aumente as vendas dessas categorias."
             ],
             "Upsell in Thank You Page": [
-                "Upsell op de bedankpagina"
+                "Venda adicional na P\u00e1gina de Agradecimento"
             ],
             "Maximize sales by presenting relevant upsell options after customers have completed their purchase.": [
-                "Maximaliseer de verkoop door relevante upsell-opties te presenteren nadat klanten hun aankoop hebben afgerond."
+                "Maximize as vendas apresentando op\u00e7\u00f5es relevantes de upsell depois de os clientes terem conclu\u00eddo a compra."
             ],
             "Last Minute Deal": [
-                "Last-minute Deal"
+                "Acordo de \u00daltima Hora"
             ],
             "Create urgency with a special time-limited deal for customers on the cart and checkout pages.": [
-                "Cre\u00eber urgentie met een speciale tijdsbeperkte aanbieding voor klanten op de winkelwagen- en afrekenpagina's."
+                "Crie urg\u00eancia com uma oferta especial com tempo limitado para os clientes no carrinho e nas p\u00e1ginas de checkout."
             ]
         }
     }

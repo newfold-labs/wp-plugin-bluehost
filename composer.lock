@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "bc8c17501e2a0ab1ed3295616e873fb8",
+    "content-hash": "29cbc6b399a863f2bf373e52ee58d6d1",
     "packages": [
         {
             "name": "doctrine/inflector",
@@ -882,16 +882,16 @@
         },
         {
             "name": "newfold-labs/wp-module-data",
-            "version": "2.9.0",
+            "version": "2.9.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/newfold-labs/wp-module-data.git",
-                "reference": "fb9ebafe5ad7bc23832f87dba83475815db80e4c"
+                "reference": "7eaa7d783fa04bca4382a9b479c73ff3be7d11ff"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/newfold-labs/wp-module-data/zipball/fb9ebafe5ad7bc23832f87dba83475815db80e4c",
-                "reference": "fb9ebafe5ad7bc23832f87dba83475815db80e4c",
+                "url": "https://api.github.com/repos/newfold-labs/wp-module-data/zipball/7eaa7d783fa04bca4382a9b479c73ff3be7d11ff",
+                "reference": "7eaa7d783fa04bca4382a9b479c73ff3be7d11ff",
                 "shasum": ""
             },
             "require": {
@@ -981,10 +981,10 @@
             ],
             "description": "Newfold Data Module",
             "support": {
-                "source": "https://github.com/newfold-labs/wp-module-data/tree/2.9.0",
+                "source": "https://github.com/newfold-labs/wp-module-data/tree/2.9.1",
                 "issues": "https://github.com/newfold-labs/wp-module-data/issues"
             },
-            "time": "2025-12-02T16:15:37+00:00"
+            "time": "2025-12-12T19:08:04+00:00"
         },
         {
             "name": "newfold-labs/wp-module-deactivation",

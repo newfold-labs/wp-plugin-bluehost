@@ -25,12 +25,13 @@ const Settings = () => {
 	useEffect( () => {
 		// if neither staging or performance are enabled, set settings details to open
 		if ( ! isStagingEnabled && ! isPerformanceEnabled ) {
-			const settingsDetails = document.querySelector( '.settings-details' );
+			const settingsDetails =
+				document.querySelector( '.settings-details' );
 			if ( settingsDetails ) {
 				settingsDetails.setAttribute( 'open', 'true' );
 			}
 		}
-	}, [isStagingEnabled, isPerformanceEnabled]);
+	}, [ isStagingEnabled, isPerformanceEnabled ] );
 
 	useEffect( () => {
 		// run when mounts

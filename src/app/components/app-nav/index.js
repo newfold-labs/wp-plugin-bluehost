@@ -14,7 +14,7 @@ import {
 	getPlatformPathUrl,
 	addUtmParams,
 	getEditorUrl,
-	getEditorLabel
+	getEditorLabel,
 } from 'App/util/helpers';
 import { topRoutes } from 'App/data/routes';
 import {

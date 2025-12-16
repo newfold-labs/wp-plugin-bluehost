@@ -42,13 +42,13 @@ msgid "Please install the Bluehost Plugin dependencies."
 msgstr ""
 
 #. translators: %1$s starts the bold text, %2$s ends the bold text and adds a line break, %3$s is the link to the Domain Registration page, %4$s is the closing link for Domain Registration, %5$s wraps everything inside a span with text-center class
-#: bootstrap.php:102
+#: bootstrap.php:97
 #, php-format
 msgid "%1$sNeed a domain?%2$sCheck out our %3$sDomain Registration%4$s options.%5$s"
 msgstr ""
 
 #. translators: %1$s starts the bold text, %2$s ends the bold text and adds a line break, %3$s is the link to Shared Hosting, %4$s is the closing link for Shared Hosting, %5$s is the link to WordPress Hosting, %6$s is the closing link for WordPress Hosting, %7$s is the link to VPS Hosting, %8$s is the closing link for VPS Hosting, %9$s is the link to Dedicated Hosting, %10$s is the closing link for Dedicated Hosting, %11$s wraps everything inside a span with text-center class
-#: bootstrap.php:111
+#: bootstrap.php:106
 #, php-format
 msgid ""
 "%1$sDiscover our hosting solutions:%2$s\n"
@@ -60,7 +60,7 @@ msgid ""
 msgstr ""
 
 #. translators: %1$s is the logo SVG, %2$s wraps the text, %3$s is the link start for Bluehost WordPress Hosting, %4$s is the closing anchor tag, %5$s wraps the text again, %6$s contains backlinks
-#: bootstrap.php:139
+#: bootstrap.php:134
 #, php-format
 msgid ""
 "%1$s\n"
@@ -69,22 +69,22 @@ msgid ""
 msgstr ""
 
 #. translators: %s: Blog name
-#: bootstrap.php:154
+#: bootstrap.php:149
 #, php-format
 msgid "%s &mdash; Coming Soon"
 msgstr ""
 
-#: bootstrap.php:157
+#: bootstrap.php:152
 msgid "Coming Soon Active"
 msgstr ""
 
 #. translators: %1$s is replaced with the opening link tag to preview the page, and %2$s is replaced with the closing link tag, %3$s is the opening link tag, %4$s is the closing link tag.
-#: bootstrap.php:160
+#: bootstrap.php:155
 #, php-format
 msgid "Your site is currently displaying a %1$scoming soon page%2$s. Once you are ready, %3$slaunch your site%4$s."
 msgstr ""
 
-#: bootstrap.php:161
+#: bootstrap.php:156
 msgid "Preview the coming soon landing page"
 msgstr ""
 

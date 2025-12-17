@@ -61,7 +61,7 @@ jobs:
           npm run create:dev
 
       - name: Upload build artifact
-        uses: actions/upload-artifact@330a01c490aca151604b8cf639adc76d48f6c5d4 # v5.0.0
+        uses: actions/upload-artifact@b7c566a772e6b6bfb58ed0dc250532a479d7789f # v6.0.0
         with:
           name: plugin-build-${{ matrix.environment }}
           path: ./${{ vars.PLUGIN_NAME }}.zip
@@ -112,7 +112,7 @@ jobs:
           echo "Server not ready after 5 minutes" && exit 1
 
       - name: Run Specific Cypress Tests
-        uses: cypress-io/github-action@e3ff965ee85ae28bdd2ea32c3e22a7fa12e02f2b # v6.10.5
+        uses: cypress-io/github-action@2ad32e649e4db26c07674ebae31a297601dbcbaf # v6.10.8
         with:
           install: true
           start: npm start

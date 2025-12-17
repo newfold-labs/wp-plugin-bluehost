@@ -46,6 +46,7 @@ vendor/newfold-labs/*/*.yml
 # Add wordpress/mcp-adapter rules vendor and vendor-prefixex
 wordpress/mcp-adapter/.*
 wordpress/mcp-adapter/*.lock
+wordpress/mcp-adapter/*.json
 wordpress/mcp-adapter/*.md
-wordpress/mcp-adapter/*/tests
-wordpress/mcp-adapter/*/docs
+wordpress/mcp-adapter/tests
+wordpress/mcp-adapter/docs

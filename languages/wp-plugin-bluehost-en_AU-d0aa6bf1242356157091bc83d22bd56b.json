@@ -1,13 +1,13 @@
 {
     "translation-revision-date": "2025-02-25T20:53:21+00:00",
     "generator": "WP-CLI\/2.12.0",
-    "source": "build\/4.10.0\/index.js",
+    "source": "build\/4.11.0\/index.js",
     "domain": "messages",
     "locale_data": {
         "messages": {
             "": {
                 "domain": "messages",
-                "lang": "en_GB",
+                "lang": "en_AU",
                 "plural-forms": "nplurals=2; plural=(n != 1);"
             },
             "Home": [
@@ -75,18 +75,6 @@
             ],
             "Store": [
                 "Store"
-            ],
-            "Products & Services": [
-                "Products & Services"
-            ],
-            "Sales & Promotions": [
-                "Sales & Promotions"
-            ],
-            "Sales Channel": [
-                "Sales Channel"
-            ],
-            "Payments": [
-                "Payments"
             ],
             "Store Details": [
                 "Store Details"
@@ -170,7 +158,7 @@
                 "WonderBlocks will no longer display."
             ],
             "WonderBlocks provides a library of customizable block patterns and page templates.": [
-                "WonderBlocks provides a library of customisable block patterns and page templates."
+                "WonderBlocks provides a library of customizable block patterns and page templates."
             ],
             "Bluehost WordPress Plugin": [
                 "Bluehost WordPress Plugin"
@@ -344,7 +332,7 @@
                 "Events and Webinars"
             ],
             "Team Bluehost organizes multiple webinars and events throughout the year. We are also sponsors and speak at most WordCamps across the world. Join us at our next event!": [
-                "Team Bluehost organises multiple webinars and events throughout the year. We are also sponsors and speak at most WordCamps across the world. Join us at our next event!"
+                "Team Bluehost organizes multiple webinars and events throughout the year. We are also sponsors and speak at most WordCamps across the world. Join us at our next event!"
             ],
             "More Info": [
                 "More Info"
@@ -477,6 +465,57 @@
             ],
             "Unlock exclusive benefits with our referral program.": [
                 "Unlock exclusive benefits with our referral program."
+            ],
+            "Create a campaign and boost your sales!": [
+                "Create a campaign and boost your sales!"
+            ],
+            "Create custom upsell, cross-sell and other promotional campaigns to generate more sales.": [
+                "Create custom upsell, cross-sell and other promotional campaigns to generate more sales."
+            ],
+            "Get Started Now": [
+                "Get Started Now"
+            ],
+            "Not sure where to start? Try one of these popular promotions:": [
+                "Not sure where to start? Try one of these popular promotions:"
+            ],
+            "Create a Campaign": [
+                "Create a Campaign"
+            ],
+            "Free Shipping": [
+                "Free Shipping"
+            ],
+            "Attract and retain customers by offering free shipping based on cart amount, location or store category.": [
+                "Attract and retain customers by offering free shipping based on cart amount, location or store category."
+            ],
+            "Buy 1 Get 1": [
+                "Buy 1 Get 1"
+            ],
+            "Attract customers with a compelling deal where they can buy one product and get another product for free.": [
+                "Attract customers with a compelling deal where they can buy one product and get another product for free."
+            ],
+            "Gift Product in Cart": [
+                "Gift Product in Cart"
+            ],
+            "Reward customers with a free gift in their cart based on total cart value, or specific products or categories.": [
+                "Reward customers with a free gift in their cart based on total cart value, or specific products or categories."
+            ],
+            "Category Discount": [
+                "Category Discount"
+            ],
+            "Give your customers a discount on specific categories of products and boost sales for those categories.": [
+                "Give your customers a discount on specific categories of products and boost sales for those categories."
+            ],
+            "Upsell in Thank You Page": [
+                "Upsell in Thank You Page"
+            ],
+            "Maximize sales by presenting relevant upsell options after customers have completed their purchase.": [
+                "Maximize sales by presenting relevant upsell options after customers have completed their purchase."
+            ],
+            "Last Minute Deal": [
+                "Last Minute Deal"
+            ],
+            "Create urgency with a special time-limited deal for customers on the cart and checkout pages.": [
+                "Create urgency with a special time-limited deal for customers on the cart and checkout pages."
             ]
         }
     }

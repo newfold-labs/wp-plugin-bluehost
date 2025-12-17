@@ -1,7 +1,7 @@
 {
     "translation-revision-date": "2024-10-21 07:10-0000",
     "generator": "WP-CLI\/2.12.0",
-    "source": "build\/4.10.0\/index.js",
+    "source": "build\/4.11.0\/index.js",
     "domain": "messages",
     "locale_data": {
         "messages": {
@@ -75,18 +75,6 @@
             ],
             "Store": [
                 "Abspeichern"
-            ],
-            "Products & Services": [
-                "Produkte & Dienstleistungen"
-            ],
-            "Sales & Promotions": [
-                "Verkauf & Verkaufsf\u00f6rderung"
-            ],
-            "Sales Channel": [
-                "Vertriebskanal"
-            ],
-            "Payments": [
-                "Zahlungen"
             ],
             "Store Details": [
                 "Details zum Shop"
@@ -477,6 +465,57 @@
             ],
             "Unlock exclusive benefits with our referral program.": [
                 "Sichern Sie sich exklusive Vorteile mit unserem Empfehlungsprogramm."
+            ],
+            "Create a campaign and boost your sales!": [
+                "Erstellen Sie eine Kampagne und steigern Sie Ihren Umsatz!"
+            ],
+            "Create custom upsell, cross-sell and other promotional campaigns to generate more sales.": [
+                "Erstellen Sie individuelle Upsell-, Cross-Sell- und andere Werbekampagnen, um mehr Verk\u00e4ufe zu generieren."
+            ],
+            "Get Started Now": [
+                "Fang jetzt an"
+            ],
+            "Not sure where to start? Try one of these popular promotions:": [
+                "Wissen Sie nicht, wo Sie anfangen sollen? Probieren Sie eine dieser beliebten Aktionen aus:"
+            ],
+            "Create a Campaign": [
+                "Eine Kampagne erstellen"
+            ],
+            "Free Shipping": [
+                "Freier Versand"
+            ],
+            "Attract and retain customers by offering free shipping based on cart amount, location or store category.": [
+                "Gewinnen und halten Sie Kunden, indem Sie kostenlosen Versand basierend auf Warenwarenzahl, Standort oder Shop-Kategorie anbieten."
+            ],
+            "Buy 1 Get 1": [
+                "Kaufen Sie 1 Bekommen Sie 1"
+            ],
+            "Attract customers with a compelling deal where they can buy one product and get another product for free.": [
+                "Ziehen Sie Kunden mit einem \u00fcberzeugenden Angebot an, bei dem sie ein Produkt kaufen und ein anderes kostenlos erhalten k\u00f6nnen."
+            ],
+            "Gift Product in Cart": [
+                "Geschenkprodukt im Einkaufswagen"
+            ],
+            "Reward customers with a free gift in their cart based on total cart value, or specific products or categories.": [
+                "Belohnen Sie Kunden mit einem kostenlosen Geschenk im Warenkorb, basierend auf dem Gesamtwert des Warenkorbs oder bestimmten Produkten oder Kategorien."
+            ],
+            "Category Discount": [
+                "Kategorienrabatt"
+            ],
+            "Give your customers a discount on specific categories of products and boost sales for those categories.": [
+                "Geben Sie Ihren Kunden einen Rabatt auf bestimmte Produktkategorien und steigern Sie den Umsatz in diesen Kategorien."
+            ],
+            "Upsell in Thank You Page": [
+                "Upsell auf der Dankesseite"
+            ],
+            "Maximize sales by presenting relevant upsell options after customers have completed their purchase.": [
+                "Maximieren Sie den Umsatz, indem Sie relevante Upsell-Optionen pr\u00e4sentieren, nachdem die Kunden ihren Kauf abgeschlossen haben."
+            ],
+            "Last Minute Deal": [
+                "Last-Minute-Deal"
+            ],
+            "Create urgency with a special time-limited deal for customers on the cart and checkout pages.": [
+                "Schaffen Sie Dringlichkeit mit einem speziellen zeitlich begrenzten Angebot f\u00fcr Kunden auf den Warenkorb- und Kassenseiten."
             ]
         }
     }

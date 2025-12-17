@@ -1,7 +1,7 @@
 {
     "translation-revision-date": "2025-02-25T20:53:21+00:00",
     "generator": "WP-CLI\/2.12.0",
-    "source": "build\/4.10.0\/index.js",
+    "source": "build\/4.11.0\/index.js",
     "domain": "messages",
     "locale_data": {
         "messages": {
@@ -75,18 +75,6 @@
             ],
             "Store": [
                 "Loja"
-            ],
-            "Products & Services": [
-                "Produtos e Servi\u00e7os"
-            ],
-            "Sales & Promotions": [
-                "Vendas & Promo\u00e7\u00f5es"
-            ],
-            "Sales Channel": [
-                "Canal de Vendas"
-            ],
-            "Payments": [
-                "Pagamentos"
             ],
             "Store Details": [
                 "Detalhes da Loja"
@@ -477,6 +465,57 @@
             ],
             "Unlock exclusive benefits with our referral program.": [
                 "Desbloqueie benef\u00edcios exclusivos com o nosso programa de refer\u00eancias."
+            ],
+            "Create a campaign and boost your sales!": [
+                "Crie uma campanha e aumente as suas vendas!"
+            ],
+            "Create custom upsell, cross-sell and other promotional campaigns to generate more sales.": [
+                "Crie campanhas personalizadas de upsell, cross-sell e outras promo\u00e7\u00f5es para gerar mais vendas."
+            ],
+            "Get Started Now": [
+                "Comece j\u00e1"
+            ],
+            "Not sure where to start? Try one of these popular promotions:": [
+                "N\u00e3o sabe por onde come\u00e7ar? Experimente uma destas promo\u00e7\u00f5es populares:"
+            ],
+            "Create a Campaign": [
+                "Criar uma Campanha"
+            ],
+            "Free Shipping": [
+                "Envio gratuito"
+            ],
+            "Attract and retain customers by offering free shipping based on cart amount, location or store category.": [
+                "Atraia e retenha clientes oferecendo envio gratuito com base no n\u00famero do carrinho, localiza\u00e7\u00e3o ou categoria da loja."
+            ],
+            "Buy 1 Get 1": [
+                "Compra 1 Compra 1"
+            ],
+            "Attract customers with a compelling deal where they can buy one product and get another product for free.": [
+                "Atraia clientes com uma oferta apelativa onde possam comprar um produto e obter outro gratuitamente."
+            ],
+            "Gift Product in Cart": [
+                "Produto de Oferta no Carrinho"
+            ],
+            "Reward customers with a free gift in their cart based on total cart value, or specific products or categories.": [
+                "Recompense os clientes com um presente gratuito no carrinho com base no valor total do carrinho, ou em produtos ou categorias espec\u00edficas."
+            ],
+            "Category Discount": [
+                "Desconto por Categoria"
+            ],
+            "Give your customers a discount on specific categories of products and boost sales for those categories.": [
+                "D\u00ea aos seus clientes um desconto em categorias espec\u00edficas de produtos e aumente as vendas dessas categorias."
+            ],
+            "Upsell in Thank You Page": [
+                "Venda adicional na P\u00e1gina de Agradecimento"
+            ],
+            "Maximize sales by presenting relevant upsell options after customers have completed their purchase.": [
+                "Maximize as vendas apresentando op\u00e7\u00f5es relevantes de upsell depois de os clientes terem conclu\u00eddo a compra."
+            ],
+            "Last Minute Deal": [
+                "Acordo de \u00daltima Hora"
+            ],
+            "Create urgency with a special time-limited deal for customers on the cart and checkout pages.": [
+                "Crie urg\u00eancia com uma oferta especial com tempo limitado para os clientes no carrinho e nas p\u00e1ginas de checkout."
             ]
         }
     }

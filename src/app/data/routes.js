@@ -9,7 +9,7 @@ import { NewfoldRuntime } from '@newfold/wp-module-runtime';
 import { getMarketplaceSubnavRoutes } from '@modules/wp-module-marketplace/components/marketplaceSubnav';
 import { Route, Routes } from 'react-router-dom';
 import Home from '../pages/home';
-import Store from '../pages/ecommerce/page';
+import StoreSalesDiscounts from '../pages/store-sales-discounts/page';
 import Marketplace from '../pages/marketplace';
 import Commerce from '../pages/commerce';
 import Settings from '../pages/settings';
@@ -160,40 +160,10 @@ export const routes = [
 		condition: true,
 	},
 	{
-		name: '/store',
+		name: '/store/sales_discounts',
 		title: __( 'Store', 'wp-plugin-bluehost' ),
-		Component: Store,
+		Component: StoreSalesDiscounts,
 		Icon: BuildingStorefrontIcon,
-		subRoutes: [
-			{
-				name: '/store/products',
-				title: __( 'Products & Services', 'wp-plugin-bluehost' ),
-			},
-			NewfoldRuntime.hasCapability( 'hasYithExtended' ) ||
-			NewfoldRuntime.hasCapability( 'canAccessGlobalCTB' )
-				? {
-						name: '/store/sales_discounts',
-						title: __( 'Sales & Promotions', 'wp-plugin-bluehost' ),
-				  }
-				: null,
-			NewfoldRuntime.hasCapability( 'hasYithExtended' ) &&
-			NewfoldRuntime.hasCapability( 'hasEcomdash' )
-				? {
-						name: '/store/sales_channel',
-						title: __( 'Sales Channel', 'wp-plugin-bluehost' ),
-				  }
-				: null,
-			NewfoldRuntime.isWoo
-				? {
-						name: '/store/payments',
-						title: __( 'Payments', 'wp-plugin-bluehost' ),
-				  }
-				: null,
-			{
-				name: '/store/details',
-				title: __( 'Store Details', 'wp-plugin-bluehost' ),
-			},
-		].filter( Boolean ),
 		condition: true,
 	},
 	{

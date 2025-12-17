@@ -10,8 +10,12 @@ import {
 import { default as NewfoldNotifications } from '@modules/wp-module-notifications/assets/js/components/notifications/';
 import { useLocation } from 'react-router-dom';
 import classnames from 'classnames';
-import { getPlatformPathUrl, addUtmParams } from 'App/util/helpers';
-import { getEditorUrl, getEditorLabel } from 'App/util/themeUtils';
+import {
+	getPlatformPathUrl,
+	addUtmParams,
+	getEditorUrl,
+	getEditorLabel,
+} from 'App/util/helpers';
 import { topRoutes } from 'App/data/routes';
 import {
 	RectangleGroupIcon,

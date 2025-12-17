@@ -1,7 +1,7 @@
 {
     "translation-revision-date": "2025-02-25T20:53:21+00:00",
     "generator": "WP-CLI\/2.12.0",
-    "source": "build\/4.10.0\/index.js",
+    "source": "build\/4.11.0\/index.js",
     "domain": "messages",
     "locale_data": {
         "messages": {
@@ -75,18 +75,6 @@
             ],
             "Store": [
                 "Boutique"
-            ],
-            "Products & Services": [
-                "Produits et services"
-            ],
-            "Sales & Promotions": [
-                "Ventes et promotions"
-            ],
-            "Sales Channel": [
-                "Canal de vente"
-            ],
-            "Payments": [
-                "Paiements"
             ],
             "Store Details": [
                 "D\u00e9tails du magasin"
@@ -477,6 +465,57 @@
             ],
             "Unlock exclusive benefits with our referral program.": [
                 "D\u00e9bloquez des avantages exclusifs gr\u00e2ce \u00e0 notre programme de parrainage."
+            ],
+            "Create a campaign and boost your sales!": [
+                "Cr\u00e9ez une campagne et augmentez vos ventes !"
+            ],
+            "Create custom upsell, cross-sell and other promotional campaigns to generate more sales.": [
+                "Cr\u00e9ez des campagnes personnalis\u00e9es de vente additionnelle, de cross-sell et d\u2019autres campagnes promotionnelles pour g\u00e9n\u00e9rer plus de ventes."
+            ],
+            "Get Started Now": [
+                "Commencez d\u00e8s maintenant"
+            ],
+            "Not sure where to start? Try one of these popular promotions:": [
+                "Vous ne savez pas par o\u00f9 commencer ? Essayez l\u2019une de ces promotions populaires :"
+            ],
+            "Create a Campaign": [
+                "Cr\u00e9er une campagne"
+            ],
+            "Free Shipping": [
+                "Livraison gratuite"
+            ],
+            "Attract and retain customers by offering free shipping based on cart amount, location or store category.": [
+                "Attirez et fid\u00e9liser les clients en proposant la livraison gratuite bas\u00e9e sur le montant du panier, l\u2019emplacement ou la cat\u00e9gorie du magasin."
+            ],
+            "Buy 1 Get 1": [
+                "Achetez 1, recevez-en 1"
+            ],
+            "Attract customers with a compelling deal where they can buy one product and get another product for free.": [
+                "Attirez les clients avec une offre attrayante o\u00f9 ils peuvent acheter un produit et en obtenir un autre gratuitement."
+            ],
+            "Gift Product in Cart": [
+                "Produit cadeau dans le panier"
+            ],
+            "Reward customers with a free gift in their cart based on total cart value, or specific products or categories.": [
+                "R\u00e9compensez les clients avec un cadeau gratuit dans leur panier bas\u00e9 sur la valeur totale du panier, ou sur des produits ou cat\u00e9gories sp\u00e9cifiques."
+            ],
+            "Category Discount": [
+                "Remise par cat\u00e9gorie"
+            ],
+            "Give your customers a discount on specific categories of products and boost sales for those categories.": [
+                "Offrez \u00e0 vos clients une r\u00e9duction sur certaines cat\u00e9gories de produits et augmentez les ventes pour ces cat\u00e9gories."
+            ],
+            "Upsell in Thank You Page": [
+                "Vendre en plus dans la page de remerciement"
+            ],
+            "Maximize sales by presenting relevant upsell options after customers have completed their purchase.": [
+                "Maximisez les ventes en pr\u00e9sentant des options de vente additionnelle pertinentes apr\u00e8s que les clients ont finalis\u00e9 leur achat."
+            ],
+            "Last Minute Deal": [
+                "Accord de derni\u00e8re minute"
+            ],
+            "Create urgency with a special time-limited deal for customers on the cart and checkout pages.": [
+                "Cr\u00e9ez de l\u2019urgence avec une offre sp\u00e9ciale \u00e0 dur\u00e9e limit\u00e9e pour les clients sur les pages du panier et du paiement."
             ]
         }
     }

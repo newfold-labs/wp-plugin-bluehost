@@ -40,7 +40,7 @@ final class Admin {
 		\add_filter( 'newfold-runtime', array( __CLASS__, 'add_to_runtime' ) );
 		\add_filter( 'newfold_runtime', array( __CLASS__, 'add_to_runtime' ) );
 
-		if ( isset( $_GET['page'] ) && strpos( filter_input( INPUT_GET, 'page', FILTER_UNSAFE_RAW ), 'bluehost' ) >= 0 ) { // phpcs:ignore
+		if ( isset( $_GET['page'] ) && strpos( filter_input( INPUT_GET, 'page', FILTER_UNSAFE_RAW ), 'bluehost' ) !== false ) { // phpcs:ignore
 			\add_action( 'admin_footer_text', array( __CLASS__, 'add_brand_to_admin_footer' ) );
 			/* Disable admin notices on App pages */
 			\add_action( 'admin_init', array( __CLASS__, 'disable_admin_notices' ) );

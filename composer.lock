@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "06145d6f3ff3a768b1b9e32793d7fcb5",
+    "content-hash": "ce5ea0e4dce65302b2cdee9dccd899e5",
     "packages": [
         {
             "name": "dealerdirect/phpcodesniffer-composer-installer",
@@ -2497,20 +2497,20 @@
         },
         {
             "name": "newfold-labs/wp-module-notifications",
-            "version": "1.7.0",
+            "version": "1.8.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/newfold-labs/wp-module-notifications.git",
-                "reference": "8a0fb26c9d1f6314a0cfc54e5760bca413a108fd"
+                "reference": "4b3dc6c31623429a5d2ae7e96e2a8961d3ccf0fd"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/newfold-labs/wp-module-notifications/zipball/8a0fb26c9d1f6314a0cfc54e5760bca413a108fd",
-                "reference": "8a0fb26c9d1f6314a0cfc54e5760bca413a108fd",
+                "url": "https://api.github.com/repos/newfold-labs/wp-module-notifications/zipball/4b3dc6c31623429a5d2ae7e96e2a8961d3ccf0fd",
+                "reference": "4b3dc6c31623429a5d2ae7e96e2a8961d3ccf0fd",
                 "shasum": ""
             },
             "require": {
-                "newfold-labs/wp-module-data": "^2.0.0",
+                "newfold-labs/wp-module-data": "^2.9.1",
                 "wp-forge/collection": "^1.0",
                 "wp-forge/helpers": "^2.0",
                 "wpscholar/url": "^1.2"
@@ -2557,10 +2557,10 @@
             ],
             "description": "A module for managing Newfold in-site notifications.",
             "support": {
-                "source": "https://github.com/newfold-labs/wp-module-notifications/tree/1.7.0",
+                "source": "https://github.com/newfold-labs/wp-module-notifications/tree/1.8.0",
                 "issues": "https://github.com/newfold-labs/wp-module-notifications/issues"
             },
-            "time": "2025-11-14T21:05:13+00:00"
+            "time": "2026-01-06T15:55:00+00:00"
         },
         {
             "name": "newfold-labs/wp-module-onboarding",

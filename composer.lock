@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "6becc1ac2ebf25f8e57812530647eded",
+    "content-hash": "06145d6f3ff3a768b1b9e32793d7fcb5",
     "packages": [
         {
             "name": "dealerdirect/phpcodesniffer-composer-installer",
@@ -2151,27 +2151,27 @@
         },
         {
             "name": "newfold-labs/wp-module-marketplace",
-            "version": "3.1.2",
+            "version": "3.2.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/newfold-labs/wp-module-marketplace.git",
-                "reference": "66740a1edef0ab0e6217126d90ff39e8d6223288"
+                "reference": "ed3e42ddc7b19815060d449cfc060d6e757af209"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/newfold-labs/wp-module-marketplace/zipball/66740a1edef0ab0e6217126d90ff39e8d6223288",
-                "reference": "66740a1edef0ab0e6217126d90ff39e8d6223288",
+                "url": "https://api.github.com/repos/newfold-labs/wp-module-marketplace/zipball/ed3e42ddc7b19815060d449cfc060d6e757af209",
+                "reference": "ed3e42ddc7b19815060d449cfc060d6e757af209",
                 "shasum": ""
             },
             "require": {
-                "newfold-labs/wp-module-data": "^2.8.8"
+                "newfold-labs/wp-module-data": "^2.9.1"
             },
             "require-dev": {
                 "johnpbloch/wordpress": "@stable",
                 "lucatume/wp-browser": "*",
                 "newfold-labs/wp-php-standards": "^1.2",
                 "phpunit/phpcov": "*",
-                "wp-cli/i18n-command": "^2.6.5"
+                "wp-cli/i18n-command": "^2.6.6"
             },
             "type": "library",
             "autoload": {
@@ -2243,10 +2243,10 @@
             ],
             "description": "A module for rendering product data and interacting with the Hiive marketplace API.",
             "support": {
-                "source": "https://github.com/newfold-labs/wp-module-marketplace/tree/3.1.2",
+                "source": "https://github.com/newfold-labs/wp-module-marketplace/tree/3.2.0",
                 "issues": "https://github.com/newfold-labs/wp-module-marketplace/issues"
             },
-            "time": "2025-11-14T20:39:34+00:00"
+            "time": "2026-01-06T18:35:04+00:00"
         },
         {
             "name": "newfold-labs/wp-module-mcp",

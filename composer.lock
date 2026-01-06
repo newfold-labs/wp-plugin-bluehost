@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "463bbf9b60f7a6b923fb470261df14fe",
+    "content-hash": "e9d054e1c27f920b47ebfb358e714e4c",
     "packages": [
         {
             "name": "dealerdirect/phpcodesniffer-composer-installer",
@@ -1814,21 +1814,24 @@
         },
         {
             "name": "newfold-labs/wp-module-insights",
-            "version": "1.0.1",
+            "version": "1.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/newfold-labs/wp-module-insights.git",
-                "reference": "9b05d12a0f1f50036d76186bd95a833ce3686ba6"
+                "reference": "05ea04897d5c7c2496ae575e585ab7f80b652313"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/newfold-labs/wp-module-insights/zipball/9b05d12a0f1f50036d76186bd95a833ce3686ba6",
-                "reference": "9b05d12a0f1f50036d76186bd95a833ce3686ba6",
+                "url": "https://api.github.com/repos/newfold-labs/wp-module-insights/zipball/05ea04897d5c7c2496ae575e585ab7f80b652313",
+                "reference": "05ea04897d5c7c2496ae575e585ab7f80b652313",
                 "shasum": ""
             },
             "require": {
                 "newfold-labs/wp-module-data": "^2.9.1",
                 "newfold-labs/wp-module-loader": "^1.0.12"
+            },
+            "require-dev": {
+                "newfold-labs/wp-php-standards": "^1.2.3"
             },
             "type": "library",
             "autoload": {
@@ -1850,10 +1853,10 @@
             ],
             "description": "A Newfold module that handles integration of Insights page.",
             "support": {
-                "source": "https://github.com/newfold-labs/wp-module-insights/tree/1.0.1",
+                "source": "https://github.com/newfold-labs/wp-module-insights/tree/1.1.0",
                 "issues": "https://github.com/newfold-labs/wp-module-insights/issues"
             },
-            "time": "2025-12-17T15:40:08+00:00"
+            "time": "2026-01-05T22:10:41+00:00"
         },
         {
             "name": "newfold-labs/wp-module-install-checker",

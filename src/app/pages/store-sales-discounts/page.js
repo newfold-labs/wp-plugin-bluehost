@@ -9,7 +9,9 @@ import {
 import { ReactComponent as WonderCartIcon } from 'App/images/sales-discounts-wondercart.svg';
 import promotions from 'App/pages/store-sales-discounts/promotions';
 
-const promotionsUrl = window.NewfoldRuntime?.adminUrl + 'admin.php?page=bluehost&s=promotions#/commerce';
+const promotionsUrl =
+	window.NewfoldRuntime?.adminUrl +
+	'admin.php?page=bluehost&s=promotions#/commerce';
 
 const StoreSalesDiscounts = () => {
 	return (

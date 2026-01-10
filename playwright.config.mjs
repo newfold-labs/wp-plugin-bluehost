@@ -70,10 +70,10 @@ export default defineConfig({
       reducedMotion: 'reduce', // Accessibility testing
       strictSelectors: true,   // Better selector reliability
     },
-    // Enable debugging features
+    // Debugging features
     trace: 'retain-on-failure',
     screenshot: 'only-on-failure',
-    video: 'on-first-retry',
+    video: 'retain-on-failure',
   },
   webServer: process.env.CI ? undefined : {
     command: 'wp-env start',
@@ -85,7 +85,7 @@ export default defineConfig({
   expect: {
     timeout: 10 * 1000, // 10 seconds
   },
-  retries: process.env.CI ? 0 : 0,
+  retries: process.env.CI ? 1 : 1,
   workers: process.env.CI ? 1 : 1, // Use default (number of CPU cores) for local, 1 for CI
   outputDir: 'tests/playwright/test-results',
   expect: {
@@ -96,7 +96,7 @@ export default defineConfig({
     },
   },
   reporter: [
-    ['list', { printSteps: true,  }],
+    ['list', { printSteps: true, }],
     // ['json', {  outputFile: 'tests/playwright/reports/test-results.json' }],
     // ['html', { outputFolder: 'tests/playwright/reports/html' }],
     // ['@estruyf/github-actions-reporter'] // https://github.com/estruyf/playwright-github-actions-reporter

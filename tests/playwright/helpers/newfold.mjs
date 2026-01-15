@@ -2,12 +2,177 @@
  * Newfold/Bluehost Plugin-Specific Test Helpers
  * 
  * Utilities for testing Newfold Labs modules and Bluehost-specific functionality.
- * Includes capabilities, coming soon, dashboard widgets, and plugin-specific features.
+ * Includes capabilities, coming soon, dashboard widgets, plugin-specific features,
+ * and version compatibility checks for third-party plugin integrations.
  */
 
 import { expect } from '@playwright/test';
 import wordpress from './wordpress.mjs';
 import utils from './utils.mjs';
+
+// ============================================================================
+// VERSION COMPARISON UTILITIES
+// ============================================================================
+
+/**
+ * Compare two semantic version strings
+ * @param {string} a - First version (e.g., "6.8.0")
+ * @param {string} b - Second version (e.g., "6.7.0")
+ * @returns {number} -1 if a < b, 0 if equal, 1 if a > b
+ */
+function compareVersions(a, b) {
+  const partsA = String(a).split('.').map(Number);
+  const partsB = String(b).split('.').map(Number);
+  
+  for (let i = 0; i < Math.max(partsA.length, partsB.length); i++) {
+    const numA = partsA[i] || 0;
+    const numB = partsB[i] || 0;
+    if (numA < numB) return -1;
+    if (numA > numB) return 1;
+  }
+  return 0;
+}
+
+/**
+ * Check if version satisfies minimum requirement (>=)
+ * @param {string} version - Current version
+ * @param {string} minVersion - Minimum required version
+ * @returns {boolean}
+ */
+function satisfiesMin(version, minVersion) {
+  return compareVersions(version, minVersion) >= 0;
+}
+
+// ============================================================================
+// ENVIRONMENT VERSION DETECTION
+// ============================================================================
+
+/** Cached environment versions */
+let _envVersions = null;
+
+/**
+ * Get WordPress and PHP versions from the environment
+ * Caches the result to avoid repeated WP-CLI calls
+ * @returns {Promise<{wpVersion: string, phpVersion: string}>}
+ */
+async function getEnvironmentVersions() {
+  if (_envVersions) {
+    return _envVersions;
+  }
+  
+  const [wpVersion, phpVersion] = await Promise.all([
+    wordpress.wpCli('core version'),
+    wordpress.wpCli('eval "echo PHP_VERSION;"'),
+  ]);
+  
+  _envVersions = {
+    wpVersion: wpVersion.trim(),
+    phpVersion: phpVersion.trim(),
+  };
+  
+  utils.fancyLog(`📦 Environment: WP ${_envVersions.wpVersion}, PHP ${_envVersions.phpVersion}`);
+  
+  return _envVersions;
+}
+
+/**
+ * Clear cached environment versions (useful for testing)
+ */
+function clearVersionCache() {
+  _envVersions = null;
+}
+
+// ============================================================================
+// THIRD-PARTY PLUGIN SUPPORT CHECKS
+// Based on plugin requirements
+//
+// Example usage:
+// const wooSupported = await newfold.supportsWoo();		
+// test.skip(!wooSupported, await newfold.getSkipMessage('woocommerce'));
+//
+// ============================================================================
+
+/**
+ * Plugin support requirements
+ * Update these when plugin requirements change
+ */
+const PLUGIN_REQUIREMENTS = {
+  // https://wordpress.org/plugins/woocommerce/
+  woocommerce: { minWp: '6.8.0', minPhp: '7.4.0' },
+  // https://wordpress.org/plugins/jetpack/
+  jetpack: { minWp: '6.7.0', minPhp: '7.2.0' },
+  // https://wordpress.org/plugins/wordpress-seo/
+  yoast: { minWp: '6.7.0', minPhp: '7.4.0' },
+  // https://github.com/newfold-labs/yith-wonder/blob/master/style.css
+  wonderTheme: { minWp: '6.5.0', minPhp: '7.0.0' },
+};
+
+/**
+ * Check if the current environment supports a specific plugin
+ * @param {'woocommerce' | 'jetpack' | 'yoast' | 'wonderTheme'} pluginKey - Plugin identifier
+ * @returns {Promise<boolean>}
+ */
+async function supportsPlugin(pluginKey) {
+  const requirements = PLUGIN_REQUIREMENTS[pluginKey];
+  if (!requirements) {
+    throw new Error(`Unknown plugin: ${pluginKey}. Available: ${Object.keys(PLUGIN_REQUIREMENTS).join(', ')}`);
+  }
+  
+  const { wpVersion, phpVersion } = await getEnvironmentVersions();
+  
+  return satisfiesMin(wpVersion, requirements.minWp) && 
+         satisfiesMin(phpVersion, requirements.minPhp);
+}
+
+/**
+ * Check if current environment supports WooCommerce
+ * Requires: WP >= 6.8.0, PHP >= 7.4.0
+ * @returns {Promise<boolean>}
+ */
+async function supportsWoo() {
+  return supportsPlugin('woocommerce');
+}
+
+/**
+ * Check if current environment supports Jetpack
+ *
+ * @returns {Promise<boolean>}
+ */
+async function supportsJetpack() {
+  return supportsPlugin('jetpack');
+}
+
+/**
+ * Check if current environment supports Yoast SEO
+ *
+ * @returns {Promise<boolean>}
+ */
+async function supportsYoast() {
+  return supportsPlugin('yoast');
+}
+
+/**
+ * Check if current environment supports Wonder Theme
+ *
+ * @returns {Promise<boolean>}
+ */
+async function supportsWonderTheme() {
+  // theme support is determined the same way as a plugin
+  return supportsPlugin('wonderTheme');
+}
+
+/**
+ * Get a skip message for unsupported plugin
+ * @param {'woocommerce' | 'jetpack' | 'yoast' | 'wonderTheme'} pluginKey
+ * @returns {Promise<string>}
+ */
+async function getSkipMessage(pluginKey) {
+  const requirements = PLUGIN_REQUIREMENTS[pluginKey];
+  const { wpVersion, phpVersion } = await getEnvironmentVersions();
+  
+  return `Skipping: ${pluginKey} requires WP >=${requirements.minWp} & PHP >=${requirements.minPhp}, ` +
+         `current: WP ${wpVersion} & PHP ${phpVersion}`;
+}
 
 /**
  * Set plugin capabilities (Bluehost-specific functionality)
@@ -219,6 +384,21 @@ async function waitForRestAPI(page) {
 }
 
 export default {
+  // Version Utilities
+  compareVersions,
+  satisfiesMin,
+  getEnvironmentVersions,
+  clearVersionCache,
+  
+  // Plugin Support Checks
+  PLUGIN_REQUIREMENTS,
+  supportsPlugin,
+  supportsWoo,
+  supportsJetpack,
+  supportsYoast,
+  supportsWonderTheme,
+  getSkipMessage,
+  
   // Capabilities
   setCapability,
   clearCapabilities,

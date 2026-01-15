@@ -96,7 +96,7 @@ export default defineConfig({
     },
   },
   reporter: [
-    ['list', { printSteps: true, }],
+    ['list', { printSteps: true }],
     // ['json', {  outputFile: 'tests/playwright/reports/test-results.json' }],
     // ['html', { outputFolder: 'tests/playwright/reports/html' }],
     // ['@estruyf/github-actions-reporter'] // https://github.com/estruyf/playwright-github-actions-reporter

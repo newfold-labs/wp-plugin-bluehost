@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "d1c4897885f1a65b6cbe33400f9757b8",
+    "content-hash": "78b32de5381771b1a18afea6b5265d30",
     "packages": [
         {
             "name": "dealerdirect/phpcodesniffer-composer-installer",
@@ -639,7 +639,7 @@
             "version": "1.2.3",
             "source": {
                 "type": "git",
-                "url": "git@github.com:newfold-labs/container.git",
+                "url": "https://github.com/newfold-labs/container.git",
                 "reference": "0c16f8a70523159c1f3842a242e9c3b20f5729a6"
             },
             "dist": {
@@ -667,6 +667,9 @@
                 }
             ],
             "description": "A lightweight, PHP 7.0+ compatible, PSR-11 dependency injection container.",
+            "support": {
+                "source": "https://github.com/newfold-labs/container/tree/1.2.3"
+            },
             "time": "2025-05-06T18:14:40+00:00"
         },
         {
@@ -874,28 +877,28 @@
         },
         {
             "name": "newfold-labs/wp-module-coming-soon",
-            "version": "2.1.2",
+            "version": "2.2.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/newfold-labs/wp-module-coming-soon.git",
-                "reference": "e9f8f45821a149227ce2cd4033d87a0fc79bc073"
+                "reference": "4641512ef5c8fa28e14907bd416e34715c6ae9dc"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/newfold-labs/wp-module-coming-soon/zipball/e9f8f45821a149227ce2cd4033d87a0fc79bc073",
-                "reference": "e9f8f45821a149227ce2cd4033d87a0fc79bc073",
+                "url": "https://api.github.com/repos/newfold-labs/wp-module-coming-soon/zipball/4641512ef5c8fa28e14907bd416e34715c6ae9dc",
+                "reference": "4641512ef5c8fa28e14907bd416e34715c6ae9dc",
                 "shasum": ""
             },
             "require": {
-                "newfold-labs/wp-module-data": "^2.6.8",
+                "newfold-labs/wp-module-data": "^2.9.2",
                 "wp-forge/wp-upgrade-handler": "^1.0"
             },
             "require-dev": {
                 "johnpbloch/wordpress": "@stable",
                 "lucatume/wp-browser": "*",
-                "newfold-labs/wp-php-standards": "^1.2.4",
+                "newfold-labs/wp-php-standards": "^1.2.5",
                 "phpunit/phpcov": "*",
-                "wp-cli/i18n-command": "^2.6.3"
+                "wp-cli/i18n-command": "^2.6.6"
             },
             "type": "library",
             "autoload": {
@@ -962,17 +965,17 @@
             ],
             "description": "Coming Soon module for WordPress sites.",
             "support": {
-                "source": "https://github.com/newfold-labs/wp-module-coming-soon/tree/2.1.2",
+                "source": "https://github.com/newfold-labs/wp-module-coming-soon/tree/2.2.2",
                 "issues": "https://github.com/newfold-labs/wp-module-coming-soon/issues"
             },
-            "time": "2025-09-29T14:59:51+00:00"
+            "time": "2026-01-16T17:32:30+00:00"
         },
         {
             "name": "newfold-labs/wp-module-context",
             "version": "1.0.2",
             "source": {
                 "type": "git",
-                "url": "git@github.com:newfold-labs/wp-module-context.git",
+                "url": "https://github.com/newfold-labs/wp-module-context.git",
                 "reference": "46c3fb5f0df3eb1e016b04310a1edb274e00fde9"
             },
             "dist": {
@@ -1026,6 +1029,10 @@
                 }
             ],
             "description": "Newfold module to determine context for various brands and platforms.",
+            "support": {
+                "source": "https://github.com/newfold-labs/wp-module-context/tree/1.0.2",
+                "issues": "https://github.com/newfold-labs/wp-module-context/issues"
+            },
             "time": "2025-06-06T22:13:44+00:00"
         },
         {
@@ -1033,7 +1040,7 @@
             "version": "2.9.2",
             "source": {
                 "type": "git",
-                "url": "git@github.com:newfold-labs/wp-module-data.git",
+                "url": "https://github.com/newfold-labs/wp-module-data.git",
                 "reference": "685b5f77dce4dcab58d82b520c1290b99bdf69b2"
             },
             "dist": {
@@ -1128,6 +1135,10 @@
                 "GPL-2.0-or-later"
             ],
             "description": "Newfold Data Module",
+            "support": {
+                "source": "https://github.com/newfold-labs/wp-module-data/tree/2.9.2",
+                "issues": "https://github.com/newfold-labs/wp-module-data/issues"
+            },
             "time": "2026-01-08T16:52:37+00:00"
         },
         {
@@ -2054,7 +2065,7 @@
             "version": "1.0.14",
             "source": {
                 "type": "git",
-                "url": "git@github.com:newfold-labs/wp-module-loader.git",
+                "url": "https://github.com/newfold-labs/wp-module-loader.git",
                 "reference": "8e01e4ef47c88ac8124e67ff8a0df38f823ed040"
             },
             "dist": {
@@ -2104,6 +2115,10 @@
                 }
             ],
             "description": "A module that handles registration and management of Newfold modules used within our WordPress plugins.",
+            "support": {
+                "source": "https://github.com/newfold-labs/wp-module-loader/tree/1.0.14",
+                "issues": "https://github.com/newfold-labs/wp-module-loader/issues"
+            },
             "time": "2025-12-02T15:45:29+00:00"
         },
         {

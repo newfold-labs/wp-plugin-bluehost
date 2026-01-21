@@ -28,7 +28,8 @@ function getLocalModules() {
   } catch (error) {
     console.warn('Could not read composer.local.json:', error.message);
   }
-  return localModules;
+  // Sort modules alphabetically by name
+  return localModules.sort((a, b) => a.name.localeCompare(b.name));
 }
 
 function getVendorModules() {
@@ -51,7 +52,8 @@ function getVendorModules() {
   } catch (error) {
     // No vendor directories found, continue
   }
-  return vendorModules;
+  // Sort modules alphabetically by name
+  return vendorModules.sort((a, b) => a.name.localeCompare(b.name));
 }
 
 function generateProjects() {

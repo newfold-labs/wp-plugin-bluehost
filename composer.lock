@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "870a447f71b70e639ee8aede22be4aac",
+    "content-hash": "8fb5f240d410e235853a6968b01bd7f3",
     "packages": [
         {
             "name": "dealerdirect/phpcodesniffer-composer-installer",
@@ -1504,7 +1504,7 @@
             "version": "1.5.1",
             "source": {
                 "type": "git",
-                "url": "git@github.com:newfold-labs/wp-module-features.git",
+                "url": "https://github.com/newfold-labs/wp-module-features.git",
                 "reference": "c88f1aec2b87996186a0a8e70fd6100b966079d8"
             },
             "dist": {
@@ -1592,6 +1592,10 @@
                 }
             ],
             "description": "A module for providing an interface for features.",
+            "support": {
+                "source": "https://github.com/newfold-labs/wp-module-features/tree/1.5.1",
+                "issues": "https://github.com/newfold-labs/wp-module-features/issues"
+            },
             "time": "2025-07-18T17:05:47+00:00"
         },
         {
@@ -1904,7 +1908,7 @@
             "version": "1.7.1",
             "source": {
                 "type": "git",
-                "url": "git@github.com:newfold-labs/wp-module-installer.git",
+                "url": "https://github.com/newfold-labs/wp-module-installer.git",
                 "reference": "f72cd9f1b72e14d21161fe69ea2dbe495220fe3c"
             },
             "dist": {
@@ -1985,6 +1989,10 @@
                 }
             ],
             "description": "An installer for WordPress plugins and themes.",
+            "support": {
+                "source": "https://github.com/newfold-labs/wp-module-installer/tree/1.7.1",
+                "issues": "https://github.com/newfold-labs/wp-module-installer/issues"
+            },
             "time": "2025-12-03T15:38:31+00:00"
         },
         {
@@ -2735,20 +2743,20 @@
         },
         {
             "name": "newfold-labs/wp-module-patterns",
-            "version": "2.12.0",
+            "version": "2.12.1",
             "source": {
                 "type": "git",
-                "url": "git@github.com:newfold-labs/wp-module-patterns.git",
-                "reference": "9b6bd0acc92a3a5c1a0727b912b40903d488b7c0"
+                "url": "https://github.com/newfold-labs/wp-module-patterns.git",
+                "reference": "e34cc20ce09597c8e5d0a8af0627adbb2cc67b28"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/newfold-labs/wp-module-patterns/zipball/9b6bd0acc92a3a5c1a0727b912b40903d488b7c0",
-                "reference": "9b6bd0acc92a3a5c1a0727b912b40903d488b7c0",
+                "url": "https://api.github.com/repos/newfold-labs/wp-module-patterns/zipball/e34cc20ce09597c8e5d0a8af0627adbb2cc67b28",
+                "reference": "e34cc20ce09597c8e5d0a8af0627adbb2cc67b28",
                 "shasum": ""
             },
             "require": {
-                "newfold-labs/wp-module-data": "^2.9.0",
+                "newfold-labs/wp-module-data": "^2.9.2",
                 "newfold-labs/wp-module-features": "^1.5",
                 "newfold-labs/wp-module-installer": "^1.7"
             },
@@ -2823,7 +2831,11 @@
                 }
             ],
             "description": "WordPress Cloud Patterns",
-            "time": "2026-01-08T15:11:05+00:00"
+            "support": {
+                "source": "https://github.com/newfold-labs/wp-module-patterns/tree/2.12.1",
+                "issues": "https://github.com/newfold-labs/wp-module-patterns/issues"
+            },
+            "time": "2026-01-26T17:27:22+00:00"
         },
         {
             "name": "newfold-labs/wp-module-performance",
@@ -2931,7 +2943,7 @@
             "version": "1.1.2",
             "source": {
                 "type": "git",
-                "url": "git@github.com:newfold-labs/wp-module-pls.git",
+                "url": "https://github.com/newfold-labs/wp-module-pls.git",
                 "reference": "5fc0288cc74fe3a322ca6de127d6572aae080d0c"
             },
             "dist": {
@@ -2997,6 +3009,10 @@
                 }
             ],
             "description": "A Newfold module that handles license key provisioning, validation, and other lifecycle events for registered plugins using the PLS API via Hiive.",
+            "support": {
+                "source": "https://github.com/newfold-labs/wp-module-pls/tree/1.1.2",
+                "issues": "https://github.com/newfold-labs/wp-module-pls/issues"
+            },
             "time": "2025-06-03T20:12:47+00:00"
         },
         {

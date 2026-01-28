@@ -7,11 +7,11 @@ import {
 	Button,
 } from '@newfold/ui-component-library';
 import { ReactComponent as WonderCartIcon } from 'App/images/sales-discounts-wondercart.svg';
-import { NewfoldRuntime } from '@newfold/wp-module-runtime';
 import promotions from 'App/pages/store-sales-discounts/promotions';
 
 const promotionsUrl =
-	NewfoldRuntime.adminUrl + 'admin.php?page=bluehost&s=promotions#/commerce';
+	window.NewfoldRuntime?.adminUrl +
+	'admin.php?page=bluehost&s=promotions#/commerce';
 
 const StoreSalesDiscounts = () => {
 	return (

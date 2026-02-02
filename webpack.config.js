@@ -125,4 +125,17 @@ const webConfig = {
 	},
 };
 
-module.exports = merge( wpScriptsConfig, webConfig );
+const mergedConfig = merge( wpScriptsConfig, webConfig );
+
+// Allow importing SVGs as URL (e.g. import url from './file.svg?url') so they render in
+// their own document and avoid ID/CSS conflicts with other inlined SVGs on the page.
+mergedConfig.module.rules.unshift( {
+	test: /\.svg$/,
+	resourceQuery: /url/,
+	type: 'asset/resource',
+	generator: {
+		filename: 'images/[name].[hash:8][ext]',
+	},
+} );
+
+module.exports = mergedConfig;

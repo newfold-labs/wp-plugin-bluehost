@@ -5,11 +5,15 @@
     position: sticky !important;
     top: 3rem !important;
 
+    @media screen and (max-width: 782px) {
+        width: 100%;
+    }
+
     .yoast-ad-logo-square {
         margin-top: -2.6rem;
         z-index: 10;
     }
-    .yoast-ad-logo-svg {
+    .yoast-ad-logo-svg {    
         width: 64px;
         height: 64px;
     }

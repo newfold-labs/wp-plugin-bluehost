@@ -196,6 +196,40 @@ body.toplevel_page_bluehost {
     box-sizing: border-box;
 }
 
+.wppbh-app-body-content {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 1rem;
+    position: relative;
+
+    .wppbh-app-body-inner {
+        flex-grow: 1;
+    }
+
+    .wppbh-app-aside {
+        flex-shrink: 1;
+        flex-grow: 0;
+    }
+    
+    @media screen and (max-width: 782px) {
+        flex-direction: column;
+
+        .wppbh-app-aside {
+            width: 100%;
+            position: relative;
+        }
+    }
+
+}
+
+.wppbh-app-aside {
+    position: sticky;
+    top: 4rem;
+    z-index: 2;
+}
+
 // .wppbh-app-body {
 //     padding: 18px 24px 0;
 //     &-inner {
@@ -550,8 +584,6 @@ body.toplevel_page_bluehost {
         display: none;
     }
 }
-
-.settings-details {}
 
 .nfd-root .nfd-details {
 

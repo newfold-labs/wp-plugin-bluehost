@@ -11,7 +11,7 @@ import './yoast-ad.scss';
  */
 export const AppAside = () => {
 	return (
-		<div className="wppbh-app-aside">
+		<div className="wppbh-app-aside" data-test-id="app-aside">
 			<div className="wppbh-app-aside-content">
 				<YoastAd />
 			</div>
@@ -25,7 +25,7 @@ export const AppAside = () => {
  */
 const YoastAd = () => {
 	return (
-		<div className="yoast-ad nfd-p-6 nfd-rounded-lg nfd-text-slate-600 nfd-bg-white nfd-shadow nfd-border">
+		<div className="yoast-ad nfd-p-6 nfd-rounded-lg nfd-text-slate-600 nfd-bg-white nfd-shadow nfd-border" data-test-id="app-aside-yoast-ad">
 			<figure className="yoast-ad-logo-square nfd-logo-square nfd-w-16 nfd-h-16 nfd-mx-auto nfd-overflow-hidden nfd-relative nfd-z-10">
 				<img
 					src={ yoastAdLogoSrc }
@@ -36,31 +36,30 @@ const YoastAd = () => {
 				/>
 			</figure>
 			<h2 className="yoast-ad-title nfd-title nfd-title--2 nfd-mt-6 nfd-text-xl nfd-font-semibold">
-				Yoast SEO Premium
+				{ __( 'Yoast SEO Premium', 'wp-plugin-bluehost' ) }
 			</h2>
 			<p className="nfd-mt-3 nfd-font-medium nfd-text-slate-800">
-				Spend less time on SEO tasks!
+				{ __( 'Spend less time on SEO tasks!', 'wp-plugin-bluehost' ) }
 			</p>
 			<p className="nfd-mt-1 nfd-font-normal">
-				Optimize your site faster, smarter, and with more confidence.
+				{ __( 'Optimize your site faster, smarter, and with more confidence.', 'wp-plugin-bluehost' ) }
 			</p>
 			<ul className="nfd-list-outside nfd-text-slate-600 nfd-mt-4 nfd-flex nfd-flex-col nfd-gap-2">
 				<li className="nfd-flex nfd-items-start">
 					<BulletPointIcon />
-					Create optimized SEO titles &amp; meta descriptions in
-					seconds
+					{ __( 'Create optimized SEO titles &amp; meta descriptions in seconds', 'wp-plugin-bluehost' ) }
 				</li>
 				<li className="nfd-flex nfd-items-start">
 					<BulletPointIcon />
-					Apply AI suggestions to improve content in 1 click
+					{ __( 'Apply AI suggestions to improve content in 1 click', 'wp-plugin-bluehost' ) }
 				</li>
 				<li className="nfd-flex nfd-items-start">
 					<BulletPointIcon />
-					Manage redirects with ease and without extra plugins
+					{ __( 'Manage redirects with ease and without extra plugins', 'wp-plugin-bluehost' ) }
 				</li>
 				<li className="nfd-flex nfd-items-start">
 					<BulletPointIcon />
-					Optimize pages for multiple keywords with guidance
+					{ __( 'Optimize pages for multiple keywords with guidance', 'wp-plugin-bluehost' ) }
 				</li>
 			</ul>
 			<a
@@ -70,17 +69,18 @@ const YoastAd = () => {
 				rel="noopener noreferrer"
 				data-action="load-nfd-ctb"
 				data-ctb-id="f6a84663-465f-4cb5-8ba5-f7a6d72224b2"
+				data-test-id="app-aside-yoast-buy-link"
 			>
-				<span>Buy now</span>
+				<span>{ __( 'Buy now', 'wp-plugin-bluehost' ) }</span>
 				<ArrowRightIcon />
 			</a>
 			<p className="nfd-text-center nfd-text-xs nfd-font-normal nfd-leading-5 nfd-text-slate-500 nfd-italic nfd-mt-3 nfd-mb-2">
-				Less friction. Faster publishing.
+				{ __( 'Less friction. Faster publishing.', 'wp-plugin-bluehost' ) }
 			</p>
 			<hr className="nfd-border-t nfd-border-slate-200 nfd-my-4" />
 			<ul className="nfd-text-center nfd-text-xs nfd-font-medium nfd-text-slate-800 nfd-list-none">
-				<li>30-day money back guarantee</li>
-				<li>24/7 support</li>
+				<li>{ __( '30-day money back guarantee', 'wp-plugin-bluehost' ) }</li>
+				<li>{ __( '24/7 support', 'wp-plugin-bluehost' ) }</li>
 			</ul>
 		</div>
 	);

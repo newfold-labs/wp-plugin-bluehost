@@ -20,5 +20,9 @@ if ( getenv( 'BLUEHOST_PHPUNIT_MINIMAL' ) ) {
 }
 
 if ( $wp_phpunit_dir && is_dir( $wp_phpunit_dir ) ) {
+	$polyfills_path = $plugin_root . '/vendor/yoast/phpunit-polyfills';
+	if ( is_dir( $polyfills_path ) && ! defined( 'WP_TESTS_PHPUNIT_POLYFILLS_PATH' ) ) {
+		define( 'WP_TESTS_PHPUNIT_POLYFILLS_PATH', $polyfills_path );
+	}
 	require $wp_phpunit_dir . '/includes/bootstrap.php';
 }

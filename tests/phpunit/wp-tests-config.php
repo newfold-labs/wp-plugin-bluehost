@@ -19,8 +19,8 @@ if ( $wp_root === false || $wp_root === '' ) {
 }
 define( 'ABSPATH', $plugin_root . '/' . rtrim( $wp_root, '/\\' ) . '/' );
 
-// Database (match .env.testing / CI).
-define( 'DB_NAME', getenv( 'TEST_DB_NAME' ) ?: 'wp-browser-tests' );
+// Database (match .env.testing / CI; workflow MySQL service creates "tests-wordpress").
+define( 'DB_NAME', getenv( 'TEST_DB_NAME' ) ?: 'tests-wordpress' );
 define( 'DB_USER', getenv( 'TEST_DB_USER' ) ?: 'root' );
 define( 'DB_PASSWORD', getenv( 'TEST_DB_PASSWORD' ) ?: 'password' );
 $db_host = getenv( 'TEST_DB_HOST' ) ?: '127.0.0.1';

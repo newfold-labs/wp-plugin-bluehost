@@ -111,6 +111,9 @@
     "test": [
       "codecept run wpunit"
     ],
+    "test:phpunit": [
+      "BLUEHOST_PHPUNIT_MINIMAL=1 vendor/bin/phpunit --bootstrap tests/phpunit/bootstrap.php tests/phpunit/PluginTest.php --no-configuration"
+    ],
     "test-coverage": [
       "codecept run wpunit --coverage wpunit.cov",
       "phpcov merge --php tests/_output/merged.cov --html tests/_output/html tests/_output;",

@@ -2,13 +2,23 @@
 /**
  * Bootstrap file for unit tests.
  *
+ * When WP_PHPUNIT__DIR is set (e.g. in CI) and BLUEHOST_PHPUNIT_MINIMAL is not set,
+ * loads the WordPress test suite. Set BLUEHOST_PHPUNIT_MINIMAL=1 to run only the
+ * minimal PluginTest without WordPress (e.g. vendor/bin/phpunit tests/phpunit/PluginTest.php).
+ *
  * @package WPPluginBluehost
  */
 
-// Load up Composer dependencies
-require dirname( dirname( __DIR__ ) ) . '/vendor/autoload.php';
+$plugin_root = dirname( dirname( __DIR__ ) );
+require $plugin_root . '/vendor/autoload.php';
 
-$wp_phpunit_dir = getenv( 'WP_PHPUNIT__DIR' );
+if ( getenv( 'BLUEHOST_PHPUNIT_MINIMAL' ) ) {
+	putenv( 'WP_PHPUNIT__DIR' );
+	$wp_phpunit_dir = '';
+} else {
+	$wp_phpunit_dir = getenv( 'WP_PHPUNIT__DIR' );
+}
 
-// Bootstrap tests
-require $wp_phpunit_dir . '/includes/bootstrap.php';
+if ( $wp_phpunit_dir && is_dir( $wp_phpunit_dir ) ) {
+	require $wp_phpunit_dir . '/includes/bootstrap.php';
+}

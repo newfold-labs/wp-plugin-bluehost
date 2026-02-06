@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "4beb50a2587474bc38cd4312695dfdad",
+    "content-hash": "98e98c23ffa4a72fc6c35d5995d9e341",
     "packages": [
         {
             "name": "colinmollenhour/credis",
@@ -2567,20 +2567,20 @@
         },
         {
             "name": "newfold-labs/wp-module-notifications",
-            "version": "1.8.0",
+            "version": "1.8.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/newfold-labs/wp-module-notifications.git",
-                "reference": "4b3dc6c31623429a5d2ae7e96e2a8961d3ccf0fd"
+                "reference": "357948d47692f6d96eade667236d03dc3beae897"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/newfold-labs/wp-module-notifications/zipball/4b3dc6c31623429a5d2ae7e96e2a8961d3ccf0fd",
-                "reference": "4b3dc6c31623429a5d2ae7e96e2a8961d3ccf0fd",
+                "url": "https://api.github.com/repos/newfold-labs/wp-module-notifications/zipball/357948d47692f6d96eade667236d03dc3beae897",
+                "reference": "357948d47692f6d96eade667236d03dc3beae897",
                 "shasum": ""
             },
             "require": {
-                "newfold-labs/wp-module-data": "^2.9.1",
+                "newfold-labs/wp-module-data": "^2.9.2",
                 "wp-forge/collection": "^1.0",
                 "wp-forge/helpers": "^2.0",
                 "wpscholar/url": "^1.2"
@@ -2627,10 +2627,10 @@
             ],
             "description": "A module for managing Newfold in-site notifications.",
             "support": {
-                "source": "https://github.com/newfold-labs/wp-module-notifications/tree/1.8.0",
+                "source": "https://github.com/newfold-labs/wp-module-notifications/tree/1.8.1",
                 "issues": "https://github.com/newfold-labs/wp-module-notifications/issues"
             },
-            "time": "2026-01-06T15:55:00+00:00"
+            "time": "2026-02-06T15:42:43+00:00"
         },
         {
             "name": "newfold-labs/wp-module-onboarding",

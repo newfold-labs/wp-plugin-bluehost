@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "63e655c75f80265477266a0b0f853677",
+    "content-hash": "709ff98cc11c5545e10f65c47453f80b",
     "packages": [
         {
             "name": "colinmollenhour/credis",
@@ -1307,21 +1307,21 @@
         },
         {
             "name": "newfold-labs/wp-module-ecommerce",
-            "version": "2.2.2",
+            "version": "2.3.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/newfold-labs/wp-module-ecommerce.git",
-                "reference": "98b2d55f44c9a5b8be86a4c70941803bf001b556"
+                "reference": "1950cc9aabb8f731e745672404598bd8553fe32b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/newfold-labs/wp-module-ecommerce/zipball/98b2d55f44c9a5b8be86a4c70941803bf001b556",
-                "reference": "98b2d55f44c9a5b8be86a4c70941803bf001b556",
+                "url": "https://api.github.com/repos/newfold-labs/wp-module-ecommerce/zipball/1950cc9aabb8f731e745672404598bd8553fe32b",
+                "reference": "1950cc9aabb8f731e745672404598bd8553fe32b",
                 "shasum": ""
             },
             "require": {
                 "newfold-labs/wp-module-installer": "^1.7.1",
-                "newfold-labs/wp-module-onboarding-data": "^1.2.21"
+                "newfold-labs/wp-module-onboarding-data": "^1.2.22"
             },
             "require-dev": {
                 "johnpbloch/wordpress": "@stable",
@@ -1396,10 +1396,10 @@
             ],
             "description": "Brand Agnostic eCommerce Experience",
             "support": {
-                "source": "https://github.com/newfold-labs/wp-module-ecommerce/tree/2.2.2",
+                "source": "https://github.com/newfold-labs/wp-module-ecommerce/tree/2.3.0",
                 "issues": "https://github.com/newfold-labs/wp-module-ecommerce/issues"
             },
-            "time": "2026-01-26T18:04:18+00:00"
+            "time": "2026-02-05T16:05:02+00:00"
         },
         {
             "name": "newfold-labs/wp-module-editor-chat",
@@ -1938,16 +1938,16 @@
         },
         {
             "name": "newfold-labs/wp-module-install-checker",
-            "version": "1.0.4",
+            "version": "1.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/newfold-labs/wp-module-install-checker.git",
-                "reference": "dabc9869e14a5449e26ca07d4c8f02a615b2466c"
+                "reference": "74b4c55935634bb5ed0d8dbe1d623932ce5a79dc"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/newfold-labs/wp-module-install-checker/zipball/dabc9869e14a5449e26ca07d4c8f02a615b2466c",
-                "reference": "dabc9869e14a5449e26ca07d4c8f02a615b2466c",
+                "url": "https://api.github.com/repos/newfold-labs/wp-module-install-checker/zipball/74b4c55935634bb5ed0d8dbe1d623932ce5a79dc",
+                "reference": "74b4c55935634bb5ed0d8dbe1d623932ce5a79dc",
                 "shasum": ""
             },
             "require-dev": {
@@ -1988,10 +1988,10 @@
             ],
             "description": "A module that handles checking a WordPress installation to see if it is a fresh install and to fetch the estimated installation date.",
             "support": {
-                "source": "https://github.com/newfold-labs/wp-module-install-checker/tree/1.0.4",
+                "source": "https://github.com/newfold-labs/wp-module-install-checker/tree/1.1.0",
                 "issues": "https://github.com/newfold-labs/wp-module-install-checker/issues"
             },
-            "time": "2025-06-03T18:28:04+00:00"
+            "time": "2026-02-05T20:32:35+00:00"
         },
         {
             "name": "newfold-labs/wp-module-installer",
@@ -2733,16 +2733,16 @@
         },
         {
             "name": "newfold-labs/wp-module-onboarding-data",
-            "version": "1.2.22",
+            "version": "1.2.23",
             "source": {
                 "type": "git",
                 "url": "https://github.com/newfold-labs/wp-module-onboarding-data.git",
-                "reference": "e16d27a2e44c3d34c3626e55eea48508d5e78c3a"
+                "reference": "f06a6263e109dbdb24f654f6fcd0b3df9a9f2eef"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/newfold-labs/wp-module-onboarding-data/zipball/e16d27a2e44c3d34c3626e55eea48508d5e78c3a",
-                "reference": "e16d27a2e44c3d34c3626e55eea48508d5e78c3a",
+                "url": "https://api.github.com/repos/newfold-labs/wp-module-onboarding-data/zipball/f06a6263e109dbdb24f654f6fcd0b3df9a9f2eef",
+                "reference": "f06a6263e109dbdb24f654f6fcd0b3df9a9f2eef",
                 "shasum": ""
             },
             "require": {
@@ -2826,10 +2826,10 @@
             ],
             "description": "A non-toggleable module containing a standardized interface for interacting with Onboarding data.",
             "support": {
-                "source": "https://github.com/newfold-labs/wp-module-onboarding-data/tree/1.2.22",
+                "source": "https://github.com/newfold-labs/wp-module-onboarding-data/tree/1.2.23",
                 "issues": "https://github.com/newfold-labs/wp-module-onboarding-data/issues"
             },
-            "time": "2026-02-02T17:28:30+00:00"
+            "time": "2026-02-06T12:03:25+00:00"
         },
         {
             "name": "newfold-labs/wp-module-patterns",

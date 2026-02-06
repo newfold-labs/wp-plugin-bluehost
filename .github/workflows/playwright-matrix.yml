@@ -37,22 +37,22 @@ jobs:
         run: |
           # Manual run or non-PR: always run
           if [ "$EVENT_NAME" != "pull_request" ]; then
-            echo "run_matrix=true" >> $GITHUB_OUTPUT
+            echo "run_matrix=true" >> "$GITHUB_OUTPUT"
             echo "Not a PR event; running matrix."
             exit 0
           fi
           # Not Dependabot: always run
           if [ "$ACTOR" != "dependabot[bot]" ]; then
-            echo "run_matrix=true" >> $GITHUB_OUTPUT
+            echo "run_matrix=true" >> "$GITHUB_OUTPUT"
             echo "Not Dependabot; running matrix."
             exit 0
           fi
           # Dependabot PR: only run if newfold-labs is involved (title or branch)
           if echo "$PR_TITLE $PR_HEAD_REF" | grep -qi 'newfold-labs'; then
-            echo "run_matrix=true" >> $GITHUB_OUTPUT
+            echo "run_matrix=true" >> "$GITHUB_OUTPUT"
             echo "Dependabot PR touches newfold-labs; running matrix."
           else
-            echo "run_matrix=false" >> $GITHUB_OUTPUT
+            echo "run_matrix=false" >> "$GITHUB_OUTPUT"
             echo "Dependabot PR does not touch newfold-labs; skipping matrix."
           fi
 

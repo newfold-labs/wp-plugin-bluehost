@@ -25,7 +25,7 @@ jobs:
     steps:
       - name: Extract repository name
         id: repo-name
-        run: echo "name=$(echo ${{ github.repository }} | cut -d'/' -f2)" >> $GITHUB_OUTPUT
+        run: echo "name=$(echo ${{ github.repository }} | cut -d'/' -f2)" >> "$GITHUB_OUTPUT"
 
   codecoverage:
     needs: get-repo-name

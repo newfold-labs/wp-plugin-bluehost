@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "06339f2cea2328234b38abb3cb163aa2",
+    "content-hash": "42e098cc656538065f001796dc464a0f",
     "packages": [
         {
             "name": "colinmollenhour/credis",
@@ -1205,20 +1205,20 @@
         },
         {
             "name": "newfold-labs/wp-module-deactivation",
-            "version": "1.6.0",
+            "version": "1.6.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/newfold-labs/wp-module-deactivation.git",
-                "reference": "b3ad33716c6198beea98c4714f2a53f0c8d691e5"
+                "reference": "c280d20c6ba44434e42e52791f581bc95ddcd41a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/newfold-labs/wp-module-deactivation/zipball/b3ad33716c6198beea98c4714f2a53f0c8d691e5",
-                "reference": "b3ad33716c6198beea98c4714f2a53f0c8d691e5",
+                "url": "https://api.github.com/repos/newfold-labs/wp-module-deactivation/zipball/c280d20c6ba44434e42e52791f581bc95ddcd41a",
+                "reference": "c280d20c6ba44434e42e52791f581bc95ddcd41a",
                 "shasum": ""
             },
             "require": {
-                "newfold-labs/wp-module-data": "^2.9.1"
+                "newfold-labs/wp-module-data": "^2.9.2"
             },
             "require-dev": {
                 "johnpbloch/wordpress": "@stable",
@@ -1300,10 +1300,10 @@
             ],
             "description": "A Module for handling WordPress brand plugins and modules deactivations",
             "support": {
-                "source": "https://github.com/newfold-labs/wp-module-deactivation/tree/1.6.0",
+                "source": "https://github.com/newfold-labs/wp-module-deactivation/tree/1.6.1",
                 "issues": "https://github.com/newfold-labs/wp-module-deactivation/issues"
             },
-            "time": "2025-12-19T15:08:13+00:00"
+            "time": "2026-02-06T13:33:31+00:00"
         },
         {
             "name": "newfold-labs/wp-module-ecommerce",

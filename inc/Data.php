@@ -37,6 +37,7 @@ final class Data {
 			'isSalesPromoActive' => self::is_sales_promotions_plugin_active(),
 		);
 
+		// Add solutions data to runtime
 		if ( class_exists( 'NewfoldLabs\WP\Module\Solutions\Solutions' ) ) {
 			$solution_data        = Solutions::get_enhanced_entitlment_data();
 			$solution             = is_array( $solution_data ) && array_key_exists( 'solution', $solution_data ) ? $solution_data['solution'] : false;
@@ -54,7 +55,13 @@ final class Data {
 				'url' => 'https://www.bluehost.com/my-account/hosting/details#click-to-buy-WP_SOLUTION_FAMILY',
 			),
 		);
-
+		
+		// Check if Yoast Premium is active
+		$has_yoat_premium = is_plugin_active( 'wordpress-seo-premium/wp-seo-premium.php' );
+		if ( $has_yoat_premium ) {
+			$runtime['wordpress']['hasYoastPremium'] = true;
+		}
+		
 		return $runtime;
 	}
 

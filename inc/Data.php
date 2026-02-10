@@ -55,7 +55,7 @@ final class Data {
 				'url' => 'https://www.bluehost.com/my-account/hosting/details#click-to-buy-WP_SOLUTION_FAMILY',
 			),
 		);
-		
+
 		// Check if Yoast Premium is active
 		$has_yoast_premium = is_plugin_active( 'wordpress-seo-premium/wp-seo-premium.php' );
 		if ( $has_yoast_premium ) {

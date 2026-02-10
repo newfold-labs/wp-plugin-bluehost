@@ -13,6 +13,7 @@ import { useEffect } from 'react';
 import { kebabCase, filter } from 'lodash';
 import AppStore, { AppStoreProvider } from './data/store';
 import { AppNav } from './components/app-nav/index';
+import { AppAside } from './components/app-aside/index';
 import AppRoutes from './data/routes';
 import ErrorCard from './components/errorCard';
 import { useHandlePageLoad } from './util/hooks';
@@ -184,12 +185,15 @@ const AppBody = ( props ) => {
 				<header>
 					<AppNav />
 				</header>
-				<div className="wppbh-app-body-inner nfd-flex nfd-justify-center">
-					<ErrorBoundary FallbackComponent={ <ErrorCard /> }>
-						{ hasError && <ErrorCard error={ hasError } /> }
-						{ ( true === booted && <AppRoutes /> ) ||
-							( ! hasError && <Spinner /> ) }
-					</ErrorBoundary>
+				<div className="wppbh-app-body-content">
+					<div className="wppbh-app-body-inner nfd-flex nfd-justify-center">
+						<ErrorBoundary FallbackComponent={ <ErrorCard /> }>
+							{ hasError && <ErrorCard error={ hasError } /> }
+							{ ( true === booted && <AppRoutes /> ) ||
+								( ! hasError && <Spinner /> ) }
+						</ErrorBoundary>
+					</div>
+					<AppAside />
 				</div>
 			</div>
 

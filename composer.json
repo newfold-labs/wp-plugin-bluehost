@@ -111,6 +111,9 @@
     "test": [
       "codecept run wpunit"
     ],
+    "test:phpunit": [
+      "BLUEHOST_PHPUNIT_MINIMAL=1 vendor/bin/phpunit --bootstrap tests/phpunit/bootstrap.php tests/phpunit/PluginTest.php --no-configuration"
+    ],
     "test-coverage": [
       "codecept run wpunit --coverage wpunit.cov",
       "phpcov merge --php tests/_output/merged.cov --html tests/_output/html tests/_output;",
@@ -142,7 +145,8 @@
     "phpunit/phpcov": ">=8.2.1",
     "roave/security-advisories": "dev-latest",
     "wp-cli/i18n-command": "^2.6.6",
-    "wp-phpunit/wp-phpunit": "^6.9.1"
+    "wp-phpunit/wp-phpunit": "^6.9.1",
+    "yoast/phpunit-polyfills": "^2.0.5"
   },
   "require": {
     "newfold-labs/wp-module-activation": "^1.0.13",

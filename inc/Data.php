@@ -57,11 +57,11 @@ final class Data {
 		);
 		
 		// Check if Yoast Premium is active
-		$has_yoat_premium = is_plugin_active( 'wordpress-seo-premium/wp-seo-premium.php' );
-		if ( $has_yoat_premium ) {
+		$has_yoast_premium = is_plugin_active( 'wordpress-seo-premium/wp-seo-premium.php' );
+		if ( $has_yoast_premium ) {
 			$runtime['wordpress']['hasYoastPremium'] = true;
 		}
-		
+
 		return $runtime;
 	}
 

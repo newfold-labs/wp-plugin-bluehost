@@ -69,4 +69,44 @@ class LoginRedirectWpunitTest extends \lucatume\WPBrowser\TestCase\WPTestCase {
 		$this->assertStringContainsString( 'page=bluehost', $url );
 		$this->assertStringContainsString( '#/home', $url );
 	}
+
+	/** @covers \Bluehost\LoginRedirect::get_default_redirect_url */
+	public function test_get_default_redirect_url_returns_passed_url_for_non_admin(): void {
+		$user = $this->factory()->user->create_and_get( array( 'role' => 'subscriber' ) );
+		wp_set_current_user( $user->ID );
+		$passed = 'https://example.com/custom-redirect';
+		$this->assertSame( $passed, \Bluehost\LoginRedirect::get_default_redirect_url( $passed ) );
+	}
+
+	/** @covers \Bluehost\LoginRedirect::filter_login_form_defaults */
+	public function test_filter_login_form_defaults_sets_redirect_to_bluehost_dashboard(): void {
+		$defaults = \Bluehost\LoginRedirect::filter_login_form_defaults( array( 'redirect' => admin_url( '/' ) ) );
+		$this->assertArrayHasKey( 'redirect', $defaults );
+		$this->assertStringContainsString( 'page=bluehost', $defaults['redirect'] );
+		$this->assertStringContainsString( '#/home', $defaults['redirect'] );
+	}
+
+	/** @covers \Bluehost\LoginRedirect::on_login_redirect */
+	public function test_on_login_redirect_returns_bluehost_dashboard_for_admin_when_empty_requested(): void {
+		$admin = $this->factory()->user->create_and_get( array( 'role' => 'administrator' ) );
+		$result = \Bluehost\LoginRedirect::on_login_redirect( admin_url( '/' ), '', $admin );
+		$this->assertStringContainsString( 'page=bluehost', $result );
+		$this->assertStringContainsString( '#/home', $result );
+	}
+
+	/** @covers \Bluehost\LoginRedirect::on_login_redirect */
+	public function test_on_login_redirect_returns_wp_admin_for_non_admin_when_bluehost_requested(): void {
+		$user = $this->factory()->user->create_and_get( array( 'role' => 'subscriber' ) );
+		$bluehost_url = admin_url( 'admin.php?page=bluehost#/home' );
+		$result = \Bluehost\LoginRedirect::on_login_redirect( $bluehost_url, $bluehost_url, $user );
+		$this->assertSame( admin_url( '/' ), $result );
+	}
+
+	/** @covers \Bluehost\LoginRedirect::on_login_redirect */
+	public function test_on_login_redirect_returns_original_when_custom_redirect_requested(): void {
+		$admin = $this->factory()->user->create_and_get( array( 'role' => 'administrator' ) );
+		$custom = admin_url( 'edit.php?post_type=page' );
+		$result = \Bluehost\LoginRedirect::on_login_redirect( $custom, $custom, $admin );
+		$this->assertSame( $custom, $result );
+	}
 }

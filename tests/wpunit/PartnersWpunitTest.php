@@ -3,9 +3,11 @@
 namespace Bluehost;
 
 /**
- * WPUnit tests for Bluehost\partners (plugin_activated and option filters).
+ * WPUnit tests for Bluehost\partners (plugin_activated, affiliate links, option filters).
  *
  * @covers \Bluehost\plugin_activated
+ * @covers \Bluehost\wpforms_upgrade_affiliate_link
+ * @covers \Bluehost\aioseo_upgrade_affiliate_link
  * @covers \Bluehost\nfd_remove_sas_id
  */
 class PartnersWpunitTest extends \lucatume\WPBrowser\TestCase\WPTestCase {
@@ -29,8 +31,31 @@ class PartnersWpunitTest extends \lucatume\WPBrowser\TestCase\WPTestCase {
 		$this->assertFalse( get_option( 'woocommerce_allow_tracking' ) );
 	}
 
-	/** @covers \Bluehost\nfd_remove_sas_id (option filter behavior) */
+	/** @covers \Bluehost\wpforms_upgrade_affiliate_link */
+	public function test_wpforms_upgrade_affiliate_link_returns_shareasale_url_with_encoded_destination(): void {
+		$url    = 'https://wpforms.com/lite-upgrade/';
+		$result = \Bluehost\wpforms_upgrade_affiliate_link( $url );
+		$this->assertStringContainsString( 'shareasale.com', $result );
+		$this->assertStringContainsString( 'urllink=', $result );
+		$this->assertStringContainsString( rawurlencode( $url ), $result );
+	}
+
+	/** @covers \Bluehost\aioseo_upgrade_affiliate_link */
+	public function test_aioseo_upgrade_affiliate_link_returns_shareasale_url_with_encoded_destination(): void {
+		$url    = 'https://aioseo.com/pricing/';
+		$result = \Bluehost\aioseo_upgrade_affiliate_link( $url );
+		$this->assertStringContainsString( 'shareasale.com', $result );
+		$this->assertStringContainsString( 'urllink=', $result );
+		$this->assertStringContainsString( rawurlencode( $url ), $result );
+	}
+
+	/** @covers \Bluehost\nfd_remove_sas_id */
 	public function test_nfd_remove_sas_id_returns_false_for_blocked_sas_id(): void {
 		$this->assertFalse( \Bluehost\nfd_remove_sas_id( '1258907' ) );
+	}
+
+	/** @covers \Bluehost\nfd_remove_sas_id */
+	public function test_nfd_remove_sas_id_returns_value_unchanged_when_not_blocked(): void {
+		$this->assertSame( '9999999', \Bluehost\nfd_remove_sas_id( '9999999' ) );
 	}
 }

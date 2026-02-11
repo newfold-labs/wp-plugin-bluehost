@@ -33,7 +33,7 @@ jobs:
     permissions:
       contents: write
       pull-requests: write
-    uses: newfold-labs/workflows/.github/workflows/reusable-codecoverage.yml@c75f0f215c474f0ff78deed3f0b54cdf8e02ac2c # main
+    uses: newfold-labs/workflows/.github/workflows/reusable-codecoverage.yml@update/codecov-base-and-precision # main
     with:
       php-versions: '["7.4", "8.0", "8.1", "8.2", "8.3", "8.4"]'
       coverage-php-version: '7.4'

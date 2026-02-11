@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "32fcf2fff1905234e97415eda83600e5",
+    "content-hash": "a2a39d4384667ff85577cd27bbbae534",
     "packages": [
         {
             "name": "colinmollenhour/credis",
@@ -2434,24 +2434,24 @@
         },
         {
             "name": "newfold-labs/wp-module-migration",
-            "version": "1.7.0",
+            "version": "1.7.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/newfold-labs/wp-module-migration.git",
-                "reference": "a8f78fc78352bd7339a0ab7f92bc8906e7d3a2db"
+                "reference": "c8a3ed9a6cd81568f5f3d6a7da1ea085755902a6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/newfold-labs/wp-module-migration/zipball/a8f78fc78352bd7339a0ab7f92bc8906e7d3a2db",
-                "reference": "a8f78fc78352bd7339a0ab7f92bc8906e7d3a2db",
+                "url": "https://api.github.com/repos/newfold-labs/wp-module-migration/zipball/c8a3ed9a6cd81568f5f3d6a7da1ea085755902a6",
+                "reference": "c8a3ed9a6cd81568f5f3d6a7da1ea085755902a6",
                 "shasum": ""
             },
             "require": {
-                "instawp/connect-helpers": "^1.0.4",
-                "newfold-labs/wp-module-loader": "^1.0.14"
+                "instawp/connect-helpers": "^1.0.8",
+                "newfold-labs/wp-module-loader": "^1.1.0"
             },
             "require-dev": {
-                "johnpbloch/wordpress": "6.9.0",
+                "johnpbloch/wordpress": "6.9.1",
                 "lucatume/wp-browser": "*",
                 "newfold-labs/wp-php-standards": "^1.2",
                 "phpunit/phpcov": "*",
@@ -2519,10 +2519,10 @@
             ],
             "description": "Initiates the migration process",
             "support": {
-                "source": "https://github.com/newfold-labs/wp-module-migration/tree/1.7.0",
+                "source": "https://github.com/newfold-labs/wp-module-migration/tree/1.7.1",
                 "issues": "https://github.com/newfold-labs/wp-module-migration/issues"
             },
-            "time": "2026-01-12T18:14:02+00:00"
+            "time": "2026-02-11T07:18:57+00:00"
         },
         {
             "name": "newfold-labs/wp-module-next-steps",

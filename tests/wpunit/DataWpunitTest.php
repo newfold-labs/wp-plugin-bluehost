@@ -71,6 +71,13 @@ class DataWpunitTest extends \lucatume\WPBrowser\TestCase\WPTestCase {
 		$this->assertSame( 'store', \Bluehost\Data::get_site_type() );
 	}
 
+	/** @covers \Bluehost\Data::get_site_type */
+	public function test_get_site_type_returns_website_for_unknown_onboarding_site_type(): void {
+		update_option( 'active_plugins', array() );
+		update_option( 'nfd_module_onboarding_site_info', array( 'site_type' => 'unknown_type' ) );
+		$this->assertSame( 'website', \Bluehost\Data::get_site_type() );
+	}
+
 	/** @covers \Bluehost\Data::is_sales_promotions_plugin_active */
 	public function test_is_sales_promotions_plugin_active_returns_false_when_inactive(): void {
 		update_option( 'active_plugins', array() );

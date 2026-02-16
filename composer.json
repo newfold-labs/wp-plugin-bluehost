@@ -91,7 +91,7 @@
       "@i18n-json",
       "@i18n-php"
     ],
-    "ensure-strauss": "sh -c 'test -f ./bin/strauss.phar || (mkdir -p bin && curl -o bin/strauss.phar -L https://github.com/BrianHenryIE/strauss/releases/latest/download/strauss.phar && chmod +x bin/strauss.phar)'",
+    "ensure-strauss": "php bin/ensure-strauss.php",
     "prefix-namespaces": [
       "@ensure-strauss",
       "@php bin/strauss.phar",
@@ -182,6 +182,7 @@
     "newfold-labs/wp-module-solutions": "^2.9.0",
     "newfold-labs/wp-module-sso": "^1.2.1",
     "newfold-labs/wp-module-staging": "^2.7.1",
+    "newfold-labs/wp-module-adam": "1.0.0",
     "wp-forge/wp-update-handler": "^1.0.2",
     "wp-forge/wp-upgrade-handler": "^1.0"
   }

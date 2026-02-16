@@ -16,10 +16,52 @@ concurrency:
 permissions: {}
 
 jobs:
+  # Lightweight gate: skip full matrix on Dependabot PRs that don't touch newfold-labs packages.
+  should-run-matrix:
+    name: Check if matrix should run
+    runs-on: ubuntu-latest
+    timeout-minutes: 1
+    outputs:
+      run_matrix: ${{ steps.check.outputs.run_matrix }}
+    permissions:
+      contents: read
+
+    steps:
+      - name: Decide whether to run matrix
+        id: check
+        env:
+          EVENT_NAME: ${{ github.event_name }}
+          ACTOR: ${{ github.actor }}
+          PR_TITLE: ${{ github.event.pull_request.title }}
+          PR_HEAD_REF: ${{ github.event.pull_request.head.ref }}
+        run: |
+          # Manual run or non-PR: always run
+          if [ "$EVENT_NAME" != "pull_request" ]; then
+            echo "run_matrix=true" >> "$GITHUB_OUTPUT"
+            echo "Not a PR event; running matrix."
+            exit 0
+          fi
+          # Not Dependabot: always run
+          if [ "$ACTOR" != "dependabot[bot]" ]; then
+            echo "run_matrix=true" >> "$GITHUB_OUTPUT"
+            echo "Not Dependabot; running matrix."
+            exit 0
+          fi
+          # Dependabot PR: only run if newfold-labs is involved (title or branch)
+          if echo "$PR_TITLE $PR_HEAD_REF" | grep -qi 'newfold-labs'; then
+            echo "run_matrix=true" >> "$GITHUB_OUTPUT"
+            echo "Dependabot PR touches newfold-labs; running matrix."
+          else
+            echo "run_matrix=false" >> "$GITHUB_OUTPUT"
+            echo "Dependabot PR does not touch newfold-labs; skipping matrix."
+          fi
+
   test:
     name: Playwright Test Matrix
     runs-on: ubuntu-latest
     timeout-minutes: 60
+    needs: should-run-matrix
+    if: needs.should-run-matrix.outputs.run_matrix == 'true'
     permissions:
       contents: read
     strategy:

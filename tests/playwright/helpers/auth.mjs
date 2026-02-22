@@ -76,8 +76,15 @@ async function loginToWordPress(page, options = {}) {
   await page.fill('#user_pass', password);
   await page.press('#user_pass', 'Enter');
   
-  // Wait for successful login (redirect away from login page)
-  await page.waitForURL(url => !url.pathname.includes('/wp-login.php'), { timeout: 10000 });
+  // Wait for successful login: either left wp-login or landed on admin email verification (still wp-login.php?action=confirm_admin_email)
+  await page.waitForURL(
+    (url) => {
+      if (!url.pathname.includes('/wp-login.php')) return true;
+      if (url.searchParams.get('action') === 'confirm_admin_email') return true;
+      return false;
+    },
+    { timeout: 10000 }
+  );
 }
 
 /**

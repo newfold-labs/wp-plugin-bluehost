@@ -394,7 +394,6 @@ msgid "Marketplace"
 msgstr "Mercado"
 
 #: build/4.13.1/index.js:1
-#: build/4.13.1/index.js:9
 msgid "Admin"
 msgstr "Admin"
 
@@ -450,53 +449,51 @@ msgstr "Ya no se mostrará la puesta en escena."
 msgid "The staging feature provides a way to copy a site to test new updates, features or content."
 msgstr "La función de ensayo proporciona una forma de copiar un sitio para probar nuevas actualizaciones, características o contenido."
 
-#: build/4.13.1/index.js:1
 #: build/4.13.1/index.js:9
 msgid "Sorry, that is not allowed."
 msgstr "Lo siento, eso no está permitido."
 
-#: build/4.13.1/index.js:1
 #: build/4.13.1/index.js:9
 msgid "This feature cannot currently be modified."
 msgstr "Esta función no se puede modificar actualmente."
 
-#: build/4.13.1/index.js:1
+#: build/4.13.1/index.js:9
 msgid "Help Center Enabled"
 msgstr "Centro de ayuda habilitado"
 
-#: build/4.13.1/index.js:1
+#: build/4.13.1/index.js:9
 msgid "Help Center Disabled"
 msgstr "Centro de ayuda deshabilitado"
 
-#: build/4.13.1/index.js:1
+#: build/4.13.1/index.js:9
 msgid "Reload the page to access the Help Center."
 msgstr "Vuelva a cargar la página para acceder al Centro de ayuda."
 
-#: build/4.13.1/index.js:1
+#: build/4.13.1/index.js:9
 msgid "The Help Center will no longer display."
 msgstr "El Centro de ayuda ya no aparecerá."
 
-#: build/4.13.1/index.js:1
+#: build/4.13.1/index.js:9
 msgid "The Help Center provides guided, step-by-step assistance as you build your site."
 msgstr "El Centro de ayuda proporciona asistencia guiada paso a paso a medida que crea su sitio."
 
-#: build/4.13.1/index.js:1
+#: build/4.13.1/index.js:9
 msgid "WonderBlocks Enabled"
 msgstr "WonderBlocks habilitados"
 
-#: build/4.13.1/index.js:1
+#: build/4.13.1/index.js:9
 msgid "WonderBlocks Disabled"
 msgstr "WonderBlocks desactivado"
 
-#: build/4.13.1/index.js:1
+#: build/4.13.1/index.js:9
 msgid "Create new content to see WonderBlocks in action."
 msgstr "Crea contenido nuevo para ver WonderBlocks en acción."
 
-#: build/4.13.1/index.js:1
+#: build/4.13.1/index.js:9
 msgid "WonderBlocks will no longer display."
 msgstr "Los WonderBlocks ya no se mostrarán."
 
-#: build/4.13.1/index.js:1
+#: build/4.13.1/index.js:9
 msgid "WonderBlocks provides a library of customizable block patterns and page templates."
 msgstr "WonderBlocks proporciona una biblioteca de patrones de bloques y plantillas de página personalizables."
 
@@ -508,103 +505,103 @@ msgstr "Bluehost WordPress Plugin"
 msgid "Quick links"
 msgstr "Enlaces rápidos"
 
-#: build/4.13.1/index.js:7
+#: build/4.13.1/index.js:9
 msgid "Manage common settings for your website"
 msgstr "Administrar la configuración común de su sitio web"
 
-#: build/4.13.1/index.js:7
+#: build/4.13.1/index.js:9
 msgid "Features"
 msgstr "Funciones"
 
-#: build/4.13.1/index.js:7
+#: build/4.13.1/index.js:9
 msgid "Customize the available features as you manage your website."
 msgstr "Personalice las funciones disponibles a medida que administra su sitio web."
 
-#: build/4.13.1/index.js:7
+#: build/4.13.1/index.js:1
 msgid "Enabled All auto-updates"
 msgstr "Habilitado Todas las actualizaciones automáticas"
 
-#: build/4.13.1/index.js:7
+#: build/4.13.1/index.js:1
 msgid "Disabled All auto-updates"
 msgstr "Desactivado Todas las actualizaciones automáticas"
 
-#: build/4.13.1/index.js:7
+#: build/4.13.1/index.js:1
 msgid "Everything will automatically update."
 msgstr "Todo se actualizará automáticamente."
 
-#: build/4.13.1/index.js:7
+#: build/4.13.1/index.js:1
 msgid "Custom auto-update settings."
 msgstr "Configuración personalizada de actualización automática."
 
-#: build/4.13.1/index.js:7
+#: build/4.13.1/index.js:1
 msgid "Automatically keep all up to date"
 msgstr "Mantener todo actualizado automáticamente"
 
-#: build/4.13.1/index.js:7
+#: build/4.13.1/index.js:1
 msgid "Enabled Core auto-updates"
 msgstr "Actualizaciones automáticas principales habilitadas"
 
-#: build/4.13.1/index.js:7
+#: build/4.13.1/index.js:1
 msgid "Disabled Core auto-updates"
 msgstr "Actualizaciones automáticas principales deshabilitadas"
 
-#: build/4.13.1/index.js:7
+#: build/4.13.1/index.js:1
 msgid "WordPress will automatically update."
 msgstr "WordPress se actualizará automáticamente."
 
-#: build/4.13.1/index.js:7
+#: build/4.13.1/index.js:1
 msgid "WordPress must be manually updated."
 msgstr "WordPress debe actualizarse manualmente."
 
-#: build/4.13.1/index.js:7
+#: build/4.13.1/index.js:1
 msgid "WordPress Core"
 msgstr "Núcleo de WordPress"
 
-#: build/4.13.1/index.js:7
+#: build/4.13.1/index.js:1
 msgid "Enabled Plugins auto-update"
 msgstr "Actualización automática de complementos habilitados"
 
-#: build/4.13.1/index.js:7
+#: build/4.13.1/index.js:1
 msgid "Disabled Plugins auto-update"
 msgstr "Actualización automática de complementos deshabilitados"
 
-#: build/4.13.1/index.js:7
+#: build/4.13.1/index.js:1
 msgid "All plugins will automatically update."
 msgstr "Todos los complementos se actualizarán automáticamente."
 
-#: build/4.13.1/index.js:7
+#: build/4.13.1/index.js:1
 msgid "Each plugin must be manually updated."
 msgstr "Cada complemento debe actualizarse manualmente."
 
-#: build/4.13.1/index.js:7
+#: build/4.13.1/index.js:1
 msgid "Plugins"
 msgstr "Complementos"
 
-#: build/4.13.1/index.js:7
+#: build/4.13.1/index.js:1
 msgid "Enabled Themes auto-update"
 msgstr "Actualización automática de temas habilitados"
 
-#: build/4.13.1/index.js:7
+#: build/4.13.1/index.js:1
 msgid "Disabled Themes auto-update"
 msgstr "Actualización automática de temas deshabilitados"
 
-#: build/4.13.1/index.js:7
+#: build/4.13.1/index.js:1
 msgid "All themes will automatically update."
 msgstr "Todos los temas se actualizarán automáticamente."
 
-#: build/4.13.1/index.js:7
+#: build/4.13.1/index.js:1
 msgid "Each theme must be manually updated."
 msgstr "Cada tema debe actualizarse manualmente."
 
-#: build/4.13.1/index.js:7
+#: build/4.13.1/index.js:1
 msgid "Themes"
 msgstr "Temas"
 
-#: build/4.13.1/index.js:7
+#: build/4.13.1/index.js:1
 msgid "Automatic Updates"
 msgstr "Actualizaciones automáticas"
 
-#: build/4.13.1/index.js:7
+#: build/4.13.1/index.js:1
 msgid "Keeping automatic updates on ensures timely security fixes and the latest features."
 msgstr "Mantener activadas las actualizaciones automáticas garantiza correcciones de seguridad oportunas y las últimas funciones."
 
@@ -753,37 +750,36 @@ msgid "Go to Bluehost"
 msgstr "Ir a Bluehost"
 
 #: build/4.13.1/index.js:1
-#: build/4.13.1/index.js:7
 msgid "Help"
 msgstr "Ayuda"
 
-#: build/4.13.1/index.js:7
+#: build/4.13.1/index.js:1
 msgid "We are available 24/7 to help answer questions and solve your problems."
 msgstr ""
 "\n"
 "develop"
 
-#: build/4.13.1/index.js:9
+#: build/4.13.1/index.js:1
 msgid "Secret page to manage admin features and settings."
 msgstr "Página secreta para administrar las funciones y configuraciones de administración."
 
-#: build/4.13.1/index.js:1
+#: build/4.13.1/index.js:9
 msgid "Performance Enabled"
 msgstr "Rendimiento habilitado"
 
-#: build/4.13.1/index.js:1
+#: build/4.13.1/index.js:9
 msgid "Performance Disabled"
 msgstr "Rendimiento deshabilitado"
 
-#: build/4.13.1/index.js:1
+#: build/4.13.1/index.js:9
 msgid "You need to reload the page to manage Performance."
 msgstr "Debe volver a cargar la página para administrar el rendimiento."
 
-#: build/4.13.1/index.js:1
+#: build/4.13.1/index.js:9
 msgid "Performance will no longer display."
 msgstr "El rendimiento ya no se mostrará."
 
-#: build/4.13.1/index.js:1
+#: build/4.13.1/index.js:9
 msgid "The performance feature provides improvements to loads faster for visitors including cache settings."
 msgstr "La función de rendimiento proporciona mejoras para cargar más rápido para los visitantes, incluida la configuración de caché."
 
@@ -808,42 +804,41 @@ msgid "Commerce"
 msgstr "Comercio"
 
 #: build/4.13.1/index.js:1
-#: build/4.13.1/index.js:7
+#: build/4.13.1/index.js:9
 msgid "Manage WordPress"
 msgstr "Administrar WordPress"
 
 #: build/4.13.1/index.js:1
-#: build/4.13.1/index.js:7
+#: build/4.13.1/index.js:9
 msgid "Staging"
 msgstr "Estadificación"
 
 #: build/4.13.1/index.js:1
-#: build/4.13.1/index.js:7
+#: build/4.13.1/index.js:9
 msgid "Performance"
 msgstr "Rendimiento"
 
-#. translators: %s: Search term
-#: build/4.13.1/index.js:10
+#: build/4.13.1/index.js:1
 msgid "Launch our AI Editor"
 msgstr "Inicie nuestro editor de IA"
 
-#: build/4.13.1/index.js:10
+#: build/4.13.1/index.js:1
 msgid "Say hello to effortless site building with a wide library of 250+ blocks"
 msgstr "Saluda a la creación de sitios sin esfuerzo con una amplia biblioteca de 250+ bloques"
 
-#: build/4.13.1/index.js:10
+#: build/4.13.1/index.js:1
 msgid "Launch the Editor"
 msgstr "Inicie el editor"
 
-#: build/4.13.1/index.js:7
+#: build/4.13.1/index.js:9
 msgid "Optimize your website by managing cache and performance settings"
 msgstr "Optimiza tu sitio web administrando la caché y la configuración de rendimiento"
 
-#: build/4.13.1/index.js:7
+#: build/4.13.1/index.js:9
 msgid "General Settings"
 msgstr "Configuración general"
 
-#: build/4.13.1/index.js:7
+#: build/4.13.1/index.js:9
 msgid "A staging site is a duplicate of your live site, offering a secure environment to experiment, test updates, and deploy when ready."
 msgstr "Un sitio de ensayo es un duplicado de su sitio en vivo, que ofrece un entorno seguro para experimentar, probar actualizaciones e implementar cuando esté listo."
 
@@ -875,35 +870,35 @@ msgstr "Inicie nuestra ayuda de IA"
 msgid "Add Store Details"
 msgstr "Agregar detalles de la tienda"
 
-#: build/4.13.1/index.js:10
+#: build/4.13.1/index.js:1
 msgid "Refer a Friend"
 msgstr "Recomiende a un amigo"
 
-#: build/4.13.1/index.js:10
+#: build/4.13.1/index.js:1
 msgid "Start Now"
 msgstr "Empezar ahora"
 
-#: build/4.13.1/index.js:7
+#: build/4.13.1/index.js:1
 msgid "Pro Design Live"
 msgstr "Diseño profesional en vivo"
 
-#: build/4.13.1/index.js:7
+#: build/4.13.1/index.js:1
 msgid "We will help you build and grow your website and improve your skills in WordPress."
 msgstr "Te ayudaremos a construir y hacer crecer tu sitio web y a mejorar tus habilidades en WordPress."
 
-#: build/4.13.1/index.js:7
+#: build/4.13.1/index.js:1
 msgid "Get Info"
 msgstr "Obtener información"
 
-#: build/4.13.1/index.js:7
+#: build/4.13.1/index.js:9
 msgid "Optimize your website my managing cache, security and performance settings."
 msgstr "Optimiza tu sitio web administrando la configuración de caché, seguridad y rendimiento."
 
-#: build/4.13.1/index.js:9
+#: build/4.13.1/index.js:1
 msgid "Premium tools available in eCommerce Add-Ons"
 msgstr "Herramientas premium disponibles en complementos de comercio electrónico"
 
-#: build/4.13.1/index.js:9
+#: build/4.13.1/index.js:1
 msgid "Discover exclusive features, designed to deliver unmatched value and elevate your online experience."
 msgstr "Descubre funciones exclusivas, diseñadas para ofrecer un valor inigualable y elevar tu experiencia en línea."
 
@@ -915,7 +910,7 @@ msgstr "¡Felicidades, su tienda está activa!"
 msgid "Congrats, your website is live!"
 msgstr "¡Felicidades, su sitio web está activo!"
 
-#: build/4.13.1/index.js:10
+#: build/4.13.1/index.js:1
 msgid "Unlock exclusive benefits with our referral program."
 msgstr "Desbloquea beneficios exclusivos con nuestro programa de referidos."
 
@@ -923,71 +918,71 @@ msgstr "Desbloquea beneficios exclusivos con nuestro programa de referidos."
 msgid "Sales & Promotions Page"
 msgstr "Página de Ventas y Promociones"
 
-#: build/4.13.1/index.js:1
+#: build/4.13.1/index.js:9
 msgid "Create a campaign and boost your sales!"
 msgstr "¡Crea una campaña y aumenta tus ventas!"
 
-#: build/4.13.1/index.js:1
+#: build/4.13.1/index.js:9
 msgid "Create custom upsell, cross-sell and other promotional campaigns to generate more sales."
 msgstr "Crea campañas personalizadas de upsell, cross-sell y otras campañas promocionales para generar más ventas."
 
-#: build/4.13.1/index.js:1
+#: build/4.13.1/index.js:9
 msgid "Get Started Now"
 msgstr "Empieza ahora"
 
-#: build/4.13.1/index.js:1
+#: build/4.13.1/index.js:9
 msgid "Not sure where to start? Try one of these popular promotions:"
 msgstr "¿No sabes por dónde empezar? Prueba una de estas promociones populares:"
 
-#: build/4.13.1/index.js:1
+#: build/4.13.1/index.js:9
 msgid "Create a Campaign"
 msgstr "Crear una campaña"
 
-#: build/4.13.1/index.js:1
+#: build/4.13.1/index.js:9
 msgid "Free Shipping"
 msgstr "Envío gratuito"
 
-#: build/4.13.1/index.js:1
+#: build/4.13.1/index.js:9
 msgid "Attract and retain customers by offering free shipping based on cart amount, location or store category."
 msgstr "Atrae y retiene clientes ofreciendo envío gratuito según la cantidad del carrito, la ubicación o la categoría de tienda."
 
-#: build/4.13.1/index.js:1
+#: build/4.13.1/index.js:9
 msgid "Buy 1 Get 1"
 msgstr "Compra 1 y recibe 1"
 
-#: build/4.13.1/index.js:1
+#: build/4.13.1/index.js:9
 msgid "Attract customers with a compelling deal where they can buy one product and get another product for free."
 msgstr "Atrae a los clientes con una oferta atractiva en la que puedan comprar un producto y obtener otro gratis."
 
-#: build/4.13.1/index.js:1
+#: build/4.13.1/index.js:9
 msgid "Gift Product in Cart"
 msgstr "Producto de regalo en el carrito"
 
-#: build/4.13.1/index.js:1
+#: build/4.13.1/index.js:9
 msgid "Reward customers with a free gift in their cart based on total cart value, or specific products or categories."
 msgstr "Recompensa a los clientes con un regalo gratuito en su carrito basado en el valor total del carrito, o en productos o categorías específicas."
 
-#: build/4.13.1/index.js:1
+#: build/4.13.1/index.js:9
 msgid "Category Discount"
 msgstr "Descuento por categoría"
 
-#: build/4.13.1/index.js:1
+#: build/4.13.1/index.js:9
 msgid "Give your customers a discount on specific categories of products and boost sales for those categories."
 msgstr "Haz un descuento a tus clientes en categorías específicas de productos y aumenta las ventas de esas categorías."
 
-#: build/4.13.1/index.js:1
+#: build/4.13.1/index.js:9
 msgid "Upsell in Thank You Page"
 msgstr "Vender más en la página de agradecimiento"
 
-#: build/4.13.1/index.js:1
+#: build/4.13.1/index.js:9
 msgid "Maximize sales by presenting relevant upsell options after customers have completed their purchase."
 msgstr "Maximiza las ventas presentando opciones relevantes de venta adicional después de que los clientes hayan completado su compra."
 
-#: build/4.13.1/index.js:1
+#: build/4.13.1/index.js:9
 msgid "Last Minute Deal"
 msgstr "Trato de última hora"
 
-#: build/4.13.1/index.js:1
+#: build/4.13.1/index.js:9
 msgid "Create urgency with a special time-limited deal for customers on the cart and checkout pages."
 msgstr "Crea urgencia con una oferta especial con tiempo limitado para los clientes en las páginas del carrito y de pago."
 

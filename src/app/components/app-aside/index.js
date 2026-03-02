@@ -7,7 +7,7 @@ const PORTAL_NAME = 'adam';
  * App Aside: slot only. Renders the aside wrapper and the Adam portal container,
  * and registers it with NFDPortalRegistry. The Adam module fills the slot.
  *
- * @return {JSX.Element} Aside wrapper with portal div.
+ * @return {import('react').ReactElement} Aside wrapper with portal div.
  */
 export const AppAside = () => {
 	useEffect( () => {

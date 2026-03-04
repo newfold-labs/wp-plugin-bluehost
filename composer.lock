@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "21b5466612cf1b342f737fd4eb3f76e8",
+    "content-hash": "5277fc1cb70026ea769cce499ffd1124",
     "packages": [
         {
             "name": "colinmollenhour/credis",
@@ -790,16 +790,16 @@
         },
         {
             "name": "newfold-labs/wp-module-adam",
-            "version": "1.0.0",
+            "version": "1.0.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/newfold-labs/wp-module-adam.git",
-                "reference": "cac30736685d2ee1877788eddaa4ee37f3b45fd3"
+                "reference": "70db915dd1cbddd7bb5f282198c2e475b36a4024"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/newfold-labs/wp-module-adam/zipball/cac30736685d2ee1877788eddaa4ee37f3b45fd3",
-                "reference": "cac30736685d2ee1877788eddaa4ee37f3b45fd3",
+                "url": "https://api.github.com/repos/newfold-labs/wp-module-adam/zipball/70db915dd1cbddd7bb5f282198c2e475b36a4024",
+                "reference": "70db915dd1cbddd7bb5f282198c2e475b36a4024",
                 "shasum": ""
             },
             "require": {
@@ -869,10 +869,10 @@
             ],
             "description": "Newfold module for Adam (Ads and More) cross-sell content in brand plugins",
             "support": {
-                "source": "https://github.com/newfold-labs/wp-module-adam/tree/1.0.0",
+                "source": "https://github.com/newfold-labs/wp-module-adam/tree/1.0.1",
                 "issues": "https://github.com/newfold-labs/wp-module-adam/issues"
             },
-            "time": "2026-03-02T10:46:52+00:00"
+            "time": "2026-03-04T10:43:22+00:00"
         },
         {
             "name": "newfold-labs/wp-module-ai",
@@ -11519,5 +11519,5 @@
     "platform-overrides": {
         "php": "7.4"
     },
-    "plugin-api-version": "2.9.0"
+    "plugin-api-version": "2.6.0"
 }

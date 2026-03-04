@@ -794,12 +794,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/newfold-labs/wp-module-adam.git",
-                "reference": "70db915dd1cbddd7bb5f282198c2e475b36a4024"
+                "reference": "5a313d711ba561e61108f6165bfaadb2f22443e9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/newfold-labs/wp-module-adam/zipball/70db915dd1cbddd7bb5f282198c2e475b36a4024",
-                "reference": "70db915dd1cbddd7bb5f282198c2e475b36a4024",
+                "url": "https://api.github.com/repos/newfold-labs/wp-module-adam/zipball/5a313d711ba561e61108f6165bfaadb2f22443e9",
+                "reference": "5a313d711ba561e61108f6165bfaadb2f22443e9",
                 "shasum": ""
             },
             "require": {
@@ -872,7 +872,7 @@
                 "source": "https://github.com/newfold-labs/wp-module-adam/tree/1.0.1",
                 "issues": "https://github.com/newfold-labs/wp-module-adam/issues"
             },
-            "time": "2026-03-04T10:43:22+00:00"
+            "time": "2026-03-04T12:54:16+00:00"
         },
         {
             "name": "newfold-labs/wp-module-ai",

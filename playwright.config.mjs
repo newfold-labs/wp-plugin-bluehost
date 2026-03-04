@@ -41,7 +41,16 @@ if (!existsSync(projectsFile)) {
 }
 
 // Load projects from generated file
-const projects = JSON.parse(readFileSync(projectsFile, 'utf8'));
+let projects = JSON.parse(readFileSync(projectsFile, 'utf8'));
+// Merge per-project overrides from module (e.g. tests/playwright/project-overrides.json)
+projects = projects.map((p) => {
+  const overridesPath = resolve(__dirname, p.testDir, '..', 'project-overrides.json');
+  if (existsSync(overridesPath)) {
+    const overrides = JSON.parse(readFileSync(overridesPath, 'utf8'));
+    return { ...p, ...overrides };
+  }
+  return p;
+});
 
 // Set environment variable for plugin root
 process.env.PLUGIN_DIR = __dirname;

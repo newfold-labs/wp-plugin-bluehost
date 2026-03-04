@@ -23,3 +23,12 @@ if ( ! defined( 'BLUEHOST_BUILD_URL' ) ) {
 if ( ! defined( 'NFD_HIIVE_URL' ) ) {
 	define( 'NFD_HIIVE_URL', 'https://hiive.cloud/api' );
 }
+
+// Provide a container with comingSoon so RestApi SettingsController get_current_settings() and update_item() can run.
+$root = codecept_root_dir();
+if ( is_readable( $root . 'vendor/autoload.php' ) ) {
+	require_once $root . 'vendor/autoload.php';
+	$container = new \NewfoldLabs\WP\ModuleLoader\Container();
+	$container->set( 'comingSoon', new \NewfoldLabs\WP\Module\ComingSoon\Service() );
+	\NewfoldLabs\WP\ModuleLoader\container( $container );
+}

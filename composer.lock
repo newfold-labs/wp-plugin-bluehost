@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "dfc5d90dc20fae4ffec82074ac648e70",
+    "content-hash": "2df9d31eb65c4c3573d72f0de3d4f895",
     "packages": [
         {
             "name": "colinmollenhour/credis",
@@ -11485,7 +11485,7 @@
         },
         {
             "name": "wp-phpunit/wp-phpunit",
-            "version": "6.9.1",
+            "version": "6.9.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/wp-phpunit/wp-phpunit.git",

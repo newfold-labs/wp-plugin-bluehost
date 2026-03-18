@@ -1,0 +1,12 @@
+name: Test Plugin Size Audit
+
+on:
+  pull_request:
+    branches:
+      - main
+      - develop
+
+jobs:
+  size-audit:
+    uses: newfold-labs/workflows/.github/workflows/reusable-plugin-size-audit.yml@add/PRESS10-209
+    secrets: inherit

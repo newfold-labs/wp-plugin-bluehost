@@ -45,6 +45,13 @@
     }
   },
   "repositories": {
+    "newfold-labs/wp-module-onboarding": {
+      "type": "vcs",
+      "url": "https://github.com/newfold-labs/wp-module-onboarding.git",
+      "only": [
+        "newfold-labs/wp-module-onboarding"
+      ]
+    },
     "newfold": {
       "type": "composer",
       "url": "https://newfold-labs.github.io/satis/",
@@ -173,8 +180,7 @@
     "newfold-labs/wp-module-migration": "^1.7.1",
     "newfold-labs/wp-module-next-steps": "^1.5.2",
     "newfold-labs/wp-module-notifications": "^1.8.1",
-    "newfold-labs/wp-module-onboarding": "^3.3.5",
-    "newfold-labs/wp-module-onboarding-data": "^1.2.23",
+    "newfold-labs/wp-module-onboarding": "dev-features/onboarding-redesign",
     "newfold-labs/wp-module-patterns": "^2.12.1",
     "newfold-labs/wp-module-performance": "^3.7.2",
     "newfold-labs/wp-module-pls": "^1.1.3",

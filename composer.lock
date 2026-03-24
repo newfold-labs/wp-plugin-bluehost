@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "dfc5d90dc20fae4ffec82074ac648e70",
+    "content-hash": "a1bc9c8f5c869953cf6296f8b24dbdba",
     "packages": [
         {
             "name": "colinmollenhour/credis",
@@ -2782,16 +2782,16 @@
         },
         {
             "name": "newfold-labs/wp-module-onboarding",
-            "version": "3.3.5",
+            "version": "3.3.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/newfold-labs/wp-module-onboarding.git",
-                "reference": "81188edf489c6cbc6c47d7e053059051caf0daf4"
+                "reference": "bd901d8e549295f381279e69c2193a21c07f221c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/newfold-labs/wp-module-onboarding/zipball/81188edf489c6cbc6c47d7e053059051caf0daf4",
-                "reference": "81188edf489c6cbc6c47d7e053059051caf0daf4",
+                "url": "https://api.github.com/repos/newfold-labs/wp-module-onboarding/zipball/bd901d8e549295f381279e69c2193a21c07f221c",
+                "reference": "bd901d8e549295f381279e69c2193a21c07f221c",
                 "shasum": ""
             },
             "require": {
@@ -2804,13 +2804,13 @@
                 "wp-forge/helpers": "^2.0"
             },
             "require-dev": {
-                "johnpbloch/wordpress": "6.9.1",
+                "johnpbloch/wordpress": "6.9.4",
                 "lucatume/wp-browser": "*",
                 "newfold-labs/wp-php-standards": "^1.2.5",
-                "php": ">=7.3",
+                "php": ">=7.4",
                 "phpunit/phpcov": "*",
-                "wp-cli/i18n-command": "^2.6.6",
-                "wp-phpunit/wp-phpunit": "^6.9.1",
+                "wp-cli/i18n-command": "^2.7.0",
+                "wp-phpunit/wp-phpunit": "^6.9.4",
                 "yoast/phpunit-polyfills": "^4.0.0"
             },
             "type": "library",
@@ -2878,10 +2878,10 @@
             ],
             "description": "Next-generation WordPress Onboarding for WordPress sites at Newfold Digital.",
             "support": {
-                "source": "https://github.com/newfold-labs/wp-module-onboarding/tree/3.3.5",
+                "source": "https://github.com/newfold-labs/wp-module-onboarding/tree/3.3.6",
                 "issues": "https://github.com/newfold-labs/wp-module-onboarding/issues"
             },
-            "time": "2026-02-25T19:02:25+00:00"
+            "time": "2026-03-24T16:41:10+00:00"
         },
         {
             "name": "newfold-labs/wp-module-onboarding-data",

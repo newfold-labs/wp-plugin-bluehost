@@ -2064,16 +2064,16 @@
         },
         {
             "name": "newfold-labs/wp-module-install-checker",
-            "version": "1.1.0",
+            "version": "1.1.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/newfold-labs/wp-module-install-checker.git",
-                "reference": "74b4c55935634bb5ed0d8dbe1d623932ce5a79dc"
+                "reference": "43dae50be0ee6dbf03acd3daea5672fff98ed120"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/newfold-labs/wp-module-install-checker/zipball/74b4c55935634bb5ed0d8dbe1d623932ce5a79dc",
-                "reference": "74b4c55935634bb5ed0d8dbe1d623932ce5a79dc",
+                "url": "https://api.github.com/repos/newfold-labs/wp-module-install-checker/zipball/43dae50be0ee6dbf03acd3daea5672fff98ed120",
+                "reference": "43dae50be0ee6dbf03acd3daea5672fff98ed120",
                 "shasum": ""
             },
             "require-dev": {
@@ -2114,10 +2114,10 @@
             ],
             "description": "A module that handles checking a WordPress installation to see if it is a fresh install and to fetch the estimated installation date.",
             "support": {
-                "source": "https://github.com/newfold-labs/wp-module-install-checker/tree/1.1.0",
+                "source": "https://github.com/newfold-labs/wp-module-install-checker/tree/1.1.1",
                 "issues": "https://github.com/newfold-labs/wp-module-install-checker/issues"
             },
-            "time": "2026-02-05T20:32:35+00:00"
+            "time": "2026-03-25T19:19:41+00:00"
         },
         {
             "name": "newfold-labs/wp-module-installer",

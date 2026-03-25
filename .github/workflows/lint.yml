@@ -48,7 +48,7 @@ jobs:
 
       # User PHP 7.4 here for compatibility with the WordPress codesniffer rules.
       - name: Setup PHP
-        uses: shivammathur/setup-php@44454db4f0199b8b9685a5d763dc37cbf79108e1 # v2.36.0
+        uses: shivammathur/setup-php@accd6127cb78bee3e8082180cb391013d204ef9f # v2.37.0
         with:
           php-version: '${{ env.PHP_VERSION }}'
           coverage: none
@@ -61,13 +61,13 @@ jobs:
         run: echo "date=$(/bin/date -u --date='last Mon' "+%F")" >> "$GITHUB_OUTPUT"
 
       - name: Cache PHPCS scan cache
-        uses: actions/cache@cdf6c1fa76f9f475f3d7449005a359c84ca0f306 # v5.0.3
+        uses: actions/cache@668228422ae6a00e4ad889ee87cd7109ec5666a7 # v5.0.4
         with:
           path: '.cache/phpcs.json'
           key: ${{ runner.os }}-date-${{ steps.get-date.outputs.date }}-php-${{ env.PHP_VERSION }}-phpcs-cache-${{ hashFiles('**/composer.lock', 'phpcs.xml') }}
 
       - name: Install Composer dependencies
-        uses: ramsey/composer-install@3cf229dc2919194e9e36783941438d17239e8520 # v3.1.1
+        uses: ramsey/composer-install@65e4f84970763564f46a70b8a54b90d033b3bdda # v4.0.0
         with:
           composer-options: '--no-progress --optimize-autoloader --prefer-dist'
 

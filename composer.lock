@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "6bc71a9cbd548689a1f529c65548b827",
+    "content-hash": "1702c90cfd80a77b85e3c55066221ed9",
     "packages": [
         {
             "name": "colinmollenhour/credis",
@@ -3284,16 +3284,16 @@
         },
         {
             "name": "newfold-labs/wp-module-reset",
-            "version": "v1.0.1",
+            "version": "1.0.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/newfold-labs/wp-module-reset.git",
-                "reference": "a70d4f52bc69156a8bf59da47d7d6910fdcf614d"
+                "reference": "a2c281e755779acb6927575548eca833818135a5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/newfold-labs/wp-module-reset/zipball/a70d4f52bc69156a8bf59da47d7d6910fdcf614d",
-                "reference": "a70d4f52bc69156a8bf59da47d7d6910fdcf614d",
+                "url": "https://api.github.com/repos/newfold-labs/wp-module-reset/zipball/a2c281e755779acb6927575548eca833818135a5",
+                "reference": "a2c281e755779acb6927575548eca833818135a5",
                 "shasum": ""
             },
             "require": {
@@ -3317,21 +3317,11 @@
                 ]
             },
             "scripts": {
-                "test": [
-                    "codecept run wpunit"
-                ],
-                "test-coverage": [
-                    "codecept run wpunit --coverage wpunit.cov",
-                    "phpcov merge ./tests/_output/ --clover ./tests/_output/coverage.xml"
-                ],
-                "lint": [
-                    "vendor/bin/phpcs --standard=phpcs.xml -s ."
-                ],
                 "fix": [
                     "vendor/bin/phpcbf --standard=phpcs.xml ."
                 ],
                 "i18n-pot": [
-                    "vendor/bin/wp i18n make-pot . ./languages/wp-module-reset.pot --domain=wp-module-reset --exclude=tests,vendor,node_modules"
+                    "vendor/bin/wp i18n make-pot . ./languages/wp-module-reset.pot --domain=wp-module-reset --exclude=tests,vendor,node_modules,wordpress"
                 ],
                 "i18n-po": [
                     "vendor/bin/wp i18n update-po ./languages/wp-module-reset.pot ./languages"
@@ -3347,6 +3337,25 @@
                     "@i18n-po",
                     "@i18n-mo",
                     "@i18n-php"
+                ],
+                "i18n-ci-pre": [
+                    "@i18n-pot",
+                    "@i18n-po"
+                ],
+                "i18n-ci-post": [
+                    "@i18n-po",
+                    "@i18n-php",
+                    "@i18n-json"
+                ],
+                "lint": [
+                    "vendor/bin/phpcs --standard=phpcs.xml -s ."
+                ],
+                "test": [
+                    "codecept run wpunit"
+                ],
+                "test-coverage": [
+                    "codecept run wpunit --coverage wpunit.cov",
+                    "phpcov merge ./tests/_output/ --clover ./tests/_output/coverage.xml"
                 ]
             },
             "license": [
@@ -3354,10 +3363,10 @@
             ],
             "description": "Factory Reset module for Newfold WordPress plugins",
             "support": {
-                "source": "https://github.com/newfold-labs/wp-module-reset/tree/v1.0.1",
+                "source": "https://github.com/newfold-labs/wp-module-reset/tree/1.0.2",
                 "issues": "https://github.com/newfold-labs/wp-module-reset/issues"
             },
-            "time": "2026-02-20T19:12:45+00:00"
+            "time": "2026-03-25T19:47:53+00:00"
         },
         {
             "name": "newfold-labs/wp-module-runtime",

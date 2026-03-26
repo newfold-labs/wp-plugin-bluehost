@@ -115,7 +115,7 @@ jobs:
         run: npx playwright install --with-deps chromium
 
       - name: Run Playwright Tests
-        run: npx playwright test ${{ env.PLAYWRIGHT_TEST_SPEC }} --reporter=line
+        run: npx playwright test tests/playwright/specs/help.spec.js --reporter=line
         env:
           CI: true
           BASE_URL: ${{ vars.SITE_URL }}

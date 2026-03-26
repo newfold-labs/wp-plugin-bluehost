@@ -11,7 +11,7 @@ on:
 permissions: {}
 
 env:
-  CYPRESS_TEST_PATH: tests/cypress/integration/help.cy.js
+  PLAYWRIGHT_TEST_SPEC: tests/playwright/specs/help.spec.js
 
 jobs:
   deploy:
@@ -111,15 +111,21 @@ jobs:
           done
           echo "Server not ready after 5 minutes" && exit 1
 
-      - name: Run Specific Cypress Tests
-        uses: cypress-io/github-action@4c06c48f3ffea349b7189aa06dfcda47a9fa7b92 # v7.1.8
-        with:
-          install: true
-          start: npm start
-          wait-on: ${{ vars.SITE_URL }}
-          config: baseUrl=${{ vars.SITE_URL }}
-          command: npx cypress run --spec ${{ env.CYPRESS_TEST_PATH }}
+      - name: Install Playwright Browsers
+        run: npx playwright install --with-deps chromium
+
+      - name: Run Playwright Tests
+        run: npx playwright test ${{ env.PLAYWRIGHT_TEST_SPEC }} --reporter=line
         env:
+          CI: true
           BASE_URL: ${{ vars.SITE_URL }}
           WP_ADMIN_USERNAME: ${{ secrets.WP_ADMIN_USERNAME }}
           WP_ADMIN_PASSWORD: ${{ secrets.WP_ADMIN_PASSWORD }}
+
+      - name: Store Playwright test results
+        if: always()
+        uses: actions/upload-artifact@b7c566a772e6b6bfb58ed0dc250532a479d7789f # v6.0.0
+        with:
+          name: playwright-report-${{ matrix.environment }}
+          path: tests/playwright/test-results/
+          retention-days: 10

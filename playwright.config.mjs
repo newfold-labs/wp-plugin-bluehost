@@ -61,7 +61,7 @@ process.env.WP_VERSION = process.env.WP_VERSION || wpVersion;
 process.env.PHP_VERSION = process.env.PHP_VERSION || phpVersion;
 
 export default defineConfig({
-  globalSetup: resolve(__dirname, './tests/playwright/global-setup.js'),
+  globalSetup: process.env.BASE_URL ? undefined : resolve(__dirname, './tests/playwright/global-setup.js'),
   projects: projects,
   testIgnore: [
     // Don't ignore anything - we want to include gitignored files that playwright needs to find
@@ -71,7 +71,7 @@ export default defineConfig({
     ...devices['Desktop Chrome'],
     headless: true,
     viewport: { width: 1200, height: 800 },
-    baseURL: `http://localhost:${_port}`, // Use port from wp-env.json
+    baseURL: process.env.BASE_URL || `http://localhost:${_port}`,
     ignoreHTTPSErrors: true,
     // WordPress-optimized settings
     locale: 'en-US',

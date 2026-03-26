@@ -86,11 +86,12 @@ jobs:
           SERVER_IP: ${{ vars.SERVER_IP }}
           SERVER_PATH: ${{ vars.SERVER_PATH }}
         run: |
-          ssh -i github-actions -o StrictHostKeyChecking=no "$SERVER_USERNAME@$SERVER_IP" << 'EOF'
+          ssh -i github-actions -o StrictHostKeyChecking=no "$SERVER_USERNAME@$SERVER_IP" \
+            "PLUGIN_NAME='$PLUGIN_NAME' SERVER_PATH='$SERVER_PATH' bash -s" << 'EOF'
             cd "${SERVER_PATH}/wp-content"
-            wp plugin install uploads/$PLUGIN_NAME.zip --force --path=./../
-            rm uploads/$PLUGIN_NAME.zip
-            wp plugin activate $PLUGIN_NAME --path=./../
+            wp plugin install "uploads/${PLUGIN_NAME}.zip" --force --path=./../
+            rm "uploads/${PLUGIN_NAME}.zip"
+            wp plugin activate "${PLUGIN_NAME}" --path=./../
           EOF
 
       - name: Cleanup SSH Key

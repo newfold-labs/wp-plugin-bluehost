@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "b87833d30e4a7fde4bc65f2ef0a0a515",
+    "content-hash": "97b624859bd2b4ac3443079e60d57c0c",
     "packages": [
         {
             "name": "colinmollenhour/credis",
@@ -1396,20 +1396,20 @@
         },
         {
             "name": "newfold-labs/wp-module-ecommerce",
-            "version": "2.3.2",
+            "version": "2.3.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/newfold-labs/wp-module-ecommerce.git",
-                "reference": "2ed362afab868f7a298f2589a8d0987b90eac28d"
+                "reference": "3c2c2bd415fbce9d16ddb589455607a2f347035d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/newfold-labs/wp-module-ecommerce/zipball/2ed362afab868f7a298f2589a8d0987b90eac28d",
-                "reference": "2ed362afab868f7a298f2589a8d0987b90eac28d",
+                "url": "https://api.github.com/repos/newfold-labs/wp-module-ecommerce/zipball/3c2c2bd415fbce9d16ddb589455607a2f347035d",
+                "reference": "3c2c2bd415fbce9d16ddb589455607a2f347035d",
                 "shasum": ""
             },
             "require": {
-                "newfold-labs/wp-module-installer": "^1.7.2"
+                "newfold-labs/wp-module-installer": "^1.7.3"
             },
             "require-dev": {
                 "johnpbloch/wordpress": "@stable",
@@ -1447,13 +1447,10 @@
                     "@i18n-php"
                 ],
                 "i18n-json": [
-                    "rm -f languages/*.json && vendor/bin/wp i18n make-json ./languages --no-purge --pretty-print"
-                ],
-                "i18n-mo": [
-                    "vendor/bin/wp i18n make-mo ./languages"
+                    "rm -f languages/*.json && vendor/bin/wp i18n make-json ./languages --pretty-print"
                 ],
                 "i18n-php": [
-                    "vendor/bin/wp i18n make-php ./languages"
+                    "vendor/bin/wp i18n make-php ./languages --pretty-print"
                 ],
                 "i18n-po": [
                     "vendor/bin/wp i18n update-po ./languages/wp-module-ecommerce.pot ./languages"
@@ -1484,10 +1481,10 @@
             ],
             "description": "Brand Agnostic eCommerce Experience",
             "support": {
-                "source": "https://github.com/newfold-labs/wp-module-ecommerce/tree/2.3.2",
+                "source": "https://github.com/newfold-labs/wp-module-ecommerce/tree/2.3.3",
                 "issues": "https://github.com/newfold-labs/wp-module-ecommerce/issues"
             },
-            "time": "2026-03-13T17:10:28+00:00"
+            "time": "2026-03-27T21:55:10+00:00"
         },
         {
             "name": "newfold-labs/wp-module-editor-chat",

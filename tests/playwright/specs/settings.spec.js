@@ -1,11 +1,31 @@
 import { test, expect } from '@playwright/test';
 import { auth, a11y, utils } from '../helpers';
 
-test.describe('Settings Page', () => {
+/**
+ * Navigate to performance settings and return the portal root locator.
+ * (Keeps each test to one setup line instead of open + `#performance-portal`.)
+ */
+async function openPerformanceModule(page) {
+  await auth.navigateToAdminPage(
+    page,
+    'admin.php?page=bluehost#/settings/performance',
+  );
+  await page.waitForSelector('#wppbh-app-rendered', { timeout: 20000 });
+  await expect(page.locator('#nfd-performance')).toBeVisible({
+    timeout: 15000,
+  });
+  await page.waitForSelector('#performance-portal .newfold-cache-settings', {
+    timeout: 30000,
+  });
+  return page.locator('#performance-portal');
+}
 
+test.describe('Settings', () => {
   test.beforeEach(async ({ page }) => {
-    // Navigate to settings page
-    await auth.navigateToAdminPage(page, 'admin.php?page=bluehost#/settings/settings');
+    await auth.navigateToAdminPage(
+      page,
+      'admin.php?page=bluehost#/settings/settings',
+    );
   });
 
   test('Is Accessible', async ({ page }) => {
@@ -194,5 +214,136 @@ test.describe('Settings Page', () => {
     await page.waitForTimeout(100);
     await expect(disableCommentsToggle).toHaveAttribute('aria-checked', 'false');
     await expect(closeCommentsDaysSelect).toBeDisabled();
+  });
+
+  test('Shows cache, exclusion, clear cache, skip 404, advanced, and image optimization blocks', async ({
+    page,
+  }) => {
+    const portal = await openPerformanceModule(page);
+    const performanceSections = [
+      '.newfold-cache-settings',
+      '.newfold-cache-exclusion',
+      '.newfold-clear-cache',
+      '.newfold-skip404',
+      '.newfold-performance-advanced-settings',
+      '.newfold-image-optimization',
+    ];
+    for (const sel of performanceSections) {
+      await expect(portal.locator(sel)).toBeVisible();
+    }
+  });
+
+  test('Cache level change saves and shows confirmation', async ({
+    page,
+  }) => {
+    const portal = await openPerformanceModule(page);
+    const checked = portal.locator('input[name="cache-level"]:checked');
+    await expect(checked).toBeAttached();
+    const current = await checked.getAttribute('value');
+    const nextLevel = current === '1' ? '2' : '1';
+    await portal.locator(`#cache-level-${nextLevel}`).click();
+    await utils.waitForNotification(page, 'Cache setting saved', 15000);
+  });
+
+  test('Clear cache succeeds when caching is on', async ({ page }) => {
+    const portal = await openPerformanceModule(page);
+    const clearBtn = portal.locator('button.clear-cache-button');
+    if (await clearBtn.isDisabled()) {
+      await portal.locator('#cache-level-1').click();
+      await utils.waitForNotification(page, 'Cache setting saved', 15000);
+    }
+    await expect(clearBtn).not.toBeDisabled();
+    await clearBtn.click();
+    await utils.waitForNotification(page, 'Cache cleared', 15000);
+  });
+
+  test('Skip 404 toggle saves', async ({ page }) => {
+    const portal = await openPerformanceModule(page);
+    const toggle = portal.locator('.newfold-skip404').getByRole('switch');
+    await utils.scrollIntoView(toggle);
+    const before = await toggle.getAttribute('aria-checked');
+    await toggle.click();
+    await utils.waitForNotification(page, 'Skip 404 saved', 15000);
+    const mid = await toggle.getAttribute('aria-checked');
+    expect(mid).not.toBe(before);
+    await toggle.click();
+    await utils.waitForNotification(page, 'Skip 404 saved', 15000);
+    expect(await toggle.getAttribute('aria-checked')).toBe(before);
+  });
+
+  test('Cache exclusion validates input and saves valid rules', async ({
+    page,
+  }) => {
+    const portal = await openPerformanceModule(page);
+    const textarea = portal.locator('#cache-exclusion');
+    await utils.scrollIntoView(textarea);
+    await textarea.fill('Invalid_UPPERCASE');
+    await expect(portal.locator('.nfd-text-red-600')).toContainText(
+      /Invalid input/i,
+    );
+    await textarea.fill('e2e-exclude-rule');
+    const saveBtn = portal.locator('.save-cache-exclusion-button');
+    await expect(saveBtn).toBeVisible();
+    await saveBtn.click();
+    await utils.waitForNotification(page, 'Exclude from cache', 15000);
+  });
+
+  test('Cache exclusion cannot save invalid rules', async ({ page }) => {
+    const portal = await openPerformanceModule(page);
+    const textarea = portal.locator('#cache-exclusion');
+    await utils.scrollIntoView(textarea);
+    await textarea.fill('BAD_CHARS!@#');
+    await expect(portal.locator('.nfd-text-red-600')).toContainText(
+      /Invalid input/i,
+    );
+    const saveBtn = portal.locator('.save-cache-exclusion-button');
+    await expect(saveBtn).toBeVisible();
+    await expect(saveBtn).toBeDisabled();
+  });
+
+  test('Link prefetch desktop toggle saves when section is available', async ({
+    page,
+  }, testInfo) => {
+    const portal = await openPerformanceModule(page);
+    const section = portal.locator('[data-cy="link-prefetch-settings"]');
+    if (!(await section.isVisible().catch(() => false))) {
+      testInfo.skip(true, 'Link prefetch not available for this environment');
+      return;
+    }
+    const toggle = portal.locator(
+      '[data-cy="link-prefetch-active-desktop-toggle"]',
+    );
+    await utils.scrollIntoView(toggle);
+    await toggle.click();
+    await utils.waitForNotification(
+      page,
+      'Link prefetching setting saved',
+      15000,
+    );
+    await toggle.click();
+    await utils.waitForNotification(
+      page,
+      'Link prefetching setting saved',
+      15000,
+    );
+  });
+
+  test('Image optimization section loads and exposes main toggle', async ({
+    page,
+  }) => {
+    const portal = await openPerformanceModule(page);
+    const block = portal.locator('.newfold-image-optimization');
+    await utils.scrollIntoView(block);
+    // ToggleField passes `id` to Toggle as `data-id`, not as a DOM `id` attribute.
+    const mainToggle = portal.locator('[data-id="image-optimization-enabled"]');
+    await expect(mainToggle).toBeVisible({ timeout: 45000 });
+    const usageLimited = await portal
+      .locator('.nfd-text-red')
+      .filter({ hasText: /usage limits/i })
+      .isVisible()
+      .catch(() => false);
+    if (!usageLimited) {
+      await expect(mainToggle).toBeEnabled();
+    }
   });
 });

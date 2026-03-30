@@ -10,9 +10,6 @@ on:
 # Any needed permissions should be configured at the job level.
 permissions: {}
 
-env:
-  CYPRESS_TEST_PATH: tests/cypress/integration/help.cy.js
-
 jobs:
   deploy:
     runs-on: ubuntu-latest
@@ -29,6 +26,20 @@ jobs:
         uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
         with:
           persist-credentials: false
+
+      # Playwright baseURL must match the real WordPress home URL (include subdirectory installs).
+      # Trim, default to https, strip trailing slash so /wp-login.php resolves correctly.
+      - name: Normalize site URL for Playwright
+        env:
+          SITE_URL: ${{ vars.SITE_URL }}
+        run: |
+          set -euo pipefail
+          SITE="${SITE_URL//[[:space:]]/}"
+          if [[ -z "$SITE" ]]; then echo "vars.SITE_URL is empty"; exit 1; fi
+          if [[ "$SITE" != http://* && "$SITE" != https://* ]]; then SITE="https://$SITE"; fi
+          SITE="${SITE%/}"
+          echo "BASE_URL=$SITE" >> "$GITHUB_ENV"
+          echo "Using BASE_URL=$SITE"
 
       - name: Setup PHP
         uses: shivammathur/setup-php@accd6127cb78bee3e8082180cb391013d204ef9f # v2.37.0
@@ -86,22 +97,21 @@ jobs:
           SERVER_IP: ${{ vars.SERVER_IP }}
           SERVER_PATH: ${{ vars.SERVER_PATH }}
         run: |
-          ssh -i github-actions -o StrictHostKeyChecking=no "$SERVER_USERNAME@$SERVER_IP" << 'EOF'
+          ssh -i github-actions -o StrictHostKeyChecking=no "$SERVER_USERNAME@$SERVER_IP" \
+            "PLUGIN_NAME='$PLUGIN_NAME' SERVER_PATH='$SERVER_PATH' bash -s" << 'EOF'
             cd "${SERVER_PATH}/wp-content"
-            wp plugin install uploads/$PLUGIN_NAME.zip --force --path=./../
-            rm uploads/$PLUGIN_NAME.zip
-            wp plugin activate $PLUGIN_NAME --path=./../
+            wp plugin install "uploads/${PLUGIN_NAME}.zip" --force --path=./../
+            rm "uploads/${PLUGIN_NAME}.zip"
+            wp plugin activate "${PLUGIN_NAME}" --path=./../
           EOF
 
       - name: Cleanup SSH Key
         run: rm -f github-actions
 
       - name: Check if the remote Server is up
-        env:
-          SITE_URL: ${{ vars.SITE_URL }}
         run: |
           for _ in {1..30}; do
-            STATUS_CODE=$(curl -s -o /dev/null -w "%{http_code}" "$SITE_URL/wp-login.php")
+            STATUS_CODE=$(curl -s -o /dev/null -w "%{http_code}" "${BASE_URL}/wp-login.php")
             if [[ "$STATUS_CODE" == "200" ]]; then
               echo "Server is up with status code: $STATUS_CODE"
               exit 0
@@ -111,15 +121,39 @@ jobs:
           done
           echo "Server not ready after 5 minutes" && exit 1
 
-      - name: Run Specific Cypress Tests
-        uses: cypress-io/github-action@4c06c48f3ffea349b7189aa06dfcda47a9fa7b92 # v7.1.8
-        with:
-          install: true
-          start: npm start
-          wait-on: ${{ vars.SITE_URL }}
-          config: baseUrl=${{ vars.SITE_URL }}
-          command: npx cypress run --spec ${{ env.CYPRESS_TEST_PATH }}
+      - name: Verify wp-login is WordPress (not 404 HTML)
+        run: |
+          set -euo pipefail
+          LOGIN_URL="${BASE_URL}/wp-login.php"
+          BODY_FILE="$(mktemp)"
+          CODE=$(curl -sS -o "$BODY_FILE" -w "%{http_code}" "$LOGIN_URL")
+          echo "HTTP $CODE for $LOGIN_URL"
+          if [[ "$CODE" != "200" ]]; then
+            head -c 800 "$BODY_FILE" || true
+            exit 1
+          fi
+          if ! grep -qE 'id="user_login"|name="log"|wp-login' "$BODY_FILE"; then
+            echo "Response is not a WordPress login page (check SITE_URL matches WP home, including subdirectory)."
+            head -c 1200 "$BODY_FILE" || true
+            exit 1
+          fi
+          rm -f "$BODY_FILE"
+
+      - name: Install Playwright Browsers
+        run: npx playwright install --with-deps chromium
+
+      - name: Run Playwright Tests
+        run: npx playwright test --reporter=line
         env:
-          BASE_URL: ${{ vars.SITE_URL }}
+          CI: true
+          BASE_URL: ${{ env.BASE_URL }}
           WP_ADMIN_USERNAME: ${{ secrets.WP_ADMIN_USERNAME }}
           WP_ADMIN_PASSWORD: ${{ secrets.WP_ADMIN_PASSWORD }}
+
+      - name: Store Playwright test results
+        if: always()
+        uses: actions/upload-artifact@b7c566a772e6b6bfb58ed0dc250532a479d7789f # v6.0.0
+        with:
+          name: playwright-report-${{ matrix.environment }}
+          path: tests/playwright/test-results/
+          retention-days: 10

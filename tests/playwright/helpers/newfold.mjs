@@ -240,7 +240,7 @@ async function logCapabilities() {
  * @returns {Promise<boolean>} True if coming soon is enabled
  */
 async function isComingSoonEnabled(page) {
-  const response = await page.request.get('/wp-json/wp/v2/options/nfd_coming_soon');
+  const response = await page.request.get('wp-json/wp/v2/options/nfd_coming_soon');
   if (response.ok()) {
     const data = await response.json();
     return data === '1' || data === true;
@@ -344,7 +344,7 @@ async function waitForDashboardWidgets(page, timeout = 10000) {
  * @param {string} path - The path within the plugin (e.g., '#/home').
  */
 async function navigateToPluginPage(page, pluginId, path = '') {
-  await page.goto(`/wp-admin/admin.php?page=${pluginId}${path}`);
+  await page.goto(`wp-admin/admin.php?page=${pluginId}${path}`);
   await waitForWordPressAdmin(page);
 }
 
@@ -377,7 +377,7 @@ async function getAdminMenuItems(page) {
  */
 async function waitForRestAPI(page) {
   // Try to access a simple REST endpoint
-  const response = await page.request.get('/wp-json/wp/v2/users/me');
+  const response = await page.request.get('wp-json/wp/v2/users/me');
   if (!response.ok()) {
     throw new Error('WordPress REST API not available');
   }

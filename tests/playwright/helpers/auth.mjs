@@ -33,7 +33,7 @@ async function isLoggedIn(page) {
     }
     
     // If we're not on an admin page, try to access a protected page
-    const response = await page.goto('/wp-admin/', { waitUntil: 'domcontentloaded', timeout: 5000 });
+    const response = await page.goto('wp-admin/', { waitUntil: 'domcontentloaded', timeout: 5000 });
     
     // Check if we were redirected to login page
     const newUrl = page.url();
@@ -71,7 +71,7 @@ async function loginToWordPress(page, options = {}) {
     return;
   }
 
-  await page.goto('/wp-login.php');
+  await page.goto('wp-login.php');
   await page.fill('#user_login', username);
   await page.fill('#user_pass', password);
   await page.press('#user_pass', 'Enter');
@@ -131,7 +131,7 @@ async function navigateToAdminPage(page, adminPage, options = {}) {
   }
   
   // Navigate to the admin page
-  const response = await page.goto(`/wp-admin/${adminPage}`, { waitUntil: 'domcontentloaded' });
+  const response = await page.goto(`wp-admin/${adminPage}`, { waitUntil: 'domcontentloaded' });
   
   // Check if we were redirected to login (session expired)
   const currentUrl = page.url();
@@ -139,7 +139,7 @@ async function navigateToAdminPage(page, adminPage, options = {}) {
     // Session expired, login again
     await loginToWordPress(page, { ...options, force: true });
     // Retry navigation
-    await page.goto(`/${adminPage}`, { waitUntil: 'domcontentloaded' });
+    await page.goto(`wp-admin/${adminPage}`, { waitUntil: 'domcontentloaded' });
   }
   
   // Create WordPress utilities for additional functionality

@@ -60,6 +60,31 @@ process.env.WP_ADMIN_PASSWORD = process.env.WP_ADMIN_PASSWORD || 'password';
 process.env.WP_VERSION = process.env.WP_VERSION || wpVersion;
 process.env.PHP_VERSION = process.env.PHP_VERSION || phpVersion;
 
+/**
+ * Paths passed to page.goto('/foo') are resolved against the URL *origin* only, not baseURL's path.
+ * For WordPress in a subdirectory, baseURL must end with '/' and navigations must use relative paths
+ * (e.g. 'wp-login.php'), or /foo incorrectly hits https://domain/foo instead of https://domain/blog/foo.
+ * @param {string} raw
+ * @param {string} fallback e.g. http://localhost:8882
+ */
+function normalizePlaywrightBaseURL(raw, fallback) {
+  const base = String(raw || fallback).trim();
+  try {
+    const u = new URL(base);
+    if (u.pathname !== '/' && !u.pathname.endsWith('/')) {
+      u.pathname += '/';
+    }
+    return u.href;
+  } catch {
+    return base;
+  }
+}
+
+const resolvedBaseURL = normalizePlaywrightBaseURL(
+  process.env.BASE_URL,
+  `http://localhost:${_port}`
+);
+
 export default defineConfig({
   globalSetup: process.env.BASE_URL ? undefined : resolve(__dirname, './tests/playwright/global-setup.js'),
   projects: projects,
@@ -71,7 +96,7 @@ export default defineConfig({
     ...devices['Desktop Chrome'],
     headless: true,
     viewport: { width: 1200, height: 800 },
-    baseURL: process.env.BASE_URL || `http://localhost:${_port}`,
+    baseURL: resolvedBaseURL,
     ignoreHTTPSErrors: true,
     // WordPress-optimized settings
     locale: 'en-US',

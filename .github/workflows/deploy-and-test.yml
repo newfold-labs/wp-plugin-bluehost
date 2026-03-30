@@ -30,6 +30,20 @@ jobs:
         with:
           persist-credentials: false
 
+      # Playwright baseURL must match the real WordPress home URL (include subdirectory installs).
+      # Trim, default to https, strip trailing slash so /wp-login.php resolves correctly.
+      - name: Normalize site URL for Playwright
+        env:
+          SITE_URL: ${{ vars.SITE_URL }}
+        run: |
+          set -euo pipefail
+          SITE="${SITE_URL//[[:space:]]/}"
+          if [[ -z "$SITE" ]]; then echo "vars.SITE_URL is empty"; exit 1; fi
+          if [[ "$SITE" != http://* && "$SITE" != https://* ]]; then SITE="https://$SITE"; fi
+          SITE="${SITE%/}"
+          echo "BASE_URL=$SITE" >> "$GITHUB_ENV"
+          echo "Using BASE_URL=$SITE"
+
       - name: Setup PHP
         uses: shivammathur/setup-php@accd6127cb78bee3e8082180cb391013d204ef9f # v2.37.0
         with:
@@ -98,11 +112,9 @@ jobs:
         run: rm -f github-actions
 
       - name: Check if the remote Server is up
-        env:
-          SITE_URL: ${{ vars.SITE_URL }}
         run: |
           for _ in {1..30}; do
-            STATUS_CODE=$(curl -s -o /dev/null -w "%{http_code}" "$SITE_URL/wp-login.php")
+            STATUS_CODE=$(curl -s -o /dev/null -w "%{http_code}" "${BASE_URL}/wp-login.php")
             if [[ "$STATUS_CODE" == "200" ]]; then
               echo "Server is up with status code: $STATUS_CODE"
               exit 0
@@ -112,6 +124,24 @@ jobs:
           done
           echo "Server not ready after 5 minutes" && exit 1
 
+      - name: Verify wp-login is WordPress (not 404 HTML)
+        run: |
+          set -euo pipefail
+          LOGIN_URL="${BASE_URL}/wp-login.php"
+          BODY_FILE="$(mktemp)"
+          CODE=$(curl -sS -o "$BODY_FILE" -w "%{http_code}" "$LOGIN_URL")
+          echo "HTTP $CODE for $LOGIN_URL"
+          if [[ "$CODE" != "200" ]]; then
+            head -c 800 "$BODY_FILE" || true
+            exit 1
+          fi
+          if ! grep -qE 'id="user_login"|name="log"|wp-login' "$BODY_FILE"; then
+            echo "Response is not a WordPress login page (check SITE_URL matches WP home, including subdirectory)."
+            head -c 1200 "$BODY_FILE" || true
+            exit 1
+          fi
+          rm -f "$BODY_FILE"
+
       - name: Install Playwright Browsers
         run: npx playwright install --with-deps chromium
 
@@ -119,7 +149,7 @@ jobs:
         run: npx playwright test tests/playwright/specs/help.spec.js --reporter=line
         env:
           CI: true
-          BASE_URL: ${{ vars.SITE_URL }}
+          BASE_URL: ${{ env.BASE_URL }}
           WP_ADMIN_USERNAME: ${{ secrets.WP_ADMIN_USERNAME }}
           WP_ADMIN_PASSWORD: ${{ secrets.WP_ADMIN_PASSWORD }}
 

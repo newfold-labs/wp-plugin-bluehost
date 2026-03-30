@@ -10,9 +10,6 @@ on:
 # Any needed permissions should be configured at the job level.
 permissions: {}
 
-env:
-  PLAYWRIGHT_TEST_SPEC: tests/playwright/specs/help.spec.js
-
 jobs:
   deploy:
     runs-on: ubuntu-latest
@@ -146,7 +143,7 @@ jobs:
         run: npx playwright install --with-deps chromium
 
       - name: Run Playwright Tests
-        run: npx playwright test tests/playwright/specs/help.spec.js --reporter=line
+        run: npx playwright test --reporter=line
         env:
           CI: true
           BASE_URL: ${{ env.BASE_URL }}

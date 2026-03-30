@@ -75,16 +75,26 @@ async function loginToWordPress(page, options = {}) {
   await page.fill('#user_login', username);
   await page.fill('#user_pass', password);
   await page.press('#user_pass', 'Enter');
-  
-  // Wait for successful login: either left wp-login or landed on admin email verification (still wp-login.php?action=confirm_admin_email)
-  await page.waitForURL(
-    (url) => {
-      if (!url.pathname.includes('/wp-login.php')) return true;
-      if (url.searchParams.get('action') === 'confirm_admin_email') return true;
-      return false;
-    },
-    { timeout: 10000 }
-  );
+
+  const loginSucceeded = (url) => {
+    if (!url.pathname.includes('/wp-login.php')) return true;
+    if (url.searchParams.get('action') === 'confirm_admin_email') return true;
+    return false;
+  };
+
+  try {
+    await page.waitForURL(loginSucceeded, { timeout: 20000 });
+  } catch (err) {
+    const errorLocator = page.locator('#login_error, .login .message.error').first();
+    if (await errorLocator.isVisible().catch(() => false)) {
+      const text = (await errorLocator.innerText()).trim();
+      throw new Error(
+        `WordPress login failed (${text || 'invalid username or password'}). ` +
+          'Set WP_ADMIN_USERNAME and WP_ADMIN_PASSWORD to real admin credentials for this site (GitHub secrets must not be placeholder text).'
+      );
+    }
+    throw err;
+  }
 }
 
 /**

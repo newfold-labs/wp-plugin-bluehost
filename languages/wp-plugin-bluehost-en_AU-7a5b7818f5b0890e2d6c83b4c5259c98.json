@@ -1,7 +1,7 @@
 {
-    "translation-revision-date": "2026-03-27T22:55:13+00:00",
+    "translation-revision-date": "2026-04-01T22:35:39+00:00",
     "generator": "WP-CLI\/2.12.0",
-    "source": "build\/4.15.0\/index.js",
+    "source": "build\/4.15.1\/index.js",
     "domain": "messages",
     "locale_data": {
         "messages": {
@@ -152,19 +152,19 @@
                 "\ndevelop"
             ],
             "Congrats, your %1$s is %2$s!": [
-                ""
+                "Congrats, your %1$s is %2$s!"
             ],
             "store": [
-                ""
+                "store"
             ],
             "website": [
-                ""
+                "website"
             ],
             "ready": [
-                ""
+                "ready"
             ],
             "live": [
-                ""
+                "live"
             ],
             "Store Details": [
                 "Store Details"

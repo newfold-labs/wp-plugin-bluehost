@@ -1,11 +1,11 @@
 <?php
 return [
 	'domain' => NULL,
-	'plural-forms' => NULL,
+	'plural-forms' => 'nplurals=2; plural=(n != 1);',
 	'language' => 'en_GB',
-	'project-id-version' => 'Bluehost Plugi2024-10-21 07:10-00002024-10-21 07:10-0000none1.0text/plain; charset=UTF-88bitnplurals=2; plural=(n != 1);Crowdin',
+	'project-id-version' => 'wp-plugin-bluehost',
 	'pot-creation-date' => '2025-02-25T20:53:21+00:00',
-	'po-revision-date' => '2026-03-27T22:55:13+00:00',
+	'po-revision-date' => '2026-04-01T22:35:38+00:00',
 	'messages' => [
 		'The Bluehost Plugin' => 'The Bluehost Plugin',
 		'https://bluehost.com' => 'https://bluehost.com',

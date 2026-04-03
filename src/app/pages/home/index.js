@@ -1,10 +1,12 @@
-import { useState, useEffect } from '@wordpress/element';
-import { __ } from '@wordpress/i18n';
+import { useState, useEffect, useContext } from '@wordpress/element';
+import { __, sprintf } from '@wordpress/i18n';
 import { Container, Page, Title, Button } from '@newfold/ui-component-library';
 import { PartyIcon } from 'App/components/icons';
+import AppStore from '../../data/store';
 import QuickLinks from './quick-links';
 
 const Home = () => {
+	const { store } = useContext( AppStore );
 	const [ hasStoreInfo, setHasStoreInfo ] = useState(
 		!! (
 			window?.NFDStoreInfo?.data?.address &&
@@ -40,6 +42,19 @@ const Home = () => {
 	}, [] );
 
 	const siteKind = window.NewfoldRuntime.siteType || 'website';
+	/** From settings API: true when Coming Soon is enabled (show “ready”); false when public (show “live”). */
+	const isComingSoonEnabled = !! store?.comingSoon;
+
+	const homeTitle = sprintf(
+		/* translators: 1: site kind (e.g. “store” or “website”), 2: status (“live” or “ready”). */
+		__( 'Congrats, your %1$s is %2$s!', 'wp-plugin-bluehost' ),
+		siteKind === 'store'
+			? __( 'store', 'wp-plugin-bluehost' )
+			: __( 'website', 'wp-plugin-bluehost' ),
+		isComingSoonEnabled
+			? __( 'ready', 'wp-plugin-bluehost' )
+			: __( 'live', 'wp-plugin-bluehost' )
+	);
 
 	useEffect( () => {
 		// Update hasStoreInfo when storeInfo changes
@@ -73,15 +88,7 @@ const Home = () => {
 				>
 					<PartyIcon />
 					<Title className="nfd-mb-1 nfd-font-semibold">
-						{ siteKind === 'store'
-							? __(
-									'Congrats, your store is live!',
-									'wp-plugin-bluehost'
-							  )
-							: __(
-									'Congrats, your website is live!',
-									'wp-plugin-bluehost'
-							  ) }
+						{ homeTitle }
 					</Title>
 				</span>
 				{ siteKind === 'store' && (

@@ -200,17 +200,44 @@ $pluginUpdater->setDataOverrides(
 // Handle any upgrade routines (only in the admin)
 if ( is_admin() ) {
 
+	$bluehost_stored_version = get_option( 'bluehost_plugin_version', '0.1.0' );
+
 	// Handle plugin upgrades
 	$upgrade_handler = new UpgradeHandler(
-		BLUEHOST_PLUGIN_DIR . '/inc/upgrades',                    // Directory where upgrade routines live
-		get_option( 'bluehost_plugin_version', '0.1.0' ), // Old plugin version (from database)
-		BLUEHOST_PLUGIN_VERSION                                  // New plugin version (from code)
+		BLUEHOST_PLUGIN_DIR . '/inc/upgrades', // Directory where upgrade routines live
+		$bluehost_stored_version, // Old plugin version (from database)
+		BLUEHOST_PLUGIN_VERSION // New plugin version (from code)
 	);
+
+	if ( defined( 'WP_DEBUG_LOG' ) && WP_DEBUG_LOG ) {
+		$upgrade_debug = array(
+			'stored_version' => $bluehost_stored_version,
+			'code_version'   => BLUEHOST_PLUGIN_VERSION,
+			'will_run'       => $upgrade_handler->should_upgrade(),
+		);
+		if ( $upgrade_handler->should_upgrade() ) {
+			$available = $upgrade_handler->get_available_upgrade_routines();
+			$required  = $upgrade_handler->get_required_upgrade_routines( $available );
+			$upgrade_debug['routines_scheduled'] = array_map(
+				'basename',
+				$required
+			);
+			$upgrade_debug['routine_count'] = count( $required );
+		}
+		// phpcs:ignore WordPress.PHP.DevelopmentFunctions.error_log_error_log -- gated by WP_DEBUG_LOG
+		error_log( '[Bluehost Plugin] upgrade: ' . wp_json_encode( $upgrade_debug ) );
+	}
 
 	// Returns true if the old version doesn't match the new version
 	$did_upgrade = $upgrade_handler->maybe_upgrade();
 
 	if ( $did_upgrade ) {
+		if ( defined( 'WP_DEBUG_LOG' ) && WP_DEBUG_LOG ) {
+			// phpcs:ignore WordPress.PHP.DevelopmentFunctions.error_log_error_log -- gated by WP_DEBUG_LOG
+			error_log(
+				'[Bluehost Plugin] upgrade: completed, updating option bluehost_plugin_version to ' . BLUEHOST_PLUGIN_VERSION
+			);
+		}
 		// If an upgrade occurred, update the new version in the database to prevent running the routine(s) again.
 		update_option( 'bluehost_plugin_version', BLUEHOST_PLUGIN_VERSION, true );
 	}

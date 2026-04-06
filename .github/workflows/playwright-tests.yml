@@ -18,6 +18,58 @@ concurrency:
 permissions: {}
 
 jobs:
+  discover-projects:
+    name: Discover Playwright Projects
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    outputs:
+      projects: ${{ steps.projects.outputs.projects }}
+    permissions:
+      contents: read
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd  # v6.0.2
+        with:
+          persist-credentials: false
+
+      - name: Setup PHP
+        uses: shivammathur/setup-php@44454db4f0199b8b9685a5d763dc37cbf79108e1  # v2.36.0
+        with:
+          php-version: '8.3'
+          coverage: none
+
+      - name: Get Composer cache directory
+        id: composer-cache
+        run: echo "dir=$(composer config cache-files-dir)" >> "$GITHUB_OUTPUT"
+
+      - name: Cache Composer vendor directory
+        uses: actions/cache@cdf6c1fa76f9f475f3d7449005a359c84ca0f306  # v5.0.3
+        with:
+          path: ${{ steps.composer-cache.outputs.dir }}
+          key: ${{ runner.os }}-composer-${{ hashFiles('**/composer.lock') }}
+
+      - name: Install PHP Dependencies
+        run: composer install --no-progress --no-dev --optimize-autoloader --prefer-source
+
+      - name: Use Node.js 24.x
+        uses: actions/setup-node@6044e13b5dc448c55e2357c09f80417699197238  # v6.2.0
+        with:
+          node-version: 24.x
+
+      - name: NPM Install
+        run: npm install --legacy-peer-deps
+
+      - name: Generate Playwright projects file
+        run: npm run test:playwright:update-projects
+
+      - name: Output project names for matrix
+        id: projects
+        run: |
+          PROJECTS_JSON=$(jq -r '[.[].name] | @json' tests/playwright/playwright-projects.json)
+          echo "projects=$PROJECTS_JSON" >> "$GITHUB_OUTPUT"
+          echo "Discovered projects: $PROJECTS_JSON"
+
   build:
     name: Build Plugin
     runs-on: ubuntu-latest
@@ -107,10 +159,14 @@ jobs:
           retention-days: 7
 
   test:
-    name: Run Playwright Tests
+    name: Playwright - ${{ matrix.project }}
     runs-on: ubuntu-latest
     timeout-minutes: 60
-    needs: build
+    needs: [build, discover-projects]
+    strategy:
+      fail-fast: false
+      matrix:
+        project: ${{ fromJson(needs.discover-projects.outputs.projects) }}
     permissions:
       contents: read
 
@@ -190,15 +246,22 @@ jobs:
         run: npx playwright install --with-deps chromium
 
       - name: Run Playwright Tests
-        run: npx playwright test --reporter=line
+        run: npx playwright test --project="${{ matrix.project }}" --reporter=line
         env:
           CI: true
+
+      - name: Set sanitized project name for artifact
+        if: always()
+        id: artifact-name
+        run: echo "name=playwright-report-${PROJECT//\//-}" >> "$GITHUB_OUTPUT"
+        env:
+          PROJECT: ${{ matrix.project }}
 
       - name: Store Playwright test results
         if: always()
         uses: actions/upload-artifact@bbbca2ddaa5d8feaa63e36b76fdaad77386f024f  # v7.0.0
         with:
-          name: playwright-report
+          name: playwright-report-${{ steps.artifact-name.outputs.name }}
           path: tests/playwright/test-results/
           retention-days: 10
 

@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "364c95704080081abc27822a5d3a5596",
+    "content-hash": "2821aa4b27bf8ac86e28e66f4f734d85",
     "packages": [
         {
             "name": "colinmollenhour/credis",
@@ -877,21 +877,21 @@
         },
         {
             "name": "newfold-labs/wp-module-ai-chat",
-            "version": "1.0.3",
+            "version": "dev-enhance/group-tool-executions",
             "source": {
                 "type": "git",
                 "url": "https://github.com/newfold-labs/wp-module-ai-chat.git",
-                "reference": "9c60e49b4c667c08978627ec8a3c8cc913a98487"
+                "reference": "6ed98346dfa13a67683558df867ca6fc99d9f113"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/newfold-labs/wp-module-ai-chat/zipball/9c60e49b4c667c08978627ec8a3c8cc913a98487",
-                "reference": "9c60e49b4c667c08978627ec8a3c8cc913a98487",
+                "url": "https://api.github.com/repos/newfold-labs/wp-module-ai-chat/zipball/6ed98346dfa13a67683558df867ca6fc99d9f113",
+                "reference": "6ed98346dfa13a67683558df867ca6fc99d9f113",
                 "shasum": ""
             },
             "require-dev": {
                 "newfold-labs/wp-php-standards": "^1.2.5",
-                "wp-cli/i18n-command": "^2.6.3"
+                "wp-cli/i18n-command": "^2.7.0"
             },
             "type": "library",
             "autoload": {
@@ -958,10 +958,10 @@
             ],
             "description": "AI Chat module for WordPress",
             "support": {
-                "source": "https://github.com/newfold-labs/wp-module-ai-chat/tree/1.0.3",
+                "source": "https://github.com/newfold-labs/wp-module-ai-chat/tree/enhance/group-tool-executions",
                 "issues": "https://github.com/newfold-labs/wp-module-ai-chat/issues"
             },
-            "time": "2026-03-06T16:08:31+00:00"
+            "time": "2026-04-13T14:13:54+00:00"
         },
         {
             "name": "newfold-labs/wp-module-atomic",
@@ -1489,16 +1489,16 @@
         },
         {
             "name": "newfold-labs/wp-module-editor-chat",
-            "version": "1.0.9",
+            "version": "dev-add/cf-gateway",
             "source": {
                 "type": "git",
                 "url": "https://github.com/newfold-labs/wp-module-editor-chat.git",
-                "reference": "7fe53518b371f3ff86febe8a0269ba807106dc25"
+                "reference": "d0becf1fe80d21224a1fb22f2cfb659f2e463629"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/newfold-labs/wp-module-editor-chat/zipball/7fe53518b371f3ff86febe8a0269ba807106dc25",
-                "reference": "7fe53518b371f3ff86febe8a0269ba807106dc25",
+                "url": "https://api.github.com/repos/newfold-labs/wp-module-editor-chat/zipball/d0becf1fe80d21224a1fb22f2cfb659f2e463629",
+                "reference": "d0becf1fe80d21224a1fb22f2cfb659f2e463629",
                 "shasum": ""
             },
             "require-dev": {
@@ -1506,7 +1506,7 @@
                 "lucatume/wp-browser": "*",
                 "newfold-labs/wp-php-standards": "^1.2.5",
                 "phpunit/phpcov": "*",
-                "wp-cli/i18n-command": "^2.7.0"
+                "wp-cli/i18n-command": "^2.6.3"
             },
             "type": "library",
             "autoload": {
@@ -1530,11 +1530,14 @@
                 "i18n-po": [
                     "vendor/bin/wp i18n update-po ./languages/nfd-wonder-blocks.pot ./languages"
                 ],
+                "i18n-mo": [
+                    "vendor/bin/wp i18n make-mo ./languages"
+                ],
                 "i18n-php": [
-                    "vendor/bin/wp i18n make-php ./languages --pretty-print"
+                    "vendor/bin/wp i18n make-php ./languages"
                 ],
                 "i18n-json": [
-                    "rm -f languages/*.json && vendor/bin/wp i18n make-json ./languages --pretty-print"
+                    "find ./languages -name \"*.json\" -exec rm {} \\; && vendor/bin/wp i18n make-json ./languages --no-purge --pretty-print"
                 ],
                 "i18n": [
                     "@i18n-pot",
@@ -1570,10 +1573,10 @@
             ],
             "description": "Site Editor AI Chat",
             "support": {
-                "source": "https://github.com/newfold-labs/wp-module-editor-chat/tree/1.0.9",
+                "source": "https://github.com/newfold-labs/wp-module-editor-chat/tree/add/cf-gateway",
                 "issues": "https://github.com/newfold-labs/wp-module-editor-chat/issues"
             },
-            "time": "2026-04-06T15:51:04+00:00"
+            "time": "2026-04-13T16:42:13+00:00"
         },
         {
             "name": "newfold-labs/wp-module-facebook",
@@ -2061,6 +2064,63 @@
             "time": "2026-03-06T16:50:12+00:00"
         },
         {
+            "name": "newfold-labs/wp-module-install-checker",
+            "version": "1.1.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/newfold-labs/wp-module-install-checker.git",
+                "reference": "43dae50be0ee6dbf03acd3daea5672fff98ed120"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/newfold-labs/wp-module-install-checker/zipball/43dae50be0ee6dbf03acd3daea5672fff98ed120",
+                "reference": "43dae50be0ee6dbf03acd3daea5672fff98ed120",
+                "shasum": ""
+            },
+            "require-dev": {
+                "johnpbloch/wordpress": "@stable",
+                "lucatume/wp-browser": "*",
+                "php": ">=7.3",
+                "phpunit/phpcov": "*",
+                "wpackagist-plugin/woocommerce": "@stable",
+                "wpackagist-theme/twentysixteen": "*"
+            },
+            "type": "library",
+            "autoload": {
+                "files": [
+                    "bootstrap.php"
+                ],
+                "psr-4": {
+                    "NewfoldLabs\\WP\\Module\\InstallChecker\\": "includes/"
+                }
+            },
+            "scripts": {
+                "test": [
+                    "codecept run wpunit"
+                ],
+                "test-coverage": [
+                    "codecept run wpunit --coverage wpunit.cov",
+                    "phpcov merge --php tests/_output/merged.cov --html tests/_output/html tests/_output;",
+                    "echo \"open tests/_output/html/index.html\" to view the report"
+                ]
+            },
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "Micah Wood",
+                    "homepage": "https://wpscholar.com"
+                }
+            ],
+            "description": "A module that handles checking a WordPress installation to see if it is a fresh install and to fetch the estimated installation date.",
+            "support": {
+                "source": "https://github.com/newfold-labs/wp-module-install-checker/tree/1.1.1",
+                "issues": "https://github.com/newfold-labs/wp-module-install-checker/issues"
+            },
+            "time": "2026-03-25T19:19:41+00:00"
+        },
+        {
             "name": "newfold-labs/wp-module-installer",
             "version": "1.7.3",
             "source": {
@@ -2398,16 +2458,16 @@
         },
         {
             "name": "newfold-labs/wp-module-mcp",
-            "version": "1.6.0",
+            "version": "dev-add/block-editor-abilities",
             "source": {
                 "type": "git",
                 "url": "https://github.com/newfold-labs/wp-module-mcp.git",
-                "reference": "86fd83768a16a6248e26da7788fc442ecd00babe"
+                "reference": "b61d5d86b00504c740a1cebed70ba67c76e0d880"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/newfold-labs/wp-module-mcp/zipball/86fd83768a16a6248e26da7788fc442ecd00babe",
-                "reference": "86fd83768a16a6248e26da7788fc442ecd00babe",
+                "url": "https://api.github.com/repos/newfold-labs/wp-module-mcp/zipball/b61d5d86b00504c740a1cebed70ba67c76e0d880",
+                "reference": "b61d5d86b00504c740a1cebed70ba67c76e0d880",
                 "shasum": ""
             },
             "require": {
@@ -2456,10 +2516,10 @@
             ],
             "description": "WordPress MCP module for Newfold Labs BLU",
             "support": {
-                "source": "https://github.com/newfold-labs/wp-module-mcp/tree/1.6.0",
+                "source": "https://github.com/newfold-labs/wp-module-mcp/tree/add/block-editor-abilities",
                 "issues": "https://github.com/newfold-labs/wp-module-mcp/issues"
             },
-            "time": "2026-04-01T09:36:18+00:00"
+            "time": "2026-04-13T16:24:20+00:00"
         },
         {
             "name": "newfold-labs/wp-module-migration",
@@ -2723,23 +2783,25 @@
         },
         {
             "name": "newfold-labs/wp-module-onboarding",
-            "version": "dev-apr9",
+            "version": "dev-features/onboarding-redesign",
             "source": {
                 "type": "git",
                 "url": "https://github.com/newfold-labs/wp-module-onboarding.git",
-                "reference": "ade4bff04b5cf1addc646298228228e93393dfec"
+                "reference": "39cbc114b766c64e88731bd1888525d300022bdd"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/newfold-labs/wp-module-onboarding/zipball/ade4bff04b5cf1addc646298228228e93393dfec",
-                "reference": "ade4bff04b5cf1addc646298228228e93393dfec",
+                "url": "https://api.github.com/repos/newfold-labs/wp-module-onboarding/zipball/39cbc114b766c64e88731bd1888525d300022bdd",
+                "reference": "39cbc114b766c64e88731bd1888525d300022bdd",
                 "shasum": ""
             },
             "require": {
                 "mustache/mustache": "^2.14.2",
                 "newfold-labs/wp-module-facebook": "^1.3.3",
+                "newfold-labs/wp-module-install-checker": "^1.0.3",
                 "newfold-labs/wp-module-migration": "^1.7.1",
-                "newfold-labs/wp-module-patterns": "^2.12.2",
+                "newfold-labs/wp-module-patterns": "^2.10.3",
+                "newfold-labs/wp-module-survey": "^1.0.1",
                 "wp-cli/wp-config-transformer": "^1.4.4",
                 "wp-forge/helpers": "^2.0"
             },
@@ -2818,10 +2880,10 @@
             ],
             "description": "Next-generation WordPress Onboarding for WordPress sites at Newfold Digital.",
             "support": {
-                "source": "https://github.com/newfold-labs/wp-module-onboarding/tree/apr9",
+                "source": "https://github.com/newfold-labs/wp-module-onboarding/tree/features/onboarding-redesign",
                 "issues": "https://github.com/newfold-labs/wp-module-onboarding/issues"
             },
-            "time": "2026-04-09T17:29:40+00:00"
+            "time": "2026-04-13T18:40:06+00:00"
         },
         {
             "name": "newfold-labs/wp-module-patterns",
@@ -3603,6 +3665,49 @@
                 "issues": "https://github.com/newfold-labs/wp-module-staging/issues"
             },
             "time": "2026-02-11T21:10:17+00:00"
+        },
+        {
+            "name": "newfold-labs/wp-module-survey",
+            "version": "1.0.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/newfold-labs/wp-module-survey.git",
+                "reference": "e41860c62d1b0c3d4e752b140b8df0773b1be459"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/newfold-labs/wp-module-survey/zipball/e41860c62d1b0c3d4e752b140b8df0773b1be459",
+                "reference": "e41860c62d1b0c3d4e752b140b8df0773b1be459",
+                "shasum": ""
+            },
+            "require-dev": {
+                "newfold-labs/wp-php-standards": "^1.2",
+                "wp-cli/i18n-command": "^2.4.3"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "NewfoldLabs\\WP\\Module\\Survey\\": "includes"
+                },
+                "files": [
+                    "bootstrap.php"
+                ]
+            },
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "arunshenoy99",
+                    "email": "devarunshenoy99@gmail.com"
+                }
+            ],
+            "description": "A Newfold module to collect customer satisfaction feedback via surveys in the WordPress admin dashboard.",
+            "support": {
+                "source": "https://github.com/newfold-labs/wp-module-survey/tree/1.0.2",
+                "issues": "https://github.com/newfold-labs/wp-module-survey/issues"
+            },
+            "time": "2025-01-03T04:32:27+00:00"
         },
         {
             "name": "predis/predis",
@@ -10483,6 +10588,9 @@
     "aliases": [],
     "minimum-stability": "stable",
     "stability-flags": {
+        "newfold-labs/wp-module-ai-chat": 20,
+        "newfold-labs/wp-module-editor-chat": 20,
+        "newfold-labs/wp-module-mcp": 20,
         "newfold-labs/wp-module-onboarding": 20
     },
     "prefer-stable": false,

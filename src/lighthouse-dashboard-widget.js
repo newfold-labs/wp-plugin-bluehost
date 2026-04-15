@@ -12,7 +12,5 @@ domReady( () => {
 	if ( ! el ) {
 		return;
 	}
-	createRoot( el ).render(
-		<LighthouseReport isDashboardWidget={ true } />
-	);
+	createRoot( el ).render( <LighthouseReport isDashboardWidget={ true } /> );
 } );

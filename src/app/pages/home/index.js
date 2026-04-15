@@ -4,6 +4,7 @@ import { Container, Page, Title, Button } from '@newfold/ui-component-library';
 import { PartyIcon } from 'App/components/icons';
 import AppStore from '../../data/store';
 import QuickLinks from './quick-links';
+import LighthouseReport from 'App/components/lighthouse-report';
 
 const Home = () => {
 	const { store } = useContext( AppStore );
@@ -116,6 +117,8 @@ const Home = () => {
 			<Container className="nfd-max-w-full nfd-p-8 nfd-shadow-none nfd-rounded-xl nfd-border nfd-border-[#D5D5D5]">
 				<div id="next-steps-portal" />
 			</Container>
+
+			<LighthouseReport />
 
 			<Container className="nfd-max-w-full nfd-p-0 nfd-shadow-none nfd-bg-transparent nfd-border-0 nfd-mt-4">
 				<Title

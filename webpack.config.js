@@ -86,6 +86,10 @@ const webConfig = {
 			process.cwd(),
 			'src/portalRegistry/index.js'
 		), // Shared registry
+		'lighthouse-dashboard-widget': path.resolve(
+			process.cwd(),
+			'src/lighthouse-dashboard-widget.js'
+		),
 	},
 	output: {
 		// versioned output directory i.e. /build/1.0.0, /build/1.1.0, etc.

@@ -1,5 +1,6 @@
 import './app/tailwind.pcss';
 import './app/stylesheet.scss';
+import './lighthouse-dashboard-widget.scss';
 
 import domReady from '@wordpress/dom-ready';
 import { createRoot } from '@wordpress/element';

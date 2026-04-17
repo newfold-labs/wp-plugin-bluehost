@@ -3,11 +3,12 @@
 namespace Bluehost;
 
 /**
- * WPUnit tests for Bluehost dashboard widgets (Account, Help, SitePreview).
+ * WPUnit tests for Bluehost dashboard widgets (Account, Help, SitePreview, Lighthouse Report).
  *
  * @covers \Bluehost\BluehostAccountWidget
  * @covers \Bluehost\BluehostHelpWidget
  * @covers \Bluehost\BluehostSitePreviewWidget
+ * @covers \Bluehost\BluehostLighthouseReportWidget
  */
 class WidgetsWpunitTest extends \lucatume\WPBrowser\TestCase\WPTestCase {
 
@@ -17,6 +18,7 @@ class WidgetsWpunitTest extends \lucatume\WPBrowser\TestCase\WPTestCase {
 		require_once codecept_root_dir( 'inc/widgets/Account.php' );
 		require_once codecept_root_dir( 'inc/widgets/Help.php' );
 		require_once codecept_root_dir( 'inc/widgets/SitePreview.php' );
+		require_once codecept_root_dir( 'inc/widgets/LighthouseReport.php' );
 	}
 
 	public function test_bluehost_account_widget_has_expected_id(): void {
@@ -29,5 +31,9 @@ class WidgetsWpunitTest extends \lucatume\WPBrowser\TestCase\WPTestCase {
 
 	public function test_bluehost_site_preview_widget_has_expected_id(): void {
 		$this->assertSame( 'site_preview_widget', \Bluehost\BluehostSitePreviewWidget::ID );
+	}
+
+	public function test_bluehost_lighthouse_report_widget_has_expected_id(): void {
+		$this->assertSame( 'bluehost_lighthouse_report_widget', \Bluehost\BluehostLighthouseReportWidget::ID );
 	}
 }

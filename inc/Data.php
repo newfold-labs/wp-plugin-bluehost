@@ -126,4 +126,40 @@ final class Data {
 	public static function is_sales_promotions_plugin_active() {
 		return is_plugin_active( 'wp-plugin-sales-promotions/wp-plugin-sales-promotions.php' );
 	}
+
+	/**
+	 * Data for the Lighthouse Report UI (Bluehost app + dashboard widget), mirroring NFD_INSIGHTS_DATA on the Insights screen.
+	 *
+	 * @return array{isRunningScan: bool, isRecurringScansEnabled: bool, adminUrl: string, canScanPerformance: bool}
+	 */
+	public static function insights_home_script_data() {
+		$data = array(
+			'isRunningScan'           => false,
+			'isRecurringScansEnabled' => false,
+			'adminUrl'                => \admin_url(),
+			'canScanPerformance'      => false,
+		);
+
+		if ( class_exists( '\NewfoldLabs\WP\Module\Insights\Repositories\InsightsRepository' ) ) {
+			$repo = new \NewfoldLabs\WP\Module\Insights\Repositories\InsightsRepository();
+			$data['isRunningScan']           = $repo->is_scan_locked();
+			$data['isRecurringScansEnabled'] = $repo->get_recurring_scans_status();
+		}
+
+		global $nfd_module_container;
+		if ( isset( $nfd_module_container ) && is_object( $nfd_module_container ) ) {
+			try {
+				$capabilities = $nfd_module_container->get( 'capabilities' );
+				if ( is_object( $capabilities ) && method_exists( $capabilities, 'all' ) ) {
+					$all = $capabilities->all();
+					if ( isset( $all['canScanPerformance'] ) ) {
+						$data['canScanPerformance'] = (bool) $all['canScanPerformance'];
+					}
+				}
+			} catch ( \Throwable $e ) { // phpcs:ignore Generic.CodeAnalysis.EmptyStatement.DetectedCatch
+			}
+		}
+
+		return $data;
+	}
 }

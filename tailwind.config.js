@@ -11,6 +11,8 @@ module.exports = {
 		'./node_modules/@newfold-labs/wp-module-*/build/index.js', // all github npm sourced module builds
 		'./vendor/newfold-labs/wp-module-*/components/**/*.js', // all composer sourced module components
 		'./vendor/newfold-labs/wp-module-*/src/components/**/*.js', // more composer sourced module components
+		// e.g. wp-module-insights Lighthouse UI lives under src/insights-page/, not src/components/
+		'./vendor/newfold-labs/wp-module-*/src/**/*.js',
 	],
 	theme: {
 		extend: {

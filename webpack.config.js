@@ -2,7 +2,7 @@ const path = require( 'path' );
 const { merge } = require( 'webpack-merge' );
 const wpScriptsConfig = require( '@wordpress/scripts/config/webpack.config' );
 const version = require( './package.json' ).version;
-const { ProvidePlugin, DefinePlugin } = require( 'webpack' );
+const { ProvidePlugin } = require( 'webpack' );
 const TerserPlugin = require( 'terser-webpack-plugin' );
 
 /**
@@ -86,10 +86,6 @@ const webConfig = {
 			process.cwd(),
 			'src/portalRegistry/index.js'
 		), // Shared registry
-		'lighthouse-dashboard-widget': path.resolve(
-			process.cwd(),
-			'src/lighthouse-dashboard-widget.js'
-		),
 	},
 	output: {
 		// versioned output directory i.e. /build/1.0.0, /build/1.1.0, etc.
@@ -97,15 +93,7 @@ const webConfig = {
 		filename: '[name].js',
 	},
 	resolve: { alias },
-	plugins: [
-		new ProvidePlugin( mostCommonImports ),
-		// Lighthouse UI is authored in wp-module-insights; Bluehost bundles it with wp-plugin-bluehost for existing wp_set_script_translations().
-		new DefinePlugin( {
-			'process.env.NFD_INSIGHTS_TEXT_DOMAIN': JSON.stringify(
-				'wp-plugin-bluehost'
-			),
-		} ),
-	],
+	plugins: [ new ProvidePlugin( mostCommonImports ) ],
 	optimization: {
 		concatenateModules: false,
 		minimize: true,

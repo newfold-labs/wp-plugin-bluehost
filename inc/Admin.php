@@ -301,12 +301,6 @@ final class Admin {
 			// Enqueue the necessary Bluehost scripts and styles
 			wp_enqueue_script( 'bluehost-script' );
 			wp_enqueue_style( 'bluehost-style' );
-			include_once BLUEHOST_PLUGIN_DIR . '/inc/Data.php';
-			wp_localize_script(
-				'bluehost-script',
-				'NFD_INSIGHTS_HOME',
-				Data::insights_home_script_data()
-			);
 		}
 
 		// These assets are loaded in all wp-admin

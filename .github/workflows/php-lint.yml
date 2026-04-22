@@ -1,0 +1,22 @@
+
+name: PHP Lint
+
+on:
+  pull_request:
+    types: [ opened, synchronize, reopened, ready_for_review ]
+    paths:
+      - '**.php'
+concurrency:
+  group: ${{ github.workflow }}-${{ github.event_name == 'pull_request' && github.head_ref || github.sha }}
+  cancel-in-progress: true
+
+permissions: {}
+
+jobs:
+  php-lint:
+    name: Lint PHP files
+    permissions:
+      contents: read
+    uses: newfold-labs/workflows/.github/workflows/reusable-php-lint.yml@feature/PRESS0-4271-lint-php-files
+    with:
+      scope: 'all'

@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "028918ce6aab55aa876f7d7045e0730f",
+    "content-hash": "86b4edb2d46a8f8fc4271ff4f93d36cb",
     "packages": [
         {
             "name": "colinmollenhour/credis",
@@ -1397,16 +1397,16 @@
         },
         {
             "name": "newfold-labs/wp-module-ecommerce",
-            "version": "2.3.3",
+            "version": "2.3.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/newfold-labs/wp-module-ecommerce.git",
-                "reference": "3c2c2bd415fbce9d16ddb589455607a2f347035d"
+                "reference": "a53e1531979440771b55cb91c659d79d69281976"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/newfold-labs/wp-module-ecommerce/zipball/3c2c2bd415fbce9d16ddb589455607a2f347035d",
-                "reference": "3c2c2bd415fbce9d16ddb589455607a2f347035d",
+                "url": "https://api.github.com/repos/newfold-labs/wp-module-ecommerce/zipball/a53e1531979440771b55cb91c659d79d69281976",
+                "reference": "a53e1531979440771b55cb91c659d79d69281976",
                 "shasum": ""
             },
             "require": {
@@ -1482,10 +1482,10 @@
             ],
             "description": "Brand Agnostic eCommerce Experience",
             "support": {
-                "source": "https://github.com/newfold-labs/wp-module-ecommerce/tree/2.3.3",
+                "source": "https://github.com/newfold-labs/wp-module-ecommerce/tree/2.3.4",
                 "issues": "https://github.com/newfold-labs/wp-module-ecommerce/issues"
             },
-            "time": "2026-03-27T21:55:10+00:00"
+            "time": "2026-04-22T21:51:37+00:00"
         },
         {
             "name": "newfold-labs/wp-module-editor-chat",

@@ -4,7 +4,7 @@ msgstr ""
 "Project-Id-Version: wp-plugin-bluehost\n"
 "Report-Msgid-Bugs-To: https://github.com/newfold-labs/wp-plugin-bluehost\n"
 "POT-Creation-Date: 2025-02-25T20:53:21+00:00\n"
-"PO-Revision-Date: 2026-04-17T22:03:17+00:00\n"
+"PO-Revision-Date: 2026-04-23T12:39:52+00:00\n"
 "Last-Translator: \n"
 "Language-Team: English\n"
 "Language: en_AU\n"
@@ -29,16 +29,16 @@ msgstr "\"%1$s\" has been deactivated. It is incompatible with \"%2$s\"."
 msgid "\"%1$s\" has self-deactivated. It is incompatible with \"%2$s\"."
 msgstr "\"%1$s\" has self-deactivated. It is incompatible with \"%2$s\"."
 
-#. translators: %1$s is the logo SVG, %2$s wraps the text, %3$s is the link start for Bluehost WordPress Hosting, %4$s is the closing anchor tag, %5$s wraps the text again, %6$s contains backlinks
+#. translators: %1$s is the logo SVG, %2$s wraps the text, %3$s is the link start for Powered by Bluehost, %4$s is the closing anchor tag, %5$s wraps the text again, %6$s contains backlinks
 #: bootstrap.php:134
 #, php-format
 msgid ""
 "%1$s\n"
-"\t\t\t\t\t%2$sA %3$sReliable WordPress Hosting by Bluehost%4$s powered website.%5$s\n"
+"\t\t\t\t\t%2$s%3$sPowered by Bluehost%4$s%5$s\n"
 "                    %6$s"
 msgstr ""
 "%1$s\n"
-"\t\t\t\t\t%2$sA %3$sReliable WordPress Hosting by Bluehost%4$s powered website.%5$s\n"
+"\t\t\t\t\t%2$s%3$sPowered by Bluehost%4$s%5$s\n"
 "                    %6$s"
 
 #. translators: 1: plugin name 2: minimum required PHP version, current PHP version

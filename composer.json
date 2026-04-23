@@ -23,6 +23,9 @@
       "dealerdirect/phpcodesniffer-composer-installer": true,
       "johnpbloch/wordpress-core-installer": true
     },
+    "audit": {
+      "ignore": ["PKSA-y2cr-5h3j-g3ys"]
+    },
     "preferred-install": {
       "newfold-labs/*": "source",
       "*": "dist"
@@ -169,7 +172,7 @@
     "newfold-labs/wp-module-link-tracker": "^1.1.5",
     "newfold-labs/wp-module-loader": "^1.1.0",
     "newfold-labs/wp-module-marketplace": "^3.2.2",
-    "newfold-labs/wp-module-mcp": "^1.6.0",
+    "newfold-labs/wp-module-mcp": "^1.6.1",
     "newfold-labs/wp-module-migration": "^1.7.1",
     "newfold-labs/wp-module-next-steps": "^1.5.2",
     "newfold-labs/wp-module-notifications": "^1.8.2",

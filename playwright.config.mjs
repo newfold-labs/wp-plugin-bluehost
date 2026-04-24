@@ -7,6 +7,7 @@ import { existsSync, readFileSync } from 'fs';
 import { fileURLToPath } from 'url';
 import { dirname, resolve } from 'path';
 import { writeProjectsFile } from './.github/scripts/generate-playwright-projects.mjs';
+import { applyPlaywrightModuleOverrides } from './.github/scripts/apply-playwright-module-overrides.mjs';
 
 // ES module equivalent of __dirname
 const __filename = fileURLToPath(import.meta.url);
@@ -39,6 +40,9 @@ const projectsFile = './tests/playwright/playwright-projects.json';
 if (!existsSync(projectsFile)) {
   writeProjectsFile();
 }
+
+// Copy tests/playwright/module-overrides/wp-module-foo/*.spec.{mjs,js} into that module’s tests/playwright/specs. see tests/playwright/module-overrides/readme.md
+applyPlaywrightModuleOverrides(__dirname);
 
 // Load projects from generated file
 let projects = JSON.parse(readFileSync(projectsFile, 'utf8'));

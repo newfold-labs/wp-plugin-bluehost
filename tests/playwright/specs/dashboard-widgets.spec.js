@@ -95,11 +95,9 @@ test.describe('Dashboard Widgets', () => {
     await expect(enableComingSoonButton).toBeVisible();
     await expect(enableComingSoonButton).toContainText('Enable Coming Soon');
     await expect(enableComingSoonButton).toHaveAttribute('href', '#');
-    // Click the button and wait for the API call to complete
-    enableComingSoonButton.click();
-
-    // Wait for the UI to update
-    // await page.waitForTimeout(1000);
+    // Click triggers NewfoldRuntime + full page reload (see site-preview.php)
+    await enableComingSoonButton.click();
+    await page.waitForLoadState( 'load' );
 
     // Coming Soon Enabled - wait for preview link to appear
     const previewLink = page.locator('a[data-test-id="nfd-preview-site"]');
@@ -123,11 +121,8 @@ test.describe('Dashboard Widgets', () => {
     await expect(disableComingSoonButton).toContainText('Launch Site');
     await expect(disableComingSoonButton).toHaveAttribute('href', '#');
     
-    // Click the button and wait for the API call to complete
-    disableComingSoonButton.click();
-    
-    // Wait for the UI to update
-    // await page.waitForTimeout(1000);
+    await disableComingSoonButton.click();
+    await page.waitForLoadState( 'load' );
 
     // Coming Soon Disabled
     viewSiteLink.scrollIntoViewIfNeeded();

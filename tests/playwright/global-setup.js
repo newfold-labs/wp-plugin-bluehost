@@ -1,4 +1,4 @@
-import { execSync } from 'child_process';
+import { execFileSync, execSync } from 'child_process';
 import { dirname, join } from 'path';
 import utils from './helpers/utils.mjs';
 import wordpress from './helpers/wordpress.mjs';
@@ -9,7 +9,8 @@ function runApplyPlaywrightModuleOverrides(config) {
       ? dirname(config.configFile)
       : (config.rootDir || process.cwd());
   const script = join(pluginRoot, '.github/scripts/apply-playwright-module-overrides.mjs');
-  execSync('node ' + JSON.stringify(script), { cwd: pluginRoot, stdio: 'inherit' });
+  // No shell: argv only, so path characters are not interpreted by a shell
+  execFileSync(process.execPath, [script], { cwd: pluginRoot, stdio: 'inherit' });
 }
 
 async function globalSetup(config) {

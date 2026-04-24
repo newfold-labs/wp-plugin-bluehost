@@ -31,19 +31,26 @@ test.describe('Settings Page', () => {
     await utils.scrollIntoView(updatesSection);
     await expect(updatesSection).toBeVisible();
 
-    // On load update all is checked, which forces other updates to check and disabled state
     const allToggle = page.locator('[data-id="autoupdate-all-toggle"]');
-    await expect(allToggle).toHaveAttribute('aria-checked', 'true');
-
     const coreToggle = page.locator('[data-id="autoupdate-core-toggle"]');
+    const pluginsToggle = page.locator('[data-id="autoupdate-plugins-toggle"]');
+    const themesToggle = page.locator('[data-id="autoupdate-themes-toggle"]');
+
+    // `AUTOMATIC_UPDATER_DISABLED: true` in .wp-env.json
+    // Production sites do not have this setting and will have updates enabled by default
+    // This test is for the local environment where updates are disabled and the test enables them
+    await expect(allToggle).toHaveAttribute('aria-checked', 'false');
+    await expect(coreToggle).not.toBeDisabled();
+    await allToggle.click();
+    await page.waitForTimeout(100);
+    await utils.waitForNotification(page, 'Enabled All auto-updates');
+
+    // “Update all” is on, which syncs the three child toggles on and locks them
+    await expect(allToggle).toHaveAttribute('aria-checked', 'true');
     await expect(coreToggle).toBeDisabled();
     await expect(coreToggle).toHaveAttribute('aria-checked', 'true');
-
-    const pluginsToggle = page.locator('[data-id="autoupdate-plugins-toggle"]');
     await expect(pluginsToggle).toBeDisabled();
     await expect(pluginsToggle).toHaveAttribute('aria-checked', 'true');
-
-    const themesToggle = page.locator('[data-id="autoupdate-themes-toggle"]');
     await expect(themesToggle).toBeDisabled();
     await expect(themesToggle).toHaveAttribute('aria-checked', 'true');
 
@@ -122,6 +129,16 @@ test.describe('Settings Page', () => {
     await expect(pluginsToggle).toHaveAttribute('aria-checked', 'true');
     await expect(themesToggle).toBeDisabled();
     await expect(themesToggle).toHaveAttribute('aria-checked', 'true');
+
+    // Disable All to return to initial state
+    await allToggle.click();
+    await expect(allToggle).toHaveAttribute('aria-checked', 'false');
+    await coreToggle.click();
+    await expect(coreToggle).toHaveAttribute('aria-checked', 'false');
+    await pluginsToggle.click();
+    await expect(pluginsToggle).toHaveAttribute('aria-checked', 'false');
+    await themesToggle.click();
+    await expect(themesToggle).toHaveAttribute('aria-checked', 'false');
   });
 
   test('Content Settings Work', async ({ page }) => {

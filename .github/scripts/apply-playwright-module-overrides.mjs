@@ -105,7 +105,7 @@ export function applyPlaywrightModuleOverrides(pluginRoot = process.cwd()) {
   }
   if (applied > 0) {
     console.warn(
-      `⚠️ [playwright module-overrides] ${applied} file(s) applied. Don't forget to update the module repo and remove overrides when done; do not release with long-lived overrides.`
+      `⚠️ [playwright module-overrides] ${applied} file(s) applied. Don't forget to update the module repo and remove overrides when done; do not release with test overrides in place.`
     );
   }
 }

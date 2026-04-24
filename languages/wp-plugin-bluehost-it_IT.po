@@ -2,6 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: wp-plugin-bluehost\n"
 "Report-Msgid-Bugs-To: https://github.com/newfold-labs/wp-plugin-bluehost\n"
+"POT-Creation-Date: 2025-02-25T20:53:21+00:00\n"
+"PO-Revision-Date: 2026-04-23T12:39:52+00:00\n"
 "Last-Translator: \n"
 "Language-Team: Italian\n"
 "MIME-Version: 1.0\n"
@@ -34,12 +36,17 @@ msgstr "https://bluehost.com"
 msgid "WordPress plugin that integrates a WordPress site with the Bluehost control panel, including performance, security, and update features."
 msgstr "Plugin WordPress che integra un sito WordPress con il pannello di controllo Bluehost, tra cui prestazioni, sicurezza e funzionalità di aggiornamento."
 
-#. Author of the plugin
-#: bluehost-wordpress-plugin.php:19
-#: inc/Admin.php:183
-#: inc/Admin.php:184
-msgid "Bluehost"
-msgstr "Bluehost"
+#. translators: %1$s is the logo SVG, %2$s wraps the text, %3$s is the link start for Powered by Bluehost, %4$s is the closing anchor tag, %5$s wraps the text again, %6$s contains backlinks
+#: bootstrap.php:134
+#, php-format
+msgid ""
+"%1$s\n"
+"\t\t\t\t\t%2$s%3$sPowered by Bluehost%4$s%5$s\n"
+"                    %6$s"
+msgstr ""
+"%1$s\n"
+"\t\t\t\t\t%2$s%3$sPowered by Bluehost%4$s%5$s\n"
+"                    %6$s"
 
 #: bootstrap.php:30
 msgid "Please install the Bluehost Plugin dependencies."

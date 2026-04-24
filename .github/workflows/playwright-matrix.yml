@@ -176,14 +176,18 @@ jobs:
         run: npx playwright install --with-deps chromium
 
       - name: Run Playwright Tests
-        run: |
-          {
-            echo "## Playwright — WordPress ${{ matrix.wpVersion }} · PHP ${{ matrix.phpVersion }}"
-            echo ""
-          } >> "$GITHUB_STEP_SUMMARY"
-          npx playwright test --reporter=line,github
+        run: npx playwright test --reporter=line,json,github
         env:
           CI: true
+          PLAYWRIGHT_JSON_OUTPUT_FILE: tests/playwright/test-results/github-summary-source.json
+
+      - name: Add Playwright results to job summary
+        if: always()
+        env:
+          MATRIX_WP: ${{ matrix.wpVersion }}
+          MATRIX_PHP: ${{ matrix.phpVersion }}
+          PLAYWRIGHT_JSON_OUTPUT_FILE: tests/playwright/test-results/github-summary-source.json
+        run: node .github/scripts/playwright-job-summary.mjs
 
       - name: Store Playwright test results
         if: always()

@@ -11,9 +11,6 @@
   "plugins": [
     "."
   ],
-  "mappings": {
-    "wp-content/plugins/wpforms-lite": "https://downloads.wordpress.org/plugin/wpforms-lite.latest-stable.zip"
-  },
   "themes": [
     "https://downloads.wordpress.org/theme/yith-wonder.latest-stable.zip"
   ],

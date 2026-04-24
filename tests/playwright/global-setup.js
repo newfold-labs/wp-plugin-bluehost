@@ -1,5 +1,6 @@
 import { execSync } from 'child_process';
 import utils from './helpers/utils.mjs';
+import wordpress from './helpers/wordpress.mjs';
 
 async function globalSetup(config) {
   utils.fancyLog('Running global setup...', 55, 'gray', '');
@@ -20,7 +21,21 @@ async function globalSetup(config) {
       stdio: 'inherit',
       encoding: 'utf-8',
     });
-    
+
+    // remove extra plugins for faster cleaner tests
+    var extraPlugins = [
+      'google-analytics-for-wordpress/googleanalytics.php',
+      'jetpack/jetpack.php',
+      'optinmonster/optin-monster-wp-api.php',
+      'wpforms-lite/wpforms.php',
+      'wordpress-seo/wp-seo.php',
+    ];
+    for (const plugin of extraPlugins) {
+      wordpress.wpCli(`plugin delete ${plugin}`, {
+        failOnNonZeroExit: false,
+      });
+    }
+
     utils.fancyLog('✔ Global setup completed successfully', 55, 'green', '');
   } catch (error) {
     utils.fancyLog(`✘ Global setup failed: ${error.message}`, 55, 'red', '');

@@ -4,6 +4,7 @@
  */
 import { readFile, appendFile } from 'node:fs/promises';
 import { existsSync } from 'node:fs';
+import { stripVTControlCharacters } from 'node:util';
 
 const jsonPath = process.env.PLAYWRIGHT_JSON_OUTPUT_FILE
   || 'tests/playwright/test-results/github-summary-source.json';
@@ -16,6 +17,42 @@ const md = (s) => String(s ?? '')
 const wp = process.env.MATRIX_WP || '—';
 const php = process.env.MATRIX_PHP || '—';
 
+/**
+ * @param {string} phpV
+ * @param {string} wpV
+ * @param {number} failureCount
+ */
+function matrixSummaryHeading(phpV, wpV, failureCount) {
+  const n = Math.max(0, Math.floor(Number(failureCount) || 0));
+  const failText = n === 0 ? '0 Tests Failed' : n === 1 ? '1 Test Failed' : `${n} Tests Failed`;
+  return `## Playwright Test Matrix (${phpV}, ${wpV}) summary: ${failText}`;
+}
+
+/**
+ * @param {number} ms
+ */
+function formatTotalDuration(ms) {
+  if (!Number.isFinite(ms) || ms < 0) ms = 0;
+  const tSec = ms / 1000;
+  const minutes = Math.floor(tSec / 60);
+  const remSec = tSec - minutes * 60;
+  return `*Total duration: ${tSec.toFixed(1)}s (${minutes} min ${remSec.toFixed(1)} s)*`;
+}
+
+/**
+ * Plain text for the job summary: strip TTY/ANSI and orphaned SGR fragments
+ * (Playwright / expect often embed dim/color codes in `error.message`).
+ * @param {string} s
+ */
+function cleanErrorText(s) {
+  if (s == null) return '';
+  let t = stripVTControlCharacters(String(s));
+  t = t.replace(/\uFFFD/g, '');
+  // If ESC was lost in transit, SGR can remain as e.g. "[2m" (orphaned CSI "m" sequences)
+  t = t.replace(/\[[\d;]+m/g, '');
+  return t.replace(/\s+/g, ' ').trim();
+}
+
 if (!summaryFile) {
   console.warn('playwright-job-summary: GITHUB_STEP_SUMMARY is not set; skipping.');
   process.exit(0);
@@ -25,7 +62,7 @@ if (!existsSync(jsonPath)) {
   await appendFile(
     summaryFile,
     [
-      `## Playwright — WordPress ${wp} · PHP ${php}`,
+      matrixSummaryHeading(php, wp, 0),
       '',
       '*No JSON report was written (the test run may have been interrupted or failed before reporting).*',
       '',
@@ -41,7 +78,12 @@ try {
 } catch (e) {
   await appendFile(
     summaryFile,
-    `## Playwright report parse error\n\n\`${md(e instanceof Error ? e.message : e)}\``,
+    [
+      `## Playwright Test Matrix (${php}, ${wp}) summary: report parse error`,
+      '',
+      `\`${md(e instanceof Error ? e.message : e)}\``,
+      '',
+    ].join('\n'),
     'utf8',
   );
   process.exit(0);
@@ -49,12 +91,11 @@ try {
 
 const { stats, suites = [] } = report;
 const d = (stats && stats.duration) || 0;
-const durationS = d >= 1000 ? `${(d / 1000).toFixed(1)} s` : `${d} ms`;
 const s = stats || { expected: 0, unexpected: 0, skipped: 0, flaky: 0 };
 const { expected, unexpected, skipped, flaky } = s;
 
 const lines = [];
-lines.push(`## Playwright — WordPress ${wp} · PHP ${php}`);
+lines.push(matrixSummaryHeading(php, wp, unexpected));
 lines.push('');
 lines.push('| Outcome   | Count |');
 lines.push('|----------|------:|');
@@ -63,7 +104,7 @@ lines.push(`| Failed   | ${unexpected} |`);
 lines.push(`| Flaky    | ${flaky} |`);
 lines.push(`| Skipped  | ${skipped} |`);
 lines.push('');
-lines.push(`*Duration (wall clock): ${durationS}*`);
+lines.push(formatTotalDuration(d));
 lines.push('');
 
 /** @typedef {{ file?: string, line?: number, title?: string, tests?: any[], specs?: any[], suites?: any[] }} SuiteLike */
@@ -87,13 +128,14 @@ function walkSuite(suite, pathTitles, out) {
       const err =
         (errObj && (errObj.message || (typeof errObj === 'string' ? errObj : JSON.stringify(errObj)))) || '';
       const name = [...next, spec.title || ''].filter(Boolean).join(' › ') || (spec.title || 'unnamed');
+      const firstLine = (err && String(err).split('\n')[0]) || '';
       out.push({
         name,
         file,
         line: typeof line === 'number' ? line : 0,
         projectName,
         status,
-        error: (err && String(err).split('\n')[0]) || '',
+        error: cleanErrorText(firstLine),
       });
     }
   }

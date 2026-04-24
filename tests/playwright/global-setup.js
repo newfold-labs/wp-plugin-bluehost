@@ -1,18 +1,20 @@
 import { execSync } from 'child_process';
-import { dirname, resolve } from 'path';
-import { fileURLToPath } from 'url';
-import { applyPlaywrightModuleOverrides } from '../../.github/scripts/apply-playwright-module-overrides.mjs';
+import { dirname, join } from 'path';
 import utils from './helpers/utils.mjs';
 import wordpress from './helpers/wordpress.mjs';
 
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = dirname(__filename);
-const pluginRoot = resolve(__dirname, '../..');
+function runApplyPlaywrightModuleOverrides(config) {
+  const pluginRoot =
+    config.configFile && config.configFile.length > 0
+      ? dirname(config.configFile)
+      : (config.rootDir || process.cwd());
+  const script = join(pluginRoot, '.github/scripts/apply-playwright-module-overrides.mjs');
+  execSync('node ' + JSON.stringify(script), { cwd: pluginRoot, stdio: 'inherit' });
+}
 
 async function globalSetup(config) {
-
-  // Apply module spec overrides
-  applyPlaywrightModuleOverrides(pluginRoot);
+  // Apply module spec overrides (separate process; see runApplyPlaywrightModuleOverrides)
+  runApplyPlaywrightModuleOverrides(config);
 
   utils.fancyLog('Running global setup...', 55, 'gray', '');
   

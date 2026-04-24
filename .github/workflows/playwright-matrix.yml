@@ -176,7 +176,12 @@ jobs:
         run: npx playwright install --with-deps chromium
 
       - name: Run Playwright Tests
-        run: npx playwright test --reporter=line
+        run: |
+          {
+            echo "## Playwright — WordPress ${{ matrix.wpVersion }} · PHP ${{ matrix.phpVersion }}"
+            echo ""
+          } >> "$GITHUB_STEP_SUMMARY"
+          npx playwright test --reporter=line,github
         env:
           CI: true
 

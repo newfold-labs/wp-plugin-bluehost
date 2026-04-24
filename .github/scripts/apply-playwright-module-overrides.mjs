@@ -52,7 +52,7 @@ function getModuleNameFromOverrideDir(dirName) {
 /**
  * Copy plugin test overrides into the installed module tree so imports (e.g. ../helpers) stay valid.
  * See tests/playwright/module-overrides/readme.md
- * @param {string} [pluginRoot] - use __dirname for correct paths when the config is loaded; defaults to process.cwd() when run as a CLI
+ * @param {string} [pluginRoot] - plugin root (from global-setup: tests/playwright → ../..); defaults to process.cwd() when run as a CLI
  */
 export function applyPlaywrightModuleOverrides(pluginRoot = process.cwd()) {
   const overridesBase = join(pluginRoot, OVERRIDES_SUBDIR);
@@ -76,7 +76,7 @@ export function applyPlaywrightModuleOverrides(pluginRoot = process.cwd()) {
     const targetRoot = getModuleTargetRoot(pluginRoot, moduleName, localByName);
     if (!existsSync(targetRoot)) {
       console.warn(
-        `[playwright module-overrides] Skipping ${ent.name} (${moduleName}): not installed (expected at ${targetRoot})`
+        `⚠️ [playwright module-overrides] Skipping ${ent.name} (${moduleName}): not installed (expected at ${targetRoot})`
       );
       continue;
     }
@@ -98,14 +98,14 @@ export function applyPlaywrightModuleOverrides(pluginRoot = process.cwd()) {
       }
       copyFileSync(src, dest);
       console.warn(
-        `[module playwright test spec overridden] ${ent.name}: ${relInSpecs} -> ${dest}`
+        `⚠️ [playwright module-overrides] module playwright test spec overridden: ${ent.name}: ${relInSpecs}`
       );
       applied += 1;
     }
   }
   if (applied > 0) {
     console.warn(
-      `[playwright module-overrides] ${applied} file(s) applied. Revert in the module repo and remove overrides when done; do not release with long-lived overrides.`
+      `⚠️ [playwright module-overrides] ${applied} file(s) applied. Don't forget to update the module repo and remove overrides when done; do not release with long-lived overrides.`
     );
   }
 }

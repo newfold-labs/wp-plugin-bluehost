@@ -1,10 +1,10 @@
 # Module test overrides
 
-Each Newfold `wp-module-*` package has its own repo and Playwright tests. A failure sometimes only shows up in a full plugin build. This directory is for **short-lived iteration** on a module spec: you edit a copy here, and the plugin copies it over the installed module’s `tests/playwright/specs` tree on each Playwright run, so you do not have to publish the module just to try a spec fix.
+Each Newfold `wp-module-*` package has its own repo and Playwright tests. A failure sometimes only shows up in a full plugin build. This directory is for **short-lived iteration** on a module spec: you edit a copy here, and the plugin copies it over the installed module’s `tests/playwright/specs` **at the start of each** `npx playwright test` run, so you do not have to publish the module just to try a quick test fix.
 
 ## How it works
 
-- **When:** Overrides are applied when [playwright.config.mjs](../../../playwright.config.mjs) loads (e.g. every `npm run test:playwright` / `npx playwright test`).
+- **When:** Once per `playwright test` run, in [global-setup.js](../global-setup.js) (before the rest of global setup). Running `node .github/scripts/apply-playwright-module-overrides.mjs` from the plugin root is still a single manual copy (see below).
 - **Implementation:** [.github/scripts/apply-playwright-module-overrides.mjs](../../../.github/scripts/apply-playwright-module-overrides.mjs) copies `*.spec.mjs` / `*.spec.js` into the target module. Specs stay under that module’s tree so **relative imports** (e.g. `import … from '../helpers'`) still resolve the same as in the package.
 - **Where files land:** For `vendor/…/wp-module-foo`, the destination is `vendor/newfold-labs/wp-module-foo/tests/playwright/specs/…`. If the same module is present via **`composer.local.json`** (path repository), the **local checkout wins** and receives the copy (same rules as the Playwright project generator). If the target module is not installed, the folder is skipped and a message is printed.
 
@@ -33,7 +33,7 @@ From the **plugin root**:
 node .github/scripts/apply-playwright-module-overrides.mjs
 ```
 
-Uses the current working directory as the plugin root. To match config loading, run from the plugin root.
+Uses the current working directory as the plugin root. Use the same directory you use when running Playwright.
 
 ## Scope and risk
 

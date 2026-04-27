@@ -33,9 +33,9 @@ test.describe( 'ECommerce Module', () => {
 	 */
 	test.describe( 'No Store - Store Info', () => {
 		test( 'Store info section does not display', async ( { page } ) => {
-			// check if woocommerce is installed
-			if (await isWooCommerceInstalled()) {
-				test.skip('WooCommerce is installed, cannot run non-ecommerce tests.');
+			// check if woocommerce is active
+			if (await isWooCommerceActive()) {
+				test.skip('WooCommerce is still active, cannot run non-ecommerce tests.');
 			}
 
 			const homeHeader = page.locator( '.wppbh-home .nfd-home__title-section' );

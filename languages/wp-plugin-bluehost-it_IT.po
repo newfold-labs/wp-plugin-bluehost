@@ -2,15 +2,13 @@ msgid ""
 msgstr ""
 "Project-Id-Version: wp-plugin-bluehost\n"
 "Report-Msgid-Bugs-To: https://github.com/newfold-labs/wp-plugin-bluehost\n"
-"POT-Creation-Date: 2025-02-25T20:53:21+00:00\n"
-"PO-Revision-Date: 2026-04-23T12:39:52+00:00\n"
 "Last-Translator: \n"
 "Language-Team: Italian\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "POT-Creation-Date: 2025-02-25T20:53:21+00:00\n"
-"PO-Revision-Date: 2026-04-22T18:32:51+00:00\n"
+"PO-Revision-Date: 2026-04-27T08:16:54+00:00\n"
 "Language: it_IT\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Crowdin-File: wp-plugin-bluehost.pot\n"
@@ -36,17 +34,12 @@ msgstr "https://bluehost.com"
 msgid "WordPress plugin that integrates a WordPress site with the Bluehost control panel, including performance, security, and update features."
 msgstr "Plugin WordPress che integra un sito WordPress con il pannello di controllo Bluehost, tra cui prestazioni, sicurezza e funzionalità di aggiornamento."
 
-#. translators: %1$s is the logo SVG, %2$s wraps the text, %3$s is the link start for Powered by Bluehost, %4$s is the closing anchor tag, %5$s wraps the text again, %6$s contains backlinks
-#: bootstrap.php:134
-#, php-format
-msgid ""
-"%1$s\n"
-"\t\t\t\t\t%2$s%3$sPowered by Bluehost%4$s%5$s\n"
-"                    %6$s"
+#. Author of the plugin
+#: bluehost-wordpress-plugin.php:19
+#: inc/Admin.php:183
+#: inc/Admin.php:184
+msgid "Bluehost"
 msgstr ""
-"%1$s\n"
-"\t\t\t\t\t%2$s%3$sPowered by Bluehost%4$s%5$s\n"
-"                    %6$s"
 
 #: bootstrap.php:30
 msgid "Please install the Bluehost Plugin dependencies."
@@ -76,16 +69,16 @@ msgstr ""
 "\t\t\t\t\t\t      %9$sHosting dedicato%10$s. \n"
 "\t\t\t\t\t      %11$s"
 
-#. translators: %1$s is the logo SVG, %2$s wraps the text, %3$s is the link start for Bluehost WordPress Hosting, %4$s is the closing anchor tag, %5$s wraps the text again, %6$s contains backlinks
+#. translators: %1$s is the logo SVG, %2$s wraps the text, %3$s is the link start for Powered by Bluehost, %4$s is the closing anchor tag, %5$s wraps the text again, %6$s contains backlinks
 #: bootstrap.php:134
 #, php-format
 msgid ""
 "%1$s\n"
-"\t\t\t\t\t%2$sA %3$sReliable WordPress Hosting by Bluehost%4$s powered website.%5$s\n"
+"\t\t\t\t\t%2$s%3$sPowered by Bluehost%4$s%5$s\n"
 "                    %6$s"
 msgstr ""
 "%1$s\n"
-"\t\t\t\t\t%2$sA %3$sHosting WordPress affidabile dal sito web alimentato da Bluehost%4$s.%5$s\n"
+"\t\t\t\t\t%2$s%3$sPowered by Bluehost%4$s%5$s\n"
 "                    %6$s"
 
 #. translators: %s: Blog name
@@ -168,6 +161,10 @@ msgstr "Considera di abilitare gli aggiornamenti automatici per rimanere aggiorn
 #: inc/AppWhenOutdated.php:66
 msgid "Update Now"
 msgstr "Aggiorna Ora"
+
+#: inc/Filters.php:64
+msgid "Login with Bluehost"
+msgstr "Accedi con Bluehost"
 
 #. translators: 1: plugin name 2: incompatible plugin name
 #: inc/plugin-nfd-compat-check.php:161
@@ -486,15 +483,13 @@ msgstr "Scopri funzionalità esclusive, progettate per offrire un valore senza p
 
 #: build/4.16.0/index.js:1
 msgid "We are available 24/7 to help answer questions and solve your problems."
-msgstr ""
-"\n"
-"develop"
+msgstr "Siamo disponibili 24 ore su 24, 7 giorni su 7, per rispondere alle domande e risolvere i tuoi problemi."
 
 #. translators: 1: site kind (e.g. “store” or “website”), 2: status (“live” or “ready”).
 #: build/4.16.0/index.js:2
 #, js-format
 msgid "Congrats, your %1$s is %2$s!"
-msgstr "Congratulazioni, il tuo %1$ è %2$s!"
+msgstr "Congratulazioni, il tuo %1$s è %2$s!"
 
 #: build/4.16.0/index.js:2
 msgid "store"

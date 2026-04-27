@@ -4,7 +4,7 @@ import {
 	auth,
 	navigateToHomePage,
 	uninstallWooCommerce,
-	isWooCommerceInstalled,
+	isWooCommerceActive,
 } from '../helpers/index.mjs';
 
 test.describe( 'ECommerce Module', () => {

@@ -40,8 +40,8 @@ final class Filters {
 	}
 
 	/**
-	 * @param array $data
-	 * @return array
+	 * @param mixed $data Portal payload (array) or other value returned unchanged.
+	 * @return mixed
 	 */
 	public static function filter_coming_soon_portal_data( $data ) {
 		if ( ! \is_array( $data ) || ! self::is_wvc_theme_active() ) {

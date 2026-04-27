@@ -13,7 +13,6 @@
 async function scrollIntoView(locator, options = {}) {
   await locator.scrollIntoViewIfNeeded();
   await locator.waitFor({ state: 'visible', timeout: 5000 });
-  await locator.waitFor({ state: 'attached', timeout: 100 }); // Wait for stability
 }
 
 /**

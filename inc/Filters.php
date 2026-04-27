@@ -40,6 +40,8 @@ final class Filters {
 	}
 
 	/**
+	 * Override Coming Soon portal "Edit" URL to the 10Web editor when WVC theme is active.
+	 *
 	 * @param mixed $data Portal payload (array) or other value returned unchanged.
 	 * @return mixed
 	 */
@@ -75,6 +77,8 @@ final class Filters {
 	}
 
 	/**
+	 * Whether the active or parent theme directory is the 10Web WVC theme.
+	 *
 	 * @return bool
 	 */
 	private static function is_wvc_theme_active() {

@@ -5,12 +5,11 @@ return [
 	'language' => 'en_AU',
 	'project-id-version' => 'wp-plugin-bluehost',
 	'pot-creation-date' => '2025-02-25T20:53:21+00:00',
-	'po-revision-date' => '2026-04-22T18:32:51+00:00',
+	'po-revision-date' => '2026-04-27T08:16:54+00:00',
 	'messages' => [
 		'The Bluehost Plugin' => 'The Bluehost Plugin',
 		'https://bluehost.com' => 'https://bluehost.com',
 		'WordPress plugin that integrates a WordPress site with the Bluehost control panel, including performance, security, and update features.' => 'WordPress plugin that integrates a WordPress site with the Bluehost control panel, including performance, security, and update features.',
-		'Bluehost' => 'Bluehost',
 		'Please install the Bluehost Plugin dependencies.' => 'Please install the Bluehost Plugin dependencies.',
 		'%1$sNeed a domain?%2$sCheck out our %3$sDomain Registration%4$s options.%5$s' => '%1$sNeed a domain?%2$sCheck out our %3$sDomain Registration%4$s options.%5$s',
 		'%1$sDiscover our hosting solutions:%2$s
@@ -25,9 +24,9 @@ return [
 						      %9$sDedicated Hosting%10$s. 
 					      %11$s',
 		'%1$s
-					%2$sA %3$sReliable WordPress Hosting by Bluehost%4$s powered website.%5$s
+					%2$s%3$sPowered by Bluehost%4$s%5$s
                     %6$s' => '%1$s
-					%2$sA %3$sReliable WordPress Hosting by Bluehost%4$s powered website.%5$s
+					%2$s%3$sPowered by Bluehost%4$s%5$s
                     %6$s',
 		'%s &mdash; Coming Soon' => '%s &mdash; Coming Soon',
 		'Coming Soon Active' => 'Coming Soon Active',
@@ -47,6 +46,7 @@ return [
 		'Minimum required WordPress version:' => 'Minimum required WordPress version:',
 		'Consider enabling auto-updates to stay up to date.' => 'Consider enabling auto-updates to stay up to date.',
 		'Update Now' => 'Update Now',
+		'Login with Bluehost' => 'Login with Bluehost',
 		'"%1$s" has self-deactivated. It is incompatible with "%2$s".' => '"%1$s" has self-deactivated. It is incompatible with "%2$s".',
 		'"%1$s" has been deactivated. It is incompatible with "%2$s".' => '"%1$s" has been deactivated. It is incompatible with "%2$s".',
 		'%1$s requires PHP version %2$s or later. You are currently running version %3$s.' => '%1$s requires PHP version %2$s or later. You are currently running version %3$s.',

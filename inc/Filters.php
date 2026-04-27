@@ -8,6 +8,7 @@
 namespace Bluehost;
 
 use function NewfoldLabs\WP\ModuleLoader\container;
+use function NewfoldLabs\WP\Module\LinkTracker\Functions\build_link as buildLink;
 
 /**
  * Class Filters
@@ -21,6 +22,7 @@ final class Filters {
 	 */
 	public static function init() {
 		\add_filter( 'http_request_args', array( __CLASS__, 'add_hiive_headers' ), 99, 2 );
+		\add_filter( 'newfold/sso/hosting_login', array( __CLASS__, 'configure_hosting_login' ) );
 	}
 
 	/**
@@ -42,5 +44,27 @@ final class Filters {
 		}
 
 		return $args;
+	}
+
+	/**
+	 * Recovery affordance for users sent to wp-login.php after a temp →
+	 * permanent domain switch logs them out — points them at the Bluehost
+	 * portal so they can SSO back in.
+	 *
+	 * @param array $config Default config from wp-module-sso.
+	 *
+	 * @return array
+	 */
+	public static function configure_hosting_login( $config ) {
+		$config['enabled']  = true;
+		$config['url']      = buildLink(
+			'https://www.bluehost.com/my-account/hosting/details/sites',
+			array( 'source' => 'hosting_login_button' )
+		);
+		$config['label']    = __( 'Login with Bluehost', 'wp-plugin-bluehost' );
+		$config['accent_color'] = Brand::BUTTON_BACKGROUND;
+		$config['icon_svg'] = Helpers::get_svg( 'bluehost-grid-mark' );
+
+		return $config;
 	}
 }

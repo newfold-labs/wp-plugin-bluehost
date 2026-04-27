@@ -4,6 +4,7 @@ import {
 	auth,
 	navigateToHomePage,
 	uninstallWooCommerce,
+	isWooCommerceInstalled,
 } from '../helpers/index.mjs';
 
 test.describe( 'ECommerce Module', () => {
@@ -32,6 +33,11 @@ test.describe( 'ECommerce Module', () => {
 	 */
 	test.describe( 'No Store - Store Info', () => {
 		test( 'Store info section does not display', async ( { page } ) => {
+			// check if woocommerce is installed
+			if (await isWooCommerceInstalled()) {
+				test.skip('WooCommerce is installed, cannot run non-ecommerce tests.');
+			}
+
 			const homeHeader = page.locator( '.wppbh-home .nfd-home__title-section' );
 			const storeInfoCta = homeHeader.locator(
 				'.nfd-button[data-store-info-trigger="true"]'
@@ -53,6 +59,11 @@ test.describe( 'ECommerce Module', () => {
 	 */
 	test.describe( 'No Woo - Quick Add Product', () => {
 		test( 'Add product not visible', async ( { page } ) => {
+			// check if woocommerce is installed
+			if (await isWooCommerceInstalled()) {
+				test.skip('WooCommerce is installed, cannot run non-ecommerce tests.');
+			}
+			
 			const homeHeader = page.locator( '.wppbh-home .nfd-home__title-section' );
 			// Ecommerce module widget root (not Next Steps); empty when WC / hooks do not add it.
 			const quickAddTrigger = page.locator(

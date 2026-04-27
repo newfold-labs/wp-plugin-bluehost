@@ -104,6 +104,19 @@ export async function isWooCommerceActive() {
 }
 
 /**
+ * `siteType` as exposed on `window.NewfoldRuntime` (see `Data::runtime()` and `src/app/pages/home/index.js`).
+ * This runs in the *browser* via `page.evaluate` — the test file runs in Node, so `window` is not available
+ * at import time; pass `page` after navigating to a route where the app is loaded.
+ * @param {import('@playwright/test').Page} page
+ * @returns {Promise<string|null>}
+ */
+export async function getNewfoldRuntimeSiteType(page) {
+  return page.evaluate(() => {
+    return globalThis.NewfoldRuntime?.siteType ?? null;
+  });
+}
+
+/**
  * Uninstall WooCommerce. Runs `deactivate --uninstall` first; if the plugin
  * is still active (e.g. uninstall step failed), runs `plugin deactivate` so
  * later tests do not run with WooCommerce still active. Repeats up to

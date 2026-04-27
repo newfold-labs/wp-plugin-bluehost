@@ -19,6 +19,9 @@ const Home = () => {
 		const nextStepsPortal = document.getElementById( 'next-steps-portal' );
 		const comingSoonPortal =
 			document.getElementById( 'coming-soon-portal' );
+		const lighthouseReportPortal = document.getElementById(
+			'lighthouse-report-portal'
+		);
 
 		if ( nextStepsPortal ) {
 			window.NFDPortalRegistry.registerPortal(
@@ -34,10 +37,19 @@ const Home = () => {
 			);
 		}
 
+		if ( lighthouseReportPortal ) {
+			// Consumed by wp-module-insights' `lighthouse-widget` bundle.
+			window.NFDPortalRegistry.registerPortal(
+				'lighthouse-report',
+				lighthouseReportPortal
+			);
+		}
+
 		// run when unmounts
 		return () => {
 			window.NFDPortalRegistry.unregisterPortal( 'next-steps' );
 			window.NFDPortalRegistry.unregisterPortal( 'coming-soon' );
+			window.NFDPortalRegistry.unregisterPortal( 'lighthouse-report' );
 		};
 	}, [] );
 
@@ -116,6 +128,9 @@ const Home = () => {
 			<Container className="nfd-max-w-full nfd-p-8 nfd-shadow-none nfd-rounded-xl nfd-border nfd-border-[#D5D5D5]">
 				<div id="next-steps-portal" />
 			</Container>
+
+			{ /* Filled by wp-module-insights' `lighthouse-widget` bundle via NFDPortalRegistry. */ }
+			<div id="lighthouse-report-portal" />
 
 			<Container className="nfd-max-w-full nfd-p-0 nfd-shadow-none nfd-bg-transparent nfd-border-0 nfd-mt-4">
 				<Title

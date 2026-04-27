@@ -94,7 +94,7 @@ export default defineConfig({
   expect: {
     timeout: 10 * 1000, // 10 seconds
   },
-  retries: process.env.CI ? 1 : 1,
+  retries: process.env.CI ? 0 : 1, // 0 retries on CI, 1 for local
   workers: process.env.CI ? 1 : 1, // Use default (number of CPU cores) for local, 1 for CI
   outputDir: 'tests/playwright/test-results',
   expect: {

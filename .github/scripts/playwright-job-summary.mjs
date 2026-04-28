@@ -25,7 +25,7 @@ const php = process.env.MATRIX_PHP || '—';
 function matrixSummaryHeading(phpV, wpV, failureCount) {
   const n = Math.max(0, Math.floor(Number(failureCount) || 0));
   const failText = n === 0 ? '0 Tests Failed' : n === 1 ? '1 Test Failed' : `${n} Tests Failed`;
-  return `## Playwright Test Matrix (${phpV}, ${wpV}) summary: ${failText}`;
+  return `## Playwright Test Matrix (${phpV}, ${wpV}) summary (${failText})`;
 }
 
 /**
@@ -97,12 +97,19 @@ const { expected, unexpected, skipped, flaky } = s;
 const lines = [];
 lines.push(matrixSummaryHeading(php, wp, unexpected));
 lines.push('');
-lines.push('| Outcome   | Count |');
-lines.push('|----------|------:|');
-lines.push(`| Passed   | ${expected} |`);
-lines.push(`| Failed   | ${unexpected} |`);
-lines.push(`| Flaky    | ${flaky} |`);
-lines.push(`| Skipped  | ${skipped} |`);
+lines.push('| Outcome | Count |');
+lines.push('|---------|------:|');
+lines.push(`| ✅ Passed | ${expected} |`);
+lines.push(`| ❌ Failed | ${unexpected} |`);
+lines.push(`| ⚠️ Flaky | ${flaky} |`);
+lines.push(`| ⏭️ Skipped | ${skipped} |`);
+lines.push('');
+if (unexpected === 0) {
+  lines.push('🎉 **No failed tests in this environment.**');
+} else {
+  const noun = unexpected === 1 ? 'test failure' : 'test failures';
+  lines.push(`⚠️ **This environment has ${unexpected} ${noun}.**`);
+}
 lines.push('');
 lines.push(formatTotalDuration(d));
 lines.push('');
@@ -153,17 +160,20 @@ const failed = all.filter(
 const flakyTests = all.filter((t) => t.status === 'flaky');
 
 if (failed.length) {
-  lines.push('### Failed');
+  lines.push(`<details><summary>❌ Failed tests (${failed.length})</summary>\n`);
+  lines.push('');
   for (const t of failed) {
     const where = t.line ? `:${t.line}` : '';
     lines.push(`- **${md(t.name)}** [${t.projectName || '—'}] — \`${md(t.file)}${where}\``);
     if (t.error) lines.push(`  - \`${md(t.error.slice(0, 500))}\``);
   }
   lines.push('');
+  lines.push('</details>');
+  lines.push('');
 }
 
 if (flakyTests.length) {
-  lines.push('### Flaky');
+  lines.push('### ⚠️ Flaky');
   for (const t of flakyTests) {
     const where = t.line ? `:${t.line}` : '';
     lines.push(`- **${md(t.name)}** [${t.projectName || '—'}] — \`${md(t.file)}${where}\``);

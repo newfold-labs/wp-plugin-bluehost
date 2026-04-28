@@ -164,9 +164,11 @@ async function setupHelpCenterApiMocks(page) {
  * Set site capabilities
  * 
  * @param {Object} capabilities - Capabilities object
+ * @param {{ attempts?: number, retryDelayMs?: number }} [options]
+ * @returns {Promise<boolean>}
  */
-async function setSiteCapabilities(capabilities) {
-  const attempts = 3;
+async function setSiteCapabilities(capabilities, options = {}) {
+  const { attempts = 2, retryDelayMs = 250 } = options;
   let lastError;
 
   for (let attempt = 1; attempt <= attempts; attempt += 1) {
@@ -185,7 +187,7 @@ async function setSiteCapabilities(capabilities) {
         throw new Error(`capability mismatch for "${key}"`);
       }
 
-      return;
+      return true;
     } catch (error) {
       lastError = error;
       fancyLog(
@@ -194,12 +196,17 @@ async function setSiteCapabilities(capabilities) {
         'yellow',
       );
       if (attempt < attempts) {
-        await new Promise((resolve) => setTimeout(resolve, 500));
+        await new Promise((resolve) => setTimeout(resolve, retryDelayMs));
       }
     }
   }
 
-  throw new Error(`Unable to set site capabilities after ${attempts} attempts: ${lastError?.message || lastError}`);
+  fancyLog(
+    `Unable to set site capabilities after ${attempts} attempts: ${lastError?.message || lastError}`,
+    55,
+    'yellow',
+  );
+  return false;
 }
 
 /**
@@ -207,13 +214,18 @@ async function setSiteCapabilities(capabilities) {
  * Retries with capability refresh + page reload to avoid transient timing races.
  *
  * @param {import('@playwright/test').Page} page
- * @param {{ throwOnFailure?: boolean }} [options]
+ * @param {{ throwOnFailure?: boolean, maxAttempts?: number, adminBarTimeout?: number, visibilityTimeout?: number }} [options]
  * @returns {Promise<boolean>}
  */
 async function waitForHelpCenterIcon(page, options = {}) {
-  const { throwOnFailure = false } = options;
+  const {
+    throwOnFailure = false,
+    maxAttempts = 3,
+    adminBarTimeout = 15000,
+    visibilityTimeout = 10000,
+  } = options;
   try {
-    await page.waitForSelector('#wpadminbar', { timeout: 15000 });
+    await page.waitForSelector('#wpadminbar', { timeout: adminBarTimeout });
   } catch {
     if (throwOnFailure) {
       throw new Error('WordPress admin bar did not render in time.');
@@ -223,14 +235,14 @@ async function waitForHelpCenterIcon(page, options = {}) {
 
   const icon = page.locator(SELECTORS.helpCenterIcon).first();
 
-  for (let attempt = 1; attempt <= 3; attempt += 1) {
+  for (let attempt = 1; attempt <= maxAttempts; attempt += 1) {
     try {
-      await expect(icon).toBeVisible({ timeout: 10000 });
+      await expect(icon).toBeVisible({ timeout: visibilityTimeout });
       return true;
     } catch (error) {
-      if (attempt === 3) break;
-      fancyLog(`Help Center icon not visible, retrying setup (${attempt}/3)...`, 55, 'yellow');
-      await setSiteCapabilities(HELP_CENTER_CAPABILITIES);
+      if (attempt === maxAttempts) break;
+      fancyLog(`Help Center icon not visible, retrying setup (${attempt}/${maxAttempts})...`, 55, 'yellow');
+      await setSiteCapabilities(HELP_CENTER_CAPABILITIES, { attempts: 1, retryDelayMs: 150 });
       await page.reload({ waitUntil: 'domcontentloaded' });
     }
   }

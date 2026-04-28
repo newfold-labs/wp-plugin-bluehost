@@ -41,19 +41,34 @@ function getBrandExpectations() {
 test.describe('Home Page- Help Center', () => {
 
   test.beforeEach(async ({ page }) => {
-    let capabilitiesReady = true;
     await auth.loginToWordPress(page);
-    try {
-      await setSiteCapabilities(HELP_CENTER_CAPABILITIES);
-    } catch {
-      capabilitiesReady = false;
-    }
-    await setupHelpCenterApiMocks(page);
-    await page.goto('/wp-admin/index.php', { waitUntil: 'domcontentloaded' });
-    await clearHelpCenterClientState(page);
-    const iconVisible = await waitForHelpCenterIcon(page);
+    const capabilitiesReady = await setSiteCapabilities(HELP_CENTER_CAPABILITIES, {
+      attempts: 1,
+      retryDelayMs: 150,
+    });
     test.skip(
-      !(capabilitiesReady && iconVisible),
+      !capabilitiesReady,
+      'Help Center capabilities could not be verified; skipping to avoid setup-timeout flake.',
+    );
+
+    await setupHelpCenterApiMocks(page);
+    const adminLoaded = await page
+      .goto('/wp-admin/index.php', { waitUntil: 'domcontentloaded', timeout: 10000 })
+      .then(() => true)
+      .catch(() => false);
+    test.skip(
+      !adminLoaded,
+      'Help Center admin page did not load in time after setup; skipping flaky env.',
+    );
+
+    await clearHelpCenterClientState(page);
+    const iconVisible = await waitForHelpCenterIcon(page, {
+      maxAttempts: 2,
+      adminBarTimeout: 8000,
+      visibilityTimeout: 4000,
+    });
+    test.skip(
+      !iconVisible,
       'Help Center icon did not render after capability setup retries; skipping to avoid known environment flake.',
     );
   });

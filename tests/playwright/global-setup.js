@@ -17,12 +17,12 @@ async function globalSetup(config) {
   // Apply module spec overrides (separate process; see runApplyPlaywrightModuleOverrides)
   runApplyPlaywrightModuleOverrides(config);
 
-  utils.fancyLog('Running global setup...', 'gray', '');
+  utils.fancyLog('Running global setup...', 100, 'gray', '');
   
   try {
     // Set permalink structure via WP-CLI (runs before browser is created)
     const permalinkStructure = '/%postname%/';
-    utils.fancyLog(`🔗 Setting permalink structure to: ${permalinkStructure}`, 'gray', '');
+    utils.fancyLog(`🔗 Setting permalink structure to: ${permalinkStructure}`, 100, 'gray', '');
     
     execSync(`npx wp-env run cli wp option update permalink_structure '${permalinkStructure}'`, {
       stdio: 'inherit',
@@ -30,7 +30,7 @@ async function globalSetup(config) {
     });
     
     // Flush rewrite rules to apply the new permalink structure
-    utils.fancyLog('🔄 Flushing rewrite rules...', 'gray', '');
+    utils.fancyLog('🔄 Flushing rewrite rules...', 100, 'gray', '');
     execSync('npx wp-env run cli wp rewrite flush', {
       stdio: 'inherit',
       encoding: 'utf-8',
@@ -50,9 +50,9 @@ async function globalSetup(config) {
       });
     }
 
-    utils.fancyLog('✔ Global setup completed successfully', 'green', '');
+    utils.fancyLog('✔ Global setup completed successfully', 100, 'green', '');
   } catch (error) {
-    utils.fancyLog(`✘ Global setup failed: ${error.message}`, 'red', '');
+    utils.fancyLog(`✘ Global setup failed: ${error.message}`, 100, 'red', '');
     process.exit(1);
   }
 }

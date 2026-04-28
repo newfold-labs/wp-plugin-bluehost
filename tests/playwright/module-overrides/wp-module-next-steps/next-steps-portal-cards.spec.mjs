@@ -35,8 +35,9 @@ test.describe('Next Steps Portal in Plugin App with Cards', () => {
         // Wait for initial load
         await page.waitForTimeout(250);
 
-        // Check for 3 total sections
-        await expect(page.locator('.nfd-nextsteps-section-card')).toHaveCount(3);
+        // Three non-expired section cards (fixture also includes section-expired, filtered in UI).
+        // Longer timeout: cards depend on `window.NewfoldNextSteps` after full plan resolution on the server.
+        await expect(page.locator('.nfd-nextsteps-section-card')).toHaveCount(3, { timeout: 20000 });
         // Check that expired section is not rendered
         await expect(page.locator('.nfd-nextsteps-section-card[data-nfd-section-id="section-expired"]')).not.toBeVisible();
 

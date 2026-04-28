@@ -91,7 +91,7 @@ export async function installWooCommerce() {
       timeout: 15000,
     });
   } catch (error) {
-    utils.fancyLog('Failed to install WooCommerce:' + error.message, 'yellow');
+    utils.fancyLog('Failed to install WooCommerce:' + error.message, 100, 'yellow');
   }
 }
 
@@ -137,6 +137,7 @@ export async function uninstallWooCommerce() {
   if (await isWooCommerceActive()) {
     utils.fancyLog(
       'WooCommerce is still active after multiple deactivate attempts; later tests may fail.',
+      100,
       'yellow',
     );
   }

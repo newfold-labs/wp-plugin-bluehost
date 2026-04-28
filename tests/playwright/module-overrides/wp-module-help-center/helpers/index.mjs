@@ -192,6 +192,7 @@ async function setSiteCapabilities(capabilities, options = {}) {
       lastError = error;
       fancyLog(
         `Failed to set site capabilities (attempt ${attempt}/${attempts}): ${error?.message || error}`,
+        100,
         'yellow',
       );
       if (attempt < attempts) {
@@ -202,6 +203,7 @@ async function setSiteCapabilities(capabilities, options = {}) {
 
   fancyLog(
     `Unable to set site capabilities after ${attempts} attempts: ${lastError?.message || lastError}`,
+    100,
     'yellow',
   );
   return false;
@@ -239,7 +241,7 @@ async function waitForHelpCenterIcon(page, options = {}) {
       return true;
     } catch (error) {
       if (attempt === maxAttempts) break;
-      fancyLog(`Help Center icon not visible, retrying setup (${attempt}/${maxAttempts})...`, 'yellow');
+      fancyLog(`Help Center icon not visible, retrying setup (${attempt}/${maxAttempts})...`, 100, 'yellow');
       await setSiteCapabilities(HELP_CENTER_CAPABILITIES, { attempts: 1, retryDelayMs: 150 });
       await page.reload({ waitUntil: 'domcontentloaded' });
     }

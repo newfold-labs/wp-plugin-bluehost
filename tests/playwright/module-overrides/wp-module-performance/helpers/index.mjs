@@ -201,12 +201,13 @@ export async function ensureHealthyHtaccess(retries = DEFAULT_HTACCESS_REPAIR_RE
 
     fancyLog(
       `Detected unhealthy wp-login response (${status || 'no status'}) — restoring .htaccess baseline (${attempt}/${retries})`,
+      100,
       'yellow',
     );
     try {
       restoreBaseHtaccess();
     } catch (error) {
-      fancyLog(`.htaccess repair command failed: ${error?.message || error}`, 'yellow');
+      fancyLog(`.htaccess repair command failed: ${error?.message || error}`, 100, 'yellow');
     }
   }
 
@@ -309,6 +310,7 @@ export async function setSiteCapabilitiesWithRetry(
 
     fancyLog(
       `Performance capability setup retry (${attempt}/${retries}): ${lastReason}`,
+      100,
       'yellow',
     );
     if (attempt < retries) {

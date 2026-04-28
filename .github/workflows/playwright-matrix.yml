@@ -214,9 +214,8 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 10
     needs:
-      - should-run-matrix
       - test
-    if: needs.should-run-matrix.outputs.run_matrix == 'true'
+    if: ${{ always() && needs.test.result != 'skipped' }}
     permissions:
       contents: read
 

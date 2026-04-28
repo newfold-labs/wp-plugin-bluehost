@@ -39,7 +39,9 @@ async function runWpCli(command) {
 }
 
 /**
- * Verify nfd_next_steps option roughly matches expected fixture identity.
+ * Verify nfd_next_steps option matches the fixture enough for E2E (id, track count, section count).
+ * Relying on track count alone was insufficient: `PlanRepository` can replace a non-`custom` plan when
+ * detected site type ≠ plan.type, producing fewer sections and a passing false-negative verify.
  *
  * @param {{ id: string, tracks?: any[] }} expectedPlan
  * @returns {Promise<boolean>}
@@ -52,7 +54,12 @@ async function verifyNextStepsPlan(expectedPlan) {
     if (!parsed || parsed.id !== expectedPlan.id) return false;
     const expectedTracks = Array.isArray(expectedPlan.tracks) ? expectedPlan.tracks.length : 0;
     const actualTracks = Array.isArray(parsed.tracks) ? parsed.tracks.length : 0;
-    return expectedTracks === actualTracks;
+    if (expectedTracks !== actualTracks || expectedTracks < 1) return false;
+    const expFirst = expectedPlan.tracks[0];
+    const actFirst = parsed.tracks[0];
+    const expSectionCount = Array.isArray(expFirst?.sections) ? expFirst.sections.length : 0;
+    const actSectionCount = Array.isArray(actFirst?.sections) ? actFirst.sections.length : 0;
+    return expSectionCount > 0 && expSectionCount === actSectionCount;
   } catch {
     return false;
   }
@@ -79,13 +86,13 @@ async function setAndVerifyNextStepsData(plan, retries = 2) {
       lastError = 'option verification mismatch after update';
     }
 
-    fancyLog(`Next Steps fixture setup retry (${attempt}/${retries}): ${lastError}`, 'yellow');
+    fancyLog(`Next Steps fixture setup retry (${attempt}/${retries}): ${lastError}`, 100, 'yellow');
     if (attempt < retries) {
       await new Promise((resolve) => setTimeout(resolve, 200));
     }
   }
 
-  fancyLog(`Next Steps fixture setup failed: ${lastError}`, 'yellow');
+  fancyLog(`Next Steps fixture setup failed: ${lastError}`, 100, 'yellow');
   return false;
 }
 
@@ -104,7 +111,7 @@ async function setTestNextStepsData() {
  * @returns {Promise<boolean>}
  */
 async function setTestCardsNextStepsData() {
-  return setAndVerifyNextStepsData(testCardsPlan, 2);
+  return setAndVerifyNextStepsData(testCardsPlan, 3);
 }
 
 /**

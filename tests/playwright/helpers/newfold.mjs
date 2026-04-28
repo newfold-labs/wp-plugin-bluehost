@@ -219,16 +219,16 @@ async function logCapabilities() {
     if (typeof capabilities === 'object' && capabilities !== null) {
       Object.entries(capabilities).forEach(([key, value]) => {
         const valueStr = typeof value === 'object' ? JSON.stringify(value) : String(value);
-        utils.fancyLog(`- ${key}: ${valueStr}`, 55, 'gray', '            ');
+        utils.fancyLog(`- ${key}: ${valueStr}`, 'gray', '            ');
       });
     } else {
-      utils.fancyLog(`- ${String(capabilities)}`, 55, 'gray', '            ');
+      utils.fancyLog(`- ${String(capabilities)}`, 'gray', '            ');
     }
     
     return capabilities;
   } catch (error) {
     // Fallback if JSON parsing fails
-    utils.fancyLog(`${result}`, 55, 'gray', '            ');
+    utils.fancyLog(`${result}`, 'gray', '            ');
     return result;
   }
 }

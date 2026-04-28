@@ -79,13 +79,13 @@ async function setAndVerifyNextStepsData(plan, retries = 2) {
       lastError = 'option verification mismatch after update';
     }
 
-    fancyLog(`Next Steps fixture setup retry (${attempt}/${retries}): ${lastError}`, 70, 'yellow');
+    fancyLog(`Next Steps fixture setup retry (${attempt}/${retries}): ${lastError}`, 'yellow');
     if (attempt < retries) {
       await new Promise((resolve) => setTimeout(resolve, 200));
     }
   }
 
-  fancyLog(`Next Steps fixture setup failed: ${lastError}`, 70, 'yellow');
+  fancyLog(`Next Steps fixture setup failed: ${lastError}`, 'yellow');
   return false;
 }
 

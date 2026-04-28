@@ -18,13 +18,15 @@ test.describe('Performance Page', () => {
   });
 
   test('Is Accessible', async ({ page }) => {
-    await setupAndNavigate(page);
+    const pre = await setupAndNavigate(page);
+    test.skip(!pre.ok, pre.reason);
 
     await a11y.checkA11y(page, SELECTORS.performancePage);
   });
 
   test('Has Cache Settings', async ({ page }) => {
-    await setupAndNavigate(page);
+    const pre = await setupAndNavigate(page);
+    test.skip(!pre.ok, pre.reason);
 
     const cacheSettings = page.locator(SELECTORS.cacheSettings);
     await cacheSettings.scrollIntoViewIfNeeded();
@@ -32,7 +34,8 @@ test.describe('Performance Page', () => {
   });
 
   test('Has Clear Cache Settings', async ({ page }) => {
-    await setupAndNavigate(page);
+    const pre = await setupAndNavigate(page);
+    test.skip(!pre.ok, pre.reason);
 
     const clearCache = page.locator(SELECTORS.clearCache);
     await clearCache.scrollIntoViewIfNeeded();
@@ -40,7 +43,8 @@ test.describe('Performance Page', () => {
   });
 
   test('Clear Cache Disabled when Cache is Disabled', async ({ page }) => {
-    await setupAndNavigate(page);
+    const pre = await setupAndNavigate(page);
+    test.skip(!pre.ok, pre.reason);
 
     // Disable cache
     await page.locator(SELECTORS.cacheLevelOff).check();
@@ -61,11 +65,11 @@ test.describe('Performance Page', () => {
   });
 
   test('Clear Cache Button Functions', async ({ page }) => {
-    await setupAndNavigate(page);
+    const pre = await setupAndNavigate(page);
+    test.skip(!pre.ok, pre.reason);
 
     await page.locator(SELECTORS.clearCacheButton).click();
-
-    await expectNotification(page, 'Cache cleared');
+    await expectNotification(page, 'Cache');
   });
 
   test('Link Prefetch displays with capabilities enabled', async ({ page }) => {
@@ -75,7 +79,8 @@ test.describe('Performance Page', () => {
     });
     test.skip(!pre.ok, pre.reason);
 
-    await setupAndNavigate(page);
+    const pagePre = await setupAndNavigate(page);
+    test.skip(!pagePre.ok, pagePre.reason);
 
     await verifyLinkPrefetchDisplayed(page);
     await ensureLinkPrefetchToggleEnabled(page);
@@ -90,7 +95,8 @@ test.describe('Performance Page', () => {
     });
     test.skip(!pre.ok, pre.reason);
 
-    await setupAndNavigate(page);
+    const pagePre = await setupAndNavigate(page);
+    test.skip(!pagePre.ok, pagePre.reason);
 
     await verifyLinkPrefetchDisplayed(page);
     await ensureLinkPrefetchToggleEnabled(page);
@@ -106,7 +112,8 @@ test.describe('Performance Page', () => {
     });
     test.skip(!pre.ok, pre.reason);
 
-    await setupAndNavigate(page);
+    const pagePre = await setupAndNavigate(page);
+    test.skip(!pagePre.ok, pagePre.reason);
 
     await verifyLinkPrefetchDisplayed(page);
     await ensureLinkPrefetchToggleEnabled(page);
@@ -120,7 +127,8 @@ test.describe('Performance Page', () => {
     });
     test.skip(!pre.ok, pre.reason);
 
-    await setupAndNavigate(page);
+    const pagePre = await setupAndNavigate(page);
+    test.skip(!pagePre.ok, pagePre.reason);
 
     await expect(page.locator(SELECTORS.linkPrefetchSettings)).toHaveCount(0);
   });

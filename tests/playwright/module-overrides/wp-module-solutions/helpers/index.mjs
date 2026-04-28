@@ -107,7 +107,7 @@ async function runWpCli(command) {
 async function setSolution(solution, expiration = 3600, retries = DEFAULT_SET_RETRIES) {
   const fixtureData = FIXTURES[solution];
   if (!fixtureData) {
-    fancyLog(`Unknown solution: ${solution}`, 55, 'yellow');
+    fancyLog(`Unknown solution: ${solution}`, 'yellow');
     return {
       ok: false,
       reason: `Unknown solution fixture key: ${solution}`,
@@ -130,7 +130,7 @@ async function setSolution(solution, expiration = 3600, retries = DEFAULT_SET_RE
       } else {
         const verifyResult = await verifySolutionTransient(solution);
         if (verifyResult.ok) {
-          fancyLog(`Solution set to ${solution}`, 55, 'green');
+          fancyLog(`Solution set to ${solution}`, 'green');
           return { ok: true, reason: '' };
         }
         lastReason = verifyResult.reason;
@@ -139,13 +139,13 @@ async function setSolution(solution, expiration = 3600, retries = DEFAULT_SET_RE
       lastReason = error?.message || String(error);
     }
 
-    fancyLog(`Solution setup retry (${attempt}/${retries}) for ${solution}: ${lastReason}`, 55, 'yellow');
+    fancyLog(`Solution setup retry (${attempt}/${retries}) for ${solution}: ${lastReason}`, 'yellow');
     if (attempt < retries) {
       await new Promise((resolve) => setTimeout(resolve, DEFAULT_RETRY_DELAY_MS));
     }
   }
 
-  fancyLog(`Failed to set solution ${solution}: ${lastReason}`, 55, 'yellow');
+  fancyLog(`Failed to set solution ${solution}: ${lastReason}`, 'yellow');
   return {
     ok: false,
     reason: `Unable to verify newfold_solutions transient for "${solution}": ${lastReason}`,
@@ -277,7 +277,7 @@ async function setSolutionAndOpenMySolutions(page, solutionKey, queryParam, navO
   const setup = await setSolution(solutionKey);
   if (!setup.ok) {
     const reason = `[solutions setup] unable to seed solution "${solutionKey}" before navigation: ${setup.reason}`;
-    fancyLog(reason, 55, 'yellow');
+    fancyLog(reason, 'yellow');
     return { ok: false, reason };
   }
 
@@ -285,7 +285,7 @@ async function setSolutionAndOpenMySolutions(page, solutionKey, queryParam, navO
   const hydrated = await verifyNewfoldSolutionsHydrated(page, solutionKey);
   if (!hydrated.ok) {
     const reason = `[solutions setup] seeded "${solutionKey}" but localized data did not hydrate as expected: ${hydrated.reason}`;
-    fancyLog(reason, 55, 'yellow');
+    fancyLog(reason, 'yellow');
     return { ok: false, reason };
   }
 
@@ -312,7 +312,7 @@ async function setSolutionAndOpenSolutionsPage(
   const setup = await setSolution(solutionKey);
   if (!setup.ok) {
     const reason = `[solutions setup] unable to seed solution "${solutionKey}" before navigation: ${setup.reason}`;
-    fancyLog(reason, 55, 'yellow');
+    fancyLog(reason, 'yellow');
     return { ok: false, reason };
   }
 
@@ -320,7 +320,7 @@ async function setSolutionAndOpenSolutionsPage(
   const hydrated = await verifyNewfoldSolutionsHydrated(page, solutionKey);
   if (!hydrated.ok) {
     const reason = `[solutions setup] seeded "${solutionKey}" but localized data did not hydrate as expected: ${hydrated.reason}`;
-    fancyLog(reason, 55, 'yellow');
+    fancyLog(reason, 'yellow');
     return { ok: false, reason };
   }
 
@@ -342,7 +342,7 @@ async function clearSolutionTransient() {
       }),
     ]);
   } catch (error) {
-    fancyLog(`Failed to clear solution transient: ${error.message}`, 55, 'yellow');
+    fancyLog(`Failed to clear solution transient: ${error.message}`, 'yellow');
   }
 }
 
@@ -358,7 +358,7 @@ async function uninstallPlugin(pluginSlug) {
       failOnNonZeroExit: false,
     });
   } catch (error) {
-    fancyLog(`Failed to uninstall ${pluginSlug}: ${error.message}`, 55, 'yellow');
+    fancyLog(`Failed to uninstall ${pluginSlug}: ${error.message}`, 'yellow');
   }
 }
 

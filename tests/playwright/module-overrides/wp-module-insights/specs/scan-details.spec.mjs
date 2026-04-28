@@ -82,7 +82,7 @@ test.describe('Scan Details Page', () => {
   test('Scan Result Details page loads and displays correct information', async ({ page }) => {
     const fixturePath = join(
       __dirname,
-      '../../../../../vendor/newfold-labs/wp-module-insights/tests/fixtures/scans.json',
+      '../fixtures/scans.json',
     );
     const fixtureData = await readFile(fixturePath, 'utf8');
 

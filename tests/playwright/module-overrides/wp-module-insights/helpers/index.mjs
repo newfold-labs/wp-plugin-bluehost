@@ -71,13 +71,13 @@ export async function setInsightsCapability(enabled, retries = DEFAULT_RETRIES) 
       lastError = 'capability did not match expected value after set_transient';
     }
 
-    fancyLog(`Insights capability setup retry (${attempt}/${retries}): ${lastError}`, 65, 'yellow');
+    fancyLog(`Insights capability setup retry (${attempt}/${retries}): ${lastError}`, 'yellow');
     if (attempt < retries) {
       await new Promise((resolve) => setTimeout(resolve, DEFAULT_RETRY_DELAY_MS));
     }
   }
 
-  fancyLog(`Insights capability setup failed: ${lastError}`, 65, 'yellow');
+  fancyLog(`Insights capability setup failed: ${lastError}`, 'yellow');
   return false;
 }
 
@@ -91,7 +91,7 @@ export async function cleanupInsightsState(commands = []) {
   for (const command of commands) {
     const result = await runWpCli(command);
     if (!result.ok) {
-      fancyLog(`Cleanup warning for "${command}": ${result.output}`, 65, 'yellow');
+      fancyLog(`Cleanup warning for "${command}": ${result.output}`, 'yellow');
     }
   }
 }
@@ -123,7 +123,7 @@ export async function loginToWordPressWithGuard(page) {
     );
     return true;
   } catch (error) {
-    fancyLog(`Login precondition failed: ${error?.message || error}`, 65, 'yellow');
+    fancyLog(`Login precondition failed: ${error?.message || error}`, 'yellow');
     return false;
   }
 }

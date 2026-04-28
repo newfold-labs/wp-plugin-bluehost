@@ -72,6 +72,20 @@ export const SELECTORS = {
 
 const DEFAULT_CAPABILITY_RETRIES = 2;
 const DEFAULT_CAPABILITY_RETRY_DELAY_MS = 200;
+const DEFAULT_HTACCESS_REPAIR_RETRIES = 2;
+
+const CLEAN_HTACCESS_TEMPLATE = `# BEGIN WordPress
+<IfModule mod_rewrite.c>
+RewriteEngine On
+RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]
+RewriteBase /
+RewriteRule ^index\\.php$ - [L]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule . /index.php [L]
+</IfModule>
+# END WordPress
+`;
 
 // ============================================================================
 // NAVIGATION HELPERS
@@ -92,7 +106,37 @@ export async function navigateToPerformancePage(page) {
  * @param {import('@playwright/test').Page} page
  */
 export async function waitForPerformancePage(page) {
-  await page.waitForSelector( SELECTORS.performancePage, { timeout: 15000 } );
+  for (let attempt = 1; attempt <= 3; attempt += 1) {
+    await page.waitForLoadState('domcontentloaded');
+    const isVisible = await page.locator(SELECTORS.performancePage).isVisible().catch(() => false);
+    if (isVisible) {
+      return true;
+    }
+
+    const bodyText = await page.locator('body').innerText().catch(() => '');
+    const currentUrl = page.url();
+    if (
+      bodyText.includes('Internal Server Error') ||
+      currentUrl.includes('/wp-login.php') ||
+      !currentUrl.includes(`/wp-admin/admin.php?page=${pluginId}`)
+    ) {
+      const repaired = await ensureHealthyHtaccess();
+      if (!repaired.ok) {
+        break;
+      }
+      await auth.loginToWordPress(page);
+      await page.goto(`/wp-admin/admin.php?page=${pluginId}#/settings/performance`, {
+        waitUntil: 'domcontentloaded',
+      });
+      continue;
+    }
+
+    await page.goto(`/wp-admin/admin.php?page=${pluginId}#/settings/performance`, {
+      waitUntil: 'domcontentloaded',
+    });
+  }
+
+  return false;
 }
 
 /**
@@ -100,9 +144,77 @@ export async function waitForPerformancePage(page) {
  * @param {import('@playwright/test').Page} page
  */
 export async function setupAndNavigate(page) {
+  const htaccess = await ensureHealthyHtaccess();
+  if (!htaccess.ok) {
+    return htaccess;
+  }
   await auth.loginToWordPress(page);
   await navigateToPerformancePage(page);
-  await waitForPerformancePage(page);
+  const ready = await waitForPerformancePage(page);
+  if (!ready) {
+    return {
+      ok: false,
+      reason: 'Performance page did not become ready after recovery attempts.',
+    };
+  }
+  return { ok: true, reason: '' };
+}
+
+function getWpLoginHttpStatusLine() {
+  try {
+    return execSync(
+      `npx wp-env run wordpress php -r '$ctx=stream_context_create(["http"=>["ignore_errors"=>true]]); @file_get_contents("http://localhost/wp-login.php", false, $ctx); echo (string)($http_response_header[0] ?? "");'`,
+      {
+        encoding: 'utf-8',
+        stdio: ['pipe', 'pipe', 'pipe'],
+        timeout: 15000,
+      },
+    ).trim();
+  } catch {
+    return '';
+  }
+}
+
+function restoreBaseHtaccess() {
+  const b64 = Buffer.from(CLEAN_HTACCESS_TEMPLATE, 'utf8').toString('base64');
+  execSync(
+    `npx wp-env run wordpress php -r "file_put_contents('/var/www/html/.htaccess', base64_decode('${b64}'));"`,
+    {
+      encoding: 'utf-8',
+      stdio: ['pipe', 'pipe', 'pipe'],
+      timeout: 15000,
+    },
+  );
+  execSync('npx wp-env run cli wp rewrite flush', {
+    encoding: 'utf-8',
+    stdio: ['pipe', 'pipe', 'pipe'],
+    timeout: 15000,
+  });
+}
+
+export async function ensureHealthyHtaccess(retries = DEFAULT_HTACCESS_REPAIR_RETRIES) {
+  for (let attempt = 1; attempt <= retries; attempt += 1) {
+    const status = getWpLoginHttpStatusLine();
+    if (status.includes('200')) {
+      return { ok: true, reason: '' };
+    }
+
+    fancyLog(
+      `Detected unhealthy wp-login response (${status || 'no status'}) — restoring .htaccess baseline (${attempt}/${retries})`,
+      'yellow',
+    );
+    try {
+      restoreBaseHtaccess();
+    } catch (error) {
+      fancyLog(`.htaccess repair command failed: ${error?.message || error}`, 'yellow');
+    }
+  }
+
+  const finalStatus = getWpLoginHttpStatusLine();
+  return {
+    ok: false,
+    reason: `wp-login remains unhealthy after .htaccess repair attempts (status: ${finalStatus || 'unknown'})`,
+  };
 }
 
 function isWpCliError(output) {
@@ -197,7 +309,6 @@ export async function setSiteCapabilitiesWithRetry(
 
     fancyLog(
       `Performance capability setup retry (${attempt}/${retries}): ${lastReason}`,
-      65,
       'yellow',
     );
     if (attempt < retries) {

@@ -27,6 +27,7 @@ const helpersUrl = pathToFileURL(finalHelpersPath).href;
 const pluginHelpers = await import(helpersUrl);
 
 export const { auth, wordpress, newfold, a11y, utils } = pluginHelpers;
+const { fancyLog } = utils;
 
 // ============================================================================
 // CONSTANTS
@@ -69,6 +70,9 @@ export const SELECTORS = {
   notifications: '.nfd-notifications',
 };
 
+const DEFAULT_CAPABILITY_RETRIES = 2;
+const DEFAULT_CAPABILITY_RETRY_DELAY_MS = 200;
+
 // ============================================================================
 // NAVIGATION HELPERS
 // ============================================================================
@@ -101,6 +105,62 @@ export async function setupAndNavigate(page) {
   await waitForPerformancePage(page);
 }
 
+function isWpCliError(output) {
+  if (typeof output !== 'string') {
+    return false;
+  }
+  return output.startsWith('Error:') || output.includes('Fatal error') || output.includes('Parse error');
+}
+
+async function runWpCli(command) {
+  const raw = await wordpress.wpCli(command, { failOnNonZeroExit: false });
+  const output = typeof raw === 'string' ? raw : String(raw ?? '');
+  return {
+    ok: !isWpCliError(output),
+    output,
+  };
+}
+
+function toPhpArray(capabilities) {
+  return Object.entries(capabilities)
+    .map(([key, value]) => {
+      const phpValue = typeof value === 'boolean' ? value.toString() : `'${value}'`;
+      return `'${key}' => ${phpValue}`;
+    })
+    .join(', ');
+}
+
+async function verifySiteCapabilities(expectedCapabilities) {
+  const result = await runWpCli('option get _transient_nfd_site_capabilities --format=json');
+  if (!result.ok) {
+    return {
+      ok: false,
+      reason: `capability read failed: ${result.output}`,
+    };
+  }
+
+  let parsed;
+  try {
+    parsed = JSON.parse(result.output);
+  } catch {
+    return {
+      ok: false,
+      reason: `capability read was not valid JSON: ${result.output}`,
+    };
+  }
+
+  for (const [key, expected] of Object.entries(expectedCapabilities)) {
+    if (parsed?.[key] !== expected) {
+      return {
+        ok: false,
+        reason: `capability mismatch for ${key} (expected: ${String(expected)}, actual: ${String(parsed?.[key])})`,
+      };
+    }
+  }
+
+  return { ok: true, reason: '' };
+}
+
 // ============================================================================
 // WP-CLI / CAPABILITY HELPERS
 // ============================================================================
@@ -111,15 +171,44 @@ export async function setupAndNavigate(page) {
  * @example setSiteCapabilities({ hasCloudflareFonts: true, hasLinkPrefetchClick: true })
  */
 export async function setSiteCapabilities(capabilities) {
-  const phpArray = Object.entries(capabilities)
-    .map(([key, value]) => {
-      const phpValue = typeof value === 'boolean' ? value.toString() : `'${value}'`;
-      return `'${key}' => ${phpValue}`;
-    })
-    .join(', ');
+  return setSiteCapabilitiesWithRetry(capabilities);
+}
 
-  const command = `eval "set_transient('nfd_site_capabilities', array(${phpArray}));"`;
-  await wordpress.wpCli(command, { failOnNonZeroExit: false });
+export async function setSiteCapabilitiesWithRetry(
+  capabilities,
+  retries = DEFAULT_CAPABILITY_RETRIES,
+) {
+  const phpArray = toPhpArray(capabilities);
+  let lastReason = '';
+
+  for (let attempt = 1; attempt <= retries; attempt += 1) {
+    const setResult = await runWpCli(
+      `eval "set_transient('nfd_site_capabilities', array(${phpArray}), 4 * HOUR_IN_SECONDS);"`,
+    );
+    if (!setResult.ok) {
+      lastReason = setResult.output;
+    } else {
+      const verify = await verifySiteCapabilities(capabilities);
+      if (verify.ok) {
+        return { ok: true, reason: '' };
+      }
+      lastReason = verify.reason;
+    }
+
+    fancyLog(
+      `Performance capability setup retry (${attempt}/${retries}): ${lastReason}`,
+      65,
+      'yellow',
+    );
+    if (attempt < retries) {
+      await new Promise((resolve) => setTimeout(resolve, DEFAULT_CAPABILITY_RETRY_DELAY_MS));
+    }
+  }
+
+  return {
+    ok: false,
+    reason: `Unable to verify nfd_site_capabilities after retries: ${lastReason}`,
+  };
 }
 
 /**

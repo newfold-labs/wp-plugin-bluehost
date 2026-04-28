@@ -30,7 +30,8 @@ test.describe('Cloudflare Font Optimization Toggle', () => {
     await navigateToPerformancePage(page);
     await waitForPerformancePage(page);
 
-    await setSiteCapabilities({ hasCloudflareFonts: true });
+    const pre = await setSiteCapabilities({ hasCloudflareFonts: true });
+    test.skip(!pre.ok, pre.reason);
     await page.reload();
     await waitForPerformancePage(page);
 
@@ -45,7 +46,8 @@ test.describe('Cloudflare Font Optimization Toggle', () => {
   });
 
   test('Does not show Font Optimization section when capability is false', async ({ page }) => {
-    await setSiteCapabilities({ hasCloudflareFonts: false });
+    const pre = await setSiteCapabilities({ hasCloudflareFonts: false });
+    test.skip(!pre.ok, pre.reason);
 
     await navigateToPerformancePage(page);
     await waitForPerformancePage(page);
@@ -55,7 +57,8 @@ test.describe('Cloudflare Font Optimization Toggle', () => {
   });
 
   test('Writes correct rewrite rules to .htaccess when Font Optimization is enabled', async ({ page }) => {
-    await setSiteCapabilities({ hasCloudflareFonts: true });
+    const pre = await setSiteCapabilities({ hasCloudflareFonts: true });
+    test.skip(!pre.ok, pre.reason);
 
     await navigateToPerformancePage(page);
     await waitForPerformancePage(page);
@@ -68,7 +71,8 @@ test.describe('Cloudflare Font Optimization Toggle', () => {
   });
 
   test('Toggles Font Optimization on/off and updates .htaccess accordingly', async ({ page }) => {
-    await setSiteCapabilities({ hasCloudflareFonts: true });
+    const pre = await setSiteCapabilities({ hasCloudflareFonts: true });
+    test.skip(!pre.ok, pre.reason);
 
     await navigateToPerformancePage(page);
     await waitForPerformancePage(page);

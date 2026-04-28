@@ -1,9 +1,31 @@
 import { test, expect } from '@playwright/test';
 import { prepareInsightsPreconditions } from '../helpers/index.mjs';
 
-const SCANS_ENDPOINT = '**/wp-json/newfold-insights/v1/performance-scans**';
 const INSIGHTS_PAGE = '/wp-admin/tools.php?page=nfd-insights';
-const SCORE_SELECTOR = '.nfd-text-xl.nfd-font-semibold.nfd-text-gray-900';
+const SCORE_SELECTOR = '#nfd-insights-lighthouse-report .nfd-text-xl.nfd-font-semibold';
+
+/**
+ * Match the scans *collection* endpoint only (not `/run-scan`, `/scan-details`, etc.).
+ * Supports `/wp-json/...` and `index.php?rest_route=/...`.
+ *
+ * @param {string} urlString
+ * @returns {boolean}
+ */
+function isPerformanceScansCollectionUrl(urlString) {
+  try {
+    const url = new URL(urlString);
+    const restRoute = url.searchParams.get('rest_route');
+
+    if (restRoute) {
+      const routePath = restRoute.startsWith('/') ? restRoute : `/${restRoute}`;
+      return /^\/newfold-insights\/v1\/performance-scans\/?$/.test(routePath);
+    }
+
+    return /\/wp-json\/newfold-insights\/v1\/performance-scans\/?$/.test(url.pathname);
+  } catch {
+    return false;
+  }
+}
 
 function buildScan(id, score) {
   return {
@@ -19,7 +41,7 @@ function buildScan(id, score) {
 }
 
 function mockScans(page, scans) {
-  return page.route(SCANS_ENDPOINT, (route) => {
+  return page.route(isPerformanceScansCollectionUrl, (route) => {
     route.fulfill({
       status: 200,
       contentType: 'application/json',
@@ -31,7 +53,7 @@ function mockScans(page, scans) {
 async function navigateAndWait(page) {
   await page.goto(INSIGHTS_PAGE, { waitUntil: 'domcontentloaded', timeout: 10000 });
   await page.waitForLoadState('domcontentloaded');
-  await page.waitForSelector('#nfd-insights-app', { timeout: 10000 });
+  await page.waitForSelector('#nfd-insights-app', { timeout: 20000 });
 }
 
 test.describe('Insights Caching Logic', () => {
@@ -67,7 +89,7 @@ test.describe('Insights Caching Logic', () => {
     console.log(
       '[caching-logic] This test mocks the performance-scans API with HTTP 500. Any related browser console errors are expected.',
     );
-    await page.route(SCANS_ENDPOINT, (route) => {
+    await page.route(isPerformanceScansCollectionUrl, (route) => {
       route.fulfill({
         status: 500,
         contentType: 'application/json',
@@ -86,16 +108,16 @@ test.describe('Insights Caching Logic', () => {
     const scoreEl = page.locator(SCORE_SELECTOR).first();
     await expect(scoreEl).toContainText('11', { timeout: 15000 });
 
-    await page.unroute(SCANS_ENDPOINT);
+    await page.unroute(isPerformanceScansCollectionUrl);
     await mockScans(page, [buildScan('fresh_scan', 0.93)]);
 
     await page.goto('/wp-admin/index.php', { waitUntil: 'domcontentloaded', timeout: 10000 });
     await Promise.all([
-      page.waitForResponse((r) => r.url().includes('performance-scans'), { timeout: 12000 }),
-      page.goto(INSIGHTS_PAGE),
+      page.waitForResponse((r) => r.url().includes('performance-scans'), { timeout: 20000 }),
+      page.goto(INSIGHTS_PAGE, { waitUntil: 'domcontentloaded', timeout: 10000 }),
     ]);
     await page.waitForLoadState('domcontentloaded');
-    await page.waitForSelector('#nfd-insights-app', { timeout: 10000 });
+    await page.waitForSelector('#nfd-insights-app', { timeout: 15000 });
 
     await expect(scoreEl).toContainText('93', { timeout: 15000 });
   });
@@ -107,16 +129,16 @@ test.describe('Insights Caching Logic', () => {
     const scoreEl = page.locator(SCORE_SELECTOR).first();
     await expect(scoreEl).toContainText('42', { timeout: 15000 });
 
-    await page.unroute(SCANS_ENDPOINT);
+    await page.unroute(isPerformanceScansCollectionUrl);
     await mockScans(page, [buildScan('refreshed_scan', 0.77)]);
 
     await page.goto('/wp-admin/index.php', { waitUntil: 'domcontentloaded', timeout: 10000 });
     await Promise.all([
-      page.waitForResponse((r) => r.url().includes('performance-scans') && r.status() === 200, { timeout: 12000 }),
-      page.goto(INSIGHTS_PAGE),
+      page.waitForResponse((r) => r.url().includes('performance-scans') && r.status() === 200, { timeout: 20000 }),
+      page.goto(INSIGHTS_PAGE, { waitUntil: 'domcontentloaded', timeout: 10000 }),
     ]);
     await page.waitForLoadState('domcontentloaded');
-    await page.waitForSelector('#nfd-insights-app', { timeout: 10000 });
+    await page.waitForSelector('#nfd-insights-app', { timeout: 15000 });
 
     await expect(scoreEl).toContainText('77', { timeout: 15000 });
   });

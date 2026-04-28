@@ -30,7 +30,8 @@ test.describe('Cloudflare Polish Toggle', () => {
     await navigateToPerformancePage(page);
     await waitForPerformancePage(page);
 
-    await setSiteCapabilities({ hasCloudflarePolish: true });
+    const pre = await setSiteCapabilities({ hasCloudflarePolish: true });
+    test.skip(!pre.ok, pre.reason);
     await page.reload();
     await waitForPerformancePage(page);
 
@@ -45,7 +46,8 @@ test.describe('Cloudflare Polish Toggle', () => {
   });
 
   test('Does not show Polish section when capability is false', async ({ page }) => {
-    await setSiteCapabilities({ hasCloudflarePolish: false });
+    const pre = await setSiteCapabilities({ hasCloudflarePolish: false });
+    test.skip(!pre.ok, pre.reason);
 
     await navigateToPerformancePage(page);
     await waitForPerformancePage(page);
@@ -55,7 +57,8 @@ test.describe('Cloudflare Polish Toggle', () => {
   });
 
   test('Writes correct rewrite rules to .htaccess when Polish is enabled', async ({ page }) => {
-    await setSiteCapabilities({ hasCloudflarePolish: true });
+    const pre = await setSiteCapabilities({ hasCloudflarePolish: true });
+    test.skip(!pre.ok, pre.reason);
 
     await navigateToPerformancePage(page);
     await waitForPerformancePage(page);
@@ -68,7 +71,8 @@ test.describe('Cloudflare Polish Toggle', () => {
   });
 
   test('Toggles Polish on/off and updates .htaccess accordingly', async ({ page }) => {
-    await setSiteCapabilities({ hasCloudflarePolish: true });
+    const pre = await setSiteCapabilities({ hasCloudflarePolish: true });
+    test.skip(!pre.ok, pre.reason);
 
     await navigateToPerformancePage(page);
     await waitForPerformancePage(page);

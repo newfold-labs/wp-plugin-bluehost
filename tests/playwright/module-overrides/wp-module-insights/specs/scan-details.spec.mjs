@@ -9,8 +9,47 @@ import {
 
 const __dirname = fileURLToPath(new URL('.', import.meta.url));
 
-const SCANS_ENDPOINT = '**/wp-json/newfold-insights/v1/performance-scans';
-const SCAN_DETAILS_ENDPOINT = '**/wp-json/newfold-insights/v1/performance-scans/scan-details*';
+/**
+ * Match the scans *collection* endpoint only (not `/run-scan`, `/scan-details`, etc.).
+ *
+ * @param {string} urlString
+ * @returns {boolean}
+ */
+function isPerformanceScansCollectionUrl(urlString) {
+  try {
+    const url = new URL(urlString);
+    const restRoute = url.searchParams.get('rest_route');
+
+    if (restRoute) {
+      const routePath = restRoute.startsWith('/') ? restRoute : `/${restRoute}`;
+      return /^\/newfold-insights\/v1\/performance-scans\/?$/.test(routePath);
+    }
+
+    return /\/wp-json\/newfold-insights\/v1\/performance-scans\/?$/.test(url.pathname);
+  } catch {
+    return false;
+  }
+}
+
+/**
+ * @param {string} urlString
+ * @returns {boolean}
+ */
+function isPerformanceScansScanDetailsUrl(urlString) {
+  try {
+    const url = new URL(urlString);
+    const restRoute = url.searchParams.get('rest_route');
+
+    if (restRoute) {
+      const routePath = restRoute.startsWith('/') ? restRoute : `/${restRoute}`;
+      return /^\/newfold-insights\/v1\/performance-scans\/scan-details\b/.test(routePath);
+    }
+
+    return /\/wp-json\/newfold-insights\/v1\/performance-scans\/scan-details\b/.test(url.pathname);
+  } catch {
+    return false;
+  }
+}
 
 const mockAuditDetails = {
   audits: {
@@ -41,10 +80,13 @@ test.describe('Scan Details Page', () => {
   });
 
   test('Scan Result Details page loads and displays correct information', async ({ page }) => {
-    const fixturePath = join(__dirname, '../../fixtures/scans.json');
+    const fixturePath = join(
+      __dirname,
+      '../../../../../vendor/newfold-labs/wp-module-insights/tests/fixtures/scans.json',
+    );
     const fixtureData = await readFile(fixturePath, 'utf8');
 
-    await page.route(SCANS_ENDPOINT, (route) => {
+    await page.route(isPerformanceScansCollectionUrl, (route) => {
       route.fulfill({
         status: 200,
         contentType: 'application/json',
@@ -52,7 +94,7 @@ test.describe('Scan Details Page', () => {
       });
     });
 
-    await page.route(SCAN_DETAILS_ENDPOINT, (route) => {
+    await page.route(isPerformanceScansScanDetailsUrl, (route) => {
       route.fulfill({
         status: 200,
         contentType: 'application/json',
@@ -66,11 +108,11 @@ test.describe('Scan Details Page', () => {
     });
     await waitForInsightsPage(page);
 
-    await expect(page.locator('h1.nfd-text-2xl')).toContainText('Scan Result Details');
-    await expect(page.locator('p.nfd-text-gray-600')).toContainText('Below is a detailed breakdown');
-    await expect(page.locator('h2')).toContainText('Diagnostics');
+    await expect(page.getByRole('heading', { level: 1 })).toContainText('Performance report');
+    await expect(page.getByText(/Lighthouse audit for this scan/i)).toBeVisible();
+    await expect(page.getByRole('heading', { name: 'Diagnostics' })).toBeVisible();
 
-    const firstAccordion = page.locator('button.nfd-w-full').filter({ hasText: /—|Mocked/ }).first();
+    const firstAccordion = page.getByRole('button', { name: /Mocked/ }).first();
     await expect(firstAccordion).toBeVisible({ timeout: 10000 });
     await firstAccordion.click();
 

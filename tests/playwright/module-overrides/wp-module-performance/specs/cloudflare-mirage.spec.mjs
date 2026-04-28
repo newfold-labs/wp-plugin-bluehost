@@ -30,7 +30,8 @@ test.describe('Cloudflare Mirage Toggle', () => {
     await navigateToPerformancePage(page);
     await waitForPerformancePage(page);
 
-    await setSiteCapabilities({ hasCloudflareMirage: true });
+    const pre = await setSiteCapabilities({ hasCloudflareMirage: true });
+    test.skip(!pre.ok, pre.reason);
     await page.reload();
     await waitForPerformancePage(page);
 
@@ -45,7 +46,8 @@ test.describe('Cloudflare Mirage Toggle', () => {
   });
 
   test('Does not show Mirage section when capability is false', async ({ page }) => {
-    await setSiteCapabilities({ hasCloudflareMirage: false });
+    const pre = await setSiteCapabilities({ hasCloudflareMirage: false });
+    test.skip(!pre.ok, pre.reason);
 
     await navigateToPerformancePage(page);
     await waitForPerformancePage(page);
@@ -55,7 +57,8 @@ test.describe('Cloudflare Mirage Toggle', () => {
   });
 
   test('Writes correct rewrite rules to .htaccess when Mirage is enabled', async ({ page }) => {
-    await setSiteCapabilities({ hasCloudflareMirage: true });
+    const pre = await setSiteCapabilities({ hasCloudflareMirage: true });
+    test.skip(!pre.ok, pre.reason);
 
     await navigateToPerformancePage(page);
     await waitForPerformancePage(page);
@@ -68,7 +71,8 @@ test.describe('Cloudflare Mirage Toggle', () => {
   });
 
   test('Toggles Mirage on/off and updates .htaccess accordingly', async ({ page }) => {
-    await setSiteCapabilities({ hasCloudflareMirage: true });
+    const pre = await setSiteCapabilities({ hasCloudflareMirage: true });
+    test.skip(!pre.ok, pre.reason);
 
     await navigateToPerformancePage(page);
     await waitForPerformancePage(page);

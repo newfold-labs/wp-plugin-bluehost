@@ -132,7 +132,15 @@ export const setLinkPrefetchCapabilities = setSiteCapabilities;
  * Clear site capabilities transient
  */
 export async function clearSiteCapabilities() {
-  await wordpress.wpCli('option delete _transient_nfd_site_capabilities', { failOnNonZeroExit: false });
+  await wordpress.wpCli('transient delete nfd_site_capabilities', {
+    failOnNonZeroExit: false,
+  });
+  await wordpress.wpCli('option delete _transient_nfd_site_capabilities', {
+    failOnNonZeroExit: false,
+  });
+  await wordpress.wpCli('option delete _transient_timeout_nfd_site_capabilities', {
+    failOnNonZeroExit: false,
+  });
 }
 
 /**
@@ -167,7 +175,7 @@ export async function readHtaccess() {
     const output = execSync('npx wp-env run cli cat .htaccess', {
       encoding: 'utf-8',
       stdio: ['pipe', 'pipe', 'pipe'],
-      timeout: 5000,
+      timeout: 15000,
     });
     return output || '';
   } catch (error) {
@@ -186,12 +194,15 @@ export async function readHtaccess() {
  * @param {string} hash - The hash identifier for the rule (use CLOUDFLARE_HASHES)
  * @param {number} retries - Number of retry attempts (default: 3)
  */
-export async function assertHtaccessHasRule(hash, retries = 3) {
+export async function assertHtaccessHasRule(hash, retries = 8) {
   let htaccess = '';
-  
+
   for (let i = 0; i < retries; i++) {
     htaccess = await readHtaccess();
-    if (htaccess.includes(hash) && htaccess.includes('# BEGIN Newfold CF Optimization Header')) {
+    if (
+      htaccess.includes(hash) &&
+      htaccess.includes('# BEGIN Newfold CF Optimization Header')
+    ) {
       expect(htaccess).toContain('# BEGIN Newfold CF Optimization Header');
       expect(htaccess).toContain('# END Newfold CF Optimization Header');
       expect(htaccess).toContain('nfd-enable-cf-opt');
@@ -200,19 +211,28 @@ export async function assertHtaccessHasRule(hash, retries = 3) {
       return;
     }
     if (i < retries - 1) {
-      await new Promise(resolve => setTimeout(resolve, 300));
+      await new Promise((resolve) => setTimeout(resolve, 500));
     }
   }
-  
-  // Final assertion - will produce clear error message on failure
+
   expect(htaccess).toContain(hash);
 }
 
 /**
- * Assert that .htaccess does NOT contain the expected rule
+ * Assert that .htaccess does NOT contain the expected rule (retries: rules are removed async).
  * @param {string} hash - The hash identifier for the rule (use CLOUDFLARE_HASHES)
+ * @param {number} retries
  */
-export async function assertHtaccessHasNoRule(hash) {
+export async function assertHtaccessHasNoRule(hash, retries = 8) {
+  for (let i = 0; i < retries; i++) {
+    const htaccess = await readHtaccess();
+    if (!htaccess.includes(hash)) {
+      return;
+    }
+    if (i < retries - 1) {
+      await new Promise((resolve) => setTimeout(resolve, 500));
+    }
+  }
   const htaccess = await readHtaccess();
   expect(htaccess).not.toContain(hash);
 }
@@ -255,13 +275,15 @@ export function getCloudflareToggle(page, type) {
  */
 export async function verifyCloudflareToggleState(page, type, expectedState) {
   const toggle = getCloudflareToggle(page, type);
-  await expect(toggle).toBeVisible();
-  await expect(toggle).toHaveAttribute('aria-checked', expectedState);
+  await expect(toggle).toBeVisible({ timeout: 20000 });
+  await expect(toggle).toHaveAttribute('aria-checked', expectedState, {
+    timeout: 20000,
+  });
 }
 
 /**
- * Toggle a Cloudflare feature on or off
- * Waits for network to settle after clicking to ensure htaccess is updated
+ * Toggle a Cloudflare feature on or off. Avoids `networkidle` (unreliable in wp-admin);
+ * relies on attribute assertion and a short delay for async .htaccess writes.
  * @param {import('@playwright/test').Page} page
  * @param {'fonts' | 'mirage' | 'polish'} type - Toggle type
  * @param {boolean} enable - Whether to enable (true) or disable (false)
@@ -270,10 +292,15 @@ export async function setCloudflareToggle(page, type, enable) {
   const toggle = getCloudflareToggle(page, type);
   const currentState = await toggle.getAttribute('aria-checked');
   const wantEnabled = enable ? 'true' : 'false';
+
   if (currentState !== wantEnabled) {
     await toggle.click();
   }
-  await expect(toggle).toHaveAttribute('aria-checked', wantEnabled);
+  await expect(toggle).toHaveAttribute('aria-checked', wantEnabled, {
+    timeout: 20000,
+  });
+  await page.waitForLoadState('load').catch(() => {});
+  await new Promise((resolve) => setTimeout(resolve, 400));
 }
 
 /**

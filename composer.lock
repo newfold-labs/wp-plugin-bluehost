@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "37e9a823a7a95cce02475fcffa713afc",
+    "content-hash": "87521d2e05283e19e2bb423874199ab9",
     "packages": [
         {
             "name": "colinmollenhour/credis",
@@ -2380,16 +2380,16 @@
         },
         {
             "name": "newfold-labs/wp-module-marketplace",
-            "version": "3.2.2",
+            "version": "3.2.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/newfold-labs/wp-module-marketplace.git",
-                "reference": "769b4059965887a617ab557f97bb7e02e4986812"
+                "reference": "4d5dc5e7e124e6e0e86cc8522c1f2b6917ef965f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/newfold-labs/wp-module-marketplace/zipball/769b4059965887a617ab557f97bb7e02e4986812",
-                "reference": "769b4059965887a617ab557f97bb7e02e4986812",
+                "url": "https://api.github.com/repos/newfold-labs/wp-module-marketplace/zipball/4d5dc5e7e124e6e0e86cc8522c1f2b6917ef965f",
+                "reference": "4d5dc5e7e124e6e0e86cc8522c1f2b6917ef965f",
                 "shasum": ""
             },
             "require": {
@@ -2468,10 +2468,10 @@
             ],
             "description": "A module for rendering product data and interacting with the Hiive marketplace API.",
             "support": {
-                "source": "https://github.com/newfold-labs/wp-module-marketplace/tree/3.2.2",
+                "source": "https://github.com/newfold-labs/wp-module-marketplace/tree/3.2.3",
                 "issues": "https://github.com/newfold-labs/wp-module-marketplace/issues"
             },
-            "time": "2026-04-20T23:48:44+00:00"
+            "time": "2026-04-29T17:09:18+00:00"
         },
         {
             "name": "newfold-labs/wp-module-mcp",

@@ -5,12 +5,11 @@ return [
 	'language' => 'nl_NL',
 	'project-id-version' => 'wp-plugin-bluehost',
 	'pot-creation-date' => '2025-02-25T20:53:21+00:00',
-	'po-revision-date' => '2026-04-01T22:35:39+00:00',
+	'po-revision-date' => '2026-04-27T08:16:54+00:00',
 	'messages' => [
 		'The Bluehost Plugin' => 'De Bluehost Plugin',
 		'https://bluehost.com' => 'https://bluehost.com',
 		'WordPress plugin that integrates a WordPress site with the Bluehost control panel, including performance, security, and update features.' => 'WordPress plugin die een WordPress site integreert met het Bluehost control panel, inclusief prestaties, veiligheid en update functies.',
-		'Bluehost' => 'Bluehost',
 		'Please install the Bluehost Plugin dependencies.' => 'Installeer de Bluehost Plugin afhankelijkheden.',
 		'%1$sNeed a domain?%2$sCheck out our %3$sDomain Registration%4$s options.%5$s' => '%1$sHeb je een domein nodig?%2$sBekijk onze %3$sDomeinregistratie%4$s opties.%5$s',
 		'%1$sDiscover our hosting solutions:%2$s
@@ -25,9 +24,9 @@ return [
 						      %9$sToegewijde hosting%10$s. 
 					      %11$s',
 		'%1$s
-					%2$sA %3$sReliable WordPress Hosting by Bluehost%4$s powered website.%5$s
+					%2$s%3$sPowered by Bluehost%4$s%5$s
                     %6$s' => '%1$s
-					%2$sA %3$sBetrouwbare WordPress Hosting door Bluehost%4$s aangedreven website.%5$s
+					%2$s%3$sPowered by Bluehost%4$s%5$s
                     %6$s',
 		'%s &mdash; Coming Soon' => '%s &mdash; Binnenkort',
 		'Coming Soon Active' => 'Binnenkort actief',
@@ -47,6 +46,7 @@ return [
 		'Minimum required WordPress version:' => 'Minimum vereiste WordPress-versie:',
 		'Consider enabling auto-updates to stay up to date.' => 'Overweeg om auto-updates op de hoogte te houden.',
 		'Update Now' => 'Nu bijwerken',
+		'Login with Bluehost' => 'Inloggen met Bluehost',
 		'"%1$s" has self-deactivated. It is incompatible with "%2$s".' => '"%1$s" heeft zichzelf gedeactiveerd. Het is niet compatibel met "%2$s".',
 		'"%1$s" has been deactivated. It is incompatible with "%2$s".' => '"%1$s" is gedeactiveerd. Het is niet compatibel met "%2$s".',
 		'%1$s requires PHP version %2$s or later. You are currently running version %3$s.' => '%1$s vereist PHP versie %2$s of hoger. Je gebruikt momenteel versie %3$s.',

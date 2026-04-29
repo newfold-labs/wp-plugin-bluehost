@@ -130,10 +130,10 @@ add_filter(
 			array(
 				'admin_app_url'                  => buildLink( admin_url( 'admin.php?page=bluehost#/home' ) ),
 				'template_coming_soon_backlinks' => sprintf(
-					/* translators: %1$s is the logo SVG, %2$s wraps the text, %3$s is the link start for Bluehost WordPress Hosting, %4$s is the closing anchor tag, %5$s wraps the text again, %6$s contains backlinks */
+					/* translators: %1$s is the logo SVG, %2$s wraps the text, %3$s is the link start for Powered by Bluehost, %4$s is the closing anchor tag, %5$s wraps the text again, %6$s contains backlinks */
 					esc_html__(
 						'%1$s
-					%2$sA %3$sReliable WordPress Hosting by Bluehost%4$s powered website.%5$s
+					%2$s%3$sPowered by Bluehost%4$s%5$s
                     %6$s',
 						'wp-plugin-bluehost'
 					),
@@ -228,6 +228,8 @@ require BLUEHOST_PLUGIN_DIR . '/inc/settings.php';
 require BLUEHOST_PLUGIN_DIR . '/inc/updates.php';
 require BLUEHOST_PLUGIN_DIR . '/inc/YoastAI.php';
 require BLUEHOST_PLUGIN_DIR . '/inc/widgets/bootstrap.php';
+require_once BLUEHOST_PLUGIN_DIR . '/inc/Helpers.php';
+require_once BLUEHOST_PLUGIN_DIR . '/inc/Brand.php';
 require_once BLUEHOST_PLUGIN_DIR . '/inc/Filters.php';
 
 Filters::init();

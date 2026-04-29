@@ -5,12 +5,11 @@ return [
 	'language' => 'pt_PT',
 	'project-id-version' => 'wp-plugin-bluehost',
 	'pot-creation-date' => '2025-02-25T20:53:21+00:00',
-	'po-revision-date' => '2026-04-01T22:35:39+00:00',
+	'po-revision-date' => '2026-04-27T08:16:54+00:00',
 	'messages' => [
 		'The Bluehost Plugin' => 'O Plugin Bluehost',
 		'https://bluehost.com' => 'https://bluehost.com',
 		'WordPress plugin that integrates a WordPress site with the Bluehost control panel, including performance, security, and update features.' => 'Plugin WordPress que integra um site WordPress com o painel de controle Bluehost, incluindo desempenho, segurança e recursos de atualização.',
-		'Bluehost' => 'Bluehost',
 		'Please install the Bluehost Plugin dependencies.' => 'Por favor instale as dependências do Plugin Bluehost.',
 		'%1$sNeed a domain?%2$sCheck out our %3$sDomain Registration%4$s options.%5$s' => '%1$sPrecisa de um domínio?%2$sConfira nossas opções %3$sRegistro de domínio%4$s.%5$s',
 		'%1$sDiscover our hosting solutions:%2$s
@@ -25,9 +24,9 @@ return [
 						      %9$sAlojamento dedicado%10$s. 
 					      %11$s',
 		'%1$s
-					%2$sA %3$sReliable WordPress Hosting by Bluehost%4$s powered website.%5$s
+					%2$s%3$sPowered by Bluehost%4$s%5$s
                     %6$s' => '%1$s
-					%2$sA %3$sHospedagem WordPress confiável por Bluehost%4$s powered website.%5$s
+					%2$s%3$sPowered por Bluehost%4$s%5$s
                     %6$s',
 		'%s &mdash; Coming Soon' => '%s &mdash; Em breve',
 		'Coming Soon Active' => 'Em breve ativo',
@@ -47,6 +46,7 @@ return [
 		'Minimum required WordPress version:' => 'Versão mínima necessária do WordPress:',
 		'Consider enabling auto-updates to stay up to date.' => 'Considere habilitar as atualizações automáticas para ficar atualizado.',
 		'Update Now' => 'Atualizar agora',
+		'Login with Bluehost' => 'Iniciar sessão com Bluehost',
 		'"%1$s" has self-deactivated. It is incompatible with "%2$s".' => '"%1$s" se autodesativou. É incompatível com "%2$s".',
 		'"%1$s" has been deactivated. It is incompatible with "%2$s".' => '"%1$s" foi desativado. É incompatível com "%2$s".',
 		'%1$s requires PHP version %2$s or later. You are currently running version %3$s.' => '%1$s requer a versão %2$s do PHP ou posterior. Você está executando a versão %3$s no momento.',

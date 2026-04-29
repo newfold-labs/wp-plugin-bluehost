@@ -9,11 +9,10 @@ import {
 test.describe('Next Steps Widget', () => {
 
     test.beforeEach(async ({ page }) => {
-        await auth.loginToWordPress(page);
         await setupNextStepsInteractionMocks(page);
-        // Set test Next Steps data
         const seeded = await setTestNextStepsData();
         test.skip(!seeded, 'Next Steps widget fixture could not be verified after retries; skipping flaky environment.');
+        await auth.loginToWordPress(page);
         // Visit the Next Steps widget
         await page.goto('/wp-admin/index.php');
         // Reload the page to ensure the test data is loaded

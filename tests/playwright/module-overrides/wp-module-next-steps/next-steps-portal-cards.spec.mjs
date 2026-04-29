@@ -11,11 +11,11 @@ const pluginId = process.env.PLUGIN_ID || 'bluehost';
 test.describe('Next Steps Portal in Plugin App with Cards', () => {
 
     test.beforeEach(async ({ page }) => {
-        await auth.loginToWordPress(page);
+        // Seed DB before any admin HTTP request so PHP-FPM never caches a pre-fixture plan for this worker.
         await setupNextStepsInteractionMocks(page);
-        // Set test Next Steps data
         const seeded = await setTestCardsNextStepsData();
         test.skip(!seeded, 'Next Steps cards fixture could not be verified after retries; skipping flaky environment.');
+        await auth.loginToWordPress(page);
         // Visit the Next Steps portal
         await page.goto(`/wp-admin/admin.php?page=${pluginId}#/home`);
         // Reload the page to ensure the test data is loaded

@@ -11,11 +11,10 @@ const pluginId = process.env.PLUGIN_ID || 'bluehost';
 test.describe('Next Steps Portal in Plugin App', () => {
 
     test.beforeEach(async ({ page }) => {
-        await auth.loginToWordPress(page);
         await setupNextStepsInteractionMocks(page);
-        // Set test Next Steps data
         const seeded = await setTestNextStepsData();
         test.skip(!seeded, 'Next Steps test fixture could not be verified after retries; skipping flaky environment.');
+        await auth.loginToWordPress(page);
         // Visit the Next Steps portal
         await page.goto(`/wp-admin/admin.php?page=${pluginId}#/home`);
         // Reload the page to ensure the test data is loaded

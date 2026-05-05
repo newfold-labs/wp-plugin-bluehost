@@ -5,7 +5,7 @@ return [
 	'language' => 'de_DE',
 	'project-id-version' => 'wp-plugin-bluehost',
 	'pot-creation-date' => '2024-10-21 07:10-0000',
-	'po-revision-date' => '2026-04-27T08:16:54+00:00',
+	'po-revision-date' => '2026-05-05T14:29:06+00:00',
 	'messages' => [
 		'The Bluehost Plugin' => 'Das Bluehost-Plugin',
 		'https://bluehost.com' => 'https://bluehost.com',

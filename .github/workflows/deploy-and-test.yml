@@ -112,7 +112,7 @@ jobs:
           echo "Server not ready after 5 minutes" && exit 1
 
       - name: Run Specific Cypress Tests
-        uses: cypress-io/github-action@b7a7441d775af8f8b9d19945c10dd689a51dba68 # v7.2.0
+        uses: cypress-io/github-action@dace029018fcdf86e0df89a31bc3cfa5b32570d8 # v7.3.0
         with:
           install: true
           start: npm start

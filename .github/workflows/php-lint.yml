@@ -19,4 +19,4 @@ jobs:
     name: Lint PHP files
     permissions:
       contents: read
-    uses: newfold-labs/workflows/.github/workflows/reusable-php-lint.yml@feature/PRESS0-4271-lint-php-files
+    uses: newfold-labs/workflows/.github/workflows/reusable-php-lint.yml@93e85acfbf997f27409792f1f54dabcf890cda6d

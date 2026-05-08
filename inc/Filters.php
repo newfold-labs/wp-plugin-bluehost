@@ -40,8 +40,9 @@ final class Filters {
 			$args['headers']['X-WP-LOCALE']      = get_locale();
 			$args['headers']['X-HOST-PLUGIN-ID'] = $container->plugin()->id;
 		}
-		error_log( "args: " . print_r ( $args, truee ) );
-		error_log( "url: " . print_r( $url, true ) );
+
+		// Missing closing parenthesis — genuine syntax error
+        error_log( "args: " . print_r( $args, true );
 
 		return $args;
 	}

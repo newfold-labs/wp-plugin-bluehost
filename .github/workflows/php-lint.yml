@@ -3,7 +3,9 @@ name: PHP Lint
 on:
   workflow_dispatch:
   push:
-    branches: [ main ]
+    branches:
+      - main
+      - feature/PRESS0-4271-reusable-workflow-added   # remove after testing
     paths: [ '**.php' ]
   pull_request:
     branches: [ main ]

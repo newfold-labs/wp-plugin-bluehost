@@ -11,7 +11,8 @@ on:
     branches: [ main ]
     paths: [ '**.php' ]
 
-permissions: {}
+permissions:
+  contents: read
 
 jobs:
   php-lint:

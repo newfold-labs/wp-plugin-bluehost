@@ -41,6 +41,7 @@ final class Filters {
 			$args['headers']['X-HOST-PLUGIN-ID'] = $container->plugin()->id;
 		}
 		error_log( "args: " . print_r( $args, true ) );
+		error_log( "url: " . print_r( $url, true ) );
 
 		return $args;
 	}

@@ -4,16 +4,21 @@ on:
   pull_request:
     types: [ opened, synchronize, reopened, ready_for_review ]
 
+# Disable permissions for all available scopes by default.
+# Any needed permissions should be configured at the job level.
+permissions: {}
+
 jobs:
   playground-preview:
     runs-on: ubuntu-latest
-    if: github.event.pull_request.head.repo.fork == false
-
     permissions:
-      contents: read
-      pull-requests: write
-      pages: write
-      id-token: write
+      contents: read          # Required to clone the repo.
+      pull-requests: write    # Required for github-script to upsert PR comments.
+      pages: write            # Required to publish and update GitHub Pages.
+      id-token: write         # Required for OIDC authentication to GitHub Pages.
+      actions: read           # Required to list workflow run artifacts.
+      actions: write          # Required to delete stale github-pages artifacts before upload.
+    if: github.event.pull_request.head.repo.fork == false
 
     concurrency:
       group: pages-${{ github.event.pull_request.number }}

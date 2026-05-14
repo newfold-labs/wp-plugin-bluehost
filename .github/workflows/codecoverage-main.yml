@@ -15,12 +15,15 @@ on:
       - release/*
   workflow_dispatch:
 
-permissions:
-  contents: read
+# Disable permissions for all available scopes by default.
+# Any needed permissions should be configured at the job level.
+permissions: {}
 
 jobs:
   get-repo-name:
     runs-on: ubuntu-latest
+    # No repository clone or token use; only parses github.repository for reusable workflow inputs.
+    permissions: {}
     outputs:
       repository-name: ${{ steps.repo-name.outputs.name }}
     steps:
@@ -31,8 +34,8 @@ jobs:
   codecoverage:
     needs: get-repo-name
     permissions:
-      contents: write
-      pull-requests: write
+      contents: write           # Required for reusable workflow to push coverage to GitHub Pages.
+      pull-requests: write      # Required for reusable workflow to post or update PR comments.
     uses: newfold-labs/workflows/.github/workflows/reusable-codecoverage.yml@main
     with:
       php-versions: '["7.4", "8.0", "8.1", "8.2", "8.3", "8.4"]'

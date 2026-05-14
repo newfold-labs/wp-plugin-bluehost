@@ -14,6 +14,7 @@ jobs:
   visit-site:
     name: Visit the performance test site
     runs-on: ubuntu-latest
+    permissions: {}
     environment: Performance Test Site
     env:
       BASE_URL: ${{ vars.BASE_URL }}

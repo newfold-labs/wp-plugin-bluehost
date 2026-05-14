@@ -17,7 +17,8 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     permissions:
-      contents: read
+      contents: read           # Required to clone the repo.
+      actions: write          # Required to upload the plugin zip artifact.
     strategy:
       matrix:
         environment: [ bluehost-shared ]

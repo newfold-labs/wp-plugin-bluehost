@@ -13,6 +13,7 @@ jobs:
   delete:
     name: On Delete Release
     runs-on: ubuntu-latest
+    permissions: {}
     if: ${{ github.repository == 'newfold-labs/wp-plugin-bluehost' }}
     steps:
 

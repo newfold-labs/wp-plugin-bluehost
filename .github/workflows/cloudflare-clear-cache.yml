@@ -15,6 +15,7 @@ jobs:
   clear-cache:
     name: Clear the Cloudflare cache
     runs-on: ubuntu-latest
+    permissions: {}
     steps:
       - name: Clear cache for release API
         if: ${{ github.repository == 'newfold-labs/wp-plugin-bluehost' }}

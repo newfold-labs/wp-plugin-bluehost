@@ -25,7 +25,7 @@ jobs:
   ESLint:
     runs-on: ubuntu-latest
     permissions:
-      contents: read
+      contents: read           # Required to clone the repo.
     steps:
 
       - name: Checkout

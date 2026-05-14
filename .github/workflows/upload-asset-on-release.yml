@@ -20,6 +20,7 @@ jobs:
   build:
     name: On Release
     runs-on: ubuntu-latest
+    timeout-minutes: 45
     permissions:
       contents: write             # Required to checkout with persist-credentials and upload release assets with gh.
     steps:

@@ -15,6 +15,7 @@ jobs:
   clear-cache:
     name: Clear the Cloudflare cache
     runs-on: ubuntu-latest
+    timeout-minutes: 10
     permissions: {}
     steps:
       - name: Clear cache for release API

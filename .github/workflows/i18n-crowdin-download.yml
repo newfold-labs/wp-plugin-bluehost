@@ -15,6 +15,7 @@ permissions: {}
 jobs:
   call-crowdin-workflow:
     uses: newfold-labs/workflows/.github/workflows/i18n-crowdin-download.yml@main
+    timeout-minutes: 60
     permissions:
       contents: write           # Required for reusable workflow to commit downloaded translations.
       pull-requests: write      # Required for reusable workflow to open or update pull requests.

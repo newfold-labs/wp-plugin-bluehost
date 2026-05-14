@@ -27,6 +27,7 @@ permissions: {}
 jobs:
   lint:
     name: Scan & lint workflow files
+    timeout-minutes: 30
     permissions:
       security-events: write   # Required for SARIF or code scanning uploads from the reusable workflow.
       actions: read           # Required for the reusable workflow to read workflow definitions.

@@ -20,6 +20,7 @@ jobs:
   build:
     name: On Push
     runs-on: ubuntu-latest
+    timeout-minutes: 45
     permissions:
       contents: read            # Required to clone the repo.
       pull-requests: write      # Required for github-script to create/update PR comments with artifact links.

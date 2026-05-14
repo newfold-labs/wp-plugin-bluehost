@@ -32,6 +32,7 @@ jobs:
   # This runs the newfold reusable-plugin-prep-release workflow for this plugin to prepare a release.
   prep-release:
     name: Prepare Release
+    timeout-minutes: 60
     permissions:
       contents: write           # Required for reusable workflow to push release preparation commits.
       pull-requests: write      # Required for reusable workflow to open or update the release pull request.

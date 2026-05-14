@@ -14,27 +14,27 @@ class DataWpunitTest extends \lucatume\WPBrowser\TestCase\WPTestCase {
 		require_once codecept_root_dir( 'inc/Data.php' );
 	}
 
-	/** @covers \Bluehost\Data::get_entitlement_by_id */
-	public function test_get_entitlement_by_id_returns_false_when_no_entitlements(): void {
-		$this->assertFalse( \Bluehost\Data::get_entitlement_by_id( array( 'solution' => 'foo' ), 'WonderCart' ) );
+	/** @covers \Bluehost\Data::get_entitlement_by_name */
+	public function test_get_entitlement_by_name_returns_false_when_no_entitlements(): void {
+		$this->assertFalse( \Bluehost\Data::get_entitlement_by_name( array( 'solution' => 'foo' ), 'WonderCart' ) );
 	}
 
-	/** @covers \Bluehost\Data::get_entitlement_by_id */
-	public function test_get_entitlement_by_id_returns_false_when_entitlements_not_array(): void {
-		$this->assertFalse( \Bluehost\Data::get_entitlement_by_id( array( 'entitlements' => 'invalid' ), 'WonderCart' ) );
+	/** @covers \Bluehost\Data::get_entitlement_by_name */
+	public function test_get_entitlement_by_name_returns_false_when_entitlements_not_array(): void {
+		$this->assertFalse( \Bluehost\Data::get_entitlement_by_name( array( 'entitlements' => 'invalid' ), 'WonderCart' ) );
 	}
 
-	/** @covers \Bluehost\Data::get_entitlement_by_id */
-	public function test_get_entitlement_by_id_returns_entitlement_by_name(): void {
+	/** @covers \Bluehost\Data::get_entitlement_by_name */
+	public function test_get_entitlement_by_name_returns_entitlement_when_found(): void {
 		$entitlement = array( 'name' => 'WonderCart', 'id' => '123' );
 		$data        = array( 'entitlements' => array( array( 'name' => 'Other' ), $entitlement ) );
-		$this->assertEquals( $entitlement, \Bluehost\Data::get_entitlement_by_id( $data, 'WonderCart' ) );
+		$this->assertEquals( $entitlement, \Bluehost\Data::get_entitlement_by_name( $data, 'WonderCart' ) );
 	}
 
-	/** @covers \Bluehost\Data::get_entitlement_by_id */
-	public function test_get_entitlement_by_id_returns_false_when_name_not_found(): void {
+	/** @covers \Bluehost\Data::get_entitlement_by_name */
+	public function test_get_entitlement_by_name_returns_false_when_name_not_found(): void {
 		$data = array( 'entitlements' => array( array( 'name' => 'WonderCart' ) ) );
-		$this->assertFalse( \Bluehost\Data::get_entitlement_by_id( $data, 'Sales & Promotions' ) );
+		$this->assertFalse( \Bluehost\Data::get_entitlement_by_name( $data, 'Sales & Promotions' ) );
 	}
 
 	/** @covers \Bluehost\Data::get_site_type */

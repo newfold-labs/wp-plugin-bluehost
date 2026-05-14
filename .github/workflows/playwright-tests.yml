@@ -26,7 +26,8 @@ jobs:
       dist: ${{ steps.workflow.outputs.DIST }}
       package: ${{ steps.workflow.outputs.PACKAGE }}
     permissions:
-      contents: read
+      contents: read            # Required to clone the repo.
+      actions: write           # Required to upload the plugin build artifact.
 
     steps:
       - name: Checkout
@@ -112,7 +113,8 @@ jobs:
     timeout-minutes: 60
     needs: build
     permissions:
-      contents: read
+      contents: read            # Required to clone the repo.
+      actions: write           # Required to download the build artifact and upload Playwright reports.
 
     steps:
       - name: Checkout

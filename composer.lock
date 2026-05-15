@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "54ff5882dc775f4f27f805b59cb7b59e",
+    "content-hash": "7f3cc9a3350e428416c18cb25c324685",
     "packages": [
         {
             "name": "colinmollenhour/credis",
@@ -877,21 +877,21 @@
         },
         {
             "name": "newfold-labs/wp-module-ai-chat",
-            "version": "1.0.3",
+            "version": "1.0.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/newfold-labs/wp-module-ai-chat.git",
-                "reference": "9c60e49b4c667c08978627ec8a3c8cc913a98487"
+                "reference": "3a25fb836a18b2a3f1d20bcb061a5e5f9cc4d60e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/newfold-labs/wp-module-ai-chat/zipball/9c60e49b4c667c08978627ec8a3c8cc913a98487",
-                "reference": "9c60e49b4c667c08978627ec8a3c8cc913a98487",
+                "url": "https://api.github.com/repos/newfold-labs/wp-module-ai-chat/zipball/3a25fb836a18b2a3f1d20bcb061a5e5f9cc4d60e",
+                "reference": "3a25fb836a18b2a3f1d20bcb061a5e5f9cc4d60e",
                 "shasum": ""
             },
             "require-dev": {
-                "newfold-labs/wp-php-standards": "^1.2.5",
-                "wp-cli/i18n-command": "^2.6.3"
+                "newfold-labs/wp-php-standards": "^1.2.6",
+                "wp-cli/i18n-command": "^2.7.0"
             },
             "type": "library",
             "autoload": {
@@ -915,14 +915,11 @@
                 "i18n-po": [
                     "vendor/bin/wp i18n update-po ./languages/nfd-ai-chat.pot ./languages"
                 ],
-                "i18n-mo": [
-                    "vendor/bin/wp i18n make-mo ./languages"
-                ],
                 "i18n-php": [
-                    "vendor/bin/wp i18n make-php ./languages"
+                    "vendor/bin/wp i18n make-php ./languages --pretty-print"
                 ],
                 "i18n-json": [
-                    "find ./languages -name \"*.json\" -exec rm {} \\; && vendor/bin/wp i18n make-json ./languages --no-purge --pretty-print"
+                    "rm -f languages/*.json && vendor/bin/wp i18n make-json ./languages --pretty-print"
                 ],
                 "i18n": [
                     "@i18n-pot",
@@ -958,10 +955,10 @@
             ],
             "description": "AI Chat module for WordPress",
             "support": {
-                "source": "https://github.com/newfold-labs/wp-module-ai-chat/tree/1.0.3",
+                "source": "https://github.com/newfold-labs/wp-module-ai-chat/tree/1.0.4",
                 "issues": "https://github.com/newfold-labs/wp-module-ai-chat/issues"
             },
-            "time": "2026-03-06T16:08:31+00:00"
+            "time": "2026-05-14T13:12:19+00:00"
         },
         {
             "name": "newfold-labs/wp-module-atomic",

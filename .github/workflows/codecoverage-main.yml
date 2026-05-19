@@ -34,7 +34,6 @@ jobs:
 
   codecoverage:
     needs: get-repo-name
-    timeout-minutes: 120
     permissions:
       contents: write           # Required for reusable workflow to push coverage to GitHub Pages.
       pull-requests: write      # Required for reusable workflow to post or update PR comments.

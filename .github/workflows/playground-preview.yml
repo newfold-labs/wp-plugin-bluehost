@@ -17,8 +17,7 @@ jobs:
       pull-requests: write    # Required for github-script to upsert PR comments.
       pages: write            # Required to publish and update GitHub Pages.
       id-token: write         # Required for OIDC authentication to GitHub Pages.
-      actions: read           # Required to list workflow run artifacts.
-      actions: write          # Required to delete stale github-pages artifacts before upload.
+      actions: write          # Required to list and delete stale github-pages workflow artifacts before upload.
     if: github.event.pull_request.head.repo.fork == false
 
     concurrency:

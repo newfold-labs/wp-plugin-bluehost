@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "7eb3b67df64cdc2ec7c079a2575212a1",
+    "content-hash": "f2273d9e37bb263cfd00c0b218856662",
     "packages": [
         {
             "name": "colinmollenhour/credis",
@@ -877,7 +877,7 @@
         },
         {
             "name": "newfold-labs/wp-module-ai-chat",
-            "version": "1.0.5",
+            "version": "1.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/newfold-labs/wp-module-ai-chat.git",
@@ -955,7 +955,7 @@
             ],
             "description": "AI Chat module for WordPress",
             "support": {
-                "source": "https://github.com/newfold-labs/wp-module-ai-chat/tree/1.0.5",
+                "source": "https://github.com/newfold-labs/wp-module-ai-chat/tree/1.1.0",
                 "issues": "https://github.com/newfold-labs/wp-module-ai-chat/issues"
             },
             "time": "2026-05-18T10:26:00+00:00"
@@ -1510,22 +1510,22 @@
         },
         {
             "name": "newfold-labs/wp-module-editor-chat",
-            "version": "1.0.9",
+            "version": "2.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/newfold-labs/wp-module-editor-chat.git",
-                "reference": "7fe53518b371f3ff86febe8a0269ba807106dc25"
+                "reference": "f5993d63dd671e97ab769c8916cbd905c531930b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/newfold-labs/wp-module-editor-chat/zipball/7fe53518b371f3ff86febe8a0269ba807106dc25",
-                "reference": "7fe53518b371f3ff86febe8a0269ba807106dc25",
+                "url": "https://api.github.com/repos/newfold-labs/wp-module-editor-chat/zipball/f5993d63dd671e97ab769c8916cbd905c531930b",
+                "reference": "f5993d63dd671e97ab769c8916cbd905c531930b",
                 "shasum": ""
             },
             "require-dev": {
                 "johnpbloch/wordpress": "@stable",
                 "lucatume/wp-browser": "*",
-                "newfold-labs/wp-php-standards": "^1.2.5",
+                "newfold-labs/wp-php-standards": "^1.2.6",
                 "phpunit/phpcov": "*",
                 "wp-cli/i18n-command": "^2.7.0"
             },
@@ -1591,10 +1591,10 @@
             ],
             "description": "Site Editor AI Chat",
             "support": {
-                "source": "https://github.com/newfold-labs/wp-module-editor-chat/tree/1.0.9",
+                "source": "https://github.com/newfold-labs/wp-module-editor-chat/tree/2.0.0",
                 "issues": "https://github.com/newfold-labs/wp-module-editor-chat/issues"
             },
-            "time": "2026-04-06T15:51:04+00:00"
+            "time": "2026-05-15T21:31:35+00:00"
         },
         {
             "name": "newfold-labs/wp-module-facebook",
@@ -3075,27 +3075,27 @@
         },
         {
             "name": "newfold-labs/wp-module-patterns",
-            "version": "2.12.2",
+            "version": "2.13.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/newfold-labs/wp-module-patterns.git",
-                "reference": "9d228320be05da0e4acf4b176503619bf887c998"
+                "reference": "af783af33c005d36b3200fab794673c8a9c14c95"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/newfold-labs/wp-module-patterns/zipball/9d228320be05da0e4acf4b176503619bf887c998",
-                "reference": "9d228320be05da0e4acf4b176503619bf887c998",
+                "url": "https://api.github.com/repos/newfold-labs/wp-module-patterns/zipball/af783af33c005d36b3200fab794673c8a9c14c95",
+                "reference": "af783af33c005d36b3200fab794673c8a9c14c95",
                 "shasum": ""
             },
             "require": {
-                "newfold-labs/wp-module-data": "^2.9.3",
+                "newfold-labs/wp-module-data": "^2.9.4",
                 "newfold-labs/wp-module-features": "^1.5",
                 "newfold-labs/wp-module-installer": "^1.7"
             },
             "require-dev": {
                 "johnpbloch/wordpress": "@stable",
                 "lucatume/wp-browser": "*",
-                "newfold-labs/wp-php-standards": "^1.2.5",
+                "newfold-labs/wp-php-standards": "^1.2.6",
                 "phpunit/phpcov": "*",
                 "wp-cli/i18n-command": "^2.7.0"
             },
@@ -3121,14 +3121,11 @@
                 "i18n-po": [
                     "vendor/bin/wp i18n update-po ./languages/nfd-wonder-blocks.pot ./languages"
                 ],
-                "i18n-mo": [
-                    "vendor/bin/wp i18n make-mo ./languages"
-                ],
                 "i18n-php": [
-                    "vendor/bin/wp i18n make-php ./languages"
+                    "vendor/bin/wp i18n make-php ./languages  --pretty-print"
                 ],
                 "i18n-json": [
-                    "find ./languages -name \"*.json\" -exec rm {} \\; && vendor/bin/wp i18n make-json ./languages --no-purge --pretty-print"
+                    "rm -f languages/*.json && vendor/bin/wp i18n make-json ./languages --pretty-print"
                 ],
                 "i18n": [
                     "@i18n-pot",
@@ -3164,10 +3161,10 @@
             ],
             "description": "WordPress Cloud Patterns",
             "support": {
-                "source": "https://github.com/newfold-labs/wp-module-patterns/tree/2.12.2",
+                "source": "https://github.com/newfold-labs/wp-module-patterns/tree/2.13.0",
                 "issues": "https://github.com/newfold-labs/wp-module-patterns/issues"
             },
-            "time": "2026-03-24T18:56:32+00:00"
+            "time": "2026-05-18T18:38:12+00:00"
         },
         {
             "name": "newfold-labs/wp-module-performance",

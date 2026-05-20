@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "b3fa2fcf27842b65f2629d730c8e8e00",
+    "content-hash": "f2273d9e37bb263cfd00c0b218856662",
     "packages": [
         {
             "name": "colinmollenhour/credis",
@@ -877,7 +877,7 @@
         },
         {
             "name": "newfold-labs/wp-module-ai-chat",
-            "version": "1.0.5",
+            "version": "1.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/newfold-labs/wp-module-ai-chat.git",
@@ -955,7 +955,7 @@
             ],
             "description": "AI Chat module for WordPress",
             "support": {
-                "source": "https://github.com/newfold-labs/wp-module-ai-chat/tree/1.0.5",
+                "source": "https://github.com/newfold-labs/wp-module-ai-chat/tree/1.1.0",
                 "issues": "https://github.com/newfold-labs/wp-module-ai-chat/issues"
             },
             "time": "2026-05-18T10:26:00+00:00"

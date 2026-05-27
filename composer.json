@@ -36,6 +36,7 @@
     "mozart": {
       "dep_namespace": "Bluehost\\Plugin\\",
       "dep_directory": "vendor-prefixed/",
+      "classmap_directory": "vendor-prefixed/",
       "classmap_prefix": "Bluehost_Plugin_",
       "packages": [
         "wordpress/mcp-adapter"
@@ -97,7 +98,7 @@
     "ensure-mozart": "sh -c 'test -f ./bin/mozart.phar || (mkdir -p bin && curl -o bin/mozart.phar -L https://github.com/coenjacobs/mozart/releases/download/1.1.6/mozart.phar && chmod +x bin/mozart.phar)'",
     "prefix-namespaces": [
       "@ensure-mozart",
-      "@php bin/mozart.phar compose",
+      "@php bin/mozart compose",
       "@composer dump-autoload"
     ],
     "post-install-cmd": [

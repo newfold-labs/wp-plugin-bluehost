@@ -1,0 +1,12 @@
+#!/usr/bin/env php
+<?php
+/**
+ * Mozart PHAR wrapper.
+ *
+ * The Mozart PHAR stub uses Phar::mapPhar('') which registers the archive
+ * under an empty alias, but the internal entry point tries to load files via
+ * phar://mozart.phar/... The Phar::loadPhar() call below pre-registers the
+ * archive under that alias so the internal references resolve correctly.
+ */
+Phar::loadPhar(__DIR__ . DIRECTORY_SEPARATOR . 'mozart.phar', 'mozart.phar');
+require 'phar://mozart.phar/bin/mozart';

@@ -3,10 +3,26 @@
 /**
  * Mozart PHAR wrapper.
  *
- * The Mozart PHAR stub uses Phar::mapPhar('') which registers the archive
- * under an empty alias, but the internal entry point tries to load files via
- * phar://mozart.phar/... The Phar::loadPhar() call below pre-registers the
- * archive under that alias so the internal references resolve correctly.
+ * Handles two issues with the Mozart PHAR distribution:
+ *
+ * 1. PHP version guard: Mozart requires PHP 8.1+. Workflows that install
+ *    Composer deps under PHP 7.4 (e.g. the PHPCS lint job) don't need the
+ *    vendor-prefixed output, so we exit 0 silently rather than crashing.
+ *
+ * 2. PHAR alias bug: The PHAR stub calls Phar::mapPhar('') (empty alias) but
+ *    the internal entry point references phar://mozart.phar/... Phar::loadPhar()
+ *    pre-registers the archive under that alias so the references resolve.
  */
-Phar::loadPhar(__DIR__ . DIRECTORY_SEPARATOR . 'mozart.phar', 'mozart.phar');
+if (version_compare(PHP_VERSION, '8.1.0', '<')) {
+    exit(0);
+}
+
+$pharPath = __DIR__ . DIRECTORY_SEPARATOR . 'mozart.phar';
+
+if (!file_exists($pharPath)) {
+    fwrite(STDERR, 'Error: ' . $pharPath . ' not found. Run composer run ensure-mozart first.' . PHP_EOL);
+    exit(1);
+}
+
+Phar::loadPhar($pharPath, 'mozart.phar');
 require 'phar://mozart.phar/bin/mozart';

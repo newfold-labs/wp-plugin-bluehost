@@ -187,6 +187,8 @@ jobs:
       - name: Verify WordPress is ready
         run: |
           echo "Verifying WordPress is ready..."
+          pwd
+          ls -la .wp-env*
           npx wp-env run cli wp core version
           echo "WordPress is ready!"
 

@@ -178,7 +178,11 @@ jobs:
         with:
           timeout_minutes: 4
           max_attempts: 3
-          command: npx wp-env start --debug
+          command: |
+            pwd
+            ls -la .wp-env*
+            npx wp-env start --debug
+            npx wp-env run cli wp core version
 
       - name: Verify WordPress is ready
         run: |

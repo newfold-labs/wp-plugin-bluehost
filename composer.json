@@ -33,18 +33,19 @@
   },
   "extra": {
     "installer-name": "bluehost-wordpress-plugin",
-    "strauss": {
-      "target_directory": "vendor-prefixed",
-      "namespace_prefix": "Bluehost\\Plugin\\",
-      "delete_vendor_packages": false,
+    "mozart": {
+      "dep_namespace": "Bluehost\\Plugin\\",
+      "dep_directory": "vendor-prefixed/",
+      "classmap_prefix": "Bluehost_Plugin_",
       "packages": [
         "wordpress/mcp-adapter"
       ],
-      "exclude_from_copy": {
-        "file_patterns": [
-          "wordpress/mcp-adapter/tests"
-        ]
-      }
+      "delete_vendor_directories": false
+    }
+  },
+  "autoload": {
+    "psr-4": {
+      "Bluehost\\Plugin\\WP\\MCP\\": "vendor-prefixed/wordpress/mcp-adapter/includes/"
     }
   },
   "repositories": {
@@ -93,10 +94,10 @@
       "@i18n-json",
       "@i18n-php"
     ],
-    "ensure-strauss": "sh -c 'test -f ./bin/strauss.phar || (mkdir -p bin && curl -o bin/strauss.phar -L https://github.com/BrianHenryIE/strauss/releases/download/0.27.0/strauss.phar && chmod +x bin/strauss.phar)'",
+    "ensure-mozart": "sh -c 'test -f ./bin/mozart.phar || (mkdir -p bin && curl -o bin/mozart.phar -L https://github.com/coenjacobs/mozart/releases/download/1.1.6/mozart.phar && chmod +x bin/mozart.phar)'",
     "prefix-namespaces": [
-      "@ensure-strauss",
-      "@php bin/strauss.phar",
+      "@ensure-mozart",
+      "@php bin/mozart.phar compose",
       "@composer dump-autoload"
     ],
     "post-install-cmd": [
@@ -104,11 +105,6 @@
     ],
     "post-update-cmd": [
       "@prefix-namespaces"
-    ],
-    "post-autoload-dump": [
-      "@ensure-strauss",
-      "@php bin/strauss.phar include-autoloader",
-      "@php bin/strauss.phar"
     ],
     "test": [
       "codecept run wpunit"
@@ -131,11 +127,10 @@
     "i18n-json": "Generate new language .json files.",
     "i18n-ci-pre": "Command for CI to run before generating language files.",
     "i18n-ci-post": "Command for CI to run after generating language files.",
-    "ensure-strauss": "Ensure Strauss PHAR exists and is executable (downloads if missing).",
-    "prefix-namespaces": "Prefix namespaces for the plugin.",
+    "ensure-mozart": "Ensure Mozart PHAR exists and is executable (downloads if missing).",
+    "prefix-namespaces": "Prefix namespaces for the plugin using Mozart.",
     "post-install-cmd": "Command to run after installing the plugin.",
     "post-update-cmd": "Command to run after updating the plugin.",
-    "post-autoload-dump": "Command to run after dumping the autoloader.",
     "test": "Run tests.",
     "test-coverage": "Run tests with coverage, merge coverage and create HTML report."
   },

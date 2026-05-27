@@ -22,7 +22,7 @@ if ( file_exists( __DIR__ . '/vendor/autoload_packages.php' ) ) {
 	require_once __DIR__ . '/vendor/autoload_packages.php';
 }
 
-// Composer autoloader (includes prefixed packages via Strauss modification)
+// Composer autoloader (includes prefixed packages via PSR-4 autoload mapping)
 if ( is_readable( __DIR__ . '/vendor/autoload.php' ) ) {
 	require __DIR__ . '/vendor/autoload.php';
 } else {

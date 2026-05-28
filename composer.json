@@ -46,7 +46,8 @@
   },
   "autoload": {
     "psr-4": {
-      "Bluehost\\Plugin\\WP\\MCP\\": "vendor-prefixed/wordpress/mcp-adapter/includes/"
+      "Bluehost\\Plugin\\WP\\MCP\\": "vendor-prefixed/wordpress/mcp-adapter/includes/",
+      "Bluehost\\Plugin\\WP\\McpSchema\\": "vendor-prefixed/wordpress/php-mcp-schema/src/"
     }
   },
   "repositories": {

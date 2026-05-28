@@ -114,7 +114,7 @@ jobs:
           PLUGIN_NAME: ${{ vars.PLUGIN_NAME }}
         run: |
           pluginHeaderTestedVersion=$(grep "Tested up to:" "$PLUGIN_NAME.php" | grep -Eo "[0-9\.]*")
-          wpEnvVersion=$(grep "WordPress/WordPress#tags/" .wp-env.json | grep -Eo "[0-9\.]*")
+          wpEnvVersion=$(grep -oE 'wordpress-[0-9]+(\.[0-9]+)+\.zip' .wp-env.json | grep -oE '[0-9]+(\.[0-9]+)+')
           echo "Plugin header tested version: $pluginHeaderTestedVersion"
           echo "wp-env version: $wpEnvVersion"
           [[ "$wpEnvVersion" == "$pluginHeaderTestedVersion" ]] || exit 1

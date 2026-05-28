@@ -153,7 +153,7 @@ jobs:
           PACKAGE: ${{ steps.workflow.outputs.PACKAGE }}
         run: |
           jq -n \
-            --arg core "https://wordpress.org/wordpress-${{ matrix.wpVersion }}.zip" \
+            --arg core "WordPress/WordPress#tags/${{ matrix.wpVersion }}" \
             --arg phpVersion "${{ matrix.phpVersion }}" \
             --arg plugin "$DIST/$PACKAGE" \
             '{core: $core, phpVersion: $phpVersion, plugins: [$plugin]}' \

@@ -43,10 +43,17 @@ vendor/newfold-labs/*/*.config.js
 vendor/newfold-labs/*/LICENSE
 vendor/newfold-labs/*/*.yml
 
-# Add wordpress/mcp-adapter rules vendor and vendor-prefixex
+# Add wordpress/mcp-adapter rules vendor and vendor-prefixed
 wordpress/mcp-adapter/.*
 wordpress/mcp-adapter/*.lock
 wordpress/mcp-adapter/*.json
 wordpress/mcp-adapter/*.md
 wordpress/mcp-adapter/tests
 wordpress/mcp-adapter/docs
+
+# Add wordpress/php-mcp-schema rules vendor and vendor-prefixed
+php-mcp-schema/.*
+php-mcp-schema/*.lock
+php-mcp-schema/*.json
+php-mcp-schema/*.md
+php-mcp-schema/tests

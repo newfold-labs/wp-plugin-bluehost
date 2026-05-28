@@ -39,7 +39,8 @@
       "classmap_directory": "vendor-prefixed/",
       "classmap_prefix": "Bluehost_Plugin_",
       "packages": [
-        "wordpress/mcp-adapter"
+        "wordpress/mcp-adapter",
+        "wordpress/php-mcp-schema"
       ],
       "delete_vendor_directories": false
     }

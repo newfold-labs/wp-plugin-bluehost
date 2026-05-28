@@ -94,9 +94,10 @@
       "@i18n-php"
     ],
     "ensure-strauss": "sh -c 'test -f ./bin/strauss.phar || (mkdir -p bin && curl -o bin/strauss.phar -L https://github.com/BrianHenryIE/strauss/releases/download/0.27.0/strauss.phar && chmod +x bin/strauss.phar)'",
+    "strauss-run": "sh -c 'COMPOSER_HOME=$(mktemp -d) COMPOSER_AUTH=\"{}\" GITHUB_TOKEN= php bin/strauss.phar \"$@\"' --",
     "prefix-namespaces": [
       "@ensure-strauss",
-      "@php bin/strauss.phar",
+      "@strauss-run",
       "@composer dump-autoload"
     ],
     "post-install-cmd": [
@@ -107,8 +108,8 @@
     ],
     "post-autoload-dump": [
       "@ensure-strauss",
-      "@php bin/strauss.phar include-autoloader",
-      "@php bin/strauss.phar"
+      "@strauss-run include-autoloader",
+      "@strauss-run"
     ],
     "test": [
       "codecept run wpunit"

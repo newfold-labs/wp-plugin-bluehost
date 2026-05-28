@@ -1,356 +1,356 @@
 {
-    "translation-revision-date": "2026-05-05T14:29:06+00:00",
+    "translation-revision-date": "2026-05-27T15:56:51+00:00",
     "generator": "WP-CLI\/2.12.0",
-    "source": "build\/4.16.1\/index.js",
+    "source": "build\/4.17.0\/index.js",
     "domain": "messages",
     "locale_data": {
         "messages": {
             "": {
                 "domain": "messages",
-                "lang": "de_DE",
+                "lang": "it_IT",
                 "plural-forms": "nplurals=2; plural=(n != 1);"
             },
             "Home": [
-                "Startseite"
+                "Home"
             ],
             "Settings": [
-                "Einstellungen"
+                "Impostazioni"
             ],
             "Get Help": [
-                "Hilfe erhalten"
+                "Ricevi assistenza"
             ],
             "Not Live": [
-                "Nicht live"
+                "Non live"
             ],
             "Live": [
                 "Live"
             ],
             "Your website is currently displaying a \"Coming Soon\" page.": [
-                "Ihre Webseite zeigt derzeit eine \"Kommende bald\"-Seite an."
+                "Al momento il tuo sito mostra una pagina \u201cComing Soon\u201d."
             ],
             "Oh No, An Error!": [
-                "Oh nein, ein Irrtum!"
+                "Oh no, un errore!"
             ],
             "You found an error, please refresh the page and try again!": [
-                "Sie haben einen Fehler gefunden, bitte aktualisieren Sie die Seite und versuchen Sie es erneut!"
+                "Hai trovato un errore, aggiorna la pagina e riprova!"
             ],
             "If the error persists, please contact support.": [
-                "Wenn der Fehler weiterhin besteht, wenden Sie sich bitte an den Support."
+                "Se l'errore persiste, contatta l'assistenza."
             ],
             "Error code:": [
-                "Fehlercode:"
+                "Codice errore:"
             ],
             "Bluehost WordPress Plugin": [
                 "Bluehost WordPress Plugin"
             ],
             "Phone": [
-                "Telefon"
+                "Telefono"
             ],
             "Call Us": [
-                "Rufen Sie uns an"
+                "Chiamaci"
             ],
             "Chat": [
-                "Plaudern"
+                "Chiacchierare"
             ],
             "Chat with one of our friendly Customer Care Specialists, as we are waiting to help. Open 24 hours - 7 days.": [
-                "Chatten Sie mit einem unserer freundlichen Kundendienstspezialisten, denn wir warten darauf, Ihnen zu helfen. 24 Stunden - 7 Tage ge\u00f6ffnet."
+                "Chatta con uno dei nostri amichevoli specialisti dell'assistenza clienti, poich\u00e9 stiamo aspettando di aiutarti. Aperto 24 ore su 24, 7 giorni su 7."
             ],
             "Live Chat": [
-                "Live-Chat"
+                "Chat dal vivo"
             ],
             "Tweet": [
-                "Zwitschern"
+                "Cinguettare"
             ],
             "Find our team at @bluehost for updates on our products and support from our team.": [
-                "Finden Sie unser Team unter @bluehost, um Updates zu unseren Produkten und Support von unserem Team zu erhalten."
+                "Trova il nostro team all'@bluehost per aggiornamenti sui nostri prodotti e supporto da parte del nostro team."
             ],
             "Tweet Us": [
-                "Twittern Sie uns"
+                "Twittaci"
             ],
             "YouTube": [
-                "Auf YouTube (Englisch)"
+                "Su YouTube"
             ],
             "Find tutorials, answers, interviews and guides on our YouTube channel.": [
-                "Tutorials, Antworten, Interviews und Leitf\u00e4den finden Sie auf unserem YouTube-Kanal."
+                "Trova tutorial, risposte, interviste e guide sul nostro canale YouTube."
             ],
             "Watch Now": [
-                "Jetzt ansehen"
+                "Guarda ora"
             ],
             "Knowledge Base": [
-                "Wissensdatenbank"
+                "Knowledge base"
             ],
             "Articles, guides, how-tos, instructions, and answers to our client's most frequently asked questions.": [
-                "Artikel, Anleitungen, Anleitungen, Anleitungen und Antworten auf die am h\u00e4ufigsten gestellten Fragen unserer Kunden."
+                "Articoli, guide, istruzioni, istruzioni e risposte alle domande pi\u00f9 frequenti dei nostri clienti."
             ],
             "Visit Knowledge Base": [
-                "Besuchen Sie die Wissensdatenbank"
+                "Visita la Knowledge Base"
             ],
             "Resources": [
-                "Betriebsmittel"
+                "Risorse"
             ],
             "Boost your online knowledge and get ahead of the competition.": [
-                "Erweitern Sie Ihr Online-Wissen und verschaffen Sie sich einen Vorsprung vor der Konkurrenz."
+                "Migliora le tue conoscenze online e supera la concorrenza."
             ],
             "Explore Resources": [
-                "Ressourcen erkunden"
+                "Esplora le risorse"
             ],
             "Events and Webinars": [
-                "Veranstaltungen und Webinare"
+                "Eventi e Webinar"
             ],
             "Team Bluehost organizes multiple webinars and events throughout the year. We are also sponsors and speak at most WordCamps across the world. Join us at our next event!": [
-                "Team Bluehost organisiert das ganze Jahr \u00fcber mehrere Webinare und Veranstaltungen. Wir sind auch Sponsoren und sprechen auf den meisten WordCamps auf der ganzen Welt. Seien Sie bei unserem n\u00e4chsten Event dabei!"
+                "Il team Bluehost organizza pi\u00f9 webinar ed eventi durante tutto l'anno. Siamo anche sponsor e parliamo nella maggior parte dei WordCamp in tutto il mondo. Unisciti a noi al nostro prossimo evento!"
             ],
             "More Info": [
-                "Mehr Info"
+                "Ulteriori informazioni"
             ],
             "Bluehost Website": [
-                "Bluehost Webseite"
+                "Sito web Bluehost"
             ],
             "Not finding what you need? Visit our website for more information about our products and services.": [
-                "Sie finden nicht, was Sie brauchen? Besuchen Sie unsere Website, um weitere Informationen \u00fcber unsere Produkte und Dienstleistungen zu erhalten."
+                "Non trovi quello che ti serve? Visita il nostro sito web per ulteriori informazioni sui nostri prodotti e servizi."
             ],
             "Go to Bluehost": [
-                "Gehe zu Bluehost"
+                "Vai a Bluehost"
             ],
             "There's nothing here!": [
-                "Hier gibt es nichts!"
+                "Non c'\u00e8 niente qui!"
             ],
             "Manage WordPress": [
-                "WordPress verwalten"
+                "Gestisci WordPress"
             ],
             "Staging": [
-                "Inszenierung"
+                "Stadiazione"
             ],
             "Performance": [
-                "Leistung"
+                "Prestazione"
             ],
             "Store": [
-                "Abspeichern"
+                "Negozio"
             ],
             "Commerce": [
-                "Handel"
+                "Commercio"
             ],
             "Marketplace": [
-                "Marktplatz"
+                "Mercato"
             ],
             "Help": [
-                "Hilfe"
+                "Guida"
             ],
             "Admin": [
-                "Administrator"
+                "Admin"
             ],
             "Secret page to manage admin features and settings.": [
-                "Geheime Seite zum Verwalten von Admin-Funktionen und -Einstellungen."
+                "Pagina segreta per gestire le funzioni e le impostazioni dell'amministratore."
             ],
             "Premium tools available in eCommerce Add-Ons": [
-                "Premium-Tools, die in E-Commerce-Add-Ons verf\u00fcgbar sind"
+                "Strumenti premium disponibili nei componenti aggiuntivi per l'e-commerce"
             ],
             "Discover exclusive features, designed to deliver unmatched value and elevate your online experience.": [
-                "Entdecken Sie exklusive Funktionen, die entwickelt wurden, um einen un\u00fcbertroffenen Wert zu bieten und Ihr Online-Erlebnis zu verbessern."
+                "Scopri funzionalit\u00e0 esclusive, progettate per offrire un valore senza pari e migliorare la tua esperienza online."
             ],
             "We are available 24\/7 to help answer questions and solve your problems.": [
-                "Wir sind rund um die Uhr f\u00fcr Sie da, um Fragen zu beantworten und Probleme zu l\u00f6sen."
+                "Siamo disponibili 24 ore su 24, 7 giorni su 7, per rispondere alle domande e risolvere i tuoi problemi."
             ],
             "Congrats, your %1$s is %2$s!": [
-                "Gl\u00fcckwunsch, dein %1$s ist %2$s!"
+                "Congratulazioni, il tuo %1$s \u00e8 %2$s!"
             ],
             "store": [
-                "Laden"
+                "Negozio"
             ],
             "website": [
-                "Website"
+                "Sito web"
             ],
             "ready": [
-                "Bereit"
+                "Pronto"
             ],
             "live": [
                 "Live"
             ],
             "Store Details": [
-                "Details zum Shop"
+                "Dettagli negozio"
             ],
             "Add Store Details": [
-                "Shop-Details hinzuf\u00fcgen"
+                "Aggiungi dettagli negozio"
             ],
             "Quick links": [
-                "Schnelle Links"
+                "Collegamenti rapidi"
             ],
             "Launch our AI Editor": [
-                "Starten Sie unseren KI-Editor"
+                "Avvia il nostro editor AI"
             ],
             "Say hello to effortless site building with a wide library of 250+ blocks": [
-                "Begr\u00fc\u00dfen Sie die m\u00fchelose Erstellung von Websites mit einer umfangreichen Bibliothek von 250+ Bl\u00f6cken"
+                "Dai il benvenuto alla creazione di siti senza sforzo con un'ampia libreria di 250+ blocchi"
             ],
             "Launch the Editor": [
-                "Starten Sie den Editor"
+                "Avvia l'editor"
             ],
             "Master WordPress with help from our AI assistant.": [
-                "Meistern Sie WordPress mit Hilfe unseres KI-Assistenten."
+                "Padroneggia WordPress con l'aiuto del nostro assistente AI."
             ],
             "Launch our AI Help": [
-                "Starten Sie unsere KI-Hilfe"
+                "Avvia la nostra Guida AI"
             ],
             "Pro Design Live": [
-                "Pro Design Live"
+                "Pro Design dal vivo"
             ],
             "We will help you build and grow your website and improve your skills in WordPress.": [
-                "Wir helfen Ihnen, Ihre Website aufzubauen und zu erweitern und Ihre F\u00e4higkeiten in WordPress zu verbessern."
+                "Ti aiuteremo a costruire e far crescere il tuo sito web e a migliorare le tue competenze in WordPress."
             ],
             "Get Info": [
-                "Informationen erhalten"
+                "Richiedi informazioni"
             ],
             "Refer a Friend": [
-                "Einen Freund empfehlen"
+                "Invita un amico"
             ],
             "Unlock exclusive benefits with our referral program.": [
-                "Sichern Sie sich exklusive Vorteile mit unserem Empfehlungsprogramm."
+                "Sblocca vantaggi esclusivi con il nostro programma di referral."
             ],
             "Start Now": [
-                "Jetzt loslegen"
+                "Parti ora"
             ],
             "Security, performance, backups, staging & more.": [
-                "Sicherheit, Leistung, Backups, Staging und mehr."
+                "Sicurezza, prestazioni, backup, staging e altro ancora."
             ],
             "Manage": [
-                "Verwalten"
+                "Amministrare"
             ],
             "Optimize your content": [
-                "Optimieren Sie Ihre Inhalte"
+                "Ottimizza i tuoi contenuti"
             ],
             "Optimize your content for search engines and boost your store visibility.": [
-                "Optimieren Sie Ihre Inhalte f\u00fcr Suchmaschinen und steigern Sie die Sichtbarkeit Ihres Gesch\u00e4fts."
+                "Ottimizza i tuoi contenuti per i motori di ricerca e aumenta la visibilit\u00e0 del tuo negozio."
             ],
             "Start now": [
-                "Jetzt loslegen"
+                "Inizia ora"
             ],
             "Explore our featured collection of tools and services.": [
-                "Entdecken Sie unsere vorgestellte Sammlung von Tools und Services."
+                "Esplora la nostra raccolta di strumenti e servizi in primo piano."
             ],
             "Oops, there was an error loading the marketplace, please try again later.": [
-                "Hoppla, beim Laden des Marktplatzes ist ein Fehler aufgetreten, bitte versuchen Sie es sp\u00e4ter erneut."
+                "Oops, si \u00e8 verificato un errore durante il caricamento del marketplace, riprova pi\u00f9 tardi."
             ],
             "Sorry, no marketplace items. Please, try again later.": [
-                "Leider keine Marktplatzartikel. Bitte versuchen Sie es sp\u00e4ter noch einmal."
+                "Spiacenti, non ci sono articoli del marketplace. Per favore, riprova pi\u00f9 tardi."
             ],
             "Load More": [
-                "Mehr laden"
+                "Carica di pi\u00f9"
             ],
             "Oops! Something Went Wrong": [
-                "Hoppla! Etwas ist schief gelaufen"
+                "Oops! Qualcosa \u00e8 andato storto"
             ],
             "An error occurred while loading the content. Please try again later.": [
-                "Beim Laden des Inhalts ist ein Fehler aufgetreten. Bitte versuchen Sie es sp\u00e4ter erneut."
+                "Si \u00e8 verificato un errore durante il caricamento del contenuto. Riprova pi\u00f9 tardi."
             ],
             "Enabled All auto-updates": [
-                "Aktiviert: Alle automatischen Updates"
+                "Abilitato Tutti gli aggiornamenti automatici"
             ],
             "Disabled All auto-updates": [
-                "Deaktiviert Alle automatischen Updates"
+                "Disabilitato Tutti gli aggiornamenti automatici"
             ],
             "Everything will automatically update.": [
-                "Alles wird automatisch aktualisiert."
+                "Tutto si aggiorner\u00e0 automaticamente."
             ],
             "Custom auto-update settings.": [
-                "Benutzerdefinierte Einstellungen f\u00fcr automatische Updates."
+                "Impostazioni di aggiornamento automatico personalizzate."
             ],
             "Automatically keep all up to date": [
-                "Halten Sie alle automatisch auf dem neuesten Stand"
+                "Mantieni automaticamente tutto aggiornato"
             ],
             "Enabled Core auto-updates": [
-                "Automatische Core-Updates aktiviert"
+                "Abilitati gli aggiornamenti automatici di base"
             ],
             "Disabled Core auto-updates": [
-                "Automatische Core-Updates deaktiviert"
+                "Disabilitati gli aggiornamenti automatici di base"
             ],
             "WordPress will automatically update.": [
-                "WordPress wird automatisch aktualisiert."
+                "WordPress si aggiorner\u00e0 automaticamente."
             ],
             "WordPress must be manually updated.": [
-                "WordPress muss manuell aktualisiert werden."
+                "WordPress deve essere aggiornato manualmente."
             ],
             "WordPress Core": [
-                "WordPress-Kern"
+                "Nucleo di WordPress"
             ],
             "Enabled Plugins auto-update": [
-                "Aktivierte Plugins werden automatisch aktualisiert"
+                "Aggiornamento automatico dei plugin abilitati"
             ],
             "Disabled Plugins auto-update": [
-                "Deaktivierte automatische Aktualisierung von Plugins"
+                "Aggiornamento automatico dei plugin disabilitato"
             ],
             "All plugins will automatically update.": [
-                "Alle Plugins werden automatisch aktualisiert."
+                "Tutti i plugin si aggiorneranno automaticamente."
             ],
             "Each plugin must be manually updated.": [
-                "Jedes Plugin muss manuell aktualisiert werden."
+                "Ogni plugin deve essere aggiornato manualmente."
             ],
             "Plugins": [
-                "Plugins"
+                "Plugin"
             ],
             "Enabled Themes auto-update": [
-                "Aktivierte automatische Aktualisierung von Themes"
+                "Abilitato l'aggiornamento automatico dei temi"
             ],
             "Disabled Themes auto-update": [
-                "Deaktivierte automatische Aktualisierung von Themes"
+                "Aggiornamento automatico dei temi disabilitato"
             ],
             "All themes will automatically update.": [
-                "Alle Designs werden automatisch aktualisiert."
+                "Tutti i temi si aggiorneranno automaticamente."
             ],
             "Each theme must be manually updated.": [
-                "Jedes Design muss manuell aktualisiert werden."
+                "Ogni tema deve essere aggiornato manualmente."
             ],
             "Themes": [
-                "Themen"
+                "Temi"
             ],
             "Automatic Updates": [
-                "Automatische Updates"
+                "Aggiornamenti automatici"
             ],
             "Keeping automatic updates on ensures timely security fixes and the latest features.": [
-                "Automatische Updates stellen sicher, dass zeitnahe Sicherheitsupdates und die neuesten Funktionen verf\u00fcgbar sind."
+                "Mantenere attivi gli aggiornamenti automatici garantisce correzioni di sicurezza tempestive e le funzionalit\u00e0 pi\u00f9 recenti."
             ],
             "Oops! Something went wrong. Please try again.": [
-                "Hoppla! Irgendetwas ist schief gelaufen. Bitte versuchen Sie es erneut."
+                "Oops! Qualcosa \u00e8 andato storto. Riprova."
             ],
             "Coming soon activated": [
-                "Demn\u00e4chst aktiviert"
+                "Prossimamente attivato"
             ],
             "Coming soon deactivated": [
-                "Demn\u00e4chst deaktiviert"
+                "Prossimamente disattivato"
             ],
             "Coming soon page is active. Site requires login.": [
-                "Die Seite \"Demn\u00e4chst verf\u00fcgbar\" ist aktiv. F\u00fcr die Website ist eine Anmeldung erforderlich."
+                "La pagina Coming soon \u00e8 attiva. Il sito richiede l'accesso."
             ],
             "Coming soon page is not active. Site is live to visitors.": [
-                "Die Seite \"Demn\u00e4chst verf\u00fcgbar\" ist nicht aktiv. Die Website ist f\u00fcr Besucher live."
+                "La pagina Prossimamente non \u00e8 attiva. Il sito \u00e8 disponibile per i visitatori."
             ],
             "Site Status": [
-                "Status der Website"
+                "Stato del sito"
             ],
             "Turn off your \"Coming Soon\" page when you are ready to launch your website.": [
-                "Deaktivieren Sie Ihre \"Coming Soon\"-Seite, wenn Sie bereit sind, Ihre Website zu starten."
+                "Disattiva la pagina \"Prossimamente\" quando sei pronto per avviare il tuo sito web."
             ],
             "Turn on your \"Coming Soon\" page when you need to make major changes to your website.": [
-                "Aktivieren Sie Ihre \"Demn\u00e4chst\"-Seite, wenn Sie gr\u00f6\u00dfere \u00c4nderungen an Ihrer Website vornehmen m\u00fcssen."
+                "Attiva la pagina \"Prossimamente\" quando devi apportare modifiche importanti al tuo sito web."
             ],
             "Your Bluehost Coming Soon page lets you hide your site from visitors while you make the magic happen.": [
-                "Auf Ihrer Bluehost Coming Soon-Seite k\u00f6nnen Sie Ihre Website vor Besuchern verbergen, w\u00e4hrend Sie die Magie geschehen lassen."
+                "La tua pagina Bluehost Coming Soon ti consente di nascondere il tuo sito ai visitatori mentre fai accadere la magia."
             ],
             "Disabled old post comments": [
-                "Deaktivierte Kommentare zu alten Beitr\u00e4gen"
+                "Disabilitati i commenti ai vecchi post"
             ],
             "Enabled old post comments": [
-                "Alte Beitragskommentare aktiviert"
+                "Abilitati i commenti ai vecchi post"
             ],
             "Comments on old posts are disabled.": [
-                "Kommentare zu alten Beitr\u00e4gen sind deaktiviert."
+                "I commenti sui vecchi post sono disabilitati."
             ],
             "Comments are allowed on old posts.": [
-                "Kommentare zu alten Beitr\u00e4gen sind erlaubt."
+                "I commenti sono consentiti sui vecchi post."
             ],
             "Disable comments for older posts": [
-                "Kommentare f\u00fcr \u00e4ltere Beitr\u00e4ge deaktivieren"
+                "Disabilita i commenti per i post pi\u00f9 vecchi"
             ],
             "Comments setting saved": [
-                "Kommentareinstellung gespeichert"
+                "Impostazione dei commenti salvati"
             ],
             "Comments on posts are disabled after %s day.": [
                 ""
@@ -359,172 +359,172 @@
                 ""
             ],
             "Comments setting saved.": [
-                "Einstellung \"Kommentare\" gespeichert."
+                "Impostazione dei commenti salvata."
             ],
             "Posts will display %s comment at a time.": [
                 ""
             ],
             "Comments to display per page": [
-                "Kommentare, die pro Seite angezeigt werden sollen"
+                "Commenti da visualizzare per pagina"
             ],
             "Comments": [
-                "Kommentare"
+                "Commenti"
             ],
             "Comments allow visitors to provide feedback and respond to your posts or pages.": [
-                "Kommentare erm\u00f6glichen es Besuchern, Feedback zu geben und auf Ihre Beitr\u00e4ge oder Seiten zu antworten."
+                "I commenti consentono ai visitatori di fornire feedback e rispondere ai tuoi post o alle tue pagine."
             ],
             "The trash will automatically empty every %s week.": [
                 ""
             ],
             "Trash setting saved": [
-                "Papierkorbeinstellung gespeichert"
+                "Impostazione cestino salvata"
             ],
             "Number of weeks in between emptying trash": [
-                "Anzahl der Wochen zwischen dem Leeren des M\u00fclls"
+                "Numero di settimane tra lo svuotamento del cestino"
             ],
             "Content Options": [
-                "Inhaltsoptionen"
+                "Opzioni di contenuto"
             ],
             "Controls for how often to empty the trash.": [
-                "Steuert, wie oft der Papierkorb geleert werden soll."
+                "Controlla la frequenza con cui svuotare il cestino."
             ],
             "Help Center Enabled": [
-                "Help Center aktiviert"
+                "Centro assistenza abilitato"
             ],
             "Help Center Disabled": [
-                "Help Center deaktiviert"
+                "Centro assistenza disabilitato"
             ],
             "Reload the page to access the Help Center.": [
-                "Laden Sie die Seite neu, um auf das Help Center zuzugreifen."
+                "Ricarica la pagina per accedere al Centro assistenza."
             ],
             "The Help Center will no longer display.": [
-                "Das Help Center wird nicht mehr angezeigt."
+                "Il Centro assistenza non verr\u00e0 pi\u00f9 visualizzato."
             ],
             "The Help Center provides guided, step-by-step assistance as you build your site.": [
-                "Das Help Center bietet eine Anleitung und Schritt-f\u00fcr-Schritt-Unterst\u00fctzung beim Erstellen Ihrer Website."
+                "Il Centro assistenza fornisce assistenza guidata passo dopo passo durante la creazione del sito."
             ],
             "Sorry, that is not allowed.": [
-                "Sorry, das ist nicht erlaubt."
+                "Spiacenti, non \u00e8 permesso."
             ],
             "This feature cannot currently be modified.": [
-                "Diese Funktion kann derzeit nicht ge\u00e4ndert werden."
+                "Questa funzione non pu\u00f2 essere attualmente modificata."
             ],
             "Optimize your website my managing cache, security and performance settings.": [
-                "Optimieren Sie Ihre Website durch die Verwaltung von Cache-, Sicherheits- und Leistungseinstellungen."
+                "Ottimizza il tuo sito web gestendo le impostazioni di cache, sicurezza e prestazioni."
             ],
             "Optimize your website by managing cache and performance settings": [
-                "Optimieren Sie Ihre Website, indem Sie Cache- und Performance-Einstellungen verwalten"
+                "Ottimizza il tuo sito web gestendo la cache e le impostazioni delle prestazioni"
             ],
             "General Settings": [
-                "Allgemeine Einstellungen"
+                "Impostazioni generali"
             ],
             "Manage common settings for your website": [
-                "Allgemeine Einstellungen f\u00fcr Ihre Website verwalten"
+                "Gestire le impostazioni comuni per il tuo sito web"
             ],
             "Features": [
-                "Funktionen"
+                "Tratti somatici"
             ],
             "Customize the available features as you manage your website.": [
-                "Passen Sie die verf\u00fcgbaren Funktionen an, w\u00e4hrend Sie Ihre Website verwalten."
+                "Personalizza le funzionalit\u00e0 disponibili durante la gestione del tuo sito web."
             ],
             "A staging site is a duplicate of your live site, offering a secure environment to experiment, test updates, and deploy when ready.": [
-                "Eine Staging-Site ist ein Duplikat Ihrer Live-Site und bietet eine sichere Umgebung zum Experimentieren, Testen von Updates und Bereitstellen, wenn sie bereit ist."
+                "Un sito di staging \u00e8 un duplicato del tuo sito live, che offre un ambiente sicuro per sperimentare, testare gli aggiornamenti e distribuirli quando sei pronto."
             ],
             "Performance Enabled": [
-                "Leistung aktiviert"
+                "Prestazioni abilitate"
             ],
             "Performance Disabled": [
-                "Leistung deaktiviert"
+                "Prestazioni disabilitate"
             ],
             "You need to reload the page to manage Performance.": [
-                "Sie m\u00fcssen die Seite neu laden, um die Leistung zu verwalten."
+                "\u00c8 necessario ricaricare la pagina per gestire le prestazioni."
             ],
             "Performance will no longer display.": [
-                "Die Leistung wird nicht mehr angezeigt."
+                "Le prestazioni non verranno pi\u00f9 visualizzate."
             ],
             "The performance feature provides improvements to loads faster for visitors including cache settings.": [
-                "Die Leistungsfunktion bietet Verbesserungen f\u00fcr schnellere Ladevorg\u00e4nge f\u00fcr Besucher, einschlie\u00dflich Cache-Einstellungen."
+                "La funzione delle prestazioni offre miglioramenti ai caricamenti pi\u00f9 rapidi per i visitatori, comprese le impostazioni della cache."
             ],
             "Staging Enabled": [
-                "Staging aktiviert"
+                "Staging abilitato"
             ],
             "Staging Disabled": [
-                "Staging deaktiviert"
+                "Staging disabilitato"
             ],
             "You need to reload the page to manage Staging.": [
-                "Sie m\u00fcssen die Seite neu laden, um das Staging zu verwalten."
+                "\u00c8 necessario ricaricare la pagina per gestire lo Staging."
             ],
             "Staging will no longer display.": [
-                "Das Staging wird nicht mehr angezeigt."
+                "La gestione temporanea non verr\u00e0 pi\u00f9 visualizzata."
             ],
             "The staging feature provides a way to copy a site to test new updates, features or content.": [
-                "Die Stagingfunktion bietet eine M\u00f6glichkeit, eine Website zu kopieren, um neue Updates, Funktionen oder Inhalte zu testen."
+                "La funzione di staging consente di copiare un sito per testare nuovi aggiornamenti, funzionalit\u00e0 o contenuti."
             ],
             "WonderBlocks Enabled": [
-                "WonderBlocks aktiviert"
+                "WonderBlocks abilitato"
             ],
             "WonderBlocks Disabled": [
-                "WonderBlocks deaktiviert"
+                "WonderBlocks disabilitato"
             ],
             "Create new content to see WonderBlocks in action.": [
-                "Erstellen Sie neue Inhalte, um WonderBlocks in Aktion zu sehen."
+                "Crea nuovi contenuti per vedere WonderBlocks in azione."
             ],
             "WonderBlocks will no longer display.": [
-                "WonderBlocks werden nicht mehr angezeigt."
+                "I WonderBlock non verranno pi\u00f9 visualizzati."
             ],
             "WonderBlocks provides a library of customizable block patterns and page templates.": [
-                "WonderBlocks bietet eine Bibliothek mit anpassbaren Blockmustern und Seitenvorlagen."
+                "WonderBlocks fornisce una libreria di modelli di blocchi e modelli di pagina personalizzabili."
             ],
             "Create a campaign and boost your sales!": [
-                "Erstellen Sie eine Kampagne und steigern Sie Ihren Umsatz!"
+                "Crea una campagna e aumenta le tue vendite!"
             ],
             "Create custom upsell, cross-sell and other promotional campaigns to generate more sales.": [
-                "Erstellen Sie individuelle Upsell-, Cross-Sell- und andere Werbekampagnen, um mehr Verk\u00e4ufe zu generieren."
+                "Crea campagne personalizzate di upsell, cross-sell e altre campagne promozionali per generare pi\u00f9 vendite."
             ],
             "Get Started Now": [
-                "Fang jetzt an"
+                "Inizia ora"
             ],
             "Not sure where to start? Try one of these popular promotions:": [
-                "Wissen Sie nicht, wo Sie anfangen sollen? Probieren Sie eine dieser beliebten Aktionen aus:"
+                "Non sai da dove cominciare? Prova una di queste promozioni popolari:"
             ],
             "Create a Campaign": [
-                "Eine Kampagne erstellen"
+                "Crea una campagna"
             ],
             "Free Shipping": [
-                "Freier Versand"
+                "Spedizione gratuita"
             ],
             "Attract and retain customers by offering free shipping based on cart amount, location or store category.": [
-                "Gewinnen und halten Sie Kunden, indem Sie kostenlosen Versand basierend auf Warenwarenzahl, Standort oder Shop-Kategorie anbieten."
+                "Attira e fidelizza i clienti offrendo spedizione gratuita in base all'importo del carrello, alla posizione o alla categoria del negozio."
             ],
             "Buy 1 Get 1": [
-                "Kaufen Sie 1 Bekommen Sie 1"
+                "Compra 1 Prendi 1"
             ],
             "Attract customers with a compelling deal where they can buy one product and get another product for free.": [
-                "Ziehen Sie Kunden mit einem \u00fcberzeugenden Angebot an, bei dem sie ein Produkt kaufen und ein anderes kostenlos erhalten k\u00f6nnen."
+                "Attira i clienti con un'offerta interessante in cui possono acquistare un prodotto e riceverne un altro gratuitamente."
             ],
             "Gift Product in Cart": [
-                "Geschenkprodukt im Einkaufswagen"
+                "Prodotto regalo nel carrello"
             ],
             "Reward customers with a free gift in their cart based on total cart value, or specific products or categories.": [
-                "Belohnen Sie Kunden mit einem kostenlosen Geschenk im Warenkorb, basierend auf dem Gesamtwert des Warenkorbs oder bestimmten Produkten oder Kategorien."
+                "Premia i clienti con un regalo gratuito nel carrello in base al valore totale del carrello, o a prodotti o categorie specifiche."
             ],
             "Category Discount": [
-                "Kategorienrabatt"
+                "Sconto per categoria"
             ],
             "Give your customers a discount on specific categories of products and boost sales for those categories.": [
-                "Geben Sie Ihren Kunden einen Rabatt auf bestimmte Produktkategorien und steigern Sie den Umsatz in diesen Kategorien."
+                "Offri ai tuoi clienti uno sconto su specifiche categorie di prodotti e aumenta le vendite di quelle categorie."
             ],
             "Upsell in Thank You Page": [
-                "Upsell auf der Dankesseite"
+                "Vendi un ulteriore nella pagina di ringraziamento"
             ],
             "Maximize sales by presenting relevant upsell options after customers have completed their purchase.": [
-                "Maximieren Sie den Umsatz, indem Sie relevante Upsell-Optionen pr\u00e4sentieren, nachdem die Kunden ihren Kauf abgeschlossen haben."
+                "Massimizzare le vendite presentando opzioni di upsell rilevanti dopo che i clienti hanno completato l'acquisto."
             ],
             "Last Minute Deal": [
-                "Last-Minute-Deal"
+                "Accordo dell'ultimo minuto"
             ],
             "Create urgency with a special time-limited deal for customers on the cart and checkout pages.": [
-                "Schaffen Sie Dringlichkeit mit einem speziellen zeitlich begrenzten Angebot f\u00fcr Kunden auf den Warenkorb- und Kassenseiten."
+                "Crea urgenza con un'offerta speciale a tempo limitato per i clienti sul carrello e sulle pagine di pagamento."
             ]
         }
     }

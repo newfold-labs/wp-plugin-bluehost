@@ -1,6 +1,6 @@
 {
     "name": "bluehost-wordpress-plugin",
-    "version": "4.16.1",
+    "version": "4.17.0",
     "description": "WordPress plugin that integrates your WordPress site with the Bluehost control panel, including performance, security, and update features.",
     "author": {
         "name": "Bluehost",
@@ -62,7 +62,7 @@
         "@playwright/test": "^1.60.0",
         "@tailwindcss/forms": "^0.5.11",
         "@wordpress/env": "^11.6.0",
-        "@wordpress/eslint-plugin": "^25.1.0",
+        "@wordpress/eslint-plugin": "25.1.0",
         "@wordpress/scripts": "^32.2.0",
         "ajv": "^8.20.0",
         "eslint-import-resolver-alias": "^1.1.2",

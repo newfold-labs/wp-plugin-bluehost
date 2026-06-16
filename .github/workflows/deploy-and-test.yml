@@ -16,8 +16,10 @@ env:
 jobs:
   deploy:
     runs-on: ubuntu-latest
+    timeout-minutes: 60
     permissions:
-      contents: read
+      contents: read           # Required to clone the repo.
+      actions: write          # Required to upload the plugin zip artifact.
     strategy:
       matrix:
         environment: [ bluehost-shared ]

@@ -20,7 +20,8 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 45
     permissions:
-      contents: read
+      contents: read            # Required to clone the repo.
+      actions: write           # Required to upload Playwright test result artifacts.
 
     steps:
       - name: Checkout

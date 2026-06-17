@@ -5,12 +5,13 @@ return [
 	'language' => 'it_IT',
 	'project-id-version' => 'wp-plugin-bluehost',
 	'pot-creation-date' => '2025-02-25T20:53:21+00:00',
-	'po-revision-date' => '2026-05-05T14:29:06+00:00',
+	'po-revision-date' => '2026-05-27T15:56:51+00:00',
 	'x-generator' => 'Crowdin',
 	'messages' => [
 		'The Bluehost Plugin' => 'Il plugin Bluehost',
 		'https://bluehost.com' => 'https://bluehost.com',
 		'WordPress plugin that integrates a WordPress site with the Bluehost control panel, including performance, security, and update features.' => 'Plugin WordPress che integra un sito WordPress con il pannello di controllo Bluehost, tra cui prestazioni, sicurezza e funzionalità di aggiornamento.',
+		'Bluehost' => 'Bluehost',
 		'Please install the Bluehost Plugin dependencies.' => 'Installa le dipendenze del plugin Bluehost.',
 		'%1$sNeed a domain?%2$sCheck out our %3$sDomain Registration%4$s options.%5$s' => '%1$sHai bisogno di un dominio?%2$sDai un\'occhiata alle nostre opzioni di %3$sRegistrazione del dominio%4$s.%5$s',
 		'%1$sDiscover our hosting solutions:%2$s

@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "9c575536a7db03b36d07a7557b53140c",
+    "content-hash": "ea6e904dd17d669b1a85fb17b4cf21c9",
     "packages": [
         {
             "name": "colinmollenhour/credis",
@@ -1511,22 +1511,22 @@
         },
         {
             "name": "newfold-labs/wp-module-editor-chat",
-            "version": "1.0.9",
+            "version": "2.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/newfold-labs/wp-module-editor-chat.git",
-                "reference": "7fe53518b371f3ff86febe8a0269ba807106dc25"
+                "reference": "9228d977ce6269e7b97ddcf96877403e76eedd98"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/newfold-labs/wp-module-editor-chat/zipball/7fe53518b371f3ff86febe8a0269ba807106dc25",
-                "reference": "7fe53518b371f3ff86febe8a0269ba807106dc25",
+                "url": "https://api.github.com/repos/newfold-labs/wp-module-editor-chat/zipball/9228d977ce6269e7b97ddcf96877403e76eedd98",
+                "reference": "9228d977ce6269e7b97ddcf96877403e76eedd98",
                 "shasum": ""
             },
             "require-dev": {
                 "johnpbloch/wordpress": "@stable",
                 "lucatume/wp-browser": "*",
-                "newfold-labs/wp-php-standards": "^1.2.5",
+                "newfold-labs/wp-php-standards": "^1.2.6",
                 "phpunit/phpcov": "*",
                 "wp-cli/i18n-command": "^2.7.0"
             },
@@ -1592,10 +1592,10 @@
             ],
             "description": "Site Editor AI Chat",
             "support": {
-                "source": "https://github.com/newfold-labs/wp-module-editor-chat/tree/1.0.9",
+                "source": "https://github.com/newfold-labs/wp-module-editor-chat/tree/2.1.0",
                 "issues": "https://github.com/newfold-labs/wp-module-editor-chat/issues"
             },
-            "time": "2026-04-06T15:51:04+00:00"
+            "time": "2026-06-03T16:52:31+00:00"
         },
         {
             "name": "newfold-labs/wp-module-facebook",

@@ -93,7 +93,7 @@
       "@i18n-json",
       "@i18n-php"
     ],
-    "ensure-strauss": "sh -c 'test -f ./bin/strauss.phar || (mkdir -p bin && curl -o bin/strauss.phar -L https://github.com/BrianHenryIE/strauss/releases/download/0.27.0/strauss.phar && chmod +x bin/strauss.phar)'",
+    "ensure-strauss": "sh -c 'test -f ./bin/strauss.phar || (mkdir -p bin && curl -o bin/strauss.phar -L https://github.com/BrianHenryIE/strauss/releases/download/0.27.2/strauss.phar && chmod +x bin/strauss.phar)'",
     "strauss-run": "sh -c 'COMPOSER_HOME=$(mktemp -d) COMPOSER_AUTH=\"{}\" GITHUB_TOKEN= php bin/strauss.phar \"$@\"' --",
     "prefix-namespaces": [
       "@ensure-strauss",
@@ -154,7 +154,7 @@
     "newfold-labs/wp-module-activation": "^1.0.14",
     "newfold-labs/wp-module-adam": "^1.0.1",
     "newfold-labs/wp-module-ai": "^1.3.5",
-    "newfold-labs/wp-module-ai-chat": "^1.1.4",
+    "newfold-labs/wp-module-ai-chat": "^1.1.5",
     "newfold-labs/wp-module-atomic": "^1.4.1",
     "newfold-labs/wp-module-coming-soon": "^2.2.8",
     "newfold-labs/wp-module-context": "^1.0.3",

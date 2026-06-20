@@ -40,7 +40,9 @@ class FiltersWpunitTest extends \lucatume\WPBrowser\TestCase\WPTestCase {
 		// Filters::init() in tests registers global hooks; clear them so later tests don't see lingering state.
 		remove_all_filters( 'http_request_args' );
 		remove_all_filters( 'newfold/sso/hosting_login' );
-		remove_all_actions( 'load-site-editor.php' );
+		$callback = array( \Bluehost\Filters::class, 'redirect_wvc_theme_to_10web_editor' );
+		\remove_action( 'load-site-editor.php', $callback );
+		\remove_action( 'load-customize.php', $callback );
 		parent::tearDown();
 	}
 
@@ -137,14 +139,13 @@ class FiltersWpunitTest extends \lucatume\WPBrowser\TestCase\WPTestCase {
 	}
 
 	/** @covers \Bluehost\Filters::init */
-	public function test_init_registers_site_editor_redirect(): void {
+	public function test_init_registers_site_editor_and_customizer_redirects(): void {
 		\Bluehost\Filters::init();
 
 		$callback = array( \Bluehost\Filters::class, 'redirect_wvc_theme_to_10web_editor' );
 
-		$this->assertNotFalse(
-			\has_action( 'load-site-editor.php', $callback )
-		);
+		$this->assertNotFalse( \has_action( 'load-site-editor.php', $callback ) );
+		$this->assertNotFalse( \has_action( 'load-customize.php', $callback ) );
 	}
 
 	/** @covers \Bluehost\Filters::configure_hosting_login */

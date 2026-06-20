@@ -24,15 +24,21 @@ final class Filters {
 	 */
 	public static function init() {
 		\add_filter( 'http_request_args', array( __CLASS__, 'add_hiive_headers' ), 99, 2 );
-		\add_action( 'load-site-editor.php', array( __CLASS__, 'redirect_wvc_theme_to_10web_editor' ) );
+		\add_action( 'admin_init', array( __CLASS__, 'redirect_wvc_theme_to_10web_editor' ), 1 );
 		\add_filter( 'newfold/sso/hosting_login', array( __CLASS__, 'configure_hosting_login' ) );
 	}
 
 	/**
-	 * Redirect the WP Site Editor to the 10Web WVC editor when that theme is active.
+	 * Redirect WP Site Editor / Customizer to the 10Web WVC editor when that theme is active.
 	 */
 	public static function redirect_wvc_theme_to_10web_editor() {
 		if ( ! self::is_wvc_theme_active() ) {
+			return;
+		}
+
+		global $pagenow;
+
+		if ( ! \in_array( $pagenow, array( 'site-editor.php', 'customize.php' ), true ) ) {
 			return;
 		}
 
@@ -66,7 +72,7 @@ final class Filters {
 	 *
 	 * @return bool
 	 */
-	private static function is_wvc_theme_active() {
+	public static function is_wvc_theme_active() {
 		return self::TENWEB_WVC_THEME_SLUG === \get_stylesheet()
 			|| self::TENWEB_WVC_THEME_SLUG === \get_template();
 	}

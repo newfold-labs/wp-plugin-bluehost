@@ -32,6 +32,7 @@ final class Data {
 			),
 			'wordpress'          => array(
 				'isBlockTheme' => function_exists( 'wp_is_block_theme' ) ? wp_is_block_theme() : false,
+				'isWvcTheme'   => Filters::is_wvc_theme_active(),
 			),
 			'siteType'           => self::get_site_type(),
 			'isSalesPromoActive' => self::is_sales_promotions_plugin_active(),

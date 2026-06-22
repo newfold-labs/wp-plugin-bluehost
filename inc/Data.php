@@ -53,7 +53,7 @@ final class Data {
 		$runtime['ctbs'] = array(
 			'ecomFamily' => array(
 				'id'  => '5dc83bdd-9274-4557-a6d7-0b2adbc3919f',
-				'url' => 'https://www.bluehost.com/my-account/hosting/details#click-to-buy-WP_SOLUTION_FAMILY',
+				'url' => 'https://www.bluehost.com/my-account/market-place#marketplace-WordPress%20Solutions',
 			),
 		);
 

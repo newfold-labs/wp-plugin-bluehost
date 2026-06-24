@@ -355,7 +355,8 @@ export const getEditorUrl = async ( canvas = 'edit' ) => {
 	const blockThemeEditorUrl = `${ runtime.adminUrl }site-editor.php?canvas=${ canvas }`;
 	const aiEditorChatUrl = `&referrer=nfd-editor-chat`;
 	const hasBluMVPCapability = runtime.capabilities?.hasBluMVP || false;
-	const blockTheme = runtime?.wordpress?.isBlockTheme || false;
+	const isWvcTheme = runtime?.wordpress?.isWvcTheme || false;
+	const blockTheme = runtime?.wordpress?.isBlockTheme || isWvcTheme || false;
 
 	// If the theme is a block theme and the user has the Blu MVP capability
 	if ( blockTheme && hasBluMVPCapability ) {
@@ -378,7 +379,8 @@ export const getEditorUrl = async ( canvas = 'edit' ) => {
  */
 export const getEditorLabel = async () => {
 	const runtime = await waitForRuntime();
-	const blockTheme = ( await runtime?.wordpress?.isBlockTheme ) || false;
+	const isWvcTheme = runtime?.wordpress?.isWvcTheme || false;
+	const blockTheme = runtime?.wordpress?.isBlockTheme || isWvcTheme || false;
 	const hasBluMVPCapability = runtime.capabilities?.hasBluMVP || false;
 	// If the theme is a block theme and the user has the Blu MVP capability, return 'AI Editor'
 	if ( blockTheme && hasBluMVPCapability ) {

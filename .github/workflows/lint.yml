@@ -31,7 +31,7 @@ concurrency:
 permissions: {}
 
 env:
-  PHP_VERSION: '7.4' # Set a default PHP version for the job.
+  PHP_VERSION: '8.3' # Set a default PHP version for the job. Must be >= 8.2 because composer install runs PHP-Scoper; phpcs compatibility rules still target the plugin's minimum PHP via testVersion in phpcs.xml.
 
 jobs:
   phpcs:

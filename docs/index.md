@@ -15,6 +15,7 @@ This directory holds detailed documentation for the Bluehost WordPress Plugin, f
 | [api.md](api.md) | REST API namespace, endpoints table, and settings endpoint reference. |
 | [integrations.md](integrations.md) | Third-party and partner integrations (Google Site Kit, Yoast AI, Jetpack, partners, Hiive API). |
 | [development.md](development.md) | Linting, testing, i18n, version management, and day-to-day workflow. |
+| [php-scoper.md](php-scoper.md) | Namespace prefixing of bundled Composer packages with PHP-Scoper: how it works, adding packages, migrating from Strauss. |
 | [release.md](release.md) | Release process, version bumping, and pre-release tagging. |
 | [reference.md](reference.md) | Cache/transients, platform detection, compatibility, and design/resources. |
 | [workflows.md](workflows.md) | GitHub Actions workflows: triggers, jobs, and purpose of each file. |

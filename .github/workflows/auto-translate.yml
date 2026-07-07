@@ -26,5 +26,7 @@ jobs:
     with:
       text_domain: 'wp-plugin-bluehost'
       i18n-script-location: 'npm'
+      # composer install runs PHP-Scoper, which needs PHP >= 8.2.
+      php-version: '8.3'
     secrets:
       TRANSLATOR_API_KEY: ${{ secrets.TRANSLATOR_API_KEY }}

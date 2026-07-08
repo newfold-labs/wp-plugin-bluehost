@@ -34,6 +34,10 @@
 $nfd_scoper_excludes = static function ( $file ) {
 	$path = __DIR__ . '/bin/php-scoper/vendor/sniccowp/php-scoper-wordpress-excludes/generated/' . $file;
 
+	if ( ! is_readable( $path ) ) {
+		throw new RuntimeException( 'Missing WordPress exclude list ' . $path . '. Run "composer run ensure-scoper" first.' );
+	}
+
 	return json_decode( file_get_contents( $path ), true );
 };
 

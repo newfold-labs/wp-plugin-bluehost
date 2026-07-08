@@ -41,6 +41,4 @@ jobs:
       plugin-target-branch: ${{ inputs.target-branch }}
       plugin-source-branch: ${{ inputs.source-branch }}
       level: ${{ inputs.level }}
-      # composer install runs PHP-Scoper, which needs PHP >= 8.2.
-      php-version: '8.3'
       php-file: ${{ format( '{0}.php', vars.PLUGIN_NAME ) }}

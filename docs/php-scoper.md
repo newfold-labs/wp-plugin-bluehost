@@ -27,7 +27,7 @@ Currently prefixed packages:
 PHP-Scoper requires PHP 8.2+ to run. The scoped output is unaffected: it stays as compatible as the input (the plugin's platform config pins dependency resolution to PHP 7.4).
 
 - Local development: use PHP 8.2 or newer to run `composer install`.
-- CI: workflows that run `composer install` use PHP 8.3. The codecoverage matrix still tests on PHP 7.4 through 8.4; it installs dependencies on 8.3 via the `install-php-version` input of `reusable-codecoverage.yml`, then switches to the matrix PHP for the tests. The lock file and platform config make the installed tree identical regardless of the installing PHP.
+- CI: workflows that run `composer install` use PHP 8.3. The shared translations and prep-release workflows in `newfold-labs/workflows` run on 8.3 directly. The codecoverage matrix still tests on PHP 7.4 through 8.4; it installs dependencies on 8.3 via the `install-php-version` input of `reusable-codecoverage.yml`, then switches to the matrix PHP for the tests. The lock file and platform config make the installed tree identical regardless of the installing PHP.
 
 ## Adding a package
 
@@ -47,6 +47,6 @@ Audit result (2026-07, PRESS0-4774): `wp-plugin-bluehost` was the only repo in n
 2. Add the `ensure-scoper`, `scoper-run`, and `prefix-namespaces` scripts to `composer.json`, hooked into `post-install-cmd` and `post-update-cmd`. Do not add a `post-autoload-dump` hook.
 3. Add the PSR-4 `autoload` entries for the prefixed namespaces.
 4. Gitignore `/vendor-prefixed` and `/bin/php-scoper/vendor`; exclude `scoper.inc.php` from the dist archive.
-5. Ensure every workflow that runs `composer install` uses PHP 8.2+. For a codecoverage matrix that tests older PHP, pass `install-php-version` to `reusable-codecoverage.yml`. For translations and release-prep, pass `php-version` to the reusable workflows.
+5. Ensure every workflow that runs `composer install` uses PHP 8.2+. For a codecoverage matrix that tests older PHP, pass `install-php-version` to `reusable-codecoverage.yml`. The shared translations and prep-release workflows already run on PHP 8.3.
 6. If migrating from Strauss, also remove: the `extra.strauss` block, the `ensure-strauss`/`strauss-run` scripts, the `post-autoload-dump` hook, `bin/strauss.phar` (and its gitignore entry), and any `COMPOSER_HOME`/`GITHUB_TOKEN` CI workarounds. Keep the same namespace prefix and target directory so consuming modules need no changes.
 7. Verify: fresh `composer install`, confirm the consuming module's prefixed classes autoload (`php -r "require 'vendor/autoload.php'; var_dump(class_exists('Brand\Plugin\...'));"`), and run the plugin's tests.

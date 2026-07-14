@@ -60,22 +60,30 @@ async function isPluginActive(page, pluginSlug) {
 
 /**
  * Execute WordPress CLI command
- * 
+ *
  * @param {string} command - WP-CLI command to execute
+ * @param {Object} options - Execution options
+ * @param {number} options.timeout - Kill the command if it runs longer than this (ms)
+ * @param {boolean} options.failOnNonZeroExit - Throw instead of returning an error string (default: false)
  * @returns {string|number} - Output string if available, 0 for success, or error info.
  */
-async function wpCli(command) {
+async function wpCli(command, options = {}) {
+  const { timeout, failOnNonZeroExit = false } = options;
   utils.fancyLog(`🔧 WP-CLI command: ${command}`);
   try {
     const output = execSync(`npx wp-env run cli wp ${command}`, {
       cwd: process.env.PLUGIN_DIR || process.cwd(),
       encoding: 'utf-8', // auto convert Buffer to string
       stdio: ['pipe', 'pipe', 'pipe'], // capture stdout/stderr
+      ...(timeout ? { timeout } : {}),
     });
 
     // If output is empty, just return 0 for success
     return output.trim() ? output.trim() : 0;
   } catch (err) {
+    if (failOnNonZeroExit) {
+      throw err;
+    }
     // err.status = exit code
     // err.stdout / err.stderr may have useful info
     if (err.stderr) {

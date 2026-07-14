@@ -97,7 +97,7 @@ async function globalSetup(config) {
       failOnNonZeroExit: false,
     });
     if (typeof activePluginsOutput === 'string' && !activePluginsOutput.startsWith('Error:')) {
-      const activeSlugs = activePluginsOutput.split('\n').map((line) => line.trim());
+      const activeSlugs = activePluginsOutput.split('\n').map((line) => line.trim()).filter(Boolean);
       const stillActive = extraPlugins.filter((plugin) => activeSlugs.includes(plugin.split('/')[0]));
       if (stillActive.length > 0) {
         utils.fancyLog(`⚠ Still active after cleanup: ${stillActive.join(', ')}`, 100, 'yellow', '');

@@ -12,6 +12,7 @@ The project uses **Playwright** for end-to-end tests in the browser. Tests run a
 
 - **Config file:** **`playwright.config.mjs`** (repository root).
 - **Port:** Taken from **`.wp-env.json`** (default dev port, e.g. 8882). In CI, **`.wp-env.override.json`** may be created by the workflow with a different core/phpVersion.
+- **PHP memory:** **`.wp-env.json`**'s `config` sets `WP_MEMORY_LIMIT`/`WP_MAX_MEMORY_LIMIT` to `512M` (above the container's 128M PHP default). This covers both wp-admin/front-end requests and WP-CLI invocations, since these constants are read on every WordPress bootstrap and raise `memory_limit` for the whole PHP process via `ini_set()`. Without this, a full Playwright run across every vendored module (100+ sequential tests, each driving wp-admin renders and WP-CLI calls against one long-lived wp-env instance) exhausts the default 128M and fails with `PHP Fatal error: Allowed memory size ... exhausted`.
 - **Projects:** Playwright “projects” (plugin + modules) are defined in **`tests/playwright/playwright-projects.json`**, which can be generated/updated by **`.github/scripts/generate-playwright-projects.mjs`** (run via `npm run test:playwright:update-projects`). The config merges in optional **`project-overrides.json`** per project.
 - **Global setup:** **`tests/playwright/global-setup.js`** runs before tests (e.g. sets permalink structure and flushes rewrite rules via WP-CLI in wp-env).
 

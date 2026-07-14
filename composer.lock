@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "0c71789c1b0493eb9460487a8da7ce4e",
+    "content-hash": "e45c115850508181f4ac26d2402b62fc",
     "packages": [
         {
             "name": "colinmollenhour/credis",
@@ -627,16 +627,16 @@
         },
         {
             "name": "newfold-labs/wp-module-activation",
-            "version": "1.0.14",
+            "version": "1.0.15",
             "source": {
                 "type": "git",
                 "url": "https://github.com/newfold-labs/wp-module-activation.git",
-                "reference": "3dc9d7aaa508e9351166868e8d264a61b95974b7"
+                "reference": "e224eeb8048b296cf2cb38e1f06df0c92e47541a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/newfold-labs/wp-module-activation/zipball/3dc9d7aaa508e9351166868e8d264a61b95974b7",
-                "reference": "3dc9d7aaa508e9351166868e8d264a61b95974b7",
+                "url": "https://api.github.com/repos/newfold-labs/wp-module-activation/zipball/e224eeb8048b296cf2cb38e1f06df0c92e47541a",
+                "reference": "e224eeb8048b296cf2cb38e1f06df0c92e47541a",
                 "shasum": ""
             },
             "require-dev": {
@@ -689,10 +689,10 @@
             ],
             "description": "A Module for handling WordPress brand plugins activations",
             "support": {
-                "source": "https://github.com/newfold-labs/wp-module-activation/tree/1.0.14",
+                "source": "https://github.com/newfold-labs/wp-module-activation/tree/1.0.15",
                 "issues": "https://github.com/newfold-labs/wp-module-activation/issues"
             },
-            "time": "2026-03-26T13:06:44+00:00"
+            "time": "2026-07-13T17:55:03+00:00"
         },
         {
             "name": "newfold-labs/wp-module-adam",

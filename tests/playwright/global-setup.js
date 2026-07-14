@@ -54,6 +54,17 @@ async function globalSetup(config) {
       'wordpress-seo/wp-seo.php',
     ];
     for (const plugin of extraPlugins) {
+      // These companion plugins come pre-activated in the shared brand-plugin
+      // build. `wp plugin delete` silently declines to remove an active
+      // plugin, so without deactivating first, delete is a no-op and the
+      // plugin stays loaded (and running its own hooks) for the entire
+      // ~150-test combined suite. That compounds memory usage across the run
+      // until PHP's memory_limit is exhausted partway through (see fatals in
+      // wp-content/debug.log), causing unrelated later tests to see broken
+      // pages that never finish rendering.
+      await wordpress.wpCli(`plugin deactivate ${plugin}`, {
+        failOnNonZeroExit: false,
+      });
       // Awaited so cleanup finishes deleting plugins before tests start.
       await wordpress.wpCli(`plugin delete ${plugin}`, {
         failOnNonZeroExit: false,

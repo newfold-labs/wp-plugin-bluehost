@@ -66,6 +66,7 @@ async function isPluginActive(page, pluginSlug) {
  * @param {number} options.timeout - Kill the command if it runs longer than this (ms)
  * @param {boolean} options.failOnNonZeroExit - Throw instead of returning an error string (default: false)
  * @returns {string|number} - Output string if available, 0 for success, or error info.
+ * @throws {Error} When failOnNonZeroExit is true and the command exits non-zero; error.message is prefixed with the command.
  */
 async function wpCli(command, options = {}) {
   const { timeout, failOnNonZeroExit = false } = options;
@@ -75,14 +76,15 @@ async function wpCli(command, options = {}) {
       cwd: process.env.PLUGIN_DIR || process.cwd(),
       encoding: 'utf-8', // auto convert Buffer to string
       stdio: ['pipe', 'pipe', 'pipe'], // capture stdout/stderr
-      ...(timeout ? { timeout } : {}),
+      ...(timeout !== undefined ? { timeout } : {}),
     });
 
     // If output is empty, just return 0 for success
     return output.trim() ? output.trim() : 0;
   } catch (err) {
     if (failOnNonZeroExit) {
-      throw err;
+      const detail = err.stderr ? err.stderr.toString().trim() : err.message;
+      throw new Error(`wp ${command}: ${detail}`);
     }
     // err.status = exit code
     // err.stdout / err.stderr may have useful info

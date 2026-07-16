@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "5c801967355a3f7874dac8142c9e9ba0",
+    "content-hash": "354dcdaf8e9b8d560f47dd8be943e484",
     "packages": [
         {
             "name": "colinmollenhour/credis",
@@ -2968,16 +2968,16 @@
         },
         {
             "name": "newfold-labs/wp-module-onboarding-data",
-            "version": "1.2.23",
+            "version": "1.2.24",
             "source": {
                 "type": "git",
                 "url": "https://github.com/newfold-labs/wp-module-onboarding-data.git",
-                "reference": "f06a6263e109dbdb24f654f6fcd0b3df9a9f2eef"
+                "reference": "030189aa96dec96b5b3fb3f3783fea7dac03a613"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/newfold-labs/wp-module-onboarding-data/zipball/f06a6263e109dbdb24f654f6fcd0b3df9a9f2eef",
-                "reference": "f06a6263e109dbdb24f654f6fcd0b3df9a9f2eef",
+                "url": "https://api.github.com/repos/newfold-labs/wp-module-onboarding-data/zipball/030189aa96dec96b5b3fb3f3783fea7dac03a613",
+                "reference": "030189aa96dec96b5b3fb3f3783fea7dac03a613",
                 "shasum": ""
             },
             "require": {
@@ -3014,7 +3014,6 @@
                 "i18n": [
                     "@i18n-pot",
                     "@i18n-po",
-                    "@i18n-mo",
                     "@i18n-php",
                     "@i18n-json"
                 ],
@@ -3027,13 +3026,10 @@
                     "@i18n-php"
                 ],
                 "i18n-json": [
-                    "rm -f languages/*.json && vendor/bin/wp i18n make-json ./languages --no-purge --pretty-print"
-                ],
-                "i18n-mo": [
-                    "vendor/bin/wp i18n make-mo ./languages"
+                    "rm -f languages/*.json && vendor/bin/wp i18n make-json ./languages --pretty-print"
                 ],
                 "i18n-php": [
-                    "vendor/bin/wp i18n make-php ./languages"
+                    "vendor/bin/wp i18n make-php ./languages --pretty-print"
                 ],
                 "i18n-po": [
                     "vendor/bin/wp i18n update-po ./languages/wp-module-onboarding-data.pot ./languages"
@@ -3061,10 +3057,10 @@
             ],
             "description": "A non-toggleable module containing a standardized interface for interacting with Onboarding data.",
             "support": {
-                "source": "https://github.com/newfold-labs/wp-module-onboarding-data/tree/1.2.23",
+                "source": "https://github.com/newfold-labs/wp-module-onboarding-data/tree/1.2.24",
                 "issues": "https://github.com/newfold-labs/wp-module-onboarding-data/issues"
             },
-            "time": "2026-02-06T12:03:25+00:00"
+            "time": "2026-07-16T16:46:50+00:00"
         },
         {
             "name": "newfold-labs/wp-module-patterns",

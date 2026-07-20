@@ -2,6 +2,8 @@ import HelpCenterSettings from '../settings/helpCenterSettings';
 import WonderBlocksSettings from '../settings/wonderBlocksSettings';
 import StagingFeatureSettings from '../settings/stagingFeatureSettings';
 import PerformanceFeatureSettings from '../settings/performanceFeatureSettings';
+import TenWebAdminRestrictionsSettings from './tenWebAdminRestrictionsSettings';
+import TenWebEditorSupportSettings from './tenWebEditorSupportSettings';
 import { Container, Page } from '@newfold/ui-component-library';
 
 const Admin = () => {
@@ -33,6 +35,10 @@ const Admin = () => {
 						<StagingFeatureSettings />
 						<br />
 						<PerformanceFeatureSettings />
+						<br />
+						<TenWebAdminRestrictionsSettings />
+						<br />
+						<TenWebEditorSupportSettings />
 					</Container.SettingsField>
 				</Container.Block>
 			</Container>

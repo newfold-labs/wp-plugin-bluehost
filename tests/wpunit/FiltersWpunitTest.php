@@ -40,7 +40,9 @@ class FiltersWpunitTest extends \lucatume\WPBrowser\TestCase\WPTestCase {
 		// Filters::init() in tests registers global hooks; clear them so later tests don't see lingering state.
 		remove_all_filters( 'http_request_args' );
 		remove_all_filters( 'newfold/sso/hosting_login' );
-		remove_all_filters( 'newfold/coming-soon/filter/portal_data' );
+		$callback = array( \Bluehost\Filters::class, 'redirect_wvc_theme_to_10web_editor' );
+		\remove_action( 'load-site-editor.php', $callback );
+		\remove_action( 'load-customize.php', $callback );
 		parent::tearDown();
 	}
 
@@ -89,77 +91,61 @@ class FiltersWpunitTest extends \lucatume\WPBrowser\TestCase\WPTestCase {
 		$this->assertSame( $args, $result );
 	}
 
-	/** @covers \Bluehost\Filters::filter_coming_soon_portal_data */
-	public function test_filter_coming_soon_portal_data_returns_non_array_unchanged(): void {
-		$not_array = new \stdClass();
-		$result    = \Bluehost\Filters::filter_coming_soon_portal_data( $not_array );
-		$this->assertSame( $not_array, $result );
-	}
-
-	/** @covers \Bluehost\Filters::filter_coming_soon_portal_data */
-	public function test_filter_coming_soon_portal_data_leaves_array_when_not_wvc_theme(): void {
+	/** @covers \Bluehost\Filters::redirect_wvc_theme_to_10web_editor */
+	public function test_redirect_wvc_theme_to_10web_editor_does_nothing_when_not_wvc_theme(): void {
 		$this->stub_non_wvc_theme_slugs();
-		$input = array(
-			'isComingSoon' => true,
-			'editUrl'      => 'https://example.test/wp-admin/customize.php',
-			'viewUrl'      => 'https://example.test',
-			'previewUrl'   => 'https://example.test/?preview=coming_soon',
-		);
-		$result = \Bluehost\Filters::filter_coming_soon_portal_data( $input );
-		$this->assertSame( $input, $result );
+
+		\Bluehost\Filters::redirect_wvc_theme_to_10web_editor();
+
+		$this->assertTrue( true );
 	}
 
-	/** @covers \Bluehost\Filters::filter_coming_soon_portal_data */
-	public function test_filter_coming_soon_portal_data_sets_wvc_editor_when_wvc_theme(): void {
+	/** @covers \Bluehost\Filters::redirect_wvc_theme_to_10web_editor */
+	public function test_redirect_wvc_theme_to_10web_editor_redirects_when_wvc_theme(): void {
 		$this->stub_wvc_theme_slugs();
-		$input = array(
-			'isComingSoon' => true,
-			'editUrl'      => 'https://example.test/wp-admin/site-editor.php',
-			'viewUrl'      => 'https://example.test',
-			'previewUrl'   => 'https://example.test/?preview=coming_soon',
+
+		\add_filter(
+			'wp_redirect',
+			static function ( $location ) {
+				throw new \RuntimeException( $location );
+			}
 		);
-		$result = \Bluehost\Filters::filter_coming_soon_portal_data( $input );
-		$this->assertIsArray( $result );
-		$this->assertArrayHasKey( 'editUrl', $result );
-		$this->assertStringStartsWith( \admin_url(), $result['editUrl'] );
-		$this->assertStringContainsString( 'admin.php?page=wvc-editor', $result['editUrl'] );
-		$this->assertSame( $input['isComingSoon'], $result['isComingSoon'] );
-		$this->assertSame( $input['viewUrl'], $result['viewUrl'] );
-		$this->assertSame( $input['previewUrl'], $result['previewUrl'] );
+
+		try {
+			\Bluehost\Filters::redirect_wvc_theme_to_10web_editor();
+			$this->fail( 'Expected redirect' );
+		} catch ( \RuntimeException $e ) {
+			$this->assertStringContainsString( 'admin.php?page=wvc-editor', $e->getMessage() );
+		}
 	}
 
-	/** @covers \Bluehost\Filters::get_site_edit_admin_url */
-	public function test_get_site_edit_admin_url_points_to_wvc_editor_when_wvc_theme(): void {
-		$this->stub_wvc_theme_slugs();
-		$url = \Bluehost\Filters::get_site_edit_admin_url();
-		$this->assertStringStartsWith( \admin_url(), $url );
-		$this->assertStringContainsString( 'admin.php?page=wvc-editor', $url );
-	}
-
-	/** @covers \Bluehost\Filters::get_site_edit_admin_url */
-	public function test_get_site_edit_admin_url_wvc_when_only_template_slug_is_wvc(): void {
+	/** @covers \Bluehost\Filters::redirect_wvc_theme_to_10web_editor */
+	public function test_redirect_wvc_theme_to_10web_editor_redirects_when_only_template_slug_is_wvc(): void {
 		$this->stub_template_only_wvc();
-		$url = \Bluehost\Filters::get_site_edit_admin_url();
-		$this->assertStringContainsString( 'admin.php?page=wvc-editor', $url );
-	}
 
-	/** @covers \Bluehost\Filters::get_site_edit_admin_url */
-	public function test_get_site_edit_admin_url_uses_site_editor_or_customizer_when_not_wvc(): void {
-		$this->stub_non_wvc_theme_slugs();
-		$url      = \Bluehost\Filters::get_site_edit_admin_url();
-		$expected = \wp_is_block_theme() ? 'site-editor.php?canvas=edit' : 'customize.php';
-		$this->assertSame( \admin_url( $expected ), $url );
+		\add_filter(
+			'wp_redirect',
+			static function ( $location ) {
+				throw new \RuntimeException( $location );
+			}
+		);
+
+		try {
+			\Bluehost\Filters::redirect_wvc_theme_to_10web_editor();
+			$this->fail( 'Expected redirect' );
+		} catch ( \RuntimeException $e ) {
+			$this->assertStringContainsString( 'admin.php?page=wvc-editor', $e->getMessage() );
+		}
 	}
 
 	/** @covers \Bluehost\Filters::init */
-	public function test_init_registers_portal_data_filter(): void {
+	public function test_init_registers_site_editor_and_customizer_redirects(): void {
 		\Bluehost\Filters::init();
 
-		$callback = array( \Bluehost\Filters::class, 'filter_coming_soon_portal_data' );
+		$callback = array( \Bluehost\Filters::class, 'redirect_wvc_theme_to_10web_editor' );
 
-		$this->assertNotFalse(
-			\has_filter( 'newfold/coming-soon/filter/portal_data', $callback )
-		);
+		$this->assertNotFalse( \has_action( 'load-site-editor.php', $callback ) );
+		$this->assertNotFalse( \has_action( 'load-customize.php', $callback ) );
 	}
 
 	/** @covers \Bluehost\Filters::configure_hosting_login */

@@ -166,10 +166,10 @@ jobs:
       #       "s3://${R2_BUCKET_NAME}/uploads/free/$PACKAGE.zip" \
       #       --endpoint-url "$ENDPOINT"
 
-      - name: Clear cache for release API
-        if: ${{ github.repository == 'newfold-labs/wp-plugin-bluehost' }}
-        run: |
-          curl -X POST "https://api.cloudflare.com/client/v4/zones/${{ secrets.CLOUDFLARE_ZONE_ID }}/purge_cache" \
-               -H "Authorization: Bearer ${{ secrets.CLOUDFLARE_API_TOKEN }}" \
-               -H "Content-Type: application/json" \
-               --data '{"files":["https://hiive.cloud/workers/release-api/plugins/newfold-labs/wp-plugin-bluehost"]}'
+      # - name: Clear cache for release API
+      #   if: ${{ github.repository == 'newfold-labs/wp-plugin-bluehost' }}
+      #   run: |
+      #     curl -X POST "https://api.cloudflare.com/client/v4/zones/${{ secrets.CLOUDFLARE_ZONE_ID }}/purge_cache" \
+      #          -H "Authorization: Bearer ${{ secrets.CLOUDFLARE_API_TOKEN }}" \
+      #          -H "Content-Type: application/json" \
+      #          --data '{"files":["https://hiive.cloud/workers/release-api/plugins/newfold-labs/wp-plugin-bluehost"]}'

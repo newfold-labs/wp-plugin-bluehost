@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "c967db5dd93d50b047b6fb088de431b6",
+    "content-hash": "79ded270ed72504f8ac00d9d6aca427e",
     "packages": [
         {
             "name": "colinmollenhour/credis",
@@ -708,16 +708,16 @@
         },
         {
             "name": "newfold-labs/wp-module-activation",
-            "version": "1.0.15",
+            "version": "1.0.16",
             "source": {
                 "type": "git",
                 "url": "https://github.com/newfold-labs/wp-module-activation.git",
-                "reference": "e224eeb8048b296cf2cb38e1f06df0c92e47541a"
+                "reference": "a2dd9a0d096899594ca8a02615d771839e711424"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/newfold-labs/wp-module-activation/zipball/e224eeb8048b296cf2cb38e1f06df0c92e47541a",
-                "reference": "e224eeb8048b296cf2cb38e1f06df0c92e47541a",
+                "url": "https://api.github.com/repos/newfold-labs/wp-module-activation/zipball/a2dd9a0d096899594ca8a02615d771839e711424",
+                "reference": "a2dd9a0d096899594ca8a02615d771839e711424",
                 "shasum": ""
             },
             "require-dev": {
@@ -770,10 +770,10 @@
             ],
             "description": "A Module for handling WordPress brand plugins activations",
             "support": {
-                "source": "https://github.com/newfold-labs/wp-module-activation/tree/1.0.15",
+                "source": "https://github.com/newfold-labs/wp-module-activation/tree/1.0.16",
                 "issues": "https://github.com/newfold-labs/wp-module-activation/issues"
             },
-            "time": "2026-07-13T17:55:03+00:00"
+            "time": "2026-07-20T15:13:47+00:00"
         },
         {
             "name": "newfold-labs/wp-module-adam",
@@ -2333,6 +2333,10 @@
                 }
             ],
             "description": "An installer for WordPress plugins and themes.",
+            "support": {
+                "source": "https://github.com/newfold-labs/wp-module-installer/tree/1.7.5",
+                "issues": "https://github.com/newfold-labs/wp-module-installer/issues"
+            },
             "time": "2026-06-23T13:21:37+00:00"
         },
         {
@@ -3054,23 +3058,23 @@
         },
         {
             "name": "newfold-labs/wp-module-onboarding-data",
-            "version": "1.2.24",
+            "version": "1.2.25",
             "source": {
                 "type": "git",
                 "url": "https://github.com/newfold-labs/wp-module-onboarding-data.git",
-                "reference": "030189aa96dec96b5b3fb3f3783fea7dac03a613"
+                "reference": "d33170525c1557379cd80d73fb1d4590e1a45834"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/newfold-labs/wp-module-onboarding-data/zipball/030189aa96dec96b5b3fb3f3783fea7dac03a613",
-                "reference": "030189aa96dec96b5b3fb3f3783fea7dac03a613",
+                "url": "https://api.github.com/repos/newfold-labs/wp-module-onboarding-data/zipball/d33170525c1557379cd80d73fb1d4590e1a45834",
+                "reference": "d33170525c1557379cd80d73fb1d4590e1a45834",
                 "shasum": ""
             },
             "require": {
                 "mustache/mustache": "^2.14.2",
                 "newfold-labs/wp-module-ai": "^1.3.1",
-                "newfold-labs/wp-module-data": "^2.6.5",
-                "newfold-labs/wp-module-install-checker": "^1.0.3",
+                "newfold-labs/wp-module-data": "^2.9.4",
+                "newfold-labs/wp-module-install-checker": "^1.1.1",
                 "newfold-labs/wp-module-installer": "^1.2.0",
                 "newfold-labs/wp-module-patterns": "^2.6",
                 "newfold-labs/wp-module-performance": "^3.0.0",
@@ -3143,10 +3147,10 @@
             ],
             "description": "A non-toggleable module containing a standardized interface for interacting with Onboarding data.",
             "support": {
-                "source": "https://github.com/newfold-labs/wp-module-onboarding-data/tree/1.2.24",
+                "source": "https://github.com/newfold-labs/wp-module-onboarding-data/tree/1.2.25",
                 "issues": "https://github.com/newfold-labs/wp-module-onboarding-data/issues"
             },
-            "time": "2026-07-16T16:46:50+00:00"
+            "time": "2026-07-17T16:13:28+00:00"
         },
         {
             "name": "newfold-labs/wp-module-patterns",
@@ -6266,20 +6270,20 @@
         },
         {
             "name": "johnpbloch/wordpress",
-            "version": "7.0.1",
+            "version": "7.0.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/johnpbloch/wordpress.git",
-                "reference": "ea30e333777a79cc70019f2cf9c4c6c8f3da576c"
+                "reference": "c98fe6866cfe00796c22609b260e01568d35f14a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/johnpbloch/wordpress/zipball/ea30e333777a79cc70019f2cf9c4c6c8f3da576c",
-                "reference": "ea30e333777a79cc70019f2cf9c4c6c8f3da576c",
+                "url": "https://api.github.com/repos/johnpbloch/wordpress/zipball/c98fe6866cfe00796c22609b260e01568d35f14a",
+                "reference": "c98fe6866cfe00796c22609b260e01568d35f14a",
                 "shasum": ""
             },
             "require": {
-                "johnpbloch/wordpress-core": "7.0.1",
+                "johnpbloch/wordpress-core": "7.0.2",
                 "johnpbloch/wordpress-core-installer": "^1.0 || ^2.0",
                 "php": ">=7.0.0"
             },
@@ -6308,20 +6312,20 @@
                 "issues": "https://core.trac.wordpress.org/",
                 "source": "https://core.trac.wordpress.org/browser"
             },
-            "time": "2026-07-09T17:30:50+00:00"
+            "time": "2026-07-17T18:48:31+00:00"
         },
         {
             "name": "johnpbloch/wordpress-core",
-            "version": "7.0.1",
+            "version": "7.0.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/johnpbloch/wordpress-core.git",
-                "reference": "0c01203eef6b96b4d99a1418833d5b0a6740e594"
+                "reference": "7c0153862c16407dce737ccc87a64a25953b687b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/johnpbloch/wordpress-core/zipball/0c01203eef6b96b4d99a1418833d5b0a6740e594",
-                "reference": "0c01203eef6b96b4d99a1418833d5b0a6740e594",
+                "url": "https://api.github.com/repos/johnpbloch/wordpress-core/zipball/7c0153862c16407dce737ccc87a64a25953b687b",
+                "reference": "7c0153862c16407dce737ccc87a64a25953b687b",
                 "shasum": ""
             },
             "require": {
@@ -6329,7 +6333,7 @@
                 "php": ">=7.4"
             },
             "provide": {
-                "wordpress/core-implementation": "7.0.1"
+                "wordpress/core-implementation": "7.0.2"
             },
             "type": "wordpress-core",
             "notification-url": "https://packagist.org/downloads/",
@@ -6356,7 +6360,7 @@
                 "source": "https://core.trac.wordpress.org/browser",
                 "wiki": "https://codex.wordpress.org/"
             },
-            "time": "2026-07-09T17:30:46+00:00"
+            "time": "2026-07-17T18:48:27+00:00"
         },
         {
             "name": "johnpbloch/wordpress-core-installer",
@@ -11822,7 +11826,7 @@
         },
         {
             "name": "wp-phpunit/wp-phpunit",
-            "version": "7.0.1",
+            "version": "7.0.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/wp-phpunit/wp-phpunit.git",

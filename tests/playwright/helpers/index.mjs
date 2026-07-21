@@ -20,14 +20,10 @@ import a11y from './a11y.mjs';
 // General test utilities
 import utils from './utils.mjs';
 
-// WooCommerce install/uninstall helpers (shared across modules that need ecommerce state)
-import woocommerce from './woocommerce.mjs';
-
 export {
   auth,
   wordpress,
   newfold,
   a11y,
-  utils,
-  woocommerce
+  utils
 };

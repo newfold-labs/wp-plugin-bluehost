@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "e0e56d6eb3979bacc52e32f0d1fe4404",
+    "content-hash": "d91f8fe847ff655cc05a23d4f91ec491",
     "packages": [
         {
             "name": "fidry/console",
@@ -94,27 +94,27 @@
         },
         {
             "name": "fidry/filesystem",
-            "version": "1.3.0",
+            "version": "1.2.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/theofidry/filesystem.git",
-                "reference": "d0d9e8dfa43f7663da153c306b0d5bc24846ad8e"
+                "reference": "3e1f9cac40f807b7c4196013ab77cc1b9416e3e5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/theofidry/filesystem/zipball/d0d9e8dfa43f7663da153c306b0d5bc24846ad8e",
-                "reference": "d0d9e8dfa43f7663da153c306b0d5bc24846ad8e",
+                "url": "https://api.github.com/repos/theofidry/filesystem/zipball/3e1f9cac40f807b7c4196013ab77cc1b9416e3e5",
+                "reference": "3e1f9cac40f807b7c4196013ab77cc1b9416e3e5",
                 "shasum": ""
             },
             "require": {
-                "php": "^8.3",
+                "php": "^8.1",
                 "symfony/filesystem": "^6.4 || ^7.0"
             },
             "require-dev": {
                 "bamarni/composer-bin-plugin": "^1.4",
                 "ergebnis/composer-normalize": "^2.28",
                 "infection/infection": ">=0.26",
-                "phpunit/phpunit": "^12",
+                "phpunit/phpunit": "^10.3",
                 "symfony/finder": "^6.4 || ^7.0"
             },
             "type": "library",
@@ -148,7 +148,7 @@
             ],
             "support": {
                 "issues": "https://github.com/theofidry/filesystem/issues",
-                "source": "https://github.com/theofidry/filesystem/tree/1.3.0"
+                "source": "https://github.com/theofidry/filesystem/tree/1.2.3"
             },
             "funding": [
                 {
@@ -156,7 +156,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2025-02-13T23:05:19+00:00"
+            "time": "2025-02-13T22:58:51+00:00"
         },
         {
             "name": "humbug/php-scoper",
@@ -250,12 +250,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/JetBrains/phpstorm-stubs",
-                "reference": "f6dd2dd35d99fb774251a83555fe07bf2109d57e"
+                "reference": "b06e5333a76d8e7d7c696bfdc9cd4877a914053d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/JetBrains/phpstorm-stubs/zipball/f6dd2dd35d99fb774251a83555fe07bf2109d57e",
-                "reference": "f6dd2dd35d99fb774251a83555fe07bf2109d57e",
+                "url": "https://api.github.com/repos/JetBrains/phpstorm-stubs/zipball/b06e5333a76d8e7d7c696bfdc9cd4877a914053d",
+                "reference": "b06e5333a76d8e7d7c696bfdc9cd4877a914053d",
                 "shasum": ""
             },
             "require-dev": {
@@ -287,7 +287,7 @@
                 "stubs",
                 "type"
             ],
-            "time": "2026-04-29T14:07:26+00:00"
+            "time": "2026-07-17T14:32:17+00:00"
         },
         {
             "name": "nikic/php-parser",
@@ -1521,34 +1521,35 @@
         },
         {
             "name": "symfony/string",
-            "version": "v8.1.0",
+            "version": "v7.4.13",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/string.git",
-                "reference": "afd5944f4005862d961efb85c8bbd5c523c4e3c9"
+                "reference": "961683010db3b27ec6ebcd7308e6e1ee8fa7ffde"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/string/zipball/afd5944f4005862d961efb85c8bbd5c523c4e3c9",
-                "reference": "afd5944f4005862d961efb85c8bbd5c523c4e3c9",
+                "url": "https://api.github.com/repos/symfony/string/zipball/961683010db3b27ec6ebcd7308e6e1ee8fa7ffde",
+                "reference": "961683010db3b27ec6ebcd7308e6e1ee8fa7ffde",
                 "shasum": ""
             },
             "require": {
-                "php": ">=8.4.1",
-                "symfony/polyfill-ctype": "^1.8",
-                "symfony/polyfill-intl-grapheme": "^1.33",
-                "symfony/polyfill-intl-normalizer": "^1.0",
-                "symfony/polyfill-mbstring": "^1.0"
+                "php": ">=8.2",
+                "symfony/deprecation-contracts": "^2.5|^3.0",
+                "symfony/polyfill-ctype": "~1.8",
+                "symfony/polyfill-intl-grapheme": "~1.33",
+                "symfony/polyfill-intl-normalizer": "~1.0",
+                "symfony/polyfill-mbstring": "~1.0"
             },
             "conflict": {
                 "symfony/translation-contracts": "<2.5"
             },
             "require-dev": {
-                "symfony/emoji": "^7.4|^8.0",
-                "symfony/http-client": "^7.4|^8.0",
-                "symfony/intl": "^7.4|^8.0",
+                "symfony/emoji": "^7.1|^8.0",
+                "symfony/http-client": "^6.4|^7.0|^8.0",
+                "symfony/intl": "^6.4|^7.0|^8.0",
                 "symfony/translation-contracts": "^2.5|^3.0",
-                "symfony/var-exporter": "^7.4|^8.0"
+                "symfony/var-exporter": "^6.4|^7.0|^8.0"
             },
             "type": "library",
             "autoload": {
@@ -1587,7 +1588,7 @@
                 "utf8"
             ],
             "support": {
-                "source": "https://github.com/symfony/string/tree/v8.1.0"
+                "source": "https://github.com/symfony/string/tree/v7.4.13"
             },
             "funding": [
                 {
@@ -1607,7 +1608,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2026-05-29T05:06:50+00:00"
+            "time": "2026-05-23T15:23:29+00:00"
         },
         {
             "name": "symfony/var-dumper",
@@ -1906,5 +1907,8 @@
     "prefer-lowest": false,
     "platform": {},
     "platform-dev": {},
+    "platform-overrides": {
+        "php": "8.2.0"
+    },
     "plugin-api-version": "2.9.0"
 }

@@ -190,9 +190,17 @@ const WOOCOMMERCE_DEPENDENT_PLUGINS = ['wp-plugin-payments-shipping'];
  * @param {string} slug - Plugin slug
  * @returns {Promise<boolean>} true if `wp plugin is-active <slug>` exits 0
  *   (wordpress.wpCli() returns 0 for empty success stdout).
+ *
+ * --skip-plugins: `is-active` only needs the active_plugins option, not a full plugin
+ * bootstrap. Without this flag, checking a plugin that's *currently fataling on load*
+ * (e.g. one of the WOOCOMMERCE_DEPENDENT_PLUGINS right after WooCommerce is removed)
+ * makes the check itself fail, which wordpress.wpCli() reports as a non-zero/error
+ * result — indistinguishable from "not active". That masked exactly the case this
+ * helper exists to catch: the plugin was still active and still fataling, but looked
+ * "inactive" to this check, so it never got deactivated.
  */
 async function isPluginActive(slug) {
-  return (await wordpress.wpCli(`plugin is-active ${slug}`)) === 0;
+  return (await wordpress.wpCli(`plugin is-active ${slug} --skip-plugins`)) === 0;
 }
 
 /**
@@ -243,7 +251,9 @@ async function uninstallWooCommerce() {
 
   for (const slug of WOOCOMMERCE_DEPENDENT_PLUGINS) {
     if (await isPluginActive(slug)) {
-      await wordpress.wpCli(`plugin deactivate ${slug}`);
+      // --skip-plugins here too: we want this plugin out of active_plugins even
+      // though (especially because) loading it currently fatals.
+      await wordpress.wpCli(`plugin deactivate ${slug} --skip-plugins`);
     }
   }
 }

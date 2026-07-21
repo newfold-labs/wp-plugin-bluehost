@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "2adfc2a7da351500217631466ad613b5",
+    "content-hash": "0c14e1d2603aa74a9d26c42bdfe89eab",
     "packages": [
         {
             "name": "colinmollenhour/credis",
@@ -2682,26 +2682,26 @@
         },
         {
             "name": "newfold-labs/wp-module-next-steps",
-            "version": "1.5.3",
+            "version": "1.6.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/newfold-labs/wp-module-next-steps.git",
-                "reference": "1cc8bd093f79d404b7b2ea49ed0d518a8b3998ff"
+                "reference": "40e587d83da58c74d758197f1487511847a1df74"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/newfold-labs/wp-module-next-steps/zipball/1cc8bd093f79d404b7b2ea49ed0d518a8b3998ff",
-                "reference": "1cc8bd093f79d404b7b2ea49ed0d518a8b3998ff",
+                "url": "https://api.github.com/repos/newfold-labs/wp-module-next-steps/zipball/40e587d83da58c74d758197f1487511847a1df74",
+                "reference": "40e587d83da58c74d758197f1487511847a1df74",
                 "shasum": ""
             },
             "require": {
-                "newfold-labs/wp-module-data": "^2.9.3",
+                "newfold-labs/wp-module-data": "^2.9.4",
                 "newfold-labs/wp-module-loader": "^1.0.12"
             },
             "require-dev": {
                 "johnpbloch/wordpress": "^6.9",
                 "lucatume/wp-browser": "^3.1",
-                "newfold-labs/wp-php-standards": "^1.2.5",
+                "newfold-labs/wp-php-standards": "^1.2.6",
                 "phpunit/phpcov": "^8.2.1",
                 "phpunit/phpunit": "^9.6",
                 "wp-cli/i18n-command": "^2.7.0",
@@ -2773,10 +2773,10 @@
             ],
             "description": "A Newfold module to manage next steps for a customer in a brand plugin.",
             "support": {
-                "source": "https://github.com/newfold-labs/wp-module-next-steps/tree/1.5.3",
+                "source": "https://github.com/newfold-labs/wp-module-next-steps/tree/1.6.0",
                 "issues": "https://github.com/newfold-labs/wp-module-next-steps/issues"
             },
-            "time": "2026-04-29T17:27:59+00:00"
+            "time": "2026-06-09T17:48:00+00:00"
         },
         {
             "name": "newfold-labs/wp-module-notifications",

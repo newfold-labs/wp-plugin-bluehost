@@ -28,17 +28,14 @@ const Admin = () => {
 						title="Features"
 						description="Toggle features – not settings."
 					>
-						<WonderBlocksSettings />
-						<br />
-						<HelpCenterSettings forceShow={ true } />
-						<br />
-						<StagingFeatureSettings />
-						<br />
-						<PerformanceFeatureSettings />
-						<br />
-						<TenWebAdminRestrictionsSettings />
-						<br />
-						<TenWebEditorSupportSettings />
+						<div className="nfd-flex nfd-flex-col nfd-gap-8">
+							<WonderBlocksSettings />
+							<HelpCenterSettings forceShow={ true } />
+							<StagingFeatureSettings />
+							<PerformanceFeatureSettings />
+							<TenWebAdminRestrictionsSettings />
+							<TenWebEditorSupportSettings />
+						</div>
 					</Container.SettingsField>
 				</Container.Block>
 			</Container>

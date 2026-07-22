@@ -33,25 +33,29 @@ async function globalSetup(config) {
     // https://developer.wordpress.org/cli/commands/rewrite/structure/
     const permalinkStructure = '/%postname%/';
     utils.fancyLog(`🔗 Setting permalink structure to: ${permalinkStructure}`, 100, 'gray', '');
-    const pResult = await wordpress.wpCli(`rewrite structure '${permalinkStructure}' --hard`, {
-      failOnNonZeroExit: false,
-    });
+    const { result: pResult, attempt: permalinkAttempt } = await wordpress.wpCliWithRetry(
+      `rewrite structure '${permalinkStructure}' --hard`,
+      { failOnNonZeroExit: false },
+      { maxAttempts: 2, delayMs: 2000 },
+    );
     if (wordpress.isWpCliFailure(pResult)) {
       utils.fancyLog(
-        `✘ Permalink setup failed: ${wordpress.formatWpCliResult(pResult)}`,
+        `✘ Permalink setup failed after ${permalinkAttempt} attempt(s): ${wordpress.formatWpCliResult(pResult)}`,
         200,
         'yellow',
         '',
       );
     } else {
+      const attemptNote = permalinkAttempt > 1 ? `, attempt ${permalinkAttempt}` : '';
       utils.fancyLog(
-        `✔ Permalink structure set (${wordpress.formatWpCliResult(pResult)})`,
+        `✔ Permalink structure set (${wordpress.formatWpCliResult(pResult)}${attemptNote})`,
         200,
         'green',
         '',
       );
     }
 
+    // Deactivate extra plugins so they do not load during tests (files remain installed).
     // https://developer.wordpress.org/cli/commands/plugin/deactivate/
     // failOnNonZeroExit: false — plugins may be absent; setup should not fail.
     const extraPlugins = [
@@ -67,7 +71,7 @@ async function globalSetup(config) {
       });
       if (wordpress.isWpCliFailure(result)) {
         utils.fancyLog(
-          `⚠ Could not remove ${plugin}: ${wordpress.formatWpCliResult(result)}`,
+          `⚠ Could not deactivate ${plugin}: ${wordpress.formatWpCliResult(result)}`,
           200,
           'yellow',
           '',

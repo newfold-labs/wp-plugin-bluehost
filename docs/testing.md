@@ -13,7 +13,7 @@ The project uses **Playwright** for end-to-end tests in the browser. Tests run a
 - **Config file:** **`playwright.config.mjs`** (repository root).
 - **Port:** Taken from **`.wp-env.json`** (default dev port, e.g. 8882). In CI, **`.wp-env.override.json`** may be created by the workflow with a different core/phpVersion.
 - **Projects:** Playwright “projects” (plugin + modules) are defined in **`tests/playwright/playwright-projects.json`**, which can be generated/updated by **`.github/scripts/generate-playwright-projects.mjs`** (run via `npm run test:playwright:update-projects`). The config merges in optional **`project-overrides.json`** per project.
-- **Global setup:** **`tests/playwright/global-setup.js`** runs before tests (e.g. sets permalink structure, flushes rewrite rules, and removes bundled third-party plugins via WP-CLI in wp-env). See [Global setup (WP-CLI)](#global-setup-wp-cli) below.
+- **Global setup:** **`tests/playwright/global-setup.js`** runs before tests (e.g. sets permalink structure, flushes rewrite rules, and deactivates bundled third-party plugins via WP-CLI in wp-env). See [Global setup (WP-CLI)](#global-setup-wp-cli) below.
 
 ### Global setup (WP-CLI)
 
@@ -21,21 +21,24 @@ The project uses **Playwright** for end-to-end tests in the browser. Tests run a
 
 | Step | Command | Notes |
 |------|---------|--------|
-| Permalinks | `rewrite structure '/%postname%/' --hard` | Sets structure and flushes rules (incl. `.htaccess`). [`wp rewrite structure`](https://developer.wordpress.org/cli/commands/rewrite/structure/). `failOnNonZeroExit: false` |
-| Remove extra plugins | `plugin deactivate <plugin> --uninstall` | `failOnNonZeroExit: false` per plugin |
+| Permalinks | `rewrite structure '/%postname%/' --hard` | Via **`wordpress.wpCliWithRetry()`** (2 attempts, 2s backoff). [`wp rewrite structure`](https://developer.wordpress.org/cli/commands/rewrite/structure/). `failOnNonZeroExit: false` |
+| Deactivate extra plugins | `plugin deactivate <plugin>` | `failOnNonZeroExit: false` per plugin |
 
 **Why one command for permalinks?**  
 `wp rewrite structure <pattern> --hard` replaces the older two-step `option update permalink_structure` + `rewrite flush --hard`. It updates the permalink option and regenerates rewrite rules; `--hard` also updates `.htaccess`.
 
 **`failOnNonZeroExit` in global setup:**  
-Only throws when explicitly `true`. Global setup passes `false` so a transient CLI failure does not abort the run. **`wordpress.isWpCliFailure()`** checks the return value and logs success or failure (permalink always; plugin removal only on failure) so later test failures are easier to diagnose.
+Only throws when explicitly `true`. Global setup passes `false` so a transient CLI failure does not abort the run. **`wordpress.isWpCliFailure()`** checks the return value and logs success or failure (permalink always; plugin deactivation only on failure) so later test failures are easier to diagnose.
 
-**Why `deactivate --uninstall` instead of `plugin delete`?**  
-`wp plugin delete` fails when the plugin is still active. Global setup removes plugins that wp-env may install as active (Jetpack, Yoast, etc.). The [`--uninstall` flag on `wp plugin deactivate`](https://developer.wordpress.org/cli/commands/plugin/deactivate/) deactivates first, then runs uninstall hooks and removes the plugin. An equivalent alternative is `wp plugin uninstall <plugin> --deactivate`.
+**Extra plugins in global setup:**  
+wp-env may bundle third-party plugins (Jetpack, Yoast, etc.) that are active by default. Global setup deactivates them so they do not load during tests; files remain installed. Use [`wp plugin deactivate`](https://developer.wordpress.org/cli/commands/plugin/deactivate/) only — not uninstall/delete — to avoid uninstall hooks and keep setup tolerant of missing plugins.
 
-**`wordpress.wpCli()` options** (see helper JSDoc for full detail):
+**`wordpress.wpCli()` helpers** (see helper JSDoc for full detail):
 
-- **Return value** — stdout string, `0` for empty success, or `Error: …` / exit code on failure. Use **`isWpCliFailure(result)`** and **`formatWpCliResult(result)`** in global setup for logging.
+- **`wpCli(command, options?)`** — run a single WP-CLI command via wp-env.
+- **`wpCliWithRetry(command, options?, { maxAttempts?, delayMs? })`** — retry on failure (default 2 attempts, 2s delay). Returns `{ result, attempt }`. Used in global setup for permalink setup; available to module tests for flaky CLI steps.
+- **`isWpCliFailure(result)`** / **`formatWpCliResult(result)`** — interpret return values for logging or assertions.
+- **Return value** — stdout string, `0` for empty success, or `Error: …` / exit code on failure.
 - **`failOnNonZeroExit`** — only throws when explicitly set to `true`. Omitted or `false` preserves legacy return behavior.
 - **`timeout`** — defaults to **120000 ms** (2 minutes) so CI runs do not hang indefinitely; pass `0` to disable.
 - **`cwd`** — override plugin root; otherwise uses `PLUGIN_DIR` (set in `playwright.config.mjs` and global setup) or `process.cwd()`.

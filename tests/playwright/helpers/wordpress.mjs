@@ -147,6 +147,37 @@ function formatWpCliResult(result) {
 }
 
 /**
+ * Run wpCli() with retries on failure (uses isWpCliFailure).
+ *
+ * @param {string} command - WP-CLI command to execute
+ * @param {Object} [options] - Passed to wpCli()
+ * @param {{ maxAttempts?: number, delayMs?: number }} [retry]
+ * @returns {Promise<{ result: string|number, attempt: number }>}
+ */
+async function wpCliWithRetry(command, options = {}, retry = {}) {
+  const { maxAttempts = 2, delayMs = 2000 } = retry;
+  let lastResult;
+
+  for (let attempt = 1; attempt <= maxAttempts; attempt++) {
+    lastResult = await wpCli(command, options);
+    if (!isWpCliFailure(lastResult)) {
+      return { result: lastResult, attempt };
+    }
+    if (attempt < maxAttempts) {
+      utils.fancyLog(
+        `↻ WP-CLI retry ${attempt + 1}/${maxAttempts} in ${delayMs}ms: ${command}`,
+        120,
+        'yellow',
+        '',
+      );
+      await new Promise((resolve) => setTimeout(resolve, delayMs));
+    }
+  }
+
+  return { result: lastResult, attempt: maxAttempts };
+}
+
+/**
  * Set WordPress option via WP-CLI
  * 
  * @param {string} option - Option name
@@ -214,6 +245,7 @@ export default {
   
   // WordPress CLI and options
   wpCli,
+  wpCliWithRetry,
   isWpCliFailure,
   formatWpCliResult,
   setOption,

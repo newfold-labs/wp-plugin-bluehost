@@ -79,7 +79,7 @@ async function getEnvironmentVersions() {
     wordpress.wpCli('core version'),
     wordpress.wpCli('eval "echo PHP_VERSION;"'),
   ]);
-  
+
   _envVersions = {
     wpVersion: wpVersion.trim(),
     phpVersion: phpVersion.trim(),
@@ -189,7 +189,6 @@ const WOOCOMMERCE_DEPENDENT_PLUGINS = ['wp-plugin-payments-shipping'];
 /**
  * @param {string} slug - Plugin slug
  * @returns {Promise<boolean>} true if `wp plugin is-active <slug>` exits 0
- *   (wordpress.wpCli() returns 0 for empty success stdout).
  *
  * --skip-plugins: `is-active` only needs the active_plugins option, not a full plugin
  * bootstrap. Without this flag, checking a plugin that's *currently fataling on load*
@@ -266,13 +265,22 @@ async function uninstallWooCommerce() {
  * @returns {Promise<void>}
  */
 async function setCapability(capabilitiesJSON, expiration = 3600) {
-  utils.fancyLog(`🔐 Setting capabilities: ${JSON.stringify(capabilitiesJSON)}`);
+  const capabilities = { ...capabilitiesJSON };
+
+  // Default canAccessAI only when omitted — callers can pass false to simulate no AI access.
+  // Without this key, capabilities are discarded by wp-module-data.
+  // see https://github.com/newfold-labs/wp-module-data/pull/285
+  if (capabilities.canAccessAI === undefined) {
+    capabilities.canAccessAI = true;
+  }
+
+  utils.fancyLog(`🔐 Setting capabilities: ${JSON.stringify(capabilities)}`);
   const expiry = Math.floor( new Date().getTime() / 1000.0 ) + expiration;
-  
+
   // Use Promise.all to ensure both operations complete before returning
   await Promise.all([
     wordpress.wpCli(`option update _transient_nfd_site_capabilities '${ JSON.stringify(
-      capabilitiesJSON
+      capabilities
     ) }' --format=json`),
     wordpress.wpCli(`option update _transient_timeout_nfd_site_capabilities ${ expiry }`)
   ]);
@@ -297,9 +305,8 @@ async function logCapabilities() {
   utils.fancyLog('📋 Current capabilities:');
   
   try {
-    // Parse JSON and iterate over key-value pairs
     const capabilities = JSON.parse(result);
-    
+
     if (typeof capabilities === 'object' && capabilities !== null) {
       Object.entries(capabilities).forEach(([key, value]) => {
         const valueStr = typeof value === 'object' ? JSON.stringify(value) : String(value);
@@ -308,7 +315,7 @@ async function logCapabilities() {
     } else {
       utils.fancyLog(`- ${String(capabilities)}`, 100, 'gray', '            ');
     }
-    
+
     return capabilities;
   } catch (error) {
     // Fallback if JSON parsing fails

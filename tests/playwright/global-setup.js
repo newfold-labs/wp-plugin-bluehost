@@ -1,4 +1,4 @@
-import { execFileSync, execSync } from 'child_process';
+import { execFileSync } from 'child_process';
 import { dirname, join } from 'path';
 import utils from './helpers/utils.mjs';
 import wordpress from './helpers/wordpress.mjs';
@@ -31,20 +31,19 @@ async function globalSetup(config) {
     const permalinkStructure = '/%postname%/';
     utils.fancyLog(`🔗 Setting permalink structure to: ${permalinkStructure}`, 100, 'gray', '');
     
-    wordpress.wpCli(`option update permalink_structure '${permalinkStructure}'`, {
-      cwd: pluginRoot,
-      failOnNonZeroExit: false,
-    });
-    
-    // Flush rewrite rules to apply the new permalink structure
-    utils.fancyLog('🔄 Flushing rewrite rules with hard mode...', 100, 'gray', '');
-    wordpress.wpCli('rewrite flush --hard', {
+    await wordpress.wpCli(`option update permalink_structure '${permalinkStructure}'`, {
       cwd: pluginRoot,
       failOnNonZeroExit: false,
     });
 
+    // Flush rewrite rules to apply the new permalink structure
+    utils.fancyLog('🔄 Flushing rewrite rules with hard mode...', 100, 'gray', '');
+    await wordpress.wpCli('rewrite flush --hard', {
+      cwd: pluginRoot
+    });
+
     // remove extra plugins for faster cleaner tests
-    var extraPlugins = [
+    const extraPlugins = [
       'google-analytics-for-wordpress/googleanalytics.php',
       'jetpack/jetpack.php',
       'optinmonster/optin-monster-wp-api.php',
@@ -52,8 +51,8 @@ async function globalSetup(config) {
       'wordpress-seo/wp-seo.php',
     ];
     for (const plugin of extraPlugins) {
-      wordpress.wpCli(`plugin delete ${plugin}`, {
-        failOnNonZeroExit: false,
+      await wordpress.wpCli(`plugin delete ${plugin}`, {
+        cwd: pluginRoot
       });
     }
 

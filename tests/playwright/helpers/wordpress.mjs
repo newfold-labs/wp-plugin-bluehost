@@ -60,24 +60,26 @@ async function isPluginActive(page, pluginSlug) {
 
 /**
  * Execute WordPress CLI command
- * 
+ *
  * @param {string} command - WP-CLI command to execute
- * @returns {string|number} - Output string if available, 0 for success, or error info.
+ * @param {Object} [options]
+ * @param {string} [options.cwd] - Working directory for wp-env (defaults to PLUGIN_DIR or cwd)
+ * @param {number} [options.timeout] - execSync timeout in milliseconds
+ * @param {boolean} [options.failOnNonZeroExit] - When true, throw on non-zero exit code
+ * @returns {Promise<string|number>} Output string if available, 0 for success, or error info
  */
 async function wpCli(command, options = {}) {
-  // TODO
-  // bail early if no cli access (live site or not wp-env setup)
+  // TODO: bail early if no cli access (live site or not wp-env setup)
 
-  const { timeout, failOnNonZeroExit = true } = options;
+  const { timeout, failOnNonZeroExit, cwd } = options;
 
   utils.fancyLog(`🔧 WP-CLI command: ${command}`);
   try {
     const output = execSync(`npx wp-env run cli wp ${command}`, {
-      cwd: process.env.PLUGIN_DIR || process.cwd(),
+      cwd: cwd ?? process.env.PLUGIN_DIR ?? process.cwd(),
       encoding: 'utf-8', // auto convert Buffer to string
       stdio: ['pipe', 'pipe', 'pipe'], // capture stdout/stderr
       ...(timeout !== undefined ? { timeout } : {}),
-      ...(failOnNonZeroExit !== undefined ? { failOnNonZeroExit } : {}),
     });
 
     // If output is empty, just return 0 for success

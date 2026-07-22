@@ -2,10 +2,10 @@ import { test, expect } from '@playwright/test';
 import { auth, utils } from '../helpers';
 
 const TOGGLES = {
-	staging: '#staging-toggle',
-	performance: '#performance-toggle',
-	tenwebAdminRestrictions: '#tenweb-admin-restrictions-toggle',
-	tenwebEditorSupport: '#tenweb-editor-support-toggle',
+	staging: '[data-id="staging-toggle"]',
+	performance: '[data-id="performance-toggle"]',
+	tenwebAdminRestrictions: '[data-id="tenweb-admin-restrictions-toggle"]',
+	tenwebEditorSupport: '[data-id="tenweb-editor-support-toggle"]',
 };
 
 const hasRegisteredFeature = async ( page, featureKey ) => {
@@ -30,6 +30,7 @@ const testToggleSuccessPath = async (
 	{ selector, enabledTitle, disabledTitle, restoreTitleFragment }
 ) => {
 	const toggle = page.locator( selector );
+	await utils.scrollIntoView( toggle );
 	const initial = await toggle.getAttribute( 'aria-checked' );
 
 	await toggle.click();
@@ -136,6 +137,7 @@ test.describe( 'Admin Feature Toggles', () => {
 		} );
 
 		const toggle = page.locator( TOGGLES.tenwebAdminRestrictions );
+		await utils.scrollIntoView( toggle );
 		const initial = await toggle.getAttribute( 'aria-checked' );
 
 		await toggle.click();

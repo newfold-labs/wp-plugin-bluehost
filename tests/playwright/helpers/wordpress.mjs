@@ -1,4 +1,7 @@
 import { execSync } from 'child_process';
+import { existsSync } from 'fs';
+import { dirname, join } from 'path';
+import { fileURLToPath } from 'url';
 
 /**
  * Core WordPress Test Helpers
@@ -9,6 +12,40 @@ import { execSync } from 'child_process';
 
 import { Admin, PageUtils } from '@wordpress/e2e-test-utils-playwright';
 import utils from './utils.mjs';
+
+/** @type {string|undefined} */
+let pluginRoot;
+
+/**
+ * Plugin root must match wp-env's cwd (loadConfig uses path.resolve('.')).
+ * Prefer PLUGIN_DIR when Playwright config has run; otherwise resolve from this file.
+ *
+ * @returns {string}
+ */
+function getPluginRoot() {
+  if (pluginRoot) {
+    return pluginRoot;
+  }
+
+  if (process.env.PLUGIN_DIR) {
+    pluginRoot = process.env.PLUGIN_DIR;
+    return pluginRoot;
+  }
+
+  // tests/playwright/helpers/wordpress.mjs → plugin root is three levels up
+  let dir = dirname(fileURLToPath(import.meta.url));
+  for (let i = 0; i < 3; i++) {
+    dir = dirname(dir);
+  }
+
+  if (existsSync(join(dir, '.wp-env.json')) || existsSync(join(dir, 'playwright.config.mjs'))) {
+    pluginRoot = dir;
+    return pluginRoot;
+  }
+
+  pluginRoot = process.cwd();
+  return pluginRoot;
+}
 
 /**
  * Wait for WordPress admin to be ready
@@ -63,7 +100,7 @@ async function isPluginActive(page, pluginSlug) {
  *
  * @param {string} command - WP-CLI command to execute
  * @param {Object} [options]
- * @param {string} [options.cwd] - Working directory for wp-env (defaults to PLUGIN_DIR or cwd)
+ * @param {string} [options.cwd] - Override auto-detected plugin root for wp-env
  * @param {number} [options.timeout] - execSync timeout in milliseconds
  * @param {boolean} [options.failOnNonZeroExit] - When true, throw on non-zero exit code
  * @returns {Promise<string|number>} Output string if available, 0 for success, or error info
@@ -76,7 +113,7 @@ async function wpCli(command, options = {}) {
   utils.fancyLog(`🔧 WP-CLI command: ${command}`);
   try {
     const output = execSync(`npx wp-env run cli wp ${command}`, {
-      cwd: cwd ?? process.env.PLUGIN_DIR ?? process.cwd(),
+      cwd: cwd ?? getPluginRoot(),
       encoding: 'utf-8', // auto convert Buffer to string
       stdio: ['pipe', 'pipe', 'pipe'], // capture stdout/stderr
       ...(timeout !== undefined ? { timeout } : {}),

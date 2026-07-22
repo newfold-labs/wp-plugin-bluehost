@@ -19,8 +19,6 @@ function runApplyPlaywrightModuleOverrides(config) {
 }
 
 async function globalSetup(config) {
-  const pluginRoot = getPluginRoot(config);
-
   // Apply module spec overrides (separate process; see runApplyPlaywrightModuleOverrides)
   runApplyPlaywrightModuleOverrides(config);
 
@@ -32,15 +30,12 @@ async function globalSetup(config) {
     utils.fancyLog(`🔗 Setting permalink structure to: ${permalinkStructure}`, 100, 'gray', '');
     
     await wordpress.wpCli(`option update permalink_structure '${permalinkStructure}'`, {
-      cwd: pluginRoot,
       failOnNonZeroExit: false,
     });
 
     // Flush rewrite rules to apply the new permalink structure
     utils.fancyLog('🔄 Flushing rewrite rules with hard mode...', 100, 'gray', '');
-    await wordpress.wpCli('rewrite flush --hard', {
-      cwd: pluginRoot
-    });
+    await wordpress.wpCli('rewrite flush --hard');
 
     // remove extra plugins for faster cleaner tests
     const extraPlugins = [
@@ -51,9 +46,7 @@ async function globalSetup(config) {
       'wordpress-seo/wp-seo.php',
     ];
     for (const plugin of extraPlugins) {
-      await wordpress.wpCli(`plugin delete ${plugin}`, {
-        cwd: pluginRoot
-      });
+      await wordpress.wpCli(`plugin delete ${plugin}`);
     }
 
     utils.fancyLog('✔ Global setup completed successfully', 100, 'green', '');

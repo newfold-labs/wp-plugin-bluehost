@@ -23,7 +23,7 @@ jobs:
     environment: ${{ matrix.environment }}
     steps:
       - name: Checkout repository
-        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
           persist-credentials: false
 
@@ -42,7 +42,7 @@ jobs:
           echo "Using BASE_URL=$SITE"
 
       - name: Setup PHP
-        uses: shivammathur/setup-php@accd6127cb78bee3e8082180cb391013d204ef9f # v2.37.0
+        uses: shivammathur/setup-php@f3e473d116dcccaddc5834248c87452386958240 # v2.37.2
         with:
           php-version: '8.3'
           coverage: none
@@ -53,7 +53,7 @@ jobs:
           composer-options: '--no-dev --optimize-autoloader'
 
       - name: Setup Node.js
-        uses: actions/setup-node@53b83947a5a98c8d113130e565377fae1a50d02f # v6.3.0
+        uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
 
         with:
           node-version: 20
@@ -72,7 +72,7 @@ jobs:
           npm run create:dev
 
       - name: Upload build artifact
-        uses: actions/upload-artifact@bbbca2ddaa5d8feaa63e36b76fdaad77386f024f # v7.0.0
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
         with:
           name: plugin-build-${{ matrix.environment }}
           path: ./${{ vars.PLUGIN_NAME }}.zip

@@ -28,7 +28,7 @@ function getLocalModules() {
   } catch (error) {
     console.warn('Could not read composer.local.json:', error.message);
   }
-  return localModules;
+  return localModules.sort((a, b) => a.name.localeCompare(b.name));
 }
 
 function getVendorModules() {
@@ -51,7 +51,7 @@ function getVendorModules() {
   } catch (error) {
     // No vendor directories found, continue
   }
-  return vendorModules;
+  return vendorModules.sort((a, b) => a.name.localeCompare(b.name));
 }
 
 function generateProjects() {
@@ -60,7 +60,7 @@ function generateProjects() {
     {
       name: 'newfold-labs/wp-plugin-bluehost',
       testDir: './tests/playwright/specs',
-      testMatch: '**/*.spec.js',
+      testMatch: '*.spec.{js,mjs}',
     }
   ];
 
@@ -73,8 +73,8 @@ function generateProjects() {
     if (!discoveredModules.has(module.name)) {
       projects.push({
         name: `newfold-labs/${module.name}-local`,
-        testDir: module.path,
-        testMatch: 'tests/playwright/**/*.spec.{js,mjs}',
+        testDir: `./${module.path}/tests/playwright/specs`,
+        testMatch: '*.spec.{js,mjs}',
       });
       discoveredModules.add(module.name);
     }

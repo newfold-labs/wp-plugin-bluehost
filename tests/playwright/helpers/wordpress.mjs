@@ -68,6 +68,7 @@ async function wpCli(command) {
   utils.fancyLog(`🔧 WP-CLI command: ${command}`);
   try {
     const output = execSync(`npx wp-env run cli wp ${command}`, {
+      cwd: process.env.PLUGIN_DIR || process.cwd(),
       encoding: 'utf-8', // auto convert Buffer to string
       stdio: ['pipe', 'pipe', 'pipe'], // capture stdout/stderr
     });

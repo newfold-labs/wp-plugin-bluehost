@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "354dcdaf8e9b8d560f47dd8be943e484",
+    "content-hash": "d302bb5f192d0d077f13178c58be4ae1",
     "packages": [
         {
             "name": "colinmollenhour/credis",
@@ -541,16 +541,16 @@
         },
         {
             "name": "instawp/connect-helpers",
-            "version": "1.0.8",
+            "version": "1.1.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/InstaWP/connect-helpers.git",
-                "reference": "7178cccefc15607880fd8376d95db74a4fb13ed1"
+                "reference": "e40678f5a7fd3e678e2706a0e72af76b97a3fd5f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/InstaWP/connect-helpers/zipball/7178cccefc15607880fd8376d95db74a4fb13ed1",
-                "reference": "7178cccefc15607880fd8376d95db74a4fb13ed1",
+                "url": "https://api.github.com/repos/InstaWP/connect-helpers/zipball/e40678f5a7fd3e678e2706a0e72af76b97a3fd5f",
+                "reference": "e40678f5a7fd3e678e2706a0e72af76b97a3fd5f",
                 "shasum": ""
             },
             "require": {
@@ -582,10 +582,10 @@
             ],
             "description": "CLI Package for InstaWP Remote Features",
             "support": {
-                "source": "https://github.com/InstaWP/connect-helpers/tree/1.0.8",
+                "source": "https://github.com/InstaWP/connect-helpers/tree/1.1.2",
                 "issues": "https://github.com/InstaWP/connect-helpers/issues"
             },
-            "time": "2026-01-15T13:11:21+00:00"
+            "time": "2026-06-09T10:48:48+00:00"
         },
         {
             "name": "newfold-labs/container",
@@ -878,16 +878,16 @@
         },
         {
             "name": "newfold-labs/wp-module-ai-chat",
-            "version": "1.1.5",
+            "version": "1.1.7",
             "source": {
                 "type": "git",
                 "url": "https://github.com/newfold-labs/wp-module-ai-chat.git",
-                "reference": "e8e93643bbc73f6fd5c24901e927dcdda6ceb059"
+                "reference": "1eda4492b60ffff313df38a0ac25337fb11b7909"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/newfold-labs/wp-module-ai-chat/zipball/e8e93643bbc73f6fd5c24901e927dcdda6ceb059",
-                "reference": "e8e93643bbc73f6fd5c24901e927dcdda6ceb059",
+                "url": "https://api.github.com/repos/newfold-labs/wp-module-ai-chat/zipball/1eda4492b60ffff313df38a0ac25337fb11b7909",
+                "reference": "1eda4492b60ffff313df38a0ac25337fb11b7909",
                 "shasum": ""
             },
             "require-dev": {
@@ -956,10 +956,10 @@
             ],
             "description": "AI Chat module for WordPress",
             "support": {
-                "source": "https://github.com/newfold-labs/wp-module-ai-chat/tree/1.1.5",
+                "source": "https://github.com/newfold-labs/wp-module-ai-chat/tree/1.1.7",
                 "issues": "https://github.com/newfold-labs/wp-module-ai-chat/issues"
             },
-            "time": "2026-06-08T09:04:08+00:00"
+            "time": "2026-07-22T12:41:09+00:00"
         },
         {
             "name": "newfold-labs/wp-module-atomic",
@@ -1507,22 +1507,22 @@
         },
         {
             "name": "newfold-labs/wp-module-editor-chat",
-            "version": "1.0.9",
+            "version": "2.1.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/newfold-labs/wp-module-editor-chat.git",
-                "reference": "7fe53518b371f3ff86febe8a0269ba807106dc25"
+                "reference": "8a3f858c530fecccb04d9213dfe066a19606518b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/newfold-labs/wp-module-editor-chat/zipball/7fe53518b371f3ff86febe8a0269ba807106dc25",
-                "reference": "7fe53518b371f3ff86febe8a0269ba807106dc25",
+                "url": "https://api.github.com/repos/newfold-labs/wp-module-editor-chat/zipball/8a3f858c530fecccb04d9213dfe066a19606518b",
+                "reference": "8a3f858c530fecccb04d9213dfe066a19606518b",
                 "shasum": ""
             },
             "require-dev": {
                 "johnpbloch/wordpress": "@stable",
                 "lucatume/wp-browser": "*",
-                "newfold-labs/wp-php-standards": "^1.2.5",
+                "newfold-labs/wp-php-standards": "^1.2.6",
                 "phpunit/phpcov": "*",
                 "wp-cli/i18n-command": "^2.7.0"
             },
@@ -1588,10 +1588,10 @@
             ],
             "description": "Site Editor AI Chat",
             "support": {
-                "source": "https://github.com/newfold-labs/wp-module-editor-chat/tree/1.0.9",
+                "source": "https://github.com/newfold-labs/wp-module-editor-chat/tree/2.1.5",
                 "issues": "https://github.com/newfold-labs/wp-module-editor-chat/issues"
             },
-            "time": "2026-04-06T15:51:04+00:00"
+            "time": "2026-07-22T13:07:39+00:00"
         },
         {
             "name": "newfold-labs/wp-module-facebook",
@@ -2248,6 +2248,10 @@
                 }
             ],
             "description": "An installer for WordPress plugins and themes.",
+            "support": {
+                "source": "https://github.com/newfold-labs/wp-module-installer/tree/1.7.5",
+                "issues": "https://github.com/newfold-labs/wp-module-installer/issues"
+            },
             "time": "2026-06-23T13:21:37+00:00"
         },
         {
@@ -2492,20 +2496,21 @@
         },
         {
             "name": "newfold-labs/wp-module-mcp",
-            "version": "1.7.1",
+            "version": "1.7.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/newfold-labs/wp-module-mcp.git",
-                "reference": "2f75b423236cbe8213732651519f1b4383ad9e2c"
+                "reference": "0c1af4c74af89bf7e001c2a63d9774942583c206"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/newfold-labs/wp-module-mcp/zipball/2f75b423236cbe8213732651519f1b4383ad9e2c",
-                "reference": "2f75b423236cbe8213732651519f1b4383ad9e2c",
+                "url": "https://api.github.com/repos/newfold-labs/wp-module-mcp/zipball/0c1af4c74af89bf7e001c2a63d9774942583c206",
+                "reference": "0c1af4c74af89bf7e001c2a63d9774942583c206",
                 "shasum": ""
             },
             "require": {
                 "firebase/php-jwt": "^6.10.0",
+                "smalot/pdfparser": "^2.0",
                 "wordpress/abilities-api": "^0.4.0",
                 "wordpress/mcp-adapter": "^0.5.0"
             },
@@ -2577,10 +2582,10 @@
             ],
             "description": "WordPress MCP module for Newfold Labs BLU",
             "support": {
-                "source": "https://github.com/newfold-labs/wp-module-mcp/tree/1.7.1",
+                "source": "https://github.com/newfold-labs/wp-module-mcp/tree/1.7.5",
                 "issues": "https://github.com/newfold-labs/wp-module-mcp/issues"
             },
-            "time": "2026-05-26T07:17:43+00:00"
+            "time": "2026-07-21T20:48:43+00:00"
         },
         {
             "name": "newfold-labs/wp-module-migration",
@@ -2865,31 +2870,31 @@
         },
         {
             "name": "newfold-labs/wp-module-onboarding",
-            "version": "3.3.6",
+            "version": "4.0.7",
             "source": {
                 "type": "git",
                 "url": "https://github.com/newfold-labs/wp-module-onboarding.git",
-                "reference": "bd901d8e549295f381279e69c2193a21c07f221c"
+                "reference": "ec049124c02ec010c87539d71cd287d9fe06fdab"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/newfold-labs/wp-module-onboarding/zipball/bd901d8e549295f381279e69c2193a21c07f221c",
-                "reference": "bd901d8e549295f381279e69c2193a21c07f221c",
+                "url": "https://api.github.com/repos/newfold-labs/wp-module-onboarding/zipball/ec049124c02ec010c87539d71cd287d9fe06fdab",
+                "reference": "ec049124c02ec010c87539d71cd287d9fe06fdab",
                 "shasum": ""
             },
             "require": {
                 "mustache/mustache": "^2.14.2",
-                "newfold-labs/wp-module-facebook": "^1.3.3",
-                "newfold-labs/wp-module-migration": "^1.7.1",
-                "newfold-labs/wp-module-onboarding-data": "^1.2.23",
-                "newfold-labs/wp-module-patterns": "^2.10.3",
-                "wp-cli/wp-config-transformer": "^1.4.4",
+                "newfold-labs/wp-module-install-checker": "^1.0.3",
+                "newfold-labs/wp-module-migration": "^1.7.2",
+                "newfold-labs/wp-module-patterns": "^2.13.0",
+                "newfold-labs/wp-module-survey": "^1.0.1",
+                "wp-cli/wp-config-transformer": "^1.4.5",
                 "wp-forge/helpers": "^2.0"
             },
             "require-dev": {
-                "johnpbloch/wordpress": "6.9.4",
+                "johnpbloch/wordpress": "7.0.0",
                 "lucatume/wp-browser": "*",
-                "newfold-labs/wp-php-standards": "^1.2.5",
+                "newfold-labs/wp-php-standards": "^1.2.6",
                 "php": ">=7.4",
                 "phpunit/phpcov": "*",
                 "wp-cli/i18n-command": "^2.7.0",
@@ -2915,11 +2920,8 @@
                 "i18n-po": [
                     "vendor/bin/wp i18n update-po ./languages/wp-module-onboarding.pot ./languages"
                 ],
-                "i18n-mo": [
-                    "vendor/bin/wp i18n make-mo ./languages"
-                ],
                 "i18n-php": [
-                    "vendor/bin/wp i18n make-php ./languages"
+                    "vendor/bin/wp i18n make-php ./languages --pretty-print"
                 ],
                 "i18n-json": [
                     "find ./languages -type f -name \"*.po\" -print0 | xargs -0 -I {} sh -c 'name=$(basename \"$1\" .po); npx po2json languages/\"$name\".po languages/\"$name\"-nfd-onboarding.json -f jed1.x' -- {}"
@@ -2961,106 +2963,10 @@
             ],
             "description": "Next-generation WordPress Onboarding for WordPress sites at Newfold Digital.",
             "support": {
-                "source": "https://github.com/newfold-labs/wp-module-onboarding/tree/3.3.6",
+                "source": "https://github.com/newfold-labs/wp-module-onboarding/tree/4.0.7",
                 "issues": "https://github.com/newfold-labs/wp-module-onboarding/issues"
             },
-            "time": "2026-03-24T16:41:10+00:00"
-        },
-        {
-            "name": "newfold-labs/wp-module-onboarding-data",
-            "version": "1.2.24",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/newfold-labs/wp-module-onboarding-data.git",
-                "reference": "030189aa96dec96b5b3fb3f3783fea7dac03a613"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/newfold-labs/wp-module-onboarding-data/zipball/030189aa96dec96b5b3fb3f3783fea7dac03a613",
-                "reference": "030189aa96dec96b5b3fb3f3783fea7dac03a613",
-                "shasum": ""
-            },
-            "require": {
-                "mustache/mustache": "^2.14.2",
-                "newfold-labs/wp-module-ai": "^1.3.1",
-                "newfold-labs/wp-module-data": "^2.6.5",
-                "newfold-labs/wp-module-install-checker": "^1.0.3",
-                "newfold-labs/wp-module-installer": "^1.2.0",
-                "newfold-labs/wp-module-patterns": "^2.6",
-                "newfold-labs/wp-module-performance": "^3.0.0",
-                "newfold-labs/wp-module-survey": "^1.0.1",
-                "wp-forge/wp-upgrade-handler": "^1.0"
-            },
-            "require-dev": {
-                "johnpbloch/wordpress": "@stable",
-                "lucatume/wp-browser": "*",
-                "newfold-labs/wp-php-standards": "^1.2.4",
-                "phpunit/phpcov": "*",
-                "wp-cli/i18n-command": "^2.6.2"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "NewfoldLabs\\WP\\Module\\Onboarding\\Data\\": "includes/"
-                },
-                "files": [
-                    "includes/I18n.php"
-                ]
-            },
-            "scripts": {
-                "fix": [
-                    "vendor/bin/phpcbf . --ignore=*/build/* --standard=phpcs.xml -d error_reporting=\"E_ALL&~E_DEPRECATED\""
-                ],
-                "i18n": [
-                    "@i18n-pot",
-                    "@i18n-po",
-                    "@i18n-php",
-                    "@i18n-json"
-                ],
-                "i18n-ci-pre": [
-                    "@i18n-pot",
-                    "@i18n-po"
-                ],
-                "i18n-ci-post": [
-                    "@i18n-json",
-                    "@i18n-php"
-                ],
-                "i18n-json": [
-                    "rm -f languages/*.json && vendor/bin/wp i18n make-json ./languages --pretty-print"
-                ],
-                "i18n-php": [
-                    "vendor/bin/wp i18n make-php ./languages --pretty-print"
-                ],
-                "i18n-po": [
-                    "vendor/bin/wp i18n update-po ./languages/wp-module-onboarding-data.pot ./languages"
-                ],
-                "i18n-pot": [
-                    "vendor/bin/wp i18n make-pot . ./languages/wp-module-onboarding-data.pot --domain=wp-module-onboarding-data --headers='{\"Report-Msgid-Bugs-To\":\"https://github.com/newfold-labs/wp-module-onboarding-data/issues\",\"POT-Creation-Date\":\"2025-02-13T09:55:55+00:00\"}' --exclude=wordpress"
-                ],
-                "lint": [
-                    "vendor/bin/phpcs . --ignore=*/build/* --standard=phpcs.xml -d error_reporting=\"E_ALL&~E_DEPRECATED\""
-                ],
-                "test": [
-                    "codecept run wpunit"
-                ],
-                "test-coverage": [
-                    "codecept run wpunit --coverage wpunit.cov",
-                    "phpcov merge --php tests/_output/merged.cov --html tests/_output/html tests/_output;",
-                    "echo \"open tests/_output/html/index.html\" to view the report"
-                ]
-            },
-            "authors": [
-                {
-                    "name": "arunshenoy99",
-                    "email": "devarunshenoy99@gmail.com"
-                }
-            ],
-            "description": "A non-toggleable module containing a standardized interface for interacting with Onboarding data.",
-            "support": {
-                "source": "https://github.com/newfold-labs/wp-module-onboarding-data/tree/1.2.24",
-                "issues": "https://github.com/newfold-labs/wp-module-onboarding-data/issues"
-            },
-            "time": "2026-07-16T16:46:50+00:00"
+            "time": "2026-07-21T21:44:01+00:00"
         },
         {
             "name": "newfold-labs/wp-module-patterns",
@@ -4142,6 +4048,57 @@
             "time": "2019-03-08T08:55:37+00:00"
         },
         {
+            "name": "smalot/pdfparser",
+            "version": "v2.12.5",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/smalot/pdfparser.git",
+                "reference": "2cfa0d92bd557875c9f52a75fde0e8392302a354"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/smalot/pdfparser/zipball/2cfa0d92bd557875c9f52a75fde0e8392302a354",
+                "reference": "2cfa0d92bd557875c9f52a75fde0e8392302a354",
+                "shasum": ""
+            },
+            "require": {
+                "ext-iconv": "*",
+                "ext-zlib": "*",
+                "php": ">=7.1",
+                "symfony/polyfill-mbstring": "^1.18"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "Smalot\\PdfParser\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "LGPL-3.0"
+            ],
+            "authors": [
+                {
+                    "name": "Sebastien MALOT",
+                    "email": "sebastien@malot.fr"
+                }
+            ],
+            "description": "Pdf parser library. Can read and extract information from pdf file.",
+            "homepage": "https://www.pdfparser.org",
+            "keywords": [
+                "extract",
+                "parse",
+                "parser",
+                "pdf",
+                "text"
+            ],
+            "support": {
+                "issues": "https://github.com/smalot/pdfparser/issues",
+                "source": "https://github.com/smalot/pdfparser/tree/v2.12.5"
+            },
+            "time": "2026-04-17T11:37:58+00:00"
+        },
+        {
             "name": "symfony/deprecation-contracts",
             "version": "v2.5.4",
             "source": {
@@ -4207,6 +4164,91 @@
                 }
             ],
             "time": "2024-09-25T14:11:13+00:00"
+        },
+        {
+            "name": "symfony/polyfill-mbstring",
+            "version": "v1.38.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/symfony/polyfill-mbstring.git",
+                "reference": "d3d318bad5e7a1bfbd026009c8bfb8d8f99ae6b6"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/symfony/polyfill-mbstring/zipball/d3d318bad5e7a1bfbd026009c8bfb8d8f99ae6b6",
+                "reference": "d3d318bad5e7a1bfbd026009c8bfb8d8f99ae6b6",
+                "shasum": ""
+            },
+            "require": {
+                "ext-iconv": "*",
+                "php": ">=7.2"
+            },
+            "provide": {
+                "ext-mbstring": "*"
+            },
+            "suggest": {
+                "ext-mbstring": "For best performance"
+            },
+            "type": "library",
+            "extra": {
+                "thanks": {
+                    "url": "https://github.com/symfony/polyfill",
+                    "name": "symfony/polyfill"
+                }
+            },
+            "autoload": {
+                "files": [
+                    "bootstrap.php"
+                ],
+                "psr-4": {
+                    "Symfony\\Polyfill\\Mbstring\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Nicolas Grekas",
+                    "email": "p@tchwork.com"
+                },
+                {
+                    "name": "Symfony Community",
+                    "homepage": "https://symfony.com/contributors"
+                }
+            ],
+            "description": "Symfony polyfill for the Mbstring extension",
+            "homepage": "https://symfony.com",
+            "keywords": [
+                "compatibility",
+                "mbstring",
+                "polyfill",
+                "portable",
+                "shim"
+            ],
+            "support": {
+                "source": "https://github.com/symfony/polyfill-mbstring/tree/v1.38.2"
+            },
+            "funding": [
+                {
+                    "url": "https://symfony.com/sponsor",
+                    "type": "custom"
+                },
+                {
+                    "url": "https://github.com/fabpot",
+                    "type": "github"
+                },
+                {
+                    "url": "https://github.com/nicolas-grekas",
+                    "type": "github"
+                },
+                {
+                    "url": "https://tidelift.com/funding/github/packagist/symfony/symfony",
+                    "type": "tidelift"
+                }
+            ],
+            "time": "2026-05-27T06:59:30+00:00"
         },
         {
             "name": "typesense/typesense-php",
@@ -4404,16 +4446,16 @@
         },
         {
             "name": "wordpress/php-mcp-schema",
-            "version": "v0.1.1",
+            "version": "v0.1.2",
             "source": {
                 "type": "git",
-                "url": "https://github.com/WordPress/php-mcp-schema.git",
-                "reference": "e2118ec421ead51a3e17a3d8160f4537727e91b9"
+                "url": "https://github.com/WordPress/php-mcp-schema",
+                "reference": "95df8a50a3bd54f6b7c4869c6e2185db380d4d63"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/WordPress/php-mcp-schema/zipball/e2118ec421ead51a3e17a3d8160f4537727e91b9",
-                "reference": "e2118ec421ead51a3e17a3d8160f4537727e91b9",
+                "url": "https://api.github.com/repos/WordPress/php-mcp-schema/zipball/95df8a50a3bd54f6b7c4869c6e2185db380d4d63",
+                "reference": "95df8a50a3bd54f6b7c4869c6e2185db380d4d63",
                 "shasum": ""
             },
             "require": {
@@ -4447,11 +4489,7 @@
                 "php",
                 "schema"
             ],
-            "support": {
-                "issues": "https://github.com/WordPress/php-mcp-schema/issues",
-                "source": "https://github.com/WordPress/php-mcp-schema/tree/v0.1.1"
-            },
-            "time": "2026-04-10T19:35:16+00:00"
+            "time": "2026-06-05T08:26:32+00:00"
         },
         {
             "name": "wp-cli/mustache",
@@ -10680,91 +10718,6 @@
                 }
             ],
             "time": "2026-05-25T13:48:31+00:00"
-        },
-        {
-            "name": "symfony/polyfill-mbstring",
-            "version": "v1.38.1",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/symfony/polyfill-mbstring.git",
-                "reference": "14c5439eec4ccff081ac14eca2dc57feb2a66d92"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/symfony/polyfill-mbstring/zipball/14c5439eec4ccff081ac14eca2dc57feb2a66d92",
-                "reference": "14c5439eec4ccff081ac14eca2dc57feb2a66d92",
-                "shasum": ""
-            },
-            "require": {
-                "ext-iconv": "*",
-                "php": ">=7.2"
-            },
-            "provide": {
-                "ext-mbstring": "*"
-            },
-            "suggest": {
-                "ext-mbstring": "For best performance"
-            },
-            "type": "library",
-            "extra": {
-                "thanks": {
-                    "url": "https://github.com/symfony/polyfill",
-                    "name": "symfony/polyfill"
-                }
-            },
-            "autoload": {
-                "files": [
-                    "bootstrap.php"
-                ],
-                "psr-4": {
-                    "Symfony\\Polyfill\\Mbstring\\": ""
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Nicolas Grekas",
-                    "email": "p@tchwork.com"
-                },
-                {
-                    "name": "Symfony Community",
-                    "homepage": "https://symfony.com/contributors"
-                }
-            ],
-            "description": "Symfony polyfill for the Mbstring extension",
-            "homepage": "https://symfony.com",
-            "keywords": [
-                "compatibility",
-                "mbstring",
-                "polyfill",
-                "portable",
-                "shim"
-            ],
-            "support": {
-                "source": "https://github.com/symfony/polyfill-mbstring/tree/v1.38.1"
-            },
-            "funding": [
-                {
-                    "url": "https://symfony.com/sponsor",
-                    "type": "custom"
-                },
-                {
-                    "url": "https://github.com/fabpot",
-                    "type": "github"
-                },
-                {
-                    "url": "https://github.com/nicolas-grekas",
-                    "type": "github"
-                },
-                {
-                    "url": "https://tidelift.com/funding/github/packagist/symfony/symfony",
-                    "type": "tidelift"
-                }
-            ],
-            "time": "2026-05-26T12:51:13+00:00"
         },
         {
             "name": "symfony/polyfill-php73",

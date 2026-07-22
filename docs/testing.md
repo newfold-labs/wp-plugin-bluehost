@@ -35,7 +35,9 @@ Only throws when explicitly `true`. Global setup passes `false` so a transient C
 
 **`wordpress.wpCli()` options** (see helper JSDoc for full detail):
 
-- **`failOnNonZeroExit`** — only throws when explicitly set to `true`. Omitted or `false` preserves legacy behavior (return exit code / error string).
+- **Return value** — stdout string, `0` for empty success, or `Error: …` / exit code on failure. Use **`isWpCliFailure(result)`** and **`formatWpCliResult(result)`** in global setup for logging.
+- **`failOnNonZeroExit`** — only throws when explicitly set to `true`. Omitted or `false` preserves legacy return behavior.
+- **`timeout`** — defaults to **120000 ms** (2 minutes) so CI runs do not hang indefinitely; pass `0` to disable.
 - **`cwd`** — override plugin root; otherwise uses `PLUGIN_DIR` (set in `playwright.config.mjs` and global setup) or `process.cwd()`.
 
 ### Test layout

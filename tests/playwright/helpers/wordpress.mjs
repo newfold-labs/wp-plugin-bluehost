@@ -76,35 +76,39 @@ async function isPluginActive(page, pluginSlug) {
   return await deactivateLink.isVisible();
 }
 
+/** Default execSync timeout for wp-env CLI calls (2 minutes). Pass `timeout: 0` to disable. */
+const DEFAULT_WP_CLI_TIMEOUT_MS = 120_000;
+
 /**
  * Execute WordPress CLI command
  *
  * @param {string} command - WP-CLI command to execute
  * @param {Object} [options]
  * @param {string} [options.cwd] - Override auto-detected plugin root for wp-env
- * @param {number} [options.timeout] - execSync timeout in milliseconds
+ * @param {number} [options.timeout] - execSync timeout in ms (default: 120000; use 0 to disable)
  * @param {boolean} [options.failOnNonZeroExit] - When true, throw on non-zero exit code
  * @returns {Promise<string|number>} Output string if available, 0 for success, or error info
  */
 async function wpCli(command, options = {}) {
   // TODO: bail early if no cli access (live site or not wp-env setup)
 
-  const { timeout, failOnNonZeroExit, cwd } = options;
+  const {
+    timeout = DEFAULT_WP_CLI_TIMEOUT_MS,
+    failOnNonZeroExit,
+    cwd,
+  } = options;
 
   utils.fancyLog(`🔧 WP-CLI command: ${command}`);
   try {
     const output = execSync(`npx wp-env run cli wp ${command}`, {
       cwd: cwd ?? getPluginRoot(),
-      encoding: 'utf-8', // auto convert Buffer to string
-      stdio: ['pipe', 'pipe', 'pipe'], // capture stdout/stderr
-      ...(timeout !== undefined ? { timeout } : {}),
+      encoding: 'utf-8',
+      stdio: ['pipe', 'pipe', 'pipe'],
+      ...(timeout > 0 ? { timeout } : {}),
     });
 
-    // If output is empty, just return 0 for success
     return output.trim() ? output.trim() : 0;
   } catch (err) {
-    // err.status = exit code
-    // err.stdout / err.stderr may have useful info
     if (failOnNonZeroExit) {
       const detail = err.stderr ? err.stderr.toString().trim() : err.message;
       throw new Error(`wp ${command}: ${detail}`);
@@ -117,7 +121,7 @@ async function wpCli(command, options = {}) {
 }
 
 /**
- * Whether a wpCli() return value indicates failure (when failOnNonZeroExit is false).
+ * Whether a wpCli() result indicates failure (when failOnNonZeroExit is false).
  *
  * @param {string|number} result - wpCli return value
  * @returns {boolean}
@@ -147,7 +151,7 @@ function formatWpCliResult(result) {
  * 
  * @param {string} option - Option name
  * @param {string|boolean} value - Option value
- * @returns {string|number} - Output string if available, 0 for success, or error info.
+ * @returns {Promise<string|number>} Output string if available, 0 for success, or error info
  */
 async function setOption(option, value) {
   utils.fancyLog(`⚙️  Setting WordPress option: ${option} = ${value}`);

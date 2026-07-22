@@ -52,8 +52,6 @@ async function globalSetup(config) {
       );
     }
 
-    // Remove extra plugins for faster, cleaner tests.
-    // Uses `deactivate --uninstall` (not `plugin delete`)
     // https://developer.wordpress.org/cli/commands/plugin/deactivate/
     // failOnNonZeroExit: false — plugins may be absent; setup should not fail.
     const extraPlugins = [
@@ -64,7 +62,7 @@ async function globalSetup(config) {
       'wordpress-seo/wp-seo.php',
     ];
     for (const plugin of extraPlugins) {
-      const result = await wordpress.wpCli(`plugin deactivate ${plugin} --uninstall`, {
+      const result = await wordpress.wpCli(`plugin deactivate ${plugin}`, {
         failOnNonZeroExit: false,
       });
       if (wordpress.isWpCliFailure(result)) {

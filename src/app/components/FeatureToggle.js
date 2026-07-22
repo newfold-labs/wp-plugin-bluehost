@@ -19,6 +19,17 @@ export const hasRegisteredFeature = ( store, featureKey ) => {
 	);
 };
 
+/**
+ * Whether a registered feature can be toggled in the Admin UI.
+ *
+ * @param {Object} store      App store state.
+ * @param {string} featureKey Feature flag key.
+ * @return {boolean} True when the feature is toggleable.
+ */
+export const isFeatureToggleable = ( store, featureKey ) => {
+	return Boolean( store?.toggleableFeatures?.[ featureKey ] );
+};
+
 const FeatureToggleControl = ( {
 	featureKey,
 	toggleId,
@@ -29,10 +40,10 @@ const FeatureToggleControl = ( {
 } ) => {
 	const { store, setStore } = useContext( AppStore );
 	const [ enabled, setEnabled ] = useState(
-		Boolean( store.features[ featureKey ] )
+		Boolean( store?.features?.[ featureKey ] )
 	);
 	const [ isLocked, setIsLocked ] = useState(
-		! store.toggleableFeatures[ featureKey ]
+		! isFeatureToggleable( store, featureKey )
 	);
 	const [ isError, setError ] = useState( false );
 	const notify = useNotification();
@@ -91,7 +102,7 @@ const FeatureToggleControl = ( {
 		setStore( {
 			...store,
 			features: {
-				...store.features,
+				...( store.features || {} ),
 				[ featureKey ]: enabled,
 			},
 		} );

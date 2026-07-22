@@ -13,7 +13,30 @@ The project uses **Playwright** for end-to-end tests in the browser. Tests run a
 - **Config file:** **`playwright.config.mjs`** (repository root).
 - **Port:** Taken from **`.wp-env.json`** (default dev port, e.g. 8882). In CI, **`.wp-env.override.json`** may be created by the workflow with a different core/phpVersion.
 - **Projects:** Playwright “projects” (plugin + modules) are defined in **`tests/playwright/playwright-projects.json`**, which can be generated/updated by **`.github/scripts/generate-playwright-projects.mjs`** (run via `npm run test:playwright:update-projects`). The config merges in optional **`project-overrides.json`** per project.
-- **Global setup:** **`tests/playwright/global-setup.js`** runs before tests (e.g. sets permalink structure and flushes rewrite rules via WP-CLI in wp-env).
+- **Global setup:** **`tests/playwright/global-setup.js`** runs before tests (e.g. sets permalink structure, flushes rewrite rules, and removes bundled third-party plugins via WP-CLI in wp-env). See [Global setup (WP-CLI)](#global-setup-wp-cli) below.
+
+### Global setup (WP-CLI)
+
+**`tests/playwright/global-setup.js`** runs WP-CLI commands through **`wordpress.wpCli()`** in **`tests/playwright/helpers/wordpress.mjs`** before any browser tests start.
+
+| Step | Command | Notes |
+|------|---------|--------|
+| Permalinks | `rewrite structure '/%postname%/' --hard` | Sets structure and flushes rules (incl. `.htaccess`). [`wp rewrite structure`](https://developer.wordpress.org/cli/commands/rewrite/structure/). `failOnNonZeroExit: false` |
+| Remove extra plugins | `plugin deactivate <plugin> --uninstall` | `failOnNonZeroExit: false` per plugin |
+
+**Why one command for permalinks?**  
+`wp rewrite structure <pattern> --hard` replaces the older two-step `option update permalink_structure` + `rewrite flush --hard`. It updates the permalink option and regenerates rewrite rules; `--hard` also updates `.htaccess`.
+
+**`failOnNonZeroExit` in global setup:**  
+Only throws when explicitly `true`. Global setup passes `false` so a transient CLI failure does not abort the run. **`wordpress.isWpCliFailure()`** checks the return value and logs success or failure (permalink always; plugin removal only on failure) so later test failures are easier to diagnose.
+
+**Why `deactivate --uninstall` instead of `plugin delete`?**  
+`wp plugin delete` fails when the plugin is still active. Global setup removes plugins that wp-env may install as active (Jetpack, Yoast, etc.). The [`--uninstall` flag on `wp plugin deactivate`](https://developer.wordpress.org/cli/commands/plugin/deactivate/) deactivates first, then runs uninstall hooks and removes the plugin. An equivalent alternative is `wp plugin uninstall <plugin> --deactivate`.
+
+**`wordpress.wpCli()` options** (see helper JSDoc for full detail):
+
+- **`failOnNonZeroExit`** — only throws when explicitly set to `true`. Omitted or `false` preserves legacy behavior (return exit code / error string).
+- **`cwd`** — override plugin root; otherwise uses `PLUGIN_DIR` (set in `playwright.config.mjs` and global setup) or `process.cwd()`.
 
 ### Test layout
 

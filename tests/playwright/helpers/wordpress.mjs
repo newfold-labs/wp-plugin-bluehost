@@ -1,7 +1,4 @@
 import { execSync } from 'child_process';
-import { existsSync } from 'fs';
-import { dirname, join } from 'path';
-import { fileURLToPath } from 'url';
 
 /**
  * Core WordPress Test Helpers
@@ -18,7 +15,7 @@ let pluginRoot;
 
 /**
  * Plugin root must match wp-env's cwd (loadConfig uses path.resolve('.')).
- * Prefer PLUGIN_DIR when Playwright config has run; otherwise resolve from this file.
+ * Prefer PLUGIN_DIR when Playwright config has run; otherwise use process cwd.
  *
  * @returns {string}
  */
@@ -27,23 +24,7 @@ function getPluginRoot() {
     return pluginRoot;
   }
 
-  if (process.env.PLUGIN_DIR) {
-    pluginRoot = process.env.PLUGIN_DIR;
-    return pluginRoot;
-  }
-
-  // tests/playwright/helpers/wordpress.mjs → plugin root is three levels up
-  let dir = dirname(fileURLToPath(import.meta.url));
-  for (let i = 0; i < 3; i++) {
-    dir = dirname(dir);
-  }
-
-  if (existsSync(join(dir, '.wp-env.json')) || existsSync(join(dir, 'playwright.config.mjs'))) {
-    pluginRoot = dir;
-    return pluginRoot;
-  }
-
-  pluginRoot = process.cwd();
+  pluginRoot = process.env.PLUGIN_DIR || process.cwd();
   return pluginRoot;
 }
 
@@ -136,6 +117,32 @@ async function wpCli(command, options = {}) {
 }
 
 /**
+ * Whether a wpCli() return value indicates failure (when failOnNonZeroExit is false).
+ *
+ * @param {string|number} result - wpCli return value
+ * @returns {boolean}
+ */
+function isWpCliFailure(result) {
+  return (
+    (typeof result === 'string' && result.startsWith('Error:')) ||
+    (typeof result === 'number' && result !== 0)
+  );
+}
+
+/**
+ * Format a wpCli() result for logs.
+ *
+ * @param {string|number} result - wpCli return value
+ * @returns {string}
+ */
+function formatWpCliResult(result) {
+  if (result === 0) {
+    return 'ok';
+  }
+  return String(result);
+}
+
+/**
  * Set WordPress option via WP-CLI
  * 
  * @param {string} option - Option name
@@ -203,6 +210,8 @@ export default {
   
   // WordPress CLI and options
   wpCli,
+  isWpCliFailure,
+  formatWpCliResult,
   setOption,
   setPermalinkStructure,
 };

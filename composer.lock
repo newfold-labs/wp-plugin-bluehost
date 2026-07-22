@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "5306281f5ccddf12ecdf10715a9295f9",
+    "content-hash": "ecfad4926de86fd74607e58a9e02d6d4",
     "packages": [
         {
             "name": "colinmollenhour/credis",
@@ -2500,16 +2500,16 @@
         },
         {
             "name": "newfold-labs/wp-module-mcp",
-            "version": "1.7.4",
+            "version": "1.7.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/newfold-labs/wp-module-mcp.git",
-                "reference": "cbcb6aacf131a7474e42b1960197b4b2a81c0167"
+                "reference": "0c1af4c74af89bf7e001c2a63d9774942583c206"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/newfold-labs/wp-module-mcp/zipball/cbcb6aacf131a7474e42b1960197b4b2a81c0167",
-                "reference": "cbcb6aacf131a7474e42b1960197b4b2a81c0167",
+                "url": "https://api.github.com/repos/newfold-labs/wp-module-mcp/zipball/0c1af4c74af89bf7e001c2a63d9774942583c206",
+                "reference": "0c1af4c74af89bf7e001c2a63d9774942583c206",
                 "shasum": ""
             },
             "require": {
@@ -2586,10 +2586,10 @@
             ],
             "description": "WordPress MCP module for Newfold Labs BLU",
             "support": {
-                "source": "https://github.com/newfold-labs/wp-module-mcp/tree/1.7.4",
+                "source": "https://github.com/newfold-labs/wp-module-mcp/tree/1.7.5",
                 "issues": "https://github.com/newfold-labs/wp-module-mcp/issues"
             },
-            "time": "2026-07-10T18:31:58+00:00"
+            "time": "2026-07-21T20:48:43+00:00"
         },
         {
             "name": "newfold-labs/wp-module-migration",

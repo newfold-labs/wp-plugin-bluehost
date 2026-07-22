@@ -10,9 +10,9 @@ test.describe('Dashboard Widgets', () => {
     await newfold.clearCapabilities();
   });
 
-  test('Bluehost Widgets are all Accessible', async ({ page }) => {
+  test('Bluehost Widgets are all Accessible', { tag: '@smoke' }, async ({ page }) => {
     // Wait for dashboard widgets to load with longer timeout
-    await expect(page).toHaveURL('http://localhost:8882/wp-admin/index.php');
+    await expect(page).toHaveURL(/wp-admin\/index\.php$/);
     
     try {
       await newfold.waitForDashboardWidgets(page, 15000);
@@ -138,7 +138,7 @@ test.describe('Dashboard Widgets', () => {
     await expect(enableComingSoonButton).toHaveAttribute('href', '#');
   });
 
-  test('Help Widget', async ({ page }) => {
+  test('Help Widget', { tag: '@smoke' }, async ({ page }) => {
     const helpWidget = page.locator('#bluehost_help_widget');
     await expect(helpWidget).toBeVisible();
 
@@ -172,7 +172,7 @@ test.describe('Dashboard Widgets', () => {
     await expect(helpCenter).toBeVisible();
   });
 
-  test('Bluehost Account Widget', async ({ page }) => {
+  test('Bluehost Account Widget', { tag: '@smoke' },async ({ page }) => {
     const accountWidget = page.locator('#bluehost_account_widget');
     await expect(accountWidget).toBeVisible();
 

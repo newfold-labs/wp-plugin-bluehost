@@ -46,7 +46,7 @@ async function globalSetup(config) {
       'wordpress-seo/wp-seo.php',
     ];
     for (const plugin of extraPlugins) {
-      await wordpress.wpCli(`plugin delete ${plugin}`);
+      await wordpress.wpCli(`plugin deactivate ${plugin} --uninstall`);
     }
 
     utils.fancyLog('✔ Global setup completed successfully', 100, 'green', '');

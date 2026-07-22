@@ -269,6 +269,14 @@ async function setCapability(capabilitiesJSON, expiration = 3600) {
   utils.fancyLog(`🔐 Setting capabilities: ${JSON.stringify(capabilitiesJSON)}`);
   const expiry = Math.floor( new Date().getTime() / 1000.0 ) + expiration;
   
+  // add canAccessAI to capabilitiesJSON if not already present
+  if (!capabilitiesJSON.canAccessAI) {
+    // canAccessAI is a key that is used to determine if capabilities are legitimate
+    // if it is not present, the capabilities are not discarded
+    // see https://github.com/newfold-labs/wp-module-data/pull/285
+    capabilitiesJSON.canAccessAI = true;
+  }
+
   // Use Promise.all to ensure both operations complete before returning
   await Promise.all([
     wordpress.wpCli(`option update _transient_nfd_site_capabilities '${ JSON.stringify(

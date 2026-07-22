@@ -25,8 +25,11 @@ const Admin = () => {
 					className={ classNames( 'wppbh-app-admin' ) }
 				>
 					<Container.SettingsField
-						title="Features"
-						description="Toggle features – not settings."
+						title={ __( 'Features', 'wp-plugin-bluehost' ) }
+						description={ __(
+							'Toggle features – not settings.',
+							'wp-plugin-bluehost'
+						) }
 					>
 						<div className="nfd-flex nfd-flex-col nfd-gap-8">
 							<WonderBlocksSettings />

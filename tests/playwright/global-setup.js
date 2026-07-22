@@ -54,7 +54,7 @@ async function globalSetup(config) {
       'wordpress-seo/wp-seo.php',
     ];
     for (const plugin of extraPlugins) {
-      wordpress.wpCli(`plugin delete ${plugin}`, {
+      wordpress.wpCli(`plugin deactivate ${plugin} --uninstall`, {
         failOnNonZeroExit: false,
       });
     }

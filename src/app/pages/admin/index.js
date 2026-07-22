@@ -1,3 +1,4 @@
+import { __ } from '@wordpress/i18n';
 import HelpCenterSettings from '../settings/helpCenterSettings';
 import WonderBlocksSettings from '../settings/wonderBlocksSettings';
 import StagingFeatureSettings from '../settings/stagingFeatureSettings';

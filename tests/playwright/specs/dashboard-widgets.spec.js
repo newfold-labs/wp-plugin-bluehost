@@ -12,7 +12,7 @@ test.describe('Dashboard Widgets', () => {
 
   test('Bluehost Widgets are all Accessible', { tag: '@smoke' }, async ({ page }) => {
     // Wait for dashboard widgets to load with longer timeout
-    await expect(page).toHaveURL('http://localhost:8882/wp-admin/index.php');
+    await expect(page).toHaveURL(/wp-admin\/index\.php$/);
     
     try {
       await newfold.waitForDashboardWidgets(page, 15000);

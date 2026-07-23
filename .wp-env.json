@@ -7,8 +7,8 @@
     "WP_ENVIRONMENT_TYPE": "local",
     "FS_METHOD": "direct",
     "AUTOMATIC_UPDATER_DISABLED": true,
-    "WP_MEMORY_LIMIT": "256M",
-    "WP_MAX_MEMORY_LIMIT": "256M"
+    "WP_MEMORY_LIMIT": "512M",
+    "WP_MAX_MEMORY_LIMIT": "512M"
   },
   "phpVersion": "8.1",
   "plugins": [

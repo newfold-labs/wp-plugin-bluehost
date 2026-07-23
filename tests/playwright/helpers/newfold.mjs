@@ -345,7 +345,7 @@ async function isComingSoonEnabled(page) {
  * @param {boolean} enabled - Whether to enable coming soon
  */
 async function setComingSoon(enabled) {
-return await wordpress.setOption('nfd_coming_soon', enabled);
+  return await wordpress.setOption('nfd_coming_soon', enabled);
 }
 
 /**

@@ -79,6 +79,29 @@ async function globalSetup(config) {
       }
     }
 
+    // Clear cron hooks known to fatal ("Class ... not found") if they fire after their
+    // owning module's dependency is deactivated/removed mid-suite (e.g. a stale nfd_data_sync_cron
+    // surviving into a state where wp-module-data's autoloader isn't registered). WP-Cron retries
+    // a failing event on every subsequent page load, so one orphaned event can take down the rest
+    // of the run. Belt-and-suspenders alongside the upstream fix in wp-module-data (deactivation
+    // hook now clears these itself) — protects any site/branch still on an older module version.
+    // See: https://github.com/newfold-labs/wp-plugin-bluehost/pull/1380
+    //      https://github.com/newfold-labs/wp-module-data/pull/292
+    const orphanProneCronHooks = ['nfd_data_sync_cron', 'nfd_data_cron'];
+    for (const hook of orphanProneCronHooks) {
+      const result = await wordpress.wpCli(`cron event delete ${hook}`, {
+        failOnNonZeroExit: false,
+      });
+      if (wordpress.isWpCliFailure(result)) {
+        utils.fancyLog(
+          `⚠ Could not clear cron hook ${hook}: ${wordpress.formatWpCliResult(result)}`,
+          200,
+          'yellow',
+          '',
+        );
+      }
+    }
+
     utils.fancyLog('✔ Global setup completed successfully', 100, 'green', '');
   } catch (error) {
     utils.fancyLog(`✘ Global setup failed: ${error.message}`, 100, 'red', '');

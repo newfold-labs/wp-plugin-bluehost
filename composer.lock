@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "dcde39f0980c2933c83d5b0d1d59c24c",
+    "content-hash": "2fb71a20a254ab0f7a0f7f60cb94f66a",
     "packages": [
         {
             "name": "colinmollenhour/credis",
@@ -1265,16 +1265,16 @@
         },
         {
             "name": "newfold-labs/wp-module-data",
-            "version": "2.9.5",
+            "version": "2.9.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/newfold-labs/wp-module-data.git",
-                "reference": "75633bc1055c45901aaaaf9308385bb2d2828f30"
+                "reference": "207b2bfdfd0d775820ab20e09cb66c6d8089d3cc"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/newfold-labs/wp-module-data/zipball/75633bc1055c45901aaaaf9308385bb2d2828f30",
-                "reference": "75633bc1055c45901aaaaf9308385bb2d2828f30",
+                "url": "https://api.github.com/repos/newfold-labs/wp-module-data/zipball/207b2bfdfd0d775820ab20e09cb66c6d8089d3cc",
+                "reference": "207b2bfdfd0d775820ab20e09cb66c6d8089d3cc",
                 "shasum": ""
             },
             "require": {
@@ -1391,10 +1391,10 @@
             ],
             "description": "Newfold Data Module",
             "support": {
-                "source": "https://github.com/newfold-labs/wp-module-data/tree/2.9.5",
+                "source": "https://github.com/newfold-labs/wp-module-data/tree/2.9.6",
                 "issues": "https://github.com/newfold-labs/wp-module-data/issues"
             },
-            "time": "2026-07-22T22:33:25+00:00"
+            "time": "2026-07-23T17:31:00+00:00"
         },
         {
             "name": "newfold-labs/wp-module-deactivation",

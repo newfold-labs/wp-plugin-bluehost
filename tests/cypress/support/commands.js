@@ -165,9 +165,18 @@ Cypress.Commands.add( 'wpCli', ( cmd, failOnNonZeroExit = true ) => {
  * @param {number} expiration seconds for transient to expire, defualt 3600 (1 hour)
  */
 Cypress.Commands.add( 'setCapability', ( capJSON, expiration = 3600 ) => {
+	const capabilities = { ...capJSON };
+
+	// Default canAccessAI only when omitted — callers can pass false to simulate no AI access.
+	// Without this key, capabilities are discarded by wp-module-data.
+	// see https://github.com/newfold-labs/wp-module-data/pull/285
+	if ( capabilities.canAccessAI === undefined ) {
+		capabilities.canAccessAI = true;
+	}
+
 	cy.wpCli(
 		`option update _transient_nfd_site_capabilities '${ JSON.stringify(
-			capJSON
+			capabilities
 		) }' --format=json`
 	);
 	// set transient expiration to one hour (default) from now

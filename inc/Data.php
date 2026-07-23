@@ -32,6 +32,7 @@ final class Data {
 			),
 			'wordpress'          => array(
 				'isBlockTheme' => function_exists( 'wp_is_block_theme' ) ? wp_is_block_theme() : false,
+				'isWvcTheme'   => Filters::is_wvc_theme_active(),
 			),
 			'siteType'           => self::get_site_type(),
 			'isSalesPromoActive' => self::is_sales_promotions_plugin_active(),
@@ -52,7 +53,7 @@ final class Data {
 		$runtime['ctbs'] = array(
 			'ecomFamily' => array(
 				'id'  => '5dc83bdd-9274-4557-a6d7-0b2adbc3919f',
-				'url' => 'https://www.bluehost.com/my-account/hosting/details#click-to-buy-WP_SOLUTION_FAMILY',
+				'url' => 'https://www.bluehost.com/my-account/market-place#marketplace-WordPress%20Solutions',
 			),
 		);
 

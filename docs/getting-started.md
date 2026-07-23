@@ -18,6 +18,8 @@ composer install
 
 Use `--legacy-peer-deps` for npm to satisfy the current dependency tree.
 
+`composer install` needs PHP 8.2 or newer: it runs [PHP-Scoper](php-scoper.md) to generate the prefixed packages in `vendor-prefixed/`. The plugin itself still supports PHP 7.4+.
+
 ## First run (development)
 
 1. Install dependencies (above).

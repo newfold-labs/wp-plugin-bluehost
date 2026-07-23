@@ -58,7 +58,7 @@ function getVendorModules() {
 // plugin mid-test). Deferred to run last so a still-deactivated plugin can't be
 // caught mid-teardown by another module's test setup running sequentially after it.
 // https://github.com/newfold-labs/wp-plugin-bluehost/pull/1380
-const RUN_LAST_MODULES = ['wp-module-deactivation'];
+const RUN_LAST_MODULES = new Set(['wp-module-deactivation']);
 
 function generateProjects() {
   console.log('🔍 Playwright Projects Discovery:');
@@ -85,7 +85,7 @@ function generateProjects() {
       testDir: `./${module.path}/tests/playwright/specs`,
       testMatch: '*.spec.{js,mjs}',
     };
-    if (RUN_LAST_MODULES.includes(module.name)) {
+    if (RUN_LAST_MODULES.has(module.name)) {
       deferredProjects.push(project);
     } else {
       projects.push(project);
@@ -100,6 +100,9 @@ function generateProjects() {
 
   // Append run-last modules at the very end, in their original discovery order.
   projects.push(...deferredProjects);
+  if (deferredProjects.length > 0) {
+    console.log(`⏭️  Deferring ${deferredProjects.length} project(s) to run last: ${deferredProjects.map(p => p.name).join(', ')}`);
+  }
 
   console.log(`📁 Found ${projects.length} project(s):`);
   projects.forEach(p => {

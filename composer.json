@@ -32,19 +32,12 @@
     }
   },
   "extra": {
-    "installer-name": "bluehost-wordpress-plugin",
-    "strauss": {
-      "target_directory": "vendor-prefixed",
-      "namespace_prefix": "Bluehost\\Plugin\\",
-      "delete_vendor_packages": false,
-      "packages": [
-        "wordpress/mcp-adapter"
-      ],
-      "exclude_from_copy": {
-        "file_patterns": [
-          "wordpress/mcp-adapter/tests"
-        ]
-      }
+    "installer-name": "bluehost-wordpress-plugin"
+  },
+  "autoload": {
+    "psr-4": {
+      "Bluehost\\Plugin\\WP\\MCP\\": "vendor-prefixed/wordpress/mcp-adapter/includes/",
+      "Bluehost\\Plugin\\WP\\McpSchema\\": "vendor-prefixed/wordpress/php-mcp-schema/src/"
     }
   },
   "repositories": {
@@ -93,11 +86,14 @@
       "@i18n-json",
       "@i18n-php"
     ],
-    "ensure-strauss": "sh -c 'test -f ./bin/strauss.phar || (mkdir -p bin && curl -o bin/strauss.phar -L https://github.com/BrianHenryIE/strauss/releases/download/0.27.2/strauss.phar && chmod +x bin/strauss.phar)'",
-    "strauss-run": "sh -c 'COMPOSER_HOME=$(mktemp -d) COMPOSER_AUTH=\"{}\" GITHUB_TOKEN= php bin/strauss.phar \"$@\"' --",
+    "ensure-scoper": "@composer install -d bin/php-scoper --no-interaction --no-progress",
+    "scoper-run": [
+      "bin/php-scoper/vendor/bin/php-scoper add-prefix vendor/wordpress/mcp-adapter --config=scoper.inc.php --output-dir=vendor-prefixed/wordpress/mcp-adapter --force --stop-on-failure",
+      "bin/php-scoper/vendor/bin/php-scoper add-prefix vendor/wordpress/php-mcp-schema --config=scoper.inc.php --output-dir=vendor-prefixed/wordpress/php-mcp-schema --force --stop-on-failure"
+    ],
     "prefix-namespaces": [
-      "@ensure-strauss",
-      "@strauss-run",
+      "@ensure-scoper",
+      "@scoper-run",
       "@composer dump-autoload"
     ],
     "post-install-cmd": [
@@ -105,11 +101,6 @@
     ],
     "post-update-cmd": [
       "@prefix-namespaces"
-    ],
-    "post-autoload-dump": [
-      "@ensure-strauss",
-      "@strauss-run include-autoloader",
-      "@strauss-run"
     ],
     "test": [
       "codecept run wpunit"
@@ -132,11 +123,11 @@
     "i18n-json": "Generate new language .json files.",
     "i18n-ci-pre": "Command for CI to run before generating language files.",
     "i18n-ci-post": "Command for CI to run after generating language files.",
-    "ensure-strauss": "Ensure Strauss PHAR exists and is executable (downloads if missing).",
-    "prefix-namespaces": "Prefix namespaces for the plugin.",
+    "ensure-scoper": "Install PHP-Scoper and its WordPress exclude lists into bin/php-scoper (isolated from plugin dependencies).",
+    "scoper-run": "Prefix the namespaces of bundled packages into vendor-prefixed (one PHP-Scoper run per package).",
+    "prefix-namespaces": "Prefix namespaces for the plugin and refresh the autoloader.",
     "post-install-cmd": "Command to run after installing the plugin.",
     "post-update-cmd": "Command to run after updating the plugin.",
-    "post-autoload-dump": "Command to run after dumping the autoloader.",
     "test": "Run tests.",
     "test-coverage": "Run tests with coverage, merge coverage and create HTML report."
   },

@@ -1,7 +1,7 @@
 {
-    "translation-revision-date": "2026-07-23T14:55:57+00:00",
+    "translation-revision-date": "2026-07-24T17:14:53+00:00",
     "generator": "WP-CLI\/2.12.0",
-    "source": "build\/4.17.3\/index.js",
+    "source": "build\/4.18.0\/index.js",
     "domain": "messages",
     "locale_data": {
         "messages": {
@@ -27,6 +27,15 @@
             ],
             "Your website is currently displaying a \"Coming Soon\" page.": [
                 "Je website wordt momenteel een \"Binnenkort beschikbaar\" pagina weergegeven."
+            ],
+            "Sorry, that is not allowed.": [
+                "Sorry, dat mag niet."
+            ],
+            "This feature cannot currently be modified.": [
+                "Deze functie kan momenteel niet worden gewijzigd."
+            ],
+            "Oops! Something went wrong. Please try again.": [
+                "Oeps! Er ging iets mis. Probeer het opnieuw."
             ],
             "Oh No, An Error!": [
                 "Oh nee, een fout!"
@@ -142,8 +151,47 @@
             "Secret page to manage admin features and settings.": [
                 "Geheime pagina om beheerdersfuncties en -instellingen te beheren."
             ],
-            "Premium tools available in eCommerce Add-Ons": [
-                "Premium-tools beschikbaar in eCommerce-add-ons"
+            "Features": [
+                "Functies"
+            ],
+            "Toggle features \u2013 not settings.": [
+                ""
+            ],
+            "10Web Admin Restrictions": [
+                ""
+            ],
+            "Prevents theme switching and limits plugin access on 10Web AI editor sites.": [
+                ""
+            ],
+            "10Web Admin Restrictions Enabled": [
+                ""
+            ],
+            "10Web Admin Restrictions Disabled": [
+                ""
+            ],
+            "Theme switching and plugin access restrictions are active on 10Web editor sites.": [
+                ""
+            ],
+            "Theme switching and plugin access restrictions are no longer enforced.": [
+                ""
+            ],
+            "10Web Editor Support": [
+                ""
+            ],
+            "Loads PostHog session replay on the WVC editor admin screen.": [
+                ""
+            ],
+            "10Web Editor Support Enabled": [
+                ""
+            ],
+            "10Web Editor Support Disabled": [
+                ""
+            ],
+            "PostHog session replay will load on the WVC editor screen after a page reload.": [
+                ""
+            ],
+            "PostHog session replay will no longer load on the WVC editor screen.": [
+                ""
             ],
             "Discover exclusive features, designed to deliver unmatched value and elevate your online experience.": [
                 "Ontdek exclusieve functies, ontworpen om onge\u00ebvenaarde waarde te leveren en uw online ervaring naar een hoger niveau te tillen."
@@ -307,9 +355,6 @@
             "Keeping automatic updates on ensures timely security fixes and the latest features.": [
                 "Door automatische updates aan te houden, zorgt u voor tijdige beveiligingsoplossingen en de nieuwste functies."
             ],
-            "Oops! Something went wrong. Please try again.": [
-                "Oeps! Er ging iets mis. Probeer het opnieuw."
-            ],
             "Coming soon activated": [
                 "Binnenkort geactiveerd"
             ],
@@ -330,6 +375,9 @@
             ],
             "Turn on your \"Coming Soon\" page when you need to make major changes to your website.": [
                 "Schakel uw \"Coming Soon\"-pagina in wanneer u grote wijzigingen aan uw website moet aanbrengen."
+            ],
+            "Coming Soon page": [
+                ""
             ],
             "Your Bluehost Coming Soon page lets you hide your site from visitors while you make the magic happen.": [
                 "Met uw Bluehost Coming Soon-pagina kunt u uw site verbergen voor bezoekers terwijl u de magie laat gebeuren."
@@ -403,12 +451,6 @@
             "The Help Center provides guided, step-by-step assistance as you build your site.": [
                 "Het Helpcentrum biedt begeleide, stapsgewijze ondersteuning bij het bouwen van uw site."
             ],
-            "Sorry, that is not allowed.": [
-                "Sorry, dat mag niet."
-            ],
-            "This feature cannot currently be modified.": [
-                "Deze functie kan momenteel niet worden gewijzigd."
-            ],
             "Optimize your website my managing cache, security and performance settings.": [
                 "Optimaliseer uw website door cache-, beveiligings- en prestatie-instellingen te beheren."
             ],
@@ -421,14 +463,14 @@
             "Manage common settings for your website": [
                 "Beheer algemene instellingen voor uw website"
             ],
-            "Features": [
-                "Functies"
-            ],
             "Customize the available features as you manage your website.": [
                 "Pas de beschikbare functies aan terwijl u uw website beheert."
             ],
             "A staging site is a duplicate of your live site, offering a secure environment to experiment, test updates, and deploy when ready.": [
                 "Een testsite is een duplicaat van uw livesite en biedt een veilige omgeving om te experimenteren, updates te testen en te implementeren wanneer u klaar bent."
+            ],
+            "The performance feature provides improvements to loads faster for visitors including cache settings.": [
+                "De prestatiefunctie biedt verbeteringen om sneller te laden voor bezoekers, inclusief cache-instellingen."
             ],
             "Performance Enabled": [
                 "Prestaties ingeschakeld"
@@ -442,8 +484,8 @@
             "Performance will no longer display.": [
                 "Prestaties worden niet meer weergegeven."
             ],
-            "The performance feature provides improvements to loads faster for visitors including cache settings.": [
-                "De prestatiefunctie biedt verbeteringen om sneller te laden voor bezoekers, inclusief cache-instellingen."
+            "The staging feature provides a way to copy a site to test new updates, features or content.": [
+                "De staging-functie biedt een manier om een site te kopi\u00ebren om nieuwe updates, functies of inhoud te testen."
             ],
             "Staging Enabled": [
                 "Staging ingeschakeld"
@@ -456,9 +498,6 @@
             ],
             "Staging will no longer display.": [
                 "De testopstelling wordt niet meer weergegeven."
-            ],
-            "The staging feature provides a way to copy a site to test new updates, features or content.": [
-                "De staging-functie biedt een manier om een site te kopi\u00ebren om nieuwe updates, functies of inhoud te testen."
             ],
             "WonderBlocks Enabled": [
                 "WonderBlocks ingeschakeld"

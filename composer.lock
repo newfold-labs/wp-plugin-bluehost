@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "4a8139d86c99428538f69b0f2d7cd09b",
+    "content-hash": "b852ac173be4223def08be158832eabc",
     "packages": [
         {
             "name": "colinmollenhour/credis",
@@ -959,16 +959,16 @@
         },
         {
             "name": "newfold-labs/wp-module-ai-chat",
-            "version": "1.1.7",
+            "version": "1.1.8",
             "source": {
                 "type": "git",
                 "url": "https://github.com/newfold-labs/wp-module-ai-chat.git",
-                "reference": "1eda4492b60ffff313df38a0ac25337fb11b7909"
+                "reference": "f870c7ea715738f10acbf5df5b0ef112cbfb32ea"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/newfold-labs/wp-module-ai-chat/zipball/1eda4492b60ffff313df38a0ac25337fb11b7909",
-                "reference": "1eda4492b60ffff313df38a0ac25337fb11b7909",
+                "url": "https://api.github.com/repos/newfold-labs/wp-module-ai-chat/zipball/f870c7ea715738f10acbf5df5b0ef112cbfb32ea",
+                "reference": "f870c7ea715738f10acbf5df5b0ef112cbfb32ea",
                 "shasum": ""
             },
             "require-dev": {
@@ -1037,10 +1037,10 @@
             ],
             "description": "AI Chat module for WordPress",
             "support": {
-                "source": "https://github.com/newfold-labs/wp-module-ai-chat/tree/1.1.7",
+                "source": "https://github.com/newfold-labs/wp-module-ai-chat/tree/1.1.8",
                 "issues": "https://github.com/newfold-labs/wp-module-ai-chat/issues"
             },
-            "time": "2026-07-22T12:41:09+00:00"
+            "time": "2026-07-28T06:52:53+00:00"
         },
         {
             "name": "newfold-labs/wp-module-atomic",
@@ -1932,16 +1932,16 @@
         },
         {
             "name": "newfold-labs/wp-module-help-center",
-            "version": "2.8.1",
+            "version": "2.8.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/newfold-labs/wp-module-help-center.git",
-                "reference": "eb7b4beb0cebfd83fae5e8821c35c0d69f567d71"
+                "reference": "3138b255a1de7d772b1491e1d19b85c849c92f95"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/newfold-labs/wp-module-help-center/zipball/eb7b4beb0cebfd83fae5e8821c35c0d69f567d71",
-                "reference": "eb7b4beb0cebfd83fae5e8821c35c0d69f567d71",
+                "url": "https://api.github.com/repos/newfold-labs/wp-module-help-center/zipball/3138b255a1de7d772b1491e1d19b85c849c92f95",
+                "reference": "3138b255a1de7d772b1491e1d19b85c849c92f95",
                 "shasum": ""
             },
             "require": {
@@ -2019,10 +2019,10 @@
             ],
             "description": "HelpCenter",
             "support": {
-                "source": "https://github.com/newfold-labs/wp-module-help-center/tree/2.8.1",
+                "source": "https://github.com/newfold-labs/wp-module-help-center/tree/2.8.2",
                 "issues": "https://github.com/newfold-labs/wp-module-help-center/issues"
             },
-            "time": "2026-05-28T15:40:56+00:00"
+            "time": "2026-07-28T07:25:37+00:00"
         },
         {
             "name": "newfold-labs/wp-module-htaccess",
@@ -2578,16 +2578,16 @@
         },
         {
             "name": "newfold-labs/wp-module-mcp",
-            "version": "1.7.5",
+            "version": "1.7.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/newfold-labs/wp-module-mcp.git",
-                "reference": "0c1af4c74af89bf7e001c2a63d9774942583c206"
+                "reference": "765682bbcd99891fd784fba0d5bd8f31c962a1d3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/newfold-labs/wp-module-mcp/zipball/0c1af4c74af89bf7e001c2a63d9774942583c206",
-                "reference": "0c1af4c74af89bf7e001c2a63d9774942583c206",
+                "url": "https://api.github.com/repos/newfold-labs/wp-module-mcp/zipball/765682bbcd99891fd784fba0d5bd8f31c962a1d3",
+                "reference": "765682bbcd99891fd784fba0d5bd8f31c962a1d3",
                 "shasum": ""
             },
             "require": {
@@ -2663,11 +2663,7 @@
                 }
             ],
             "description": "WordPress MCP module for Newfold Labs BLU",
-            "support": {
-                "source": "https://github.com/newfold-labs/wp-module-mcp/tree/1.7.5",
-                "issues": "https://github.com/newfold-labs/wp-module-mcp/issues"
-            },
-            "time": "2026-07-21T20:48:43+00:00"
+            "time": "2026-07-28T09:16:50+00:00"
         },
         {
             "name": "newfold-labs/wp-module-migration",

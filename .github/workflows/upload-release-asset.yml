@@ -49,9 +49,11 @@ jobs:
           CANONICAL_REPOSITORY: newfold-labs/wp-plugin-bluehost
         run: |
           mkdir dist
-          echo "DIST=${PWD}/dist" >> "$GITHUB_OUTPUT"
-          echo "PACKAGE=$PLUGIN_NAME" >> "$GITHUB_OUTPUT"
-          echo "CANONICAL_REPOSITORY=$CANONICAL_REPOSITORY" >> "$GITHUB_OUTPUT"
+          {
+            echo "DIST=${PWD}/dist"
+            echo "PACKAGE=$PLUGIN_NAME"
+            echo "CANONICAL_REPOSITORY=$CANONICAL_REPOSITORY"
+          } >> "$GITHUB_OUTPUT"
 
       - name: Download release asset
         env:

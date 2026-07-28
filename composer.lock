@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "2e0b3957ed95abb5a41fac8e94b5489d",
+    "content-hash": "b852ac173be4223def08be158832eabc",
     "packages": [
         {
             "name": "colinmollenhour/credis",
@@ -2663,10 +2663,6 @@
                 }
             ],
             "description": "WordPress MCP module for Newfold Labs BLU",
-            "support": {
-                "source": "https://github.com/newfold-labs/wp-module-mcp/tree/1.7.6",
-                "issues": "https://github.com/newfold-labs/wp-module-mcp/issues"
-            },
             "time": "2026-07-28T09:16:50+00:00"
         },
         {

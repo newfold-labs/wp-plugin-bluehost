@@ -1,7 +1,7 @@
 {
-    "translation-revision-date": "2026-07-23T14:55:57+00:00",
+    "translation-revision-date": "2026-07-24T17:14:53+00:00",
     "generator": "WP-CLI\/2.12.0",
-    "source": "build\/4.17.3\/index.js",
+    "source": "build\/4.18.0\/index.js",
     "domain": "messages",
     "locale_data": {
         "messages": {
@@ -27,6 +27,15 @@
             ],
             "Your website is currently displaying a \"Coming Soon\" page.": [
                 "Ahora mismo, en tu sitio web se muestra la p\u00e1gina \\\"Pr\u00f3ximamente\\\"."
+            ],
+            "Sorry, that is not allowed.": [
+                "Lo siento, eso no est\u00e1 permitido."
+            ],
+            "This feature cannot currently be modified.": [
+                "Esta funci\u00f3n no se puede modificar actualmente."
+            ],
+            "Oops! Something went wrong. Please try again.": [
+                "\u00a1Vaya! Algo sali\u00f3 mal. Por favor, int\u00e9ntalo de nuevo."
             ],
             "Oh No, An Error!": [
                 "\u00a1Oh no, un error!"
@@ -142,8 +151,47 @@
             "Secret page to manage admin features and settings.": [
                 "P\u00e1gina secreta para administrar las funciones y configuraciones de administraci\u00f3n."
             ],
-            "Premium tools available in eCommerce Add-Ons": [
-                "Herramientas premium disponibles en complementos de comercio electr\u00f3nico"
+            "Features": [
+                "Funciones"
+            ],
+            "Toggle features \u2013 not settings.": [
+                ""
+            ],
+            "10Web Admin Restrictions": [
+                ""
+            ],
+            "Prevents theme switching and limits plugin access on 10Web AI editor sites.": [
+                ""
+            ],
+            "10Web Admin Restrictions Enabled": [
+                ""
+            ],
+            "10Web Admin Restrictions Disabled": [
+                ""
+            ],
+            "Theme switching and plugin access restrictions are active on 10Web editor sites.": [
+                ""
+            ],
+            "Theme switching and plugin access restrictions are no longer enforced.": [
+                ""
+            ],
+            "10Web Editor Support": [
+                ""
+            ],
+            "Loads PostHog session replay on the WVC editor admin screen.": [
+                ""
+            ],
+            "10Web Editor Support Enabled": [
+                ""
+            ],
+            "10Web Editor Support Disabled": [
+                ""
+            ],
+            "PostHog session replay will load on the WVC editor screen after a page reload.": [
+                ""
+            ],
+            "PostHog session replay will no longer load on the WVC editor screen.": [
+                ""
             ],
             "Discover exclusive features, designed to deliver unmatched value and elevate your online experience.": [
                 "Descubre funciones exclusivas, dise\u00f1adas para ofrecer un valor inigualable y elevar tu experiencia en l\u00ednea."
@@ -307,9 +355,6 @@
             "Keeping automatic updates on ensures timely security fixes and the latest features.": [
                 "Mantener activadas las actualizaciones autom\u00e1ticas garantiza correcciones de seguridad oportunas y las \u00faltimas funciones."
             ],
-            "Oops! Something went wrong. Please try again.": [
-                "\u00a1Vaya! Algo sali\u00f3 mal. Por favor, int\u00e9ntalo de nuevo."
-            ],
             "Coming soon activated": [
                 "Pr\u00f3ximamente activado"
             ],
@@ -330,6 +375,9 @@
             ],
             "Turn on your \"Coming Soon\" page when you need to make major changes to your website.": [
                 "Active su p\u00e1gina \"Pr\u00f3ximamente\" cuando necesite realizar cambios importantes en su sitio web."
+            ],
+            "Coming Soon page": [
+                ""
             ],
             "Your Bluehost Coming Soon page lets you hide your site from visitors while you make the magic happen.": [
                 "Su p\u00e1gina Bluehost Coming Soon le permite ocultar su sitio a los visitantes mientras hace que suceda la magia."
@@ -403,12 +451,6 @@
             "The Help Center provides guided, step-by-step assistance as you build your site.": [
                 "El Centro de ayuda proporciona asistencia guiada paso a paso a medida que crea su sitio."
             ],
-            "Sorry, that is not allowed.": [
-                "Lo siento, eso no est\u00e1 permitido."
-            ],
-            "This feature cannot currently be modified.": [
-                "Esta funci\u00f3n no se puede modificar actualmente."
-            ],
             "Optimize your website my managing cache, security and performance settings.": [
                 "Optimiza tu sitio web administrando la configuraci\u00f3n de cach\u00e9, seguridad y rendimiento."
             ],
@@ -421,14 +463,14 @@
             "Manage common settings for your website": [
                 "Administrar la configuraci\u00f3n com\u00fan de su sitio web"
             ],
-            "Features": [
-                "Funciones"
-            ],
             "Customize the available features as you manage your website.": [
                 "Personalice las funciones disponibles a medida que administra su sitio web."
             ],
             "A staging site is a duplicate of your live site, offering a secure environment to experiment, test updates, and deploy when ready.": [
                 "Un sitio de ensayo es un duplicado de su sitio en vivo, que ofrece un entorno seguro para experimentar, probar actualizaciones e implementar cuando est\u00e9 listo."
+            ],
+            "The performance feature provides improvements to loads faster for visitors including cache settings.": [
+                "La funci\u00f3n de rendimiento proporciona mejoras para cargar m\u00e1s r\u00e1pido para los visitantes, incluida la configuraci\u00f3n de cach\u00e9."
             ],
             "Performance Enabled": [
                 "Rendimiento habilitado"
@@ -442,8 +484,8 @@
             "Performance will no longer display.": [
                 "El rendimiento ya no se mostrar\u00e1."
             ],
-            "The performance feature provides improvements to loads faster for visitors including cache settings.": [
-                "La funci\u00f3n de rendimiento proporciona mejoras para cargar m\u00e1s r\u00e1pido para los visitantes, incluida la configuraci\u00f3n de cach\u00e9."
+            "The staging feature provides a way to copy a site to test new updates, features or content.": [
+                "La funci\u00f3n de ensayo proporciona una forma de copiar un sitio para probar nuevas actualizaciones, caracter\u00edsticas o contenido."
             ],
             "Staging Enabled": [
                 "Puesta en escena habilitada"
@@ -456,9 +498,6 @@
             ],
             "Staging will no longer display.": [
                 "Ya no se mostrar\u00e1 la puesta en escena."
-            ],
-            "The staging feature provides a way to copy a site to test new updates, features or content.": [
-                "La funci\u00f3n de ensayo proporciona una forma de copiar un sitio para probar nuevas actualizaciones, caracter\u00edsticas o contenido."
             ],
             "WonderBlocks Enabled": [
                 "WonderBlocks habilitados"

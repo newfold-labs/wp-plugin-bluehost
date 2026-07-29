@@ -15,7 +15,7 @@ All workflow files live in **`.github/workflows/`**. This document summarizes ea
 
 | Workflow file | Name | Trigger | Purpose |
 |---------------|------|---------|---------|
-| **lint.yml** | Lint | Push/PR when `**.php` or `package*.json` or `composer.*` or `phpcs.xml` change (on `main`/`develop`) | Runs **PHP_CodeSniffer** (PHP 7.4). Caches PHPCS scan cache. Outputs checkstyle report; on failure runs `cs2pr` to show results in the PR. |
+| **lint.yml** | Lint | Push/PR when `**.php` or `package*.json` or `composer.*` or `phpcs.xml` change (on `main`/`develop`) | Runs **PHP_CodeSniffer** (PHP 8.3; compatibility rules still target the plugin's minimum PHP via `testVersion` in `phpcs.xml`). Caches PHPCS scan cache. Outputs checkstyle report; on failure runs `cs2pr` to show results in the PR. |
 | **eslint.yml** | ESLint | Push/PR when `src/**/*.js` change (on `main`/`develop`) | Runs **ESLint** via `npm run lint:js`. Uses Node 20, composer install, `NEWFOLD_ACCESS_TOKEN` for npm. |
 | **workflow-lint.yml** | Scan & Lint Workflow Files | Push/PR when `**.yml` change, `workflow_dispatch` | Calls reusable **newfold-labs/workflows** `reusable-workflow-lint.yml` to scan and lint workflow YAML files. |
 

@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "c0be32232aab31692284fa1d0bd51760",
+    "content-hash": "e494f086ddf27cbd748979e708862ffb",
     "packages": [
         {
             "name": "colinmollenhour/credis",
@@ -627,16 +627,16 @@
         },
         {
             "name": "newfold-labs/wp-module-10web",
-            "version": "1.0.3",
+            "version": "1.0.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/newfold-labs/wp-module-10web.git",
-                "reference": "111d14f2d21f792a1c23d10e6dcd0b2223248660"
+                "reference": "1ff2d7f32f97a612842d07f91d56730e53449a81"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/newfold-labs/wp-module-10web/zipball/111d14f2d21f792a1c23d10e6dcd0b2223248660",
-                "reference": "111d14f2d21f792a1c23d10e6dcd0b2223248660",
+                "url": "https://api.github.com/repos/newfold-labs/wp-module-10web/zipball/1ff2d7f32f97a612842d07f91d56730e53449a81",
+                "reference": "1ff2d7f32f97a612842d07f91d56730e53449a81",
                 "shasum": ""
             },
             "require-dev": {
@@ -701,10 +701,10 @@
             ],
             "description": "A Module for integrating 10Web features into the plugin.",
             "support": {
-                "source": "https://github.com/newfold-labs/wp-module-10web/tree/1.0.3",
+                "source": "https://github.com/newfold-labs/wp-module-10web/tree/1.0.4",
                 "issues": "https://github.com/newfold-labs/wp-module-10web/issues"
             },
-            "time": "2026-07-29T06:13:30+00:00"
+            "time": "2026-07-29T10:46:33+00:00"
         },
         {
             "name": "newfold-labs/wp-module-activation",

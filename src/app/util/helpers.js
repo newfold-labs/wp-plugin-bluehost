@@ -200,6 +200,27 @@ export const getPlatformPathUrl = ( jarvisPath = '', legacyPath = '' ) => {
 };
 
 /**
+ * Opens the embedded help center when closed. No-op if already open.
+ */
+export const openEmbeddedHelpCenter = () => {
+	if (
+		typeof window?.newfoldEmbeddedHelp?.toggleNFDLaunchedEmbeddedHelp !==
+		'function'
+	) {
+		return;
+	}
+
+	const helpCenter = document.getElementById( 'nfd-help-center' );
+	const isOpen =
+		localStorage.getItem( 'helpVisible' ) === 'true' ||
+		helpCenter?.classList.contains( 'help-container' );
+
+	if ( ! isOpen ) {
+		window.newfoldEmbeddedHelp.toggleNFDLaunchedEmbeddedHelp();
+	}
+};
+
+/**
  * Handles help center links click, will open help center slide if user has access
  * or navigate to help page if user doesn't have access
  */
@@ -221,7 +242,7 @@ export const handleHelpLinksClick = () => {
 					) {
 						e.preventDefault();
 					}
-					window.newfoldEmbeddedHelp.toggleNFDLaunchedEmbeddedHelp();
+					openEmbeddedHelpCenter();
 				} )
 			);
 			window.newfoldEmbeddedHelp.hasListeners = true;

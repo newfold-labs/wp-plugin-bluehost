@@ -206,7 +206,7 @@ export const getPlatformPathUrl = ( jarvisPath = '', legacyPath = '' ) => {
  * `localStorage.helpVisible === 'true'`; `toggleHelp()` updates that key when
  * the panel opens or closes.
  *
- * @return {boolean}
+ * @return {boolean} Whether the embedded help center sidebar is open.
  */
 export const isEmbeddedHelpCenterOpen = () => {
 	return localStorage.getItem( 'helpVisible' ) === 'true';

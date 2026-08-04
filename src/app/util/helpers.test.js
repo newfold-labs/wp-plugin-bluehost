@@ -1,7 +1,4 @@
-import {
-	isEmbeddedHelpCenterOpen,
-	openEmbeddedHelpCenter,
-} from './helpers';
+import { isEmbeddedHelpCenterOpen, openEmbeddedHelpCenter } from './helpers';
 
 describe( 'embedded help center helpers', () => {
 	const toggle = jest.fn();

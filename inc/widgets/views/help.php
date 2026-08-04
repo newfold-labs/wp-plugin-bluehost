@@ -148,11 +148,11 @@ function initHelpButtonHandler(){
 	if ( help_button ) {
 	help_button.addEventListener( 'click', function( e ) {
 		e.preventDefault(); // stop link from opening
-		const helpCenter = document.getElementById( 'nfd-help-center' );
-		const isOpen =
-			localStorage.getItem( 'helpVisible' ) === 'true' ||
-			helpCenter?.classList.contains( 'help-container' );
-		if ( ! isOpen && window.newfoldEmbeddedHelp?.toggleNFDLaunchedEmbeddedHelp ) {
+		if (
+			window.newfoldEmbeddedHelp &&
+			typeof window.newfoldEmbeddedHelp.toggleNFDLaunchedEmbeddedHelp === 'function' &&
+			localStorage.getItem( 'helpVisible' ) !== 'true'
+		) {
 			window.newfoldEmbeddedHelp.toggleNFDLaunchedEmbeddedHelp();
 		}
 	});

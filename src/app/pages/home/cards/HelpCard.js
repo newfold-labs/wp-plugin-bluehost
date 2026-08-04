@@ -5,12 +5,13 @@ import { openEmbeddedHelpCenter } from 'App/util/helpers';
 const HelpCard = ( {} ) => {
 	const toggleHelp = ( e ) => {
 		if (
-			typeof window?.newfoldEmbeddedHelp
-				?.toggleNFDLaunchedEmbeddedHelp === 'function'
+			typeof window?.newfoldEmbeddedHelp?.toggleNFDLaunchedEmbeddedHelp !==
+			'function'
 		) {
-			e.preventDefault();
-			openEmbeddedHelpCenter();
+			return;
 		}
+		e.preventDefault();
+		openEmbeddedHelpCenter();
 	};
 	return (
 		<a

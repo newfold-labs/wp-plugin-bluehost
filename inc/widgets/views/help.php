@@ -148,7 +148,13 @@ function initHelpButtonHandler(){
 	if ( help_button ) {
 	help_button.addEventListener( 'click', function( e ) {
 		e.preventDefault(); // stop link from opening
-		window.newfoldEmbeddedHelp.toggleNFDLaunchedEmbeddedHelp(); // open help center instead
+		if (
+			window.newfoldEmbeddedHelp &&
+			typeof window.newfoldEmbeddedHelp.toggleNFDLaunchedEmbeddedHelp === 'function' &&
+			localStorage.getItem( 'helpVisible' ) !== 'true'
+		) {
+			window.newfoldEmbeddedHelp.toggleNFDLaunchedEmbeddedHelp();
+		}
 	});
 	}
 }

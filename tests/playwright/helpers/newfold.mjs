@@ -311,8 +311,11 @@ async function clearInstallerQueues() {
 		'utf8'
 	).toString( 'base64' );
 
+	// --skip-plugins/--skip-themes: only need the options API. Loading the full
+	// plugin stack can fatal (e.g. a half-installed companion plugin) and then this
+	// cleanup itself cannot run — exactly when it is most needed.
 	return await wordpress.wpCli(
-		`eval '$options = json_decode( base64_decode( "${ encodedOptions }" ), true ); foreach ( $options as $option ) { delete_option( $option ); } $remaining = array_values( array_filter( $options, static function ( $option ) { return false !== get_option( $option, false ); } ) ); if ( $remaining ) { WP_CLI::error( "Failed to clear installer options: " . implode( ", ", $remaining ) ); }'`,
+		`eval '$options = json_decode( base64_decode( "${ encodedOptions }" ), true ); foreach ( $options as $option ) { delete_option( $option ); } $remaining = array_values( array_filter( $options, static function ( $option ) { return false !== get_option( $option, false ); } ) ); if ( $remaining ) { WP_CLI::error( "Failed to clear installer options: " . implode( ", ", $remaining ) ); }' --skip-plugins --skip-themes`,
 		{ failOnNonZeroExit: true }
 	);
 }

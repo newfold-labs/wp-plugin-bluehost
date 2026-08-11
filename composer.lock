@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "5b82cfea1fc3f6f98c18e2b7d771f37b",
+    "content-hash": "a2efb2b1c2f2c5a5461b778d7474dc0f",
     "packages": [
         {
             "name": "colinmollenhour/credis",
@@ -620,9 +620,6 @@
                 }
             ],
             "description": "A lightweight, PHP 7.0+ compatible, PSR-11 dependency injection container.",
-            "support": {
-                "source": "https://github.com/newfold-labs/container/tree/1.2.4"
-            },
             "time": "2026-03-06T22:45:10+00:00"
         },
         {
@@ -1253,10 +1250,6 @@
                 }
             ],
             "description": "Newfold module to determine context for various brands and platforms.",
-            "support": {
-                "source": "https://github.com/newfold-labs/wp-module-context/tree/1.0.3",
-                "issues": "https://github.com/newfold-labs/wp-module-context/issues"
-            },
             "time": "2026-02-06T13:36:08+00:00"
         },
         {
@@ -1386,28 +1379,24 @@
                 "GPL-2.0-or-later"
             ],
             "description": "Newfold Data Module",
-            "support": {
-                "source": "https://github.com/newfold-labs/wp-module-data/tree/2.9.6",
-                "issues": "https://github.com/newfold-labs/wp-module-data/issues"
-            },
             "time": "2026-07-23T17:31:00+00:00"
         },
         {
             "name": "newfold-labs/wp-module-deactivation",
-            "version": "1.6.2",
+            "version": "1.6.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/newfold-labs/wp-module-deactivation.git",
-                "reference": "040994dbafba63dc3b5054d62b899658a94343bf"
+                "reference": "b8e1c648441b55f1bbae8d791788701a2f4fe00c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/newfold-labs/wp-module-deactivation/zipball/040994dbafba63dc3b5054d62b899658a94343bf",
-                "reference": "040994dbafba63dc3b5054d62b899658a94343bf",
+                "url": "https://api.github.com/repos/newfold-labs/wp-module-deactivation/zipball/b8e1c648441b55f1bbae8d791788701a2f4fe00c",
+                "reference": "b8e1c648441b55f1bbae8d791788701a2f4fe00c",
                 "shasum": ""
             },
             "require": {
-                "newfold-labs/wp-module-data": "^2.9.4"
+                "newfold-labs/wp-module-data": "^2.9.6"
             },
             "require-dev": {
                 "johnpbloch/wordpress": "@stable",
@@ -1485,11 +1474,7 @@
                 }
             ],
             "description": "A Module for handling WordPress brand plugins and modules deactivations",
-            "support": {
-                "source": "https://github.com/newfold-labs/wp-module-deactivation/tree/1.6.2",
-                "issues": "https://github.com/newfold-labs/wp-module-deactivation/issues"
-            },
-            "time": "2026-07-23T14:23:57+00:00"
+            "time": "2026-08-11T21:08:23+00:00"
         },
         {
             "name": "newfold-labs/wp-module-ecommerce",
@@ -2471,10 +2456,6 @@
                 }
             ],
             "description": "A module that handles registration and management of Newfold modules used within our WordPress plugins.",
-            "support": {
-                "source": "https://github.com/newfold-labs/wp-module-loader/tree/1.1.0",
-                "issues": "https://github.com/newfold-labs/wp-module-loader/issues"
-            },
             "time": "2026-02-05T21:09:56+00:00"
         },
         {

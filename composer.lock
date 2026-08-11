@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "a2efb2b1c2f2c5a5461b778d7474dc0f",
+    "content-hash": "602d68216fed79baa0885cd99aa8c4e7",
     "packages": [
         {
             "name": "colinmollenhour/credis",
@@ -2395,10 +2395,6 @@
                 }
             ],
             "description": "A WordPress module that adds tracking params",
-            "support": {
-                "source": "https://github.com/newfold-labs/wp-module-link-tracker/tree/1.1.5",
-                "issues": "https://github.com/newfold-labs/wp-module-link-tracker/issues"
-            },
             "time": "2026-02-06T15:55:17+00:00"
         },
         {
@@ -3623,20 +3619,20 @@
         },
         {
             "name": "newfold-labs/wp-module-solutions",
-            "version": "2.10.3",
+            "version": "2.10.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/newfold-labs/wp-module-solutions.git",
-                "reference": "b616f315a07a28102385a8905293160a49946b66"
+                "reference": "0589e7a4229e93ff708a7bacb852eef37832b015"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/newfold-labs/wp-module-solutions/zipball/b616f315a07a28102385a8905293160a49946b66",
-                "reference": "b616f315a07a28102385a8905293160a49946b66",
+                "url": "https://api.github.com/repos/newfold-labs/wp-module-solutions/zipball/0589e7a4229e93ff708a7bacb852eef37832b015",
+                "reference": "0589e7a4229e93ff708a7bacb852eef37832b015",
                 "shasum": ""
             },
             "require": {
-                "newfold-labs/wp-module-data": "^2.9.4",
+                "newfold-labs/wp-module-data": "^2.9.6",
                 "newfold-labs/wp-module-link-tracker": "^1.1",
                 "newfold-labs/wp-module-loader": "^1.1.0"
             },
@@ -3706,11 +3702,7 @@
                 }
             ],
             "description": "A Newfold module that handles integration of WordPress Solutions Addon packages (content creator/ service / ecommerce) for BlueHost & HostGator customers",
-            "support": {
-                "source": "https://github.com/newfold-labs/wp-module-solutions/tree/2.10.3",
-                "issues": "https://github.com/newfold-labs/wp-module-solutions/issues"
-            },
-            "time": "2026-07-22T22:24:11+00:00"
+            "time": "2026-08-11T21:54:38+00:00"
         },
         {
             "name": "newfold-labs/wp-module-sso",

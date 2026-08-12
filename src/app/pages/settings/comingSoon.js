@@ -1,4 +1,5 @@
-import { useState } from '@wordpress/element';
+import { useContext, useState } from '@wordpress/element';
+import { __ } from '@wordpress/i18n';
 import { useUpdateEffect } from 'react-use';
 import { Alert, Container, ToggleField } from '@newfold/ui-component-library';
 import AppStore from '../../data/store';
@@ -108,7 +109,7 @@ const ComingSoon = () => {
 			<div className="nfd-flex nfd-flex-col nfd-gap-6">
 				<ToggleField
 					id="coming-soon-toggle"
-					label="Coming Soon page"
+					label={ __( 'Coming Soon page', 'wp-plugin-bluehost' ) }
 					description={ __(
 						'Your Bluehost Coming Soon page lets you hide your site from visitors while you make the magic happen.',
 						'wp-plugin-bluehost'

@@ -15,12 +15,13 @@ The plugin uses the **Newfold Module Loader**. Composer-installed modules (e.g. 
 
 ### Key modules (examples)
 
-- **wp-module-performance** – Performance/caching features.
+- **wp-module-performance** – Performance/caching features. Registers the `performance` feature flag; toggle surfaces on the Admin page (`#/admin`) via `FeatureToggle`.
 - **wp-module-coming-soon** – Coming soon page.
 - **wp-module-ecommerce** – E-commerce integrations.
 - **wp-module-marketplace** – Plugin/theme marketplace (subnav and UI).
-- **wp-module-staging** – Staging environments.
+- **wp-module-staging** – Staging environments. Registers the `staging` feature flag; toggle surfaces on the Admin page via `FeatureToggle`.
 - **wp-module-onboarding** – Onboarding flows.
+- **wp-module-10web** – 10Web/WVC integrations (admin restrictions, editor PostHog support). Registers `tenwebAdminRestrictions` and `tenwebEditorSupport` feature flags; toggles surface on the Admin page via `FeatureToggle`.
 
 Module code lives in `vendor/newfold-labs/`; the plugin does not ship their source in this repo, only references them via Composer.
 

@@ -2,6 +2,7 @@ import { __ } from '@wordpress/i18n';
 import { LightBulbIcon } from '@heroicons/react/24/outline';
 import { Card, Title } from '@newfold/ui-component-library';
 import { NewfoldRuntime } from '@newfold/wp-module-runtime';
+import { openEmbeddedHelpCenter } from 'App/util/helpers';
 
 export default () => (
 	<Card
@@ -20,7 +21,7 @@ export default () => (
 				window.NewfoldFeatures.isEnabled( 'helpCenter' )
 			) {
 				e.preventDefault();
-				window.newfoldEmbeddedHelp.toggleNFDLaunchedEmbeddedHelp();
+				openEmbeddedHelpCenter();
 			}
 		} }
 	>

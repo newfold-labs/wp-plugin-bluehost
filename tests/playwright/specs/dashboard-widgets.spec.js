@@ -90,11 +90,11 @@ test.describe('Dashboard Widgets', () => {
     expect(editSiteHref).toContain('site-editor');
 
     // Enable Coming Soon
-    const enableComingSoonButton = page.locator('a[data-test-id="nfd-coming-soon-enable"]');
+    const enableComingSoonButton = page.locator('button[data-test-id="nfd-coming-soon-enable"]');
     enableComingSoonButton.scrollIntoViewIfNeeded();
     await expect(enableComingSoonButton).toBeVisible();
     await expect(enableComingSoonButton).toContainText('Enable Coming Soon');
-    await expect(enableComingSoonButton).toHaveAttribute('href', '#');
+    await expect(enableComingSoonButton).toHaveAttribute('type', 'button');
     // Click triggers NewfoldRuntime + full page reload (see site-preview.php)
     await enableComingSoonButton.click();
     await page.waitForLoadState( 'load' );
@@ -115,12 +115,12 @@ test.describe('Dashboard Widgets', () => {
     // Enable button should not exist, disable button should exist
     await expect(enableComingSoonButton).toHaveCount(0);
     
-    const disableComingSoonButton = page.locator('a[data-test-id="nfd-coming-soon-disable"]');
+    const disableComingSoonButton = page.locator('button[data-test-id="nfd-coming-soon-disable"]');
     disableComingSoonButton.scrollIntoViewIfNeeded();
     await expect(disableComingSoonButton).toBeVisible();
     await expect(disableComingSoonButton).toContainText('Launch Site');
-    await expect(disableComingSoonButton).toHaveAttribute('href', '#');
-    
+    await expect(disableComingSoonButton).toHaveAttribute('type', 'button');
+
     await disableComingSoonButton.click();
     await page.waitForLoadState( 'load' );
 
@@ -135,7 +135,7 @@ test.describe('Dashboard Widgets', () => {
     // Disable button should not exist, enable button should exist
     await expect(disableComingSoonButton).toHaveCount(0);
     await expect(enableComingSoonButton).toContainText('Enable Coming Soon');
-    await expect(enableComingSoonButton).toHaveAttribute('href', '#');
+    await expect(enableComingSoonButton).toHaveAttribute('type', 'button');
   });
 
   test('Help Widget', async ({ page }) => {

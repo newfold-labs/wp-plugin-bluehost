@@ -1,158 +1,158 @@
 {
-    "translation-revision-date": "2026-08-10T23:38:09+00:00",
+    "translation-revision-date": "2026-08-13T16:30:47+00:00",
     "generator": "WP-CLI\/2.12.0",
-    "source": "build\/4.18.1\/index.js",
+    "source": "build\/4.18.2\/index.js",
     "domain": "messages",
     "locale_data": {
         "messages": {
             "": {
                 "domain": "messages",
-                "lang": "fr_FR",
+                "lang": "de_DE",
                 "plural-forms": "nplurals=2; plural=(n != 1);"
             },
             "Home": [
-                "Accueil"
+                "Startseite"
             ],
             "Settings": [
-                "R\u00e9glages"
+                "Einstellungen"
             ],
             "Get Help": [
-                "Obtenir de l'aide"
+                "Hilfe erhalten"
             ],
             "Not Live": [
-                "Pas en ligne"
+                "Nicht live"
             ],
             "Live": [
-                "En ligne"
+                "Live"
             ],
             "Your website is currently displaying a \"Coming Soon\" page.": [
-                "Votre site web affiche actuellement une page \"\u00c0 venir\"."
+                "Ihre Webseite zeigt derzeit eine \"Kommende bald\"-Seite an."
             ],
             "Sorry, that is not allowed.": [
-                "D\u00e9sol\u00e9, ce n\u2019est pas autoris\u00e9."
+                "Sorry, das ist nicht erlaubt."
             ],
             "This feature cannot currently be modified.": [
-                "Cette fonctionnalit\u00e9 ne peut actuellement pas \u00eatre modifi\u00e9e."
+                "Diese Funktion kann derzeit nicht ge\u00e4ndert werden."
             ],
             "Oops! Something went wrong. Please try again.": [
-                "Oups! Quelque chose a mal tourn\u00e9. Veuillez r\u00e9essayer."
+                "Hoppla! Irgendetwas ist schief gelaufen. Bitte versuchen Sie es erneut."
             ],
             "Oh No, An Error!": [
-                "Oh non, une erreur !"
+                "Oh nein, ein Irrtum!"
             ],
             "You found an error, please refresh the page and try again!": [
-                "Vous avez trouv\u00e9 une erreur, veuillez actualiser la page et r\u00e9essayer !"
+                "Sie haben einen Fehler gefunden, bitte aktualisieren Sie die Seite und versuchen Sie es erneut!"
             ],
             "If the error persists, please contact support.": [
-                "Si l\u2019erreur persiste, veuillez contacter le support."
+                "Wenn der Fehler weiterhin besteht, wenden Sie sich bitte an den Support."
             ],
             "Error code:": [
-                "Code d\u2019erreur :"
+                "Fehlercode:"
             ],
             "Bluehost WordPress Plugin": [
                 "Bluehost WordPress Plugin"
             ],
             "Phone": [
-                "T\u00e9l\u00e9phone"
+                "Telefon"
             ],
             "Call Us": [
-                "Appelez-nous"
+                "Rufen Sie uns an"
             ],
             "Chat": [
-                "Bavarder"
+                "Plaudern"
             ],
             "Chat with one of our friendly Customer Care Specialists, as we are waiting to help. Open 24 hours - 7 days.": [
-                "Discutez avec l\u2019un de nos sympathiques sp\u00e9cialistes du service client\u00e8le, car nous vous attendons. Ouvert 24 heures sur 24 et 7 jours sur 7."
+                "Chatten Sie mit einem unserer freundlichen Kundendienstspezialisten, denn wir warten darauf, Ihnen zu helfen. 24 Stunden - 7 Tage ge\u00f6ffnet."
             ],
             "Live Chat": [
-                "Chat en direct"
+                "Live-Chat"
             ],
             "Tweet": [
-                "Tweet"
+                "Zwitschern"
             ],
             "Find our team at @bluehost for updates on our products and support from our team.": [
-                "Retrouvez notre \u00e9quipe \u00e0 @bluehost pour obtenir des mises \u00e0 jour sur nos produits et l\u2019assistance de notre \u00e9quipe."
+                "Finden Sie unser Team unter @bluehost, um Updates zu unseren Produkten und Support von unserem Team zu erhalten."
             ],
             "Tweet Us": [
-                "Tweetez-nous"
+                "Twittern Sie uns"
             ],
             "YouTube": [
-                "Youtube"
+                "Auf YouTube (Englisch)"
             ],
             "Find tutorials, answers, interviews and guides on our YouTube channel.": [
-                "Retrouvez des tutoriels, des r\u00e9ponses, des interviews et des guides sur notre cha\u00eene YouTube."
+                "Tutorials, Antworten, Interviews und Leitf\u00e4den finden Sie auf unserem YouTube-Kanal."
             ],
             "Watch Now": [
-                "Regarder maintenant"
+                "Jetzt ansehen"
             ],
             "Knowledge Base": [
-                "Base de connaissances"
+                "Wissensdatenbank"
             ],
             "Articles, guides, how-tos, instructions, and answers to our client's most frequently asked questions.": [
-                "Articles, guides, tutoriels, instructions et r\u00e9ponses aux questions les plus fr\u00e9quemment pos\u00e9es par nos clients."
+                "Artikel, Anleitungen, Anleitungen, Anleitungen und Antworten auf die am h\u00e4ufigsten gestellten Fragen unserer Kunden."
             ],
             "Visit Knowledge Base": [
-                "Visiter la base de connaissances"
+                "Besuchen Sie die Wissensdatenbank"
             ],
             "Resources": [
-                "Ressources"
+                "Betriebsmittel"
             ],
             "Boost your online knowledge and get ahead of the competition.": [
-                "Am\u00e9liorez vos connaissances en ligne et devancez la concurrence."
+                "Erweitern Sie Ihr Online-Wissen und verschaffen Sie sich einen Vorsprung vor der Konkurrenz."
             ],
             "Explore Resources": [
-                "Explorer les ressources"
+                "Ressourcen erkunden"
             ],
             "Events and Webinars": [
-                "\u00c9v\u00e9nements et webinaires"
+                "Veranstaltungen und Webinare"
             ],
             "Team Bluehost organizes multiple webinars and events throughout the year. We are also sponsors and speak at most WordCamps across the world. Join us at our next event!": [
-                "L\u2019\u00e9quipe Bluehost organise de nombreux webinaires et \u00e9v\u00e9nements tout au long de l\u2019ann\u00e9e. Nous sommes \u00e9galement sponsors et intervenons dans la plupart des WordCamps \u00e0 travers le monde. Rejoignez-nous lors de notre prochain \u00e9v\u00e9nement !"
+                "Team Bluehost organisiert das ganze Jahr \u00fcber mehrere Webinare und Veranstaltungen. Wir sind auch Sponsoren und sprechen auf den meisten WordCamps auf der ganzen Welt. Seien Sie bei unserem n\u00e4chsten Event dabei!"
             ],
             "More Info": [
-                "Plus d\u2019infos"
+                "Mehr Info"
             ],
             "Bluehost Website": [
-                "Site Web de Bluehost"
+                "Bluehost Webseite"
             ],
             "Not finding what you need? Visit our website for more information about our products and services.": [
-                "Vous ne trouvez pas ce dont vous avez besoin ? Visitez notre site Web pour plus d\u2019informations sur nos produits et services."
+                "Sie finden nicht, was Sie brauchen? Besuchen Sie unsere Website, um weitere Informationen \u00fcber unsere Produkte und Dienstleistungen zu erhalten."
             ],
             "Go to Bluehost": [
-                "Aller sur Bluehost"
+                "Gehe zu Bluehost"
             ],
             "There's nothing here!": [
-                "Il n\u2019y a rien ici!"
+                "Hier gibt es nichts!"
             ],
             "Manage WordPress": [
-                "G\u00e9rer WordPress"
+                "WordPress verwalten"
             ],
             "Staging": [
-                "Mise en sc\u00e8ne"
+                "Inszenierung"
             ],
             "Performance": [
-                "Performance"
+                "Leistung"
             ],
             "Store": [
-                "Boutique"
+                "Abspeichern"
             ],
             "Commerce": [
-                "Commerce"
+                "Handel"
             ],
             "Marketplace": [
-                "March\u00e9"
+                "Marktplatz"
             ],
             "Help": [
-                "Aide"
+                "Hilfe"
             ],
             "Admin": [
-                "Admin"
+                "Administrator"
             ],
             "Secret page to manage admin features and settings.": [
-                "Page secr\u00e8te pour g\u00e9rer les fonctionnalit\u00e9s et les param\u00e8tres d\u2019administration."
+                "Geheime Seite zum Verwalten von Admin-Funktionen und -Einstellungen."
             ],
             "Features": [
-                "Fonctionnalit\u00e9s"
+                "Funktionen"
             ],
             "Toggle features \u2013 not settings.": [
                 ""
@@ -194,211 +194,211 @@
                 ""
             ],
             "Discover exclusive features, designed to deliver unmatched value and elevate your online experience.": [
-                "D\u00e9couvrez des fonctionnalit\u00e9s exclusives, con\u00e7ues pour offrir une valeur in\u00e9gal\u00e9e et am\u00e9liorer votre exp\u00e9rience en ligne."
+                "Entdecken Sie exklusive Funktionen, die entwickelt wurden, um einen un\u00fcbertroffenen Wert zu bieten und Ihr Online-Erlebnis zu verbessern."
             ],
             "We are available 24\/7 to help answer questions and solve your problems.": [
-                "Nous sommes disponibles 24h\/24 et 7j\/7 pour r\u00e9pondre \u00e0 vos questions et r\u00e9soudre vos probl\u00e8mes."
+                "Wir sind rund um die Uhr f\u00fcr Sie da, um Fragen zu beantworten und Probleme zu l\u00f6sen."
             ],
             "Congrats, your %1$s is %2$s!": [
-                "F\u00e9licitations, votre %1$s est %2$s !"
+                "Gl\u00fcckwunsch, dein %1$s ist %2$s!"
             ],
             "store": [
-                "Magasiner"
+                "Laden"
             ],
             "website": [
-                "Site web"
+                "Website"
             ],
             "ready": [
-                "Pr\u00eat"
+                "Bereit"
             ],
             "live": [
                 "Live"
             ],
             "Store Details": [
-                "D\u00e9tails du magasin"
+                "Details zum Shop"
             ],
             "Add Store Details": [
-                "Ajouter les d\u00e9tails de la boutique"
+                "Shop-Details hinzuf\u00fcgen"
             ],
             "Quick links": [
-                "Liens rapides"
+                "Schnelle Links"
             ],
             "Launch our AI Editor": [
-                "Lancez notre \u00e9diteur d\u2019IA"
+                "Starten Sie unseren KI-Editor"
             ],
             "Say hello to effortless site building with a wide library of 250+ blocks": [
-                "Dites bonjour \u00e0 la cr\u00e9ation de site sans effort avec une large biblioth\u00e8que de 250+ blocs"
+                "Begr\u00fc\u00dfen Sie die m\u00fchelose Erstellung von Websites mit einer umfangreichen Bibliothek von 250+ Bl\u00f6cken"
             ],
             "Launch the Editor": [
-                "Lancer l\u2019\u00e9diteur"
+                "Starten Sie den Editor"
             ],
             "Master WordPress with help from our AI assistant.": [
-                "Ma\u00eetrisez WordPress avec l\u2019aide de notre assistant IA."
+                "Meistern Sie WordPress mit Hilfe unseres KI-Assistenten."
             ],
             "Launch our AI Help": [
-                "Lancez notre aide sur l\u2019IA"
+                "Starten Sie unsere KI-Hilfe"
             ],
             "Pro Design Live": [
-                "Pro Design en direct"
+                "Pro Design Live"
             ],
             "We will help you build and grow your website and improve your skills in WordPress.": [
-                "Nous vous aiderons \u00e0 construire et \u00e0 d\u00e9velopper votre site web et \u00e0 am\u00e9liorer vos comp\u00e9tences dans WordPress."
+                "Wir helfen Ihnen, Ihre Website aufzubauen und zu erweitern und Ihre F\u00e4higkeiten in WordPress zu verbessern."
             ],
             "Get Info": [
-                "Obtenir des infos"
+                "Informationen erhalten"
             ],
             "Refer a Friend": [
-                "Parrainez un ami"
+                "Einen Freund empfehlen"
             ],
             "Unlock exclusive benefits with our referral program.": [
-                "D\u00e9bloquez des avantages exclusifs gr\u00e2ce \u00e0 notre programme de parrainage."
+                "Sichern Sie sich exklusive Vorteile mit unserem Empfehlungsprogramm."
             ],
             "Start Now": [
-                "Commencer maintenant"
+                "Jetzt loslegen"
             ],
             "Security, performance, backups, staging & more.": [
-                "S\u00e9curit\u00e9, performances, sauvegardes, staging et plus encore."
+                "Sicherheit, Leistung, Backups, Staging und mehr."
             ],
             "Manage": [
-                "G\u00e9rer"
+                "Verwalten"
             ],
             "Optimize your content": [
-                "Optimisez votre contenu"
+                "Optimieren Sie Ihre Inhalte"
             ],
             "Optimize your content for search engines and boost your store visibility.": [
-                "Optimisez votre contenu pour les moteurs de recherche et boostez la visibilit\u00e9 de votre boutique."
+                "Optimieren Sie Ihre Inhalte f\u00fcr Suchmaschinen und steigern Sie die Sichtbarkeit Ihres Gesch\u00e4fts."
             ],
             "Start now": [
-                "Commencer maintenant"
+                "Jetzt loslegen"
             ],
             "Explore our featured collection of tools and services.": [
-                "Explorez notre collection d\u2019outils et de services."
+                "Entdecken Sie unsere vorgestellte Sammlung von Tools und Services."
             ],
             "Oops, there was an error loading the marketplace, please try again later.": [
-                "Oups, il y a eu une erreur lors du chargement de la place de march\u00e9, veuillez r\u00e9essayer plus tard."
+                "Hoppla, beim Laden des Marktplatzes ist ein Fehler aufgetreten, bitte versuchen Sie es sp\u00e4ter erneut."
             ],
             "Sorry, no marketplace items. Please, try again later.": [
-                "D\u00e9sol\u00e9, il n\u2019y a pas d\u2019articles sur le march\u00e9. Veuillez r\u00e9essayer plus tard."
+                "Leider keine Marktplatzartikel. Bitte versuchen Sie es sp\u00e4ter noch einmal."
             ],
             "Load More": [
-                "Charger plus"
+                "Mehr laden"
             ],
             "Oops! Something Went Wrong": [
-                "Oups! Quelque chose a mal tourn\u00e9"
+                "Hoppla! Etwas ist schief gelaufen"
             ],
             "An error occurred while loading the content. Please try again later.": [
-                "Une erreur s\u2019est produite lors du chargement du contenu. Veuillez r\u00e9essayer plus tard."
+                "Beim Laden des Inhalts ist ein Fehler aufgetreten. Bitte versuchen Sie es sp\u00e4ter erneut."
             ],
             "Enabled All auto-updates": [
-                "Activ\u00e9 Toutes les mises \u00e0 jour automatiques"
+                "Aktiviert: Alle automatischen Updates"
             ],
             "Disabled All auto-updates": [
-                "D\u00e9sactiv\u00e9 : toutes les mises \u00e0 jour automatiques"
+                "Deaktiviert Alle automatischen Updates"
             ],
             "Everything will automatically update.": [
-                "Tout sera automatiquement mis \u00e0 jour."
+                "Alles wird automatisch aktualisiert."
             ],
             "Custom auto-update settings.": [
-                "Param\u00e8tres de mise \u00e0 jour automatique personnalis\u00e9s."
+                "Benutzerdefinierte Einstellungen f\u00fcr automatische Updates."
             ],
             "Automatically keep all up to date": [
-                "Maintenez automatiquement tout \u00e0 jour"
+                "Halten Sie alle automatisch auf dem neuesten Stand"
             ],
             "Enabled Core auto-updates": [
-                "Activation des mises \u00e0 jour automatiques du noyau"
+                "Automatische Core-Updates aktiviert"
             ],
             "Disabled Core auto-updates": [
-                "D\u00e9sactivation des mises \u00e0 jour automatiques du noyau"
+                "Automatische Core-Updates deaktiviert"
             ],
             "WordPress will automatically update.": [
-                "WordPress se mettra automatiquement \u00e0 jour."
+                "WordPress wird automatisch aktualisiert."
             ],
             "WordPress must be manually updated.": [
-                "WordPress doit \u00eatre mis \u00e0 jour manuellement."
+                "WordPress muss manuell aktualisiert werden."
             ],
             "WordPress Core": [
-                "Noyau de WordPress"
+                "WordPress-Kern"
             ],
             "Enabled Plugins auto-update": [
-                "Mise \u00e0 jour automatique des plugins activ\u00e9e"
+                "Aktivierte Plugins werden automatisch aktualisiert"
             ],
             "Disabled Plugins auto-update": [
-                "Mise \u00e0 jour automatique des plugins d\u00e9sactiv\u00e9e"
+                "Deaktivierte automatische Aktualisierung von Plugins"
             ],
             "All plugins will automatically update.": [
-                "Tous les plugins seront automatiquement mis \u00e0 jour."
+                "Alle Plugins werden automatisch aktualisiert."
             ],
             "Each plugin must be manually updated.": [
-                "Chaque plugin doit \u00eatre mis \u00e0 jour manuellement."
+                "Jedes Plugin muss manuell aktualisiert werden."
             ],
             "Plugins": [
-                "Plug-ins"
+                "Plugins"
             ],
             "Enabled Themes auto-update": [
-                "Mise \u00e0 jour automatique des th\u00e8mes activ\u00e9e"
+                "Aktivierte automatische Aktualisierung von Themes"
             ],
             "Disabled Themes auto-update": [
-                "Mise \u00e0 jour automatique des th\u00e8mes d\u00e9sactiv\u00e9e"
+                "Deaktivierte automatische Aktualisierung von Themes"
             ],
             "All themes will automatically update.": [
-                "Tous les th\u00e8mes seront automatiquement mis \u00e0 jour."
+                "Alle Designs werden automatisch aktualisiert."
             ],
             "Each theme must be manually updated.": [
-                "Chaque th\u00e8me doit \u00eatre mis \u00e0 jour manuellement."
+                "Jedes Design muss manuell aktualisiert werden."
             ],
             "Themes": [
-                "Th\u00e8mes"
+                "Themen"
             ],
             "Automatic Updates": [
-                "Mises \u00e0 jour automatiques"
+                "Automatische Updates"
             ],
             "Keeping automatic updates on ensures timely security fixes and the latest features.": [
-                "Le maintien des mises \u00e0 jour automatiques garantit des correctifs de s\u00e9curit\u00e9 opportuns et les derni\u00e8res fonctionnalit\u00e9s."
+                "Automatische Updates stellen sicher, dass zeitnahe Sicherheitsupdates und die neuesten Funktionen verf\u00fcgbar sind."
             ],
             "Coming soon activated": [
-                "Bient\u00f4t activ\u00e9"
+                "Demn\u00e4chst aktiviert"
             ],
             "Coming soon deactivated": [
-                "Bient\u00f4t d\u00e9sactiv\u00e9"
+                "Demn\u00e4chst deaktiviert"
             ],
             "Coming soon page is active. Site requires login.": [
-                "La page Coming Soon est active. Le site n\u00e9cessite une connexion."
+                "Die Seite \"Demn\u00e4chst verf\u00fcgbar\" ist aktiv. F\u00fcr die Website ist eine Anmeldung erforderlich."
             ],
             "Coming soon page is not active. Site is live to visitors.": [
-                "La page Coming Soon n\u2019est pas active. Le site est en direct pour les visiteurs."
+                "Die Seite \"Demn\u00e4chst verf\u00fcgbar\" ist nicht aktiv. Die Website ist f\u00fcr Besucher live."
             ],
             "Site Status": [
-                "\u00c9tat du site"
+                "Status der Website"
             ],
             "Turn off your \"Coming Soon\" page when you are ready to launch your website.": [
-                "D\u00e9sactivez votre page \u00ab Bient\u00f4t disponible \u00bb lorsque vous \u00eates pr\u00eat \u00e0 lancer votre site Web."
+                "Deaktivieren Sie Ihre \"Coming Soon\"-Seite, wenn Sie bereit sind, Ihre Website zu starten."
             ],
             "Turn on your \"Coming Soon\" page when you need to make major changes to your website.": [
-                "Activez votre page \u00ab Bient\u00f4t disponible \u00bb lorsque vous devez apporter des modifications majeures \u00e0 votre site Web."
+                "Aktivieren Sie Ihre \"Demn\u00e4chst\"-Seite, wenn Sie gr\u00f6\u00dfere \u00c4nderungen an Ihrer Website vornehmen m\u00fcssen."
             ],
             "Coming Soon page": [
                 ""
             ],
             "Your Bluehost Coming Soon page lets you hide your site from visitors while you make the magic happen.": [
-                "Votre page Bluehost Coming Soon vous permet de cacher votre site aux visiteurs pendant que vous faites op\u00e9rer la magie."
+                "Auf Ihrer Bluehost Coming Soon-Seite k\u00f6nnen Sie Ihre Website vor Besuchern verbergen, w\u00e4hrend Sie die Magie geschehen lassen."
             ],
             "Disabled old post comments": [
-                "D\u00e9sactivation des commentaires sur les anciens messages"
+                "Deaktivierte Kommentare zu alten Beitr\u00e4gen"
             ],
             "Enabled old post comments": [
-                "Activation des commentaires sur les anciens messages"
+                "Alte Beitragskommentare aktiviert"
             ],
             "Comments on old posts are disabled.": [
-                "Les commentaires sur les anciens messages sont d\u00e9sactiv\u00e9s."
+                "Kommentare zu alten Beitr\u00e4gen sind deaktiviert."
             ],
             "Comments are allowed on old posts.": [
-                "Les commentaires sont autoris\u00e9s sur les anciens messages."
+                "Kommentare zu alten Beitr\u00e4gen sind erlaubt."
             ],
             "Disable comments for older posts": [
-                "D\u00e9sactiver les commentaires pour les messages plus anciens"
+                "Kommentare f\u00fcr \u00e4ltere Beitr\u00e4ge deaktivieren"
             ],
             "Comments setting saved": [
-                "Param\u00e8tre de commentaires enregistr\u00e9"
+                "Kommentareinstellung gespeichert"
             ],
             "Comments on posts are disabled after %s day.": [
                 ""
@@ -407,163 +407,163 @@
                 ""
             ],
             "Comments setting saved.": [
-                "Param\u00e8tre de commentaires enregistr\u00e9."
+                "Einstellung \"Kommentare\" gespeichert."
             ],
             "Posts will display %s comment at a time.": [
                 ""
             ],
             "Comments to display per page": [
-                "Commentaires \u00e0 afficher par page"
+                "Kommentare, die pro Seite angezeigt werden sollen"
             ],
             "Comments": [
-                "Commentaires"
+                "Kommentare"
             ],
             "Comments allow visitors to provide feedback and respond to your posts or pages.": [
-                "Les commentaires permettent aux visiteurs de donner leur avis et de r\u00e9pondre \u00e0 vos publications ou pages."
+                "Kommentare erm\u00f6glichen es Besuchern, Feedback zu geben und auf Ihre Beitr\u00e4ge oder Seiten zu antworten."
             ],
             "The trash will automatically empty every %s week.": [
                 ""
             ],
             "Trash setting saved": [
-                "Param\u00e8tre de corbeille enregistr\u00e9"
+                "Papierkorbeinstellung gespeichert"
             ],
             "Number of weeks in between emptying trash": [
-                "Nombre de semaines entre les vidanges des ordures"
+                "Anzahl der Wochen zwischen dem Leeren des M\u00fclls"
             ],
             "Content Options": [
-                "Options de contenu"
+                "Inhaltsoptionen"
             ],
             "Controls for how often to empty the trash.": [
-                "Contr\u00f4le la fr\u00e9quence \u00e0 laquelle vider la corbeille."
+                "Steuert, wie oft der Papierkorb geleert werden soll."
             ],
             "Help Center Enabled": [
-                "Centre d\u2019aide activ\u00e9"
+                "Help Center aktiviert"
             ],
             "Help Center Disabled": [
-                "Centre d\u2019aide d\u00e9sactiv\u00e9"
+                "Help Center deaktiviert"
             ],
             "Reload the page to access the Help Center.": [
-                "Rechargez la page pour acc\u00e9der au Centre d\u2019aide."
+                "Laden Sie die Seite neu, um auf das Help Center zuzugreifen."
             ],
             "The Help Center will no longer display.": [
-                "Le centre d\u2019aide ne s\u2019affichera plus."
+                "Das Help Center wird nicht mehr angezeigt."
             ],
             "The Help Center provides guided, step-by-step assistance as you build your site.": [
-                "Le centre d\u2019aide fournit une assistance guid\u00e9e \u00e9tape par \u00e9tape pendant la cr\u00e9ation de votre site."
+                "Das Help Center bietet eine Anleitung und Schritt-f\u00fcr-Schritt-Unterst\u00fctzung beim Erstellen Ihrer Website."
             ],
             "Optimize your website my managing cache, security and performance settings.": [
-                "Optimisez votre site web en g\u00e9rant le cache, la s\u00e9curit\u00e9 et les param\u00e8tres de performance."
+                "Optimieren Sie Ihre Website durch die Verwaltung von Cache-, Sicherheits- und Leistungseinstellungen."
             ],
             "Optimize your website by managing cache and performance settings": [
-                "Optimisez votre site web en g\u00e9rant le cache et les param\u00e8tres de performance"
+                "Optimieren Sie Ihre Website, indem Sie Cache- und Performance-Einstellungen verwalten"
             ],
             "General Settings": [
-                "Param\u00e8tres g\u00e9n\u00e9raux"
+                "Allgemeine Einstellungen"
             ],
             "Manage common settings for your website": [
-                "G\u00e9rer les param\u00e8tres communs de votre site web"
+                "Allgemeine Einstellungen f\u00fcr Ihre Website verwalten"
             ],
             "Customize the available features as you manage your website.": [
-                "Personnalisez les fonctionnalit\u00e9s disponibles lorsque vous g\u00e9rez votre site Web."
+                "Passen Sie die verf\u00fcgbaren Funktionen an, w\u00e4hrend Sie Ihre Website verwalten."
             ],
             "A staging site is a duplicate of your live site, offering a secure environment to experiment, test updates, and deploy when ready.": [
-                "Un site de test est une copie de votre site en ligne, offrant un environnement s\u00e9curis\u00e9 pour exp\u00e9rimenter, tester les mises \u00e0 jour et d\u00e9ployer une fois pr\u00eat."
+                "Eine Staging-Site ist ein Duplikat Ihrer Live-Site und bietet eine sichere Umgebung zum Experimentieren, Testen von Updates und Bereitstellen, wenn sie bereit ist."
             ],
             "The performance feature provides improvements to loads faster for visitors including cache settings.": [
-                "La fonctionnalit\u00e9 de performance permet d\u2019am\u00e9liorer les chargements plus rapides pour les visiteurs, y compris les param\u00e8tres de cache."
+                "Die Leistungsfunktion bietet Verbesserungen f\u00fcr schnellere Ladevorg\u00e4nge f\u00fcr Besucher, einschlie\u00dflich Cache-Einstellungen."
             ],
             "Performance Enabled": [
-                "Performances activ\u00e9es"
+                "Leistung aktiviert"
             ],
             "Performance Disabled": [
-                "Performances d\u00e9sactiv\u00e9es"
+                "Leistung deaktiviert"
             ],
             "You need to reload the page to manage Performance.": [
-                "Vous devez recharger la page pour g\u00e9rer les performances."
+                "Sie m\u00fcssen die Seite neu laden, um die Leistung zu verwalten."
             ],
             "Performance will no longer display.": [
-                "Les performances ne s\u2019afficheront plus."
+                "Die Leistung wird nicht mehr angezeigt."
             ],
             "The staging feature provides a way to copy a site to test new updates, features or content.": [
-                "La fonctionnalit\u00e9 de mise en sc\u00e8ne permet de copier un site pour tester de nouvelles mises \u00e0 jour, fonctionnalit\u00e9s ou contenus."
+                "Die Stagingfunktion bietet eine M\u00f6glichkeit, eine Website zu kopieren, um neue Updates, Funktionen oder Inhalte zu testen."
             ],
             "Staging Enabled": [
-                "Mise en sc\u00e8ne activ\u00e9e"
+                "Staging aktiviert"
             ],
             "Staging Disabled": [
-                "Stadification d\u00e9sactiv\u00e9e"
+                "Staging deaktiviert"
             ],
             "You need to reload the page to manage Staging.": [
-                "Vous devez recharger la page pour g\u00e9rer la pr\u00e9paration."
+                "Sie m\u00fcssen die Seite neu laden, um das Staging zu verwalten."
             ],
             "Staging will no longer display.": [
-                "La mise en sc\u00e8ne ne s\u2019affichera plus."
+                "Das Staging wird nicht mehr angezeigt."
             ],
             "WonderBlocks Enabled": [
-                "WonderBlocks activ\u00e9"
+                "WonderBlocks aktiviert"
             ],
             "WonderBlocks Disabled": [
-                "WonderBlocks d\u00e9sactiv\u00e9"
+                "WonderBlocks deaktiviert"
             ],
             "Create new content to see WonderBlocks in action.": [
-                "Cr\u00e9ez du nouveau contenu pour voir WonderBlocks en action."
+                "Erstellen Sie neue Inhalte, um WonderBlocks in Aktion zu sehen."
             ],
             "WonderBlocks will no longer display.": [
-                "WonderBlocks ne s\u2019affichera plus."
+                "WonderBlocks werden nicht mehr angezeigt."
             ],
             "WonderBlocks provides a library of customizable block patterns and page templates.": [
-                "WonderBlocks fournit une biblioth\u00e8que de mod\u00e8les de blocs et de mod\u00e8les de pages personnalisables."
+                "WonderBlocks bietet eine Bibliothek mit anpassbaren Blockmustern und Seitenvorlagen."
             ],
             "Create a campaign and boost your sales!": [
-                "Cr\u00e9ez une campagne et augmentez vos ventes !"
+                "Erstellen Sie eine Kampagne und steigern Sie Ihren Umsatz!"
             ],
             "Create custom upsell, cross-sell and other promotional campaigns to generate more sales.": [
-                "Cr\u00e9ez des campagnes personnalis\u00e9es de vente additionnelle, de cross-sell et d\u2019autres campagnes promotionnelles pour g\u00e9n\u00e9rer plus de ventes."
+                "Erstellen Sie individuelle Upsell-, Cross-Sell- und andere Werbekampagnen, um mehr Verk\u00e4ufe zu generieren."
             ],
             "Get Started Now": [
-                "Commencez d\u00e8s maintenant"
+                "Fang jetzt an"
             ],
             "Not sure where to start? Try one of these popular promotions:": [
-                "Vous ne savez pas par o\u00f9 commencer ? Essayez l\u2019une de ces promotions populaires :"
+                "Wissen Sie nicht, wo Sie anfangen sollen? Probieren Sie eine dieser beliebten Aktionen aus:"
             ],
             "Create a Campaign": [
-                "Cr\u00e9er une campagne"
+                "Eine Kampagne erstellen"
             ],
             "Free Shipping": [
-                "Livraison gratuite"
+                "Freier Versand"
             ],
             "Attract and retain customers by offering free shipping based on cart amount, location or store category.": [
-                "Attirez et fid\u00e9liser les clients en proposant la livraison gratuite bas\u00e9e sur le montant du panier, l\u2019emplacement ou la cat\u00e9gorie du magasin."
+                "Gewinnen und halten Sie Kunden, indem Sie kostenlosen Versand basierend auf Warenwarenzahl, Standort oder Shop-Kategorie anbieten."
             ],
             "Buy 1 Get 1": [
-                "Achetez 1, recevez-en 1"
+                "Kaufen Sie 1 Bekommen Sie 1"
             ],
             "Attract customers with a compelling deal where they can buy one product and get another product for free.": [
-                "Attirez les clients avec une offre attrayante o\u00f9 ils peuvent acheter un produit et en obtenir un autre gratuitement."
+                "Ziehen Sie Kunden mit einem \u00fcberzeugenden Angebot an, bei dem sie ein Produkt kaufen und ein anderes kostenlos erhalten k\u00f6nnen."
             ],
             "Gift Product in Cart": [
-                "Produit cadeau dans le panier"
+                "Geschenkprodukt im Einkaufswagen"
             ],
             "Reward customers with a free gift in their cart based on total cart value, or specific products or categories.": [
-                "R\u00e9compensez les clients avec un cadeau gratuit dans leur panier bas\u00e9 sur la valeur totale du panier, ou sur des produits ou cat\u00e9gories sp\u00e9cifiques."
+                "Belohnen Sie Kunden mit einem kostenlosen Geschenk im Warenkorb, basierend auf dem Gesamtwert des Warenkorbs oder bestimmten Produkten oder Kategorien."
             ],
             "Category Discount": [
-                "Remise par cat\u00e9gorie"
+                "Kategorienrabatt"
             ],
             "Give your customers a discount on specific categories of products and boost sales for those categories.": [
-                "Offrez \u00e0 vos clients une r\u00e9duction sur certaines cat\u00e9gories de produits et augmentez les ventes pour ces cat\u00e9gories."
+                "Geben Sie Ihren Kunden einen Rabatt auf bestimmte Produktkategorien und steigern Sie den Umsatz in diesen Kategorien."
             ],
             "Upsell in Thank You Page": [
-                "Vendre en plus dans la page de remerciement"
+                "Upsell auf der Dankesseite"
             ],
             "Maximize sales by presenting relevant upsell options after customers have completed their purchase.": [
-                "Maximisez les ventes en pr\u00e9sentant des options de vente additionnelle pertinentes apr\u00e8s que les clients ont finalis\u00e9 leur achat."
+                "Maximieren Sie den Umsatz, indem Sie relevante Upsell-Optionen pr\u00e4sentieren, nachdem die Kunden ihren Kauf abgeschlossen haben."
             ],
             "Last Minute Deal": [
-                "Accord de derni\u00e8re minute"
+                "Last-Minute-Deal"
             ],
             "Create urgency with a special time-limited deal for customers on the cart and checkout pages.": [
-                "Cr\u00e9ez de l\u2019urgence avec une offre sp\u00e9ciale \u00e0 dur\u00e9e limit\u00e9e pour les clients sur les pages du panier et du paiement."
+                "Schaffen Sie Dringlichkeit mit einem speziellen zeitlich begrenzten Angebot f\u00fcr Kunden auf den Warenkorb- und Kassenseiten."
             ]
         }
     }

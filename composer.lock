@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "8ad8bb633007a413af65d86bedb07cde",
+    "content-hash": "d6d98658b6a9b415eea0c555ee40edea",
     "packages": [
         {
             "name": "colinmollenhour/credis",
@@ -956,16 +956,16 @@
         },
         {
             "name": "newfold-labs/wp-module-ai-chat",
-            "version": "1.1.9",
+            "version": "1.1.10",
             "source": {
                 "type": "git",
                 "url": "https://github.com/newfold-labs/wp-module-ai-chat.git",
-                "reference": "eef7e6c52f5f648c8cdafa663b48c3647c3a7a66"
+                "reference": "0f5ceefca669ef20b863af5c3f3c47e6c8263f7c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/newfold-labs/wp-module-ai-chat/zipball/eef7e6c52f5f648c8cdafa663b48c3647c3a7a66",
-                "reference": "eef7e6c52f5f648c8cdafa663b48c3647c3a7a66",
+                "url": "https://api.github.com/repos/newfold-labs/wp-module-ai-chat/zipball/0f5ceefca669ef20b863af5c3f3c47e6c8263f7c",
+                "reference": "0f5ceefca669ef20b863af5c3f3c47e6c8263f7c",
                 "shasum": ""
             },
             "require-dev": {
@@ -1033,7 +1033,7 @@
                 }
             ],
             "description": "AI Chat module for WordPress",
-            "time": "2026-08-10T22:42:25+00:00"
+            "time": "2026-08-14T07:16:49+00:00"
         },
         {
             "name": "newfold-labs/wp-module-atomic",

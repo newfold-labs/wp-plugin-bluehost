@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "76c896e4c62434047bf917bdbcc5eedb",
+    "content-hash": "826cfc0739bd51d76c056ccd98d11991",
     "packages": [
         {
             "name": "colinmollenhour/credis",
@@ -1650,10 +1650,6 @@
                 }
             ],
             "description": "Site Editor AI Chat",
-            "support": {
-                "source": "https://github.com/newfold-labs/wp-module-editor-chat/tree/1.0.9",
-                "issues": "https://github.com/newfold-labs/wp-module-editor-chat/issues"
-            },
             "time": "2026-04-06T15:51:04+00:00"
         },
         {
@@ -2551,16 +2547,16 @@
         },
         {
             "name": "newfold-labs/wp-module-mcp",
-            "version": "1.7.9",
+            "version": "1.7.11",
             "source": {
                 "type": "git",
                 "url": "https://github.com/newfold-labs/wp-module-mcp.git",
-                "reference": "53b2d892224e03a3a7ede91c56fd253e1b3a7fa6"
+                "reference": "66f395ad43bc7a52bd32b2fb5572a6dddae4f33e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/newfold-labs/wp-module-mcp/zipball/53b2d892224e03a3a7ede91c56fd253e1b3a7fa6",
-                "reference": "53b2d892224e03a3a7ede91c56fd253e1b3a7fa6",
+                "url": "https://api.github.com/repos/newfold-labs/wp-module-mcp/zipball/66f395ad43bc7a52bd32b2fb5572a6dddae4f33e",
+                "reference": "66f395ad43bc7a52bd32b2fb5572a6dddae4f33e",
                 "shasum": ""
             },
             "require": {
@@ -2636,7 +2632,7 @@
                 }
             ],
             "description": "WordPress MCP module for Newfold Labs BLU",
-            "time": "2026-08-12T04:02:00+00:00"
+            "time": "2026-08-18T13:03:40+00:00"
         },
         {
             "name": "newfold-labs/wp-module-migration",

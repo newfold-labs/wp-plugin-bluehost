@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "ff9e2b0d9d9ad48649981908a837eaea",
+    "content-hash": "142f27306d68ae454334fc42d22d69cd",
     "packages": [
         {
             "name": "colinmollenhour/credis",
@@ -214,25 +214,26 @@
         },
         {
             "name": "guzzlehttp/guzzle",
-            "version": "7.10.5",
+            "version": "7.15.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/guzzle/guzzle.git",
-                "reference": "7c8d84b39e680315f687e8662a9d6fb0865c5148"
+                "reference": "ae311b8f045ea93ce7b1c9cdb7cec06c53f944bc"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/guzzle/guzzle/zipball/7c8d84b39e680315f687e8662a9d6fb0865c5148",
-                "reference": "7c8d84b39e680315f687e8662a9d6fb0865c5148",
+                "url": "https://api.github.com/repos/guzzle/guzzle/zipball/ae311b8f045ea93ce7b1c9cdb7cec06c53f944bc",
+                "reference": "ae311b8f045ea93ce7b1c9cdb7cec06c53f944bc",
                 "shasum": ""
             },
             "require": {
                 "ext-json": "*",
-                "guzzlehttp/promises": "^2.3",
-                "guzzlehttp/psr7": "^2.8",
+                "guzzlehttp/promises": "^2.5.2",
+                "guzzlehttp/psr7": "^2.13",
                 "php": "^7.2.5 || ^8.0",
                 "psr/http-client": "^1.0",
-                "symfony/deprecation-contracts": "^2.2 || ^3.0"
+                "symfony/deprecation-contracts": "^2.5 || ^3.0",
+                "symfony/polyfill-php80": "^1.25"
             },
             "provide": {
                 "psr/http-client-implementation": "1.0"
@@ -240,8 +241,8 @@
             "require-dev": {
                 "bamarni/composer-bin-plugin": "^1.8.2",
                 "ext-curl": "*",
-                "guzzle/client-integration-tests": "3.0.2",
-                "guzzlehttp/test-server": "^0.4",
+                "guzzle/client-integration-tests": "3.0.3",
+                "guzzlehttp/test-server": "^0.7",
                 "php-http/message-factory": "^1.1",
                 "phpunit/phpunit": "^8.5.52 || ^9.6.34",
                 "psr/log": "^1.1 || ^2.0 || ^3.0"
@@ -321,7 +322,7 @@
             ],
             "support": {
                 "issues": "https://github.com/guzzle/guzzle/issues",
-                "source": "https://github.com/guzzle/guzzle/tree/7.10.5"
+                "source": "https://github.com/guzzle/guzzle/tree/7.15.3"
             },
             "funding": [
                 {
@@ -337,24 +338,25 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2026-05-27T11:53:46+00:00"
+            "time": "2026-08-05T19:48:21+00:00"
         },
         {
             "name": "guzzlehttp/promises",
-            "version": "2.4.1",
+            "version": "2.5.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/guzzle/promises.git",
-                "reference": "09e8a212562fb1fb6a512c4156ed71525969d6c2"
+                "reference": "2823687acff28b2dbe67b2508a6b300e2c3fa4ce"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/guzzle/promises/zipball/09e8a212562fb1fb6a512c4156ed71525969d6c2",
-                "reference": "09e8a212562fb1fb6a512c4156ed71525969d6c2",
+                "url": "https://api.github.com/repos/guzzle/promises/zipball/2823687acff28b2dbe67b2508a6b300e2c3fa4ce",
+                "reference": "2823687acff28b2dbe67b2508a6b300e2c3fa4ce",
                 "shasum": ""
             },
             "require": {
-                "php": "^7.2.5 || ^8.0"
+                "php": "^7.2.5 || ^8.0",
+                "symfony/deprecation-contracts": "^2.5 || ^3.0"
             },
             "require-dev": {
                 "bamarni/composer-bin-plugin": "^1.8.2",
@@ -404,7 +406,7 @@
             ],
             "support": {
                 "issues": "https://github.com/guzzle/promises/issues",
-                "source": "https://github.com/guzzle/promises/tree/2.4.1"
+                "source": "https://github.com/guzzle/promises/tree/2.5.2"
             },
             "funding": [
                 {
@@ -420,27 +422,29 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2026-05-20T22:57:30+00:00"
+            "time": "2026-08-05T19:30:54+00:00"
         },
         {
             "name": "guzzlehttp/psr7",
-            "version": "2.10.3",
+            "version": "2.13.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/guzzle/psr7.git",
-                "reference": "7c1472269227dc6f18930bd903d7a88fe6c52130"
+                "reference": "dad89620b7a6edb60c15858442eb2e408b45d8f4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/guzzle/psr7/zipball/7c1472269227dc6f18930bd903d7a88fe6c52130",
-                "reference": "7c1472269227dc6f18930bd903d7a88fe6c52130",
+                "url": "https://api.github.com/repos/guzzle/psr7/zipball/dad89620b7a6edb60c15858442eb2e408b45d8f4",
+                "reference": "dad89620b7a6edb60c15858442eb2e408b45d8f4",
                 "shasum": ""
             },
             "require": {
                 "php": "^7.2.5 || ^8.0",
                 "psr/http-factory": "^1.0",
                 "psr/http-message": "^1.1 || ^2.0",
-                "ralouphie/getallheaders": "^3.0"
+                "ralouphie/getallheaders": "^3.0",
+                "symfony/deprecation-contracts": "^2.5 || ^3.0",
+                "symfony/polyfill-php80": "^1.25"
             },
             "provide": {
                 "psr/http-factory-implementation": "1.0",
@@ -521,7 +525,7 @@
             ],
             "support": {
                 "issues": "https://github.com/guzzle/psr7/issues",
-                "source": "https://github.com/guzzle/psr7/tree/2.10.3"
+                "source": "https://github.com/guzzle/psr7/tree/2.13.0"
             },
             "funding": [
                 {
@@ -537,7 +541,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2026-05-27T11:48:20+00:00"
+            "time": "2026-07-16T22:23:49+00:00"
         },
         {
             "name": "instawp/connect-helpers",
@@ -948,10 +952,6 @@
                 }
             ],
             "description": "A module for providing artificial intelligence capabilities.",
-            "support": {
-                "source": "https://github.com/newfold-labs/wp-module-ai/tree/1.3.5",
-                "issues": "https://github.com/newfold-labs/wp-module-ai/issues"
-            },
             "time": "2026-02-11T22:09:51+00:00"
         },
         {
@@ -1037,16 +1037,16 @@
         },
         {
             "name": "newfold-labs/wp-module-atomic",
-            "version": "1.4.1",
+            "version": "1.4.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/newfold-labs/wp-module-atomic.git",
-                "reference": "e09b1e735462b10d4eb84563ffae8affe898e32f"
+                "reference": "b51c988cc26689c328341773a178386f070a2404"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/newfold-labs/wp-module-atomic/zipball/e09b1e735462b10d4eb84563ffae8affe898e32f",
-                "reference": "e09b1e735462b10d4eb84563ffae8affe898e32f",
+                "url": "https://api.github.com/repos/newfold-labs/wp-module-atomic/zipball/b51c988cc26689c328341773a178386f070a2404",
+                "reference": "b51c988cc26689c328341773a178386f070a2404",
                 "shasum": ""
             },
             "require": {
@@ -1093,11 +1093,7 @@
                 }
             ],
             "description": "A module to customize a brand plugin for wp cloud environments.",
-            "support": {
-                "source": "https://github.com/newfold-labs/wp-module-atomic/tree/1.4.1",
-                "issues": "https://github.com/newfold-labs/wp-module-atomic/issues"
-            },
-            "time": "2026-02-05T07:11:06+00:00"
+            "time": "2026-08-17T18:20:28+00:00"
         },
         {
             "name": "newfold-labs/wp-module-coming-soon",
@@ -1840,10 +1836,6 @@
                 }
             ],
             "description": "A module for providing an interface for features.",
-            "support": {
-                "source": "https://github.com/newfold-labs/wp-module-features/tree/1.5.2",
-                "issues": "https://github.com/newfold-labs/wp-module-features/issues"
-            },
             "time": "2026-02-04T16:38:05+00:00"
         },
         {
@@ -1905,21 +1897,21 @@
         },
         {
             "name": "newfold-labs/wp-module-help-center",
-            "version": "2.8.2",
+            "version": "2.8.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/newfold-labs/wp-module-help-center.git",
-                "reference": "3138b255a1de7d772b1491e1d19b85c849c92f95"
+                "reference": "bcc98d4dee5880d530ed74859a00f19317d22570"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/newfold-labs/wp-module-help-center/zipball/3138b255a1de7d772b1491e1d19b85c849c92f95",
-                "reference": "3138b255a1de7d772b1491e1d19b85c849c92f95",
+                "url": "https://api.github.com/repos/newfold-labs/wp-module-help-center/zipball/bcc98d4dee5880d530ed74859a00f19317d22570",
+                "reference": "bcc98d4dee5880d530ed74859a00f19317d22570",
                 "shasum": ""
             },
             "require": {
                 "newfold-labs/wp-module-ai": "^1.3.5",
-                "newfold-labs/wp-module-data": "^2.9.4",
+                "newfold-labs/wp-module-data": "^2.9.7",
                 "newfold-labs/wp-module-features": "^1.5.2",
                 "typesense/typesense-php": "^2.0.4"
             },
@@ -1991,11 +1983,7 @@
                 }
             ],
             "description": "HelpCenter",
-            "support": {
-                "source": "https://github.com/newfold-labs/wp-module-help-center/tree/2.8.2",
-                "issues": "https://github.com/newfold-labs/wp-module-help-center/issues"
-            },
-            "time": "2026-07-28T07:25:37+00:00"
+            "time": "2026-08-20T17:58:02+00:00"
         },
         {
             "name": "newfold-labs/wp-module-htaccess",
@@ -2070,10 +2058,6 @@
                 }
             ],
             "description": "A centralized Newfold module for managing .htaccess files across Newfold brand plugins. It provides a canonical ruleset, validates syntax, prevents duplicate or conflicting directives, maintains backups, and exposes a consumer API for other modules to safely register their own rewrite fragments.",
-            "support": {
-                "source": "https://github.com/newfold-labs/wp-module-htaccess/tree/1.0.1",
-                "issues": "https://github.com/newfold-labs/wp-module-htaccess/issues"
-            },
             "time": "2026-02-06T16:41:21+00:00"
         },
         {
@@ -2299,10 +2283,6 @@
                 }
             ],
             "description": "An installer for WordPress plugins and themes.",
-            "support": {
-                "source": "https://github.com/newfold-labs/wp-module-installer/tree/1.7.5",
-                "issues": "https://github.com/newfold-labs/wp-module-installer/issues"
-            },
             "time": "2026-06-23T13:21:37+00:00"
         },
         {
@@ -3197,16 +3177,16 @@
         },
         {
             "name": "newfold-labs/wp-module-performance",
-            "version": "3.8.2",
+            "version": "3.9.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/newfold-labs/wp-module-performance.git",
-                "reference": "c1e65c998310cff6852b5460d1ea3907374d378a"
+                "reference": "1e932ebdbd353ebd9b488edf50553a1a1bf6a005"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/newfold-labs/wp-module-performance/zipball/c1e65c998310cff6852b5460d1ea3907374d378a",
-                "reference": "c1e65c998310cff6852b5460d1ea3907374d378a",
+                "url": "https://api.github.com/repos/newfold-labs/wp-module-performance/zipball/1e932ebdbd353ebd9b488edf50553a1a1bf6a005",
+                "reference": "1e932ebdbd353ebd9b488edf50553a1a1bf6a005",
                 "shasum": ""
             },
             "require": {
@@ -3295,24 +3275,20 @@
                 }
             ],
             "description": "A module for managing caching functionality.",
-            "support": {
-                "source": "https://github.com/newfold-labs/wp-module-performance/tree/3.8.2",
-                "issues": "https://github.com/newfold-labs/wp-module-performance/issues"
-            },
-            "time": "2026-07-23T18:41:24+00:00"
+            "time": "2026-08-19T14:53:17+00:00"
         },
         {
             "name": "newfold-labs/wp-module-pls",
-            "version": "1.1.3",
+            "version": "1.1.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/newfold-labs/wp-module-pls.git",
-                "reference": "d92527f2e1f8537e18db3eed617f61c9a1eccf57"
+                "reference": "f509f5a692d68f55b6194650bbe64213f2a31e55"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/newfold-labs/wp-module-pls/zipball/d92527f2e1f8537e18db3eed617f61c9a1eccf57",
-                "reference": "d92527f2e1f8537e18db3eed617f61c9a1eccf57",
+                "url": "https://api.github.com/repos/newfold-labs/wp-module-pls/zipball/f509f5a692d68f55b6194650bbe64213f2a31e55",
+                "reference": "f509f5a692d68f55b6194650bbe64213f2a31e55",
                 "shasum": ""
             },
             "require": {
@@ -3323,7 +3299,7 @@
                 "lucatume/wp-browser": "*",
                 "newfold-labs/wp-php-standards": "^1.2",
                 "phpunit/phpcov": "*",
-                "wp-cli/i18n-command": "^2.6.5",
+                "wp-cli/i18n-command": "^2.7.0",
                 "wp-cli/wp-cli": "^2.12"
             },
             "type": "library",
@@ -3354,13 +3330,10 @@
                     "@i18n-php"
                 ],
                 "i18n-json": [
-                    "find ./languages -name \"*.json\" -exec rm {} \\; && vendor/bin/wp i18n make-json ./languages --no-purge --pretty-print"
-                ],
-                "i18n-mo": [
-                    "vendor/bin/wp i18n make-mo ./languages"
+                    "rm -f languages/*.json && vendor/bin/wp i18n make-json ./languages --pretty-print"
                 ],
                 "i18n-php": [
-                    "vendor/bin/wp i18n make-php ./languages"
+                    "vendor/bin/wp i18n make-php ./languages --pretty-print"
                 ],
                 "i18n-po": [
                     "vendor/bin/wp i18n update-po ./languages/wp-module-pls.pot ./languages"
@@ -3390,11 +3363,7 @@
                 }
             ],
             "description": "A Newfold module that handles license key provisioning, validation, and other lifecycle events for registered plugins using the PLS API via Hiive.",
-            "support": {
-                "source": "https://github.com/newfold-labs/wp-module-pls/tree/1.1.3",
-                "issues": "https://github.com/newfold-labs/wp-module-pls/issues"
-            },
-            "time": "2026-02-06T15:35:21+00:00"
+            "time": "2026-08-19T16:54:26+00:00"
         },
         {
             "name": "newfold-labs/wp-module-reset",
@@ -3603,20 +3572,20 @@
         },
         {
             "name": "newfold-labs/wp-module-solutions",
-            "version": "2.10.4",
+            "version": "2.10.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/newfold-labs/wp-module-solutions.git",
-                "reference": "0589e7a4229e93ff708a7bacb852eef37832b015"
+                "reference": "d62cce8c7dd70d62a5f95cc6e74010d637985158"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/newfold-labs/wp-module-solutions/zipball/0589e7a4229e93ff708a7bacb852eef37832b015",
-                "reference": "0589e7a4229e93ff708a7bacb852eef37832b015",
+                "url": "https://api.github.com/repos/newfold-labs/wp-module-solutions/zipball/d62cce8c7dd70d62a5f95cc6e74010d637985158",
+                "reference": "d62cce8c7dd70d62a5f95cc6e74010d637985158",
                 "shasum": ""
             },
             "require": {
-                "newfold-labs/wp-module-data": "^2.9.6",
+                "newfold-labs/wp-module-data": "^2.9.7",
                 "newfold-labs/wp-module-link-tracker": "^1.1",
                 "newfold-labs/wp-module-loader": "^1.1.0"
             },
@@ -3686,7 +3655,7 @@
                 }
             ],
             "description": "A Newfold module that handles integration of WordPress Solutions Addon packages (content creator/ service / ecommerce) for BlueHost & HostGator customers",
-            "time": "2026-08-11T21:54:38+00:00"
+            "time": "2026-08-20T19:13:32+00:00"
         },
         {
             "name": "newfold-labs/wp-module-sso",
@@ -3775,16 +3744,16 @@
         },
         {
             "name": "newfold-labs/wp-module-staging",
-            "version": "2.7.4",
+            "version": "2.8.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/newfold-labs/wp-module-staging.git",
-                "reference": "fd46db8136749689d63ba557c566ac508e5ca413"
+                "reference": "984575f5f265593d55d82152eb41326c8463cfc8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/newfold-labs/wp-module-staging/zipball/fd46db8136749689d63ba557c566ac508e5ca413",
-                "reference": "fd46db8136749689d63ba557c566ac508e5ca413",
+                "url": "https://api.github.com/repos/newfold-labs/wp-module-staging/zipball/984575f5f265593d55d82152eb41326c8463cfc8",
+                "reference": "984575f5f265593d55d82152eb41326c8463cfc8",
                 "shasum": ""
             },
             "require": {
@@ -3795,7 +3764,7 @@
                 "johnpbloch/wordpress": "@stable",
                 "lucatume/wp-browser": "*",
                 "newfold-labs/wp-module-loader": "^1.1",
-                "newfold-labs/wp-php-standards": "^1.2.5",
+                "newfold-labs/wp-php-standards": "^1.2.6",
                 "phpunit/phpcov": "*",
                 "wp-cli/i18n-command": "^2.7.0"
             },
@@ -3858,11 +3827,7 @@
                 }
             ],
             "description": "Newfold module for staging functionality in brand plugins",
-            "support": {
-                "source": "https://github.com/newfold-labs/wp-module-staging/tree/2.7.4",
-                "issues": "https://github.com/newfold-labs/wp-module-staging/issues"
-            },
-            "time": "2026-04-22T21:17:23+00:00"
+            "time": "2026-08-20T08:11:13+00:00"
         },
         {
             "name": "newfold-labs/wp-module-survey",
@@ -4375,6 +4340,90 @@
                 }
             ],
             "time": "2026-05-27T06:59:30+00:00"
+        },
+        {
+            "name": "symfony/polyfill-php80",
+            "version": "v1.37.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/symfony/polyfill-php80.git",
+                "reference": "dfb55726c3a76ea3b6459fcfda1ec2d80a682411"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/symfony/polyfill-php80/zipball/dfb55726c3a76ea3b6459fcfda1ec2d80a682411",
+                "reference": "dfb55726c3a76ea3b6459fcfda1ec2d80a682411",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.2"
+            },
+            "type": "library",
+            "extra": {
+                "thanks": {
+                    "url": "https://github.com/symfony/polyfill",
+                    "name": "symfony/polyfill"
+                }
+            },
+            "autoload": {
+                "files": [
+                    "bootstrap.php"
+                ],
+                "psr-4": {
+                    "Symfony\\Polyfill\\Php80\\": ""
+                },
+                "classmap": [
+                    "Resources/stubs"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Ion Bazan",
+                    "email": "ion.bazan@gmail.com"
+                },
+                {
+                    "name": "Nicolas Grekas",
+                    "email": "p@tchwork.com"
+                },
+                {
+                    "name": "Symfony Community",
+                    "homepage": "https://symfony.com/contributors"
+                }
+            ],
+            "description": "Symfony polyfill backporting some PHP 8.0+ features to lower PHP versions",
+            "homepage": "https://symfony.com",
+            "keywords": [
+                "compatibility",
+                "polyfill",
+                "portable",
+                "shim"
+            ],
+            "support": {
+                "source": "https://github.com/symfony/polyfill-php80/tree/v1.37.0"
+            },
+            "funding": [
+                {
+                    "url": "https://symfony.com/sponsor",
+                    "type": "custom"
+                },
+                {
+                    "url": "https://github.com/fabpot",
+                    "type": "github"
+                },
+                {
+                    "url": "https://github.com/nicolas-grekas",
+                    "type": "github"
+                },
+                {
+                    "url": "https://tidelift.com/funding/github/packagist/symfony/symfony",
+                    "type": "tidelift"
+                }
+            ],
+            "time": "2026-04-10T16:19:22+00:00"
         },
         {
             "name": "typesense/typesense-php",
@@ -6600,10 +6649,6 @@
                 }
             ],
             "description": "PHP Code Sniffer Standards for Newfold WordPress projects.",
-            "support": {
-                "source": "https://github.com/newfold-labs/wp-php-standards/tree/1.2.6",
-                "issues": "https://github.com/newfold-labs/wp-php-standards/issues"
-            },
             "time": "2026-05-11T14:04:37+00:00"
         },
         {
@@ -7060,181 +7105,6 @@
                 }
             ],
             "time": "2025-10-18T00:05:59+00:00"
-        },
-        {
-            "name": "phpcsstandards/phpcsextra",
-            "version": "1.5.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/PHPCSStandards/PHPCSExtra.git",
-                "reference": "b598aa890815b8df16363271b659d73280129101"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/PHPCSStandards/PHPCSExtra/zipball/b598aa890815b8df16363271b659d73280129101",
-                "reference": "b598aa890815b8df16363271b659d73280129101",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=5.4",
-                "phpcsstandards/phpcsutils": "^1.2.0",
-                "squizlabs/php_codesniffer": "^3.13.5 || ^4.0.1"
-            },
-            "require-dev": {
-                "php-parallel-lint/php-console-highlighter": "^1.0",
-                "php-parallel-lint/php-parallel-lint": "^1.4.0",
-                "phpcsstandards/phpcsdevcs": "^1.2.0",
-                "phpcsstandards/phpcsdevtools": "^1.2.1",
-                "phpunit/phpunit": "^4.5 || ^5.0 || ^6.0 || ^7.0 || ^8.0 || ^9.3.4"
-            },
-            "type": "phpcodesniffer-standard",
-            "extra": {
-                "branch-alias": {
-                    "dev-stable": "1.x-dev",
-                    "dev-develop": "1.x-dev"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "LGPL-3.0-or-later"
-            ],
-            "authors": [
-                {
-                    "name": "Juliette Reinders Folmer",
-                    "homepage": "https://github.com/jrfnl",
-                    "role": "lead"
-                },
-                {
-                    "name": "Contributors",
-                    "homepage": "https://github.com/PHPCSStandards/PHPCSExtra/graphs/contributors"
-                }
-            ],
-            "description": "A collection of sniffs and standards for use with PHP_CodeSniffer.",
-            "keywords": [
-                "PHP_CodeSniffer",
-                "phpcbf",
-                "phpcodesniffer-standard",
-                "phpcs",
-                "standards",
-                "static analysis"
-            ],
-            "support": {
-                "issues": "https://github.com/PHPCSStandards/PHPCSExtra/issues",
-                "security": "https://github.com/PHPCSStandards/PHPCSExtra/security/policy",
-                "source": "https://github.com/PHPCSStandards/PHPCSExtra"
-            },
-            "funding": [
-                {
-                    "url": "https://github.com/PHPCSStandards",
-                    "type": "github"
-                },
-                {
-                    "url": "https://github.com/jrfnl",
-                    "type": "github"
-                },
-                {
-                    "url": "https://opencollective.com/php_codesniffer",
-                    "type": "open_collective"
-                },
-                {
-                    "url": "https://thanks.dev/u/gh/phpcsstandards",
-                    "type": "thanks_dev"
-                }
-            ],
-            "time": "2025-11-12T23:06:57+00:00"
-        },
-        {
-            "name": "phpcsstandards/phpcsutils",
-            "version": "1.2.2",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/PHPCSStandards/PHPCSUtils.git",
-                "reference": "c216317e96c8b3f5932808f9b0f1f7a14e3bbf55"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/PHPCSStandards/PHPCSUtils/zipball/c216317e96c8b3f5932808f9b0f1f7a14e3bbf55",
-                "reference": "c216317e96c8b3f5932808f9b0f1f7a14e3bbf55",
-                "shasum": ""
-            },
-            "require": {
-                "dealerdirect/phpcodesniffer-composer-installer": "^0.4.1 || ^0.5 || ^0.6.2 || ^0.7 || ^1.0",
-                "php": ">=5.4",
-                "squizlabs/php_codesniffer": "^3.13.5 || ^4.0.1"
-            },
-            "require-dev": {
-                "ext-filter": "*",
-                "php-parallel-lint/php-console-highlighter": "^1.0",
-                "php-parallel-lint/php-parallel-lint": "^1.4.0",
-                "phpcsstandards/phpcsdevcs": "^1.2.0",
-                "yoast/phpunit-polyfills": "^1.1.0 || ^2.0.0 || ^3.0.0"
-            },
-            "type": "phpcodesniffer-standard",
-            "extra": {
-                "branch-alias": {
-                    "dev-stable": "1.x-dev",
-                    "dev-develop": "1.x-dev"
-                }
-            },
-            "autoload": {
-                "classmap": [
-                    "PHPCSUtils/"
-                ]
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "LGPL-3.0-or-later"
-            ],
-            "authors": [
-                {
-                    "name": "Juliette Reinders Folmer",
-                    "homepage": "https://github.com/jrfnl",
-                    "role": "lead"
-                },
-                {
-                    "name": "Contributors",
-                    "homepage": "https://github.com/PHPCSStandards/PHPCSUtils/graphs/contributors"
-                }
-            ],
-            "description": "A suite of utility functions for use with PHP_CodeSniffer",
-            "homepage": "https://phpcsutils.com/",
-            "keywords": [
-                "PHP_CodeSniffer",
-                "phpcbf",
-                "phpcodesniffer-standard",
-                "phpcs",
-                "phpcs3",
-                "phpcs4",
-                "standards",
-                "static analysis",
-                "tokens",
-                "utility"
-            ],
-            "support": {
-                "docs": "https://phpcsutils.com/",
-                "issues": "https://github.com/PHPCSStandards/PHPCSUtils/issues",
-                "security": "https://github.com/PHPCSStandards/PHPCSUtils/security/policy",
-                "source": "https://github.com/PHPCSStandards/PHPCSUtils"
-            },
-            "funding": [
-                {
-                    "url": "https://github.com/PHPCSStandards",
-                    "type": "github"
-                },
-                {
-                    "url": "https://github.com/jrfnl",
-                    "type": "github"
-                },
-                {
-                    "url": "https://opencollective.com/php_codesniffer",
-                    "type": "open_collective"
-                },
-                {
-                    "url": "https://thanks.dev/u/gh/phpcsstandards",
-                    "type": "thanks_dev"
-                }
-            ],
-            "time": "2025-12-08T14:27:58+00:00"
         },
         {
             "name": "phpoption/phpoption",
@@ -10926,90 +10796,6 @@
             "time": "2024-09-09T11:45:10+00:00"
         },
         {
-            "name": "symfony/polyfill-php80",
-            "version": "v1.33.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/symfony/polyfill-php80.git",
-                "reference": "0cc9dd0f17f61d8131e7df6b84bd344899fe2608"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/symfony/polyfill-php80/zipball/0cc9dd0f17f61d8131e7df6b84bd344899fe2608",
-                "reference": "0cc9dd0f17f61d8131e7df6b84bd344899fe2608",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=7.2"
-            },
-            "type": "library",
-            "extra": {
-                "thanks": {
-                    "url": "https://github.com/symfony/polyfill",
-                    "name": "symfony/polyfill"
-                }
-            },
-            "autoload": {
-                "files": [
-                    "bootstrap.php"
-                ],
-                "psr-4": {
-                    "Symfony\\Polyfill\\Php80\\": ""
-                },
-                "classmap": [
-                    "Resources/stubs"
-                ]
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Ion Bazan",
-                    "email": "ion.bazan@gmail.com"
-                },
-                {
-                    "name": "Nicolas Grekas",
-                    "email": "p@tchwork.com"
-                },
-                {
-                    "name": "Symfony Community",
-                    "homepage": "https://symfony.com/contributors"
-                }
-            ],
-            "description": "Symfony polyfill backporting some PHP 8.0+ features to lower PHP versions",
-            "homepage": "https://symfony.com",
-            "keywords": [
-                "compatibility",
-                "polyfill",
-                "portable",
-                "shim"
-            ],
-            "support": {
-                "source": "https://github.com/symfony/polyfill-php80/tree/v1.33.0"
-            },
-            "funding": [
-                {
-                    "url": "https://symfony.com/sponsor",
-                    "type": "custom"
-                },
-                {
-                    "url": "https://github.com/fabpot",
-                    "type": "github"
-                },
-                {
-                    "url": "https://github.com/nicolas-grekas",
-                    "type": "github"
-                },
-                {
-                    "url": "https://tidelift.com/funding/github/packagist/symfony/symfony",
-                    "type": "tidelift"
-                }
-            ],
-            "time": "2025-01-02T08:10:11+00:00"
-        },
-        {
             "name": "symfony/process",
             "version": "v5.4.47",
             "source": {
@@ -11702,38 +11488,24 @@
         },
         {
             "name": "wp-coding-standards/wpcs",
-            "version": "3.3.0",
+            "version": "0.14.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/WordPress/WordPress-Coding-Standards.git",
-                "reference": "7795ec6fa05663d716a549d0b44e47ffc8b0d4a6"
+                "reference": "8cadf48fa1c70b2381988e0a79e029e011a8f41c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/WordPress/WordPress-Coding-Standards/zipball/7795ec6fa05663d716a549d0b44e47ffc8b0d4a6",
-                "reference": "7795ec6fa05663d716a549d0b44e47ffc8b0d4a6",
+                "url": "https://api.github.com/repos/WordPress/WordPress-Coding-Standards/zipball/8cadf48fa1c70b2381988e0a79e029e011a8f41c",
+                "reference": "8cadf48fa1c70b2381988e0a79e029e011a8f41c",
                 "shasum": ""
             },
             "require": {
-                "ext-filter": "*",
-                "ext-libxml": "*",
-                "ext-tokenizer": "*",
-                "ext-xmlreader": "*",
-                "php": ">=7.2",
-                "phpcsstandards/phpcsextra": "^1.5.0",
-                "phpcsstandards/phpcsutils": "^1.1.0",
-                "squizlabs/php_codesniffer": "^3.13.4"
-            },
-            "require-dev": {
-                "php-parallel-lint/php-console-highlighter": "^1.0.0",
-                "php-parallel-lint/php-parallel-lint": "^1.4.0",
-                "phpcompatibility/php-compatibility": "^10.0.0@dev",
-                "phpcsstandards/phpcsdevtools": "^1.2.0",
-                "phpunit/phpunit": "^8.0 || ^9.0"
+                "php": ">=5.3",
+                "squizlabs/php_codesniffer": "^2.9.0 || ^3.0.2"
             },
             "suggest": {
-                "ext-iconv": "For improved results",
-                "ext-mbstring": "For improved results"
+                "dealerdirect/phpcodesniffer-composer-installer": "^0.4.3"
             },
             "type": "phpcodesniffer-standard",
             "notification-url": "https://packagist.org/downloads/",
@@ -11743,28 +11515,21 @@
             "authors": [
                 {
                     "name": "Contributors",
-                    "homepage": "https://github.com/WordPress/WordPress-Coding-Standards/graphs/contributors"
+                    "homepage": "https://github.com/WordPress-Coding-Standards/WordPress-Coding-Standards/graphs/contributors"
                 }
             ],
             "description": "PHP_CodeSniffer rules (sniffs) to enforce WordPress coding conventions",
             "keywords": [
                 "phpcs",
                 "standards",
-                "static analysis",
                 "wordpress"
             ],
             "support": {
-                "issues": "https://github.com/WordPress/WordPress-Coding-Standards/issues",
-                "source": "https://github.com/WordPress/WordPress-Coding-Standards",
-                "wiki": "https://github.com/WordPress/WordPress-Coding-Standards/wiki"
+                "issues": "https://github.com/WordPress-Coding-Standards/WordPress-Coding-Standards/issues",
+                "source": "https://github.com/WordPress-Coding-Standards/WordPress-Coding-Standards",
+                "wiki": "https://github.com/WordPress-Coding-Standards/WordPress-Coding-Standards/wiki"
             },
-            "funding": [
-                {
-                    "url": "https://opencollective.com/php_codesniffer",
-                    "type": "custom"
-                }
-            ],
-            "time": "2025-11-25T12:08:04+00:00"
+            "time": "2017-11-01T15:10:46+00:00"
         },
         {
             "name": "wp-phpunit/wp-phpunit",

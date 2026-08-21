@@ -295,6 +295,78 @@ async function clearCapabilities() {
 }
 
 /**
+ * Clear installer work that could leak into later Playwright projects.
+ *
+ * The installer cron remains enabled. On its next run it will observe an empty
+ * queue, mark the task manager complete, and unschedule itself.
+ */
+async function clearInstallerQueues() {
+	const options = [
+		'nfd_module_installer_plugin_install_queue',
+		'nfd_module_installer_plugin_activation_queue',
+		'nfd_module_installer_plugins_init_status',
+	];
+	const encodedOptions = Buffer.from(
+		JSON.stringify( options ),
+		'utf8'
+	).toString( 'base64' );
+
+	// --skip-plugins/--skip-themes: only need the options API. Loading the full
+	// plugin stack can fatal (e.g. a half-installed companion plugin) and then this
+	// cleanup itself cannot run — exactly when it is most needed.
+	return await wordpress.wpCli(
+		`eval '$options = json_decode( base64_decode( "${ encodedOptions }" ), true ); foreach ( $options as $option ) { delete_option( $option ); } $remaining = array_values( array_filter( $options, static function ( $option ) { return false !== get_option( $option, false ); } ) ); if ( $remaining ) { WP_CLI::error( "Failed to clear installer options: " . implode( ", ", $remaining ) ); }' --skip-plugins --skip-themes`,
+		{ failOnNonZeroExit: true }
+	);
+}
+
+/**
+ * Ensure WordPress does not consider a plugin active, deactivating it if it is.
+ *
+ * Specs that assert a plugin's *pre-install* UI (install/download attributes rather than
+ * "Configure") depend on that plugin being inactive. Establishing this once in global setup
+ * is not enough: the installer cron can activate a queued plugin partway through a run, so a
+ * spec that inherits the precondition from whatever ran before it will fail intermittently.
+ * Call this from the spec that needs it.
+ *
+ * Goes through is_plugin_active()/deactivate_plugins() rather than `wp plugin deactivate` on
+ * purpose. That is the same check the rendered page uses, and unlike the WP-CLI command it
+ * still clears a stale active_plugins entry whose plugin files are gone — a state WP-CLI
+ * reports as "could not be found" (indistinguishable from inactive) while the page renders
+ * the plugin as active.
+ *
+ * Returns a result instead of throwing so callers can attach the reason to the assertion
+ * that actually depends on it.
+ *
+ * @param {string} basename    - Plugin basename, e.g. 'wordpress-seo/wp-seo.php'
+ * @param {number} maxAttempts - Deactivate/verify attempts before giving up
+ * @return {Promise<{ok: boolean, reason: string}>} Whether the plugin is inactive, and why not
+ */
+async function ensurePluginInactive( basename, maxAttempts = 3 ) {
+	const encodedBasename = Buffer.from( basename, 'utf8' ).toString(
+		'base64'
+	);
+	const command = `eval '$plugin = base64_decode( "${ encodedBasename }" ); require_once ABSPATH . "wp-admin/includes/plugin.php"; if ( is_plugin_active( $plugin ) ) { deactivate_plugins( $plugin, true ); } echo is_plugin_active( $plugin ) ? "active" : "inactive";'`;
+
+	let lastResult;
+	for ( let attempt = 1; attempt <= maxAttempts; attempt++ ) {
+		lastResult = await wordpress.wpCli( command, {
+			failOnNonZeroExit: false,
+		} );
+		if ( 'inactive' === lastResult ) {
+			return { ok: true, reason: '' };
+		}
+	}
+
+	const reason = `Precondition not met: ${ basename } is still active after ${ maxAttempts } deactivation attempts (last result: ${ wordpress.formatWpCliResult(
+		lastResult
+	) })`;
+	utils.fancyLog( `⚠ ${ reason }`, 200, 'yellow', '' );
+
+	return { ok: false, reason };
+}
+
+/**
  * Log the current capabilities option from the database
  * 
  * @returns {Promise<Object>} The current capabilities object
@@ -498,6 +570,8 @@ export default {
   // Capabilities
   setCapability,
   clearCapabilities,
+  clearInstallerQueues,
+  ensurePluginInactive,
   logCapabilities,
   
   // Coming Soon

@@ -151,9 +151,9 @@ add_filter(
 				),
 				'admin_bar_text'                 => '<div style="background-color: #FEC101; color: #000; padding: 0 1rem;">' . __( 'Coming Soon Active', 'wp-plugin-bluehost' ) . '</div>',
 				'admin_notice_text'              => sprintf(
-				/* translators: %1$s is replaced with the opening link tag to preview the page, and %2$s is replaced with the closing link tag, %3$s is the opening link tag, %4$s is the closing link tag. */
+				/* translators: %1$s is replaced with the opening link tag to the coming soon setting, and %2$s is replaced with the closing link tag, %3$s is the opening link tag, %4$s is the closing link tag. */
 					__( 'Your site is currently displaying a %1$scoming soon page%2$s. Once you are ready, %3$slaunch your site%4$s.', 'wp-plugin-bluehost' ),
-					'<a href="' . esc_url( buildLink( get_home_url() . '?preview=coming_soon' ) ) . '" title="' . __( 'Preview the coming soon landing page', 'wp-plugin-bluehost' ) . '">',
+					'<a href="' . esc_url( buildLink( admin_url( 'admin.php?page=bluehost&nfd-target=coming-soon-section#/settings' ) ) ) . '" title="' . __( 'Manage your coming soon page setting', 'wp-plugin-bluehost' ) . '">',
 					'</a>',
 					'<a href="' . esc_url( buildLink( admin_url( 'admin.php?page=bluehost&nfd-target=coming-soon-section#/settings' ) ) ) . '">',
 					'</a>'

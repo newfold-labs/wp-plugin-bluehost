@@ -33,11 +33,13 @@ test.describe('Coming Soon admin notice', () => {
     const comingSoonLink = notice.getByRole('link', { name: 'coming soon page' });
     const launchLink = notice.getByRole('link', { name: 'launch your site' });
 
-    // Both links resolve to the coming soon settings section.
+    // Both links resolve to the coming soon settings section, including the
+    // SPA route fragment that selects the toggle.
     for (const link of [comingSoonLink, launchLink]) {
       const href = await link.getAttribute('href');
       expect(href).toContain('page=bluehost');
       expect(href).toContain('nfd-target=coming-soon-section');
+      expect(href).toContain('#/settings');
     }
 
     // The "coming soon page" link must no longer open the front-end preview.

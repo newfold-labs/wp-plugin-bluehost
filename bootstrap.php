@@ -126,6 +126,11 @@ add_filter(
 			),
 		);
 
+		// Deep-link to the Coming Soon toggle in the plugin settings. Matches the
+		// link the module's AdminBarSiteStatusBadge uses; kept identical on both
+		// notice links so either one lands on the on/off control.
+		$coming_soon_settings_url = esc_url( buildLink( admin_url( 'admin.php?page=bluehost&nfd-target=coming-soon-section#/settings' ) ) );
+
 		$args = wp_parse_args(
 			array(
 				'admin_app_url'                  => buildLink( admin_url( 'admin.php?page=bluehost#/home' ) ),
@@ -153,9 +158,9 @@ add_filter(
 				'admin_notice_text'              => sprintf(
 				/* translators: %1$s is replaced with the opening link tag to the coming soon setting, and %2$s is replaced with the closing link tag, %3$s is the opening link tag, %4$s is the closing link tag. */
 					__( 'Your site is currently displaying a %1$scoming soon page%2$s. Once you are ready, %3$slaunch your site%4$s.', 'wp-plugin-bluehost' ),
-					'<a href="' . esc_url( buildLink( admin_url( 'admin.php?page=bluehost&nfd-target=coming-soon-section#/settings' ) ) ) . '" title="' . __( 'Manage your coming soon page setting', 'wp-plugin-bluehost' ) . '">',
+					'<a href="' . $coming_soon_settings_url . '" title="' . esc_attr__( 'Manage your coming soon page settings', 'wp-plugin-bluehost' ) . '">',
 					'</a>',
-					'<a href="' . esc_url( buildLink( admin_url( 'admin.php?page=bluehost&nfd-target=coming-soon-section#/settings' ) ) ) . '">',
+					'<a href="' . $coming_soon_settings_url . '">',
 					'</a>'
 				),
 				'template_styles'                => esc_url( BLUEHOST_PLUGIN_URL . 'assets/styles/coming-soon.css' ),

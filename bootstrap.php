@@ -126,10 +126,12 @@ add_filter(
 			),
 		);
 
-		// Deep-link to the Coming Soon toggle in the plugin settings. Matches the
-		// link the module's AdminBarSiteStatusBadge uses; kept identical on both
-		// notice links so either one lands on the on/off control.
-		$coming_soon_settings_url = esc_url( buildLink( admin_url( 'admin.php?page=bluehost&nfd-target=coming-soon-section#/settings' ) ) );
+		// Deep-link to the Coming Soon toggle in the plugin settings, kept identical
+		// on both notice links so either one lands on the on/off control. The route
+		// must be `#/settings/settings` (not `#/settings`): without the trailing
+		// segment the settings accordion stays collapsed and the coming soon option
+		// is not shown.
+		$coming_soon_settings_url = esc_url( buildLink( admin_url( 'admin.php?page=bluehost&nfd-target=coming-soon-section#/settings/settings' ) ) );
 
 		$args = wp_parse_args(
 			array(

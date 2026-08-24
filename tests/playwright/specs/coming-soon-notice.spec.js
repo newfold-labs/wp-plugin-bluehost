@@ -67,5 +67,9 @@ test.describe('Coming Soon admin notice', () => {
     const comingSoonSection = page.locator('.wppbh-app-settings-coming-soon');
     await utils.scrollIntoView(comingSoonSection);
     await expect(comingSoonSection).toBeVisible();
+
+    // The `nfd-target=coming-soon-section` param briefly highlights (blinks) the
+    // section so the user's eye lands on the right control.
+    await expect(comingSoonSection).toHaveClass(/wppbh-animation-blink/);
   });
 });

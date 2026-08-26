@@ -126,6 +126,13 @@ add_filter(
 			),
 		);
 
+		// Deep-link to the Coming Soon toggle in the plugin settings, kept identical
+		// on both notice links so either one lands on the on/off control. The route
+		// must be `#/settings/settings` (not `#/settings`): without the trailing
+		// segment the settings accordion stays collapsed and the coming soon option
+		// is not shown.
+		$coming_soon_settings_url = esc_url( buildLink( admin_url( 'admin.php?page=bluehost&nfd-target=coming-soon-section#/settings/settings' ) ) );
+
 		$args = wp_parse_args(
 			array(
 				'admin_app_url'                  => buildLink( admin_url( 'admin.php?page=bluehost#/home' ) ),
@@ -151,11 +158,11 @@ add_filter(
 				),
 				'admin_bar_text'                 => '<div style="background-color: #FEC101; color: #000; padding: 0 1rem;">' . __( 'Coming Soon Active', 'wp-plugin-bluehost' ) . '</div>',
 				'admin_notice_text'              => sprintf(
-				/* translators: %1$s is replaced with the opening link tag to preview the page, and %2$s is replaced with the closing link tag, %3$s is the opening link tag, %4$s is the closing link tag. */
+				/* translators: %1$s is replaced with the opening link tag to the coming soon setting, and %2$s is replaced with the closing link tag, %3$s is the opening link tag, %4$s is the closing link tag. */
 					__( 'Your site is currently displaying a %1$scoming soon page%2$s. Once you are ready, %3$slaunch your site%4$s.', 'wp-plugin-bluehost' ),
-					'<a href="' . esc_url( buildLink( get_home_url() . '?preview=coming_soon' ) ) . '" title="' . __( 'Preview the coming soon landing page', 'wp-plugin-bluehost' ) . '">',
+					'<a href="' . $coming_soon_settings_url . '" title="' . esc_attr__( 'Manage your coming soon page settings', 'wp-plugin-bluehost' ) . '">',
 					'</a>',
-					'<a href="' . esc_url( buildLink( admin_url( 'admin.php?page=bluehost&nfd-target=coming-soon-section#/settings' ) ) ) . '">',
+					'<a href="' . $coming_soon_settings_url . '">',
 					'</a>'
 				),
 				'template_styles'                => esc_url( BLUEHOST_PLUGIN_URL . 'assets/styles/coming-soon.css' ),

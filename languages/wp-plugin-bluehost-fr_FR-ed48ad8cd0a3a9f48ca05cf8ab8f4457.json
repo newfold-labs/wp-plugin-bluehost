@@ -1,7 +1,7 @@
 {
-    "translation-revision-date": "2026-08-14T20:20:50+00:00",
+    "translation-revision-date": "2026-08-27T15:26:03+00:00",
     "generator": "WP-CLI\/2.12.0",
-    "source": "build\/4.18.2\/index.js",
+    "source": "build\/4.18.3\/index.js",
     "domain": "messages",
     "locale_data": {
         "messages": {
@@ -155,43 +155,43 @@
                 "Fonctionnalit\u00e9s"
             ],
             "Toggle features \u2013 not settings.": [
-                ""
+                "Basculez les fonctionnalit\u00e9s \u2013 pas les param\u00e8tres."
             ],
             "10Web Admin Restrictions": [
-                ""
+                "10Restrictions d\u2019administrateur Web"
             ],
             "Prevents theme switching and limits plugin access on 10Web AI editor sites.": [
-                ""
+                "Emp\u00eache le changement de th\u00e8me et limite l\u2019acc\u00e8s aux plugins sur les sites d\u2019\u00e9diteurs 10Web AI."
             ],
             "10Web Admin Restrictions Enabled": [
-                ""
+                "10Restrictions d\u2019administrateur Web activ\u00e9es"
             ],
             "10Web Admin Restrictions Disabled": [
-                ""
+                "10Restrictions d\u2019administrateur Web d\u00e9sactiv\u00e9es"
             ],
             "Theme switching and plugin access restrictions are active on 10Web editor sites.": [
-                ""
+                "Les restrictions de changement de th\u00e8me et d\u2019acc\u00e8s aux plugins sont actives sur 10 sites d\u2019\u00e9diteurs Web."
             ],
             "Theme switching and plugin access restrictions are no longer enforced.": [
-                ""
+                "Les restrictions de changement de th\u00e8me et d\u2019acc\u00e8s aux plugins ne sont plus appliqu\u00e9es."
             ],
             "10Web Editor Support": [
-                ""
+                "10Prise en charge, \u00e9diteur web"
             ],
             "Loads PostHog session replay on the WVC editor admin screen.": [
-                ""
+                "Charge la relecture de la session PostHog sur l\u2019\u00e9cran d\u2019administration de l\u2019\u00e9diteur WVC."
             ],
             "10Web Editor Support Enabled": [
-                ""
+                "10Prise en charge de l\u2019\u00e9diteur web activ\u00e9e"
             ],
             "10Web Editor Support Disabled": [
-                ""
+                "10Prise en charge de l\u2019\u00e9diteur web d\u00e9sactiv\u00e9e"
             ],
             "PostHog session replay will load on the WVC editor screen after a page reload.": [
-                ""
+                "La relecture de la session postHog se charge sur l\u2019\u00e9cran de l\u2019\u00e9diteur WVC apr\u00e8s un rechargement de la page."
             ],
             "PostHog session replay will no longer load on the WVC editor screen.": [
-                ""
+                "La relecture de la session PostHog ne se chargera plus sur l\u2019\u00e9cran de l\u2019\u00e9diteur WVC."
             ],
             "Discover exclusive features, designed to deliver unmatched value and elevate your online experience.": [
                 "D\u00e9couvrez des fonctionnalit\u00e9s exclusives, con\u00e7ues pour offrir une valeur in\u00e9gal\u00e9e et am\u00e9liorer votre exp\u00e9rience en ligne."
@@ -377,7 +377,7 @@
                 "Activez votre page \u00ab Bient\u00f4t disponible \u00bb lorsque vous devez apporter des modifications majeures \u00e0 votre site Web."
             ],
             "Coming Soon page": [
-                ""
+                "Page \u00e0 venir"
             ],
             "Your Bluehost Coming Soon page lets you hide your site from visitors while you make the magic happen.": [
                 "Votre page Bluehost Coming Soon vous permet de cacher votre site aux visiteurs pendant que vous faites op\u00e9rer la magie."

@@ -5,7 +5,7 @@ return [
 	'language' => 'nl_NL',
 	'project-id-version' => 'wp-plugin-bluehost',
 	'pot-creation-date' => '2025-02-25T20:53:21+00:00',
-	'po-revision-date' => '2026-08-21T17:30:16+00:00',
+	'po-revision-date' => '2026-08-27T15:33:34+00:00',
 	'messages' => [
 		'The Bluehost Plugin' => 'De Bluehost Plugin',
 		'https://bluehost.com' => 'https://bluehost.com',
@@ -32,7 +32,6 @@ return [
 		'%s &mdash; Coming Soon' => '%s &mdash; Binnenkort',
 		'Coming Soon Active' => 'Binnenkort actief',
 		'Your site is currently displaying a %1$scoming soon page%2$s. Once you are ready, %3$slaunch your site%4$s.' => 'Uw site toont momenteel een %1$sdie binnenkort pagina%2$skomt. Zodra u klaar bent, start %3$suw site%4$s.',
-		'Preview the coming soon landing page' => 'Bekijk een voorbeeld van de volgende landingspagina',
 		'Sales & Promotions Page' => 'Verkoop- en promotiepagina',
 		'Sales & Promotions' => 'Verkoop & Promoties',
 		'Home' => 'Startpagina',

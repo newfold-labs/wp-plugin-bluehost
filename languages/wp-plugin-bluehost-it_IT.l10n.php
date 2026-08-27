@@ -5,7 +5,7 @@ return [
 	'language' => 'it_IT',
 	'project-id-version' => 'wp-plugin-bluehost',
 	'pot-creation-date' => '2025-02-25T20:53:21+00:00',
-	'po-revision-date' => '2026-08-21T17:30:16+00:00',
+	'po-revision-date' => '2026-08-27T15:33:34+00:00',
 	'x-generator' => 'Crowdin',
 	'messages' => [
 		'The Bluehost Plugin' => 'Il plugin Bluehost',
@@ -33,7 +33,6 @@ return [
 		'%s &mdash; Coming Soon' => '%s &mdash; Coming Soon',
 		'Coming Soon Active' => 'Coming Soon attivo',
 		'Your site is currently displaying a %1$scoming soon page%2$s. Once you are ready, %3$slaunch your site%4$s.' => 'Il tuo sito al momento mostra una %1$spagina Coming soon%2$s. Una volta pronto, %3$spuoi lanciare il sito%4$s.',
-		'Preview the coming soon landing page' => 'Anteprima della landing page Coming soon',
 		'Sales & Promotions Page' => 'Pagina Vendite e Promozioni',
 		'Sales & Promotions' => 'Vendite e promozioni',
 		'Home' => 'Home',

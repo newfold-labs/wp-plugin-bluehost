@@ -13,8 +13,9 @@ jobs:
   webhook:
     name: Send Webhook
     runs-on: ubuntu-latest
-    permissions:
-      contents: write
+    timeout-minutes: 10
+    # Repository dispatch uses secrets.WEBHOOK_TOKEN; the job does not use GITHUB_TOKEN against this repo.
+    permissions: {}
     steps:
 
       - name: Set Package

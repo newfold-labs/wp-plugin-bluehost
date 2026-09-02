@@ -23,8 +23,8 @@ jobs:
     timeout-minutes: 1
     outputs:
       run_matrix: ${{ steps.check.outputs.run_matrix }}
-    permissions:
-      contents: read
+    # Job reads only the workflow event payload; no repository clone or GitHub API calls.
+    permissions: {}
 
     steps:
       - name: Decide whether to run matrix
@@ -63,7 +63,7 @@ jobs:
     needs: should-run-matrix
     if: needs.should-run-matrix.outputs.run_matrix == 'true'
     permissions:
-      contents: read
+      contents: read            # Required to clone the repo.
     strategy:
       fail-fast: false
       matrix:
@@ -235,7 +235,7 @@ jobs:
       - test
     if: ${{ always() && needs.test.result != 'skipped' }}
     permissions:
-      contents: read
+      contents: read            # Required to clone the repo for the summary script.
 
     steps:
       - name: Checkout

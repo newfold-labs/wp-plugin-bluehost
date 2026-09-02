@@ -19,7 +19,6 @@ jobs:
     timeout-minutes: 60
     permissions:
       contents: read           # Required to clone the repo.
-      actions: write          # Required to upload the plugin zip artifact.
     strategy:
       matrix:
         environment: [ bluehost-shared ]

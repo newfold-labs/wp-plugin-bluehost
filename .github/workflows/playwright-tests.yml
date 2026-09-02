@@ -27,7 +27,6 @@ jobs:
       package: ${{ steps.workflow.outputs.PACKAGE }}
     permissions:
       contents: read            # Required to clone the repo.
-      actions: write           # Required to upload the plugin build artifact.
 
     steps:
       - name: Checkout
@@ -114,7 +113,6 @@ jobs:
     needs: build
     permissions:
       contents: read            # Required to clone the repo.
-      actions: write           # Required to download the build artifact and upload Playwright reports.
 
     steps:
       - name: Checkout

@@ -44,7 +44,6 @@ jobs:
   cleanup-on-merge:
     needs: get-merged-pr-commits
     if: always() && needs.get-merged-pr-commits.result == 'success'
-    timeout-minutes: 30
     permissions:
       contents: write         # Required for reusable workflow to prune coverage output on gh-pages.
     uses: newfold-labs/workflows/.github/workflows/reusable-codecoverage-cleanup.yml@main
@@ -56,7 +55,6 @@ jobs:
 
   cleanup-on-branch-delete:
     if: github.event_name == 'delete' && github.event.ref_type == 'branch'
-    timeout-minutes: 30
     permissions:
       contents: write         # Required for reusable workflow to prune coverage output on gh-pages.
     uses: newfold-labs/workflows/.github/workflows/reusable-codecoverage-cleanup.yml@main
@@ -68,7 +66,6 @@ jobs:
 
   cleanup-scheduled:
     if: github.event_name == 'schedule'
-    timeout-minutes: 30
     permissions:
       contents: write         # Required for reusable workflow to prune coverage output on gh-pages.
     uses: newfold-labs/workflows/.github/workflows/reusable-codecoverage-cleanup.yml@main

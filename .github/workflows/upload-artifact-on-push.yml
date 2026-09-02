@@ -24,7 +24,6 @@ jobs:
     permissions:
       contents: read            # Required to clone the repo.
       pull-requests: write      # Required for github-script to create/update PR comments with artifact links.
-      actions: write           # Required to upload the plugin build artifact.
     if: ${{ github.repository == 'newfold-labs/wp-plugin-bluehost' }}
     steps:
 

@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "d23103440910c3fba24efa2139a99d72",
+    "content-hash": "ce78932bf19a0d1f715f1e9e47a08d5e",
     "packages": [
         {
             "name": "colinmollenhour/credis",
@@ -2505,16 +2505,16 @@
         },
         {
             "name": "newfold-labs/wp-module-mcp",
-            "version": "1.7.11",
+            "version": "1.8.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/newfold-labs/wp-module-mcp.git",
-                "reference": "66f395ad43bc7a52bd32b2fb5572a6dddae4f33e"
+                "reference": "0ccd49c1e30745bc694ed9571162f98bd85bd4a0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/newfold-labs/wp-module-mcp/zipball/66f395ad43bc7a52bd32b2fb5572a6dddae4f33e",
-                "reference": "66f395ad43bc7a52bd32b2fb5572a6dddae4f33e",
+                "url": "https://api.github.com/repos/newfold-labs/wp-module-mcp/zipball/0ccd49c1e30745bc694ed9571162f98bd85bd4a0",
+                "reference": "0ccd49c1e30745bc694ed9571162f98bd85bd4a0",
                 "shasum": ""
             },
             "require": {
@@ -2526,7 +2526,7 @@
             "require-dev": {
                 "johnpbloch/wordpress": "@stable",
                 "lucatume/wp-browser": "*",
-                "newfold-labs/wp-php-standards": "^1.2",
+                "newfold-labs/wp-php-standards": "^2.0",
                 "phpunit/phpcov": "*",
                 "wp-cli/i18n-command": "^2.7.0"
             },
@@ -2590,7 +2590,7 @@
                 }
             ],
             "description": "WordPress MCP module for Newfold Labs BLU",
-            "time": "2026-08-18T13:03:40+00:00"
+            "time": "2026-09-02T14:13:39+00:00"
         },
         {
             "name": "newfold-labs/wp-module-migration",

@@ -22,7 +22,7 @@ if ( file_exists( __DIR__ . '/vendor/autoload_packages.php' ) ) {
 	require_once __DIR__ . '/vendor/autoload_packages.php';
 }
 
-// Composer autoloader (includes prefixed packages via Strauss modification)
+// Composer autoloader (also loads the PHP-Scoper prefixed packages in vendor-prefixed via PSR-4)
 if ( is_readable( __DIR__ . '/vendor/autoload.php' ) ) {
 	require __DIR__ . '/vendor/autoload.php';
 } else {
@@ -126,14 +126,21 @@ add_filter(
 			),
 		);
 
+		// Deep-link to the Coming Soon toggle in the plugin settings, kept identical
+		// on both notice links so either one lands on the on/off control. The route
+		// must be `#/settings/settings` (not `#/settings`): without the trailing
+		// segment the settings accordion stays collapsed and the coming soon option
+		// is not shown.
+		$coming_soon_settings_url = esc_url( buildLink( admin_url( 'admin.php?page=bluehost&nfd-target=coming-soon-section#/settings/settings' ) ) );
+
 		$args = wp_parse_args(
 			array(
 				'admin_app_url'                  => buildLink( admin_url( 'admin.php?page=bluehost#/home' ) ),
 				'template_coming_soon_backlinks' => sprintf(
-					/* translators: %1$s is the logo SVG, %2$s wraps the text, %3$s is the link start for Bluehost WordPress Hosting, %4$s is the closing anchor tag, %5$s wraps the text again, %6$s contains backlinks */
+					/* translators: %1$s is the logo SVG, %2$s wraps the text, %3$s is the link start for Powered by Bluehost, %4$s is the closing anchor tag, %5$s wraps the text again, %6$s contains backlinks */
 					esc_html__(
 						'%1$s
-					%2$sA %3$sReliable WordPress Hosting by Bluehost%4$s powered website.%5$s
+					%2$s%3$sPowered by Bluehost%4$s%5$s
                     %6$s',
 						'wp-plugin-bluehost'
 					),
@@ -151,11 +158,11 @@ add_filter(
 				),
 				'admin_bar_text'                 => '<div style="background-color: #FEC101; color: #000; padding: 0 1rem;">' . __( 'Coming Soon Active', 'wp-plugin-bluehost' ) . '</div>',
 				'admin_notice_text'              => sprintf(
-				/* translators: %1$s is replaced with the opening link tag to preview the page, and %2$s is replaced with the closing link tag, %3$s is the opening link tag, %4$s is the closing link tag. */
+				/* translators: %1$s is replaced with the opening link tag to the coming soon setting, and %2$s is replaced with the closing link tag, %3$s is the opening link tag, %4$s is the closing link tag. */
 					__( 'Your site is currently displaying a %1$scoming soon page%2$s. Once you are ready, %3$slaunch your site%4$s.', 'wp-plugin-bluehost' ),
-					'<a href="' . esc_url( buildLink( get_home_url() . '?preview=coming_soon' ) ) . '" title="' . __( 'Preview the coming soon landing page', 'wp-plugin-bluehost' ) . '">',
+					'<a href="' . $coming_soon_settings_url . '" title="' . esc_attr__( 'Manage your coming soon page settings', 'wp-plugin-bluehost' ) . '">',
 					'</a>',
-					'<a href="' . esc_url( buildLink( admin_url( 'admin.php?page=bluehost&nfd-target=coming-soon-section#/settings' ) ) ) . '">',
+					'<a href="' . $coming_soon_settings_url . '">',
 					'</a>'
 				),
 				'template_styles'                => esc_url( BLUEHOST_PLUGIN_URL . 'assets/styles/coming-soon.css' ),
@@ -228,6 +235,8 @@ require BLUEHOST_PLUGIN_DIR . '/inc/settings.php';
 require BLUEHOST_PLUGIN_DIR . '/inc/updates.php';
 require BLUEHOST_PLUGIN_DIR . '/inc/YoastAI.php';
 require BLUEHOST_PLUGIN_DIR . '/inc/widgets/bootstrap.php';
+require_once BLUEHOST_PLUGIN_DIR . '/inc/Helpers.php';
+require_once BLUEHOST_PLUGIN_DIR . '/inc/Brand.php';
 require_once BLUEHOST_PLUGIN_DIR . '/inc/Filters.php';
 
 Filters::init();

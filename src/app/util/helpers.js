@@ -200,6 +200,35 @@ export const getPlatformPathUrl = ( jarvisPath = '', legacyPath = '' ) => {
 };
 
 /**
+ * Whether the embedded help center sidebar is open.
+ *
+ * Matches wp-module-help-center: `LocalStorageUtils.getHelpVisible()` reads
+ * `localStorage.helpVisible === 'true'`; `toggleHelp()` updates that key when
+ * the panel opens or closes.
+ *
+ * @return {boolean} Whether the embedded help center sidebar is open.
+ */
+export const isEmbeddedHelpCenterOpen = () => {
+	return localStorage.getItem( 'helpVisible' ) === 'true';
+};
+
+/**
+ * Opens the embedded help center when closed. No-op if already open or API missing.
+ */
+export const openEmbeddedHelpCenter = () => {
+	if (
+		typeof window?.newfoldEmbeddedHelp?.toggleNFDLaunchedEmbeddedHelp !==
+		'function'
+	) {
+		return;
+	}
+
+	if ( ! isEmbeddedHelpCenterOpen() ) {
+		window.newfoldEmbeddedHelp.toggleNFDLaunchedEmbeddedHelp();
+	}
+};
+
+/**
  * Handles help center links click, will open help center slide if user has access
  * or navigate to help page if user doesn't have access
  */
@@ -221,7 +250,7 @@ export const handleHelpLinksClick = () => {
 					) {
 						e.preventDefault();
 					}
-					window.newfoldEmbeddedHelp.toggleNFDLaunchedEmbeddedHelp();
+					openEmbeddedHelpCenter();
 				} )
 			);
 			window.newfoldEmbeddedHelp.hasListeners = true;
@@ -355,7 +384,8 @@ export const getEditorUrl = async ( canvas = 'edit' ) => {
 	const blockThemeEditorUrl = `${ runtime.adminUrl }site-editor.php?canvas=${ canvas }`;
 	const aiEditorChatUrl = `&referrer=nfd-editor-chat`;
 	const hasBluMVPCapability = runtime.capabilities?.hasBluMVP || false;
-	const blockTheme = runtime?.wordpress?.isBlockTheme || false;
+	const isWvcTheme = runtime?.wordpress?.isWvcTheme || false;
+	const blockTheme = runtime?.wordpress?.isBlockTheme || isWvcTheme || false;
 
 	// If the theme is a block theme and the user has the Blu MVP capability
 	if ( blockTheme && hasBluMVPCapability ) {
@@ -378,7 +408,8 @@ export const getEditorUrl = async ( canvas = 'edit' ) => {
  */
 export const getEditorLabel = async () => {
 	const runtime = await waitForRuntime();
-	const blockTheme = ( await runtime?.wordpress?.isBlockTheme ) || false;
+	const isWvcTheme = runtime?.wordpress?.isWvcTheme || false;
+	const blockTheme = runtime?.wordpress?.isBlockTheme || isWvcTheme || false;
 	const hasBluMVPCapability = runtime.capabilities?.hasBluMVP || false;
 	// If the theme is a block theme and the user has the Blu MVP capability, return 'AI Editor'
 	if ( blockTheme && hasBluMVPCapability ) {

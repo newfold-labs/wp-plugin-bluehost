@@ -46,7 +46,10 @@ $svgExternalView = '<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox=
   <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 6H5.25A2.25 2.25 0 0 0 3 8.25v10.5A2.25 2.25 0 0 0 5.25 21h10.5A2.25 2.25 0 0 0 18 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25" />
 </svg>';
 // site editor if block theme, otherwise customizer
-$site_edit_url = buildLink( get_admin_url( null, wp_is_block_theme() ? 'site-editor.php?canvas=edit' : 'customize.php' ), array( 'source' => 'widget=bluehost_account_widget' ) );
+$site_edit_url = buildLink(
+	\get_admin_url( null, \wp_is_block_theme() ? 'site-editor.php?canvas=edit' : 'customize.php' ),
+	array( 'source' => 'widget=bluehost_account_widget' )
+);
 ?>
 <style>
 	#site_preview_widget h2 {
@@ -189,25 +192,25 @@ $site_edit_url = buildLink( get_admin_url( null, wp_is_block_theme() ? 'site-edi
 			<?php esc_html_e( 'Edit Site', 'wp-plugin-bluehost' ); ?>
 		</a>
 		<?php if ( $isComingSoon ) : ?>
-			<a 
+			<button
+				type="button"
 				class="nfd-button nfd-button--upsell nfd-grow"
 				data-test-id="nfd-coming-soon-disable"
-				href="#"
 				id="nfd-coming-soon-disable"
 			>
 				<?php echo wp_kses( $svgRocket, KSES_ALLOWED_SVG_TAGS ); ?>
 				<?php esc_html_e( 'Launch Site', 'wp-plugin-bluehost' ); ?>
-			</a>
+			</button>
 		<?php else : ?>
-			<a 
+			<button
+				type="button"
 				class="nfd-button nfd-button--secondary nfd-grow nfd-text-balance"
 				data-test-id="nfd-coming-soon-enable"
-				href="#"
 				id="nfd-coming-soon-enable"
 			>
 				<?php echo wp_kses( $svgWrench, KSES_ALLOWED_SVG_TAGS ); ?>
 				<?php esc_html_e( 'Enable Coming Soon', 'wp-plugin-bluehost' ); ?>
-			</a>
+			</button>
 		<?php endif; ?>
 		</div>
 </div>
@@ -217,11 +220,11 @@ function initSitePreviewButtonHandlers(){
 	const enable_button = document.getElementById( 'nfd-coming-soon-enable' );
 	if ( enable_button ) {
 		enable_button.addEventListener( 'click', function( e ) {
-			e.preventDefault();
-			if ( e.target.hasAttribute( 'disabled' ) ) {
+			const btn = e.currentTarget;
+			if ( btn.hasAttribute( 'disabled' ) ) {
 				return;
 			}
-			e.target.setAttribute( 'disabled', '' );
+			btn.setAttribute( 'disabled', '' );
 			window.NewfoldRuntime.comingSoon.enable().then( () => {
 				window.location.reload();
 			});
@@ -231,11 +234,11 @@ function initSitePreviewButtonHandlers(){
 	const disable_button = document.getElementById( 'nfd-coming-soon-disable' );
 	if ( disable_button ) {
 		disable_button.addEventListener( 'click', function( e ) {
-			e.preventDefault();
-			if ( e.target.hasAttribute( 'disabled' ) ) {
+			const btn = e.currentTarget;
+			if ( btn.hasAttribute( 'disabled' ) ) {
 				return;
 			}
-			e.target.setAttribute( 'disabled', '' );
+			btn.setAttribute( 'disabled', '' );
 			window.NewfoldRuntime.comingSoon.disable().then( () => {
 				window.location.reload();
 			});

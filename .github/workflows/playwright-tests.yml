@@ -82,12 +82,12 @@ jobs:
 
     steps:
       - name: Checkout
-        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd  # v6.0.2
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1  # v7.0.1
         with:
           persist-credentials: false
 
       - name: Setup PHP
-        uses: shivammathur/setup-php@44454db4f0199b8b9685a5d763dc37cbf79108e1  # v2.36.0
+        uses: shivammathur/setup-php@f3e473d116dcccaddc5834248c87452386958240  # v2.37.2
         with:
           php-version: '8.3'
           coverage: none
@@ -104,9 +104,9 @@ jobs:
           echo "PACKAGE=${REPO##*/}" >> "$GITHUB_OUTPUT"
 
       - name: Use Node.js 24.x
-        uses: actions/setup-node@6044e13b5dc448c55e2357c09f80417699197238  # v6.2.0
+        uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020  # v7.0.0
         with:
-          node-version: 24.x
+          node-version: 24.15.0
           cache: 'npm'
 
       - name: Get Composer cache directory
@@ -114,7 +114,7 @@ jobs:
         run: echo "dir=$(composer config cache-files-dir)" >> "$GITHUB_OUTPUT"
 
       - name: Cache Composer vendor directory
-        uses: actions/cache@cdf6c1fa76f9f475f3d7449005a359c84ca0f306  # v5.0.3
+        uses: actions/cache@55cc8345863c7cc4c66a329aec7e433d2d1c52a9  # v6.1.0
         with:
           path: ${{ steps.composer-cache.outputs.dir }}
           key: ${{ runner.os }}-composer-${{ hashFiles('**/composer.lock') }}
@@ -152,7 +152,7 @@ jobs:
           find .
 
       - name: Upload artifact
-        uses: actions/upload-artifact@b7c566a772e6b6bfb58ed0dc250532a479d7789f  # v6.0.0
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a  # v7.0.1
         with:
           path: ${{ steps.workflow.outputs.DIST }}
           name: ${{ steps.workflow.outputs.PACKAGE }}
@@ -172,21 +172,21 @@ jobs:
 
     steps:
       - name: Checkout
-        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd  # v6.0.2
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1  # v7.0.1
         with:
           persist-credentials: false
 
       - name: Setup PHP
-        uses: shivammathur/setup-php@44454db4f0199b8b9685a5d763dc37cbf79108e1  # v2.36.0
+        uses: shivammathur/setup-php@f3e473d116dcccaddc5834248c87452386958240  # v2.37.2
         with:
           php-version: '8.3'
           coverage: none
           tools: composer, cs2pr
 
       - name: Use Node.js 24.x
-        uses: actions/setup-node@6044e13b5dc448c55e2357c09f80417699197238  # v6.2.0
+        uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020  # v7.0.0
         with:
-          node-version: 24.x
+          node-version: 24.15.0
           cache: 'npm'
 
       - name: Get Composer cache directory
@@ -194,7 +194,7 @@ jobs:
         run: echo "dir=$(composer config cache-files-dir)" >> "$GITHUB_OUTPUT"
 
       - name: Cache Composer vendor directory
-        uses: actions/cache@cdf6c1fa76f9f475f3d7449005a359c84ca0f306  # v5.0.3
+        uses: actions/cache@55cc8345863c7cc4c66a329aec7e433d2d1c52a9  # v6.1.0
         with:
           path: ${{ steps.composer-cache.outputs.dir }}
           key: ${{ runner.os }}-composer-${{ hashFiles('**/composer.lock') }}
@@ -215,7 +215,7 @@ jobs:
           echo "DIST=${PWD}/dist" >> "$GITHUB_OUTPUT"
 
       - name: Download build artifacts
-        uses: actions/download-artifact@37930b1c2abaa49bbe596cd826c3c89aef350131  # v7.0.0
+        uses: actions/download-artifact@3e5f45b2cfb9172054b4087a40e8e0b5a5461e7c  # v8.0.1
         with:
           path: ${{ steps.workflow.outputs.DIST }}
           name: ${{ needs.build.outputs.package }}
@@ -230,20 +230,38 @@ jobs:
             '{plugins: [$plugin]}' > .wp-env.override.json
 
       - name: Install WordPress
-        uses: nick-fields/retry@ce71cc2ab81d554ebbe88c79ab5975992d79ba08  # v3.0.2
+        uses: nick-fields/retry@ad984534de44a9489a53aefd81eb77f87c70dc60  # v4.0.0
         with:
           timeout_minutes: 4
           max_attempts: 3
-          command: npx wp-env start --debug
+          command: |
+            pwd
+            ls -la .wp-env*
+            npx wp-env start --debug
+            npx wp-env run cli wp core version
 
       - name: Verify WordPress is ready
         run: |
           echo "Verifying WordPress is ready..."
+          pwd
+          ls -la .wp-env*
           npx wp-env run cli wp core version
           echo "WordPress is ready!"
 
-      - name: Install Playwright Browsers
-        run: npx playwright install --with-deps chromium
+      - name: Get Playwright version
+        id: playwright-version
+        run: echo "version=$(node -e 'console.log(require("@playwright/test/package.json").version)')" >> "$GITHUB_OUTPUT"
+
+      - name: Cache Playwright browsers
+        uses: actions/cache@55cc8345863c7cc4c66a329aec7e433d2d1c52a9  # v6.1.0
+        with:
+          path: ~/.cache/ms-playwright
+          key: playwright-${{ runner.os }}-${{ steps.playwright-version.outputs.version }}
+
+      # Skip --with-deps: apt-get can hang on slow ubuntu mirrors. ubuntu-latest includes Chromium runtime libraries.
+      - name: Install Playwright Chromium
+        timeout-minutes: 5
+        run: npx playwright install chromium
 
       - name: Run Playwright Tests
         run: npx playwright test --project="${{ matrix.project }}" --reporter=line
@@ -259,7 +277,7 @@ jobs:
 
       - name: Store Playwright test results
         if: always()
-        uses: actions/upload-artifact@b7c566a772e6b6bfb58ed0dc250532a479d7789f  # v6.0.0
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a  # v7.0.1
         with:
           name: playwright-report-${{ steps.artifact-name.outputs.name }}
           path: tests/playwright/test-results/

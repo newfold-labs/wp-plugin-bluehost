@@ -28,7 +28,7 @@ function getLocalModules() {
   } catch (error) {
     console.warn('Could not read composer.local.json:', error.message);
   }
-  return localModules;
+  return localModules.sort((a, b) => a.name.localeCompare(b.name));
 }
 
 function getVendorModules() {
@@ -51,8 +51,14 @@ function getVendorModules() {
   } catch (error) {
     // No vendor directories found, continue
   }
-  return vendorModules;
+  return vendorModules.sort((a, b) => a.name.localeCompare(b.name));
 }
+
+// Modules whose specs toggle plugin activation state (e.g. deactivate the whole
+// plugin mid-test). Deferred to run last so a still-deactivated plugin can't be
+// caught mid-teardown by another module's test setup running sequentially after it.
+// https://github.com/newfold-labs/wp-plugin-bluehost/pull/1380
+const RUN_LAST_MODULES = new Set(['wp-module-deactivation']);
 
 function generateProjects() {
   console.log('🔍 Playwright Projects Discovery:');
@@ -60,37 +66,43 @@ function generateProjects() {
     {
       name: 'newfold-labs/wp-plugin-bluehost',
       testDir: './tests/playwright/specs',
-      testMatch: '**/*.spec.js',
+      testMatch: '*.spec.{js,mjs}',
     }
   ];
 
   const localModules = getLocalModules();
   const vendorModules = getVendorModules();
   const discoveredModules = new Set();
+  const deferredProjects = [];
+
+  const addModule = (module, projectName) => {
+    if (discoveredModules.has(module.name)) {
+      return;
+    }
+    discoveredModules.add(module.name);
+    const project = {
+      name: projectName,
+      testDir: `./${module.path}/tests/playwright/specs`,
+      testMatch: '*.spec.{js,mjs}',
+    };
+    if (RUN_LAST_MODULES.has(module.name)) {
+      deferredProjects.push(project);
+    } else {
+      projects.push(project);
+    }
+  };
 
   // Add local modules first (they take precedence)
-  localModules.forEach(module => {
-    if (!discoveredModules.has(module.name)) {
-      projects.push({
-        name: `newfold-labs/${module.name}-local`,
-        testDir: module.path,
-        testMatch: 'tests/playwright/**/*.spec.{js,mjs}',
-      });
-      discoveredModules.add(module.name);
-    }
-  });
+  localModules.forEach(module => addModule(module, `newfold-labs/${module.name}-local`));
 
   // Add vendor modules if no local version exists
-  vendorModules.forEach(module => {
-    if (!discoveredModules.has(module.name)) {
-      projects.push({
-        name: `newfold-labs/${module.name}`,
-        testDir: `./${module.path}/tests/playwright/specs`,
-        testMatch: '*.spec.{js,mjs}',
-      });
-      discoveredModules.add(module.name);
-    }
-  });
+  vendorModules.forEach(module => addModule(module, `newfold-labs/${module.name}`));
+
+  // Append run-last modules at the very end, in their original discovery order.
+  projects.push(...deferredProjects);
+  if (deferredProjects.length > 0) {
+    console.log(`⏭️  Deferring ${deferredProjects.length} project(s) to run last: ${deferredProjects.map(p => p.name).join(', ')}`);
+  }
 
   console.log(`📁 Found ${projects.length} project(s):`);
   projects.forEach(p => {

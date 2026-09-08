@@ -41,7 +41,16 @@ if (!existsSync(projectsFile)) {
 }
 
 // Load projects from generated file
-const projects = JSON.parse(readFileSync(projectsFile, 'utf8'));
+let projects = JSON.parse(readFileSync(projectsFile, 'utf8'));
+// Merge per-project overrides from module (e.g. tests/playwright/project-overrides.json)
+projects = projects.map((p) => {
+  const overridesPath = resolve(__dirname, p.testDir, '..', 'project-overrides.json');
+  if (existsSync(overridesPath)) {
+    const overrides = JSON.parse(readFileSync(overridesPath, 'utf8'));
+    return { ...p, ...overrides };
+  }
+  return p;
+});
 
 // Set environment variable for plugin root
 process.env.PLUGIN_DIR = __dirname;
@@ -85,7 +94,7 @@ export default defineConfig({
   expect: {
     timeout: 10 * 1000, // 10 seconds
   },
-  retries: process.env.CI ? 1 : 1,
+  retries: process.env.CI ? 0 : 1, // 0 retries on CI, 1 for local
   workers: process.env.CI ? 1 : 1, // Use default (number of CPU cores) for local, 1 for CI
   outputDir: 'tests/playwright/test-results',
   expect: {

@@ -14,11 +14,8 @@ const CommercePage = () => {
 					'wppbh-app-help-page__header nfd-flex nfd-flex-col nfd-gap-y-4'
 				}
 			>
-				<Title as="h1">
-					{ __(
-						'Premium tools available in eCommerce Add-Ons',
-						'wp-plugin-bluehost'
-					) }
+				<Title as="h1" data-testid="nfd-solutions-commerce-page-title">
+					{ SolutionsPageComponent.getSolutionsPageTitle() }
 				</Title>
 				<Title
 					as="h2"

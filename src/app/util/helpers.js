@@ -200,6 +200,35 @@ export const getPlatformPathUrl = ( jarvisPath = '', legacyPath = '' ) => {
 };
 
 /**
+ * Whether the embedded help center sidebar is open.
+ *
+ * Matches wp-module-help-center: `LocalStorageUtils.getHelpVisible()` reads
+ * `localStorage.helpVisible === 'true'`; `toggleHelp()` updates that key when
+ * the panel opens or closes.
+ *
+ * @return {boolean} Whether the embedded help center sidebar is open.
+ */
+export const isEmbeddedHelpCenterOpen = () => {
+	return localStorage.getItem( 'helpVisible' ) === 'true';
+};
+
+/**
+ * Opens the embedded help center when closed. No-op if already open or API missing.
+ */
+export const openEmbeddedHelpCenter = () => {
+	if (
+		typeof window?.newfoldEmbeddedHelp?.toggleNFDLaunchedEmbeddedHelp !==
+		'function'
+	) {
+		return;
+	}
+
+	if ( ! isEmbeddedHelpCenterOpen() ) {
+		window.newfoldEmbeddedHelp.toggleNFDLaunchedEmbeddedHelp();
+	}
+};
+
+/**
  * Handles help center links click, will open help center slide if user has access
  * or navigate to help page if user doesn't have access
  */
@@ -221,7 +250,7 @@ export const handleHelpLinksClick = () => {
 					) {
 						e.preventDefault();
 					}
-					window.newfoldEmbeddedHelp.toggleNFDLaunchedEmbeddedHelp();
+					openEmbeddedHelpCenter();
 				} )
 			);
 			window.newfoldEmbeddedHelp.hasListeners = true;

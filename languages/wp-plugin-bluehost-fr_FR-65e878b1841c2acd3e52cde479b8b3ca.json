@@ -1,7 +1,7 @@
 {
-    "translation-revision-date": "2026-07-16T17:18:05+00:00",
+    "translation-revision-date": "2026-08-27T15:33:34+00:00",
     "generator": "WP-CLI\/2.12.0",
-    "source": "build\/4.17.2\/index.js",
+    "source": "build\/4.19.1\/index.js",
     "domain": "messages",
     "locale_data": {
         "messages": {
@@ -27,6 +27,15 @@
             ],
             "Your website is currently displaying a \"Coming Soon\" page.": [
                 "Votre site web affiche actuellement une page \"\u00c0 venir\"."
+            ],
+            "Sorry, that is not allowed.": [
+                "D\u00e9sol\u00e9, ce n\u2019est pas autoris\u00e9."
+            ],
+            "This feature cannot currently be modified.": [
+                "Cette fonctionnalit\u00e9 ne peut actuellement pas \u00eatre modifi\u00e9e."
+            ],
+            "Oops! Something went wrong. Please try again.": [
+                "Oups! Quelque chose a mal tourn\u00e9. Veuillez r\u00e9essayer."
             ],
             "Oh No, An Error!": [
                 "Oh non, une erreur !"
@@ -142,8 +151,47 @@
             "Secret page to manage admin features and settings.": [
                 "Page secr\u00e8te pour g\u00e9rer les fonctionnalit\u00e9s et les param\u00e8tres d\u2019administration."
             ],
-            "Premium tools available in eCommerce Add-Ons": [
-                "Outils premium disponibles dans les add-ons eCommerce"
+            "Features": [
+                "Fonctionnalit\u00e9s"
+            ],
+            "Toggle features \u2013 not settings.": [
+                "Basculez les fonctionnalit\u00e9s \u2013 pas les param\u00e8tres."
+            ],
+            "10Web Admin Restrictions": [
+                "10Restrictions d\u2019administrateur Web"
+            ],
+            "Prevents theme switching and limits plugin access on 10Web AI editor sites.": [
+                "Emp\u00eache le changement de th\u00e8me et limite l\u2019acc\u00e8s aux plugins sur les sites d\u2019\u00e9diteurs 10Web AI."
+            ],
+            "10Web Admin Restrictions Enabled": [
+                "10Restrictions d\u2019administrateur Web activ\u00e9es"
+            ],
+            "10Web Admin Restrictions Disabled": [
+                "10Restrictions d\u2019administrateur Web d\u00e9sactiv\u00e9es"
+            ],
+            "Theme switching and plugin access restrictions are active on 10Web editor sites.": [
+                "Les restrictions de changement de th\u00e8me et d\u2019acc\u00e8s aux plugins sont actives sur 10 sites d\u2019\u00e9diteurs Web."
+            ],
+            "Theme switching and plugin access restrictions are no longer enforced.": [
+                "Les restrictions de changement de th\u00e8me et d\u2019acc\u00e8s aux plugins ne sont plus appliqu\u00e9es."
+            ],
+            "10Web Editor Support": [
+                "10Prise en charge, \u00e9diteur web"
+            ],
+            "Loads PostHog session replay on the WVC editor admin screen.": [
+                "Charge la relecture de la session PostHog sur l\u2019\u00e9cran d\u2019administration de l\u2019\u00e9diteur WVC."
+            ],
+            "10Web Editor Support Enabled": [
+                "10Prise en charge de l\u2019\u00e9diteur web activ\u00e9e"
+            ],
+            "10Web Editor Support Disabled": [
+                "10Prise en charge de l\u2019\u00e9diteur web d\u00e9sactiv\u00e9e"
+            ],
+            "PostHog session replay will load on the WVC editor screen after a page reload.": [
+                "La relecture de la session postHog se charge sur l\u2019\u00e9cran de l\u2019\u00e9diteur WVC apr\u00e8s un rechargement de la page."
+            ],
+            "PostHog session replay will no longer load on the WVC editor screen.": [
+                "La relecture de la session PostHog ne se chargera plus sur l\u2019\u00e9cran de l\u2019\u00e9diteur WVC."
             ],
             "Discover exclusive features, designed to deliver unmatched value and elevate your online experience.": [
                 "D\u00e9couvrez des fonctionnalit\u00e9s exclusives, con\u00e7ues pour offrir une valeur in\u00e9gal\u00e9e et am\u00e9liorer votre exp\u00e9rience en ligne."
@@ -307,9 +355,6 @@
             "Keeping automatic updates on ensures timely security fixes and the latest features.": [
                 "Le maintien des mises \u00e0 jour automatiques garantit des correctifs de s\u00e9curit\u00e9 opportuns et les derni\u00e8res fonctionnalit\u00e9s."
             ],
-            "Oops! Something went wrong. Please try again.": [
-                "Oups! Quelque chose a mal tourn\u00e9. Veuillez r\u00e9essayer."
-            ],
             "Coming soon activated": [
                 "Bient\u00f4t activ\u00e9"
             ],
@@ -330,6 +375,9 @@
             ],
             "Turn on your \"Coming Soon\" page when you need to make major changes to your website.": [
                 "Activez votre page \u00ab Bient\u00f4t disponible \u00bb lorsque vous devez apporter des modifications majeures \u00e0 votre site Web."
+            ],
+            "Coming Soon page": [
+                "Page \u00e0 venir"
             ],
             "Your Bluehost Coming Soon page lets you hide your site from visitors while you make the magic happen.": [
                 "Votre page Bluehost Coming Soon vous permet de cacher votre site aux visiteurs pendant que vous faites op\u00e9rer la magie."
@@ -403,12 +451,6 @@
             "The Help Center provides guided, step-by-step assistance as you build your site.": [
                 "Le centre d\u2019aide fournit une assistance guid\u00e9e \u00e9tape par \u00e9tape pendant la cr\u00e9ation de votre site."
             ],
-            "Sorry, that is not allowed.": [
-                "D\u00e9sol\u00e9, ce n\u2019est pas autoris\u00e9."
-            ],
-            "This feature cannot currently be modified.": [
-                "Cette fonctionnalit\u00e9 ne peut actuellement pas \u00eatre modifi\u00e9e."
-            ],
             "Optimize your website my managing cache, security and performance settings.": [
                 "Optimisez votre site web en g\u00e9rant le cache, la s\u00e9curit\u00e9 et les param\u00e8tres de performance."
             ],
@@ -421,14 +463,14 @@
             "Manage common settings for your website": [
                 "G\u00e9rer les param\u00e8tres communs de votre site web"
             ],
-            "Features": [
-                "Fonctionnalit\u00e9s"
-            ],
             "Customize the available features as you manage your website.": [
                 "Personnalisez les fonctionnalit\u00e9s disponibles lorsque vous g\u00e9rez votre site Web."
             ],
             "A staging site is a duplicate of your live site, offering a secure environment to experiment, test updates, and deploy when ready.": [
                 "Un site de test est une copie de votre site en ligne, offrant un environnement s\u00e9curis\u00e9 pour exp\u00e9rimenter, tester les mises \u00e0 jour et d\u00e9ployer une fois pr\u00eat."
+            ],
+            "The performance feature provides improvements to loads faster for visitors including cache settings.": [
+                "La fonctionnalit\u00e9 de performance permet d\u2019am\u00e9liorer les chargements plus rapides pour les visiteurs, y compris les param\u00e8tres de cache."
             ],
             "Performance Enabled": [
                 "Performances activ\u00e9es"
@@ -442,8 +484,8 @@
             "Performance will no longer display.": [
                 "Les performances ne s\u2019afficheront plus."
             ],
-            "The performance feature provides improvements to loads faster for visitors including cache settings.": [
-                "La fonctionnalit\u00e9 de performance permet d\u2019am\u00e9liorer les chargements plus rapides pour les visiteurs, y compris les param\u00e8tres de cache."
+            "The staging feature provides a way to copy a site to test new updates, features or content.": [
+                "La fonctionnalit\u00e9 de mise en sc\u00e8ne permet de copier un site pour tester de nouvelles mises \u00e0 jour, fonctionnalit\u00e9s ou contenus."
             ],
             "Staging Enabled": [
                 "Mise en sc\u00e8ne activ\u00e9e"
@@ -456,9 +498,6 @@
             ],
             "Staging will no longer display.": [
                 "La mise en sc\u00e8ne ne s\u2019affichera plus."
-            ],
-            "The staging feature provides a way to copy a site to test new updates, features or content.": [
-                "La fonctionnalit\u00e9 de mise en sc\u00e8ne permet de copier un site pour tester de nouvelles mises \u00e0 jour, fonctionnalit\u00e9s ou contenus."
             ],
             "WonderBlocks Enabled": [
                 "WonderBlocks activ\u00e9"

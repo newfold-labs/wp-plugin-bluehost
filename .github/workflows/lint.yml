@@ -31,7 +31,7 @@ concurrency:
 permissions: {}
 
 env:
-  PHP_VERSION: '7.4' # Set a default PHP version for the job.
+  PHP_VERSION: '8.3' # Set a default PHP version for the job. Must be >= 8.2 because composer install runs PHP-Scoper; phpcs compatibility rules still target the plugin's minimum PHP via testVersion in phpcs.xml.
 
 jobs:
   phpcs:
@@ -46,7 +46,6 @@ jobs:
         with:
           persist-credentials: false
 
-      # User PHP 7.4 here for compatibility with the WordPress codesniffer rules.
       - name: Setup PHP
         uses: shivammathur/setup-php@f3e473d116dcccaddc5834248c87452386958240 # v2.37.2
         with:

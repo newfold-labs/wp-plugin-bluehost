@@ -29,7 +29,7 @@ Main route names and targets:
 - `/marketplace` → Marketplace (with optional subnav from the marketplace module)
 - `/store/sales_discounts` → Store sales/promotions
 - `/help` → Help (can open embedded help when enabled)
-- `/admin` → Admin
+- `/admin` → Admin (hidden feature-flag toggles; see [Feature toggles on the Admin page](#feature-toggles-on-the-admin-page))
 
 Redirects (full-page):
 
@@ -44,6 +44,19 @@ Routes can have a `condition` so they only render when allowed; the Help route m
 
 - **App store** (`src/app/data/store.js`): Fetches `/bluehost/v1/settings` and merges result with `window.NewfoldFeatures` (features, togglable). Exposes `store`, `setStore`, `booted`, `hasError` via context.
 - **Runtime:** `window.NewfoldRuntime` (and related) is set by the PHP side and provides admin URL, API URL builder, capabilities, etc. The app uses it for links and API calls (e.g. `NewfoldRuntime.createApiUrl('/bluehost/v1/settings')`).
+
+## Feature toggles on the Admin page
+
+The hidden Admin route (`#/admin`) exposes toggles for registered Newfold feature flags. Toggles are rendered only when the flag exists in `store.features` (sourced from `window.NewfoldFeatures` at boot). Use the shared **`FeatureToggle`** component (`src/app/components/FeatureToggle.js`) for new toggles; it handles API calls via `featureToggle()`, updates `store.features.{key}`, and shows success/error notifications. This should at some point be updated to use a portal so modules can add their own toggle (and tests).
+
+| Feature key | Module | Admin toggle | Purpose |
+|-------------|--------|--------------|---------|
+| `staging` | `wp-module-staging` | Staging | Enables the staging environment for testing updates before going live |
+| `performance` | `wp-module-performance` | Performance | Enables performance and caching features in the admin navigation |
+| `tenwebAdminRestrictions` | `wp-module-10web` | 10Web Admin Restrictions | Locks theme switching and plugin access on WVC editor sites |
+| `tenwebEditorSupport` | `wp-module-10web` | 10Web Editor Support | Loads PostHog session replay on the WVC editor screen |
+
+Thin wrappers in `src/app/pages/admin/` and `src/app/pages/settings/` pass localized labels, notice copy, and optional nav `selectors` into `FeatureToggle`. Disable a flag locally with WP-CLI (e.g. `wp newfold features disable staging`) or a module-specific PHP filter.
 
 ## Build output
 

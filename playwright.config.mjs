@@ -130,7 +130,8 @@ export default defineConfig({
   webServer: isPlaygroundMode
     ? {
         command: 'node .github/scripts/start-playground-server.mjs',
-        url: `${playgroundBaseURL}wp-admin/`,
+        // Playground may redirect or 502 wp-admin during auto-login; wait for the port instead.
+        port: playgroundPort,
         reuseExistingServer: !process.env.CI,
         timeout: 300 * 1000,
         stdout: 'pipe',

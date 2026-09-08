@@ -90,25 +90,25 @@ const DEFAULT_WP_CLI_TIMEOUT_MS = 120_000;
  * @returns {Promise<string|number>} Output string if available, 0 for success, or error info
  */
 async function wpCli(command, options = {}) {
-  // TODO
-  // bail early if no cli access (live site or not wp-env setup)
+  // TODO: bail early if no cli access (live site or not wp-env setup)
 
-  const { timeout, failOnNonZeroExit = true } = options;
+  const {
+    timeout = DEFAULT_WP_CLI_TIMEOUT_MS,
+    failOnNonZeroExit,
+    cwd,
+  } = options;
 
   utils.fancyLog(`🔧 WP-CLI command: ${command}`);
   try {
     const output = execSync(`npx wp-env run cli wp ${command}`, {
-      cwd: process.env.PLUGIN_DIR || process.cwd(),
-      encoding: 'utf-8', // auto convert Buffer to string
-      stdio: ['pipe', 'pipe', 'pipe'], // capture stdout/stderr
-      ...(timeout !== undefined ? { timeout } : {}),
-      ...(failOnNonZeroExit !== undefined ? { failOnNonZeroExit } : {}),
+      cwd: cwd ?? getPluginRoot(),
+      encoding: 'utf-8',
+      stdio: ['pipe', 'pipe', 'pipe'],
+      ...(timeout > 0 ? { timeout } : {}),
     });
 
     return output.trim() ? output.trim() : 0;
   } catch (err) {
-    // err.status = exit code
-    // err.stdout / err.stderr may have useful info
     if (failOnNonZeroExit) {
       const detail = err.stderr ? err.stderr.toString().trim() : err.message;
       throw new Error(`wp ${command}: ${detail}`);

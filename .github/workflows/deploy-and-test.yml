@@ -1,5 +1,8 @@
 name: Deploy Plugin to Server
 
+# Deploys to the shared hosting environment via SSH and runs Playwright remote smoke tests.
+# Intentionally does NOT run on pull_request — it needs production secrets, deploys real
+# infrastructure, and uses vars.SITE_URL. PR remote smoke uses Playground (@env-any) instead.
 on:
   push:
     branches:

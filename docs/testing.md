@@ -194,7 +194,8 @@ The config uses **Chrome** (Chromium), **headless: true**, and in non-CI / non-r
 | Workflow file | When it runs | What it does |
 |---------------|--------------|--------------|
 | **`.github/workflows/playwright-tests.yml`** | Push to `main`/`develop`, PR (opened/sync/reopened/ready), or manual | **Build** job: composer, npm, build, rsync dist, upload artifact. **Test** job: download artifact, create `.wp-env.override.json` pointing plugin to dist, `npx wp-env start`, `npx playwright install --with-deps chromium`, `npx playwright test --reporter=line`. Uploads **playwright-report** and debug.log on failure. |
-| **`.github/workflows/playwright-matrix.yml`** | PR or manual (skips for most Dependabot PRs) | Matrix over PHP 7.4–8.4 and WordPress 6.7/6.8/6.9. For each cell: build dist, create override with that core/phpVersion, wp-env start, run Playwright. Artifacts named e.g. `playwright-report-wp6.9-php8.3`. |
+| **`.github/workflows/playwright-matrix.yml`** | PR or manual (skips for most Dependabot PRs) | Matrix over PHP 7.4–8.4 and WordPress 6.9/7.0/7.1. For each cell: build dist, create override with that core/phpVersion, wp-env start, run Playwright. Artifacts named e.g. `playwright-report-wp6.9-php8.3`. |
+| **`.github/workflows/playground-preview.yml`** | PR (non-fork) | Builds plugin, publishes preview ZIP to GitHub Pages, comments a Playground link. **`playwright-env-any`** job (same workflow) starts a local Playground server from that ZIP and runs **`@env-any`** tests against it. |
 | **`.github/workflows/playwright-tests-beta.yml`** | Weekly (Mondays 6:00 UTC) or manual | Fetches WordPress **beta** from api.wordpress.org, configures wp-env with beta core, builds plugin, runs Playwright. |
 
 See [workflows.md](workflows.md) for full workflow descriptions.
@@ -247,11 +248,21 @@ See [workflows.md](workflows.md) for the full list of workflows.
 
 **`.github/workflows/deploy-and-test.yml`** deploys the plugin to **bluehost-shared**, then runs Playwright against the live site:
 
+- **Triggers:** push to **`main`** or **workflow_dispatch** only — not pull requests (SSH deploy + production secrets).
 - Sets **`BASE_URL`** from `vars.SITE_URL` (normalized in the workflow).
 - Runs `npx playwright test` — config filters to **`@env-any`** and **`@env-remote`** only.
 - Credentials: **`WP_ADMIN_USERNAME`** / **`WP_ADMIN_PASSWORD`** from GitHub secrets.
 
 This replaces the legacy Cypress help spec for post-deploy smoke testing.
+
+### PR remote smoke (Playground `@env-any`)
+
+On pull requests, **`.github/workflows/playground-preview.yml`** includes a **`playwright-env-any`** job that runs after the preview ZIP is published:
+
+1. **`playground-preview`** builds the plugin and uploads `bluehost-pr-<PR#>.zip` to GitHub Pages.
+2. **`playwright-env-any`** uses **`@wp-playground/cli`** to start a local Playground server, installs the ZIP from the Pages URL (same source as the browser Playground link), sets **`BASE_URL`** to the CLI `serverUrl`, and runs `npx playwright test --grep @env-any --project newfold-labs/wp-plugin-bluehost`.
+
+The browser Playground URL (`playground.wordpress.net/#…`) is for manual QA; CI uses the CLI server because Playwright needs a normal HTTP origin.
 
 ---
 
@@ -260,6 +271,7 @@ This replaces the legacy Cypress help spec for post-deploy smoke testing.
 | Test type | Config / entry | Run locally | CI workflow(s) |
 |-----------|----------------|-------------|----------------|
 | **Playwright E2E** | `playwright.config.mjs`, `tests/playwright/specs/` | `npm run test:e2e` or `npx playwright test` | `playwright-tests.yml`, `playwright-matrix.yml`, `playwright-tests-beta.yml` |
-| **Playwright (deploy smoke)** | `@env-any` / `@env-remote` tagged specs | `BASE_URL=https://… npx playwright test` | `deploy-and-test.yml` |
+| **Playwright (deploy smoke)** | `@env-any` / `@env-remote` tagged specs | `BASE_URL=https://… npx playwright test` | `deploy-and-test.yml` (main only) |
+| **Playwright (PR Playground smoke)** | `@env-any` tagged specs | `node .github/scripts/run-playground-env-any-tests.mjs` with `PLAYGROUND_PLUGIN_ZIP_URL` | `playground-preview.yml` (`playwright-env-any` job) |
 | **PHPUnit (unit)** | `phpunit.xml`, `tests/phpunit/` | `vendor/bin/phpunit` (with or without `BLUEHOST_PHPUNIT_MINIMAL=1`) | `codecoverage-main.yml` (reusable) |
 | **WPUnit (Codeception)** | `tests/wpunit.suite.yml`, `tests/wpunit/` | Codeception/WP test env (as in reusable workflow) | `codecoverage-main.yml` (reusable) |

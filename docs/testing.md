@@ -262,7 +262,7 @@ On pull requests, **`.github/workflows/playground-preview.yml`** includes a **`p
 1. **`playground-preview`** builds the plugin and uploads `bluehost-pr-<PR#>.zip` to GitHub Pages.
 2. **`playwright-env-any`** downloads that ZIP, starts **`@wp-playground/cli`** in a **child process** (Playwright `webServer`), mounts the unzipped files, sets **`BASE_URL`** to the CLI `serverUrl`, and runs `npx playwright test --grep @env-any --project newfold-labs/wp-plugin-bluehost`.
 
-The browser Playground URL (`playground.wordpress.net/#…`) is for manual QA; CI uses the CLI server in a separate process because Playwright needs a normal HTTP origin and the server must keep its own event loop.
+The browser Playground URL (`playground.wordpress.net/#…`) is for manual QA; CI uses the CLI server in a separate process because Playwright needs a normal HTTP origin and the server must keep its own event loop. Playground's `login: true` blueprint flag auto-authenticates admin requests, so tests skip the `wp-login.php` credential flow (`PLAYGROUND_AUTO_LOGIN` / `PLAYGROUND_PLUGIN_DIR`).
 
 ---
 

@@ -88,6 +88,9 @@ const playgroundBaseURL = `http://127.0.0.1:${playgroundPort}/`;
 if (isPlaygroundMode && !process.env.BASE_URL) {
   process.env.BASE_URL = playgroundBaseURL;
 }
+if (isPlaygroundMode) {
+  process.env.PLAYGROUND_AUTO_LOGIN = '1';
+}
 
 const resolvedBaseURL = normalizePlaywrightBaseURL(
   process.env.BASE_URL,
@@ -127,7 +130,7 @@ export default defineConfig({
   webServer: isPlaygroundMode
     ? {
         command: 'node .github/scripts/start-playground-server.mjs',
-        url: `${playgroundBaseURL}wp-login.php`,
+        url: `${playgroundBaseURL}wp-admin/`,
         reuseExistingServer: !process.env.CI,
         timeout: 300 * 1000,
         stdout: 'pipe',

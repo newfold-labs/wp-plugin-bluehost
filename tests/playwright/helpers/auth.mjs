@@ -10,6 +10,24 @@ import { Admin, PageUtils } from '@wordpress/e2e-test-utils-playwright';
 import { readFileSync } from 'fs';
 
 /**
+ * WordPress Playground (blueprint login: true) auto-authenticates on admin requests.
+ * Skip wp-login.php credential flows in that mode.
+ */
+function usesPlaygroundAutoLogin() {
+  return (
+    process.env.PLAYGROUND_AUTO_LOGIN === '1' ||
+    Boolean(process.env.PLAYGROUND_PLUGIN_DIR)
+  );
+}
+
+/**
+ * @param {import('@playwright/test').Page} page
+ */
+async function waitForLoggedInAdmin(page) {
+  await page.waitForSelector('#wpadminbar, body.logged-in', { timeout: 30000 });
+}
+
+/**
  * Check if user is already logged in to WordPress
  * 
  * @param {import('@playwright/test').Page} page - Playwright page object
@@ -68,6 +86,12 @@ async function loginToWordPress(page, options = {}) {
 
   // Check if already logged in (unless forced)
   if (!force && await isLoggedIn(page)) {
+    return;
+  }
+
+  if (usesPlaygroundAutoLogin()) {
+    await page.goto('wp-admin/', { waitUntil: 'domcontentloaded' });
+    await waitForLoggedInAdmin(page);
     return;
   }
 
@@ -134,6 +158,13 @@ async function createWordPressUtils(page, options = {}) {
  */
 async function navigateToAdminPage(page, adminPage, options = {}) {
   const { forceLogin = false } = options;
+
+  if (usesPlaygroundAutoLogin()) {
+    await page.goto(`wp-admin/${adminPage}`, { waitUntil: 'domcontentloaded' });
+    await waitForLoggedInAdmin(page);
+    const { admin, pageUtils } = await createWordPressUtils(page, { autoLogin: false });
+    return { admin, pageUtils };
+  }
   
   // Check if we need to login first
   if (!await isLoggedIn(page) || forceLogin) {

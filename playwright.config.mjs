@@ -85,8 +85,14 @@ const resolvedBaseURL = normalizePlaywrightBaseURL(
   `http://localhost:${_port}`
 );
 
+/** When BASE_URL is set, run against that site (deploy / remote smoke) instead of wp-env. */
+const isRemoteMode = Boolean(process.env.BASE_URL);
+
 export default defineConfig({
-  globalSetup: process.env.BASE_URL ? undefined : resolve(__dirname, './tests/playwright/global-setup.js'),
+  globalSetup: isRemoteMode ? undefined : resolve(__dirname, './tests/playwright/global-setup.js'),
+  // Remote: only env-tagged smoke tests. Local: full suite except @env-remote (prod-only).
+  grep: isRemoteMode ? /@env-any|@env-remote/ : undefined,
+  grepInvert: isRemoteMode ? undefined : /@env-remote/,
   projects: projects,
   testIgnore: [
     // Don't ignore anything - we want to include gitignored files that playwright needs to find
@@ -109,7 +115,7 @@ export default defineConfig({
     screenshot: 'only-on-failure',
     video: 'retain-on-failure',
   },
-  webServer: process.env.CI ? undefined : {
+  webServer: (process.env.CI || isRemoteMode) ? undefined : {
     command: 'wp-env start',
     port: _port, // Use port from wp-env.json
     reuseExistingServer: true,
@@ -118,17 +124,15 @@ export default defineConfig({
   timeout: 30 * 1000, // 30 seconds
   expect: {
     timeout: 10 * 1000, // 10 seconds
-  },
-  retries: process.env.CI ? 0 : 1, // 0 retries on CI, 1 for local
-  workers: process.env.CI ? 1 : 1, // Use default (number of CPU cores) for local, 1 for CI
-  outputDir: 'tests/playwright/test-results',
-  expect: {
     toHaveScreenshot: {
       maxDiffPixels: 100,
       pathTemplate: '{testDir}/screenshots{/projectName}/{testFilePath}/{arg}{ext}',
       fullPage: true,
     },
   },
+  retries: process.env.CI ? 0 : 1, // 0 retries on CI, 1 for local
+  workers: process.env.CI ? 1 : 1, // Use default (number of CPU cores) for local, 1 for CI
+  outputDir: 'tests/playwright/test-results',
   reporter: [
     ['list', { printSteps: true }],
     // ['json', {  outputFile: 'tests/playwright/reports/test-results.json' }],

@@ -5,7 +5,7 @@
  * Env:
  *   PLAYGROUND_PLUGIN_DIR — absolute path to unzipped plugin files
  *   PLAYGROUND_PORT — optional (default 9400)
- *   PLAYGROUND_READY_FILE — path to write when HTTP boot completes (parent polls this)
+ *   PLAYGROUND_READY_FILE — path to write when boot completes (parent polls this)
  */
 import { runCLI } from '@wp-playground/cli';
 import { existsSync, unlinkSync, writeFileSync } from 'node:fs';
@@ -69,28 +69,9 @@ const cli = await runCLI({
   },
 });
 
+// runCLI resolves after Playground prints "Ready!" — do not HTTP-poll from this
+// process; same-thread fetch can starve the server event loop and deadlock boot.
 const baseURL = cli.serverUrl.endsWith('/') ? cli.serverUrl : `${cli.serverUrl}/`;
-const adminUrl = `${baseURL}wp-admin/`;
-const bootDeadline = Date.now() + 180_000;
-let httpReady = false;
-
-while (Date.now() < bootDeadline) {
-  try {
-    const response = await fetch(adminUrl, { redirect: 'follow' });
-    if (response.status !== 502) {
-      httpReady = true;
-      break;
-    }
-  } catch {
-    // Playground still booting in this process
-  }
-  await new Promise((resolve) => setTimeout(resolve, 2000));
-}
-
-if (!httpReady) {
-  console.error(`Playground HTTP not ready at ${adminUrl} within 180s`);
-  process.exit(1);
-}
 
 writeFileSync(readyFile, baseURL, 'utf8');
 console.log(`Playground ready at ${baseURL}`);

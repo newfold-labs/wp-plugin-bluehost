@@ -340,10 +340,23 @@ jobs:
         timeout-minutes: 5
         run: npx playwright install chromium
 
+      - name: Download PR preview plugin build
+        env:
+          ZIP_URL: ${{ needs.playground-preview.outputs.zip_url }}
+        run: |
+          set -euo pipefail
+          PLUGIN_DIR="${RUNNER_TEMP}/bluehost-preview-plugin"
+          rm -rf "$PLUGIN_DIR"
+          mkdir -p "$PLUGIN_DIR"
+          curl -fsSL "$ZIP_URL" -o "${RUNNER_TEMP}/preview.zip"
+          unzip -q "${RUNNER_TEMP}/preview.zip" -d "$PLUGIN_DIR"
+          echo "PLAYGROUND_PLUGIN_DIR=$PLUGIN_DIR" >> "$GITHUB_ENV"
+
       - name: Run @env-any tests against Playground server
         env:
-          PLAYGROUND_PLUGIN_ZIP_URL: ${{ needs.playground-preview.outputs.zip_url }}
-        run: node .github/scripts/run-playground-env-any-tests.mjs
+          PLAYGROUND_PLUGIN_DIR: ${{ env.PLAYGROUND_PLUGIN_DIR }}
+          CI: true
+        run: npx playwright test --grep @env-any --project newfold-labs/wp-plugin-bluehost --reporter=line
 
       - name: Store Playwright test results
         if: always()

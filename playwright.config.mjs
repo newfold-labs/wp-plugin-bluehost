@@ -80,6 +80,15 @@ function normalizePlaywrightBaseURL(raw, fallback) {
   }
 }
 
+/** CI Playground job: mount the PR preview zip via @wp-playground/cli in a child process. */
+const isPlaygroundMode = Boolean(process.env.PLAYGROUND_PLUGIN_DIR);
+const playgroundPort = Number(process.env.PLAYGROUND_PORT || 9400);
+const playgroundBaseURL = `http://127.0.0.1:${playgroundPort}/`;
+
+if (isPlaygroundMode && !process.env.BASE_URL) {
+  process.env.BASE_URL = playgroundBaseURL;
+}
+
 const resolvedBaseURL = normalizePlaywrightBaseURL(
   process.env.BASE_URL,
   `http://localhost:${_port}`
@@ -115,12 +124,23 @@ export default defineConfig({
     screenshot: 'only-on-failure',
     video: 'retain-on-failure',
   },
-  webServer: (process.env.CI || isRemoteMode) ? undefined : {
-    command: 'wp-env start',
-    port: _port, // Use port from wp-env.json
-    reuseExistingServer: true,
-    timeout: 120 * 1000, // 2 minutes
-  },
+  webServer: isPlaygroundMode
+    ? {
+        command: 'node .github/scripts/start-playground-server.mjs',
+        url: `${playgroundBaseURL}wp-login.php`,
+        reuseExistingServer: !process.env.CI,
+        timeout: 300 * 1000,
+        stdout: 'pipe',
+        stderr: 'pipe',
+      }
+    : (process.env.CI || isRemoteMode)
+      ? undefined
+      : {
+          command: 'wp-env start',
+          port: _port, // Use port from wp-env.json
+          reuseExistingServer: true,
+          timeout: 120 * 1000, // 2 minutes
+        },
   timeout: 30 * 1000, // 30 seconds
   expect: {
     timeout: 10 * 1000, // 10 seconds

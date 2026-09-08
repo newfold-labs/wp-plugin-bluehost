@@ -260,9 +260,9 @@ This replaces the legacy Cypress help spec for post-deploy smoke testing.
 On pull requests, **`.github/workflows/playground-preview.yml`** includes a **`playwright-env-any`** job that runs after the preview ZIP is published:
 
 1. **`playground-preview`** builds the plugin and uploads `bluehost-pr-<PR#>.zip` to GitHub Pages.
-2. **`playwright-env-any`** uses **`@wp-playground/cli`** to start a local Playground server, installs the ZIP from the Pages URL (same source as the browser Playground link), sets **`BASE_URL`** to the CLI `serverUrl`, and runs `npx playwright test --grep @env-any --project newfold-labs/wp-plugin-bluehost`.
+2. **`playwright-env-any`** downloads that ZIP, starts **`@wp-playground/cli`** in a **child process** (Playwright `webServer`), mounts the unzipped files, sets **`BASE_URL`** to the CLI `serverUrl`, and runs `npx playwright test --grep @env-any --project newfold-labs/wp-plugin-bluehost`.
 
-The browser Playground URL (`playground.wordpress.net/#…`) is for manual QA; CI uses the CLI server because Playwright needs a normal HTTP origin.
+The browser Playground URL (`playground.wordpress.net/#…`) is for manual QA; CI uses the CLI server in a separate process because Playwright needs a normal HTTP origin and the server must keep its own event loop.
 
 ---
 
@@ -272,6 +272,6 @@ The browser Playground URL (`playground.wordpress.net/#…`) is for manual QA; C
 |-----------|----------------|-------------|----------------|
 | **Playwright E2E** | `playwright.config.mjs`, `tests/playwright/specs/` | `npm run test:e2e` or `npx playwright test` | `playwright-tests.yml`, `playwright-matrix.yml`, `playwright-tests-beta.yml` |
 | **Playwright (deploy smoke)** | `@env-any` / `@env-remote` tagged specs | `BASE_URL=https://… npx playwright test` | `deploy-and-test.yml` (main only) |
-| **Playwright (PR Playground smoke)** | `@env-any` tagged specs | `node .github/scripts/run-playground-env-any-tests.mjs` with `PLAYGROUND_PLUGIN_ZIP_URL` | `playground-preview.yml` (`playwright-env-any` job) |
+| **Playwright (PR Playground smoke)** | `@env-any` tagged specs | `PLAYGROUND_PLUGIN_DIR=/path/to/unzipped/plugin npx playwright test --grep @env-any` | `playground-preview.yml` (`playwright-env-any` job) |
 | **PHPUnit (unit)** | `phpunit.xml`, `tests/phpunit/` | `vendor/bin/phpunit` (with or without `BLUEHOST_PHPUNIT_MINIMAL=1`) | `codecoverage-main.yml` (reusable) |
 | **WPUnit (Codeception)** | `tests/wpunit.suite.yml`, `tests/wpunit/` | Codeception/WP test env (as in reusable workflow) | `codecoverage-main.yml` (reusable) |

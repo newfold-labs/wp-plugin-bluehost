@@ -59,6 +59,21 @@ const cli = await runCLI({
 });
 
 const baseURL = cli.serverUrl.endsWith('/') ? cli.serverUrl : `${cli.serverUrl}/`;
+
+const adminUrl = `${baseURL}wp-admin/`;
+const bootDeadline = Date.now() + 180_000;
+while (Date.now() < bootDeadline) {
+  try {
+    const response = await fetch(adminUrl, { redirect: 'follow' });
+    if (response.status !== 502) {
+      break;
+    }
+  } catch {
+    // Playground still booting
+  }
+  await new Promise((resolve) => setTimeout(resolve, 2000));
+}
+
 console.log(`Playground ready at ${baseURL}`);
 
 async function shutdown() {

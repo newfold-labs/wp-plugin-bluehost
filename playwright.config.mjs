@@ -101,7 +101,11 @@ const resolvedBaseURL = normalizePlaywrightBaseURL(
 const isRemoteMode = Boolean(process.env.BASE_URL);
 
 export default defineConfig({
-  globalSetup: isRemoteMode ? undefined : resolve(__dirname, './tests/playwright/global-setup.js'),
+  globalSetup: isPlaygroundMode
+    ? resolve(__dirname, './tests/playwright/playground-global-setup.js')
+    : isRemoteMode
+      ? undefined
+      : resolve(__dirname, './tests/playwright/global-setup.js'),
   // Remote: only env-tagged smoke tests. Local: full suite except @env-remote (prod-only).
   grep: isRemoteMode ? /@env-any|@env-remote/ : undefined,
   grepInvert: isRemoteMode ? undefined : /@env-remote/,

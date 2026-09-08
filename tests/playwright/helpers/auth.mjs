@@ -24,7 +24,16 @@ function usesPlaygroundAutoLogin() {
  * @param {import('@playwright/test').Page} page
  */
 async function waitForLoggedInAdmin(page) {
-  await page.waitForSelector('#wpadminbar, body.logged-in', { timeout: 30000 });
+  const timeout = usesPlaygroundAutoLogin() ? 60_000 : 30_000;
+  try {
+    await page.waitForSelector('#wpadminbar, body.logged-in', { timeout });
+  } catch (error) {
+    if (!usesPlaygroundAutoLogin()) {
+      throw error;
+    }
+    await page.goto('wp-admin/', { waitUntil: 'domcontentloaded' });
+    await page.waitForSelector('#wpadminbar, body.logged-in', { timeout: 30_000 });
+  }
 }
 
 /**

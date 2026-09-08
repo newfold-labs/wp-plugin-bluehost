@@ -1,25 +1,23 @@
+import { existsSync } from 'node:fs';
+
 /**
- * Wait for WordPress Playground HTTP responses after the TCP port is open.
- * Playwright webServer uses port readiness; Playground can still return 502 until boot finishes.
+ * Wait for the Playground webServer child to finish booting.
+ * HTTP checks must run in the child process — parent fetch to 127.0.0.1 fails in CI.
  */
-async function waitForPlaygroundReady(baseURL, timeoutMs = 180_000) {
-  const adminUrl = new URL('wp-admin/', baseURL).href;
+async function waitForPlaygroundReadyFile(readyFile, timeoutMs = 180_000) {
   const deadline = Date.now() + timeoutMs;
 
   while (Date.now() < deadline) {
-    try {
-      const response = await fetch(adminUrl, { redirect: 'follow' });
-      if (response.status !== 502) {
-        console.log(`Playground HTTP ready: ${adminUrl} (${response.status})`);
-        return;
-      }
-    } catch (error) {
-      console.log(`Waiting for Playground HTTP: ${error.message}`);
+    if (existsSync(readyFile)) {
+      console.log(`Playground ready file found: ${readyFile}`);
+      return;
     }
     await new Promise((resolve) => setTimeout(resolve, 2000));
   }
 
-  throw new Error(`Playground did not become HTTP-ready at ${adminUrl}`);
+  throw new Error(
+    `Playground did not write ready file at ${readyFile} within ${timeoutMs}ms`
+  );
 }
 
 export default async function globalSetup() {
@@ -27,10 +25,10 @@ export default async function globalSetup() {
     return;
   }
 
-  const baseURL = process.env.BASE_URL;
-  if (!baseURL) {
-    throw new Error('BASE_URL is required for Playground global setup');
+  const readyFile = process.env.PLAYGROUND_READY_FILE;
+  if (!readyFile) {
+    throw new Error('PLAYGROUND_READY_FILE is required for Playground global setup');
   }
 
-  await waitForPlaygroundReady(baseURL);
+  await waitForPlaygroundReadyFile(readyFile);
 }

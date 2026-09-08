@@ -4,8 +4,9 @@
 */
 import { defineConfig, devices } from '@playwright/test';
 import { existsSync, readFileSync } from 'fs';
+import { tmpdir } from 'os';
 import { fileURLToPath } from 'url';
-import { dirname, resolve } from 'path';
+import { dirname, join, resolve } from 'path';
 import { writeProjectsFile } from './.github/scripts/generate-playwright-projects.mjs';
 
 // ES module equivalent of __dirname
@@ -90,6 +91,12 @@ if (isPlaygroundMode && !process.env.BASE_URL) {
 }
 if (isPlaygroundMode) {
   process.env.PLAYGROUND_AUTO_LOGIN = '1';
+  if (!process.env.PLAYGROUND_READY_FILE) {
+    process.env.PLAYGROUND_READY_FILE = join(
+      process.env.RUNNER_TEMP || tmpdir(),
+      'playground-http-ready'
+    );
+  }
 }
 
 const resolvedBaseURL = normalizePlaywrightBaseURL(

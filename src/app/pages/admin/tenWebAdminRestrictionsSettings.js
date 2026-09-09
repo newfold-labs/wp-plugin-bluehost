@@ -1,7 +1,13 @@
 import { __ } from '@wordpress/i18n';
+import { NewfoldRuntime } from '@newfold/wp-module-runtime';
 import FeatureToggle from '../../components/FeatureToggle';
 
-const TenWebAdminRestrictionsSettings = () => (
+const TenWebAdminRestrictionsSettings = () => {
+	if ( ! NewfoldRuntime?.wordpress?.isWvcTheme ) {
+		return null;
+	}
+
+	return (
 	<FeatureToggle
 		featureKey="tenwebAdminRestrictions"
 		toggleId="tenweb-admin-restrictions-toggle"
@@ -29,6 +35,7 @@ const TenWebAdminRestrictionsSettings = () => (
 			),
 		} }
 	/>
-);
+	);
+};
 
 export default TenWebAdminRestrictionsSettings;

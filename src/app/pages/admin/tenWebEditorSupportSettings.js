@@ -1,7 +1,13 @@
 import { __ } from '@wordpress/i18n';
+import { NewfoldRuntime } from '@newfold/wp-module-runtime';
 import FeatureToggle from '../../components/FeatureToggle';
 
-const TenWebEditorSupportSettings = () => (
+const TenWebEditorSupportSettings = () => {
+	if ( ! NewfoldRuntime?.wordpress?.isWvcTheme ) {
+		return null;
+	}
+
+	return (
 	<FeatureToggle
 		featureKey="tenwebEditorSupport"
 		toggleId="tenweb-editor-support-toggle"
@@ -29,6 +35,7 @@ const TenWebEditorSupportSettings = () => (
 			),
 		} }
 	/>
-);
+	);
+};
 
 export default TenWebEditorSupportSettings;

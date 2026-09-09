@@ -60,16 +60,24 @@ test.describe( 'Admin Feature Toggles', () => {
 	test( 'Feature toggles render when features are registered', async ( {
 		page,
 	} ) => {
-		const features = await page.evaluate(
-			() => window.NewfoldFeatures?.features ?? {}
-		);
+		const { features, isWvcTheme } = await page.evaluate( () => ( {
+			features: window.NewfoldFeatures?.features ?? {},
+			isWvcTheme: Boolean( window.NewfoldRuntime?.wordpress?.isWvcTheme ),
+		} ) );
+
+		const tenwebFeatures = new Set( [
+			'tenwebAdminRestrictions',
+			'tenwebEditorSupport',
+		] );
 
 		for ( const [ featureKey, selector ] of Object.entries( TOGGLES ) ) {
-			await expectToggleVisibility(
-				page,
-				selector,
-				typeof features[ featureKey ] !== 'undefined'
-			);
+			const isRegistered =
+				typeof features[ featureKey ] !== 'undefined';
+			const shouldRender =
+				isRegistered &&
+				( ! tenwebFeatures.has( featureKey ) || isWvcTheme );
+
+			await expectToggleVisibility( page, selector, shouldRender );
 		}
 	} );
 

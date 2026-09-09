@@ -190,6 +190,49 @@ async function setOption(option, value) {
   return await wpCli(command);
 }
 
+const WVC_THEME_SLUG = 'wvc-theme';
+const DEFAULT_TEST_THEME_SLUG = 'twentytwentyfive';
+
+/**
+ * Activate a WordPress theme via WP-CLI.
+ *
+ * @param {string} slug Theme directory slug.
+ * @returns {Promise<string|number>}
+ */
+async function activateTheme(slug) {
+  return wpCli(`theme activate ${slug}`, { failOnNonZeroExit: true });
+}
+
+/**
+ * Get the active theme slug.
+ *
+ * @returns {Promise<string>}
+ */
+async function getActiveThemeSlug() {
+  const result = await wpCli('theme list --status=active --field=name', {
+    failOnNonZeroExit: true,
+  });
+  return String(result).trim();
+}
+
+/**
+ * Activate the dummy WVC theme fixture used in Playwright tests.
+ *
+ * @returns {Promise<string|number>}
+ */
+async function activateWvcThemeFixture() {
+  return activateTheme(WVC_THEME_SLUG);
+}
+
+/**
+ * Restore the default core theme used by wp-env test runs.
+ *
+ * @returns {Promise<string|number>}
+ */
+async function restoreDefaultTheme() {
+  return activateTheme(DEFAULT_TEST_THEME_SLUG);
+}
+
 // Track if permalink structure has been set to prevent duplicate calls
 let permalinkStructureSet = false;
 
@@ -250,4 +293,10 @@ export default {
   formatWpCliResult,
   setOption,
   setPermalinkStructure,
+  activateTheme,
+  getActiveThemeSlug,
+  activateWvcThemeFixture,
+  restoreDefaultTheme,
+  WVC_THEME_SLUG,
+  DEFAULT_TEST_THEME_SLUG,
 };

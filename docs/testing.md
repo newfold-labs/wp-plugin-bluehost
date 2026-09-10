@@ -23,17 +23,18 @@ The `env-*` prefix means **how the runner selects tests** based on environment (
 
 #### Tag reference
 
-| Tag | Meaning | Default (local / wp-env) | Remote (`BASE_URL` set) |
-|-----|---------|--------------------------|-------------------------|
-| **`@env-any`** | Generic smoke: works on any WordPress install pointed to by `baseURL`. No CLI setup, non-destructive, human-verified on a real target. | Runs (with full suite) | **Runs** |
-| **`@env-remote`** | Hosted / production-only behaviour (SSO login button, live portal URLs, real hosting capabilities). | **Skipped** (`grepInvert`) | **Runs** |
-| **`@env-local`** | Needs wp-env + **WP-CLI** (or equivalent shell) to establish or reset **specific initial state** before assertions. | Runs | **Skipped** (not in remote `grep`) |
-| *(untagged)* | Same runtime as `@env-local` until tagged; prefer explicit `@env-local` on CLI-dependent blocks. | Runs | Skipped |
+| Tag | Meaning | Default (local / wp-env) | Remote (`BASE_URL` set) | CI deploy / Playground |
+|-----|---------|--------------------------|-------------------------|------------------------|
+| **`@env-any`** | Generic smoke: works on any WordPress install pointed to by `baseURL`. No CLI setup, non-destructive, human-verified on a real target. | Runs (with full suite) | **Runs** | **Runs** (`--grep @env-any`) |
+| **`@env-remote`** | Hosted / production-only behaviour (SSO login button, live portal URLs, real hosting capabilities). | **Skipped** (`grepInvert`) | Allowed by config | **Skipped** unless you pass `--grep @env-remote` locally |
+| **`@env-local`** | Needs wp-env + **WP-CLI** (or equivalent shell) to establish or reset **specific initial state** before assertions. | Runs | **Skipped** (not in remote `grep`) | Skipped |
+| *(untagged)* | Same runtime as `@env-local` until tagged; prefer explicit `@env-local` on CLI-dependent blocks. | Runs | Skipped | Skipped |
 
 **Config behavior** (`playwright.config.mjs`):
 
 - **`BASE_URL` unset:** full local suite, excluding `@env-remote`.
-- **`BASE_URL` set:** only `@env-any` and `@env-remote`; no `globalSetup`, no `webServer`.
+- **`BASE_URL` set:** config `grep` allows `@env-any` and `@env-remote`; no `globalSetup`, no `webServer`.
+- **CI Playground and `deploy-and-test.yml`:** pass `--grep @env-any --project newfold-labs/wp-plugin-bluehost`, so only plugin `@env-any` tests run. Run `@env-remote` locally with `BASE_URL=… npx playwright test --grep @env-remote`.
 
 #### What is a poor fit for live / `@env-any`?
 
@@ -108,7 +109,11 @@ test.describe('Settings mutations', { tag: '@env-local' }, () => { ... });
 **Running against a custom `BASE_URL` locally:**
 
 ```bash
-BASE_URL=https://your-site.example npx playwright test --reporter=line
+# Same opt-in filter as CI deploy / Playground
+BASE_URL=https://your-site.example npx playwright test --grep @env-any --project newfold-labs/wp-plugin-bluehost --reporter=line
+
+# Hosted-only checks (SSO, portal URLs) — not run in CI deploy
+BASE_URL=https://your-site.example npx playwright test --grep @env-remote --reporter=line
 ```
 
 Set **`WP_ADMIN_USERNAME`** and **`WP_ADMIN_PASSWORD`** to valid admin credentials for that site.
@@ -122,6 +127,34 @@ Set **`WP_ADMIN_USERNAME`** and **`WP_ADMIN_PASSWORD`** to valid admin credentia
 | **`test.skip()`** | Runtime: feature not registered, plugin missing on this site |
 
 **Module repos:** use the same `@env-any` / `@env-remote` / `@env-local` convention. Tag only after verifying behaviour in the appropriate mode.
+
+#### Plugin spec tag inventory
+
+| Spec | `@env-any` | `@env-remote` | Untagged / `@env-local` (wp-env only) |
+|------|------------|---------------|----------------------------------------|
+| `navigation.spec.js` | describe | — | — |
+| `help.spec.js` | describe (mocked network) | — | — |
+| `home.spec.js` | a11y | Quick Links (affiliate/portal URLs) | — |
+| `settings.spec.js` | a11y, Coming Soon section | — | Autoupdate / comments / other mutations |
+| `dashboard-widgets.spec.js` | a11y | Account widget links | CLI `clearCapabilities` block (`@env-local`) |
+| `admin-feature-toggles.spec.js` | render + TenWeb failure (route mock) | — | Toggle success paths (mutate live state) |
+| `hosting-login-button.spec.js` | — | SSO button | — |
+| `coming-soon-notice.spec.js` | — | — | CLI `setComingSoon` |
+| `version-check.spec.js` | — | — | `WP_VERSION` / `PHP_VERSION` from wp-env |
+| `vrt.spec.js` | — | — | Visual baselines (`describe.skip`) |
+
+Do **not** retag mutation, CLI, screenshot, or version-matrix tests as `@env-any`.
+
+#### Module tagging (one module at a time)
+
+Module specs live in their own repositories (they are only vendored here), so tagging them is a separate PR per module — not part of the plugin PR.
+
+1. Split layout/read-only checks into `test.describe(..., { tag: '@env-any' })` using `auth.navigateToAdminPage` and relative paths — no `wordpress.wpCli()`, transients, or plugin install/uninstall.
+2. Tag CLI/stateful describes `@env-local` (or leave untagged).
+3. Verify from the plugin with `npx playwright test --grep @env-any --project newfold-labs/wp-module-<name>` against Playground or `BASE_URL`.
+4. Open the PR on the **module** repository. Only then tag the next module.
+
+No module is tagged yet; the deploy and Playground jobs scope to `--project newfold-labs/wp-plugin-bluehost`, so untagged modules cannot leak into live runs.
 
 ### Global setup (WP-CLI)
 
@@ -187,7 +220,7 @@ wp-env may bundle third-party plugins (Jetpack, Yoast, etc.) that are active by 
    npx playwright test --ui
    ```
 
-The config uses **Chrome** (Chromium), **headless: true**, and in non-CI / non-remote mode can start **webServer** with `wp-env start`. In CI the workflow starts wp-env separately and runs `npx playwright test --reporter=line`. When **`BASE_URL`** is set, `webServer` and `globalSetup` are skipped and only `@env-any` / `@env-remote` tests run.
+The config uses **Chrome** (Chromium), **headless: true**, and in non-CI / non-remote mode can start **webServer** with `wp-env start`. In CI the workflow starts wp-env separately and runs `npx playwright test --reporter=line`. When **`BASE_URL`** is set, `webServer` and `globalSetup` are skipped. Config `grep` allows `@env-any` and `@env-remote`; Playground and deploy CI add `--grep @env-any`.
 
 ### Playwright CI workflows
 
@@ -250,7 +283,7 @@ See [workflows.md](workflows.md) for the full list of workflows.
 
 - **Triggers:** push to **`main`** or **workflow_dispatch** only — not pull requests (SSH deploy + production secrets).
 - Sets **`BASE_URL`** from `vars.SITE_URL` (normalized in the workflow).
-- Runs `npx playwright test` — config filters to **`@env-any`** and **`@env-remote`** only.
+- Runs `npx playwright test --grep @env-any --project newfold-labs/wp-plugin-bluehost` — the same opt-in filter as Playground. **`@env-remote`** is not included (run those locally against a hosted URL if needed).
 - Credentials: **`WP_ADMIN_USERNAME`** / **`WP_ADMIN_PASSWORD`** from GitHub secrets.
 
 This replaces the legacy Cypress help spec for post-deploy smoke testing.
@@ -264,6 +297,14 @@ On pull requests, **`.github/workflows/playground-preview.yml`** includes a **`p
 
 The browser Playground URL (`playground.wordpress.net/#…`) is for manual QA; CI uses the CLI server in a separate process because Playwright needs a normal HTTP origin and the server must keep its own event loop. Playground's `login: true` blueprint flag auto-authenticates admin requests, so tests skip the `wp-login.php` credential flow (`PLAYGROUND_AUTO_LOGIN` / `PLAYGROUND_PLUGIN_DIR`).
 
+### Module tests in a plugin env (Playground follow-up)
+
+Modules call **`newfold-labs/workflows/.github/workflows/module-plugin-test-playwright.yml`** (e.g. `brand-plugin-test-playwright.yml`). After this plugin exposes `start-playground-server.mjs`, that reusable workflow should also run:
+
+`npx playwright test --grep @env-any --project="${MODULE_REPO}" --pass-with-no-tests`
+
+against a Playground mount of the built plugin DIST. Proposed drop-in: [`docs/ci/module-plugin-test-playwright.yml`](ci/module-plugin-test-playwright.yml). Copy it to `newfold-labs/workflows` after Playground is on the plugin `main` branch used by `plugin-branch`. The job **skips** if the plugin checkout has no Playground script (older `main`). `--pass-with-no-tests` keeps the opt-in model until each module is tagged.
+
 ---
 
 ## Quick reference
@@ -271,7 +312,7 @@ The browser Playground URL (`playground.wordpress.net/#…`) is for manual QA; C
 | Test type | Config / entry | Run locally | CI workflow(s) |
 |-----------|----------------|-------------|----------------|
 | **Playwright E2E** | `playwright.config.mjs`, `tests/playwright/specs/` | `npm run test:e2e` or `npx playwright test` | `playwright-tests.yml`, `playwright-matrix.yml`, `playwright-tests-beta.yml` |
-| **Playwright (deploy smoke)** | `@env-any` / `@env-remote` tagged specs | `BASE_URL=https://… npx playwright test` | `deploy-and-test.yml` (main only) |
+| **Playwright (deploy smoke)** | `@env-any` tagged plugin specs | `BASE_URL=https://… npx playwright test --grep @env-any --project newfold-labs/wp-plugin-bluehost` | `deploy-and-test.yml` (main only) |
 | **Playwright (PR Playground smoke)** | `@env-any` tagged specs | `PLAYGROUND_PLUGIN_DIR=/path/to/unzipped/plugin npx playwright test --grep @env-any` | `playground-preview.yml` (`playwright-env-any` job) |
 | **PHPUnit (unit)** | `phpunit.xml`, `tests/phpunit/` | `vendor/bin/phpunit` (with or without `BLUEHOST_PHPUNIT_MINIMAL=1`) | `codecoverage-main.yml` (reusable) |
 | **WPUnit (Codeception)** | `tests/wpunit.suite.yml`, `tests/wpunit/` | Codeception/WP test env (as in reusable workflow) | `codecoverage-main.yml` (reusable) |

@@ -113,7 +113,8 @@ export default defineConfig({
     : isRemoteMode
       ? undefined
       : resolve(__dirname, './tests/playwright/global-setup.js'),
-  // Remote: only env-tagged smoke tests. Local: full suite except @env-remote (prod-only).
+  // Remote: allow @env-any and @env-remote. CI Playground/deploy pass --grep @env-any.
+  // Local: full suite except @env-remote (prod-only). Override with --grep @env-remote if needed.
   grep: isRemoteMode ? /@env-any|@env-remote/ : undefined,
   grepInvert: isRemoteMode ? undefined : /@env-remote/,
   projects: projects,

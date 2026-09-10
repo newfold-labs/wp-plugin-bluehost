@@ -3,6 +3,7 @@ name: Deploy Plugin to Server
 # Deploys to the shared hosting environment via SSH and runs Playwright remote smoke tests.
 # Intentionally does NOT run on pull_request — it needs production secrets, deploys real
 # infrastructure, and uses vars.SITE_URL. PR remote smoke uses Playground (@env-any) instead.
+# Post-deploy Playwright uses the same opt-in filter: --grep @env-any --project plugin.
 on:
   push:
     branches:
@@ -146,7 +147,7 @@ jobs:
         run: npx playwright install --with-deps chromium
 
       - name: Run Playwright Tests
-        run: npx playwright test --reporter=line
+        run: npx playwright test --grep @env-any --project newfold-labs/wp-plugin-bluehost --reporter=line
         env:
           CI: true
           BASE_URL: ${{ env.BASE_URL }}

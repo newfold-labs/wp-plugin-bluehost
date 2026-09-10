@@ -150,6 +150,7 @@ jobs:
         run: npx playwright test --grep @env-any --project newfold-labs/wp-plugin-bluehost --reporter=line
         env:
           CI: true
+          PLAYWRIGHT_FORCE_ASYNC_LOADER: '1'
           BASE_URL: ${{ env.BASE_URL }}
           WP_ADMIN_USERNAME: ${{ secrets.WP_ADMIN_USERNAME }}
           WP_ADMIN_PASSWORD: ${{ secrets.WP_ADMIN_PASSWORD }}

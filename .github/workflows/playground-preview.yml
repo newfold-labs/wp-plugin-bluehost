@@ -356,6 +356,7 @@ jobs:
         env:
           PLAYGROUND_PLUGIN_DIR: ${{ env.PLAYGROUND_PLUGIN_DIR }}
           CI: true
+          PLAYWRIGHT_FORCE_ASYNC_LOADER: '1'
         run: npx playwright test --grep @env-any --project newfold-labs/wp-plugin-bluehost --reporter=line
 
       - name: Store Playwright test results

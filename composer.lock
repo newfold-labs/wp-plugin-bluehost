@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "c9fafb684b0f2b6fc1cebede44514532",
+    "content-hash": "512815ce8df81d914f0bf3d3d8103fcb",
     "packages": [
         {
             "name": "colinmollenhour/credis",
@@ -3707,16 +3707,16 @@
         },
         {
             "name": "newfold-labs/wp-module-staging",
-            "version": "2.8.0",
+            "version": "2.8.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/newfold-labs/wp-module-staging.git",
-                "reference": "984575f5f265593d55d82152eb41326c8463cfc8"
+                "reference": "fb63f45f0cccefe58da83329b61b01a8efdaf6c7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/newfold-labs/wp-module-staging/zipball/984575f5f265593d55d82152eb41326c8463cfc8",
-                "reference": "984575f5f265593d55d82152eb41326c8463cfc8",
+                "url": "https://api.github.com/repos/newfold-labs/wp-module-staging/zipball/fb63f45f0cccefe58da83329b61b01a8efdaf6c7",
+                "reference": "fb63f45f0cccefe58da83329b61b01a8efdaf6c7",
                 "shasum": ""
             },
             "require": {
@@ -3727,7 +3727,7 @@
                 "johnpbloch/wordpress": "@stable",
                 "lucatume/wp-browser": "*",
                 "newfold-labs/wp-module-loader": "^1.1",
-                "newfold-labs/wp-php-standards": "^1.2.6",
+                "newfold-labs/wp-php-standards": "^2.0",
                 "phpunit/phpcov": "*",
                 "wp-cli/i18n-command": "^2.7.0"
             },
@@ -3790,7 +3790,7 @@
                 }
             ],
             "description": "Newfold module for staging functionality in brand plugins",
-            "time": "2026-08-20T08:11:13+00:00"
+            "time": "2026-09-16T09:37:32+00:00"
         },
         {
             "name": "newfold-labs/wp-module-survey",

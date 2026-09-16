@@ -57,7 +57,7 @@ test.describe( 'Admin Feature Toggles', () => {
 		await page.waitForSelector( '.wppbh-app-admin', { timeout: 10000 } );
 	} );
 
-	test( 'Feature toggles render when features are registered', async ( {
+	test( 'Feature toggles render when features are registered', { tag: '@env-any' }, async ( {
 		page,
 	} ) => {
 		const features = await page.evaluate(
@@ -117,7 +117,7 @@ test.describe( 'Admin Feature Toggles', () => {
 		} );
 	} );
 
-	test( 'TenWeb admin restrictions toggle failure path', async ( {
+	test( 'TenWeb admin restrictions toggle failure path', { tag: '@env-any' }, async ( {
 		page,
 	} ) => {
 		test.skip(

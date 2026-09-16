@@ -8,7 +8,7 @@ test.describe('Settings Page', () => {
     await auth.navigateToAdminPage(page, 'admin.php?page=bluehost#/settings/settings');
   });
 
-  test('Is Accessible', async ({ page }) => {
+  test('Is Accessible', { tag: '@env-any' }, async ({ page }) => {
     // Wait for the main app container to be rendered
     await page.waitForSelector('#wppbh-app-rendered', { timeout: 10000 });
     
@@ -19,7 +19,7 @@ test.describe('Settings Page', () => {
     await a11y.checkA11y(page, '.wppbh-app-body');
   });
 
-  test('Has Coming Soon Section', async ({ page }) => {
+  test('Has Coming Soon Section', { tag: '@env-any' }, async ({ page }) => {
     const comingSoonSection = page.locator('.wppbh-app-settings-coming-soon');
     await utils.scrollIntoView(comingSoonSection);
     await expect(comingSoonSection).toBeVisible();

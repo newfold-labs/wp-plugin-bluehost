@@ -1,7 +1,3 @@
-// Native ESM re-export for vendor modules that import this file via pathToFileURL().
-// The .js helpers are treated as ESM by the package.json in this directory.
-export { default as auth } from './auth.js';
-export { default as wordpress } from './wordpress.js';
-export { default as newfold } from './newfold.js';
-export { default as a11y } from './a11y.js';
-export { default as utils } from './utils.js';
+// Native ESM shim for vendor modules that load this file via pathToFileURL().
+// Re-exports the same named exports that index.js exposes to Playwright spec files.
+export { auth, wordpress, newfold, a11y, utils } from './index.js';

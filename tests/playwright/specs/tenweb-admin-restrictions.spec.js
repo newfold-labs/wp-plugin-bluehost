@@ -111,8 +111,8 @@ test.describe( 'TenWeb Admin Restrictions', () => {
 		await page.goto( '/wp-admin/' );
 		await page.waitForSelector( '#wpadminbar', { timeout: 10000 } );
 
-		const status = await wordpress.wpCli( 'plugin is-active hello-dolly' );
-		expect( String( status ).trim() ).not.toBe( '1' );
+		const status = await wordpress.getPluginStatus( 'hello-dolly' );
+		expect( status ).toBe( 'inactive' );
 	} );
 
 	test( 'disabling tenwebAdminRestrictions restores plugins page access', async ( {

@@ -4,6 +4,7 @@ import WonderBlocksSettings from '../settings/wonderBlocksSettings';
 import StagingFeatureSettings from '../settings/stagingFeatureSettings';
 import PerformanceFeatureSettings from '../settings/performanceFeatureSettings';
 import TenWebAdminRestrictionsSettings from './tenWebAdminRestrictionsSettings';
+import TenWebDomainSearchSettings from './tenWebDomainSearchSettings';
 import TenWebEditorSupportSettings from './tenWebEditorSupportSettings';
 import { Container, Page } from '@newfold/ui-component-library';
 
@@ -39,6 +40,7 @@ const Admin = () => {
 							<PerformanceFeatureSettings />
 							<TenWebAdminRestrictionsSettings />
 							<TenWebEditorSupportSettings />
+							<TenWebDomainSearchSettings />
 						</div>
 					</Container.SettingsField>
 				</Container.Block>

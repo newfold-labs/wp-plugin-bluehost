@@ -30,6 +30,7 @@ const testToggleSuccessPath = async (
 	{ selector, enabledTitle, disabledTitle, restoreTitleFragment }
 ) => {
 	const toggle = page.locator( selector );
+	await expect( toggle ).toBeVisible( { timeout: 15000 } );
 	await utils.scrollIntoView( toggle );
 	const initial = await toggle.getAttribute( 'aria-checked' );
 
@@ -47,14 +48,21 @@ const testToggleSuccessPath = async (
 	await utils.waitForNotification( page, restoreTitleFragment );
 };
 
+const navigateToAdminFeatureToggles = async ( page ) => {
+	await auth.navigateToAdminPage(
+		page,
+		'admin.php?page=bluehost#/admin'
+	);
+
+	await utils.waitForBluehostAppPage( page, {
+		pageKebab: 'admin',
+		contentSelector: '.wppbh-app-admin',
+	} );
+};
+
 test.describe( 'Admin Feature Toggles', () => {
 	test.beforeEach( async ( { page } ) => {
-		await auth.navigateToAdminPage(
-			page,
-			'admin.php?page=bluehost#/admin'
-		);
-		await page.waitForSelector( '#wppbh-app-rendered', { timeout: 10000 } );
-		await page.waitForSelector( '.wppbh-app-admin', { timeout: 10000 } );
+		await navigateToAdminFeatureToggles( page );
 	} );
 
 	test( 'Feature toggles render when features are registered', async ( {

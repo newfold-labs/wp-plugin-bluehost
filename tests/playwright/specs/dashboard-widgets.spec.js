@@ -48,18 +48,18 @@ test.describe('Dashboard Widgets', () => {
 
     // Verify site preview widget exists and is visible
     const sitePreviewWidget = page.locator('#site_preview_widget');
-    sitePreviewWidget.scrollIntoViewIfNeeded();
+    await sitePreviewWidget.scrollIntoViewIfNeeded();
     await expect(sitePreviewWidget).toBeVisible();
 
     // Check domain and status
     const domainElement = page.locator('.iframe-preview-domain');
-    domainElement.scrollIntoViewIfNeeded();
+    await domainElement.scrollIntoViewIfNeeded();
     await expect(domainElement).toBeVisible();
     await expect(domainElement).toContainText('localhost');
     await expect(domainElement).toBeVisible();
 
     const statusElement = page.locator('.iframe-preview-status');
-    statusElement.scrollIntoViewIfNeeded();
+    await statusElement.scrollIntoViewIfNeeded();
     await expect(statusElement).toBeVisible();
     await expect(statusElement).toContainText('Live');
     await expect(statusElement).toBeVisible();
@@ -71,27 +71,27 @@ test.describe('Dashboard Widgets', () => {
 
     // Check View Site link
     const viewSiteLink = page.locator('a[data-test-id="nfd-view-site"]');
-    viewSiteLink.scrollIntoViewIfNeeded();
+    await viewSiteLink.scrollIntoViewIfNeeded();
     await expect(viewSiteLink).toBeVisible();
     await expect(viewSiteLink).toContainText('View Site');
     await expect(viewSiteLink).toBeVisible();
-    
+
     const viewSiteHref = await viewSiteLink.getAttribute('href');
     expect(viewSiteHref).toContain('localhost');
 
     // Check Edit Site link
     const editSiteLink = page.locator('a[data-test-id="nfd-edit-site"]');
-    editSiteLink.scrollIntoViewIfNeeded();
+    await editSiteLink.scrollIntoViewIfNeeded();
     await expect(editSiteLink).toBeVisible();
     await expect(editSiteLink).toContainText('Edit Site');
     await expect(editSiteLink).toBeVisible();
-    
+
     const editSiteHref = await editSiteLink.getAttribute('href');
     expect(editSiteHref).toContain('site-editor');
 
     // Enable Coming Soon
     const enableComingSoonButton = page.locator('button[data-test-id="nfd-coming-soon-enable"]');
-    enableComingSoonButton.scrollIntoViewIfNeeded();
+    await enableComingSoonButton.scrollIntoViewIfNeeded();
     await expect(enableComingSoonButton).toBeVisible();
     await expect(enableComingSoonButton).toContainText('Enable Coming Soon');
     await expect(enableComingSoonButton).toHaveAttribute('type', 'button');
@@ -101,7 +101,7 @@ test.describe('Dashboard Widgets', () => {
 
     // Coming Soon Enabled - wait for preview link to appear
     const previewLink = page.locator('a[data-test-id="nfd-preview-site"]');
-    previewLink.scrollIntoViewIfNeeded();
+    await previewLink.scrollIntoViewIfNeeded();
     await expect(previewLink).toBeVisible();
     await expect(viewSiteLink).toHaveCount(0);
 
@@ -116,7 +116,7 @@ test.describe('Dashboard Widgets', () => {
     await expect(enableComingSoonButton).toHaveCount(0);
     
     const disableComingSoonButton = page.locator('button[data-test-id="nfd-coming-soon-disable"]');
-    disableComingSoonButton.scrollIntoViewIfNeeded();
+    await disableComingSoonButton.scrollIntoViewIfNeeded();
     await expect(disableComingSoonButton).toBeVisible();
     await expect(disableComingSoonButton).toContainText('Launch Site');
     await expect(disableComingSoonButton).toHaveAttribute('type', 'button');
@@ -125,7 +125,7 @@ test.describe('Dashboard Widgets', () => {
     await page.waitForLoadState( 'load' );
 
     // Coming Soon Disabled
-    viewSiteLink.scrollIntoViewIfNeeded();
+    await viewSiteLink.scrollIntoViewIfNeeded();
     await expect(viewSiteLink).toBeVisible();
     await expect(statusElement).toContainText('Live');
     await expect(widgetBody).toContainText('website is live');

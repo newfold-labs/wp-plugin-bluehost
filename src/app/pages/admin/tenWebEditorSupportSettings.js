@@ -1,9 +1,8 @@
 import { __ } from '@wordpress/i18n';
-import { NewfoldRuntime } from '@newfold/wp-module-runtime';
 import FeatureToggle from '../../components/FeatureToggle';
 
 const TenWebEditorSupportSettings = () => {
-	if ( ! NewfoldRuntime?.wordpress?.isWvcTheme ) {
+	if ( ! window.NewfoldRuntime?.wordpress?.isWvcTheme ) {
 		return null;
 	}
 

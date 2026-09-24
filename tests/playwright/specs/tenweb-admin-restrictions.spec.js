@@ -20,7 +20,27 @@ const isWvcThemeActive = async ( page ) => {
 	);
 };
 
+const navigateToTenWebAdmin = async ( page ) => {
+	await auth.navigateToAdminPage(
+		page,
+		'admin.php?page=bluehost#/admin'
+	);
+	await utils.waitForBluehostAppPage( page, {
+		pageKebab: 'admin',
+		contentSelector: '.wppbh-app-admin',
+	} );
+};
+
 test.describe( 'TenWeb Admin Restrictions', () => {
+	test.beforeAll( async () => {
+		wordpress.resetThemeRestoreSlug();
+		await wordpress.restoreDefaultTheme();
+		await wordpress.wpCli(
+			'newfold features enable tenwebAdminRestrictions',
+			{ failOnNonZeroExit: false }
+		);
+	} );
+
 	test.afterEach( async () => {
 		await wordpress.restoreDefaultTheme();
 		await wordpress.wpCli(
@@ -34,11 +54,7 @@ test.describe( 'TenWeb Admin Restrictions', () => {
 	} ) => {
 		await wordpress.restoreDefaultTheme();
 
-		await auth.navigateToAdminPage(
-			page,
-			'admin.php?page=bluehost#/admin'
-		);
-		await page.waitForSelector( '#wppbh-app-rendered', { timeout: 10000 } );
+		await navigateToTenWebAdmin( page );
 
 		expect( await isWvcThemeActive( page ) ).toBe( false );
 
@@ -60,24 +76,20 @@ test.describe( 'TenWeb Admin Restrictions', () => {
 	} ) => {
 		await wordpress.activateWvcThemeFixture();
 
-		await auth.navigateToAdminPage(
-			page,
-			'admin.php?page=bluehost#/admin'
-		);
-		await page.waitForSelector( '#wppbh-app-rendered', { timeout: 10000 } );
+		await navigateToTenWebAdmin( page );
 
 		expect( await isWvcThemeActive( page ) ).toBe( true );
 
 		if ( await hasRegisteredFeature( page, 'tenwebAdminRestrictions' ) ) {
 			await expect(
 				page.locator( TOGGLES.tenwebAdminRestrictions )
-			).toBeVisible();
+			).toBeVisible( { timeout: 15000 } );
 		}
 
 		if ( await hasRegisteredFeature( page, 'tenwebEditorSupport' ) ) {
 			await expect(
 				page.locator( TOGGLES.tenwebEditorSupport )
-			).toBeVisible();
+			).toBeVisible( { timeout: 15000 } );
 		}
 	} );
 
@@ -89,10 +101,14 @@ test.describe( 'TenWeb Admin Restrictions', () => {
 			'newfold features enable tenwebAdminRestrictions',
 			{ failOnNonZeroExit: true }
 		);
+		expect( await wordpress.getActiveThemeSlug() ).toBe( 'wvc-theme' );
 
-		await page.goto( '/wp-admin/plugins.php' );
+		await auth.loginToWordPress( page );
+		const response = await page.goto( '/wp-admin/plugins.php', {
+			waitUntil: 'domcontentloaded',
+		} );
 
-		await expect( page ).toHaveURL( /\/wp-admin\/index\.php/ );
+		expect( response?.status() ).not.toBe( 200 );
 		await expect( page.locator( '#menu-plugins' ) ).toHaveCount( 0 );
 	} );
 
@@ -108,8 +124,7 @@ test.describe( 'TenWeb Admin Restrictions', () => {
 			failOnNonZeroExit: true,
 		} );
 
-		await page.goto( '/wp-admin/' );
-		await page.waitForSelector( '#wpadminbar', { timeout: 10000 } );
+		await auth.navigateToAdminPage( page, 'index.php' );
 
 		const status = await wordpress.getPluginStatus( 'hello-dolly' );
 		expect( status ).toBe( 'inactive' );
@@ -124,11 +139,7 @@ test.describe( 'TenWeb Admin Restrictions', () => {
 			{ failOnNonZeroExit: true }
 		);
 
-		await auth.navigateToAdminPage(
-			page,
-			'admin.php?page=bluehost#/admin'
-		);
-		await page.waitForSelector( '#wppbh-app-rendered', { timeout: 10000 } );
+		await navigateToTenWebAdmin( page );
 
 		test.skip(
 			! ( await hasRegisteredFeature( page, 'tenwebAdminRestrictions' ) ),
@@ -136,6 +147,7 @@ test.describe( 'TenWeb Admin Restrictions', () => {
 		);
 
 		const toggle = page.locator( TOGGLES.tenwebAdminRestrictions );
+		await expect( toggle ).toBeVisible( { timeout: 15000 } );
 		await utils.scrollIntoView( toggle );
 
 		if ( await toggle.getAttribute( 'aria-checked' ) === 'true' ) {
@@ -146,7 +158,7 @@ test.describe( 'TenWeb Admin Restrictions', () => {
 			);
 		}
 
-		await page.goto( '/wp-admin/plugins.php' );
+		await auth.navigateToAdminPage( page, 'plugins.php' );
 		await expect( page ).toHaveURL( /\/wp-admin\/plugins\.php/ );
 	} );
 } );

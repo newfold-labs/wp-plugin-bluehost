@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "aa491d2bbd490351f7bcc0c25adcb91e",
+    "content-hash": "cce8eb39db95a529a6ceb21a68245c63",
     "packages": [
         {
             "name": "colinmollenhour/credis",
@@ -576,20 +576,26 @@
         },
         {
             "name": "newfold-labs/wp-module-10web",
-            "version": "1.0.4",
+            "version": "1.0.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/newfold-labs/wp-module-10web.git",
-                "reference": "1ff2d7f32f97a612842d07f91d56730e53449a81"
+                "reference": "e9a87f22968a33ab192d4adf653a90875675722e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/newfold-labs/wp-module-10web/zipball/1ff2d7f32f97a612842d07f91d56730e53449a81",
-                "reference": "1ff2d7f32f97a612842d07f91d56730e53449a81",
+                "url": "https://api.github.com/repos/newfold-labs/wp-module-10web/zipball/e9a87f22968a33ab192d4adf653a90875675722e",
+                "reference": "e9a87f22968a33ab192d4adf653a90875675722e",
                 "shasum": ""
             },
+            "require": {
+                "newfold-labs/wp-module-features": "^1.5.2",
+                "newfold-labs/wp-module-loader": "^1.1"
+            },
             "require-dev": {
-                "newfold-labs/wp-php-standards": "^1.2",
+                "johnpbloch/wordpress": "@stable",
+                "lucatume/wp-browser": "*",
+                "newfold-labs/wp-php-standards": "^2.0",
                 "wp-cli/i18n-command": "^2.7.0"
             },
             "type": "library",
@@ -629,10 +635,13 @@
                     "vendor/bin/wp i18n update-po ./languages/wp-module-10web.pot ./languages"
                 ],
                 "i18n-pot": [
-                    "vendor/bin/wp i18n make-pot . ./languages/wp-module-10web.pot --domain=wp-module-10web --headers='{\"Report-Msgid-Bugs-To\":\"https://github.com/newfold-labs/wp-module-10web/issues\",\"POT-Creation-Date\":\"2025-02-13T09:55:55+00:00\"}' --exclude=node_modules,build,src"
+                    "vendor/bin/wp i18n make-pot . ./languages/wp-module-10web.pot --domain=wp-module-10web --headers='{\"Report-Msgid-Bugs-To\":\"https://github.com/newfold-labs/wp-module-10web/issues\",\"POT-Creation-Date\":\"2025-02-13T09:55:55+00:00\"}' --exclude=node_modules,build,src,wordpress"
                 ],
                 "lint": [
                     "vendor/bin/phpcs --standard=phpcs.xml -s ."
+                ],
+                "test": [
+                    "codecept run wpunit"
                 ]
             },
             "license": [
@@ -649,11 +658,7 @@
                 }
             ],
             "description": "A Module for integrating 10Web features into the plugin.",
-            "support": {
-                "source": "https://github.com/newfold-labs/wp-module-10web/tree/1.0.4",
-                "issues": "https://github.com/newfold-labs/wp-module-10web/issues"
-            },
-            "time": "2026-07-29T10:46:33+00:00"
+            "time": "2026-09-24T19:25:55+00:00"
         },
         {
             "name": "newfold-labs/wp-module-activation",

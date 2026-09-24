@@ -76,6 +76,28 @@ async function isPluginActive(page, pluginSlug) {
   return await deactivateLink.isVisible();
 }
 
+/**
+ * Plugin status string from WP-CLI (e.g. active, inactive).
+ *
+ * Use instead of `plugin is-active` stdout; that command signals state via exit code only.
+ *
+ * @param {string} pluginSlug Plugin directory slug (e.g. hello-dolly).
+ * @returns {Promise<string>}
+ */
+async function getPluginStatus(pluginSlug) {
+  const result = await wpCli(`plugin list --name=${pluginSlug} --field=status`, {
+    failOnNonZeroExit: false,
+  });
+  if (isWpCliFailure(result)) {
+    return 'inactive';
+  }
+  const status = String(result).trim();
+  if (!status || status === '0') {
+    return 'inactive';
+  }
+  return status;
+}
+
 /** Default execSync timeout for wp-env CLI calls (2 minutes). Pass `timeout: 0` to disable. */
 const DEFAULT_WP_CLI_TIMEOUT_MS = 120_000;
 
@@ -98,9 +120,11 @@ async function wpCli(command, options = {}) {
     cwd,
   } = options;
 
+  const wpUser = process.env.WP_ADMIN_USERNAME || 'admin';
+
   utils.fancyLog(`🔧 WP-CLI command: ${command}`);
   try {
-    const output = execSync(`npx wp-env run cli wp ${command}`, {
+    const output = execSync(`npx wp-env run cli wp --user=${wpUser} ${command}`, {
       cwd: cwd ?? getPluginRoot(),
       encoding: 'utf-8',
       stdio: ['pipe', 'pipe', 'pipe'],
@@ -190,6 +214,130 @@ async function setOption(option, value) {
   return await wpCli(command);
 }
 
+const WVC_THEME_SLUG = 'wvc-theme';
+
+/** Core themes to try when no other installed theme is found (e.g. orphaned WVC active). */
+const FALLBACK_CORE_THEME_SLUGS = [
+  'yith-wonder',
+  'twentytwentyfive',
+  'twentytwentyfour',
+  'twentytwentythree',
+  'twentytwentytwo',
+];
+
+/** @type {string|null} Theme slug to restore after WVC fixture tests. */
+let themeRestoreSlug = null;
+
+/**
+ * Activate a WordPress theme via WP-CLI.
+ *
+ * @param {string} slug Theme directory slug.
+ * @returns {Promise<string|number>}
+ */
+async function activateTheme(slug) {
+  return wpCli(`theme activate ${slug}`, { failOnNonZeroExit: true });
+}
+
+/**
+ * Get the active theme directory slug (stylesheet).
+ *
+ * @returns {Promise<string>}
+ */
+async function getActiveThemeSlug() {
+  const result = await wpCli('option get stylesheet', {
+    failOnNonZeroExit: true,
+  });
+  return String(result).trim();
+}
+
+/**
+ * Pick an installed theme to restore when the WVC fixture was left active.
+ *
+ * @returns {Promise<string>}
+ */
+async function findInstalledCoreThemeSlug() {
+  // WP-CLI `theme list` uses the `name` column for the directory slug (not the theme title).
+  const listResult = await wpCli('theme list --field=name', {
+    failOnNonZeroExit: true,
+  });
+  const installed = String(listResult)
+    .trim()
+    .split(/\r?\n/)
+    .map((slug) => slug.trim())
+    .filter(Boolean);
+
+  const nonWvc = installed.find((slug) => slug !== WVC_THEME_SLUG);
+  if (nonWvc) {
+    return nonWvc;
+  }
+
+  for (const slug of FALLBACK_CORE_THEME_SLUGS) {
+    const status = await wpCli(`theme list --name=${slug} --field=status`, {
+      failOnNonZeroExit: false,
+    });
+    if (!isWpCliFailure(status) && String(status).trim()) {
+      return slug;
+    }
+  }
+
+  throw new Error(
+    'Could not find an installed core theme for Playwright theme restore',
+  );
+}
+
+/**
+ * Clear the cached theme restore slug (for test suite setup).
+ */
+function resetThemeRestoreSlug() {
+  themeRestoreSlug = null;
+}
+
+/**
+ * Remember which theme to switch back to after activating the WVC fixture.
+ *
+ * @returns {Promise<string>}
+ */
+async function ensureThemeRestoreSlug() {
+  if (themeRestoreSlug) {
+    return themeRestoreSlug;
+  }
+
+  const active = await getActiveThemeSlug();
+  if (active && active !== WVC_THEME_SLUG) {
+    themeRestoreSlug = active;
+    return themeRestoreSlug;
+  }
+
+  themeRestoreSlug = await findInstalledCoreThemeSlug();
+  return themeRestoreSlug;
+}
+
+/**
+ * Activate the dummy WVC theme fixture used in Playwright tests.
+ *
+ * @returns {Promise<string|number>}
+ */
+async function activateWvcThemeFixture() {
+  await ensureThemeRestoreSlug();
+  return activateTheme(WVC_THEME_SLUG);
+}
+
+/**
+ * Restore the theme that was active before the WVC fixture was enabled.
+ *
+ * @returns {Promise<string|number>}
+ */
+async function restoreDefaultTheme() {
+  const slug = await ensureThemeRestoreSlug();
+  const active = await getActiveThemeSlug();
+
+  if (active === slug) {
+    return 0;
+  }
+
+  return activateTheme(slug);
+}
+
 // Track if permalink structure has been set to prevent duplicate calls
 let permalinkStructureSet = false;
 
@@ -242,6 +390,7 @@ export default {
   // Plugin management
   navigateToPluginPage,
   isPluginActive,
+  getPluginStatus,
   
   // WordPress CLI and options
   wpCli,
@@ -250,4 +399,11 @@ export default {
   formatWpCliResult,
   setOption,
   setPermalinkStructure,
+  activateTheme,
+  getActiveThemeSlug,
+  activateWvcThemeFixture,
+  restoreDefaultTheme,
+  resetThemeRestoreSlug,
+  WVC_THEME_SLUG,
+  FALLBACK_CORE_THEME_SLUGS,
 };

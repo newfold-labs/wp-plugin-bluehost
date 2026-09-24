@@ -1,5 +1,5 @@
 import { test, expect } from '@playwright/test';
-import { auth, utils } from '../helpers';
+import { auth, utils, wordpress } from '../helpers';
 
 const TOGGLES = {
 	staging: '[data-id="staging-toggle"]',
@@ -61,6 +61,11 @@ const navigateToAdminFeatureToggles = async ( page ) => {
 };
 
 test.describe( 'Admin Feature Toggles', () => {
+	test.beforeAll( async () => {
+		wordpress.resetThemeRestoreSlug();
+		await wordpress.restoreDefaultTheme();
+	} );
+
 	test.beforeEach( async ( { page } ) => {
 		await navigateToAdminFeatureToggles( page );
 	} );
@@ -68,16 +73,24 @@ test.describe( 'Admin Feature Toggles', () => {
 	test( 'Feature toggles render when features are registered', async ( {
 		page,
 	} ) => {
-		const features = await page.evaluate(
-			() => window.NewfoldFeatures?.features ?? {}
-		);
+		const { features, isWvcTheme } = await page.evaluate( () => ( {
+			features: window.NewfoldFeatures?.features ?? {},
+			isWvcTheme: Boolean( window.NewfoldRuntime?.wordpress?.isWvcTheme ),
+		} ) );
+
+		const tenwebFeatures = new Set( [
+			'tenwebAdminRestrictions',
+			'tenwebEditorSupport',
+		] );
 
 		for ( const [ featureKey, selector ] of Object.entries( TOGGLES ) ) {
-			await expectToggleVisibility(
-				page,
-				selector,
-				typeof features[ featureKey ] !== 'undefined'
-			);
+			const isRegistered =
+				typeof features[ featureKey ] !== 'undefined';
+			const shouldRender =
+				isRegistered &&
+				( ! tenwebFeatures.has( featureKey ) || isWvcTheme );
+
+			await expectToggleVisibility( page, selector, shouldRender );
 		}
 	} );
 
@@ -109,48 +122,64 @@ test.describe( 'Admin Feature Toggles', () => {
 		} );
 	} );
 
-	test( 'TenWeb admin restrictions toggle success path', async ( {
-		page,
-	} ) => {
-		test.skip(
-			! ( await hasRegisteredFeature( page, 'tenwebAdminRestrictions' ) ),
-			'tenwebAdminRestrictions feature not registered'
-		);
-
-		await testToggleSuccessPath( page, {
-			selector: TOGGLES.tenwebAdminRestrictions,
-			enabledTitle: '10Web Admin Restrictions Enabled',
-			disabledTitle: '10Web Admin Restrictions Disabled',
-			restoreTitleFragment: '10Web Admin Restrictions',
-		} );
-	} );
-
-	test( 'TenWeb admin restrictions toggle failure path', async ( {
-		page,
-	} ) => {
-		test.skip(
-			! ( await hasRegisteredFeature( page, 'tenwebAdminRestrictions' ) ),
-			'tenwebAdminRestrictions feature not registered'
-		);
-
-		await page.route( '**/newfold-features/v1/feature/**', ( route ) => {
-			route.fulfill( {
-				status: 403,
-				contentType: 'application/json',
-				body: JSON.stringify( {
-					code: 'nfd_features_error',
-					message: 'Cannot modify this feature.',
-				} ),
+	test.describe( 'TenWeb admin restriction toggles (WVC theme)', () => {
+		test.beforeEach( async ( { page } ) => {
+			await wordpress.activateWvcThemeFixture();
+			await navigateToAdminFeatureToggles( page );
+			await page.reload( { waitUntil: 'domcontentloaded' } );
+			await utils.waitForBluehostAppPage( page, {
+				pageKebab: 'admin',
+				contentSelector: '.wppbh-app-admin',
 			} );
 		} );
 
-		const toggle = page.locator( TOGGLES.tenwebAdminRestrictions );
-		await utils.scrollIntoView( toggle );
-		const initial = await toggle.getAttribute( 'aria-checked' );
+		test.afterEach( async () => {
+			await wordpress.restoreDefaultTheme();
+		} );
 
-		await toggle.click();
-		await utils.waitForNotification( page, 'Sorry, that is not allowed.' );
-		await expect( toggle ).toHaveAttribute( 'aria-checked', initial );
-		await expect( toggle ).toBeDisabled();
+		test( 'TenWeb admin restrictions toggle success path', async ( {
+			page,
+		} ) => {
+			test.skip(
+				! ( await hasRegisteredFeature( page, 'tenwebAdminRestrictions' ) ),
+				'tenwebAdminRestrictions feature not registered'
+			);
+
+			await testToggleSuccessPath( page, {
+				selector: TOGGLES.tenwebAdminRestrictions,
+				enabledTitle: '10Web Admin Restrictions Enabled',
+				disabledTitle: '10Web Admin Restrictions Disabled',
+				restoreTitleFragment: '10Web Admin Restrictions',
+			} );
+		} );
+
+		test( 'TenWeb admin restrictions toggle failure path', async ( {
+			page,
+		} ) => {
+			test.skip(
+				! ( await hasRegisteredFeature( page, 'tenwebAdminRestrictions' ) ),
+				'tenwebAdminRestrictions feature not registered'
+			);
+
+			await page.route( '**/newfold-features/v1/feature/**', ( route ) => {
+				route.fulfill( {
+					status: 403,
+					contentType: 'application/json',
+					body: JSON.stringify( {
+						code: 'nfd_features_error',
+						message: 'Cannot modify this feature.',
+					} ),
+				} );
+			} );
+
+			const toggle = page.locator( TOGGLES.tenwebAdminRestrictions );
+			await utils.scrollIntoView( toggle );
+			const initial = await toggle.getAttribute( 'aria-checked' );
+
+			await toggle.click();
+			await utils.waitForNotification( page, 'Sorry, that is not allowed.' );
+			await expect( toggle ).toHaveAttribute( 'aria-checked', initial );
+			await expect( toggle ).toBeDisabled();
+		} );
 	} );
 } );

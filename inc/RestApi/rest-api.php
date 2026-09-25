@@ -13,6 +13,7 @@ namespace Bluehost;
 function init_rest_api() {
 
 	$controllers = array(
+		'Bluehost\\RestApi\\DomainSearchController',
 		'Bluehost\\RestApi\\SettingsController',
 	);
 

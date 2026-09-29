@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "d7c38bf01051aa8c2ce42d71d4e81d9c",
+    "content-hash": "0fe67989475c8120c5d6935ea70eed6a",
     "packages": [
         {
             "name": "colinmollenhour/credis",
@@ -2748,16 +2748,16 @@
         },
         {
             "name": "newfold-labs/wp-module-notifications",
-            "version": "1.8.4",
+            "version": "1.9.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/newfold-labs/wp-module-notifications.git",
-                "reference": "85005081e652f4352ed1eb4893d22a33b89aae8c"
+                "reference": "f733b6d97316f1ee8142fd5141c71bc2734b6043"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/newfold-labs/wp-module-notifications/zipball/85005081e652f4352ed1eb4893d22a33b89aae8c",
-                "reference": "85005081e652f4352ed1eb4893d22a33b89aae8c",
+                "url": "https://api.github.com/repos/newfold-labs/wp-module-notifications/zipball/f733b6d97316f1ee8142fd5141c71bc2734b6043",
+                "reference": "f733b6d97316f1ee8142fd5141c71bc2734b6043",
                 "shasum": ""
             },
             "require": {
@@ -2834,7 +2834,7 @@
                 }
             ],
             "description": "A module for managing Newfold in-site notifications.",
-            "time": "2026-08-27T20:08:10+00:00"
+            "time": "2026-09-28T17:46:41+00:00"
         },
         {
             "name": "newfold-labs/wp-module-onboarding",

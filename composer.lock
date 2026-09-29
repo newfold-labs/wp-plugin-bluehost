@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "2bf5ea066619f14b6efc25ececf6cafa",
+    "content-hash": "c54cf54b2ccf8ae83e5c28402cde4ff6",
     "packages": [
         {
             "name": "colinmollenhour/credis",
@@ -1419,16 +1419,16 @@
         },
         {
             "name": "newfold-labs/wp-module-ecommerce",
-            "version": "2.4.0",
+            "version": "2.5.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/newfold-labs/wp-module-ecommerce.git",
-                "reference": "8b9b7fc50dc5c967407298ee46370e3a93f72c01"
+                "reference": "b5607fea341c3aa9e1450962c35a50cce8a43d3b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/newfold-labs/wp-module-ecommerce/zipball/8b9b7fc50dc5c967407298ee46370e3a93f72c01",
-                "reference": "8b9b7fc50dc5c967407298ee46370e3a93f72c01",
+                "url": "https://api.github.com/repos/newfold-labs/wp-module-ecommerce/zipball/b5607fea341c3aa9e1450962c35a50cce8a43d3b",
+                "reference": "b5607fea341c3aa9e1450962c35a50cce8a43d3b",
                 "shasum": ""
             },
             "require": {
@@ -1437,7 +1437,7 @@
             "require-dev": {
                 "johnpbloch/wordpress": "@stable",
                 "lucatume/wp-browser": "*",
-                "newfold-labs/wp-php-standards": "^2.0.0",
+                "newfold-labs/wp-php-standards": "^2.0",
                 "phpunit/phpcov": "*",
                 "wp-cli/i18n-command": "@stable",
                 "wp-cli/wp-cli-bundle": "@stable"
@@ -1503,7 +1503,7 @@
                 }
             ],
             "description": "Brand Agnostic eCommerce Experience",
-            "time": "2026-09-03T18:53:42+00:00"
+            "time": "2026-09-28T19:00:42+00:00"
         },
         {
             "name": "newfold-labs/wp-module-editor-chat",

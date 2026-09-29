@@ -129,14 +129,16 @@
 .bhdc-globe::after {
 	position: absolute;
 
-	/* The meridian overflows the outer ring by its own border width so the
-	   two circles meet exactly at the poles. */
-	top: -1.7px;
+	/* The meridian overflows the outer ring by its own border width so the two
+	   circles meet at the poles. Centering it beats separate top and bottom
+	   offsets, which the renderer rounds unevenly at fractional widths. */
+	top: 50%;
 	right: 4px;
-	bottom: -1.7px;
 	left: 4px;
+	height: calc(100% + 1.7px);
 	border: 1.7px solid var(--bhdc-blue);
 	border-radius: 50%;
+	transform: translateY(-50%);
 	content: "";
 }
 
@@ -413,16 +415,15 @@
 	transform: translateY(1px);
 }
 
+/* Rendered on the body and placed by script: the editor raises overlays to
+   z-index 999999 and clips the header in some layouts. */
 .bhdc-card--header-popover {
-	position: absolute;
-	z-index: 1000;
-	top: calc(100% + 8px);
+	position: fixed;
+	z-index: 2147483000;
+	top: 0;
 	left: 0;
-
-	/* The popover escapes the narrow header trigger, so the inherited
-	   max-width of the card has to be lifted. */
 	width: 380px;
-	max-width: calc(100vw - 32px);
+	max-width: calc(100vw - 16px);
 	margin: 0;
 }
 
@@ -479,13 +480,5 @@
 		grid-row: auto;
 		grid-column: 1;
 		margin-top: 6px;
-	}
-
-	.bhdc-card--header-popover {
-		position: fixed;
-		top: 56px;
-		right: 8px;
-		left: 8px;
-		width: auto;
 	}
 }

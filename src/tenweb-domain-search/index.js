@@ -33,6 +33,7 @@ if ( config?.apiUrl ) {
 	let observer;
 	let timer;
 	let initialSearchStarted = false;
+	let headerPopover = null;
 
 	const text = ( key, fallback ) => config.strings?.[ key ] || fallback;
 	const log = ( ...args ) => {
@@ -354,6 +355,10 @@ if ( config?.apiUrl ) {
 		return text( 'availableShort', 'AVAILABLE' );
 	};
 
+	// The prototype offers three suggestions and no scroll, which also keeps the
+	// card short enough for the build stage column.
+	const RESULT_LIMIT = 3;
+
 	const renderResults = ( limit ) => {
 		if ( state.status !== 'results' ) {
 			return null;
@@ -486,7 +491,7 @@ if ( config?.apiUrl ) {
 				: [
 						renderSearchField( root ),
 						renderStatus(),
-						renderResults( compact ? 3 : 5 ),
+						renderResults( RESULT_LIMIT ),
 				  ],
 			element( 'div', {
 				className: 'bhdc-fine',
@@ -630,6 +635,9 @@ if ( config?.apiUrl ) {
 	};
 
 	const removePlacement = ( placement ) => {
+		if ( 'header' === placement ) {
+			removeHeaderPopover();
+		}
 		document
 			.querySelectorAll( `[${ ROOT_ATTRIBUTE }="${ placement }"]` )
 			.forEach( ( root ) => {
@@ -655,10 +663,33 @@ if ( config?.apiUrl ) {
 			roots.delete( duplicate );
 			duplicate.remove();
 		} );
-		if ( root.parentElement !== target ) {
+		// The host keeps appending generation messages, so the card is pushed
+		// back to the end of the list whenever it stops being the last child.
+		if ( target.lastElementChild !== root ) {
 			target.appendChild( root );
 		}
 		log( 'mounted', placement );
+	};
+
+	// The editor stacks overlays up to z-index 999999 and clips the header in
+	// some layouts, so the popover lives on the body and is placed by script.
+	const placeHeaderPopover = ( button, panel ) => {
+		const rect = button.getBoundingClientRect();
+		const width = panel.offsetWidth || 380;
+		const left = Math.max(
+			8,
+			Math.min( rect.left, window.innerWidth - width - 8 )
+		);
+		panel.style.top = `${ Math.round( rect.bottom + 8 ) }px`;
+		panel.style.left = `${ Math.round( left ) }px`;
+	};
+
+	const removeHeaderPopover = () => {
+		if ( headerPopover ) {
+			roots.delete( headerPopover );
+			headerPopover.remove();
+			headerPopover = null;
+		}
 	};
 
 	const mountHeader = ( target ) => {
@@ -667,12 +698,14 @@ if ( config?.apiUrl ) {
 		}
 		let wrapper = target.querySelector( `[${ ROOT_ATTRIBUTE }="header"]` );
 		if ( ! wrapper ) {
+			removeHeaderPopover();
 			wrapper = element( 'div', {
 				className: 'bhdc-header',
 				[ ROOT_ATTRIBUTE ]: 'header',
 			} );
 			const panel = createPanel( 'header-popover', true );
 			panel.hidden = true;
+			headerPopover = panel;
 			const button = element( 'button', {
 				type: 'button',
 				className: 'bhdc-header-button',
@@ -684,9 +717,20 @@ if ( config?.apiUrl ) {
 						'aria-expanded',
 						String( ! panel.hidden )
 					);
+					if ( ! panel.hidden ) {
+						placeHeaderPopover( button, panel );
+					}
 				},
 			} );
-			wrapper.append( button, panel );
+			const reposition = () => {
+				if ( ! panel.hidden && button.isConnected ) {
+					placeHeaderPopover( button, panel );
+				}
+			};
+			window.addEventListener( 'resize', reposition );
+			window.addEventListener( 'scroll', reposition, true );
+			wrapper.append( button );
+			document.body.appendChild( panel );
 		}
 		const anchor =
 			target.querySelector( config.selectors.headerAnchor ) ||

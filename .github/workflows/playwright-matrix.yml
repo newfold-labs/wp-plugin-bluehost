@@ -162,9 +162,10 @@ jobs:
       - name: Install WordPress
         uses: nick-fields/retry@ad984534de44a9489a53aefd81eb77f87c70dc60  # v4.0.0
         with:
-          timeout_minutes: 4
+          timeout_minutes: 10
           max_attempts: 3
           command: |
+            npx wp-env destroy --debug || true
             pwd
             ls -la .wp-env*
             npx wp-env start --debug

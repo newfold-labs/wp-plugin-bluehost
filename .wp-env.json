@@ -17,6 +17,9 @@
   "themes": [
     "https://downloads.wordpress.org/theme/yith-wonder.latest-stable.zip"
   ],
+  "mappings": {
+    "wp-content/themes/wvc-theme": "./tests/fixtures/themes/wvc-theme"
+  },
   "port": 8882,
   "testsPort": 8883,
   "env": {

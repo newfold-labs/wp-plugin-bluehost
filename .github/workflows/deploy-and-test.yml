@@ -151,7 +151,6 @@ jobs:
         env:
           CI: true
           PLAYWRIGHT_FORCE_ASYNC_LOADER: '1'
-          BASE_URL: ${{ env.BASE_URL }}
           WP_ADMIN_USERNAME: ${{ secrets.WP_ADMIN_USERNAME }}
           WP_ADMIN_PASSWORD: ${{ secrets.WP_ADMIN_PASSWORD }}
 

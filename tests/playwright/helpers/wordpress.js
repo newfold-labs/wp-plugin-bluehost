@@ -102,6 +102,16 @@ async function getPluginStatus(pluginSlug) {
 const DEFAULT_WP_CLI_TIMEOUT_MS = 120_000;
 
 /**
+ * Whether WP-CLI via wp-env is available (local / CI wp-env). False when BASE_URL points at
+ * Playground, deploy smoke, or any remote target without a host-side wp-env process.
+ *
+ * @returns {boolean}
+ */
+function canUseWpEnvCli() {
+  return !process.env.BASE_URL;
+}
+
+/**
  * Execute WordPress CLI command
  *
  * @param {string} command - WP-CLI command to execute
@@ -112,13 +122,19 @@ const DEFAULT_WP_CLI_TIMEOUT_MS = 120_000;
  * @returns {Promise<string|number>} Output string if available, 0 for success, or error info
  */
 async function wpCli(command, options = {}) {
-  // TODO: bail early if no cli access (live site or not wp-env setup)
-
   const {
     timeout = DEFAULT_WP_CLI_TIMEOUT_MS,
     failOnNonZeroExit,
     cwd,
   } = options;
+
+  if (!canUseWpEnvCli()) {
+    const unavailable = 'Error: WP-CLI unavailable (remote BASE_URL mode)';
+    if (failOnNonZeroExit) {
+      throw new Error(`wp ${command}: ${unavailable}`);
+    }
+    return unavailable;
+  }
 
   const wpUser = process.env.WP_ADMIN_USERNAME || 'admin';
 
@@ -318,6 +334,11 @@ async function ensureThemeRestoreSlug() {
  * @returns {Promise<string|number>}
  */
 async function activateWvcThemeFixture() {
+  if (!canUseWpEnvCli()) {
+    throw new Error(
+      'activateWvcThemeFixture requires wp-env (not available when BASE_URL is set)',
+    );
+  }
   await ensureThemeRestoreSlug();
   return activateTheme(WVC_THEME_SLUG);
 }
@@ -328,6 +349,10 @@ async function activateWvcThemeFixture() {
  * @returns {Promise<string|number>}
  */
 async function restoreDefaultTheme() {
+  if (!canUseWpEnvCli()) {
+    return 0;
+  }
+
   const slug = await ensureThemeRestoreSlug();
   const active = await getActiveThemeSlug();
 
@@ -393,6 +418,7 @@ export default {
   getPluginStatus,
   
   // WordPress CLI and options
+  canUseWpEnvCli,
   wpCli,
   wpCliWithRetry,
   isWpCliFailure,

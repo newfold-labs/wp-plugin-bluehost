@@ -164,8 +164,10 @@ jobs:
         with:
           timeout_minutes: 10
           max_attempts: 3
+          retry_wait_seconds: 15
           command: |
             npx wp-env destroy --debug || true
+            sleep 10
             pwd
             ls -la .wp-env*
             npx wp-env start --debug

@@ -61,11 +61,6 @@ const navigateToAdminFeatureToggles = async ( page ) => {
 };
 
 test.describe( 'Admin Feature Toggles', () => {
-	test.beforeAll( async () => {
-		wordpress.resetThemeRestoreSlug();
-		await wordpress.restoreDefaultTheme();
-	} );
-
 	test.beforeEach( async ( { page } ) => {
 		await navigateToAdminFeatureToggles( page );
 	} );
@@ -123,6 +118,11 @@ test.describe( 'Admin Feature Toggles', () => {
 	} );
 
 	test.describe( 'TenWeb admin restriction toggles (WVC theme)', () => {
+		test.beforeAll( async () => {
+			wordpress.resetThemeRestoreSlug();
+			await wordpress.restoreDefaultTheme();
+		} );
+
 		test.beforeEach( async ( { page } ) => {
 			await wordpress.activateWvcThemeFixture();
 			await navigateToAdminFeatureToggles( page );

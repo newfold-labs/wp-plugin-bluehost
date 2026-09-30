@@ -61,7 +61,7 @@ class TenWebDomainSearch {
 			'selectors' => array(
 				'stage'         => '[data-wvc-region="stage"]',
 				'stageAnchor'   => '[data-wvc-stage="onboarding"]',
-				'stageReady'    => '[data-testid="site-parts-visibility"], iframe[title*="preview" i]',
+				'stageReady'    => '[data-wvc-stage="ready"], [data-wvc-stage="plan-review"], [data-testid="site-parts-visibility"], .sp-preview, .interactive-container, iframe',
 				'chat'          => '.sidebar.open .chat, .left-sidebar .chat',
 				'chatMessage'   => '.chat__message',
 				'header'        => '.main-content-header, .header-wrapper > .header',

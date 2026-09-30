@@ -543,11 +543,11 @@ if ( config?.apiUrl ) {
 		return root;
 	};
 
+	const isInsideDomainSearch = ( node ) =>
+		Boolean( node?.closest?.( `[${ ROOT_ATTRIBUTE }]` ) );
+
 	const containsPreview = ( stage ) =>
-		Boolean(
-			stage.querySelector( config.selectors.stageReady ) ||
-				stage.querySelector( 'iframe' )
-		);
+		Boolean( stage?.querySelector( config.selectors.stageReady ) );
 
 	const findStageTarget = () => {
 		const stage = document.querySelector( config.selectors.stage );
@@ -558,10 +558,30 @@ if ( config?.apiUrl ) {
 		) {
 			return null;
 		}
-		// This explicit WVC anchor is the stage integration contract. A
-		// utility-class fallback can survive beyond the loader and leave the
-		// card mounted over the finished preview.
-		return stage.querySelector( config.selectors.stageAnchor );
+		const anchors = [
+			...stage.querySelectorAll( config.selectors.stageAnchor ),
+		].filter( ( anchor ) => ! isInsideDomainSearch( anchor ) );
+		// This explicit WVC anchor is the build-loader contract. Mount only
+		// while onboarding is up; never on the finished Sandpack preview tree.
+		return anchors[ 0 ] || null;
+	};
+
+	const removeStaleStageMounts = () => {
+		document
+			.querySelectorAll( `[${ ROOT_ATTRIBUTE }="stage"]` )
+			.forEach( ( root ) => {
+				const anchor = root.closest( config.selectors.stageAnchor );
+				const stage = root.closest( config.selectors.stage );
+				if (
+					! anchor ||
+					! stage ||
+					containsPreview( stage ) ||
+					isInsideDomainSearch( anchor )
+				) {
+					roots.delete( root );
+					root.remove();
+				}
+			} );
 	};
 
 	const findVisibleTarget = ( selector ) =>
@@ -764,6 +784,7 @@ if ( config?.apiUrl ) {
 	};
 
 	const evaluate = () => {
+		removeStaleStageMounts();
 		const enabled = getEnabledPlacements();
 		PLACEMENTS.forEach( ( placement ) => {
 			if ( ! enabled.includes( placement ) ) {

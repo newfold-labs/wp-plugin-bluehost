@@ -1,0 +1,352 @@
+name: Build and Test Module Updates in Brand Plugin
+# Proposed drop-in for newfold-labs/workflows/.github/workflows/module-plugin-test-playwright.yml
+# Adds Playground @env-any smoke after the existing wp-env Playwright suite.
+on:
+  workflow_call:
+    inputs:
+      php-version:
+        description: The version of php to be used
+        type: string
+        default: '8.2'
+      node-version:
+        description: The version of Node.js to be used
+        type: string
+        default: '22'
+      plugin-repo:
+        description: The plugin repo
+        type: string
+        required: true
+      plugin-branch:
+        description: The branch of the plugin to be tested
+        type: string
+        default: 'main'
+      module-repo:
+        description: The module repo
+        type: string
+        required: true
+      module-branch:
+        description: The branch of the module to be tested
+        type: string
+        required: true
+      secondary-module-repo:
+        description: An optional secondary module repo
+        type: string
+        required: false
+        default: ''
+      secondary-module-branch:
+        description: The branch of the secondary module to be tested
+        type: string
+        required: false
+        default: ''
+      sync-npm-package:
+        description: Flag to sync module files to equivalent node module
+        type: boolean
+        default: false
+        required: false
+      sync-npm-package-name:
+        description: Package name to sync this module files into
+        type: string
+        default: ''
+        required: false
+      only-module-tests:
+        description: Flag to run only this module tests
+        type: boolean
+        default: false
+        required: false
+      artifact-name:
+        description: The name of the plugin artifact to upload.
+        type: string
+        default: ''
+        required: false
+  workflow_dispatch:
+    inputs:
+      php-version:
+        description: The version of php to be used
+        type: string
+        default: '8.1'
+      node-version:
+        description: The version of node to be used
+        type: string
+        default: '24.15.0'
+      plugin-repo:
+        description: The plugin repo
+        type: string
+        required: true
+      plugin-branch:
+        description: The branch of the plugin to be tested
+        type: string
+        default: 'main'
+      module-repo:
+        description: The module repo
+        type: string
+        required: true
+      module-branch:
+        description: The branch of the module to be tested
+        type: string
+        required: true
+      artifact-name:
+        description: The name of the plugin artifact to upload.
+        type: string
+        default: ''
+        required: false
+
+# Disable permissions for all available scopes by default.
+# Any needed permissions should be configured individually for each job.
+permissions: {}
+
+jobs:
+  job:
+    name: Build and Test
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    env:
+      MODULE_REPO: ${{ inputs.module-repo }}
+    steps:
+
+      - name: Setup PHP
+        uses: shivammathur/setup-php@accd6127cb78bee3e8082180cb391013d204ef9f # v2.37.0
+        with:
+          php-version: ${{ inputs.php-version }}
+          coverage: none
+          tools: composer, cs2pr
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Checkout plugin
+        uses: actions/checkout@df4cb1c069e1874edd31b4311f1884172cec0e10 # v6.0.3
+        with:
+          repository: ${{ inputs.plugin-repo }}
+          ref: ${{ inputs.plugin-branch }}
+          persist-credentials: false
+
+      - name: Set up Node.js
+        uses: actions/setup-node@48b55a011bda9f5d6aeb4c2d9c7362e8dae4041e # v6.4.0
+        with:
+          node-version: ${{ inputs.node-version }}
+          cache: 'npm'
+
+      - name: Get Composer cache directory
+        id: composer-cache
+        run: echo "dir=$(composer config cache-files-dir)" >> "$GITHUB_OUTPUT"
+
+      - name: Cache Composer vendor directory
+        uses: actions/cache@27d5ce7f107fe9357f9df03efb73ab90386fccae # v5.0.5
+        with:
+          path: ${{ steps.composer-cache.outputs.dir }}
+          key: ${{ runner.os }}-composer-${{ hashFiles('**/composer.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-composer-
+
+      - name: Show versions
+        run: |
+          php --version
+          composer --version
+          node --version
+          npm --version
+
+      - name: Install PHP Dependencies for Plugin
+        run: composer install --no-progress --no-dev --optimize-autoloader --prefer-source
+
+      - name: NPM Install for Plugin
+        run: npm ci --legacy-peer-deps
+
+      - name: Get Module Source
+        run: composer reinstall "${MODULE_REPO}" --prefer-source
+
+      - name: Checkout Module Branch
+        continue-on-error: true
+        if: ${{ inputs.module-branch != 'main' }}
+        working-directory: vendor/${{ inputs.module-repo }}
+        env:
+          MODULE_BRANCH: ${{ inputs.module-branch }}
+        run: git checkout --track origin/"${MODULE_BRANCH}"
+
+      - name: Get Secondary Module Source
+        if: ${{ inputs.secondary-module-repo != '' }}
+        env:
+          SECONDARY_MODULE_REPO: ${{ inputs.secondary-module-repo }}
+        run: composer reinstall "${SECONDARY_MODULE_REPO}" --prefer-source
+
+      - name: Checkout Secondary Module Branch
+        if: ${{ (inputs.secondary-module-branch != '') && (inputs.secondary-module-repo != '') }}
+        working-directory: vendor/${{ inputs.secondary-module-repo }}
+        env:
+          SECONDARY_MODULE_BRANCH: ${{ inputs.secondary-module-branch }}
+        run: git checkout --track origin/"${SECONDARY_MODULE_BRANCH}"
+
+      - name: Validate composer.json and composer.lock
+        working-directory: vendor/${{ inputs.module-repo }}
+        run: composer validate
+
+      - name: Install Module PHP Dependencies
+        working-directory: vendor/${{ inputs.module-repo }}
+        run: composer install --no-progress --no-dev --optimize-autoloader --prefer-dist
+
+      - name: Check Module for package file
+        id: package
+        shell: bash
+        run: |
+          if [[ -f vendor/${MODULE_REPO}/package.json ]]
+          then
+            echo "Has package.json file"
+            echo "hasPackageJson=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "Does not have package.json file"
+            echo "hasPackageJson=false" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Check Module for build script
+        id: build
+        shell: bash
+        run: |
+          if [[ -f vendor/"${MODULE_REPO}"/package.json ]] && grep -wq '"build":' vendor/"${MODULE_REPO}"/package.json;
+          then
+            echo "Has build command"
+            echo "hasBuildCommand=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "Does not have build command"
+            echo "hasBuildCommand=false" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: NPM Install for Module if package.json exists
+        working-directory: vendor/${{ inputs.module-repo }}
+        if: ${{ steps.package.outputs.hasPackageJson != 'false' }}
+        run: npm ci --legacy-peer-deps
+
+      - name: Build Module if build command exists
+        working-directory: vendor/${{ inputs.module-repo }}
+        if: ${{ steps.build.outputs.hasBuildCommand != 'false' }}
+        run: npm run build
+
+      # Remove the module's node_modules directory to avoid conflicts with the plugin's node_modules directory when runningplaywright tests
+      - name: Remove the module's node_modules directory
+        working-directory: vendor/${{ inputs.module-repo }}
+        run: rm -rf node_modules
+
+      - name: Sync Module build files to Plugin node_modules dir
+        if: ${{ (inputs.sync-npm-package) && (inputs.sync-npm-package-name != '') }}
+        env:
+          SYNC_NPM_PACKAGE_NAME: ${{ inputs.sync-npm-package-name }}
+        run: rsync -r -v -h "vendor/${MODULE_REPO}/build/" "node_modules/@${SYNC_NPM_PACKAGE_NAME}/build"
+
+      - name: Build Plugin
+        run: npm run build
+
+      - name: Setup Workflow Context
+        id: workflow
+        working-directory: ${{ runner.temp }}
+        env:
+          REPO: ${{ inputs.plugin-repo }}
+        run: |
+          mkdir dist
+          echo "DIST=${PWD}/dist" >> "$GITHUB_OUTPUT"
+          echo "PACKAGE=${REPO##*/}" >> "$GITHUB_OUTPUT"
+
+      - name: Prepare files
+        env:
+          DIST: ${{ steps.workflow.outputs.DIST }}
+          PACKAGE: ${{ steps.workflow.outputs.PACKAGE }}
+        run: rsync -r --include-from=.distinclude --exclude-from=.distignore . "$DIST/$PACKAGE"
+
+      - name: List Files
+        env:
+          DIST: ${{ steps.workflow.outputs.DIST }}
+        working-directory: ${{ env.DIST }}
+        run: find .
+
+      - uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
+        with:
+          path: ${{ steps.workflow.outputs.DIST }}
+          name: ${{ inputs.artifact-name != '' && inputs.artifact-name || steps.workflow.outputs.PACKAGE }}
+          include-hidden-files: true
+
+      - name: Configure WordPress
+        env:
+          DIST: ${{ steps.workflow.outputs.DIST }}
+          PACKAGE: ${{ steps.workflow.outputs.PACKAGE }}
+        run: echo "{\"plugins\":[\"$DIST/$PACKAGE\"]}" > .wp-env.override.json
+
+      # Use the plugin's pinned @wordpress/env (via npx wp-env) so start/run share the same
+      # cache and runtime detection as Playwright global setup (matches plugin playwright workflows).
+      - name: Install WordPress
+        run: npx wp-env start --debug
+
+      - name: Verify wp-env
+        working-directory: ${{ github.workspace }}
+        run: npx wp-env run cli wp core version
+
+      - name: Get Playwright version
+        id: playwright-version
+        run: echo "version=$(node -e 'console.log(require("@playwright/test/package.json").version)')" >> "$GITHUB_OUTPUT"
+
+      - name: Cache Playwright browsers
+        uses: actions/cache@27d5ce7f107fe9357f9df03efb73ab90386fccae # v5.0.5
+        with:
+          path: ~/.cache/ms-playwright
+          key: playwright-${{ runner.os }}-${{ steps.playwright-version.outputs.version }}
+
+      # Skip --with-deps: apt-get can hang on slow ubuntu mirrors. ubuntu-latest includes Chromium runtime libraries.
+      - name: Install Playwright Chromium
+        timeout-minutes: 5
+        run: npx playwright install chromium
+
+      - name: Setup Playwright Projects
+        run: npm run test:playwright:update-projects
+
+      - name: Check for module tests
+        id: check-for-module-tests
+        run:
+          if [[ $(find ./vendor/"${MODULE_REPO}"/tests/playwright/specs -depth -name '*.spec.*js') ]]; then MODULE_TESTS_FOUND=1; else MODULE_TESTS_FOUND=0; fi;
+          if [[ $MODULE_TESTS_FOUND -eq 0 ]]; then echo "No module Playwright tests found"; else echo "Module Playwright tests found"; fi;
+          echo "MODULE_TESTS_FOUND=$MODULE_TESTS_FOUND" >> "$GITHUB_OUTPUT";
+
+      - name: Run Module Playwright Tests First
+        if: ${{ steps.check-for-module-tests.outputs.MODULE_TESTS_FOUND == 1 }}
+        run: npm run test:playwright -- --project="${MODULE_REPO}"
+
+      - name: Run All Playwright Tests
+      # This includes running the module tests again with the remaining tests.
+      # This is to ensure module tests still pass when running all tests.
+        if: ${{ ! inputs.only-module-tests }}
+        run: npm run test:playwright
+
+      - name: Store test results
+        if: failure()
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
+        with:
+          path: |
+            ./tests/playwright/test-results
+          name: ${{ inputs.artifact-name != '' && inputs.artifact-name || steps.workflow.outputs.PACKAGE }}-playwright-artifacts
+
+      - name: Check for Playground @env-any runner
+        id: playground
+        run: |
+          if [[ -f .github/scripts/start-playground-server.mjs ]]; then
+            echo "enabled=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "enabled=false" >> "$GITHUB_OUTPUT"
+            echo "Plugin checkout has no Playground server script; skipping @env-any Playground tests."
+          fi
+
+      # Opt-in: only tagged @env-any tests. --pass-with-no-tests until modules are tagged.
+      # Requires plugin branch with Playground webServer (start-playground-server.mjs).
+      - name: Run module @env-any tests against Playground
+        if: ${{ steps.playground.outputs.enabled == 'true' && steps.check-for-module-tests.outputs.MODULE_TESTS_FOUND == 1 }}
+        env:
+          PLAYGROUND_PLUGIN_DIR: ${{ steps.workflow.outputs.DIST }}/${{ steps.workflow.outputs.PACKAGE }}
+          CI: true
+        run: npx playwright test --grep @env-any --project="${MODULE_REPO}" --reporter=line --pass-with-no-tests
+
+      - name: Store Playground @env-any test results
+        if: ${{ always() && steps.playground.outputs.enabled == 'true' && steps.check-for-module-tests.outputs.MODULE_TESTS_FOUND == 1 }}
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
+        with:
+          path: |
+            ./tests/playwright/test-results
+          name: ${{ inputs.artifact-name != '' && inputs.artifact-name || steps.workflow.outputs.PACKAGE }}-playwright-playground-env-any
+
+      - name: Output debug.log file contents
+        if: always()
+        continue-on-error: true
+        run: npx wp-env run wordpress cat /var/www/html/wp-content/debug.log

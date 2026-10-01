@@ -418,7 +418,6 @@ export default {
   getPluginStatus,
   
   // WordPress CLI and options
-  canUseWpEnvCli,
   wpCli,
   wpCliWithRetry,
   isWpCliFailure,

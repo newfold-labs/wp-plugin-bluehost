@@ -10,7 +10,6 @@ jobs:
     if: github.event.pull_request.head.repo.fork == false
     outputs:
       zip_url: ${{ steps.preview_urls.outputs.zip_url }}
-      pages_url: ${{ steps.deploy.outputs.page_url }}
 
     permissions:
       contents: read

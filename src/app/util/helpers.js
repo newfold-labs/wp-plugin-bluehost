@@ -29,9 +29,9 @@ export const dispatchUpdateSnackbar = ( text = 'Settings Saved' ) => {
 /**
  * Wrapper method to post setting to bluehost endpoint
  *
- * @param {Object}   data         object of data
- * @param {Function} passError    setter for the error in component
- * @param {Function} thenCallback method to call in promise then
+ * @param {Object}                 data         object of data
+ * @param {function(Object): void} passError    setter for the error in component
+ * @param {function(Object): void} thenCallback method to call in promise then
  */
 export const bluehostSettingsApiFetch = ( data, passError, thenCallback ) => {
 	return apiFetch( {
@@ -51,8 +51,8 @@ export const bluehostSettingsApiFetch = ( data, passError, thenCallback ) => {
 /**
  * Wrapper method for toggling a feature via the features API
  *
- * @param {string}   featureName  the name of the feature
- * @param {Function} thenCallback method to call in promise then
+ * @param {string}                 featureName  the name of the feature
+ * @param {function(Object): void} thenCallback method to call in promise then
  * @return {Promise} Features API promise with attached then callback
  */
 export const featureToggle = async ( featureName, thenCallback ) => {
@@ -99,9 +99,9 @@ export const updateUI = (
 /**
  * Wrapper method to post request to bluehost cache endpoint
  *
- * @param {Object}   data         object of data
- * @param {Function} passError    setter for the error in component
- * @param {Function} thenCallback method to call in promise then
+ * @param {Object}                 data         object of data
+ * @param {function(Object): void} passError    setter for the error in component
+ * @param {function(Object): void} thenCallback method to call in promise then
  * @return {Promise} apiFetch promise with attached then and catch callbacks
  */
 export const bluehostPurgeCacheApiFetch = async (

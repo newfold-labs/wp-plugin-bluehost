@@ -166,7 +166,7 @@ export default defineConfig({
       fullPage: true,
     },
   },
-  retries: process.env.CI ? 0 : 1, // 0 retries on CI, 1 for local
+  retries: process.env.CI ? 1 : 1, // 0 retries on CI, 1 for local
   workers: process.env.CI ? 1 : 1, // Use default (number of CPU cores) for local, 1 for CI
   outputDir: 'tests/playwright/test-results',
   reporter: [

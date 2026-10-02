@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "3d6e912ba1bf9d79ad7085bbe91ccdd3",
+    "content-hash": "82f766b4e156001c0969aed54c45a83f",
     "packages": [
         {
             "name": "colinmollenhour/credis",
@@ -2838,16 +2838,16 @@
         },
         {
             "name": "newfold-labs/wp-module-onboarding",
-            "version": "3.3.7",
+            "version": "3.4.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/newfold-labs/wp-module-onboarding.git",
-                "reference": "77e2236bc2f8973adb8d1e55bedf31675d2d3bea"
+                "reference": "940ac14f175ee681d8e271e9356020764eb2410f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/newfold-labs/wp-module-onboarding/zipball/77e2236bc2f8973adb8d1e55bedf31675d2d3bea",
-                "reference": "77e2236bc2f8973adb8d1e55bedf31675d2d3bea",
+                "url": "https://api.github.com/repos/newfold-labs/wp-module-onboarding/zipball/940ac14f175ee681d8e271e9356020764eb2410f",
+                "reference": "940ac14f175ee681d8e271e9356020764eb2410f",
                 "shasum": ""
             },
             "require": {
@@ -2933,11 +2933,7 @@
                 }
             ],
             "description": "Next-generation WordPress Onboarding for WordPress sites at Newfold Digital.",
-            "support": {
-                "source": "https://github.com/newfold-labs/wp-module-onboarding/tree/3.3.7",
-                "issues": "https://github.com/newfold-labs/wp-module-onboarding/issues"
-            },
-            "time": "2026-07-22T21:17:22+00:00"
+            "time": "2026-10-01T21:04:34+00:00"
         },
         {
             "name": "newfold-labs/wp-module-onboarding-data",

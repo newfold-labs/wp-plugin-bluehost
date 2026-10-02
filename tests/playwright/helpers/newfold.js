@@ -7,8 +7,8 @@
  */
 
 import { expect } from '@playwright/test';
-import wordpress from './wordpress.mjs';
-import utils from './utils.mjs';
+import wordpress from './wordpress.js';
+import utils from './utils.js';
 
 /**
  * Plugin support requirements
@@ -18,12 +18,25 @@ const PLUGIN_REQUIREMENTS = {
   // https://wordpress.org/plugins/woocommerce/
   woocommerce: { minWp: '7.0.0', minPhp: '7.4.0' },
   // https://wordpress.org/plugins/jetpack/
-  jetpack: { minWp: '6.9.0', minPhp: '7.2.0' },
+  jetpack: { minWp: '7.0.0', minPhp: '7.4.0' },
   // https://wordpress.org/plugins/wordpress-seo/
-  yoast: { minWp: '6.8.0', minPhp: '7.4.0' },
+  yoast: { minWp: '6.9.0', minPhp: '7.4.0' },
   // https://github.com/newfold-labs/yith-wonder/blob/master/style.css
   wonderTheme: { minWp: '6.5.0', minPhp: '7.0.0' },
 };
+
+/**
+ * WP-CLI steps run once per Playwright invocation (global setup): permalinks, quiet bundled
+ * plugins, installer queue/cron reset, and orphan data-sync crons.
+ *
+ * @returns {Promise<void>}
+ */
+async function preparePlaywrightTestEnvironment() {
+	await setPlaywrightPermalinkStructure();
+	await deactivateExtraPlaywrightPlugins();
+	await clearInstallerQueues();
+	await clearOrphanProneCronEvents();
+}
 
 // ============================================================================
 // VERSION COMPARISON UTILITIES
@@ -294,30 +307,188 @@ async function clearCapabilities() {
   return await wordpress.wpCli('option delete _transient_nfd_site_capabilities');
 }
 
+const WP_CLI_SKIP_STACK = '--skip-plugins --skip-themes';
+
+/** wp_options cleared before later Playwright projects (wp-module-installer queues). */
+const INSTALLER_QUEUE_OPTIONS = [
+	'nfd_module_installer_plugin_install_queue',
+	'nfd_module_installer_plugin_activation_queue',
+	'nfd_module_installer_plugin_deactivation_queue',
+	'nfd_module_installer_plugin_uninstall_queue',
+	'nfd_module_installer_plugins_init_status',
+];
+
+/** Cron hook names unscheduled by {@link clearInstallerQueues}. */
+const INSTALLER_CRON_HOOKS = [
+	'nfd_module_installer_plugin_install_cron',
+	'nfd_module_installer_plugin_activation_event',
+	'nfd_module_installer_plugin_deactivation_event',
+	'nfd_module_installer_plugin_uninstall_cron',
+	'nfd_module_installer_theme_install_cron',
+];
+
+const WP_CLI_IDENTIFIER = /^[a-z0-9_]+$/;
+
+/**
+ * @param {string[]} identifiers Option or hook names embedded in wp eval PHP.
+ * @returns {string} PHP array elements as double-quoted literals (safe inside bash eval '...').
+ */
+function phpQuotedIdentifierList( identifiers ) {
+	return identifiers
+		.map( ( name ) => {
+			if ( ! WP_CLI_IDENTIFIER.test( name ) ) {
+				throw new Error( `Invalid WP-CLI identifier: ${ name }` );
+			}
+			return `"${ name }",`;
+		} )
+		.join( ' ' );
+}
+
+/**
+ * Build one wp eval for installer cleanup (single wp-env call; no eval-file / dist tests path).
+ *
+ * Quoting rules (read before editing this PHP):
+ * - WP-CLI is invoked through a shell as: eval '<php>' --skip-plugins --skip-themes
+ * - Inside that shell single-quoted segment, PHP must not contain `'` — use `"` for PHP strings only.
+ * - PHP variables ($options, $hook, …) are written in the template below; only ${queueList} / ${hookList} are JS.
+ *
+ * @returns {string}
+ */
+function buildClearInstallerQueuesCommand() {
+	const queueList = phpQuotedIdentifierList( INSTALLER_QUEUE_OPTIONS );
+	const hookList = phpQuotedIdentifierList( INSTALLER_CRON_HOOKS );
+
+	const php = `
+$options = array( ${queueList} );
+foreach ( $options as $option ) { delete_option( $option ); }
+$remaining = array();
+foreach ( $options as $option ) {
+if ( false !== get_option( $option, false ) ) { $remaining[] = $option; }
+}
+if ( $remaining ) { WP_CLI::error( "Failed to clear installer options: " . implode( ", ", $remaining ) ); }
+$hooks = array( ${hookList} );
+foreach ( $hooks as $hook ) { wp_clear_scheduled_hook( $hook ); }
+`
+		.replace( /\s+/g, ' ' )
+		.trim();
+
+	return `eval '${php}' ${WP_CLI_SKIP_STACK}`;
+}
+
 /**
  * Clear installer work that could leak into later Playwright projects.
- *
- * The installer cron remains enabled. On its next run it will observe an empty
- * queue, mark the task manager complete, and unschedule itself.
  */
 async function clearInstallerQueues() {
-	const options = [
-		'nfd_module_installer_plugin_install_queue',
-		'nfd_module_installer_plugin_activation_queue',
-		'nfd_module_installer_plugins_init_status',
-	];
-	const encodedOptions = Buffer.from(
-		JSON.stringify( options ),
-		'utf8'
-	).toString( 'base64' );
+	await wordpress.wpCli( buildClearInstallerQueuesCommand(), {
+		failOnNonZeroExit: true,
+	} );
+}
 
-	// --skip-plugins/--skip-themes: only need the options API. Loading the full
-	// plugin stack can fatal (e.g. a half-installed companion plugin) and then this
-	// cleanup itself cannot run — exactly when it is most needed.
-	return await wordpress.wpCli(
-		`eval '$options = json_decode( base64_decode( "${ encodedOptions }" ), true ); foreach ( $options as $option ) { delete_option( $option ); } $remaining = array_values( array_filter( $options, static function ( $option ) { return false !== get_option( $option, false ); } ) ); if ( $remaining ) { WP_CLI::error( "Failed to clear installer options: " . implode( ", ", $remaining ) ); }' --skip-plugins --skip-themes`,
-		{ failOnNonZeroExit: true }
+/** Default permalink structure for Playwright / wp-env runs. */
+const PLAYWRIGHT_PERMALINK_STRUCTURE = '/%postname%/';
+
+/**
+ * wp-env bundles third-party plugins that should stay installed but inactive during tests.
+ * Deactivate only — not uninstall — to avoid uninstall hooks and tolerate missing plugins.
+ */
+const PLAYWRIGHT_EXTRA_PLUGINS_TO_DEACTIVATE = [
+	'google-analytics-for-wordpress/googleanalytics.php',
+	'jetpack/jetpack.php',
+	'optinmonster/optin-monster-wp-api.php',
+	'wpforms-lite/wpforms.php',
+	'wordpress-seo/wp-seo.php',
+];
+
+/**
+ * Set permalink structure and flush rewrite rules (including .htaccess when supported).
+ *
+ * @param {string} [structure=PLAYWRIGHT_PERMALINK_STRUCTURE]
+ * @returns {Promise<void>}
+ */
+async function setPlaywrightPermalinkStructure(
+	structure = PLAYWRIGHT_PERMALINK_STRUCTURE
+) {
+	utils.fancyLog(
+		`🔗 Setting permalink structure to: ${ structure }`,
+		100,
+		'gray',
+		''
 	);
+	const { result, attempt } = await wordpress.wpCliWithRetry(
+		`rewrite structure '${ structure }' --hard`,
+		{ failOnNonZeroExit: false },
+		{ maxAttempts: 2, delayMs: 2000 }
+	);
+	if ( wordpress.isWpCliFailure( result ) ) {
+		utils.fancyLog(
+			`✘ Permalink setup failed after ${ attempt } attempt(s): ${ wordpress.formatWpCliResult( result ) }`,
+			200,
+			'yellow',
+			''
+		);
+		return;
+	}
+	const attemptNote = attempt > 1 ? `, attempt ${ attempt }` : '';
+	utils.fancyLog(
+		`✔ Permalink structure set (${ wordpress.formatWpCliResult( result ) }${ attemptNote })`,
+		200,
+		'green',
+		''
+	);
+}
+
+/**
+ * Deactivate bundled extra plugins so they do not load during Playwright (best-effort).
+ *
+ * @param {string[]} [plugins=PLAYWRIGHT_EXTRA_PLUGINS_TO_DEACTIVATE]
+ * @returns {Promise<void>}
+ */
+async function deactivateExtraPlaywrightPlugins(
+	plugins = PLAYWRIGHT_EXTRA_PLUGINS_TO_DEACTIVATE
+) {
+	for ( const plugin of plugins ) {
+		const result = await wordpress.wpCli( `plugin deactivate ${ plugin }`, {
+			failOnNonZeroExit: false,
+		} );
+		if ( wordpress.isWpCliFailure( result ) ) {
+			utils.fancyLog(
+				`⚠ Could not deactivate ${ plugin }: ${ wordpress.formatWpCliResult( result ) }`,
+				200,
+				'yellow',
+				''
+			);
+		}
+	}
+}
+
+/**
+ * Cron hooks that can fatal if they fire after wp-module-data is not loaded (orphaned events).
+ * Belt-and-suspenders for older module versions; wp-module-data deactivation should clear these too.
+ *
+ * @see https://github.com/newfold-labs/wp-plugin-bluehost/pull/1380
+ * @see https://github.com/newfold-labs/wp-module-data/pull/292
+ */
+const ORPHAN_PRONE_CRON_HOOKS = [ 'nfd_data_sync_cron', 'nfd_data_cron' ];
+
+/**
+ * Remove scheduled orphan-prone cron events (best-effort; does not fail the run).
+ *
+ * @returns {Promise<void>}
+ */
+async function clearOrphanProneCronEvents() {
+	for ( const hook of ORPHAN_PRONE_CRON_HOOKS ) {
+		const result = await wordpress.wpCli( `cron event delete ${ hook }`, {
+			failOnNonZeroExit: false,
+		} );
+		if ( wordpress.isWpCliFailure( result ) ) {
+			utils.fancyLog(
+				`⚠ Could not clear cron hook ${ hook }: ${ wordpress.formatWpCliResult( result ) }`,
+				200,
+				'yellow',
+				''
+			);
+		}
+	}
 }
 
 /**
@@ -403,7 +574,7 @@ async function logCapabilities() {
  * @returns {Promise<boolean>} True if coming soon is enabled
  */
 async function isComingSoonEnabled(page) {
-  const response = await page.request.get('/wp-json/wp/v2/options/nfd_coming_soon');
+  const response = await page.request.get('wp-json/wp/v2/options/nfd_coming_soon');
   if (response.ok()) {
     const data = await response.json();
     return data === '1' || data === true;
@@ -507,7 +678,7 @@ async function waitForDashboardWidgets(page, timeout = 10000) {
  * @param {string} path - The path within the plugin (e.g., '#/home').
  */
 async function navigateToPluginPage(page, pluginId, path = '') {
-  await page.goto(`/wp-admin/admin.php?page=${pluginId}${path}`);
+  await page.goto(`wp-admin/admin.php?page=${pluginId}${path}`);
   await waitForWordPressAdmin(page);
 }
 
@@ -540,7 +711,7 @@ async function getAdminMenuItems(page) {
  */
 async function waitForRestAPI(page) {
   // Try to access a simple REST endpoint
-  const response = await page.request.get('/wp-json/wp/v2/users/me');
+  const response = await page.request.get('wp-json/wp/v2/users/me');
   if (!response.ok()) {
     throw new Error('WordPress REST API not available');
   }
@@ -571,6 +742,12 @@ export default {
   setCapability,
   clearCapabilities,
   clearInstallerQueues,
+  clearOrphanProneCronEvents,
+  setPlaywrightPermalinkStructure,
+  deactivateExtraPlaywrightPlugins,
+  preparePlaywrightTestEnvironment,
+  PLAYWRIGHT_PERMALINK_STRUCTURE,
+  PLAYWRIGHT_EXTRA_PLUGINS_TO_DEACTIVATE,
   ensurePluginInactive,
   logCapabilities,
   

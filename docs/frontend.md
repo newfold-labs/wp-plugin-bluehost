@@ -53,8 +53,8 @@ The hidden Admin route (`#/admin`) exposes toggles for registered Newfold featur
 |-------------|--------|--------------|---------|
 | `staging` | `wp-module-staging` | Staging | Enables the staging environment for testing updates before going live |
 | `performance` | `wp-module-performance` | Performance | Enables performance and caching features in the admin navigation |
-| `tenwebAdminRestrictions` | `wp-module-10web` | 10Web Admin Restrictions | Locks theme switching and plugin access on WVC editor sites |
-| `tenwebEditorSupport` | `wp-module-10web` | 10Web Editor Support | Loads PostHog session replay on the WVC editor screen |
+| `tenwebAdminRestrictions` | `wp-module-10web` | 10Web Admin Restrictions | Locks theme switching and plugin access on WVC editor sites. Toggle renders only when `NewfoldRuntime.wordpress.isWvcTheme` is true. |
+| `tenwebEditorSupport` | `wp-module-10web` | 10Web Editor Support | Loads PostHog session replay on the WVC editor screen. Toggle renders only when `NewfoldRuntime.wordpress.isWvcTheme` is true. |
 
 Thin wrappers in `src/app/pages/admin/` and `src/app/pages/settings/` pass localized labels, notice copy, and optional nav `selectors` into `FeatureToggle`. Disable a flag locally with WP-CLI (e.g. `wp newfold features disable staging`) or a module-specific PHP filter.
 

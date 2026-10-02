@@ -307,44 +307,81 @@ async function clearCapabilities() {
   return await wordpress.wpCli('option delete _transient_nfd_site_capabilities');
 }
 
+const WP_CLI_SKIP_STACK = '--skip-plugins --skip-themes';
+
+/** wp_options cleared before later Playwright projects (wp-module-installer queues). */
+const INSTALLER_QUEUE_OPTIONS = [
+	'nfd_module_installer_plugin_install_queue',
+	'nfd_module_installer_plugin_activation_queue',
+	'nfd_module_installer_plugin_deactivation_queue',
+	'nfd_module_installer_plugin_uninstall_queue',
+	'nfd_module_installer_plugins_init_status',
+];
+
+/** Cron hook names unscheduled by {@link clearInstallerQueues}. */
+const INSTALLER_CRON_HOOKS = [
+	'nfd_module_installer_plugin_install_cron',
+	'nfd_module_installer_plugin_activation_event',
+	'nfd_module_installer_plugin_deactivation_event',
+	'nfd_module_installer_plugin_uninstall_cron',
+	'nfd_module_installer_theme_install_cron',
+];
+
+const WP_CLI_IDENTIFIER = /^[a-z0-9_]+$/;
+
+/**
+ * @param {string[]} identifiers Option or hook names embedded in wp eval PHP.
+ * @returns {string} PHP array elements as double-quoted literals (safe inside bash eval '...').
+ */
+function phpQuotedIdentifierList( identifiers ) {
+	return identifiers
+		.map( ( name ) => {
+			if ( ! WP_CLI_IDENTIFIER.test( name ) ) {
+				throw new Error( `Invalid WP-CLI identifier: ${ name }` );
+			}
+			return `"${ name }",`;
+		} )
+		.join( ' ' );
+}
+
+/**
+ * Build one wp eval for installer cleanup (single wp-env call; no eval-file / dist tests path).
+ *
+ * Quoting rules (read before editing this PHP):
+ * - WP-CLI is invoked through a shell as: eval '<php>' --skip-plugins --skip-themes
+ * - Inside that shell single-quoted segment, PHP must not contain `'` — use `"` for PHP strings only.
+ * - PHP variables ($options, $hook, …) are written in the template below; only ${queueList} / ${hookList} are JS.
+ *
+ * @returns {string}
+ */
+function buildClearInstallerQueuesCommand() {
+	const queueList = phpQuotedIdentifierList( INSTALLER_QUEUE_OPTIONS );
+	const hookList = phpQuotedIdentifierList( INSTALLER_CRON_HOOKS );
+
+	const php = `
+$options = array( ${queueList} );
+foreach ( $options as $option ) { delete_option( $option ); }
+$remaining = array();
+foreach ( $options as $option ) {
+if ( false !== get_option( $option, false ) ) { $remaining[] = $option; }
+}
+if ( $remaining ) { WP_CLI::error( "Failed to clear installer options: " . implode( ", ", $remaining ) ); }
+$hooks = array( ${hookList} );
+foreach ( $hooks as $hook ) { wp_clear_scheduled_hook( $hook ); }
+`
+		.replace( /\s+/g, ' ' )
+		.trim();
+
+	return `eval '${php}' ${WP_CLI_SKIP_STACK}`;
+}
+
 /**
  * Clear installer work that could leak into later Playwright projects.
- *
- * Clears install/activation/deactivation/uninstall queues and unschedules installer
- * cron hooks so the next project (e.g. deactivation on plugins.php) is not racing
- * queued tasks left by onboarding or other modules.
  */
 async function clearInstallerQueues() {
-	const options = [
-		'nfd_module_installer_plugin_install_queue',
-		'nfd_module_installer_plugin_activation_queue',
-		'nfd_module_installer_plugin_deactivation_queue',
-		'nfd_module_installer_plugin_uninstall_queue',
-		'nfd_module_installer_plugins_init_status',
-	];
-	const cronHooks = [
-		'nfd_module_installer_plugin_install_cron',
-		'nfd_module_installer_plugin_activation_event',
-		'nfd_module_installer_plugin_deactivation_event',
-		'nfd_module_installer_plugin_uninstall_cron',
-		'nfd_module_installer_theme_install_cron',
-	];
-	const encodedOptions = Buffer.from(
-		JSON.stringify( options ),
-		'utf8'
-	).toString( 'base64' );
-	const encodedHooks = Buffer.from(
-		JSON.stringify( cronHooks ),
-		'utf8'
-	).toString( 'base64' );
-
-	// --skip-plugins/--skip-themes: only need the options API. Loading the full
-	// plugin stack can fatal (e.g. a half-installed companion plugin) and then this
-	// cleanup itself cannot run — exactly when it is most needed.
-	return await wordpress.wpCli(
-		`eval '$options = json_decode( base64_decode( "${ encodedOptions }" ), true ); foreach ( $options as $option ) { delete_option( $option ); } $remaining = array_values( array_filter( $options, static function ( $option ) { return false !== get_option( $option, false ); } ) ); if ( $remaining ) { WP_CLI::error( "Failed to clear installer options: " . implode( ", ", $remaining ) ); } $hooks = json_decode( base64_decode( "${ encodedHooks }" ), true ); foreach ( $hooks as $hook ) { wp_clear_scheduled_hook( $hook ); }' --skip-plugins --skip-themes`,
-		{ failOnNonZeroExit: true }
-	);
+	await wordpress.wpCli( buildClearInstallerQueuesCommand(), {
+		failOnNonZeroExit: true,
+	} );
 }
 
 /** Default permalink structure for Playwright / wp-env runs. */

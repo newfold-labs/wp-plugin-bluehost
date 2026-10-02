@@ -164,7 +164,7 @@ No module is tagged yet; the deploy and Playground jobs scope to `--project newf
 |------|------------------|--------|
 | Permalinks | **`setPlaywrightPermalinkStructure()`** | `rewrite structure '/%postname%/' --hard` with **`wpCliWithRetry()`** (2 attempts, 2s backoff). [`wp rewrite structure`](https://developer.wordpress.org/cli/commands/rewrite/structure/). Logs warning on failure; does not abort setup |
 | Deactivate extra plugins | **`deactivateExtraPlaywrightPlugins()`** | [`wp plugin deactivate`](https://developer.wordpress.org/cli/commands/plugin/deactivate/) per entry in **`PLAYWRIGHT_EXTRA_PLUGINS_TO_DEACTIVATE`**; best-effort |
-| Installer + orphan crons | **`clearInstallerQueues()`**, **`clearOrphanProneCronEvents()`** | See helper JSDoc. **`clearInstallerQueues`** uses `failOnNonZeroExit: true` and will fail global setup if options cannot be cleared |
+| Installer + orphan crons | **`clearInstallerQueues()`**, **`clearOrphanProneCronEvents()`** | One `wp eval` built from **`INSTALLER_QUEUE_OPTIONS`** / **`INSTALLER_CRON_HOOKS`** in **`newfold.js`** (validated before embedding in PHP) |
 
 All of the above are invoked in order by **`preparePlaywrightTestEnvironment()`**. Module specs should still call **`clearInstallerQueues()`** in hooks when a project can queue installer work mid-run (e.g. onboarding).
 
@@ -172,7 +172,7 @@ All of the above are invoked in order by **`preparePlaywrightTestEnvironment()`*
 `wp rewrite structure <pattern> --hard` replaces the older two-step `option update permalink_structure` + `rewrite flush --hard`. It updates the permalink option and regenerates rewrite rules; `--hard` also updates `.htaccess`.
 
 **`failOnNonZeroExit` in global setup:**  
-Permalinks and extra-plugin deactivation use `false` and log via **`isWpCliFailure()`**. **`clearInstallerQueues()`** uses `true` — a failed installer reset aborts **`preparePlaywrightTestEnvironment()`** and global setup.
+Permalinks and extra-plugin deactivation use `false` and log via **`isWpCliFailure()`**. **`clearInstallerQueues()`** throws if any installer option remains after delete, which aborts **`preparePlaywrightTestEnvironment()`** and global setup.
 
 **Extra plugins:**  
 List lives in **`PLAYWRIGHT_EXTRA_PLUGINS_TO_DEACTIVATE`** in **`newfold.js`**; **`deactivateExtraPlaywrightPlugins()`** deactivates only (not uninstall).

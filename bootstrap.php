@@ -229,9 +229,12 @@ require BLUEHOST_PLUGIN_DIR . '/inc/base.php';
 require BLUEHOST_PLUGIN_DIR . '/inc/jetpack.php';
 require BLUEHOST_PLUGIN_DIR . '/inc/LoginRedirect.php';
 require BLUEHOST_PLUGIN_DIR . '/inc/partners.php';
+require BLUEHOST_PLUGIN_DIR . '/inc/RestApi/DomainSearchController.php';
 require BLUEHOST_PLUGIN_DIR . '/inc/RestApi/SettingsController.php';
 require BLUEHOST_PLUGIN_DIR . '/inc/RestApi/rest-api.php';
 require BLUEHOST_PLUGIN_DIR . '/inc/settings.php';
+require BLUEHOST_PLUGIN_DIR . '/inc/TenWebDomainSearch.php';
+require BLUEHOST_PLUGIN_DIR . '/inc/TenWebDomainSearchFeature.php';
 require BLUEHOST_PLUGIN_DIR . '/inc/updates.php';
 require BLUEHOST_PLUGIN_DIR . '/inc/YoastAI.php';
 require BLUEHOST_PLUGIN_DIR . '/inc/widgets/bootstrap.php';
@@ -240,6 +243,14 @@ require_once BLUEHOST_PLUGIN_DIR . '/inc/Brand.php';
 require_once BLUEHOST_PLUGIN_DIR . '/inc/Filters.php';
 
 Filters::init();
+
+add_filter(
+	'newfold/features/filter/register',
+	function ( $features ) {
+		$features[] = TenWebDomainSearchFeature::class;
+		return $features;
+	}
+);
 
 /* WordPress Admin Page & Features */
 if ( is_admin() ) {

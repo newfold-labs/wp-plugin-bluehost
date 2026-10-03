@@ -6,6 +6,7 @@ const TOGGLES = {
 	performance: '[data-id="performance-toggle"]',
 	tenwebAdminRestrictions: '[data-id="tenweb-admin-restrictions-toggle"]',
 	tenwebEditorSupport: '[data-id="tenweb-editor-support-toggle"]',
+	tenwebDomainSearch: '[data-id="tenweb-domain-search-toggle"]',
 };
 
 const hasRegisteredFeature = async ( page, featureKey ) => {

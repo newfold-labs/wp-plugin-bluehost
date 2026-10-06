@@ -13,8 +13,8 @@ import utilsModule from './utils.js';
 
 /**
  * Playwright may compile helper modules to CJS; default exports then appear as
- * { default: helpers }. Vendor modules load this file via createRequire() or
- * index.mjs — unwrap so newfold.clearInstallerQueues and wpCli stay reachable.
+ * { default: helpers }. Vendor modules load this file via createRequire() —
+ * unwrap so newfold.clearInstallerQueues and wpCli stay reachable.
  *
  * @param {unknown} mod
  * @returns {Record<string, unknown>}

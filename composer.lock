@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "82f766b4e156001c0969aed54c45a83f",
+    "content-hash": "c1d23e0ca9dcdf92461f7fdc758dab57",
     "packages": [
         {
             "name": "colinmollenhour/credis",
@@ -1507,16 +1507,16 @@
         },
         {
             "name": "newfold-labs/wp-module-editor-chat",
-            "version": "1.0.10",
+            "version": "1.0.11",
             "source": {
                 "type": "git",
                 "url": "https://github.com/newfold-labs/wp-module-editor-chat.git",
-                "reference": "f0ddad79630e6151d498c138ddf2422f45d38333"
+                "reference": "97bd914cc85efbced1af9ad8ffa79d291edb6a19"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/newfold-labs/wp-module-editor-chat/zipball/f0ddad79630e6151d498c138ddf2422f45d38333",
-                "reference": "f0ddad79630e6151d498c138ddf2422f45d38333",
+                "url": "https://api.github.com/repos/newfold-labs/wp-module-editor-chat/zipball/97bd914cc85efbced1af9ad8ffa79d291edb6a19",
+                "reference": "97bd914cc85efbced1af9ad8ffa79d291edb6a19",
                 "shasum": ""
             },
             "require-dev": {
@@ -1587,7 +1587,7 @@
                 }
             ],
             "description": "Site Editor AI Chat",
-            "time": "2026-10-01T13:28:07+00:00"
+            "time": "2026-10-07T06:13:43+00:00"
         },
         {
             "name": "newfold-labs/wp-module-facebook",

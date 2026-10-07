@@ -158,21 +158,24 @@ No module is tagged yet; the deploy and Playground jobs scope to `--project newf
 
 ### Global setup (WP-CLI)
 
-**`tests/playwright/global-setup.js`** runs WP-CLI commands through **`wordpress.wpCli()`** in **`tests/playwright/helpers/wordpress.mjs`** before any browser tests start.
+**`tests/playwright/global-setup.js`** runs **`newfold.preparePlaywrightTestEnvironment()`** before any browser tests start (WP-CLI via **`tests/playwright/helpers/wordpress.js`** and **`newfold.js`**).
 
-| Step | Command | Notes |
-|------|---------|--------|
-| Permalinks | `rewrite structure '/%postname%/' --hard` | Via **`wordpress.wpCliWithRetry()`** (2 attempts, 2s backoff). [`wp rewrite structure`](https://developer.wordpress.org/cli/commands/rewrite/structure/). `failOnNonZeroExit: false` |
-| Deactivate extra plugins | `plugin deactivate <plugin>` | `failOnNonZeroExit: false` per plugin |
+| Step | Helper / command | Notes |
+|------|------------------|--------|
+| Permalinks | **`setPlaywrightPermalinkStructure()`** | `rewrite structure '/%postname%/' --hard` with **`wpCliWithRetry()`** (2 attempts, 2s backoff). [`wp rewrite structure`](https://developer.wordpress.org/cli/commands/rewrite/structure/). Logs warning on failure; does not abort setup |
+| Deactivate extra plugins | **`deactivateExtraPlaywrightPlugins()`** | [`wp plugin deactivate`](https://developer.wordpress.org/cli/commands/plugin/deactivate/) per entry in **`PLAYWRIGHT_EXTRA_PLUGINS_TO_DEACTIVATE`**; best-effort |
+| Installer + orphan crons | **`clearInstallerQueues()`**, **`clearOrphanProneCronEvents()`** | One `wp eval` built from **`INSTALLER_QUEUE_OPTIONS`** / **`INSTALLER_CRON_HOOKS`** in **`newfold.js`** (validated before embedding in PHP) |
+
+All of the above are invoked in order by **`preparePlaywrightTestEnvironment()`**. Module specs should still call **`clearInstallerQueues()`** in hooks when a project can queue installer work mid-run (e.g. onboarding).
 
 **Why one command for permalinks?**  
 `wp rewrite structure <pattern> --hard` replaces the older two-step `option update permalink_structure` + `rewrite flush --hard`. It updates the permalink option and regenerates rewrite rules; `--hard` also updates `.htaccess`.
 
 **`failOnNonZeroExit` in global setup:**  
-Only throws when explicitly `true`. Global setup passes `false` so a transient CLI failure does not abort the run. **`wordpress.isWpCliFailure()`** checks the return value and logs success or failure (permalink always; plugin deactivation only on failure) so later test failures are easier to diagnose.
+Permalinks and extra-plugin deactivation use `false` and log via **`isWpCliFailure()`**. **`clearInstallerQueues()`** throws if any installer option remains after delete, which aborts **`preparePlaywrightTestEnvironment()`** and global setup.
 
-**Extra plugins in global setup:**  
-wp-env may bundle third-party plugins (Jetpack, Yoast, etc.) that are active by default. Global setup deactivates them so they do not load during tests; files remain installed. Use [`wp plugin deactivate`](https://developer.wordpress.org/cli/commands/plugin/deactivate/) only — not uninstall/delete — to avoid uninstall hooks and keep setup tolerant of missing plugins.
+**Extra plugins:**  
+List lives in **`PLAYWRIGHT_EXTRA_PLUGINS_TO_DEACTIVATE`** in **`newfold.js`**; **`deactivateExtraPlaywrightPlugins()`** deactivates only (not uninstall).
 
 **`wordpress.wpCli()` helpers** (see helper JSDoc for full detail):
 

@@ -176,9 +176,12 @@ jobs:
       - name: Install WordPress
         uses: nick-fields/retry@ad984534de44a9489a53aefd81eb77f87c70dc60  # v4.0.0
         with:
-          timeout_minutes: 4
+          timeout_minutes: 10
           max_attempts: 3
+          retry_wait_seconds: 15
           command: |
+            npx wp-env destroy --debug || true
+            sleep 10
             pwd
             ls -la .wp-env*
             npx wp-env start --debug
@@ -211,6 +214,7 @@ jobs:
         run: npx playwright test --reporter=line
         env:
           CI: true
+          PLAYWRIGHT_FORCE_ASYNC_LOADER: '1'
 
       - name: Store Playwright test results
         if: always()

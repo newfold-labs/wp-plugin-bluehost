@@ -7,7 +7,7 @@ test.describe('Home Page', () => {
     await auth.navigateToAdminPage(page, 'admin.php?page=bluehost#/home');
   });
 
-  test('Is Accessible', async ({ page }) => {
+  test('Is Accessible', { tag: '@env-any' }, async ({ page }) => {
     // Wait for the home page to load - check for the main app container and home page class
     await page.waitForSelector('#wppbh-app-rendered', { timeout: 10000 });
     await page.waitForSelector('.wppbh-page-home', { timeout: 10000 });
@@ -16,7 +16,7 @@ test.describe('Home Page', () => {
     await a11y.checkA11y(page, '.wppbh-app-body');
   });
 
-  test('Home Page Quick Links exist', async ({ page }) => {
+  test('Home Page Quick Links exist', { tag: '@env-remote' }, async ({ page }) => {
     // Welcome text
     const welcomeHeading = page.locator('.wppbh-app-body').locator('h1').first();
     await utils.scrollIntoView(welcomeHeading);

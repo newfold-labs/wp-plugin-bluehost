@@ -22,8 +22,8 @@ const paths = [
     'wp-admin/admin.php?page=' + pluginId + '#/commerce',
     'wp-admin/admin.php?page=' + pluginId + '#/marketplace',
     'wp-admin/admin.php?page=' + pluginId + '#/help',
-    '/wp-admin/plugins.php',
-    '/wp-admin/plugin-install.php',
+    'wp-admin/plugins.php',
+    'wp-admin/plugin-install.php',
     'wp-admin/plugin-install.php?tab=premium-marketplace'
 ];
 
@@ -33,7 +33,7 @@ test.beforeEach(async ({ page }) => {
   });
 
 /* Skipping for now until we get tests fully migrated to Playwright */
-test.skip('VRT', () => {
+test.describe.skip('VRT', () => {
     for (const path of paths) {
         test(`${path}`, async ({ page }) => {
             await page.goto(path);

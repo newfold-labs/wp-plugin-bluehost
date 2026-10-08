@@ -1,0 +1,771 @@
+/**
+ * Newfold/Bluehost Plugin-Specific Test Helpers
+ * 
+ * Utilities for testing Newfold Labs modules and Bluehost-specific functionality.
+ * Includes capabilities, coming soon, dashboard widgets, plugin-specific features,
+ * and version compatibility checks for third-party plugin integrations.
+ */
+
+import { expect } from '@playwright/test';
+import wordpress from './wordpress.js';
+import utils from './utils.js';
+
+/**
+ * Plugin support requirements
+ * Update these when plugin requirements change
+ */
+const PLUGIN_REQUIREMENTS = {
+  // https://wordpress.org/plugins/woocommerce/
+  woocommerce: { minWp: '7.0.0', minPhp: '7.4.0' },
+  // https://wordpress.org/plugins/jetpack/
+  jetpack: { minWp: '7.0.0', minPhp: '7.4.0' },
+  // https://wordpress.org/plugins/wordpress-seo/
+  yoast: { minWp: '6.9.0', minPhp: '7.4.0' },
+  // https://github.com/newfold-labs/yith-wonder/blob/master/style.css
+  wonderTheme: { minWp: '6.5.0', minPhp: '7.0.0' },
+};
+
+/**
+ * WP-CLI steps run once per Playwright invocation (global setup): permalinks, quiet bundled
+ * plugins, installer queue/cron reset, and orphan data-sync crons.
+ *
+ * @returns {Promise<void>}
+ */
+async function preparePlaywrightTestEnvironment() {
+	await setPlaywrightPermalinkStructure();
+	await deactivateExtraPlaywrightPlugins();
+	await clearInstallerQueues();
+	await clearOrphanProneCronEvents();
+}
+
+// ============================================================================
+// VERSION COMPARISON UTILITIES
+// ============================================================================
+
+/**
+ * Compare two semantic version strings
+ * @param {string} a - First version (e.g., "6.8.0")
+ * @param {string} b - Second version (e.g., "6.7.0")
+ * @returns {number} -1 if a < b, 0 if equal, 1 if a > b
+ */
+function compareVersions(a, b) {
+  const partsA = String(a).split('.').map(Number);
+  const partsB = String(b).split('.').map(Number);
+  
+  for (let i = 0; i < Math.max(partsA.length, partsB.length); i++) {
+    const numA = partsA[i] || 0;
+    const numB = partsB[i] || 0;
+    if (numA < numB) return -1;
+    if (numA > numB) return 1;
+  }
+  return 0;
+}
+
+/**
+ * Check if version satisfies minimum requirement (>=)
+ * @param {string} version - Current version
+ * @param {string} minVersion - Minimum required version
+ * @returns {boolean}
+ */
+function satisfiesMin(version, minVersion) {
+  return compareVersions(version, minVersion) >= 0;
+}
+
+// ============================================================================
+// ENVIRONMENT VERSION DETECTION
+// ============================================================================
+
+/** Cached environment versions */
+let _envVersions = null;
+
+/**
+ * Get WordPress and PHP versions from the environment
+ * Caches the result to avoid repeated WP-CLI calls
+ * @returns {Promise<{wpVersion: string, phpVersion: string}>}
+ */
+async function getEnvironmentVersions() {
+  if (_envVersions) {
+    return _envVersions;
+  }
+  
+  const [wpVersion, phpVersion] = await Promise.all([
+    wordpress.wpCli('core version'),
+    wordpress.wpCli('eval "echo PHP_VERSION;"'),
+  ]);
+
+  _envVersions = {
+    wpVersion: wpVersion.trim(),
+    phpVersion: phpVersion.trim(),
+  };
+  
+  utils.fancyLog(`📦 Environment: WP ${_envVersions.wpVersion}, PHP ${_envVersions.phpVersion}`);
+  
+  return _envVersions;
+}
+
+/**
+ * Clear cached environment versions (useful for testing)
+ */
+function clearVersionCache() {
+  _envVersions = null;
+}
+
+// ============================================================================
+// THIRD-PARTY PLUGIN SUPPORT CHECKS
+// Based on plugin requirements
+//
+// Example usage:
+// const wooSupported = await newfold.supportsWoo();		
+// test.skip(!wooSupported, await newfold.getSkipMessage('woocommerce'));
+//
+// ============================================================================
+
+/**
+ * Check if the current environment supports a specific plugin
+ * @param {'woocommerce' | 'jetpack' | 'yoast' | 'wonderTheme'} pluginKey - Plugin identifier
+ * @returns {Promise<boolean>}
+ */
+async function supportsPlugin(pluginKey) {
+  const requirements = PLUGIN_REQUIREMENTS[pluginKey];
+  if (!requirements) {
+    throw new Error(`Unknown plugin: ${pluginKey}. Available: ${Object.keys(PLUGIN_REQUIREMENTS).join(', ')}`);
+  }
+  
+  const { wpVersion, phpVersion } = await getEnvironmentVersions();
+  
+  return satisfiesMin(wpVersion, requirements.minWp) && 
+         satisfiesMin(phpVersion, requirements.minPhp);
+}
+
+/**
+ * Check if current environment supports WooCommerce
+ * Requires: WP >= 6.8.0, PHP >= 7.4.0
+ * @returns {Promise<boolean>}
+ */
+async function supportsWoo() {
+  return supportsPlugin('woocommerce');
+}
+
+/**
+ * Check if current environment supports Jetpack
+ *
+ * @returns {Promise<boolean>}
+ */
+async function supportsJetpack() {
+  return supportsPlugin('jetpack');
+}
+
+/**
+ * Check if current environment supports Yoast SEO
+ *
+ * @returns {Promise<boolean>}
+ */
+async function supportsYoast() {
+  return supportsPlugin('yoast');
+}
+
+/**
+ * Check if current environment supports Wonder Theme
+ *
+ * @returns {Promise<boolean>}
+ */
+async function supportsWonderTheme() {
+  // theme support is determined the same way as a plugin
+  return supportsPlugin('wonderTheme');
+}
+
+/**
+ * Get a skip message for unsupported plugin
+ * @param {'woocommerce' | 'jetpack' | 'yoast' | 'wonderTheme'} pluginKey
+ * @returns {Promise<string>}
+ */
+async function getSkipMessage(pluginKey) {
+  const requirements = PLUGIN_REQUIREMENTS[pluginKey];
+  const { wpVersion, phpVersion } = await getEnvironmentVersions();
+  
+  return `Skipping: ${pluginKey} requires WP >=${requirements.minWp} & PHP >=${requirements.minPhp}, ` +
+         `current: WP ${wpVersion} & PHP ${phpVersion}`;
+}
+
+// ============================================================================
+// WOOCOMMERCE / COMPANION PLUGIN MANAGEMENT
+// ============================================================================
+
+/**
+ * Companion plugins known to call WooCommerce classes (e.g. WC_Data_Store) unconditionally
+ * on bootstrap. If WooCommerce is removed while one of these is still active, it fatals on
+ * the next WP-Cron tick and can take the rest of a test run down with it. Deactivated
+ * alongside WooCommerce so that failure mode can't cascade regardless of upstream fixes.
+ */
+const WOOCOMMERCE_DEPENDENT_PLUGINS = ['wp-plugin-payments-shipping'];
+
+/**
+ * @param {string} slug - Plugin slug
+ * @returns {Promise<boolean>} true if `wp plugin is-active <slug>` exits 0
+ *
+ * --skip-plugins: `is-active` only needs the active_plugins option, not a full plugin
+ * bootstrap. Without this flag, checking a plugin that's *currently fataling on load*
+ * (e.g. one of the WOOCOMMERCE_DEPENDENT_PLUGINS right after WooCommerce is removed)
+ * makes the check itself fail, which wordpress.wpCli() reports as a non-zero/error
+ * result — indistinguishable from "not active". That masked exactly the case this
+ * helper exists to catch: the plugin was still active and still fataling, but looked
+ * "inactive" to this check, so it never got deactivated.
+ */
+async function isPluginActive(slug) {
+  return (await wordpress.wpCli(`plugin is-active ${slug} --skip-plugins`)) === 0;
+}
+
+/**
+ * Install and activate WooCommerce plugin.
+ * Callers that need to know whether WooCommerce is expected to work in the current
+ * environment first should check `supportsWoo()` above.
+ */
+async function installWooCommerce() {
+  try {
+    await wordpress.wpCli('plugin install woocommerce --activate');
+  } catch (error) {
+    utils.fancyLog('Failed to install WooCommerce:' + error.message, 100, 'yellow');
+  }
+}
+
+/**
+ * @returns {Promise<boolean>} true if WooCommerce is active
+ */
+async function isWooCommerceActive() {
+  return isPluginActive('woocommerce');
+}
+
+/**
+ * Uninstall WooCommerce, and any companion plugin known to fatal without it active.
+ * Runs `deactivate --uninstall` first; if the plugin is still active (e.g. uninstall step
+ * failed), runs `plugin deactivate` so later tests do not run with WooCommerce still active.
+ * Repeats up to `maxAttempts` (no unbounded recursion).
+ */
+async function uninstallWooCommerce() {
+  const maxAttempts = 3;
+  for (let i = 0; i < maxAttempts; i++) {
+    if (!(await isWooCommerceActive())) {
+      break;
+    }
+    await wordpress.wpCli('plugin deactivate woocommerce --uninstall');
+    if (!(await isWooCommerceActive())) {
+      break;
+    }
+    await wordpress.wpCli('plugin deactivate woocommerce');
+  }
+  if (await isWooCommerceActive()) {
+    utils.fancyLog(
+      'WooCommerce is still active after multiple deactivate attempts; later tests may fail.',
+      100,
+      'yellow',
+    );
+  }
+
+  for (const slug of WOOCOMMERCE_DEPENDENT_PLUGINS) {
+    if (await isPluginActive(slug)) {
+      // --skip-plugins here too: we want this plugin out of active_plugins even
+      // though (especially because) loading it currently fatals.
+      await wordpress.wpCli(`plugin deactivate ${slug} --skip-plugins`);
+    }
+  }
+}
+
+/**
+ * Set plugin capabilities (Bluehost-specific functionality)
+ * 
+ * @param {Object} capabilities - Capabilities object
+ * @param {number} expiration - Expiration time in seconds (default: 3600)
+ * @returns {Promise<void>}
+ */
+async function setCapability(capabilitiesJSON, expiration = 3600) {
+  const capabilities = { ...capabilitiesJSON };
+
+  // Default canAccessAI only when omitted — callers can pass false to simulate no AI access.
+  // Without this key, capabilities are discarded by wp-module-data.
+  // see https://github.com/newfold-labs/wp-module-data/pull/285
+  if (capabilities.canAccessAI === undefined) {
+    capabilities.canAccessAI = true;
+  }
+
+  utils.fancyLog(`🔐 Setting capabilities: ${JSON.stringify(capabilities)}`);
+  const expiry = Math.floor( new Date().getTime() / 1000.0 ) + expiration;
+
+  // Use Promise.all to ensure both operations complete before returning
+  await Promise.all([
+    wordpress.wpCli(`option update _transient_nfd_site_capabilities '${ JSON.stringify(
+      capabilities
+    ) }' --format=json`),
+    wordpress.wpCli(`option update _transient_timeout_nfd_site_capabilities ${ expiry }`)
+  ]);
+}
+
+/**
+ * Clear all plugin capabilities
+ */
+async function clearCapabilities() {
+  // Clear all capability options
+  return await wordpress.wpCli('option delete _transient_nfd_site_capabilities');
+}
+
+const WP_CLI_SKIP_STACK = '--skip-plugins --skip-themes';
+
+/** wp_options cleared before later Playwright projects (wp-module-installer queues). */
+const INSTALLER_QUEUE_OPTIONS = [
+	'nfd_module_installer_plugin_install_queue',
+	'nfd_module_installer_plugin_activation_queue',
+	'nfd_module_installer_plugin_deactivation_queue',
+	'nfd_module_installer_plugin_uninstall_queue',
+	'nfd_module_installer_plugins_init_status',
+];
+
+/** Cron hook names unscheduled by {@link clearInstallerQueues}. */
+const INSTALLER_CRON_HOOKS = [
+	'nfd_module_installer_plugin_install_cron',
+	'nfd_module_installer_plugin_activation_event',
+	'nfd_module_installer_plugin_deactivation_event',
+	'nfd_module_installer_plugin_uninstall_cron',
+	'nfd_module_installer_theme_install_cron',
+];
+
+const WP_CLI_IDENTIFIER = /^[a-z0-9_]+$/;
+
+/**
+ * @param {string[]} identifiers Option or hook names embedded in wp eval PHP.
+ * @returns {string} PHP array elements as double-quoted literals (safe inside bash eval '...').
+ */
+function phpQuotedIdentifierList( identifiers ) {
+	return identifiers
+		.map( ( name ) => {
+			if ( ! WP_CLI_IDENTIFIER.test( name ) ) {
+				throw new Error( `Invalid WP-CLI identifier: ${ name }` );
+			}
+			return `"${ name }",`;
+		} )
+		.join( ' ' );
+}
+
+/**
+ * Build one wp eval for installer cleanup (single wp-env call; no eval-file / dist tests path).
+ *
+ * Quoting rules (read before editing this PHP):
+ * - WP-CLI is invoked through a shell as: eval '<php>' --skip-plugins --skip-themes
+ * - Inside that shell single-quoted segment, PHP must not contain `'` — use `"` for PHP strings only.
+ * - PHP variables ($options, $hook, …) are written in the template below; only ${queueList} / ${hookList} are JS.
+ *
+ * @returns {string}
+ */
+function buildClearInstallerQueuesCommand() {
+	const queueList = phpQuotedIdentifierList( INSTALLER_QUEUE_OPTIONS );
+	const hookList = phpQuotedIdentifierList( INSTALLER_CRON_HOOKS );
+
+	const php = `
+$options = array( ${queueList} );
+foreach ( $options as $option ) { delete_option( $option ); }
+$remaining = array();
+foreach ( $options as $option ) {
+if ( false !== get_option( $option, false ) ) { $remaining[] = $option; }
+}
+if ( $remaining ) { WP_CLI::error( "Failed to clear installer options: " . implode( ", ", $remaining ) ); }
+$hooks = array( ${hookList} );
+foreach ( $hooks as $hook ) { wp_clear_scheduled_hook( $hook ); }
+`
+		.replace( /\s+/g, ' ' )
+		.trim();
+
+	return `eval '${php}' ${WP_CLI_SKIP_STACK}`;
+}
+
+/**
+ * Clear installer work that could leak into later Playwright projects.
+ */
+async function clearInstallerQueues() {
+	await wordpress.wpCli( buildClearInstallerQueuesCommand(), {
+		failOnNonZeroExit: true,
+	} );
+}
+
+/** Default permalink structure for Playwright / wp-env runs. */
+const PLAYWRIGHT_PERMALINK_STRUCTURE = '/%postname%/';
+
+/**
+ * wp-env bundles third-party plugins that should stay installed but inactive during tests.
+ * Deactivate only — not uninstall — to avoid uninstall hooks and tolerate missing plugins.
+ */
+const PLAYWRIGHT_EXTRA_PLUGINS_TO_DEACTIVATE = [
+	'google-analytics-for-wordpress/googleanalytics.php',
+	'jetpack/jetpack.php',
+	'optinmonster/optin-monster-wp-api.php',
+	'wpforms-lite/wpforms.php',
+	'wordpress-seo/wp-seo.php',
+];
+
+/**
+ * Set permalink structure and flush rewrite rules (including .htaccess when supported).
+ *
+ * @param {string} [structure=PLAYWRIGHT_PERMALINK_STRUCTURE]
+ * @returns {Promise<void>}
+ */
+async function setPlaywrightPermalinkStructure(
+	structure = PLAYWRIGHT_PERMALINK_STRUCTURE
+) {
+	utils.fancyLog(
+		`🔗 Setting permalink structure to: ${ structure }`,
+		100,
+		'gray',
+		''
+	);
+	const { result, attempt } = await wordpress.wpCliWithRetry(
+		`rewrite structure '${ structure }' --hard`,
+		{ failOnNonZeroExit: false },
+		{ maxAttempts: 2, delayMs: 2000 }
+	);
+	if ( wordpress.isWpCliFailure( result ) ) {
+		utils.fancyLog(
+			`✘ Permalink setup failed after ${ attempt } attempt(s): ${ wordpress.formatWpCliResult( result ) }`,
+			200,
+			'yellow',
+			''
+		);
+		return;
+	}
+	const attemptNote = attempt > 1 ? `, attempt ${ attempt }` : '';
+	utils.fancyLog(
+		`✔ Permalink structure set (${ wordpress.formatWpCliResult( result ) }${ attemptNote })`,
+		200,
+		'green',
+		''
+	);
+}
+
+/**
+ * Deactivate bundled extra plugins so they do not load during Playwright (best-effort).
+ *
+ * @param {string[]} [plugins=PLAYWRIGHT_EXTRA_PLUGINS_TO_DEACTIVATE]
+ * @returns {Promise<void>}
+ */
+async function deactivateExtraPlaywrightPlugins(
+	plugins = PLAYWRIGHT_EXTRA_PLUGINS_TO_DEACTIVATE
+) {
+	for ( const plugin of plugins ) {
+		const result = await wordpress.wpCli( `plugin deactivate ${ plugin }`, {
+			failOnNonZeroExit: false,
+		} );
+		if ( wordpress.isWpCliFailure( result ) ) {
+			utils.fancyLog(
+				`⚠ Could not deactivate ${ plugin }: ${ wordpress.formatWpCliResult( result ) }`,
+				200,
+				'yellow',
+				''
+			);
+		}
+	}
+}
+
+/**
+ * Cron hooks that can fatal if they fire after wp-module-data is not loaded (orphaned events).
+ * Belt-and-suspenders for older module versions; wp-module-data deactivation should clear these too.
+ *
+ * @see https://github.com/newfold-labs/wp-plugin-bluehost/pull/1380
+ * @see https://github.com/newfold-labs/wp-module-data/pull/292
+ */
+const ORPHAN_PRONE_CRON_HOOKS = [ 'nfd_data_sync_cron', 'nfd_data_cron' ];
+
+/**
+ * Remove scheduled orphan-prone cron events (best-effort; does not fail the run).
+ *
+ * @returns {Promise<void>}
+ */
+async function clearOrphanProneCronEvents() {
+	for ( const hook of ORPHAN_PRONE_CRON_HOOKS ) {
+		const result = await wordpress.wpCli( `cron event delete ${ hook }`, {
+			failOnNonZeroExit: false,
+		} );
+		if ( wordpress.isWpCliFailure( result ) ) {
+			utils.fancyLog(
+				`⚠ Could not clear cron hook ${ hook }: ${ wordpress.formatWpCliResult( result ) }`,
+				200,
+				'yellow',
+				''
+			);
+		}
+	}
+}
+
+/**
+ * Ensure WordPress does not consider a plugin active, deactivating it if it is.
+ *
+ * Specs that assert a plugin's *pre-install* UI (install/download attributes rather than
+ * "Configure") depend on that plugin being inactive. Establishing this once in global setup
+ * is not enough: the installer cron can activate a queued plugin partway through a run, so a
+ * spec that inherits the precondition from whatever ran before it will fail intermittently.
+ * Call this from the spec that needs it.
+ *
+ * Goes through is_plugin_active()/deactivate_plugins() rather than `wp plugin deactivate` on
+ * purpose. That is the same check the rendered page uses, and unlike the WP-CLI command it
+ * still clears a stale active_plugins entry whose plugin files are gone — a state WP-CLI
+ * reports as "could not be found" (indistinguishable from inactive) while the page renders
+ * the plugin as active.
+ *
+ * Returns a result instead of throwing so callers can attach the reason to the assertion
+ * that actually depends on it.
+ *
+ * @param {string} basename    - Plugin basename, e.g. 'wordpress-seo/wp-seo.php'
+ * @param {number} maxAttempts - Deactivate/verify attempts before giving up
+ * @return {Promise<{ok: boolean, reason: string}>} Whether the plugin is inactive, and why not
+ */
+async function ensurePluginInactive( basename, maxAttempts = 3 ) {
+	const encodedBasename = Buffer.from( basename, 'utf8' ).toString(
+		'base64'
+	);
+	const command = `eval '$plugin = base64_decode( "${ encodedBasename }" ); require_once ABSPATH . "wp-admin/includes/plugin.php"; if ( is_plugin_active( $plugin ) ) { deactivate_plugins( $plugin, true ); } echo is_plugin_active( $plugin ) ? "active" : "inactive";'`;
+
+	let lastResult;
+	for ( let attempt = 1; attempt <= maxAttempts; attempt++ ) {
+		lastResult = await wordpress.wpCli( command, {
+			failOnNonZeroExit: false,
+		} );
+		if ( 'inactive' === lastResult ) {
+			return { ok: true, reason: '' };
+		}
+	}
+
+	const reason = `Precondition not met: ${ basename } is still active after ${ maxAttempts } deactivation attempts (last result: ${ wordpress.formatWpCliResult(
+		lastResult
+	) })`;
+	utils.fancyLog( `⚠ ${ reason }`, 200, 'yellow', '' );
+
+	return { ok: false, reason };
+}
+
+/**
+ * Log the current capabilities option from the database
+ * 
+ * @returns {Promise<Object>} The current capabilities object
+ */
+async function logCapabilities() {
+  const result = await wordpress.wpCli('option get _transient_nfd_site_capabilities --format=json');
+  
+  utils.fancyLog('📋 Current capabilities:');
+  
+  try {
+    const capabilities = JSON.parse(result);
+
+    if (typeof capabilities === 'object' && capabilities !== null) {
+      Object.entries(capabilities).forEach(([key, value]) => {
+        const valueStr = typeof value === 'object' ? JSON.stringify(value) : String(value);
+        utils.fancyLog(`- ${key}: ${valueStr}`, 100, 'gray', '            ');
+      });
+    } else {
+      utils.fancyLog(`- ${String(capabilities)}`, 100, 'gray', '            ');
+    }
+
+    return capabilities;
+  } catch (error) {
+    // Fallback if JSON parsing fails
+    utils.fancyLog(`${result}`, 100, 'gray', '            ');
+    return result;
+  }
+}
+
+/**
+ * Check if coming soon is enabled
+ * 
+ * @param {import('@playwright/test').Page} page - Playwright page object
+ * @returns {Promise<boolean>} True if coming soon is enabled
+ */
+async function isComingSoonEnabled(page) {
+  const response = await page.request.get('wp-json/wp/v2/options/nfd_coming_soon');
+  if (response.ok()) {
+    const data = await response.json();
+    return data === '1' || data === true;
+  }
+  return false;
+}
+
+/**
+ * Enable or disable coming soon mode
+ * 
+ * @param {boolean} enabled - Whether to enable coming soon
+ */
+async function setComingSoon(enabled) {
+  return await wordpress.setOption('nfd_coming_soon', enabled);
+}
+
+/**
+ * Click coming soon toggle button
+ * 
+ * @param {import('@playwright/test').Page} page - Playwright page object
+ * @param {boolean} enable - Whether to enable (true) or disable (false) coming soon
+ */
+async function toggleComingSoon(page, enable = true) {
+  const buttonSelector = enable 
+    ? '[data-cy="nfd-coming-soon-enable"]' 
+    : '[data-cy="nfd-coming-soon-disable"]';
+  
+  const button = page.locator(buttonSelector);
+  await button.click();
+  
+  // Wait for the toggle to take effect
+  await page.waitForTimeout(1000);
+}
+
+/**
+ * Verify coming soon status in site preview widget
+ * 
+ * @param {import('@playwright/test').Page} page - Playwright page object
+ * @param {boolean} expectedEnabled - Expected coming soon status
+ */
+async function verifyComingSoonStatus(page, expectedEnabled) {
+  const statusText = expectedEnabled ? 'Not Live' : 'Live';
+  const bodyText = expectedEnabled ? 'Coming Soon' : 'website is live';
+  const dataAttribute = expectedEnabled ? 'true' : 'false';
+  
+  // Check status text
+  await expect(page.locator('.iframe-preview-status')).toContainText(statusText);
+  
+  // Check body text
+  await expect(page.locator('.site-preview-widget-body')).toContainText(bodyText);
+  
+  // Check data attribute
+  await expect(page.locator('.site-preview-widget-body')).toHaveAttribute('data-coming-soon', dataAttribute);
+}
+
+/**
+ * Verify widget link attributes
+ * 
+ * @param {import('@playwright/test').Page} page - Playwright page object
+ * @param {string} linkSelector - CSS selector for the link
+ * @param {string} expectedText - Expected link text
+ * @param {string|RegExp} expectedHref - Expected href pattern
+ * @param {Object} expectedAttributes - Expected attributes (optional)
+ */
+async function verifyWidgetLink(page, linkSelector, expectedText, expectedHref, expectedAttributes = {}) {
+  const link = page.locator(linkSelector);
+  
+  // Check text content
+  await expect(link).toContainText(expectedText);
+  
+  // Check href
+  const href = await link.getAttribute('href');
+  if (typeof expectedHref === 'string') {
+    expect(href).toContain(expectedHref);
+  } else {
+    expect(href).toMatch(expectedHref);
+  }
+  
+  // Check additional attributes
+  for (const [attr, value] of Object.entries(expectedAttributes)) {
+    await expect(link).toHaveAttribute(attr, value);
+  }
+}
+
+/**
+ * Wait for dashboard widgets to load
+ * 
+ * @param {import('@playwright/test').Page} page - Playwright page object
+ * @param {number} timeout - Timeout in milliseconds (default: 10000)
+ */
+async function waitForDashboardWidgets(page, timeout = 10000) {
+  await page.waitForSelector('#dashboard-widgets-wrap', { timeout });
+}
+
+/**
+ * Navigate to a specific plugin page in the WordPress admin.
+ * Assumes the plugin ID is known.
+ *
+ * @param {import('@playwright/test').Page} page - Playwright page object.
+ * @param {string} pluginId - The ID of the plugin (e.g., 'bluehost').
+ * @param {string} path - The path within the plugin (e.g., '#/home').
+ */
+async function navigateToPluginPage(page, pluginId, path = '') {
+  await page.goto(`wp-admin/admin.php?page=${pluginId}${path}`);
+  await waitForWordPressAdmin(page);
+}
+
+/**
+ * Wait for WordPress admin to be ready (helper function)
+ * 
+ * @param {import('@playwright/test').Page} page - Playwright page object
+ */
+async function waitForWordPressAdmin(page) {
+  await page.waitForLoadState('domcontentloaded');
+  await page.waitForSelector('#wpadminbar'); // Wait for admin bar to be visible
+}
+
+/**
+ * Get admin menu items
+ * 
+ * @param {import('@playwright/test').Page} page - Playwright page object
+ * @returns {Promise<Array<string>>} List of admin menu item texts
+ */
+async function getAdminMenuItems(page) {
+  return await page.$$eval('#adminmenu > li > a .wp-menu-text', (elements) =>
+    elements.map((el) => el.textContent.trim())
+  );
+}
+
+/**
+ * Wait for WordPress REST API to be available
+ * 
+ * @param {import('@playwright/test').Page} page - Playwright page object
+ */
+async function waitForRestAPI(page) {
+  // Try to access a simple REST endpoint
+  const response = await page.request.get('wp-json/wp/v2/users/me');
+  if (!response.ok()) {
+    throw new Error('WordPress REST API not available');
+  }
+}
+
+export default {
+  // Version Utilities
+  compareVersions,
+  satisfiesMin,
+  getEnvironmentVersions,
+  clearVersionCache,
+  
+  // Plugin Support Checks
+  PLUGIN_REQUIREMENTS,
+  supportsPlugin,
+  supportsWoo,
+  supportsJetpack,
+  supportsYoast,
+  supportsWonderTheme,
+  getSkipMessage,
+
+  // WooCommerce / Companion Plugin Management
+  installWooCommerce,
+  isWooCommerceActive,
+  uninstallWooCommerce,
+
+  // Capabilities
+  setCapability,
+  clearCapabilities,
+  clearInstallerQueues,
+  clearOrphanProneCronEvents,
+  setPlaywrightPermalinkStructure,
+  deactivateExtraPlaywrightPlugins,
+  preparePlaywrightTestEnvironment,
+  PLAYWRIGHT_PERMALINK_STRUCTURE,
+  PLAYWRIGHT_EXTRA_PLUGINS_TO_DEACTIVATE,
+  ensurePluginInactive,
+  logCapabilities,
+  
+  // Coming Soon
+  isComingSoonEnabled,
+  setComingSoon,
+  toggleComingSoon,
+  verifyComingSoonStatus,
+  
+  // Dashboard Widgets
+  verifyWidgetLink,
+  waitForDashboardWidgets,
+  
+  // Plugin Navigation
+  navigateToPluginPage,
+  
+  // WordPress Admin
+  waitForWordPressAdmin,
+  getAdminMenuItems,
+  waitForRestAPI,
+};

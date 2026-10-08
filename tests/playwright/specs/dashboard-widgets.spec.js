@@ -1,31 +1,24 @@
 import { test, expect } from '@playwright/test';
-import { auth, wordpress, newfold, a11y, utils } from '../helpers';
+import { auth, newfold, a11y, utils } from '../helpers';
 
-test.describe('Dashboard Widgets', () => {
-  
+test.describe('Dashboard Widgets (env-any)', { tag: '@env-any' }, () => {
   test.beforeEach(async ({ page }) => {
-    // Navigate to WordPress dashboard
     await auth.navigateToAdminPage(page, 'index.php');
-    // clear all capabilities
-    await newfold.clearCapabilities();
   });
 
   test('Bluehost Widgets are all Accessible', async ({ page }) => {
-    // Wait for dashboard widgets to load with longer timeout
-    await expect(page).toHaveURL('http://localhost:8882/wp-admin/index.php');
-    
+    await expect(page).toHaveURL(/wp-admin\/index\.php$/);
+
     try {
       await newfold.waitForDashboardWidgets(page, 15000);
     } catch (error) {
       console.log('Dashboard widgets not found, checking if widgets exist individually...');
     }
-    
-    // Check if widgets exist before running accessibility tests
+
     const sitePreviewWidget = page.locator('#site_preview_widget');
     const helpWidget = page.locator('#bluehost_help_widget');
     const accountWidget = page.locator('#bluehost_account_widget');
-    
-    // Run accessibility tests only on widgets that exist
+
     if (await sitePreviewWidget.count() > 0) {
       await a11y.checkA11y(page, '#site_preview_widget');
     }
@@ -35,6 +28,56 @@ test.describe('Dashboard Widgets', () => {
     if (await accountWidget.count() > 0) {
       await a11y.checkA11y(page, '#bluehost_account_widget');
     }
+  });
+});
+
+test.describe('Dashboard Widgets (env-remote)', { tag: '@env-remote' }, () => {
+  test.beforeEach(async ({ page }) => {
+    await auth.navigateToAdminPage(page, 'index.php');
+  });
+
+  test('Bluehost Account Widget', async ({ page }) => {
+    const accountWidget = page.locator('#bluehost_account_widget');
+    await expect(accountWidget).toBeVisible();
+
+    await newfold.verifyWidgetLink(
+      page,
+      '[data-test-id="nfd-widget-account-link-profile"]',
+      'Profile',
+      'bluehost',
+      { href: /utm_source/ }
+    );
+
+    await newfold.verifyWidgetLink(
+      page,
+      '[data-test-id="nfd-widget-account-link-email"]',
+      'Mail',
+      'email-office',
+      { href: /utm_source/ }
+    );
+
+    await newfold.verifyWidgetLink(
+      page,
+      '[data-test-id="nfd-widget-account-link-hosting"]',
+      'Hosting',
+      'hosting',
+      { href: /utm_source/ }
+    );
+
+    await newfold.verifyWidgetLink(
+      page,
+      '[data-test-id="nfd-widget-account-link-security"]',
+      'Security',
+      'security',
+      { href: /utm_source/ }
+    );
+  });
+});
+
+test.describe('Dashboard Widgets (wp-env)', { tag: '@env-local' }, () => {
+  test.beforeEach(async ({ page }) => {
+    await auth.navigateToAdminPage(page, 'index.php');
+    await newfold.clearCapabilities();
   });
 
   test('Site Preview Widget', async ({ page }) => {
@@ -48,18 +91,18 @@ test.describe('Dashboard Widgets', () => {
 
     // Verify site preview widget exists and is visible
     const sitePreviewWidget = page.locator('#site_preview_widget');
-    sitePreviewWidget.scrollIntoViewIfNeeded();
+    await sitePreviewWidget.scrollIntoViewIfNeeded();
     await expect(sitePreviewWidget).toBeVisible();
 
     // Check domain and status
     const domainElement = page.locator('.iframe-preview-domain');
-    domainElement.scrollIntoViewIfNeeded();
+    await domainElement.scrollIntoViewIfNeeded();
     await expect(domainElement).toBeVisible();
     await expect(domainElement).toContainText('localhost');
     await expect(domainElement).toBeVisible();
 
     const statusElement = page.locator('.iframe-preview-status');
-    statusElement.scrollIntoViewIfNeeded();
+    await statusElement.scrollIntoViewIfNeeded();
     await expect(statusElement).toBeVisible();
     await expect(statusElement).toContainText('Live');
     await expect(statusElement).toBeVisible();
@@ -71,37 +114,37 @@ test.describe('Dashboard Widgets', () => {
 
     // Check View Site link
     const viewSiteLink = page.locator('a[data-test-id="nfd-view-site"]');
-    viewSiteLink.scrollIntoViewIfNeeded();
+    await viewSiteLink.scrollIntoViewIfNeeded();
     await expect(viewSiteLink).toBeVisible();
     await expect(viewSiteLink).toContainText('View Site');
     await expect(viewSiteLink).toBeVisible();
-    
+
     const viewSiteHref = await viewSiteLink.getAttribute('href');
     expect(viewSiteHref).toContain('localhost');
 
     // Check Edit Site link
     const editSiteLink = page.locator('a[data-test-id="nfd-edit-site"]');
-    editSiteLink.scrollIntoViewIfNeeded();
+    await editSiteLink.scrollIntoViewIfNeeded();
     await expect(editSiteLink).toBeVisible();
     await expect(editSiteLink).toContainText('Edit Site');
     await expect(editSiteLink).toBeVisible();
-    
+
     const editSiteHref = await editSiteLink.getAttribute('href');
     expect(editSiteHref).toContain('site-editor');
 
     // Enable Coming Soon
-    const enableComingSoonButton = page.locator('a[data-test-id="nfd-coming-soon-enable"]');
-    enableComingSoonButton.scrollIntoViewIfNeeded();
+    const enableComingSoonButton = page.locator('button[data-test-id="nfd-coming-soon-enable"]');
+    await enableComingSoonButton.scrollIntoViewIfNeeded();
     await expect(enableComingSoonButton).toBeVisible();
     await expect(enableComingSoonButton).toContainText('Enable Coming Soon');
-    await expect(enableComingSoonButton).toHaveAttribute('href', '#');
+    await expect(enableComingSoonButton).toHaveAttribute('type', 'button');
     // Click triggers NewfoldRuntime + full page reload (see site-preview.php)
     await enableComingSoonButton.click();
     await page.waitForLoadState( 'load' );
 
     // Coming Soon Enabled - wait for preview link to appear
     const previewLink = page.locator('a[data-test-id="nfd-preview-site"]');
-    previewLink.scrollIntoViewIfNeeded();
+    await previewLink.scrollIntoViewIfNeeded();
     await expect(previewLink).toBeVisible();
     await expect(viewSiteLink).toHaveCount(0);
 
@@ -114,18 +157,18 @@ test.describe('Dashboard Widgets', () => {
 
     // Enable button should not exist, disable button should exist
     await expect(enableComingSoonButton).toHaveCount(0);
-    
-    const disableComingSoonButton = page.locator('a[data-test-id="nfd-coming-soon-disable"]');
-    disableComingSoonButton.scrollIntoViewIfNeeded();
+
+    const disableComingSoonButton = page.locator('button[data-test-id="nfd-coming-soon-disable"]');
+    await disableComingSoonButton.scrollIntoViewIfNeeded();
     await expect(disableComingSoonButton).toBeVisible();
     await expect(disableComingSoonButton).toContainText('Launch Site');
-    await expect(disableComingSoonButton).toHaveAttribute('href', '#');
-    
+    await expect(disableComingSoonButton).toHaveAttribute('type', 'button');
+
     await disableComingSoonButton.click();
     await page.waitForLoadState( 'load' );
 
     // Coming Soon Disabled
-    viewSiteLink.scrollIntoViewIfNeeded();
+    await viewSiteLink.scrollIntoViewIfNeeded();
     await expect(viewSiteLink).toBeVisible();
     await expect(statusElement).toContainText('Live');
     await expect(widgetBody).toContainText('website is live');
@@ -135,7 +178,7 @@ test.describe('Dashboard Widgets', () => {
     // Disable button should not exist, enable button should exist
     await expect(disableComingSoonButton).toHaveCount(0);
     await expect(enableComingSoonButton).toContainText('Enable Coming Soon');
-    await expect(enableComingSoonButton).toHaveAttribute('href', '#');
+    await expect(enableComingSoonButton).toHaveAttribute('type', 'button');
   });
 
   test('Help Widget', async ({ page }) => {
@@ -147,7 +190,7 @@ test.describe('Dashboard Widgets', () => {
     await utils.scrollIntoView(helpLink);
     await expect(helpLink).toContainText('Get Help');
     await expect(helpLink).toHaveAttribute('data-help-center', 'false');
-    
+
     const helpHref = await helpLink.getAttribute('href');
     expect(helpHref).toContain('help');
 
@@ -156,60 +199,19 @@ test.describe('Dashboard Widgets', () => {
       canAccessAI: true,
       canAccessHelpCenter: true,
     });
-    
+
     await page.reload();
     // Log capabilities to verify they were set
     await newfold.logCapabilities();
-    
+
     await utils.scrollIntoView(helpLink);
     await expect(helpLink).toContainText('Get Help');
     await expect(helpLink).toHaveAttribute('data-help-center', 'true');
     await helpLink.click();
-    
+
     const helpCenter = page.locator('#nfd-help-center');
     await utils.scrollIntoView(helpCenter);
     await expect(helpCenter).toContainText('Help');
     await expect(helpCenter).toBeVisible();
-  });
-
-  test('Bluehost Account Widget', async ({ page }) => {
-    const accountWidget = page.locator('#bluehost_account_widget');
-    await expect(accountWidget).toBeVisible();
-
-    // Profile Link
-    await newfold.verifyWidgetLink(
-      page,
-      '[data-test-id="nfd-widget-account-link-profile"]',
-      'Profile',
-      'bluehost',
-      { href: /utm_source/ }
-    );
-
-    // Mail Link
-    await newfold.verifyWidgetLink(
-      page,
-      '[data-test-id="nfd-widget-account-link-email"]',
-      'Mail',
-      'email-office',
-      { href: /utm_source/ }
-    );
-
-    // Hosting Link
-    await newfold.verifyWidgetLink(
-      page,
-      '[data-test-id="nfd-widget-account-link-hosting"]',
-      'Hosting',
-      'hosting',
-      { href: /utm_source/ }
-    );
-
-    // Security Link
-    await newfold.verifyWidgetLink(
-      page,
-      '[data-test-id="nfd-widget-account-link-security"]',
-      'Security',
-      'security',
-      { href: /utm_source/ }
-    );
   });
 });

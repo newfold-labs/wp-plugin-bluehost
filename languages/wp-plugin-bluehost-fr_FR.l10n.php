@@ -5,11 +5,12 @@ return [
 	'language' => 'fr_FR',
 	'project-id-version' => 'wp-plugin-bluehost',
 	'pot-creation-date' => '2025-02-25T20:53:21+00:00',
-	'po-revision-date' => '2026-05-05T14:29:06+00:00',
+	'po-revision-date' => '2026-10-01T18:01:04+00:00',
 	'messages' => [
 		'The Bluehost Plugin' => 'Le Plugin Bluehost',
 		'https://bluehost.com' => 'https://bluehost.com',
 		'WordPress plugin that integrates a WordPress site with the Bluehost control panel, including performance, security, and update features.' => 'Le plugin WordPress qui intègre un site WordPress avec le panneau de contrôle Bluehost, y compris les performances, la sécurité et les fonctionnalités de mise à jour.',
+		'Bluehost' => 'Hôte bleu',
 		'Please install the Bluehost Plugin dependencies.' => 'Veuillez installer les dépendances du plugin Bluehost.',
 		'%1$sNeed a domain?%2$sCheck out our %3$sDomain Registration%4$s options.%5$s' => '%1$sBesoin d’un domaine ?%2$sDécouvrez nos options d’enregistrement de %3$sDomain %4$s. %5$s',
 		'%1$sDiscover our hosting solutions:%2$s
@@ -31,7 +32,7 @@ return [
 		'%s &mdash; Coming Soon' => '%s &mdash; À Venir Bientôt',
 		'Coming Soon Active' => 'À Venir Bientôt Actif',
 		'Your site is currently displaying a %1$scoming soon page%2$s. Once you are ready, %3$slaunch your site%4$s.' => 'Votre site affiche actuellement une %1$sà venir page%2$s. Une fois que vous serez prêt, %3$slance votre site%4$s.',
-		'Preview the coming soon landing page' => 'Aperçu de la page d\'accueil « À Venir Bientôt »',
+		'Manage your coming soon page settings' => 'Gérez vos paramètres de page à venir',
 		'Sales & Promotions Page' => 'Page Ventes & Promotions',
 		'Sales & Promotions' => 'Ventes et promotions',
 		'Home' => 'Accueil',

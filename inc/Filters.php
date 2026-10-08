@@ -24,37 +24,24 @@ final class Filters {
 	 */
 	public static function init() {
 		\add_filter( 'http_request_args', array( __CLASS__, 'add_hiive_headers' ), 99, 2 );
-		\add_filter( 'newfold/coming-soon/filter/portal_data', array( __CLASS__, 'filter_coming_soon_portal_data' ) );
+		\add_action( 'load-site-editor.php', array( __CLASS__, 'redirect_wvc_theme_to_10web_editor' ) );
+		\add_action( 'load-customize.php', array( __CLASS__, 'redirect_wvc_theme_to_10web_editor' ) );
 		\add_filter( 'newfold/sso/hosting_login', array( __CLASS__, 'configure_hosting_login' ) );
 	}
 
 	/**
-	 * Admin URL for Edit site (dashboard widget + Coming Soon portal): Site Editor, Customizer, or 10Web WVC editor.
+	 * Redirect WP Site Editor / Customizer to the 10Web WVC editor when that theme is active.
 	 *
-	 * @return string
+	 * Registered only on load-site-editor.php and load-customize.php so other admin screens
+	 * are unaffected and redirect loops are avoided.
 	 */
-	public static function get_site_edit_admin_url() {
-		$path = self::is_wvc_theme_active()
-			? 'admin.php?page=wvc-editor'
-			: ( \wp_is_block_theme() ? 'site-editor.php?canvas=edit' : 'customize.php' );
-
-		return \get_admin_url( null, $path );
-	}
-
-	/**
-	 * Override Coming Soon portal "Edit" URL to the 10Web editor when WVC theme is active.
-	 *
-	 * @param mixed $data Portal payload (array) or other value returned unchanged.
-	 * @return mixed
-	 */
-	public static function filter_coming_soon_portal_data( $data ) {
-		if ( ! \is_array( $data ) || ! self::is_wvc_theme_active() ) {
-			return $data;
+	public static function redirect_wvc_theme_to_10web_editor() {
+		if ( ! self::is_wvc_theme_active() ) {
+			return;
 		}
 
-		$data['editUrl'] = self::get_site_edit_admin_url();
-
-		return $data;
+		\wp_safe_redirect( \admin_url( 'admin.php?page=wvc-editor' ) );
+		exit;
 	}
 
 	/**
@@ -83,7 +70,7 @@ final class Filters {
 	 *
 	 * @return bool
 	 */
-	private static function is_wvc_theme_active() {
+	public static function is_wvc_theme_active() {
 		return self::TENWEB_WVC_THEME_SLUG === \get_stylesheet()
 			|| self::TENWEB_WVC_THEME_SLUG === \get_template();
 	}

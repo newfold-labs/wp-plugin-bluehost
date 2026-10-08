@@ -32,6 +32,7 @@ final class Data {
 			),
 			'wordpress'          => array(
 				'isBlockTheme' => function_exists( 'wp_is_block_theme' ) ? wp_is_block_theme() : false,
+				'isWvcTheme'   => Filters::is_wvc_theme_active(),
 			),
 			'siteType'           => self::get_site_type(),
 			'isSalesPromoActive' => self::is_sales_promotions_plugin_active(),
@@ -43,8 +44,8 @@ final class Data {
 			$solution             = is_array( $solution_data ) && array_key_exists( 'solution', $solution_data ) ? $solution_data['solution'] : false;
 			$runtime['solutions'] = array(
 				'solution'         => $solution,
-				'wondercart'       => self::get_entitlement_by_id( $solution_data, 'WonderCart' ),
-				'sales_promotions' => self::get_entitlement_by_id( $solution_data, 'Sales & Promotions' ),
+				'wondercart'       => self::get_entitlement_by_name( $solution_data, 'WonderCart' ),
+				'sales_promotions' => self::get_entitlement_by_name( $solution_data, 'Sales & Promotions' ),
 			);
 		}
 
@@ -52,7 +53,7 @@ final class Data {
 		$runtime['ctbs'] = array(
 			'ecomFamily' => array(
 				'id'  => '5dc83bdd-9274-4557-a6d7-0b2adbc3919f',
-				'url' => 'https://www.bluehost.com/my-account/hosting/details#click-to-buy-WP_SOLUTION_FAMILY',
+				'url' => 'https://www.bluehost.com/my-account/market-place#marketplace-WordPress%20Solutions',
 			),
 		);
 
@@ -66,13 +67,13 @@ final class Data {
 	}
 
 	/**
-	 * Get entitlement by ID from solution data
+	 * Get entitlement by display name from solution data.
 	 *
-	 * @param array  $solution_data The solution data array
-	 * @param string $entitlement_name The entitlement name to search for
-	 * @return array|false The entitlement data if found, false otherwise
+	 * @param array  $solution_data The solution data array.
+	 * @param string $entitlement_name The entitlement name to search for.
+	 * @return array|false The entitlement data if found, false otherwise.
 	 */
-	public static function get_entitlement_by_id( $solution_data, $entitlement_name ) {
+	public static function get_entitlement_by_name( $solution_data, $entitlement_name ) {
 		if ( ! isset( $solution_data['entitlements'] ) || ! is_array( $solution_data['entitlements'] ) ) {
 			return false;
 		}

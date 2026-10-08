@@ -5,11 +5,12 @@ return [
 	'language' => 'pt_PT',
 	'project-id-version' => 'wp-plugin-bluehost',
 	'pot-creation-date' => '2025-02-25T20:53:21+00:00',
-	'po-revision-date' => '2026-05-05T14:29:06+00:00',
+	'po-revision-date' => '2026-10-01T18:01:04+00:00',
 	'messages' => [
 		'The Bluehost Plugin' => 'O Plugin Bluehost',
 		'https://bluehost.com' => 'https://bluehost.com',
 		'WordPress plugin that integrates a WordPress site with the Bluehost control panel, including performance, security, and update features.' => 'Plugin WordPress que integra um site WordPress com o painel de controle Bluehost, incluindo desempenho, segurança e recursos de atualização.',
+		'Bluehost' => 'Bluehost',
 		'Please install the Bluehost Plugin dependencies.' => 'Por favor instale as dependências do Plugin Bluehost.',
 		'%1$sNeed a domain?%2$sCheck out our %3$sDomain Registration%4$s options.%5$s' => '%1$sPrecisa de um domínio?%2$sConfira nossas opções %3$sRegistro de domínio%4$s.%5$s',
 		'%1$sDiscover our hosting solutions:%2$s
@@ -31,7 +32,7 @@ return [
 		'%s &mdash; Coming Soon' => '%s &mdash; Em breve',
 		'Coming Soon Active' => 'Em breve ativo',
 		'Your site is currently displaying a %1$scoming soon page%2$s. Once you are ready, %3$slaunch your site%4$s.' => 'Seu site mostrará atualmente um %1$schegando a página%2$s. Uma vez que você estiver pronto, %3$sinicie o seu site%4$s.',
-		'Preview the coming soon landing page' => 'Pré-visualizar a página inicial em breve',
+		'Manage your coming soon page settings' => 'Gerir as definições da sua página em breve',
 		'Sales & Promotions Page' => 'Página de Vendas e Promoções',
 		'Sales & Promotions' => 'Vendas & Promoções',
 		'Home' => 'Início',

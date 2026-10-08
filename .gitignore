@@ -1,7 +1,7 @@
 # Composer
 /vendor
 /vendor-prefixed
-bin/strauss.phar
+/bin/php-scoper/vendor
 
 #node_modules
 /node_modules

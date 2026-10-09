@@ -20,8 +20,8 @@ jobs:
   translate:
     name: 'Check and update translations'
     permissions:
-      contents: write
-      pull-requests: write
+      contents: write           # Required for reusable workflow to commit translation updates.
+      pull-requests: write      # Required for reusable workflow to open or update pull requests.
     uses: newfold-labs/workflows/.github/workflows/reusable-translations.yml@main
     with:
       text_domain: 'wp-plugin-bluehost'

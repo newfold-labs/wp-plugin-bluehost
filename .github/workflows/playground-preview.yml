@@ -353,7 +353,27 @@ jobs:
           PLUGIN_DIR="${RUNNER_TEMP}/bluehost-preview-plugin"
           rm -rf "$PLUGIN_DIR"
           mkdir -p "$PLUGIN_DIR"
-          curl -fsSL "$ZIP_URL" -o "${RUNNER_TEMP}/preview.zip"
+
+          # The preview zip is served from GitHub Pages. Each Pages deploy replaces the
+          # whole site, so a concurrent deploy for another PR (or Pages propagation lag)
+          # can briefly 404 this URL. Retry with backoff, then fail loudly so a genuinely
+          # broken preview pipeline doesn't go unnoticed.
+          MAX_ATTEMPTS=8
+          DELAY=5
+          for attempt in $(seq 1 "$MAX_ATTEMPTS"); do
+            if curl -fsSL "$ZIP_URL" -o "${RUNNER_TEMP}/preview.zip"; then
+              echo "Downloaded preview zip on attempt ${attempt}."
+              break
+            fi
+            if [ "$attempt" -eq "$MAX_ATTEMPTS" ]; then
+              echo "::error::Preview zip not available at ${ZIP_URL} after ${MAX_ATTEMPTS} attempts."
+              exit 1
+            fi
+            echo "Attempt ${attempt}/${MAX_ATTEMPTS} failed; retrying in ${DELAY}s..."
+            sleep "$DELAY"
+            DELAY=$(( DELAY * 2 > 60 ? 60 : DELAY * 2 ))
+          done
+
           unzip -q "${RUNNER_TEMP}/preview.zip" -d "$PLUGIN_DIR"
           echo "PLAYGROUND_PLUGIN_DIR=$PLUGIN_DIR" >> "$GITHUB_ENV"
 

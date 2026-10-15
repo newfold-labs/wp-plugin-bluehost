@@ -346,7 +346,6 @@ jobs:
         run: npx playwright install chromium
 
       - name: Download PR preview plugin build
-        id: download
         env:
           ZIP_URL: ${{ needs.playground-preview.outputs.zip_url }}
         run: |
@@ -357,8 +356,8 @@ jobs:
 
           # The preview zip is served from GitHub Pages. Each Pages deploy replaces the
           # whole site, so a concurrent deploy for another PR (or Pages propagation lag)
-          # can briefly 404 this URL. Retry with backoff. This is a preview env, so if the
-          # zip never shows up we skip the tests with a warning rather than failing the PR.
+          # can briefly 404 this URL. Retry with backoff, then fail loudly so a genuinely
+          # broken preview pipeline doesn't go unnoticed.
           MAX_ATTEMPTS=8
           DELAY=5
           for attempt in $(seq 1 "$MAX_ATTEMPTS"); do
@@ -367,9 +366,8 @@ jobs:
               break
             fi
             if [ "$attempt" -eq "$MAX_ATTEMPTS" ]; then
-              echo "::warning::Preview zip not available at ${ZIP_URL} after ${MAX_ATTEMPTS} attempts; skipping Playground tests."
-              echo "available=false" >> "$GITHUB_OUTPUT"
-              exit 0
+              echo "::error::Preview zip not available at ${ZIP_URL} after ${MAX_ATTEMPTS} attempts."
+              exit 1
             fi
             echo "Attempt ${attempt}/${MAX_ATTEMPTS} failed; retrying in ${DELAY}s..."
             sleep "$DELAY"
@@ -378,17 +376,15 @@ jobs:
 
           unzip -q "${RUNNER_TEMP}/preview.zip" -d "$PLUGIN_DIR"
           echo "PLAYGROUND_PLUGIN_DIR=$PLUGIN_DIR" >> "$GITHUB_ENV"
-          echo "available=true" >> "$GITHUB_OUTPUT"
 
       - name: Run @env-any tests against Playground server
-        if: steps.download.outputs.available == 'true'
         env:
           CI: true
           PLAYWRIGHT_FORCE_ASYNC_LOADER: '1'
         run: npx playwright test --grep @env-any --project newfold-labs/wp-plugin-bluehost --reporter=line
 
       - name: Store Playwright test results
-        if: always() && steps.download.outputs.available == 'true'
+        if: always()
         uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
         with:
           name: playwright-playground-env-any

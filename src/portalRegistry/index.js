@@ -150,10 +150,10 @@ const portalRegistry = ( () => {
 	/** @type {Object.<string, {element: HTMLElement, isReady: boolean}>} */
 	const portals = {};
 
-	/** @type {Object.<string, Array<Function>>} */
+	/** @type {Object.<string, Array<function(HTMLElement): void>>} */
 	const listeners = {};
 
-	/** @type {Object.<string, Array<Function>>} */
+	/** @type {Object.<string, Array<function(): void>>} */
 	const removalListeners = {};
 
 	return {

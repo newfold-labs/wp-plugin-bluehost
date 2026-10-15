@@ -1,4 +1,29 @@
-import { isEmbeddedHelpCenterOpen, openEmbeddedHelpCenter } from './helpers';
+jest.mock( '@newfold/wp-module-runtime', () => ( {
+	NewfoldRuntime: {
+		createApiUrl: jest.fn( ( path ) => path ),
+		hasCapability: jest.fn( () => false ),
+	},
+} ) );
+
+jest.mock( '@wordpress/data', () => ( {
+	dispatch: jest.fn( () => ( {
+		removeNotice: jest.fn(),
+		createNotice: jest.fn( () =>
+			Promise.resolve( { notice: { id: 'test-notice' } } )
+		),
+	} ) ),
+} ) );
+
+jest.mock( '@wordpress/api-fetch', () => jest.fn() );
+
+jest.mock( '@wordpress/url', () => ( {
+	addQueryArgs: jest.fn(),
+} ) );
+
+import {
+	isEmbeddedHelpCenterOpen,
+	openEmbeddedHelpCenter,
+} from 'App/util/helpers';
 
 describe( 'embedded help center helpers', () => {
 	const toggle = jest.fn();

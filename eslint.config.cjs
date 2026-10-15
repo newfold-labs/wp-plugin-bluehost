@@ -1,9 +1,10 @@
 /**
  * ESLint flat config for the Bluehost WordPress plugin.
  *
- * Mirrors @wordpress/scripts default (recommended + test-unit + Babel) and
- * restores project-specific import aliases + globals (matching webpack
- * ProvidePlugin / resolve.alias) that previously lived in .eslintrc.js.
+ * Mirrors @wordpress/scripts recommended + Babel and restores project-specific
+ * import aliases + globals (matching webpack ProvidePlugin / resolve.alias) that
+ * previously lived in .eslintrc.js. Application code only (`src/`); test files
+ * under `tests/` are not linted here (same as Playwright specs).
  */
 const path = require( 'path' );
 
@@ -36,11 +37,6 @@ const config = [
 	},
 
 	...wpPlugin.configs.recommended,
-
-	...wpPlugin.configs[ 'test-unit' ].map( ( c ) => ( {
-		...c,
-		files: [ '**/@(test|__tests__)/**/*.js', '**/?(*.)test.js' ],
-	} ) ),
 
 	// Project-specific: match webpack aliases and ProvidePlugin for ./src.
 	{

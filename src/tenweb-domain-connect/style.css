@@ -1,0 +1,25 @@
+/* Host wrappers for the domain-connect MFE mount points. */
+.bh-domain-connect-host {
+	display: block;
+	width: 100%;
+	max-width: 100%;
+	box-sizing: border-box;
+}
+
+.bh-domain-connect-host--stage {
+	flex: 0 0 auto;
+	width: min(560px, calc(100% - 24px));
+	margin: 16px auto;
+}
+
+.bh-domain-connect-host--chat,
+.bh-domain-connect-host--publish {
+	margin: 8px 0 0;
+}
+
+.bh-domain-connect-host--header {
+	display: inline-flex;
+	flex: 0 0 auto;
+	align-items: center;
+	margin: 0 12px;
+}

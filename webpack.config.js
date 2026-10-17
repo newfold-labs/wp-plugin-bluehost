@@ -86,6 +86,10 @@ const webConfig = {
 			process.cwd(),
 			'src/portalRegistry/index.js'
 		), // Shared registry
+		'tenweb-domain-connect': path.resolve(
+			process.cwd(),
+			'src/tenweb-domain-connect/index.js'
+		), // WVC domain-connect MFE host
 	},
 	output: {
 		// versioned output directory i.e. /build/1.0.0, /build/1.1.0, etc.

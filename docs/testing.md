@@ -300,6 +300,8 @@ On pull requests, **`.github/workflows/playground-preview.yml`** includes a **`p
 
 The browser Playground URL (`playground.wordpress.net/#…`) is for manual QA; CI uses the CLI server in a separate process because Playwright needs a normal HTTP origin and the server must keep its own event loop. Playground's `login: true` blueprint flag auto-authenticates admin requests, so tests skip the `wp-login.php` credential flow (`PLAYGROUND_AUTO_LOGIN` / `PLAYGROUND_PLUGIN_DIR`).
 
+**`ws` devDependency:** the `@php-wasm/node-*` PHP runtimes call `require('ws')` for PHP's outbound sockets without declaring it, so they get whichever `ws` npm hoists to the top of `node_modules`. `package.json` lists `ws` ^8 so that copy matches the ws 8 proxy server inside `@php-wasm/node`. If another package (e.g. `lighthouse` via `@wordpress/scripts`) hoists ws 7 instead, PHP's outbound requests hang the single Playground worker. Every `@env-any` spec then times out in `page.goto`. Don't remove it as unused.
+
 ### Module tests in a plugin env (Playground follow-up)
 
 Modules call **`newfold-labs/workflows/.github/workflows/module-plugin-test-playwright.yml`** (e.g. `brand-plugin-test-playwright.yml`). After this plugin exposes `start-playground-server.mjs`, that reusable workflow should also run:

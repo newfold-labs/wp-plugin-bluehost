@@ -19,6 +19,7 @@
     },
     "platform-check": false,
     "allow-plugins": {
+      "automattic/jetpack-autoloader": false,
       "composer/installers": true,
       "dealerdirect/phpcodesniffer-composer-installer": true,
       "johnpbloch/wordpress-core-installer": true

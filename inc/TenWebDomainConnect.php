@@ -8,7 +8,7 @@ namespace Bluehost;
 class TenWebDomainConnect {
 
 	const HANDLE_LOADER = 'bluehost-tenweb-domain-connect-loader';
-	const HANDLE_MFE      = 'bluehost-domain-connect-mfe';
+	const HANDLE_MFE    = 'bluehost-domain-connect-mfe';
 
 	/**
 	 * Register early editor hooks.
@@ -63,20 +63,23 @@ class TenWebDomainConnect {
 		);
 
 		$config = array(
-			'contextUrl' => esc_url_raw( rest_url( 'bluehost/v1/domain-connect/context' ) ),
-			'nonce'      => wp_create_nonce( 'wp_rest' ),
-			'placement'  => 'auto',
-			'debug'      => defined( 'WP_DEBUG' ) && WP_DEBUG,
-			'mfeBaseUrl' => esc_url_raw( $mfe_base ),
-			'selectors'  => array(
-				'stage'        => '[data-wvc-region="stage"]',
-				'stageAnchor'  => '[data-wvc-stage="onboarding"]',
-				'stageReady'   => '[data-wvc-stage="ready"], [data-wvc-stage="plan-review"], [data-testid="site-parts-visibility"], .sp-preview, .interactive-container, iframe',
-				'chat'         => '.sidebar.open .chat, .left-sidebar .chat',
-				'chatMessage'  => '.chat__message',
+			'contextUrl'  => esc_url_raw( rest_url( 'bluehost/v1/domain-connect/context' ) ),
+			'nonce'       => wp_create_nonce( 'wp_rest' ),
+			'placement'   => 'header',
+			'mfeScriptId' => self::HANDLE_MFE . '-js',
+			'debug'       => defined( 'WP_DEBUG' ) && WP_DEBUG,
+			'mfeBaseUrl'  => esc_url_raw( $mfe_base ),
+			'labels'      => array(
+				'connect'     => __( 'Connect domain', 'wp-plugin-bluehost' ),
+				'preparing'   => __( 'Preparing domain selection…', 'wp-plugin-bluehost' ),
+				'error'       => __( 'Domain selection could not be opened. Reload the editor to try again.', 'wp-plugin-bluehost' ),
+				'unavailable' => __( 'Domain selection is unavailable. Reload the editor to try again.', 'wp-plugin-bluehost' ),
+				/* translators: %s: purchased domain name. */
+				'purchased'   => __( 'Domain purchased: %s', 'wp-plugin-bluehost' ),
+			),
+			'selectors'   => array(
 				'header'       => '.main-content-header, .header-wrapper > .header',
 				'headerAnchor' => '.mw-min-content, .site-info',
-				'publishMenu'  => '.dropdown__content--hover-animated, .dropdown__content',
 			),
 		);
 

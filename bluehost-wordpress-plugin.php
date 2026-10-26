@@ -39,7 +39,14 @@ define( 'BLUEHOST_PLUGIN_URL', plugin_dir_url( __FILE__ ) );
 define( 'BLUEHOST_BUILD_DIR', BLUEHOST_PLUGIN_DIR . 'build/' . BLUEHOST_PLUGIN_VERSION );
 define( 'BLUEHOST_BUILD_URL', BLUEHOST_PLUGIN_URL . 'build/' . BLUEHOST_PLUGIN_VERSION );
 if ( ! defined( 'NFD_HIIVE_URL' ) ) {
-	define( 'NFD_HIIVE_URL', 'https://hiive.cloud/api' );
+	$nfd_hiive_api_url = 'https://hiive.cloud/api';
+	if ( function_exists( 'get_option' ) ) {
+		$nfd_hiive_env_option = get_option( 'nfd_hiive_env', '' );
+		if ( is_string( $nfd_hiive_env_option ) && '' !== $nfd_hiive_env_option ) {
+			$nfd_hiive_api_url = $nfd_hiive_env_option;
+		}
+	}
+	define( 'NFD_HIIVE_URL', $nfd_hiive_api_url );
 }
 
 if ( defined( 'BURST_SAFETY_MODE' ) && BURST_SAFETY_MODE ) {

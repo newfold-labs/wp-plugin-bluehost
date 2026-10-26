@@ -1,25 +1,82 @@
-/* Host wrappers for the domain-connect MFE mount points. */
-.bh-domain-connect-host {
-	display: block;
-	width: 100%;
-	max-width: 100%;
-	box-sizing: border-box;
-}
-
-.bh-domain-connect-host--stage {
-	flex: 0 0 auto;
-	width: min(560px, calc(100% - 24px));
-	margin: 16px auto;
-}
-
-.bh-domain-connect-host--chat,
-.bh-domain-connect-host--publish {
-	margin: 8px 0 0;
-}
-
+/* The topbar opens the SDK's own search popover and checkout. */
 .bh-domain-connect-host--header {
+	position: relative;
 	display: inline-flex;
-	flex: 0 0 auto;
+	flex: 0 1 auto;
+	width: auto;
+	min-width: 0;
+	max-width: 200px;
 	align-items: center;
 	margin: 0 12px;
+}
+
+.bh-domain-connect-entry {
+	appearance: none;
+	min-height: 36px;
+	box-sizing: border-box;
+	margin: 0;
+	padding: 8px 12px;
+	border: 1px solid #dbe8fa;
+	border-radius: 999px;
+	background: #edf3fd;
+	color: #196cdf;
+	font: inherit;
+	font-size: 12.5px;
+	font-weight: 600;
+	line-height: 1.45;
+	white-space: nowrap;
+	cursor: pointer;
+}
+
+.bh-domain-connect-entry:hover:not(:disabled),
+.bh-domain-connect-entry[aria-expanded="true"] {
+	border-color: #196cdf;
+	background: #f6faff;
+}
+
+.bh-domain-connect-entry:focus-visible {
+	outline: 2px solid #196cdf;
+	outline-offset: 3px;
+}
+
+.bh-domain-connect-entry:disabled {
+	opacity: 0.65;
+	cursor: default;
+}
+
+.bh-domain-connect-status {
+	position: absolute;
+	top: 100%;
+	right: 0;
+	z-index: 1;
+	width: min(280px, calc(100vw - 32px));
+	box-sizing: border-box;
+	margin: 8px 0 0;
+	padding: 10px 12px;
+	border: 1px solid #e4e8ec;
+	border-radius: 10px;
+	background: #fff;
+	box-shadow: 0 4px 16px rgba(4, 29, 51, 0.12);
+	color: #4a5565;
+	font-size: 12px;
+	line-height: 1.5;
+	overflow-wrap: anywhere;
+}
+
+.bh-domain-connect-status:empty {
+	display: none;
+}
+
+#bh-domain-connect-modal {
+	position: relative;
+	z-index: 100001;
+}
+
+@media (max-width: 640px) {
+
+	.bh-domain-connect-host--header {
+		max-width: 160px;
+		margin-right: 6px;
+		margin-left: 6px;
+	}
 }

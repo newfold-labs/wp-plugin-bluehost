@@ -92,12 +92,14 @@ class TenWebDomainConnect {
 	}
 
 	/**
+	 * Mark the domain-connect MFE script as an ES module.
+	 *
 	 * @param string $tag    Script tag.
 	 * @param string $handle Handle.
-	 * @param string $src    Source URL.
+	 * @param string $src    Source URL (unused; required by filter signature).
 	 * @return string
 	 */
-	public function set_mfe_script_type_module( $tag, $handle, $src ) {
+	public function set_mfe_script_type_module( $tag, $handle, $src ) { // phpcs:ignore Generic.CodeAnalysis.UnusedFunctionParameter.FoundAfterLastUsed
 		if ( self::HANDLE_MFE !== $handle ) {
 			return $tag;
 		}
@@ -110,6 +112,8 @@ class TenWebDomainConnect {
 	}
 
 	/**
+	 * CDN base URL for the domain-connect MFE bundle.
+	 *
 	 * @return string
 	 */
 	private function get_mfe_base_url() {

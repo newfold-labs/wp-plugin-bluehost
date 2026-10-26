@@ -103,6 +103,8 @@ class Context {
 	}
 
 	/**
+	 * Resolve the Jarvis user JWT for the current request.
+	 *
 	 * @return string|WP_Error
 	 */
 	private function get_user_jwt() {
@@ -195,6 +197,8 @@ class Context {
 	}
 
 	/**
+	 * Whether WordPress reports a local environment type.
+	 *
 	 * @return bool
 	 */
 	private function is_local_environment() {
@@ -202,6 +206,8 @@ class Context {
 	}
 
 	/**
+	 * Fetch the Hiive customer payload for this site (cached per operation).
+	 *
 	 * @return array|WP_Error
 	 */
 	private function get_hiive_customer() {
@@ -240,6 +246,8 @@ class Context {
 	}
 
 	/**
+	 * Resolve the hosting product instance id from Hiive customer data.
+	 *
 	 * @param array $customer Hiive customer payload.
 	 * @return string
 	 */
@@ -278,6 +286,8 @@ class Context {
 	}
 
 	/**
+	 * Suggested domain label derived from the site title.
+	 *
 	 * @return string
 	 */
 	private function get_suggested_name() {
@@ -288,6 +298,8 @@ class Context {
 	}
 
 	/**
+	 * Parse a Jarvis Bluehost URN claim into a numeric id.
+	 *
 	 * @param string $urn URN claim value.
 	 * @param string $type account|user.
 	 * @return int
@@ -304,6 +316,8 @@ class Context {
 	}
 
 	/**
+	 * Decode and validate the Jarvis JWT payload segment.
+	 *
 	 * @param string $token JWT.
 	 * @return array|WP_Error
 	 */

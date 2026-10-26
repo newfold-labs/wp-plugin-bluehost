@@ -13,11 +13,15 @@ use WP_REST_Server;
 class DomainConnectController extends WP_REST_Controller {
 
 	/**
+	 * REST API namespace.
+	 *
 	 * @var string
 	 */
 	protected $namespace = 'bluehost/v1';
 
 	/**
+	 * REST route base (without leading slash).
+	 *
 	 * @var string
 	 */
 	protected $rest_base = 'domain-connect/context';
@@ -40,6 +44,8 @@ class DomainConnectController extends WP_REST_Controller {
 	}
 
 	/**
+	 * Require edit_pages capability for domain-connect context.
+	 *
 	 * @return bool|WP_Error
 	 */
 	public function check_permission() {
@@ -55,6 +61,8 @@ class DomainConnectController extends WP_REST_Controller {
 	}
 
 	/**
+	 * Return MFE init context for the current editor session.
+	 *
 	 * @return \WP_REST_Response|WP_Error
 	 */
 	public function get_context() {

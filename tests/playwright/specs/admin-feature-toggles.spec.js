@@ -6,6 +6,7 @@ const TOGGLES = {
 	performance: '[data-id="performance-toggle"]',
 	tenwebAdminRestrictions: '[data-id="tenweb-admin-restrictions-toggle"]',
 	tenwebEditorSupport: '[data-id="tenweb-editor-support-toggle"]',
+	tenwebDomainConnect: '[data-id="tenweb-domain-connect-toggle"]',
 };
 
 const hasRegisteredFeature = async ( page, featureKey ) => {
@@ -76,6 +77,7 @@ test.describe( 'Admin Feature Toggles', () => {
 		const tenwebFeatures = new Set( [
 			'tenwebAdminRestrictions',
 			'tenwebEditorSupport',
+			'tenwebDomainConnect',
 		] );
 
 		for ( const [ featureKey, selector ] of Object.entries( TOGGLES ) ) {

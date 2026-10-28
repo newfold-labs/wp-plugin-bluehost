@@ -8,6 +8,7 @@ node_modules
 /tests
 .cache
 /wordpress
+/docs
 
 # Files
 /.*
@@ -34,6 +35,7 @@ playwright.config.mjs
 vendor/newfold-labs/*/src
 vendor/newfold-labs/*/source
 vendor/newfold-labs/*/tests
+vendor/newfold-labs/*/docs
 vendor/newfold-labs/*/.*
 vendor/newfold-labs/*/*.xml
 vendor/newfold-labs/*/*.json

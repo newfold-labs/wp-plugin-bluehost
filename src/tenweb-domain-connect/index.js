@@ -1,4 +1,5 @@
 import './style.css';
+import { checkPaymentEligibility } from './payments';
 
 const config = window.BluehostTenWebDomainConnect;
 
@@ -22,19 +23,61 @@ if ( config?.contextUrl ) {
 	let contextPromise;
 	let readinessPromise;
 	let initializedMfe;
+	let eligible = false;
 	let phase = 'loading';
 	let lastError = null;
+	let lastReason = null;
+	let lastEntryPoint = null;
 	let isOpen = false;
 	let purchasedDomain = '';
 
-	const failure = ( code ) => {
+	const failure = ( code, reason = null ) => {
 		const error = new Error( code );
 		error.code = code;
+		if ( reason ) {
+			error.reason = reason;
+		}
 		return error;
+	};
+
+	const logDebug = ( event, detail = {} ) => {
+		if ( ! config.debug ) {
+			return;
+		}
+		// eslint-disable-next-line no-console -- WP_DEBUG diagnostics at the default console level; no credentials or wallet data.
+		console.info(
+			'[Bluehost Domain Connect]',
+			event,
+			JSON.stringify( detail )
+		);
+	};
+
+	const logEntryPoint = ( outcome, reason ) => {
+		const state = `${ outcome }:${ reason }`;
+		if ( state !== lastEntryPoint ) {
+			lastEntryPoint = state;
+			logDebug( 'entry_point', { outcome, reason } );
+		}
+	};
+
+	const invalidateContext = ( code, reason = null ) => {
+		eligible = false;
+		isOpen = false;
+		lastError = code;
+		lastReason = reason || code;
+		phase = code === 'ineligible' ? 'ineligible' : 'error';
+		wrapper?.remove();
+		logEntryPoint( 'hidden', lastReason );
+		try {
+			initializedMfe?.close?.();
+		} catch {
+			// Keep the entry point hidden even if SDK cleanup fails.
+		}
 	};
 
 	const fetchContext = () => {
 		if ( ! contextPromise ) {
+			logDebug( 'shopper_context', { outcome: 'loading' } );
 			contextPromise = window
 				.fetch( config.contextUrl, {
 					headers: { 'X-WP-Nonce': config.nonce },
@@ -43,9 +86,14 @@ if ( config?.contextUrl ) {
 				} )
 				.then( async ( response ) => {
 					if ( ! response.ok ) {
-						throw failure( 'context' );
+						throw failure( 'context', `http_${ response.status }` );
 					}
-					const context = await response.json();
+					let context;
+					try {
+						context = await response.json();
+					} catch {
+						throw failure( 'context', 'invalid_json' );
+					}
 					if (
 						typeof context?.userJwt !== 'string' ||
 						! context.userJwt.trim() ||
@@ -56,12 +104,34 @@ if ( config?.contextUrl ) {
 						typeof context.productInstanceId !== 'string' ||
 						! context.productInstanceId.trim()
 					) {
-						throw failure( 'context' );
+						throw failure( 'context', 'invalid_context' );
 					}
+					logDebug( 'shopper_context', { outcome: 'ready' } );
+					logDebug( 'payment_eligibility', { outcome: 'checking' } );
+					await checkPaymentEligibility( context );
+					logDebug( 'payment_eligibility', { outcome: 'eligible' } );
 					return context;
 				} )
-				.catch( () => {
-					throw failure( 'context' );
+				.catch( ( error ) => {
+					const code = [ 'ineligible', 'payments' ].includes(
+						error?.code
+					)
+						? error.code
+						: 'context';
+					const reason = error?.reason || 'network';
+					if ( code === 'ineligible' || code === 'payments' ) {
+						logDebug( 'payment_eligibility', {
+							outcome: code,
+							reason,
+						} );
+					} else {
+						logDebug( 'shopper_context', {
+							outcome: 'error',
+							reason,
+						} );
+					}
+					invalidateContext( code, reason );
+					throw failure( lastError, lastReason );
 				} )
 				.finally( () => {
 					contextPromise = null;
@@ -72,9 +142,36 @@ if ( config?.contextUrl ) {
 
 	const waitForMfe = () =>
 		new Promise( ( resolve, reject ) => {
-			const script = document.getElementById(
+			if ( window.BhDomainConnect ) {
+				resolve( window.BhDomainConnect );
+				return;
+			}
+			let script = document.getElementById(
 				config.mfeScriptId || 'bluehost-domain-connect-mfe-js'
 			);
+			const createScript = ! script;
+			if ( createScript ) {
+				if ( ! config.mfeScriptUrl || ! config.mfeStyleUrl ) {
+					reject( failure( 'mfe_load' ) );
+					return;
+				}
+				if (
+					! document.getElementById(
+						'bluehost-domain-connect-mfe-css'
+					)
+				) {
+					const style = document.createElement( 'link' );
+					style.id = 'bluehost-domain-connect-mfe-css';
+					style.rel = 'stylesheet';
+					style.href = config.mfeStyleUrl;
+					document.head.appendChild( style );
+				}
+				script = document.createElement( 'script' );
+				script.id =
+					config.mfeScriptId || 'bluehost-domain-connect-mfe-js';
+				script.type = 'module';
+				script.src = config.mfeScriptUrl;
+			}
 			const started = Date.now();
 			let poll;
 			const cleanup = () => {
@@ -83,6 +180,9 @@ if ( config?.contextUrl ) {
 			};
 			const onError = () => {
 				cleanup();
+				if ( createScript ) {
+					script.remove();
+				}
 				reject( failure( 'mfe_load' ) );
 			};
 			const tick = () => {
@@ -96,6 +196,9 @@ if ( config?.contextUrl ) {
 				}
 			};
 			script?.addEventListener( 'error', onError, { once: true } );
+			if ( createScript ) {
+				document.body.appendChild( script );
+			}
 			tick();
 		} );
 
@@ -129,7 +232,12 @@ if ( config?.contextUrl ) {
 		refreshJWT: async ( { accountId } ) => {
 			const context = await fetchContext();
 			if ( String( context.accountId ) !== String( accountId ) ) {
-				throw failure( 'context' );
+				logDebug( 'shopper_context', {
+					outcome: 'error',
+					reason: 'account_mismatch',
+				} );
+				invalidateContext( 'context', 'account_mismatch' );
+				throw failure( 'context', 'account_mismatch' );
 			}
 			return context.userJwt.trim();
 		},
@@ -153,9 +261,10 @@ if ( config?.contextUrl ) {
 	};
 
 	const initialize = () => {
-		if ( initializedMfe ) {
+		if ( initializedMfe && eligible ) {
 			phase = 'ready';
 			lastError = null;
+			lastReason = null;
 			syncHeader();
 			return Promise.resolve( true );
 		}
@@ -167,10 +276,19 @@ if ( config?.contextUrl ) {
 		syncHeader();
 		readinessPromise = ( async () => {
 			try {
-				const [ context, mfe ] = await Promise.all( [
-					fetchContext(),
-					waitForMfe(),
-				] );
+				const context = await fetchContext();
+				eligible = true;
+				lastError = null;
+				lastReason = null;
+				// Do not create controls, a mount or request the SDK before eligibility.
+				if ( ! document.getElementById( MODAL_ID ) ) {
+					const host = document.createElement( 'div' );
+					host.id = MODAL_ID;
+					document.body.appendChild( host );
+				}
+				evaluate();
+				logDebug( 'mfe', { outcome: 'loading' } );
+				const mfe = await waitForMfe();
 				if (
 					typeof mfe.init !== 'function' ||
 					typeof mfe.open !== 'function'
@@ -197,10 +315,19 @@ if ( config?.contextUrl ) {
 				}
 				initializedMfe = mfe;
 				phase = 'ready';
+				logDebug( 'mfe', { outcome: 'ready' } );
 				return true;
 			} catch ( error ) {
-				phase = 'error';
+				phase = error.code === 'ineligible' ? 'ineligible' : 'error';
 				lastError = error.code || 'mfe_init';
+				lastReason = error.reason || lastError;
+				if (
+					! [ 'context', 'payments', 'ineligible' ].includes(
+						lastError
+					)
+				) {
+					logDebug( 'mfe', { outcome: 'error', reason: lastReason } );
+				}
 				return false;
 			} finally {
 				syncHeader();
@@ -213,7 +340,7 @@ if ( config?.contextUrl ) {
 
 	// Context and initialization are already complete: the click only opens the SDK.
 	const open = () => {
-		if ( phase !== 'ready' || ! button?.isConnected ) {
+		if ( ! eligible || phase !== 'ready' || ! button?.isConnected ) {
 			return false;
 		}
 		if ( isOpen ) {
@@ -227,6 +354,8 @@ if ( config?.contextUrl ) {
 		} catch {
 			phase = 'error';
 			lastError = 'mfe_open';
+			lastReason = lastError;
+			logDebug( 'mfe', { outcome: 'error', reason: lastReason } );
 			syncHeader();
 			return false;
 		}
@@ -238,6 +367,10 @@ if ( config?.contextUrl ) {
 	};
 
 	const evaluate = () => {
+		if ( ! eligible ) {
+			wrapper?.remove();
+			return;
+		}
 		const headerSelector =
 			config.selectors?.header ||
 			'.main-content-header, .header-wrapper > .header';
@@ -245,6 +378,7 @@ if ( config?.contextUrl ) {
 			( node ) => node.offsetWidth || node.offsetHeight
 		);
 		if ( ! header ) {
+			logEntryPoint( 'hidden', 'header_missing' );
 			return;
 		}
 		if ( ! wrapper ) {
@@ -281,17 +415,13 @@ if ( config?.contextUrl ) {
 			header.appendChild( wrapper );
 		}
 		syncHeader();
+		logEntryPoint( 'visible', 'eligible' );
 	};
 
 	const start = () => {
-		// The editor may replace its header later; the body-level SDK host survives.
-		if ( ! document.getElementById( MODAL_ID ) ) {
-			const host = document.createElement( 'div' );
-			host.id = MODAL_ID;
-			document.body.appendChild( host );
-		}
-		evaluate();
+		logDebug( 'adapter', { outcome: 'started', debug: true } );
 		initialize();
+		// The editor may replace its header later; the body-level SDK host survives.
 		const observer = new window.MutationObserver( ( records ) => {
 			const external = records.some( ( record ) => {
 				if (
@@ -337,11 +467,18 @@ if ( config?.contextUrl ) {
 		open,
 		close,
 		getState: () => ( {
+			debug: Boolean( config.debug ),
+			eligible,
+			visible: Boolean(
+				button?.isConnected &&
+				( button.offsetWidth || button.offsetHeight )
+			),
 			phase,
 			initialized: Boolean( initializedMfe ),
 			pending: Boolean( readinessPromise ),
 			isOpen,
 			error: lastError,
+			reason: lastReason,
 		} ),
 	};
 

@@ -7,8 +7,8 @@ namespace Bluehost;
  */
 class TenWebDomainConnect {
 
-	const HANDLE_LOADER = 'bluehost-tenweb-domain-connect-loader';
-	const HANDLE_MFE    = 'bluehost-domain-connect-mfe';
+	const HANDLE_LOADER     = 'bluehost-tenweb-domain-connect-loader';
+	const MFE_SCRIPT_DOM_ID = 'bluehost-domain-connect-mfe-js';
 
 	/**
 	 * Register early editor hooks.
@@ -16,7 +16,6 @@ class TenWebDomainConnect {
 	public function __construct() {
 		add_action( 'admin_init', array( $this, 'maybe_enqueue_assets' ), 8 );
 		add_action( 'load-post.php', array( $this, 'maybe_enqueue_assets' ), 8 );
-		add_filter( 'script_loader_tag', array( $this, 'set_mfe_script_type_module' ), 10, 3 );
 	}
 
 	/**
@@ -33,43 +32,29 @@ class TenWebDomainConnect {
 		}
 
 		$mfe_base = $this->get_mfe_base_url();
-		wp_enqueue_style(
-			self::HANDLE_MFE,
-			$mfe_base . '/styles.css',
-			array(),
-			null
-		);
-		wp_enqueue_script(
-			self::HANDLE_MFE,
-			$mfe_base . '/main.js',
-			array(),
-			null,
-			true
-		);
-
-		$asset = require $asset_file;
+		$asset    = require $asset_file;
 		wp_enqueue_style(
 			self::HANDLE_LOADER,
 			BLUEHOST_BUILD_URL . '/style-tenweb-domain-connect.css',
-			array( self::HANDLE_MFE ),
+			array(),
 			$asset['version']
 		);
 		wp_enqueue_script(
 			self::HANDLE_LOADER,
 			BLUEHOST_BUILD_URL . '/tenweb-domain-connect.js',
-			array_merge( $asset['dependencies'], array( self::HANDLE_MFE ) ),
+			$asset['dependencies'],
 			$asset['version'],
 			true
 		);
 
 		$config = array(
-			'contextUrl'  => esc_url_raw( rest_url( 'bluehost/v1/domain-connect/context' ) ),
-			'nonce'       => wp_create_nonce( 'wp_rest' ),
-			'placement'   => 'header',
-			'mfeScriptId' => self::HANDLE_MFE . '-js',
-			'debug'       => defined( 'WP_DEBUG' ) && WP_DEBUG,
-			'mfeBaseUrl'  => esc_url_raw( $mfe_base ),
-			'labels'      => array(
+			'contextUrl'   => esc_url_raw( rest_url( 'bluehost/v1/domain-connect/context' ) ),
+			'nonce'        => wp_create_nonce( 'wp_rest' ),
+			'mfeScriptId'  => self::MFE_SCRIPT_DOM_ID,
+			'mfeScriptUrl' => esc_url_raw( $mfe_base . '/main.js' ),
+			'mfeStyleUrl'  => esc_url_raw( $mfe_base . '/styles.css' ),
+			'debug'        => defined( 'WP_DEBUG' ) && WP_DEBUG,
+			'labels'       => array(
 				'connect'     => __( 'Connect domain', 'wp-plugin-bluehost' ),
 				'preparing'   => __( 'Preparing domain selection…', 'wp-plugin-bluehost' ),
 				'error'       => __( 'Domain selection could not be opened. Reload the editor to try again.', 'wp-plugin-bluehost' ),
@@ -77,7 +62,7 @@ class TenWebDomainConnect {
 				/* translators: %s: purchased domain name. */
 				'purchased'   => __( 'Domain purchased: %s', 'wp-plugin-bluehost' ),
 			),
-			'selectors'   => array(
+			'selectors'    => array(
 				'header'       => '.main-content-header, .header-wrapper > .header',
 				'headerAnchor' => '.mw-min-content, .site-info',
 			),
@@ -92,42 +77,29 @@ class TenWebDomainConnect {
 	}
 
 	/**
-	 * Mark the domain-connect MFE script as an ES module.
-	 *
-	 * @param string $tag    Script tag.
-	 * @param string $handle Handle.
-	 * @param string $src    Source URL (unused; required by filter signature).
-	 * @return string
-	 */
-	public function set_mfe_script_type_module( $tag, $handle, $src ) { // phpcs:ignore Generic.CodeAnalysis.UnusedFunctionParameter.FoundAfterLastUsed
-		if ( self::HANDLE_MFE !== $handle ) {
-			return $tag;
-		}
-
-		if ( false !== strpos( $tag, 'type=' ) ) {
-			return $tag;
-		}
-
-		return str_replace( '<script ', '<script type="module" ', $tag );
-	}
-
-	/**
 	 * CDN base URL for the domain-connect MFE bundle.
 	 *
 	 * @return string
 	 */
 	private function get_mfe_base_url() {
-		$use_qa = apply_filters(
-			'newfold/tenweb/filter/domain_connect_use_qa_mfe',
-			( defined( 'WP_ENVIRONMENT_TYPE' ) && in_array( WP_ENVIRONMENT_TYPE, array( 'local', 'staging', 'development' ), true ) )
-			|| ( defined( 'NFD_DOMAIN_CONNECT_QA_MFE' ) && NFD_DOMAIN_CONNECT_QA_MFE )
-		);
-
-		if ( $use_qa ) {
+		if ( self::use_qa_environment() ) {
 			return 'https://sfbff-bh.jarvisqa1k8s01.preprodapps.registeredsite.com/bh-ai-builder-mfe/domain-connect';
 		}
 
 		return 'https://sfbff.bluehost.com/bh-ai-builder-mfe/domain-connect';
+	}
+
+	/**
+	 * Keep the eligibility API in the same environment as the checkout MFE.
+	 *
+	 * @return bool
+	 */
+	public static function use_qa_environment() {
+		return (bool) apply_filters(
+			'newfold/tenweb/filter/domain_connect_use_qa_mfe',
+			( defined( 'WP_ENVIRONMENT_TYPE' ) && in_array( WP_ENVIRONMENT_TYPE, array( 'local', 'staging', 'development' ), true ) )
+			|| ( defined( 'NFD_DOMAIN_CONNECT_QA_MFE' ) && NFD_DOMAIN_CONNECT_QA_MFE )
+		);
 	}
 
 	/**

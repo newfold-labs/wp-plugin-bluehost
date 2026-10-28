@@ -3,6 +3,7 @@
 namespace Bluehost\RestApi;
 
 use Bluehost\DomainConnect\Context;
+use Bluehost\DomainConnect\Payments;
 use WP_Error;
 use WP_REST_Controller;
 use WP_REST_Server;
@@ -71,6 +72,11 @@ class DomainConnectController extends WP_REST_Controller {
 			return $context;
 		}
 
-		return rest_ensure_response( $context );
+		// The storefront BFF uses browser challenge protection; the host checks
+		// this endpoint before creating any Domain Connect UI or loading its SDK.
+		$context['paymentsUrl'] = Payments::get_endpoint();
+		$response               = rest_ensure_response( $context );
+		$response->header( 'Cache-Control', 'no-store' );
+		return $response;
 	}
 }

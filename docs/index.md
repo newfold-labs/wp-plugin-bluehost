@@ -11,6 +11,7 @@ This directory holds detailed documentation for the Bluehost WordPress Plugin, f
 | [architecture.md](architecture.md) | Module loader, container, context, and how PHP and React fit together. |
 | [modules.md](modules.md) | Newfold modules in this plugin: list in `vendor/newfold-labs` with brief descriptions. |
 | [frontend.md](frontend.md) | React app structure, routes, pages, state, and build output. |
+| [domain-connect.md](domain-connect.md) | WVC Domain Connect feature flag, saved payment eligibility and lazy MFE loading. |
 | [backend.md](backend.md) | PHP entry points, upgrades, and core `inc/` files. |
 | [api.md](api.md) | REST API namespace, endpoints table, and settings endpoint reference. |
 | [integrations.md](integrations.md) | Third-party and partner integrations (Google Site Kit, Yoast AI, Jetpack, partners, Hiive API). |

@@ -1,6 +1,18 @@
 # Testing
 
-This document describes the testing setup for the Bluehost WordPress Plugin: **Playwright** E2E tests and **WPUnit** (PHPUnit + Codeception wp-browser) tests, plus how they are run in CI.
+This document describes the testing setup for the Bluehost WordPress Plugin: **Jest** JavaScript unit tests, **Playwright** E2E tests and **WPUnit** (PHPUnit + Codeception wp-browser) tests, plus how they are run in CI.
+
+## JavaScript unit tests
+
+Run all JavaScript unit tests after installing development dependencies:
+
+```bash
+npm run test:unit -- --runInBand
+```
+
+The project keeps its existing Jest suites with the WordPress Scripts `test-unit-jest` command. Jest, `babel-jest` and the jsdom environment are explicit development dependencies. `jest.config.cjs` selects `tests/jest/**/*.test.js`, transforms modules with the WordPress Babel preset, resolves the `App/` alias, and mocks CSS imports. The config and test mocks are excluded from the production package. WordPress Scripts `test-unit-js` targets Vitest and cannot run these Jest suites.
+
+Run `npm run lint:js`, `npm run lint:css` and `npm run lint:pkg-json` for the JavaScript, source CSS and package manifest checks. CSS lint is scoped to `src/` so generated bundles, WordPress core and installed dependencies are not scanned as plugin source.
 
 ## Playwright E2E testing
 
@@ -264,7 +276,7 @@ The **codecoverage-main** workflow runs both and merges coverage.
 
 - **Suite config:** **`tests/wpunit.suite.yml`** – defines the **WpunitTester** actor, **WPLoader** and **Helper\Wpunit** modules, and DB/site settings (via placeholders like `%WP_ROOT_FOLDER%`, `%TEST_DB_HOST%`, etc.).
 - **Tests directory:** **`tests/wpunit/`** – Codeception/ wp-browser tests that run against a loaded WordPress instance.
-- **Bootstrap:** Referenced in the suite as **`_bootstrap.php`** (under `tests/`).
+- **Bootstrap:** **`tests/wpunit/_bootstrap.php`** reads the plugin version from its header and supplies the plugin identity and Coming Soon service to the module container without activating the full plugin.
 
 These tests are executed by the **newfold-labs/workflows** reusable codecoverage workflow, which sets up the WordPress test environment and runs both PHPUnit and the wpunit suite across multiple PHP versions.
 

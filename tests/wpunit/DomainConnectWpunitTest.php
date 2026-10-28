@@ -18,6 +18,8 @@ class DomainConnectWpunitTest extends \lucatume\WPBrowser\TestCase\WPTestCase {
 		parent::setUp();
 		$root = codecept_root_dir();
 		require_once $root . 'inc/DomainConnect/Context.php';
+		require_once $root . 'inc/DomainConnect/Payments.php';
+		require_once $root . 'inc/TenWebDomainConnect.php';
 		require_once $root . 'inc/RestApi/DomainConnectController.php';
 	}
 
@@ -28,6 +30,7 @@ class DomainConnectWpunitTest extends \lucatume\WPBrowser\TestCase\WPTestCase {
 		}
 		remove_all_filters( 'newfold/tenweb/filter/domain_connect_user_jwt' );
 		delete_option( 'nfd_data_token' );
+		delete_transient( 'nfd_ai_chat_jarvis_jwt' );
 		parent::tearDown();
 	}
 
@@ -115,6 +118,9 @@ class DomainConnectWpunitTest extends \lucatume\WPBrowser\TestCase\WPTestCase {
 		$data = $response->get_data();
 		$this->assertSame( 3, $data['siteId'] );
 		$this->assertSame( 'WN.HP.5', $data['productInstanceId'] );
+		$this->assertSame( \Bluehost\DomainConnect\Payments::get_endpoint(), $data['paymentsUrl'] );
+		$this->assertArrayNotHasKey( 'eligible', $data );
+		$this->assertSame( 'no-store', $response->get_headers()['Cache-Control'] );
 
 		remove_action( 'rest_api_init', array( $controller, 'register_routes' ) );
 	}

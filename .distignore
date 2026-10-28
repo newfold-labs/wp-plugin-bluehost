@@ -17,6 +17,8 @@ postcss.config.js
 tailwind.config.js
 webpack.config.js
 playwright.config.mjs
+eslint.config.cjs
+jest.config.cjs
 
 # File Types
 /*.json

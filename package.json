@@ -67,8 +67,11 @@
         "@wordpress/scripts": "^36.0.0",
         "@wp-playground/cli": "^3.1.53",
         "ajv": "^8.20.0",
+        "babel-jest": "^30.5.2",
         "eslint-import-resolver-alias": "^1.1.2",
         "eslint-plugin-import": "^2.32.0",
+        "jest": "^30.5.2",
+        "jest-environment-jsdom": "^30.5.2",
         "node-fetch": "^3.3.2",
         "tailwindcss": "^3.4.19",
         "uuid": "^14.0.2"
@@ -86,7 +89,7 @@
         "i18n": "composer run i18n",
         "i18n-ci-pre": "npm run build && composer run i18n-ci-pre",
         "i18n-ci-post": "composer run i18n-ci-post",
-        "lint:css": "wp-scripts lint-style '**/*.css'",
+        "lint:css": "wp-scripts lint-style 'src/**/*.css'",
         "lint:js": "wp-scripts lint-js ./src",
         "lint:js:fix": "wp-scripts lint-js ./src --fix",
         "lint:pkg-json": "wp-scripts lint-pkg-json",
@@ -107,7 +110,7 @@
         "test:e2e": "npm run test:playwright",
         "test:playwright": "npx playwright test",
         "test:playwright:update-projects": "node .github/scripts/generate-playwright-projects.mjs",
-        "test:unit": "wp-scripts test-unit-js",
+        "test:unit": "wp-scripts test-unit-jest",
         "test:clean-module": "bash ./.github/scripts/test-clean-module"
     }
 }

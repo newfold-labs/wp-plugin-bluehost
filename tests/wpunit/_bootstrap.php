@@ -3,7 +3,8 @@
  * WPUnit suite bootstrap: define plugin constants so inc/ files can be required without loading the full plugin.
  */
 if ( ! defined( 'BLUEHOST_PLUGIN_VERSION' ) ) {
-	define( 'BLUEHOST_PLUGIN_VERSION', '4.13.0' );
+	$plugin_headers = get_file_data( codecept_root_dir( 'bluehost-wordpress-plugin.php' ), array( 'Version' => 'Version' ) );
+	define( 'BLUEHOST_PLUGIN_VERSION', $plugin_headers['Version'] );
 }
 if ( ! defined( 'BLUEHOST_PLUGIN_FILE' ) ) {
 	define( 'BLUEHOST_PLUGIN_FILE', codecept_root_dir( 'bluehost-wordpress-plugin.php' ) );
@@ -29,6 +30,16 @@ $root = codecept_root_dir();
 if ( is_readable( $root . 'vendor/autoload.php' ) ) {
 	require_once $root . 'vendor/autoload.php';
 	$container = new \NewfoldLabs\WP\ModuleLoader\Container();
+	$container->set(
+		'plugin',
+		new \NewfoldLabs\WP\ModuleLoader\Plugin(
+			array(
+				'id'    => 'bluehost',
+				'file'  => BLUEHOST_PLUGIN_FILE,
+				'brand' => 'bluehost',
+			)
+		)
+	);
 	$container->set( 'comingSoon', new \NewfoldLabs\WP\Module\ComingSoon\Service() );
 	\NewfoldLabs\WP\ModuleLoader\container( $container );
 }

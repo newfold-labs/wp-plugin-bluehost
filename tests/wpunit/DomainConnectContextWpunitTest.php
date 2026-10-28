@@ -26,6 +26,7 @@ class DomainConnectContextWpunitTest extends \lucatume\WPBrowser\TestCase\WPTest
 		}
 		remove_all_filters( 'newfold/tenweb/filter/domain_connect_user_jwt' );
 		delete_option( 'nfd_data_token' );
+		delete_transient( 'nfd_ai_chat_jarvis_jwt' );
 		parent::tearDown();
 	}
 
@@ -49,18 +50,6 @@ class DomainConnectContextWpunitTest extends \lucatume\WPBrowser\TestCase\WPTest
 		$segment = rtrim( strtr( base64_encode( wp_json_encode( $payload ) ), '+/', '-_' ), '=' );
 
 		return 'hdr.' . $segment . '.sig';
-	}
-
-	/**
-	 * @param string   $method_name Private method on Context.
-	 * @param mixed ...$args        Method arguments.
-	 * @return mixed
-	 */
-	private function invoke_context( $method_name, ...$args ) {
-		$context = new \Bluehost\DomainConnect\Context();
-		$method  = new \ReflectionMethod( $context, $method_name );
-
-		return $method->invoke( $context, ...$args );
 	}
 
 	/**
@@ -96,6 +85,7 @@ class DomainConnectContextWpunitTest extends \lucatume\WPBrowser\TestCase\WPTest
 				return $jwt;
 			}
 		);
+		update_option( 'blogname', 'My Cool Site!!!' );
 		$this->mock_hiive_customer(
 			array(
 				'site_id'     => 42,
@@ -110,7 +100,49 @@ class DomainConnectContextWpunitTest extends \lucatume\WPBrowser\TestCase\WPTest
 		$this->assertSame( $jwt, $result['userJwt'] );
 		$this->assertSame( 42, $result['siteId'] );
 		$this->assertSame( 'WN.HP.99', $result['productInstanceId'] );
+		$this->assertSame( 'my-cool-site', $result['suggestedName'] );
 		$this->assertArrayNotHasKey( 'userId', $result );
+	}
+
+	/** @covers \Bluehost\DomainConnect\Context::get_init_context */
+	public function test_get_init_context_uses_jarvis_jwt_from_hiive_customer(): void {
+		$jwt = $this->synthetic_jwt();
+		$this->mock_hiive_customer(
+			array(
+				'site_id'     => 5,
+				'customer_id' => 'WN.HP.1',
+				'jarvis_jwt'  => $jwt,
+			)
+		);
+
+		$result = ( new \Bluehost\DomainConnect\Context() )->get_init_context();
+
+		$this->assertIsArray( $result );
+		$this->assertSame( $jwt, $result['userJwt'] );
+		$this->assertSame( 'WN.HP.1', $result['productInstanceId'] );
+	}
+
+	/** @covers \Bluehost\DomainConnect\Context::get_init_context */
+	public function test_get_init_context_prefers_explicit_product_instance_id_field(): void {
+		$jwt = $this->synthetic_jwt();
+		add_filter(
+			'newfold/tenweb/filter/domain_connect_user_jwt',
+			static function () use ( $jwt ) {
+				return $jwt;
+			}
+		);
+		$this->mock_hiive_customer(
+			array(
+				'site_id'               => 10,
+				'customer_id'           => 'WN.HP.legacy',
+				'product_instance_id'   => 'pi-explicit',
+			)
+		);
+
+		$result = ( new \Bluehost\DomainConnect\Context() )->get_init_context();
+
+		$this->assertIsArray( $result );
+		$this->assertSame( 'pi-explicit', $result['productInstanceId'] );
 	}
 
 	/** @covers \Bluehost\DomainConnect\Context::get_init_context */
@@ -156,38 +188,49 @@ class DomainConnectContextWpunitTest extends \lucatume\WPBrowser\TestCase\WPTest
 		$this->assertSame( 'bluehost_domain_connect_jwt_claims', $result->get_error_code() );
 	}
 
-	/** @covers \Bluehost\DomainConnect\Context::resolve_product_instance_id */
-	public function test_resolve_product_instance_id_prefers_explicit_fields(): void {
-		$this->assertSame(
-			'pi-explicit',
-			$this->invoke_context( 'resolve_product_instance_id', array( 'product_instance_id' => 'pi-explicit' ) )
+	/** @covers \Bluehost\DomainConnect\Context::get_init_context */
+	public function test_get_init_context_rejects_malformed_jwt(): void {
+		add_filter(
+			'newfold/tenweb/filter/domain_connect_user_jwt',
+			static function () {
+				return 'not-a-jwt';
+			}
 		);
-		$this->assertSame(
-			'WN.HP.77',
-			$this->invoke_context( 'resolve_product_instance_id', array( 'customer_id' => 'WN.HP.77' ) )
-		);
-		$this->assertSame(
-			'',
-			$this->invoke_context( 'resolve_product_instance_id', array( 'customer_id' => '99999' ) )
-		);
-	}
 
-	/** @covers \Bluehost\DomainConnect\Context::decode_jwt_payload */
-	public function test_decode_jwt_payload_rejects_malformed_token(): void {
-		$result = $this->invoke_context( 'decode_jwt_payload', 'not-a-jwt' );
+		$result = ( new \Bluehost\DomainConnect\Context() )->get_init_context();
+
 		$this->assertWPError( $result );
 		$this->assertSame( 'bluehost_domain_connect_jwt_invalid', $result->get_error_code() );
 	}
 
-	/** @covers \Bluehost\DomainConnect\Context::get_suggested_name */
-	public function test_get_suggested_name_sanitizes_blog_title(): void {
-		update_option( 'blogname', 'My Cool Site!!!' );
-		$this->assertSame( 'my-cool-site', $this->invoke_context( 'get_suggested_name' ) );
+	/** @covers \Bluehost\DomainConnect\Context::get_init_context */
+	public function test_get_init_context_fails_when_hiive_is_not_connected(): void {
+		delete_option( 'nfd_data_token' );
+
+		$result = ( new \Bluehost\DomainConnect\Context() )->get_init_context();
+
+		$this->assertWPError( $result );
+		$this->assertSame( 'jarvis_jwt_fetch_failed', $result->get_error_code() );
 	}
 
-	/** @covers \Bluehost\DomainConnect\Context::parse_urn_id */
-	public function test_parse_urn_id_extracts_numeric_id(): void {
-		$this->assertSame( 55, $this->invoke_context( 'parse_urn_id', 'urn:jarvis:bluehost:account:55', 'account' ) );
-		$this->assertSame( 0, $this->invoke_context( 'parse_urn_id', '', 'user' ) );
+	/** @covers \Bluehost\DomainConnect\Context::get_init_context */
+	public function test_get_init_context_fails_when_site_id_missing(): void {
+		$jwt = $this->synthetic_jwt();
+		add_filter(
+			'newfold/tenweb/filter/domain_connect_user_jwt',
+			static function () use ( $jwt ) {
+				return $jwt;
+			}
+		);
+		$this->mock_hiive_customer(
+			array(
+				'customer_id' => 'WN.HP.88',
+			)
+		);
+
+		$result = ( new \Bluehost\DomainConnect\Context() )->get_init_context();
+
+		$this->assertWPError( $result );
+		$this->assertSame( 'bluehost_domain_connect_site_id', $result->get_error_code() );
 	}
 }

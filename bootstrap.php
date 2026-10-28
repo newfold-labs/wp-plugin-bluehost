@@ -233,6 +233,7 @@ require BLUEHOST_PLUGIN_DIR . '/inc/RestApi/SettingsController.php';
 require BLUEHOST_PLUGIN_DIR . '/inc/RestApi/rest-api.php';
 require BLUEHOST_PLUGIN_DIR . '/inc/settings.php';
 require BLUEHOST_PLUGIN_DIR . '/inc/DomainConnect/Context.php';
+require BLUEHOST_PLUGIN_DIR . '/inc/DomainConnect/Payments.php';
 require BLUEHOST_PLUGIN_DIR . '/inc/TenWebDomainConnect.php';
 require BLUEHOST_PLUGIN_DIR . '/inc/RestApi/DomainConnectController.php';
 require BLUEHOST_PLUGIN_DIR . '/inc/TenWebDomainConnectFeature.php';

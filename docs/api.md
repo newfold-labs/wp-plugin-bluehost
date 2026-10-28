@@ -12,6 +12,8 @@ For backend entry points and PHP structure, see [backend.md](backend.md).
 |--------|------|------------|-------------|
 | GET, POST/PUT | `/bluehost/v1/settings` | `Bluehost\RestApi\SettingsController` | Read or update plugin-managed settings (Coming Soon, auto-updates, comments, revisions, homepage, etc.). |
 
+The `GET /bluehost/v1/domain-connect/context` endpoint requires `edit_pages` and returns the shopper init context plus `paymentsUrl`. The local browser adapter checks that endpoint before rendering or loading the MFE. Context responses use `Cache-Control: no-store`. See [Domain Connect](domain-connect.md).
+
 Full URL example: `{site}/wp-json/bluehost/v1/settings`. The React app calls this via `NewfoldRuntime.createApiUrl('/bluehost/v1/settings')`.
 
 ---

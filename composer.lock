@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "4987cf87b4f5b5df4c5048e8534cdb27",
+    "content-hash": "d20e0c7a184964f2cb55c4a513902e91",
     "packages": [
         {
             "name": "automattic/jetpack-autoloader",
@@ -3207,16 +3207,16 @@
         },
         {
             "name": "newfold-labs/wp-module-pls",
-            "version": "1.1.4",
+            "version": "1.1.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/newfold-labs/wp-module-pls.git",
-                "reference": "f509f5a692d68f55b6194650bbe64213f2a31e55"
+                "reference": "35d8bff47b67c3f4da7a97fa54aee499fd332134"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/newfold-labs/wp-module-pls/zipball/f509f5a692d68f55b6194650bbe64213f2a31e55",
-                "reference": "f509f5a692d68f55b6194650bbe64213f2a31e55",
+                "url": "https://api.github.com/repos/newfold-labs/wp-module-pls/zipball/35d8bff47b67c3f4da7a97fa54aee499fd332134",
+                "reference": "35d8bff47b67c3f4da7a97fa54aee499fd332134",
                 "shasum": ""
             },
             "require": {
@@ -3225,7 +3225,7 @@
             "require-dev": {
                 "johnpbloch/wordpress": "@stable",
                 "lucatume/wp-browser": "*",
-                "newfold-labs/wp-php-standards": "^1.2",
+                "newfold-labs/wp-php-standards": "^2.0",
                 "phpunit/phpcov": "*",
                 "wp-cli/i18n-command": "^2.7.0",
                 "wp-cli/wp-cli": "^2.12"
@@ -3291,7 +3291,7 @@
                 }
             ],
             "description": "A Newfold module that handles license key provisioning, validation, and other lifecycle events for registered plugins using the PLS API via Hiive.",
-            "time": "2026-08-19T16:54:26+00:00"
+            "time": "2026-11-05T18:25:37+00:00"
         },
         {
             "name": "newfold-labs/wp-module-reset",

@@ -23,7 +23,7 @@ All workflow files live in **`.github/workflows/`**. This document summarizes ea
 
 | Workflow file | Name | Trigger | Purpose |
 |---------------|------|---------|---------|
-| **upload-artifact-on-push.yml** | Build Plugin | Push to `main`/`develop`, PR (opened/sync/reopened/ready), `workflow_dispatch` | **Only when repo is `newfold-labs/wp-plugin-bluehost`.** Validates version consistency (header, constant, package.json), builds plugin (composer, npm, rsync from `.distinclude`/`.distignore`), uploads artifact. Comments on PR with download link and note about Playground preview. |
+| **upload-artifact-on-push.yml** | Build Plugin | Push to `main`/`develop`, PR (opened/sync/reopened/ready), `workflow_dispatch` | **Only when repo is `newfold-labs/wp-plugin-bluehost`.** Validates version consistency (header, constant, package.json), builds plugin (composer, npm, rsync from `.distinclude`/`.distignore` into `dist/<PLUGIN_NAME>/`), uploads artifact. The artifact zip contains a single `<PLUGIN_NAME>/` root folder so WordPress replaces the existing plugin on upload (required since WordPress 7.1.4 randomizes the unpack directory name). Comments on PR with download link and note about Playground preview. |
 | **upload-asset-on-release.yml** | Package Plugin | Release **published** | On release publish: validates version (tag vs header/constant/package.json), validates vendor dirs and (for non-prerelease) WP “Tested up to” vs `.wp-env.json`. Builds dist, creates zip, **uploads zip as release asset** via `gh release upload`. Optionally purges Cloudflare cache for the release API URL. |
 
 ## Deploy and post-deploy test

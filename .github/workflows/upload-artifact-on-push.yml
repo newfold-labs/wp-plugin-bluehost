@@ -100,10 +100,7 @@ jobs:
       - name: Build JavaScript
         run: npm run build
 
-      # Copy into a "$PACKAGE" subfolder so the artifact zip has a single root
-      # directory matching the plugin slug. Without it, WordPress 7.1.4+ (and
-      # its security backports) installs uploaded zips into a randomly named
-      # folder instead of replacing the existing plugin.
+      # Copy into a "$PACKAGE" subfolder so the zip has a single root directory
       - name: Prepare files
         env:
           DIST: ${{ steps.workflow.outputs.DIST }}

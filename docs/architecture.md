@@ -9,6 +9,7 @@ The plugin uses the **Newfold Module Loader**. Composer-installed modules (e.g. 
 - **`bootstrap.php`** runs after the main plugin file and vendor autoload:
   - Creates `NewfoldLabs\WP\ModuleLoader\Container` and registers the Bluehost plugin with it (id `bluehost`, brand, install date).
   - Sets **context** (e.g. `brand.name` = `bluehost`) via `NewfoldLabs\WP\Context`.
+  - Registers the `editor_chat_brand` container payload (id, name, portal links, admin URL) via `Bluehost\Brand::register()`, with separate links for Bluehost US and Bluehost India (`mm_brand` = `Bluehost_India`). Modules such as wp-module-editor-chat read it; the plugin owns these values.
   - Registers filter-based overrides for things like cache types and marketplace brand (so platforms like Atomic can change behavior).
   - Passes the container into the loader with `setContainer()`.
 - **Modules** are Composer dependencies. They register with the same container and receive the plugin instance and context.

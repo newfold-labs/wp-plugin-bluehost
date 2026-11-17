@@ -4,7 +4,7 @@ msgstr ""
 "Project-Id-Version: wp-plugin-bluehost\n"
 "Report-Msgid-Bugs-To: https://github.com/newfold-labs/wp-plugin-bluehost\n"
 "POT-Creation-Date: 2025-02-25T20:53:21+00:00\n"
-"PO-Revision-Date: 2026-10-28T15:29:51+00:00\n"
+"PO-Revision-Date: 2026-11-17T15:34:10+00:00\n"
 "Last-Translator: \n"
 "Language-Team: Spanish\n"
 "Language: es_ES\n"
@@ -30,7 +30,7 @@ msgid "\"%1$s\" has self-deactivated. It is incompatible with \"%2$s\"."
 msgstr "\"%1$s\" se ha desactivado. Es incompatible con \"%2$s\"."
 
 #. translators: %1$s is the logo SVG, %2$s wraps the text, %3$s is the link start for Powered by Bluehost, %4$s is the closing anchor tag, %5$s wraps the text again, %6$s contains backlinks
-#: bootstrap.php:141
+#: bootstrap.php:142
 #, php-format
 msgid ""
 "%1$s\n"
@@ -60,7 +60,7 @@ msgid "%1$s requires the %2$s PHP extension."
 msgstr "%1$s requiere la extensión PHP %2$s."
 
 #. translators: %1$s starts the bold text, %2$s ends the bold text and adds a line break, %3$s is the link to Shared Hosting, %4$s is the closing link for Shared Hosting, %5$s is the link to WordPress Hosting, %6$s is the closing link for WordPress Hosting, %7$s is the link to VPS Hosting, %8$s is the closing link for VPS Hosting, %9$s is the link to Dedicated Hosting, %10$s is the closing link for Dedicated Hosting, %11$s wraps everything inside a span with text-center class
-#: bootstrap.php:106
+#: bootstrap.php:107
 #, php-format
 msgid ""
 "%1$sDiscover our hosting solutions:%2$s\n"
@@ -78,13 +78,13 @@ msgstr ""
 "\t\t\t\t\t      %11$s"
 
 #. translators: %1$s starts the bold text, %2$s ends the bold text and adds a line break, %3$s is the link to the Domain Registration page, %4$s is the closing link for Domain Registration, %5$s wraps everything inside a span with text-center class
-#: bootstrap.php:97
+#: bootstrap.php:98
 #, php-format
 msgid "%1$sNeed a domain?%2$sCheck out our %3$sDomain Registration%4$s options.%5$s"
 msgstr "%1$s¿Necesitas un dominio?%2$sEcha un vistazo a nuestras opciones de %3$sRegistro de dominio%4$s.%5$s"
 
 #. translators: %s: Blog name
-#: bootstrap.php:156
+#: bootstrap.php:157
 #, php-format
 msgid "%s &mdash; Coming Soon"
 msgstr "%s &mdash; Próximamente"
@@ -215,7 +215,7 @@ msgid_plural "Close comments after %s days."
 msgstr[0] ""
 msgstr[1] ""
 
-#: bootstrap.php:159
+#: bootstrap.php:160
 msgid "Coming Soon Active"
 msgstr "\"Próximamente\" activo"
 
@@ -551,7 +551,7 @@ msgstr "Administrar WordPress"
 msgid "Manage common settings for your website"
 msgstr "Administrar la configuración común de su sitio web"
 
-#: bootstrap.php:163
+#: bootstrap.php:164
 msgid "Manage your coming soon page settings"
 msgstr "Gestiona la configuración de tu página de próximas"
 
@@ -991,7 +991,7 @@ msgid "Your current version is outdated."
 msgstr "Su versión actual está desactualizada."
 
 #. translators: %1$s is replaced with the opening link tag to the coming soon setting, and %2$s is replaced with the closing link tag, %3$s is the opening link tag, %4$s is the closing link tag.
-#: bootstrap.php:162
+#: bootstrap.php:163
 #, php-format
 msgid "Your site is currently displaying a %1$scoming soon page%2$s. Once you are ready, %3$slaunch your site%4$s."
 msgstr "En tu sitio actualmente se muestra la página %1$sPróximamente%2$s. Una vez que estés listo, %3$slanza tu sitio%4$s."

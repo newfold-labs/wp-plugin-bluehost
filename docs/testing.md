@@ -251,7 +251,20 @@ The Playwright matrix sets `WP_HTTP_BLOCK_EXTERNAL` to `true` on the test site, 
 **Where it lives:** the CI-only settings are in **`.wp-env.ci.json`** at the repo root, in the same shape as `.wp-env.json` (`config.WP_HTTP_BLOCK_EXTERNAL` and `config.WP_ACCESSIBLE_HOSTS`). The matrix workflow merges it with the per-cell core, PHP version and built plugin into the temporary `.wp-env.override.json`. `.wp-env.json` is not changed, so local runs are not blocked. `WP_ACCESSIBLE_HOSTS` is a single comma-separated string (JSON has no comments), so the reasons are listed here. Currently:
 
 | Hosts | Why |
-|
+|-------|-----|
+| `localhost`, `127.0.0.1` | The test site itself and loopback requests |
+| `wordpress.org`, `*.wordpress.org`, `w.org`, `*.w.org` | Core, plugin and theme installs, update checks |
+| `hiive.cloud`, `*.hiive.cloud`, `hiive.space`, `*.hiive.space` | Hiive connection, CTB, patterns, AI platform, CDN |
+| `*.lambda-url.us-east-1.on.aws` | PayPal onboarding login URL from `wp-plugin-payments-shipping`; it fatals on a blocked request, which breaks every wp-admin page once WooCommerce is active |
+
+**Adding an exception** when a test needs a real outbound request:
+
+1. Find the host. A blocked request shows in `wp-content/debug.log` as `User has blocked requests through HTTP to the URL: <url>` (with `WP_DEBUG_LOG` on), and the calling feature usually fails visibly. Locally: `npx wp-env run cli cat /var/www/html/wp-content/debug.log`.
+2. Append the host to `WP_ACCESSIBLE_HOSTS` in `.wp-env.ci.json` and add a row to the table above saying which module or test needs it.
+3. `*.example.com` matches subdomains only, not `example.com`; add both lines if you need both.
+4. Keep the list small.
+
+**Diagnosing slow requests:** to find out what is slow, temporarily remove `WP_HTTP_BLOCK_EXTERNAL` and `WP_ACCESSIBLE_HOSTS` from the override and log outbound calls, for example with a short mu-plugin that hooks `pre_http_request` and `http_api_debug` and writes slow or failing requests to `error_log`, mapped into the site with `mappings` in `.wp-env.override.json`. The CI log then shows each host and duration.
 
 ---
 

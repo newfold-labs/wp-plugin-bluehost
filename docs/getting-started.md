@@ -39,7 +39,7 @@ For a full local WordPress environment (recommended for testing the plugin in WP
 npx wp-env start
 ```
 
-Then open the site and admin using the URLs wp-env prints (default dev port **8882**, tests **8883**).
+Then open the site and admin using the URLs wp-env prints (the dev site runs on port **8882**).
 
 ## Local WordPress (wp-env)
 
@@ -47,7 +47,7 @@ Configuration is in **`.wp-env.json`** at the repo root:
 
 - **WordPress:** Core version defined in config (e.g. tag 6.9.1).
 - **PHP:** 8.1.
-- **Ports:** 8882 (development), 8883 (tests).
+- **Port:** 8882. The deprecated wp-env tests environment is turned off (`"testsEnvironment": false`); Playwright runs against the dev site.
 - **Plugins:** Current directory is mounted as the Bluehost plugin; wp-env can also load other plugins (e.g. wpforms-lite via mapping).
 - **Themes:** Can install themes (e.g. yith-wonder) via config.
 

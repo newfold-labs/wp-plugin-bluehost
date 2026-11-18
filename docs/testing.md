@@ -11,7 +11,7 @@ The project uses **Playwright** for end-to-end tests in the browser. Tests run a
 ### Configuration
 
 - **Config file:** **`playwright.config.mjs`** (repository root).
-- **Port:** Taken from **`.wp-env.json`** (default dev port, e.g. 8882). In CI, **`.wp-env.override.json`** may be created by the workflow with a different core/phpVersion.
+- **Port:** Taken from **`.wp-env.json`** (the dev site, 8882). Playwright and the WP-CLI helpers (`wp-env run cli`) use the dev site; the deprecated wp-env tests environment is disabled (`"testsEnvironment": false`). In CI, **`.wp-env.override.json`** is created by the workflow with a different core/phpVersion (and, in the matrix, the settings from `.wp-env.ci.json`).
 - **Projects:** Playwright “projects” (plugin + modules) are defined in **`tests/playwright/playwright-projects.json`**, which can be generated/updated by **`.github/scripts/generate-playwright-projects.mjs`** (run via `npm run test:playwright:update-projects`). The config merges in optional **`project-overrides.json`** per project.
 - **Global setup:** **`tests/playwright/global-setup.js`** runs before tests in the default (wp-env) mode only. Skipped when **`BASE_URL`** is set. See [Global setup (WP-CLI)](#global-setup-wp-cli) and [Test tagging](#test-tagging-env--prefix) below.
 
@@ -236,6 +236,23 @@ The config uses **Chrome** (Chromium), **headless: true**, and in non-CI / non-r
 
 See [workflows.md](workflows.md) for full workflow descriptions.
 
+### External HTTP is blocked in CI
+
+The Playwright matrix sets `WP_HTTP_BLOCK_EXTERNAL` to `true` on the test site, so any outbound request from WordPress to a host that is not on the allowlist fails immediately with `User has blocked requests through HTTP`.
+
+**Why:** third-party plugins and Newfold modules make many blocking HTTP calls on every admin and login request: notification feeds, telemetry, and the Have I Been Pwned password check from `wp-module-secure-passwords`. On GitHub runners these were intermittently slow, which stalled `wp-login.php` and caused cascading timeouts in the WordPress 7.x matrix cells. Blocking them made the matrix stable and noticeably faster.
+
+**Scope and behavior:**
+
+- Applies to **`playwright-matrix.yml`** only. The override file it writes includes the settings from `.wp-env.ci.json`. Local `wp-env` runs (`.wp-env.json`) and `playwright-tests.yml` do not block requests.
+- Plugins treat a blocked call as a failed request, so tests should not be affected unless they need real data from that host.
+- The Have I Been Pwned check is blocked on purpose. The test admin password is known to be weak and leaked, so there is nothing to learn from checking it on every login.
+
+**Where it lives:** the CI-only settings are in **`.wp-env.ci.json`** at the repo root, in the same shape as `.wp-env.json` (`config.WP_HTTP_BLOCK_EXTERNAL` and `config.WP_ACCESSIBLE_HOSTS`). The matrix workflow merges it with the per-cell core, PHP version and built plugin into the temporary `.wp-env.override.json`. `.wp-env.json` is not changed, so local runs are not blocked. `WP_ACCESSIBLE_HOSTS` is a single comma-separated string (JSON has no comments), so the reasons are listed here. Currently:
+
+| Hosts | Why |
+|
+
 ---
 
 ## WPUnit and PHPUnit tests
@@ -266,7 +283,15 @@ The **codecoverage-main** workflow runs both and merges coverage.
 - **Tests directory:** **`tests/wpunit/`** – Codeception/ wp-browser tests that run against a loaded WordPress instance.
 - **Bootstrap:** Referenced in the suite as **`_bootstrap.php`** (under `tests/`).
 
-These tests are executed by the **newfold-labs/workflows** reusable codecoverage workflow, which sets up the WordPress test environment and runs both PHPUnit and the wpunit suite across multiple PHP versions.
+These tests do not use wp-env. For local runs, copy `.env.testing.example` to `.env.testing` and start a MySQL that matches it (the defaults match the CI service):
+
+```bash
+docker run -d --name wpunit-mysql -p 33306:3306 -e MYSQL_ROOT_PASSWORD=password -e MYSQL_DATABASE=tests-wordpress mysql:8
+```
+
+Older setups relied on the wp-env tests environment (`env.tests.mysqlPort`) for this database; that environment is now disabled, so use your own MySQL as above.
+
+In CI they are executed by the **newfold-labs/workflows** reusable codecoverage workflow, which sets up the WordPress test environment and runs both PHPUnit and the wpunit suite across multiple PHP versions.
 
 ### Code coverage and CI workflow
 

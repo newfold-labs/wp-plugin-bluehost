@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1793201525">
-  <project timestamp="1793201525">
+<coverage generated="1795102253">
+  <project timestamp="1795102253">
     <file name="/home/runner/work/wp-plugin-bluehost/wp-plugin-bluehost/inc/Admin.php">
       <class name="Bluehost\Admin" namespace="global">
         <metrics complexity="34" methods="13" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="199" coveredstatements="42" elements="212" coveredelements="42"/>
@@ -397,9 +397,31 @@
     </file>
     <file name="/home/runner/work/wp-plugin-bluehost/wp-plugin-bluehost/inc/Brand.php">
       <class name="Bluehost\Brand" namespace="global">
-        <metrics complexity="0" methods="0" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="0" coveredstatements="0" elements="0" coveredelements="0"/>
+        <metrics complexity="6" methods="4" coveredmethods="4" conditionals="0" coveredconditionals="0" statements="18" coveredstatements="18" elements="22" coveredelements="22"/>
       </class>
-      <metrics loc="24" ncloc="9" classes="0" methods="0" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="0" coveredstatements="0" elements="0" coveredelements="0"/>
+      <line num="74" type="method" name="is_india" visibility="public" complexity="1" crap="1" count="5"/>
+      <line num="75" type="stmt" count="5"/>
+      <line num="77" type="stmt" count="5"/>
+      <line num="88" type="method" name="link" visibility="public" complexity="3" crap="3" count="3"/>
+      <line num="89" type="stmt" count="3"/>
+      <line num="90" type="stmt" count="1"/>
+      <line num="92" type="stmt" count="3"/>
+      <line num="94" type="stmt" count="3"/>
+      <line num="104" type="method" name="register" visibility="public" complexity="1" crap="1" count="2"/>
+      <line num="105" type="stmt" count="2"/>
+      <line num="116" type="method" name="editor_chat_payload" visibility="private" complexity="1" crap="1" count="2"/>
+      <line num="117" type="stmt" count="2"/>
+      <line num="118" type="stmt" count="2"/>
+      <line num="119" type="stmt" count="2"/>
+      <line num="121" type="stmt" count="2"/>
+      <line num="122" type="stmt" count="2"/>
+      <line num="123" type="stmt" count="2"/>
+      <line num="124" type="stmt" count="2"/>
+      <line num="125" type="stmt" count="2"/>
+      <line num="126" type="stmt" count="2"/>
+      <line num="127" type="stmt" count="2"/>
+      <line num="128" type="stmt" count="2"/>
+      <metrics loc="131" ncloc="66" classes="1" methods="4" coveredmethods="4" conditionals="0" coveredconditionals="0" statements="18" coveredstatements="18" elements="22" coveredelements="22"/>
     </file>
     <file name="/home/runner/work/wp-plugin-bluehost/wp-plugin-bluehost/inc/Data.php">
       <class name="Bluehost\Data" namespace="global">
@@ -1683,6 +1705,6 @@
       <line num="248" type="stmt" count="0"/>
       <metrics loc="248" ncloc="232" classes="0" methods="0" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="128" coveredstatements="0" elements="128" coveredelements="0"/>
     </file>
-    <metrics files="42" loc="3800" ncloc="2619" classes="14" methods="86" coveredmethods="23" conditionals="0" coveredconditionals="0" statements="1425" coveredstatements="321" elements="1511" coveredelements="344"/>
+    <metrics files="42" loc="3907" ncloc="2676" classes="15" methods="90" coveredmethods="27" conditionals="0" coveredconditionals="0" statements="1443" coveredstatements="339" elements="1533" coveredelements="366"/>
   </project>
 </coverage>

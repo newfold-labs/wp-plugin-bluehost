@@ -43,3 +43,5 @@ cypress.env.json
 *.sql
 *.zip
 *.local.json
+.phpunit.result.cache
+/tests/cypress/downloads
